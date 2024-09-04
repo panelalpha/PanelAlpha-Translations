@@ -1,0 +1,1 @@
+<p>Fehler bei der Installation <strong>{{ $theme_title }}</strong> theme. Message: {{ $exception_message }}</p>
