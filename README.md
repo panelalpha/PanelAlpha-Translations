@@ -10,7 +10,11 @@
 
 Welcome to the PanelAlpha Translations repository! This repository contains translation files for PanelAlpha in multiple languages. Each language has its own directory with translation files organized by category.
 
-> **Disclaimer:** This repository was created with the help of automated tools, so there might be errors or inaccuracies in the translations. Please feel free to contribute improvements or corrections.
+> [!NOTE]
+> This repository was created with the help of automated tools, specifically DeepL. As a result, some translations may contain inaccuracies. 
+
+> [!NOTE]
+> We encourage you to contribute improvements or corrections to ensure the best quality.
 
 ## Available Translations
 
@@ -31,413 +35,55 @@ Each language directory contains the following structure:
 |
 ├── clientarea
 │   └── translation.json
-└── email-templates
-    ├── Admin
-    │   ├── DnsZone
-    │   │   ├── CreateADnsRecordFailed
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   ├── DnsRecordsCreateFailed
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   ├── DnsZoneCreateFailed
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   └── DnsZoneExists
-    │   │       ├── Email
-    │   │       │   ├── message.blade.php
-    │   │       │   └── subject.blade.php
-    │   │       └── InApp
-    │   │           └── message.blade.php
-    │   ├── EmailDomain
-    │   │   ├── EmailDomainCreateFailed
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   └── EmailDomainExists
-    │   │       ├── Email
-    │   │       │   ├── message.blade.php
-    │   │       │   └── subject.blade.php
-    │   │       └── InApp
-    │   │           └── message.blade.php
-    │   ├── Instance
-    │   │   ├── ImportByUserFailed
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   ├── ImportByUserFinished
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   ├── InstanceDeletedByUser
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   ├── InstanceInstallationByUserFailed
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   ├── InstanceInstallationByUserFinished
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   ├── ManualImportInstanceFailed
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   └── ManualImportInstanceFinished
-    │   │       ├── Email
-    │   │       │   ├── message.blade.php
-    │   │       │   └── subject.blade.php
-    │   │       └── InApp
-    │   │           └── message.blade.php
-    │   ├── InstanceTemplate
-    │   │   ├── InstanceTemplateCreateFailed
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   └── InstanceTemplateCreateFinished
-    │   │       ├── Email
-    │   │       │   ├── message.blade.php
-    │   │       │   └── subject.blade.php
-    │   │       └── InApp
-    │   │           └── message.blade.php
-    │   ├── Package
-    │   │   ├── InstallPackageFailed
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   └── InstallPackageFinished
-    │   │       ├── Email
-    │   │       │   ├── message.blade.php
-    │   │       │   └── subject.blade.php
-    │   │       └── InApp
-    │   │           └── message.blade.php
-    │   ├── Plugin
-    │   │   ├── ForceUpdatePluginFailed
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   └── ForceUpdatePluginFinished
-    │   │       ├── Email
-    │   │       │   ├── message.blade.php
-    │   │       │   └── subject.blade.php
-    │   │       └── InApp
-    │   │           └── message.blade.php
-    │   ├── Queue
-    │   │   ├── QueueTaskFailed
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   └── QueueTaskSucceeded
-    │   │       ├── Email
-    │   │       │   ├── message.blade.php
-    │   │       │   └── subject.blade.php
-    │   │       └── InApp
-    │   │           └── message.blade.php
-    │   ├── ReportProvider
-    │   │   ├── SyncReportProvidersFailed
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   └── SyncReportProvidersFinished
-    │   │       ├── Email
-    │   │       │   ├── message.blade.php
-    │   │       │   └── subject.blade.php
-    │   │       └── InApp
-    │   │           └── message.blade.php
-    │   ├── Service
-    │   │   ├── ServiceSuspended
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   ├── ServiceUnsuspended
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   └── ServiceUpgraded
-    │   │       ├── Email
-    │   │       │   ├── message.blade.php
-    │   │       │   └── subject.blade.php
-    │   │       └── InApp
-    │   │           └── message.blade.php
-    │   ├── SslOrder
-    │   │   └── DnsPropagationExceeded
-    │   │       ├── Email
-    │   │       │   ├── message.blade.php
-    │   │       │   └── subject.blade.php
-    │   │       └── InApp
-    │   │           └── message.blade.php
-    │   ├── System
-    │   │   ├── NewDeviceLogin
-    │   │   │   └── Email
-    │   │   │       ├── message.blade.php
-    │   │   │       └── subject.blade.php
-    │   │   └── ResetPassword
-    │   │       └── Email
-    │   │           ├── message.blade.php
-    │   │           └── subject.blade.php
-    │   ├── Theme
-    │   │   ├── ForceUpdateThemeFailed
-    │   │   │   ├── Email
-    │   │   │   │   ├── message.blade.php
-    │   │   │   │   └── subject.blade.php
-    │   │   │   └── InApp
-    │   │   │       └── message.blade.php
-    │   │   └── ForceUpdateThemeFinished
-    │   │       ├── Email
-    │   │       │   ├── message.blade.php
-    │   │       │   └── subject.blade.php
-    │   │       └── InApp
-    │   │           └── message.blade.php
-    │   └── Updates
-    │       ├── PluginUpdateAvailable
-    │       │   └── Email
-    │       │       ├── message.blade.php
-    │       │       └── subject.blade.php
-    │       ├── ThemeUpdateAvailable
-    │       │   └── Email
-    │       │       ├── message.blade.php
-    │       │       └── subject.blade.php
-    │       └── WordpressUpdateAvailable
-    │           └── Email
-    │               ├── message.blade.php
-    │               └── subject.blade.php
-    └── User
-        ├── Backup
-        │   ├── AutomaticCreateFailed
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── AutomaticCreateFinished
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── CreateFailed
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── CreateFinished
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── DeleteFailed
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── DeleteFinished
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── RestoreFailed
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   └── RestoreFinished
-        │       ├── Email
-        │       │   ├── message.blade.php
-        │       │   └── subject.blade.php
-        │       └── InApp
-        │           └── message.blade.php
-        ├── Instance
-        │   ├── CreateStagingFailed
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── CreateStagingFinished
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── ImportFailed
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── ImportFinished
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── InstanceInstallationFailed
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── InstanceInstallationFinished
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── InstanceInvitationReceived
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── PushToLiveFailed
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── PushToLiveFinished
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── UpdateWordpressFailed
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   └── UpdateWordpressFinished
-        │       ├── Email
-        │       │   ├── message.blade.php
-        │       │   └── subject.blade.php
-        │       └── InApp
-        │           └── message.blade.php
-        ├── Plugin
-        │   ├── InstallFailed
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── InstallFinished
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── UpdateFailed
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   └── UpdateFinished
-        │       ├── Email
-        │       │   ├── message.blade.php
-        │       │   └── subject.blade.php
-        │       └── InApp
-        │           └── message.blade.php
-        ├── System
-        │   ├── NewDeviceLogin
-        │   │   └── Email
-        │   │       ├── message.blade.php
-        │   │       └── subject.blade.php
-        │   └── ResetPassword
-        │       └── Email
-        │           ├── message.blade.php
-        │           └── subject.blade.php
-        ├── Theme
-        │   ├── InstallFailed
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── InstallFinished
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   ├── UpdateFailed
-        │   │   ├── Email
-        │   │   │   ├── message.blade.php
-        │   │   │   └── subject.blade.php
-        │   │   └── InApp
-        │   │       └── message.blade.php
-        │   └── UpdateFinished
-        │       ├── Email
-        │       │   ├── message.blade.php
-        │       │   └── subject.blade.php
-        │       └── InApp
-        │           └── message.blade.php
-        └── Updates
-            ├── PluginUpdateAvailable
-            │   └── Email
-            │       ├── message.blade.php
-            │       └── subject.blade.php
-            ├── ThemeUpdateAvailable
-            │   └── Email
-            │       ├── message.blade.php
-            │       └── subject.blade.php
-            └── WordpressUpdateAvailable
-                └── Email
-                    ├── message.blade.php
-                    └── subject.blade.php
+├── email-templates
+└── README.md
 ```
 
 ### Description
-
-- `README.md`: Contains information about the specific translations for that language. This file provides context and instructions for the translation files within that language directory.
   
 - `clientarea/`: Contains translation files related to the client area of PanelAlpha. These files translate text and interface elements visible to users in the client area of the application.
 
 - `email-templates/`: Contains translation files for email templates used by PanelAlpha. These files translate the content of emails sent by the application to users.
+
+- `README.md`: Contains information about the specific translations for that language. This file provides context and instructions for the translation files within that language directory.
+
+## Installation
+
+To install and use these translations with PanelAlpha, follow these general steps:
+
+1. <b>Download the Translation Files:</b>
+    - Download the language files for your desired language from the repository.
+
+2. <b>Copy Files to the Server:</b>
+    - Copy the translation files to your server's language directory. For example:
+
+3. <b>Set Appropriate Permissions:</b>
+    - Ensure the correct permissions are set for the translation files. Run the following command:
+    ```sh
+    chmod -R 755 /opt/panelalpha/app/packages/api/resources/lang/<language_code>
+    ```
+
+4. <b>Synchronize Notifications:</b>
+    - Execute the following command to sync notifications with the new translations:
+    ```sh
+    docker compose -f /opt/panelalpha/app/docker-compose.yml exec -T api php artisan notifications:sync
+    ```
+
+5. <b>Configure the Client Area Language:</b>
+    - <b>Administrator Settings</b>: <br>
+    The administrator can set the default language for the client area in the PanelAlpha admin interface. Go to Configuration → General → Client Area → Default Language. The selected language here will be the default for all clients.
+
+    - <b>Client Preferences</b>: <br>
+    Clients can set their own language preferences and select a language when accessing the client area using the dropdown menu.
+    
+    - <b>Account Details</b>: <br>
+    In the client area, clients can also change the language via their account details. Navigate to Account Details → Personal Information → Language and choose the preferred language from the dropdown menu.
+
+## Additional Information
+
+- <b>Translations Documentation:</b> Each language directory contains a README.md file with specific details and instructions for the translations in that language. Please refer to this file for additional context.
+
+- <b>For more information</b> on how to use and integrate these translations with PanelAlpha, please refer to the [PanelAlpha documentation](https://www.panelalpha.com/documentation/getting-started/translations/)
 
 ## Contributing
 
@@ -447,6 +93,6 @@ If you'd like to contribute translations or updates to existing translations, pl
 2. Make your changes in a separate branch.
 3. Submit a pull request with a clear description of the changes made.
 
-## Getting Started
+## License
 
-For more information on how to use and integrate these translations with PanelAlpha, please refer to the [PanelAlpha documentation](https://www.panelalpha.com/documentation/getting-started/translations/)
+This repository is licensed under the [MIT License](https://github.com/panelalpha/PanelAlpha-Translations/blob/main/LICENSE).
