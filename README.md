@@ -33,19 +33,10 @@ Each language directory contains the following structure:
 ```console
 <lang>
 |
-├── clientarea
-│   └── translation.json
-├── email-templates
+├── clientarea       # translation files related to the client area of PanelAlpha
+├── email-templates  # translation files for email templates and notifications
 └── README.md
 ```
-
-### Description
-  
-- `clientarea/`: Contains translation files related to the client area of PanelAlpha. These files translate text and interface elements visible to users in the client area of the application.
-
-- `email-templates/`: Contains translation files for email templates used by PanelAlpha. These files translate the content of emails sent by the application to users.
-
-- `README.md`: Contains information about the specific translations for that language. This file provides context and instructions for the translation files within that language directory.
 
 ## Installation
 
