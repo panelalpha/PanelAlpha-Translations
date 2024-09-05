@@ -40,6 +40,22 @@ Each language directory contains the following structure:
 
 ## Installation
 
+### Automatic 
+
+To automatically install and use these translations with PanelAlpha, follow these steps:
+
+1. <b>Download the script to /opt/panelalpha:</b>
+    ```sh
+    curl -sL -o /opt/panelalpha/sync-translations.sh https://raw.githubusercontent.com/panelalpha/PanelAlpha-Translations/feature/sync-translations/scripts/sync-translations.sh
+    ```
+
+2. <b>Run the script with the desired language:</b>
+    ```sh
+    bash /opt/panelalpha/sync-translations.sh --lang "{language_code}"
+    ```
+
+### Manual
+
 To install and use these translations with PanelAlpha, follow these general steps:
 
 1. <b>Download the Translation Files:</b>
