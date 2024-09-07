@@ -62,7 +62,7 @@ To install and use these translations with PanelAlpha, follow these general step
     - Download the language files for your desired language from the repository.
 
 2. <b>Copy Files to the Server:</b>
-    - Copy the translation files to your server's language directory. For example:
+    - Copy the translation files to your server's language directory.
 
 3. <b>Set Appropriate Permissions:</b>
     - Ensure the correct permissions are set for the translation files. Run the following command:
