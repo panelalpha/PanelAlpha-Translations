@@ -21,6 +21,20 @@ prompt_confirmation() {
   esac
 }
 
+self_update() {
+  echo -e "${YELLOW}>>> Checking for script updates...${NC}"
+  git -C "$TEMP_DIR" fetch origin
+  LOCAL_VERSION=$(git -C "$TEMP_DIR" rev-parse HEAD)
+  REMOTE_VERSION=$(git -C "$TEMP_DIR" rev-parse origin/main)  # Use the appropriate branch if not 'main'
+  
+  if [ "$LOCAL_VERSION" != "$REMOTE_VERSION" ]; then
+    echo -e "${YELLOW}>>> Update available. Pulling the latest changes...${NC}"
+    git -C "$TEMP_DIR" pull origin main
+  else
+    echo -e "${GREEN}>>> The script is up-to-date.${NC}"
+  fi
+}
+
 if [[ "$1" == "--help" ]]; then
   display_help
   exit 0
@@ -48,6 +62,13 @@ fi
 REPO_URL="https://github.com/panelalpha/panelalpha-translations"
 TEMP_DIR="/tmp/panelalpha-translations"
 TARGET_DIR="/opt/panelalpha/app/packages/api/resources/lang/$LANG"
+
+if [ ! -d "$TEMP_DIR" ]; then
+  echo -e "${YELLOW}>>> Cloning repository...${NC}"
+  git clone --depth 1 "$REPO_URL" "$TEMP_DIR" > /dev/null 2>&1
+fi
+
+self_update
 
 if [ -d "$TARGET_DIR/clientarea" ] || [ -d "$TARGET_DIR/email-templates" ]; then
   echo -e "${YELLOW}>>> Files for language \"$LANG\" already exist in the target directory.${NC}"
