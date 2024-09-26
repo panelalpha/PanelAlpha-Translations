@@ -1,1 +1,1 @@
-Thèmes WordPress : Dernières mises à jour disponibles
+Thèmes WordPress: Dernières mises à jour disponibles

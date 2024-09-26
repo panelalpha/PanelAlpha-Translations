@@ -1,7 +1,7 @@
-</p> <p>Cher <strong>Chez nous</strong>{{ $client_first_name }}</strong>,</p> <p>
-</p> <p>La <strong>Structure de l'entreprise</strong>.{{ $backup_name }}</strong> la sauvegarde a été supprimée avec succès.</p>
-</p> <p>Détails de l'instance:</p> <p>Les détails de l'instance
-<b>Tableau>
+<p>Cher <strong>{{ $client_first_name }}</strong>,</p>
+<p>La sauvegarde <strong>{{ $backup_name }}</strong> a été supprimée avec succès.</p>
+<p>Détails de l'instance:</p>
+<table>
     <tbody>
     <tr>
         <th>Nom du site</th>
@@ -16,4 +16,4 @@
         <td><a href="{{$instance_url}}">{{ $instance_url }}</a></td>
     </tr>
     </tbody>
-</tableau>
+</table>

@@ -1,1 +1,1 @@
-Instance {{ $instance_name }} by {{ $client_name }} Importation réussie
+Instance {{ $instance_name }} par {{ $client_name }} importée avec succès

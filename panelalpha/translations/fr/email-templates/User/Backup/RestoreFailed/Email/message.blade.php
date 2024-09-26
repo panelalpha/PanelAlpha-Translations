@@ -1,12 +1,12 @@
 <p>Cher <strong>{{ $client_first_name }}</strong>,</p>
 <p>La restauration de la sauvegarde <strong>{{ $backup_name }}</strong> a échoué.</p>
-<p>Message : {{ $exception_message }}</p>
-<p>Détails de la sauvegarde :</p>
+<p>Message: {{ $exception_message }}</p>
+<p>Détails de la sauvegarde:</p>
 <table>
     <tbody>
     <tr>
         <th>Nom</th>
-        <td>{{ $backup_name }}</td>
+        <td>{{ $backup_name  }}</td>
     </tr>
     <tr>
         <th>Type</th>
@@ -14,15 +14,15 @@
     </tr>
     <tr>
         <th>Taille</th>
-        <td>{{ $backup_size }} MB</td>
+        <td>{{ $backup_size  }} MB</td>
     </tr>
     <tr>
         <th>Version</th>
-        <td>{{ $backup_version }}</td>
+        <td>{{ $backup_version  }}</td>
     </tr>
     <tr>
         <th>Date</th>
-        <td>{{ $backup_date }}</td>
+        <td>{{ $backup_date  }}</td>
     </tr>
     </tbody>
 </table>
@@ -34,11 +34,11 @@
         <td>{{ $instance_name }}</td>
     </tr>
     <tr>
-        <th>Domain</th>
+        <th>Domaine</th>
         <td>{{ $instance_domain }}</td>
     </tr>
     <tr>
-        <th>URL</th>
+        <th>Url</th>
         <td><a href="{{$instance_url}}">{{ $instance_url }}</a></td>
     </tr>
     </tbody>

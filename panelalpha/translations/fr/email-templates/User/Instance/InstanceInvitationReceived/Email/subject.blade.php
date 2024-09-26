@@ -1,1 +1,1 @@
-Invitation à accéder à la gestion des instances de WordPress pour {{ $instance_name }}
+Invitation à accéder à la gestion de l'instance WordPress pour {{ $instance_name }}

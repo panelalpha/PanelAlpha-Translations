@@ -1,1 +1,1 @@
-Instance {{ $instance_name }} Mise à jour réussie
+Instance {{ $instance_name }} mise à jour avec succès

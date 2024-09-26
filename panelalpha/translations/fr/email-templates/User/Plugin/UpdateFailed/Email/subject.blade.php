@@ -1,1 +1,1 @@
-Plugin {{ $plugin_title }} Échec de la mise à jour
+Mise à jour du plugin {{ $plugin_title }} échouée

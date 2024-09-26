@@ -1,1 +1,1 @@
-Sauvegarde {{ $backup_name }} Suppression réussie
+Sauvegarde {{ $backup_name }} supprimée avec succès

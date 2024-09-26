@@ -1,1 +1,1 @@
-Synchronisation des fournisseurs de rapports {{ $instance_name }} Échec
+La synchronisation des fournisseurs de rapports de {{ $instance_name }} a échoué

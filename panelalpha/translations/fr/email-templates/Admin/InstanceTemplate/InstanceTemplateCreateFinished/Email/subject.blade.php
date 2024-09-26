@@ -1,1 +1,1 @@
-Modèle d'instance {{ $template_name }} Créé avec succès
+Modèle d'instance {{ $template_name }} créé avec succès

@@ -1,1 +1,1 @@
-Tâche en file d'attente {{ $task_name }} Échec
+Échec de la tâche de file d'attente {{ $task_name }}

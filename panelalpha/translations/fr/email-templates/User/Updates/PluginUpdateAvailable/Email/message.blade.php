@@ -1,5 +1,5 @@
 <p>Cher <strong>{{ $client_first_name }}</strong>,</p>
-<p>De nouvelles mises à jour pour les plugins WordPress sont maintenant disponibles pour vos instances :</p>
+<p>De nouvelles mises à jour pour les plugins WordPress sont maintenant disponibles pour vos instances:</p>
 @foreach ($plugins as $pluginsAssingedToInstance)
     <table style="margin-top: 16px; padding: 10px 16px;">
         <tbody>

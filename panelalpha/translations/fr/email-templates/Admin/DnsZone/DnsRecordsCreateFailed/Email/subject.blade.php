@@ -1,1 +1,1 @@
-Enregistrements DNS pour {{ $zone_name }} Échec de la création
+Échec de la création des enregistrements DNS pour {{ $zone_name }}

@@ -1,1 +1,1 @@
-Sauvegarde {{ $backup_name }} Rétabli avec succès
+La restauration de la sauvegarde {{ $backup_name }} a réussi

@@ -1,1 +1,1 @@
-Instance {{ $import_domain }} Importation manuelle réussie
+Instance {{ $import_domain }} Importée Manuellement Avec Succès

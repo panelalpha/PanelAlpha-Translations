@@ -1,1 +1,1 @@
-Thème {{ $theme_title }} Échec de la mise à jour
+Échec de la mise à jour du thème {{ $theme_title }}

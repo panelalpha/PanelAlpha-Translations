@@ -1,1 +1,1 @@
-Instance {{ $instance_name }} by {{ $client_name }} Suppression réussie
+Instance {{ $instance_name }} par {{ $client_name }} supprimée avec succès

@@ -1,1 +1,1 @@
-Pousser pour vivre {{ $instance_name }} Échec de l'installation
+Push to Live de {{ $instance_name }} a échoué

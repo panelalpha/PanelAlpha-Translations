@@ -1,7 +1,7 @@
-</p> <p>Cher <strong>Chez nous</strong>{{ $admin_name }}</strong>,</p> <p>
-</p> <p>La création <strong>de l'entreprise</strong>.{{ $template_name }}</Le modèle d'instance a échoué.
-<p>Message :{{ $exception_message }}</p>
-<b>Tableau>
+<p>Cher <strong>{{ $admin_name }}</strong>,</p>
+<p>La création du modèle d'instance <strong>{{ $template_name }}</strong> a échoué.</p>
+<p>Message: {{ $exception_message }}</p>
+<table>
     <tbody>
     <tr>
         <th>ID</th>
@@ -12,8 +12,8 @@
         <td>{{ $template_name }}</td>
     </tr>
     <tr>
-        <th>Version WordPress</th>
+        <th>Version de WordPress</th>
         <td>{{ $wordpress_version }}</td>
     </tr>
     </tbody>
-</tableau>
+</table>

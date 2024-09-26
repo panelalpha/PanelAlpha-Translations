@@ -1,5 +1,5 @@
 <p>Cher <strong>{{ $client_first_name }}</strong>,</p>
-<p>De nouvelles mises à jour pour les thèmes WordPress sont maintenant disponibles pour vos instances :</p>
+<p>De nouvelles mises à jour pour les thèmes WordPress sont maintenant disponibles pour vos instances:</p>
 @foreach ($themes as $themesAssingedToInstance)
     <table style="margin-top: 16px; padding: 10px 16px;">
         <tbody>
@@ -22,7 +22,7 @@
         <w:anchorlock/>
         <center>
     <![endif]--> <a
-            style="background-color: {{$branding_color}}; border-radius: 5px; color: #fff; display: inline-block; font-family: 'Montserrat', Arial, sans-seriff; font-weight: 600; font-size: 15px; line-height: 54px; text-decoration: none; text-align: center; -webkit-text-size-adjust: none; padding-left: 20px; padding-right: 20px;"
+            style="background-color: {{$branding_color}}; border-radius: 5px; color: #fff; display: inline-block; font-family: 'Montserrat', Arial, sans-serif; font-weight: 600; font-size: 15px; line-height: 54px; text-decoration: none; text-align: center; -webkit-text-size-adjust: none; padding-left: 20px; padding-right: 20px;"
             href="{{ $app_url }}/instances"> Se connecter </a> <!-- [if mso]>
         </v:roundrect>
         </center>

@@ -1,12 +1,12 @@
-</p> <p>Cher <strong>Chez nous</strong>{{ $admin_name }}</strong>,</p> <p>
-<p>La création d'un domaine d'email <strong>est un élément important de la stratégie de l'entreprise.{{ $domain }}</strong> a échoué.</p> <p>
-<p>Message :{{ $exception_message }}</p>
+<p>Cher <strong>{{ $admin_name }}</strong>,</p>
+<p>La création du domaine de messagerie <strong>{{ $domain }}</strong> a échoué.</p>
+<p>Message: {{ $exception_message }}</p>
 
-</p> <p>Email Domain details:</p> <p>Les détails du domaine de l'e-mail
-<b>Tableau>
+<p>Détails du domaine de messagerie:</p>
+<table>
     <tbody>
     <tr>
-        <th>Domaine électronique</th>
+        <th>Domaine de messagerie</th>
         <td>{{ $domain }}</td>
     </tr>
     <tr>
@@ -18,4 +18,4 @@
         <td><strong>#{{ $email_server_id }}</strong> {{ $email_server_name }}</td>
     </tr>
     </tbody>
-</tableau>
+</table>

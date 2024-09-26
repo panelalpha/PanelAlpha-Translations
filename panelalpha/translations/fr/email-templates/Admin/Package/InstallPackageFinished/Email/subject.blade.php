@@ -1,1 +1,1 @@
-Paquet {{ $package_name }} Installed Successfully In {{ $instance_name }}
+Le package {{ $package_name }} a été installé avec succès dans l'instance {{ $instance_name }}

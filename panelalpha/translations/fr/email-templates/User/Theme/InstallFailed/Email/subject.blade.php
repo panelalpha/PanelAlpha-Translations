@@ -1,1 +1,1 @@
-Thème {{ $theme_title }} Échec de l'installation
+L'installation du thème {{ $theme_title }} a échoué

@@ -1,1 +1,1 @@
-Mise à jour des forces {{ $plugin_title }} Plugin In {{ $instance_name }} Échec
+La mise à jour forcée du plugin {{ $plugin_title }} dans l'instance {{ $instance_name }} a échoué

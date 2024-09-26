@@ -1,1 +1,1 @@
-Les mises à jour des plugins WordPress sont disponibles
+Mises à jour des plugins WordPress disponibles

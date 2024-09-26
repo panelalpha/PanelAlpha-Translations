@@ -1,5 +1,5 @@
 <p>Cher <strong>{{ $client_first_name }}</strong>,</p>
-<p>Une nouvelle mise à jour de WordPress est maintenant disponible pour vos instances :</p>
+<p>Une nouvelle mise à jour de WordPress est maintenant disponible pour vos instances:</p>
 @foreach ($instances as $instance)
     <table style="margin-top: 16px; padding: 10px 16px;">
         <tbody>

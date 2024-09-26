@@ -1,1 +1,1 @@
-Sauvegarde {{ $backup_name }} Échec de la suppression
+La suppression de la sauvegarde {{ $backup_name }} a échoué

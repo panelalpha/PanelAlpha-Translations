@@ -1,1 +1,1 @@
-Mise à jour des forces {{ $plugin_title }} Plugin In {{ $instance_name }} Terminé avec succès
+Mise à jour forcée du plugin {{ $plugin_title }} dans {{ $instance_name }} terminée avec succès

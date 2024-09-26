@@ -1,1 +1,1 @@
-Le domaine de l'email existe déjà sur le serveur d'email
+Le domaine email existe déjà sur le serveur de messagerie

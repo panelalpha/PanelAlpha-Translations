@@ -1,1 +1,1 @@
-Instance {{ $instance_name }} Échec de la mise à jour
+Mise à jour de l'instance {{ $instance_name }} échouée

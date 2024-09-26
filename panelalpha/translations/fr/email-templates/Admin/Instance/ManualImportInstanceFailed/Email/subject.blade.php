@@ -1,1 +1,1 @@
-Importation manuelle {{ $import_domain }} Échec
+Importation manuelle de {{ $import_domain }} a échoué

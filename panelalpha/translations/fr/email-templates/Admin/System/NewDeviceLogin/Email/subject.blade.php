@@ -1,1 +1,1 @@
-La connexion a été détectée à partir d'un nouvel appareil
+Une connexion a été détectée depuis un nouvel appareil

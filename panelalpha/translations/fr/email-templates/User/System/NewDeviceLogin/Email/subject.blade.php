@@ -1,1 +1,1 @@
-Connexion d'un nouvel appareil détectée
+Détection de connexion d'un nouvel appareil

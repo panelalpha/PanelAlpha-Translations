@@ -1,1 +1,1 @@
-Plugin {{ $plugin_title }} Mise à jour réussie
+Plugin {{ $plugin_title }} mis à jour avec succès

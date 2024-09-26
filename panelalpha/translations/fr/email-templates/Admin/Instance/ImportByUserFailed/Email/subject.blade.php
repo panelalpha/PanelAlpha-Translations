@@ -1,1 +1,1 @@
-Instance {{ $instance_name }} by {{ $client_name }} Échec de l'importation
+L'importation de l'instance {{ $instance_name }} par {{ $client_name }} a échoué

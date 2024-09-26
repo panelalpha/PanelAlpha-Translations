@@ -1,1 +1,1 @@
-Domaine de l'email {{ $domain }} Échec de la création
+Échec de la création du domaine e-mail {{ $domain }}

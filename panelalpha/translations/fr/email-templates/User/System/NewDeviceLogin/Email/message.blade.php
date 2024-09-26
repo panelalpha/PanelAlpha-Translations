@@ -1,5 +1,5 @@
 <p>Cher <strong>{{ $client_first_name }}</strong>,</p>
-<p>Il semble que le <strong>{{ $formatted_date }}</strong> à <strong>{{ $formatted_time }}</strong>, vous vous soyez connecté à {{$app_name }} en utilisant un nouvel appareil. Les détails de la tentative de connexion sont les suivants :</p>
+<p>Il semble qu'au <strong>{{ $formatted_date }}</strong> à <strong>{{ $formatted_time }}</strong>, vous vous soyez connecté à <strong>{{ $app_name }}</strong> en utilisant un nouvel appareil. Les détails de la tentative de connexion sont les suivants:</p>
 <table>
     <tbody>
     <tr>
@@ -22,8 +22,7 @@
     </tr>
     </tbody>
 </table>
-<p>Ce nouvel appareil a été ajouté à votre liste d'appareils connus sur PanelAlpha : <a
-        href="{{ $devices_list_url }}">{{ $devices_list_url }}</a></p>
+<p>Ce nouvel appareil a été ajouté à votre liste d'appareils connus sur PanelAlpha : <a href="{{ $devices_list_url }}">{{ $devices_list_url }}</a></p>
 <p>Si vous ne le reconnaissez pas, assurez-vous de supprimer l'enregistrement et de mettre à jour votre mot de passe immédiatement. Une personne non autorisée pourrait avoir accédé à votre compte {{ $app_name }}.</p>
 <div style="width: 100%; text-align: center; margin-top: 32px;">
     <p class="button" style="display: inline; text-align: center; margin-right: auto;"><!-- [if mso]>

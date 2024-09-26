@@ -1,1 +1,1 @@
-Sauvegarde {{ $backup_name }} Rétabli Échec
+La restauration de la sauvegarde {{ $backup_name }} a échoué
