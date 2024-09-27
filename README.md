@@ -20,6 +20,7 @@ Welcome to the PanelAlpha Translations repository! This repository contains tran
 
 The following languages are currently available:
 
+- NEW: **Dutch** (`nl`)
 - **German** (`de`)
 - **Spanish** (`es`)
 - **French** (`fr`)
