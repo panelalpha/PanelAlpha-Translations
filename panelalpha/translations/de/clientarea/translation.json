@@ -131,7 +131,7 @@
             "title": "Meine Instanzen",
             "tag.assignExisting.title": "Zugewiesene Tags",
             "tag.add.title": "Neuen Tag hinzufügen",
-            "tab.siteDetails": "Details",
+            "tab.siteDetails": "Übersicht",
             "tab.monitoring": "Überwachung",
             "tab.backups": "Backups",
             "tab.plugins": "Plugins",
@@ -352,7 +352,7 @@
             "sidebar.manage.title": "Verwalten Sie",
             "sidebar.email.title": "E-Mails",
             "summary.title": "Zusammenfassung",
-            "summary.nameserverCard.mainDomain.headline": "Main Domain - {domain}",
+            "summary.nameserverCard.mainDomain.headline": "Hauptbereich - {domain}",
             "summary.nameserverCard.nameservers.headline": "Nameserver",
             "summary.nameserverCard.nameservers.text": "Richten Sie Ihren Domänennamen auf die folgenden Nameserver, um eine Verbindung mit unseren Nameservern herzustellen.",
             "summary.nameserverCard.dnsRecords.headline": "DNS-Einträge",
@@ -577,7 +577,7 @@
             "monitoring.title": "Es sind noch keine Daten zu sehen",
             "monitoring.description": "Unser System aktualisiert die Statistiken einmal am Tag und wir haben noch keine Informationen von Ihrer Website gesammelt. Bitte überprüfen Sie dies morgen.",
             "activeDevices.title": "Keine aktiven Geräte gefunden",
-            "activeDevices.description": "Es wurden keine aktiven Geräte für diese Instanz gefunden. Wenn sich ein Benutzer von einem beliebigen Gerät aus anmeldet, wird er automatisch in der Liste angezeigt."
+            "activeDevices.description": "Es wurden keine aktiven Geräte gefunden. Wenn sich ein Benutzer von einem beliebigen Gerät aus anmeldet, wird es hier automatisch in der Liste angezeigt."
         },
         "status": {
             "active": "Aktiv",
@@ -646,7 +646,7 @@
             "hasSubInstance": "Diese Instanz enthält eine Unterinstanz {{label}}.",
             "modal.ssoLogin.success": "Der Login-Link wurde generiert.",
             "modal.staging.create.success": "Inszenierung Installation in Arbeit",
-            "modal.staging.cancel.success": "Staging Gelöscht",
+            "modal.staging.cancel.success": "Staging-Instanz gelöscht",
             "modal.update.success": "Instanz-Update in Arbeit",
             "modal.clearCache.success": "Der Instanz-Cache wurde geleert.",
             "modal.delete.success_one": "Die Instanz wurde gelöscht.",
