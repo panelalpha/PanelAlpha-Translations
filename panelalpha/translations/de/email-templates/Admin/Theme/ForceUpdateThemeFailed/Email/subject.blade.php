@@ -1,1 +1,1 @@
-Kraft-Update {{ $theme_title }} Theme In {{ $instance_name }} Gescheitert
+Erzwungene Aktualisierung des {{ $theme_title }} Themes in {{ $instance_name }} fehlgeschlagen

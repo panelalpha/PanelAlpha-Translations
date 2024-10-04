@@ -1,1 +1,1 @@
-Thema {{ $theme_title }} Installation fehlgeschlagen
+Theme {{ $theme_title }} Installation fehlgeschlagen

@@ -1,1 +1,1 @@
-<p>Fehler bei der Aktualisierung <strong>{{ $instance_name }}</strong> instance. Message: {{ $exception_message }}</p>
+<p>Fehler bei der Aktualisierung der Instanz <strong>{{ $instance_name }}</strong>. Fehlernachricht: {{ $exception_message }}</p>

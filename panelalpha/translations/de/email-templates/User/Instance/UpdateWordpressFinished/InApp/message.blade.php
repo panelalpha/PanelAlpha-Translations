@@ -1,2 +1,1 @@
-<p>Die <strong>{{ $instance_name }}</strong> Die Instanz wurde auf die WordPress-Version aktualisiert
-    <strong>{{ $instance_version }}</strong></p>
+<p>Die Instanz <strong>{{ $instance_name }}</strong> wurde auf die WordPress-Version <strong>{{ $instance_version }}</strong> aktualisiert.</p>

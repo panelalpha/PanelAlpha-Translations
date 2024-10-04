@@ -1,1 +1,1 @@
-Instanz {{ $instance_name }} Erfolgreich installiert
+Instanz {{ $instance_name }} Installation erfolgreich

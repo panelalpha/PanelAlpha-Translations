@@ -1,1 +1,1 @@
-<p>Fehler beim Löschen <strong>{{ $backup_name }}</strong> backup. Message: {{ $exception_message }}</p>
+<p>Fehler beim Löschen des Backups <strong>{{ $backup_name }}</strong>. Fehlernachricht: {{ $exception_message }}</p>

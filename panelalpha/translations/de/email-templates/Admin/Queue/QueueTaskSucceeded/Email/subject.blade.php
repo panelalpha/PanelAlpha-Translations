@@ -1,1 +1,1 @@
-Aufgabe in der Warteschlange {{ $task_name }} Erfolgreich abgeschlossen
+Task in der Warteschlange {{ $task_name }} erfolgreich abgeschlossen

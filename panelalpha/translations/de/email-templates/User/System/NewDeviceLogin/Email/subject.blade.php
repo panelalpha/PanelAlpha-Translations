@@ -1,1 +1,1 @@
-Anmeldung für neues Gerät erkannt
+Anmeldung eines neuen Geräts erkannt

@@ -1,4 +1,4 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
 <p>Nachfolgend finden Sie eine Liste von Fällen, die möglicherweise WordPress-Updates erfordern:</p>
 @foreach($users_with_instances_to_update as $user)
     <p><strong>#{{ $user['user_id'] }} {{ $user['user_name'] }}</strong></p>

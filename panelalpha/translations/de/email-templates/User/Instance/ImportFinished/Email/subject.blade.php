@@ -1,1 +1,1 @@
-Ihr Standort {{ $import_from_domain }} has been imported to {{ $app_name }}
+Ihr Standort {{ $import_from_domain }} wurde erfolgreich importiert zu {{ $app_name }}

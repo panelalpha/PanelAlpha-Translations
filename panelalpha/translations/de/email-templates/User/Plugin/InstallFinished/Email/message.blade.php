@@ -1,5 +1,5 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
-<p>Die <strong>{{ $theme_title }}</strong> Das Thema wurde erfolgreich installiert.</p>
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
+<p>Das Plugin <strong>{{ $plugin_title }}</strong> wurde erfolgreich installiert.</p>
 <p>Instanzdetails:</p>
 <table>
     <tbody>

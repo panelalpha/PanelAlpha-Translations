@@ -1,1 +1,1 @@
-<p>Die Inszenierung <strong>{{ $instance_name }}</strong> Instanz installiert wurde</p>
+<p>Die Staging-Instanz <strong>{{ $instance_name }}</strong> wurde installiert</p>

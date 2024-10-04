@@ -1,5 +1,5 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
-<p>Die Staging-Installation für <strong>{{ $instance_name }}</strong> Instanz fehlgeschlagen.</p>
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
+<p>Die Staging-Installation für <strong>{{ $instance_name }}</strong> Instanz ist fehlgeschlagen.</p>
 <p>Mitteilung:{{ $exception_message }}</p>
 <p>Instanzdetails:</p>
 <table>

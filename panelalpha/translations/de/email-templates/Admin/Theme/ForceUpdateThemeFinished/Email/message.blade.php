@@ -1,5 +1,5 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
-<p>Die <strong>{{ $theme_title }}</strong> Thema in <strong><a
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
+<p>Das Theme <strong>{{ $theme_title }}</strong> in <strong><a
             href="{{ $admin_url }}/instances/{{ $instance_id }}"
             target="_blank">{{ $instance_name }}</a></strong> Instanz wurde zwangsweise aktualisiert.</p>
 <p>Instanzdetails:</p>

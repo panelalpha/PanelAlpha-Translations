@@ -1,5 +1,5 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
-<p>Die <strong>{{ $template_name }}</strong> Die Instanzvorlage wurde erfolgreich erstellt.</p>
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
+<p>Die <strong>{{ $template_name }}</strong> Instanzvorlage wurde erfolgreich erstellt.</p>
 <p>Details der Instanzvorlage:</p>
 <table>
     <tbody>

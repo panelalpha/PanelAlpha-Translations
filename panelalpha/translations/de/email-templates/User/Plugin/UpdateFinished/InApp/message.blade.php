@@ -1,1 +1,1 @@
-<p>Plugin <strong>{{ $plugin_title }}</strong> erfolgreich aktualisiert.</p>
+<p>Das Plugin <strong>{{ $plugin_title }}</strong> wurde erfolgreich aktualisiert.</p>

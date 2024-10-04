@@ -1,5 +1,5 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
-<p>Die <strong>{{ $backup_name }}</strong> Die Sicherung wurde erfolgreich gelöscht.</p>
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
+<p>Das Backup <strong>{{ $backup_name }}</strong> wurde erfolgreich gelöscht.</p>
 <p>Instanzdetails:</p>
 <table>
     <tbody>

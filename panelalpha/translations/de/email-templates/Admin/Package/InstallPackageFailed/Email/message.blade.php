@@ -1,8 +1,8 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
-<p>Die Installation von <strong><a href="{{ $admin_url }}/plugins-and-themes">{{ $package_name }}</a></strong> Paket in
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
+<p>Die Installation von <strong><a href="{{ $admin_url }}/plugins-and-themes">{{ $package_name }}</a></strong> im
     <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}"
-               target="_blank">{{ $instance_name }}</a></strong> Instanz fehlgeschlagen.</p>
-<p>Mitteilung:{{ $exception_message }}</p>
+               target="_blank">{{ $instance_name }}</a></strong> Instanz ist fehlgeschlagen.</p>
+<p>Fehlernachricht:{{ $exception_message }}</p>
 <p>Instanzdetails:</p>
 <table>
     <tbody>

@@ -1,1 +1,1 @@
-Instanz {{ $instance_name }} Erfolgreich installiert
+Staging-Instanz {{ $instance_name }} Installation erfolgreich

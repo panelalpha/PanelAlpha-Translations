@@ -1,6 +1,6 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
-<p>Die <strong>{{ $task_name }}</strong> Die Aufgabe wurde erfolgreich abgeschlossen.</p>
-<p>Details zur Aufgabe:</p>
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
+<p>Der <strong>{{ $task_name }}</strong> Task wurde erfolgreich abgeschlossen.</p>
+<p>Details des Tasks:</p>
 <table>
     <tbody>
     <tr>

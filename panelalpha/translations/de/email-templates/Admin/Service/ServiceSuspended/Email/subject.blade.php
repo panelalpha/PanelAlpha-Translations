@@ -1,1 +1,1 @@
-Service # {{ $service_id }} {{ $service_domain }} aussetzen.
+Service # {{ $service_id }} {{ $service_domain }} suspendieren.

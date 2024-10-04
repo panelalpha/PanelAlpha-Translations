@@ -1,1 +1,1 @@
-Sicherung für {{ $instance_name }} Erfolgreich erstellt
+Backup für {{ $instance_name }} Erfolgreich erstellt

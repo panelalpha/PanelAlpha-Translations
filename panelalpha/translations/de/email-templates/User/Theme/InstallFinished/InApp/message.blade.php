@@ -1,1 +1,1 @@
-<p>Die <strong>{{ $theme_title }}</strong> Thema wurde installiert</p>
+<p>Das <strong>{{ $theme_title }}</strong> Theme wurde installiert</p>

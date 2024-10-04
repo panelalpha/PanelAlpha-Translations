@@ -1,7 +1,7 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
-<p>Die Installation von <strong>{{ $theme_title }}</strong> Thema fehlgeschlagen.</p>
-<p>Mitteilung:{{ $exception_message }}</p>
-<p>Instanzdetails:</p>
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
+<p>Die Installation des <strong>{{ $theme_title }}</strong> Themes ist fehlgeschlagen.</p>
+<p>Fehler:{{ $exception_message }}</p>
+<p>Theme Details:</p>
 <table>
     <tbody>
     <tr>

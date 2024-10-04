@@ -1,6 +1,5 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
-<p>Es scheint, dass am <strong>{{ $formatted_date }}</strong> at <strong>{{ $formatted_time }}</strong> Sie haben sich angemeldet
-    zu{{$app_name }} unter Verwendung eines neuen Geräts. Die Details des Anmeldeversuchs sind wie folgt:</p>
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
+<p>Es scheint, dass am <strong>{{ $formatted_date }}</strong> um <strong>{{ $formatted_time }}</strong> in {{ $app_name }} ein neues Gerät verwendet wurde.</p>
 <table>
     <tbody>
     <tr>
@@ -23,10 +22,10 @@
     </tr>
     </tbody>
 </table>
-<p>Dieses neue Gerät wurde zu Ihrer Liste der bekannten Geräte bei PanelAlpha hinzugefügt: <a
+<p>Dieses neue Gerät wurde zu Ihrer Liste der bekannten Geräte bei {{ $app_name }} hinzugefügt: <a
         href="{{ $devices_list_url }}">{{ $devices_list_url }}</a></p>
-<p>Wenn Sie es nicht erkennen, entfernen Sie den Eintrag und aktualisieren Sie Ihr Passwort sofort. Ein Unbefugter
-    Person Zugang zu Ihren Daten erhalten haben könnte{{ $app_name }} Konto.</p>
+<p>Wenn Sie das nicht waren, entfernen Sie den Eintrag und aktualisieren Sie Ihr Passwort sofort. Ein Unbefugter
+    Person Zugang zu Ihren Daten erhalten haben könnte {{ $app_name }} Konto.</p>
 <div style="width: 100%; text-align: center; margin-top: 32px;">
     <p class="button" style="display: inline; text-align: center; margin-right: auto;"><!-- [if mso]>
     <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{ $reset_password_url }}" style="height:48px;v-text-anchor:middle;width:160px;" arcsize="10%" stroke="f" fillcolor="{{$branding_color}}">

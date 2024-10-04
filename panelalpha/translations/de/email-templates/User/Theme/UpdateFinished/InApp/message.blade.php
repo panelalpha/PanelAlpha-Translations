@@ -1,1 +1,1 @@
-<p>Die <strong>{{ $theme_title }}</strong> Thema wurde aktualisiert</p>
+<p>Das Theme <strong>{{ $theme_title }}</strong> wurde aktualisiert</p>

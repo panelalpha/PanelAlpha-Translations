@@ -1,1 +1,1 @@
-Thema {{ $theme_title }} Erfolgreich aktualisiert
+Theme {{ $theme_title }} erfolgreich aktualisiert

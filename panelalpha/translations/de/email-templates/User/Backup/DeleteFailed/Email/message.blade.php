@@ -1,5 +1,5 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
-<p>Das Löschen der <strong>{{ $backup_name }}</strong> Sicherung fehlgeschlagen.</p>
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
+<p>Das Löschen des Backups <strong>{{ $backup_name }}</strong> ist fehlgeschlagen.</p>
 <p>Mitteilung:{{ $exception_message }}</p>
 <p>Details zur Datensicherung:</p>
 <table>

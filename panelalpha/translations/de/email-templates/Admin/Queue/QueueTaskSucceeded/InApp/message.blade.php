@@ -1,1 +1,1 @@
-<p>Die <a href="/Aufgaben"><strong>{{ $task_name }}</strong></a> Aufgabe erfolgreich abgeschlossen</p>
+<p>Der <a href="/Aufgaben"><strong>{{ $task_name }}</strong></a> Task wurde erfolgreich abgeschlossen</p>

@@ -1,5 +1,5 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
-<p>Die Inszenierung für <strong>{{ $instance_name }}</strong> wurde erfolgreich installiert.</p>
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
+<p>Die Staging-Instanz für <strong>{{ $instance_name }}</strong> wurde erfolgreich installiert.</p>
 <p>Instanzdetails:</p>
 <table>
     <tbody>

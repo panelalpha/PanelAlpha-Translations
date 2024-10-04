@@ -1,1 +1,1 @@
-<p>Die <strong>{{ $plugin_title }}</strong> Plugin wurde installiert</p>
+<p>Das Plugin <strong>{{ $plugin_title }}</strong> wurde installiert</p>

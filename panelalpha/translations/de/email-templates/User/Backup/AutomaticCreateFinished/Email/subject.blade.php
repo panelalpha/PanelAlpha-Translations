@@ -1,1 +1,1 @@
-Automatische Sicherung für {{ $instance_name }} Erfolgreich erstellt
+Automatisches Backup für {{ $instance_name }} Erfolgreich erstellt

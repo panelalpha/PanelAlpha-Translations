@@ -1,1 +1,1 @@
-Thema {{ $theme_title }} Aktualisierung fehlgeschlagen
+Theme {{ $theme_title }} Aktualisierung fehlgeschlagen

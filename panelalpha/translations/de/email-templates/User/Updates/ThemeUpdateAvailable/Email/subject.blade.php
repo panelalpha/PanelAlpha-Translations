@@ -1,1 +1,1 @@
-WordPress-Themen: Neueste Updates verfügbar
+WordPress-Themen: Neue Updates verfügbar

@@ -1,4 +1,4 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
 <p>Wir haben eine Anfrage zum Zurücksetzen des Passworts für Ihr Konto erhalten.</p>
 <p>Um Ihr Passwort zurückzusetzen, klicken Sie auf die Schaltfläche unten:</p>
 <div style="width: 100%; text-align: center; margin-top: 32px; margin-bottom: 32px;">
@@ -15,5 +15,5 @@
 </div>
 <p>Oder kopieren Sie die URL und fügen Sie sie in Ihren Browser ein:</p>
 <a href="{{ $reset_password_url }}">{{ $reset_password_url }}</a>
-<p>Dieser Link zum Zurücksetzen des Passworts läuft in <strong>{{ $expire_time }}</strong> Minuten.</p>
+<p>Dieser Link zum Zurücksetzen des Passworts läuft in <strong>{{ $expire_time }}</strong> Minuten ab.</p>
 <p>Wenn Sie keine Rücksetzung des Passworts beantragt haben, sind keine weiteren Maßnahmen erforderlich.</p>

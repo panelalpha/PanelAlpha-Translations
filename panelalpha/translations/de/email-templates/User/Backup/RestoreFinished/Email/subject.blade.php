@@ -1,1 +1,1 @@
-Sicherung {{ $backup_name }} Erfolgreich wiederhergestellt
+Backup {{ $backup_name }} Erfolgreich wiederhergestellt

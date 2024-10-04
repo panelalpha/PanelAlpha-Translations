@@ -1,2 +1,2 @@
-<p>Fehler bei der Installation <strong>{{ $instance_name }}</strong> staging instance. Message: {{ $exception_message }}
+<p>Fehler bei der Installation der Staging-Instanz <strong>{{ $instance_name }}</strong>. Fehlernachricht: {{ $exception_message }}
 </p>

@@ -1,5 +1,5 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
-<p>Synchronisierung der Berichtsanbieter <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}"
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p> 
+<p>Die Synchronisierung der Bericht Provider für die Instanz <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}"
                                                   target="_blank">{{ $instance_name }}</a></strong> ist abgeschlossen.
 </p>
 

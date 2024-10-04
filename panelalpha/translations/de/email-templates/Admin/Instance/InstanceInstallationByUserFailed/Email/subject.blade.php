@@ -1,1 +1,1 @@
-Instanz {{ $instance_name }} by {{ $client_name }} Installation fehlgeschlagen
+Installation {{ $instance_name }} von {{ $client_name }} fehlgeschlagen

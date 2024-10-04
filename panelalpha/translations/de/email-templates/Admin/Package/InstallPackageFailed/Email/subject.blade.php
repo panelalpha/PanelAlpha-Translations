@@ -1,1 +1,1 @@
-Paket {{ $package_name }} Installation Failed In {{ $instance_name }}
+Paket {{ $package_name }} Installation fehlgeschlagen in {{ $instance_name }}

@@ -1,4 +1,4 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
 <p>Der manuelle Import der <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}"
                                        target="_blank">{{ $instance_name }}</a></strong> ist abgeschlossen.
 </p>

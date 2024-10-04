@@ -1,1 +1,1 @@
-Benachrichtigung zum Zurücksetzen des Passworts
+Passwort zurücksetzen

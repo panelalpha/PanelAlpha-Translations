@@ -1,1 +1,1 @@
-Instanz {{ $instance_name }} by {{ $client_name }} Import fehlgeschlagen
+Instanz {{ $instance_name }} von {{ $client_name }} Import fehlgeschlagen
