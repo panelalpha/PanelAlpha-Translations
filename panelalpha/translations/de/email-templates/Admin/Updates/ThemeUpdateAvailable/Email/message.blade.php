@@ -1,4 +1,4 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
 <p>Nachfolgend finden Sie eine Liste von Instanzen, die möglicherweise Aktualisierungen der Themen benötigen:</p>
 @foreach ($users_with_themes_to_update as $user)
     <p><strong>#{{ $user['user_id'] }} {{ $user['user_name'] }}</strong></p>

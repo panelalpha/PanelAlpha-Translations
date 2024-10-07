@@ -1,6 +1,5 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
-<p>Die <strong><a href="{{ $admin_url }}/plugins-and-themes">{{ $package_name }}</a></strong> has been installed successfully in <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}" target="_blank">{{ $instance_name }}</a></strong>
-    Beispiel.</p>
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
+<p>Das Paket <strong><a href="{{ $admin_url }}/plugins-and-themes">{{ $package_name }}</a></strong> wurde erfolgreich in <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}" target="_blank">{{ $instance_name }}</a></strong> installiert.</p>
 <p>Instanzdetails:</p>
 <table>
     <tbody>

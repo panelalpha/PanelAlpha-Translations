@@ -1,1 +1,1 @@
-DNS-Eintrag A für {{ $domain }} Erstellen fehlgeschlagen
+Erstellung des DNS-Eintrags A für {{ $domain }} fehlgeschlagen

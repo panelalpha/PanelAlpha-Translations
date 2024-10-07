@@ -1,1 +1,1 @@
-Automatische Sicherung für {{ $instance_name }} Erstellen fehlgeschlagen
+Automatisches Backup für {{ $instance_name }} Erstellen fehlgeschlagen

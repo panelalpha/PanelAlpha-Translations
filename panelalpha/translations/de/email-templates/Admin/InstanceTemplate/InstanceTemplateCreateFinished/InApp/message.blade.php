@@ -1,1 +1,1 @@
-<p>Die <strong>#{{ $template_id }} {{ $template_name }}</strong> Instanzvorlage wurde erstellt</p>
+<p>Die Instanzvorlage <strong>#{{ $template_id }} {{ $template_name }}</strong> wurde erfolgreich erstellt.</p>

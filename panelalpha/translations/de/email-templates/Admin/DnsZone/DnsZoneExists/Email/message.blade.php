@@ -1,4 +1,4 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
 <p>DNS-Zone für <strong>{{ $zone_name }}</strong> Domäne existiert bereits im DNS Server.</p>
 <p>Details zur DNS-Zone:</p>
 <table>
@@ -8,7 +8,7 @@
         <td>{{ $zone_name }}</td>
     </tr>
     <tr>
-        <th>Dienstleistung</th>
+        <th>Service</th>
         <td>#{{ $service_id }}{{ $service_main_domain }}</td>
     </tr>
     <tr>

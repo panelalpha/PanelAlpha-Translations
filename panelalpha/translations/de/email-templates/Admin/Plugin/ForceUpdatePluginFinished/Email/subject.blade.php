@@ -1,1 +1,1 @@
-Kraft-Update {{ $plugin_title }} Plugin In {{ $instance_name }} Erfolgreich abgeschlossen
+Erzwungene Aktualisierung des {{ $plugin_title }} Plugin in {{ $instance_name }} erfolgreich abgeschlossen

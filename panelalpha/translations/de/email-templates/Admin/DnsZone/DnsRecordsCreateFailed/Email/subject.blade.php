@@ -1,1 +1,1 @@
-DNS-Einträge für {{ $zone_name }} Erstellen fehlgeschlagen
+Erstellung der DNS-Einträge für {{ $zone_name }} fehlgeschlagen

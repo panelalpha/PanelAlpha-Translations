@@ -1,1 +1,1 @@
-'Push To Live' auf {{ $instance_name }} Erfolgreich abgeschlossen
+Push zur Live-Instanz von {{ $instance_name }} erfolgreich abgeschlossen

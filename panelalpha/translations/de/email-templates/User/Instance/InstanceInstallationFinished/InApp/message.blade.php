@@ -1,1 +1,1 @@
-<p>Die <strong>{{ $instance_name }}</strong> Instanz installiert wurde</p>
+<p>Die Instanz <strong>{{ $instance_name }}</strong> wurde erfolgreich installiert</p>

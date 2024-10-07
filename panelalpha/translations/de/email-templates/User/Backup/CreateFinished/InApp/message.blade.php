@@ -1,1 +1,1 @@
-<p>Die <strong>{{ $backup_name }}</strong>Die Sicherung wurde erstellt</p>
+<p>Das Backup <strong>{{ $backup_name }}</strong> wurde erfolgreich erstellt</p>

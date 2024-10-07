@@ -1,9 +1,8 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
-<p>Die erzwungene Aktualisierung der <strong>{{ $plugin_title }}</strong> Plugin in <strong><a
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
+<p>Die erzwungene Aktualisierung des <strong>{{ $plugin_title }}</strong> Plugin in <strong><a
             href="{{ $admin_url }}/instances/{{ $instance_id }}"
-            target="_blank">{{ $instance_name }}</a></strong> Beispiel
-    fehlgeschlagen.</p>
-<p>Mitteilung:{{ $exception_message }}</p>
+            target="_blank">{{ $instance_name }}</a></strong> ist fehlgeschlagen.</p>
+<p>Fehlernachricht:{{ $exception_message }}</p>
 <p>Instanzdetails:</p>
 <table>
     <tbody>

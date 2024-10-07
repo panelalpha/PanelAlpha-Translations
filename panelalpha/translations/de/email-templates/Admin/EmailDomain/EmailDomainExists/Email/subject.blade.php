@@ -1,1 +1,1 @@
-E-Mail-Domäne ist bereits auf dem E-Mail-Server vorhanden
+E-Mail-Domain ist bereits auf dem E-Mail-Server vorhanden

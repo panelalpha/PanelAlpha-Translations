@@ -1,5 +1,5 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
-<p>Die <strong>{{ $backup_name }}</strong> Die automatische Sicherung wurde erfolgreich erstellt.</p>
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
+<p>Das automatische Backup <strong>{{ $backup_name }}</strong> wurde erfolgreich erstellt.</p>
 <p>Details zur Datensicherung:</p>
 <table>
     <tbody>

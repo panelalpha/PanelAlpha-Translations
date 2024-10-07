@@ -1,1 +1,1 @@
-<p>Fehler bei der Aktualisierung <strong>{{ $theme_title }}</strong> theme. Message: {{ $exception_message }}</p>
+<p>Fehler bei der Aktualisierung des Themes <strong>{{ $theme_title }}</strong>. Message: {{ $exception_message }}</p>

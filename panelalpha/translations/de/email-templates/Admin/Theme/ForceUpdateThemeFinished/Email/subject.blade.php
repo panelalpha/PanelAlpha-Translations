@@ -1,1 +1,1 @@
-Kraft-Update {{ $theme_title }} Theme In {{ $instance_name }} Erfolgreich abgeschlossen
+Erzwungene Aktualisierung des {{ $theme_title }} Themes in {{ $instance_name }} erfolgreich abgeschlossen

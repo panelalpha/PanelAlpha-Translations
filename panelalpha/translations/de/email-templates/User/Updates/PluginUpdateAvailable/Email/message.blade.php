@@ -1,4 +1,4 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
 <p>Neue Updates für WordPress-Plugins sind jetzt für Ihre Instanzen verfügbar:</p>
 @foreach ($plugins as $pluginsAssingedToInstance)
     <table style="margin-top: 16px; padding: 10px 16px;">

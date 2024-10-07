@@ -1,5 +1,5 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
-<p>Die <strong>{{ $plugin_title }}</strong> plugin has been updated to version <strong>{{ $plugin_version }}</strong>.
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
+<p>Das Plugin <strong>{{ $plugin_title }}</strong> wurde auf die Version <strong>{{ $plugin_version }}</strong> aktualisiert.
 </p>
 <p>Instanzdetails:</p>
 <table>

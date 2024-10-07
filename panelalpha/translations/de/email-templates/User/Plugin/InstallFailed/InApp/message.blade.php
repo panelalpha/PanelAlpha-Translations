@@ -1,1 +1,1 @@
-<p>Fehler bei der Installation <strong>{{ $plugin_title }}</strong> plugin. Message: {{ $exception_message }}</p>
+<p>Fehler bei der Installation des <strong>{{ $plugin_title }}</strong> Plugins. Fehlernachricht: {{ $exception_message }}</p>

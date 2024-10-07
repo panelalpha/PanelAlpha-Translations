@@ -1,6 +1,6 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
-<p>Die Erstellung der E-Mail-Domain <strong>{{ $domain }}</strong> gescheitert.</p>
-<p>Mitteilung:{{ $exception_message }}</p>
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
+<p>Die Erstellung der E-Mail-Domain <strong>{{ $domain }}</strong> ist fehlgeschlagen.</p>
+<p>Fehlernachricht: {{ $exception_message }}</p>
 
 <p>Details zur E-Mail-Domäne:</p>
 <table>
@@ -10,7 +10,7 @@
         <td>{{ $domain }}</td>
     </tr>
     <tr>
-        <th>Dienstleistung</th>
+        <th>Service</th>
         <td><strong>#{{ $service_id }}</strong> {{ $service_main_domain }}</td>
     </tr>
     <tr>

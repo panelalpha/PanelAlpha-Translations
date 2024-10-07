@@ -1,1 +1,1 @@
-<p>Fehler bei der Installation <strong>{{ $package_name }}</strong> package in <a href="/instances/{{$instance_id}}"><strong>{{ $instance_name }}</strong></a>. Message: {{ $exception_message }}</p>
+<p>Fehler bei der Installation des Pakets <strong>{{ $package_name }}</strong> in <a href="/instances/{{$instance_id}}"><strong>{{ $instance_name }}</strong></a>. Fehlernachricht: {{ $exception_message }}</p>

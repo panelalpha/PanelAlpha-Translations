@@ -1,6 +1,6 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
-<p>Die Schaffung <strong>{{ $template_name }}</strong> Instanzvorlage fehlgeschlagen.</p>
-<p>Mitteilung:{{ $exception_message }}</p>
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
+<p>Die Erstellung der <strong>{{ $template_name }}</strong> Instanzvorlage ist fehlgeschlagen.</p>
+<p>Fehlernachricht:{{ $exception_message }}</p>
 <table>
     <tbody>
     <tr>

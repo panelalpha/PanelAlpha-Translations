@@ -1,1 +1,1 @@
-Plugin ' {{ $plugin_title }}' Erfolgreich installiert
+Plugin {{ $plugin_title }} erfolgreich installiert

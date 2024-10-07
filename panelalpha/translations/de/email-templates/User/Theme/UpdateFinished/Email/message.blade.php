@@ -1,14 +1,14 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
-<p>Die <strong>{{ $theme_title }}</strong> theme has been updated to version <strong>{{ $theme_version }}</strong>.</p>
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
+<p>Das Theme <strong>{{ $theme_title }}</strong> wurde auf Version <strong>{{ $theme_version }}</strong> aktualisiert.</p>
 <p>Instanzdetails:</p>
 <table>
     <tbody>
     <tr>
-        <th>Standortname</th>
+        <th>Name</th>
         <td>{{ $instance_name }}</td>
     </tr>
     <tr>
-        <th>Domäne</th>
+        <th>Domain</th>
         <td>{{ $instance_domain }}</td>
     </tr>
     <th>Url</th>

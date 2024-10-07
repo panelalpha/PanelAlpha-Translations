@@ -1,5 +1,5 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
-<p>Die Installation des <strong>{{ $plugin_title }}</strong> gescheitert. </p>
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
+<p>Die Installation des <strong>{{ $plugin_title }}</strong> ist fehlgeschlagen. </p>
 <p>Mitteilung:{{ $exception_message }}</p>
 <p>Instanzdetails:</p>
 <table>

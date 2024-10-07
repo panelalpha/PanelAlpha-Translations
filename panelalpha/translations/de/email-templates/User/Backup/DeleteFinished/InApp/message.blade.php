@@ -1,1 +1,1 @@
-<p>Die <strong>{{ $backup_name }}</strong> Sicherung wurde gelöscht</p>
+<p>Das Backup <strong>{{ $backup_name }}</strong> wurde erfolgreich gelöscht</p>

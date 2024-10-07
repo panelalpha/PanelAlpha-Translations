@@ -1,1 +1,1 @@
-WordPress-Instanz-Updates sind verfügbar
+WordPress-Updates sind verfügbar

@@ -1,1 +1,1 @@
-WordPress-Plugins: Neueste Updates verfügbar
+WordPress-Plugins: Neue Updates verfügbar

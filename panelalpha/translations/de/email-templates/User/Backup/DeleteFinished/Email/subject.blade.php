@@ -1,1 +1,1 @@
-Sicherung {{ $backup_name }} Erfolgreich gelöscht
+Backup {{ $backup_name }} Erfolgreich gelöscht

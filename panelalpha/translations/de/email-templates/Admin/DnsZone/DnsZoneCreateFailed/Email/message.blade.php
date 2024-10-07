@@ -1,6 +1,6 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
-<p>Die Erstellung der DNS-Zone für <strong>{{ $zone_name }}</strong> Domain fehlgeschlagen.</p>
-<p>Mitteilung:{{ $exception_message }}</p>
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
+<p>Die Erstellung der DNS-Zone für <strong>{{ $zone_name }}</strong> ist fehlgeschlagen.</p>
+<p>Fehlernachricht: {{ $exception_message }}</p>
 <p>Details zur DNS-Zone:</p>
 <table>
     <tbody>
@@ -9,7 +9,7 @@
         <td>{{ $zone_name }}</td>
     </tr>
     <tr>
-        <th>Dienstleistung</th>
+        <th>Service</th>
         <td>#{{ $service_id }}{{ $service_main_domain }}</td>
     </tr>
     <tr>

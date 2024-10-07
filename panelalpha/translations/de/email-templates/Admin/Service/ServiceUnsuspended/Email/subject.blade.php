@@ -1,1 +1,1 @@
-Service # {{ $service_id }} {{ $service_domain }} Aufhängen
+Service # {{ $service_id }} {{ $service_domain }} wiederherstellen

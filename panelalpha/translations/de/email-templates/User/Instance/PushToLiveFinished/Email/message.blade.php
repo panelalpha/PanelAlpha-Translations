@@ -1,5 +1,5 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
-<p>Der Push zum Leben von <strong>{{ $instance_name }}</strong> wurde erfolgreich abgeschlossen.</p>
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
+<p>Der Push zur Live-Instanz von <strong>{{ $instance_name }}</strong> wurde erfolgreich abgeschlossen.</p>
 <p>Instanzdetails:</p>
 <table>
     <tbody>

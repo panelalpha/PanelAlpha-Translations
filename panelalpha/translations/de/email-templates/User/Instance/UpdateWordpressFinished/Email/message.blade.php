@@ -1,5 +1,5 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
-<p>Die <strong>{{ $instance_name }}</strong> instance updated to WordPress version <strong>{{ $instance_version }}</strong>.</p>
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
+<p>Die Instanz <strong>{{ $instance_name }}</strong> wurde auf die WordPress-Version <strong>{{ $instance_version }}</strong> aktualisiert.</p>
 <p>Instanzdetails:</p>
 <table>
     <tbody>

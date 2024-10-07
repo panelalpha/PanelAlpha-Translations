@@ -1,1 +1,1 @@
-Push To Live From {{ $instance_name }} Installation fehlgeschlagen
+Push zur Live-Instanz von {{ $instance_name }} fehlgeschlagen

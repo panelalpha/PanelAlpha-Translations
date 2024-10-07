@@ -1,1 +1,1 @@
-Synchronisierung der Berichtsanbieter {{ $instance_name }} Abgeschlossen
+Synchronisierung der Bericht Provider für die Instanz {{ $instance_name }} abgeschlossen

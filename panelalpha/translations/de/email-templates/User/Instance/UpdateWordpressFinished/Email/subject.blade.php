@@ -1,1 +1,1 @@
-Instanz {{ $instance_name }} Erfolgreich aktualisiert
+Instanz {{ $instance_name }} erfolgreich aktualisiert

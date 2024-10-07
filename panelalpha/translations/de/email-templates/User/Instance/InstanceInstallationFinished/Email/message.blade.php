@@ -1,4 +1,4 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
 <p>Die <strong>{{ $instance_name }}</strong> wurde erfolgreich installiert.</p>
 <p>Instanzdetails:</p>
 <table>

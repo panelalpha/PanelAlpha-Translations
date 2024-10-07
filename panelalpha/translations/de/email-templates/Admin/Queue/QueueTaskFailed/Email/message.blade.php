@@ -1,7 +1,7 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
-<p>Die <strong>{{ $task_name }}</strong>Aufgabenausführung fehlgeschlagen.</p>
-<p>Mitteilung:{{ $exception_message }}</p>
-<p>Details zur Aufgabe:</p>
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
+<p>Der <strong>{{ $task_name }}</strong> Task ist fehlgeschlagen.</p>
+<p>Fehlernachricht:{{ $exception_message }}</p>
+<p>Details des Tasks:</p>
 <table>
     <tbody>
     <tr>

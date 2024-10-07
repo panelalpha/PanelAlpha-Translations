@@ -1,1 +1,1 @@
-Sicherung {{ $backup_name }} Wiederhergestellt Gescheitert
+Backup {{ $backup_name }} Wiederherstellung Gescheitert

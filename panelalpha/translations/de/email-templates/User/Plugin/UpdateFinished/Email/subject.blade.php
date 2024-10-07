@@ -1,1 +1,1 @@
-Plugin {{ $plugin_title }} Erfolgreich aktualisiert
+Plugin {{ $plugin_title }} erfolgreich aktualisiert

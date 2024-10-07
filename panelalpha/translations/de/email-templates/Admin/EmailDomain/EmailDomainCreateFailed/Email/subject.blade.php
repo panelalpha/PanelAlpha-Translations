@@ -1,1 +1,1 @@
-E-Mail-Bereich {{ $domain }} Erstellen fehlgeschlagen
+Erstellung der E-Mail-Domain {{ $domain }} fehlgeschlagen

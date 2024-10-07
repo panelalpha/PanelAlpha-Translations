@@ -1,1 +1,1 @@
-Service # {{ $service_id }} {{ $service_domain }} Verbessert
+Service # {{ $service_id }} {{ $service_domain }} aktualisieren

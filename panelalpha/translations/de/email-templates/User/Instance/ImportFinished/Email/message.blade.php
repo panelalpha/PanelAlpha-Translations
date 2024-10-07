@@ -1,5 +1,5 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
-<p>Ihre Website <strong>{{ $import_from_domain }}</strong> has been successfully imported to {{ $app_name }}! You can now proceed to manage it in our system at{{ $app_url }}</p>
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
+<p>Ihre Website <strong>{{ $import_from_domain }}</strong> wurde erfolgreich importiert zu {{ $app_name }}! Sie können jetzt mit der Verwaltung in unserem System fortfahren bei {{ $app_url }}</p>
 
 @if ($import_from_domain !=$instance_domain)
     <p>Ihre Instanz wurde auf eine temporäre Domain gesetzt:{{ $instance_domain }}</p>

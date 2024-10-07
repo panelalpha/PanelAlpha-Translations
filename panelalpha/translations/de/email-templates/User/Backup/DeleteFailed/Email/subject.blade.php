@@ -1,1 +1,1 @@
-Sicherung {{ $backup_name }} Löschen fehlgeschlagen
+Backup {{ $backup_name }} Löschen fehlgeschlagen

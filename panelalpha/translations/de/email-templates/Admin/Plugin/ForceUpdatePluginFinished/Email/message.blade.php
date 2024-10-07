@@ -1,8 +1,7 @@
-<p>Liebe <strong>{{ $admin_name }}</strong>,</p>
-<p>Die <strong>{{ $plugin_name }}</strong> Thema in <strong><a
+<p>Sehr geehrte/r <strong>{{ $admin_name }}</strong>,</p>
+<p>Das <strong>{{ $plugin_name }}</strong> Theme in <strong><a
             href="{{ $admin_url }}/instances/{{ $instance_id }}"
-            target="_blank">{{ $instance_name }}</a></strong> Instanz gewaltsam entfernt worden ist.
-    aktualisiert.</p>
+            target="_blank">{{ $instance_name }}</a></strong> Instanz wurde erfolgreich aktualisiert.</p>
 <p>Instanzdetails:</p>
 <table>
     <tbody>
@@ -12,7 +11,7 @@
     </tr>
     <tr>
         <th style="width: 33%;">Domain</th>
-        <td>{{ $instance_domain }}</td>
+        <td>{{ $instance_domain }}</td>,
     </tr>
     <tr>
         <th style="width: 33%;">Url</th>

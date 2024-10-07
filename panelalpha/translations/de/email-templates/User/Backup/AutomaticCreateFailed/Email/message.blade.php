@@ -1,4 +1,4 @@
-<p>Liebe <strong>{{ $client_first_name }}</strong>,</p>
+<p>Sehr geehrte/r <strong>{{ $client_first_name }}</strong>,</p>
 <p>Die Erstellung automatischer Backups für die <strong>{{ $instance_name }}</strong> Instanz fehlgeschlagen.</p>
 <p>Mitteilung:{{ $exception_message }}</p>
 <p>Details zur Datensicherung:</p>

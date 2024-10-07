@@ -1,1 +1,1 @@
-Aufgabe in der Warteschlange {{ $task_name }} Gescheitert
+Task in der Warteschlange {{ $task_name }} fehlgeschlagen

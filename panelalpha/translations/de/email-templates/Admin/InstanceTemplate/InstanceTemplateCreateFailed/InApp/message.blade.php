@@ -1,2 +1,2 @@
-<p>Fehler bei der Erstellung <strong>#{{ $template_id }} {{ $template_name }}</strong> instance template. Message: {{ $exception_message }}</p>
+<p>Fehler bei der Erstellung der <strong>#{{ $template_id }} {{ $template_name }}</strong> Instanzvorlage. Fehlernachricht: {{ $exception_message }}</p>
 

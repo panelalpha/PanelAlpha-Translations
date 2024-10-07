@@ -1,1 +1,1 @@
-Instanz {{ $import_domain }} Manuell erfolgreich importiert
+Manueller Import von {{ $import_domain }} erfolgreich

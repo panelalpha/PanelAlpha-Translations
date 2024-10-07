@@ -1,1 +1,1 @@
-Manueller Import {{ $import_domain }} Gescheitert
+Manueller Import {{ $import_domain }} fehlgeschlagen
