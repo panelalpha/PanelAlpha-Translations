@@ -9,84 +9,83 @@ use App\Lib\Integrations\SslProviders\LetsEncrypt;
 
 return [
     DbIp::class => [
-        "subtitle" => "Used to determine the location when logging in from a new device",
-        "description" => "DB-IP is a powerful geolocation database that maps IP addresses to physical locations. It enables businesses to customize content and services based on specific regions, improve targeted advertising, and enhance user experience.",
-        "instruction" => "PanelAlpha utilizes a free geolocation database prepared by DB-IP. The condition for using this database is to include a backlink to DB-IP.com on any pages that display or use results from the database.<br>Therefore, this link will be included in the email for new device detection.",
+        "subtitle" => "Wird verwendet, um den Standort beim Einloggen von einem neuen Gerät zu bestimmen",
+        "description" => "DB-IP ist eine leistungsstarke Geolokalisierungsdatenbank, die IP-Adressen physischen Standorten zuordnet. Sie ermöglicht es Unternehmen, Inhalte und Dienste basierend auf bestimmten Regionen anzupassen, gezielte Werbung zu verbessern und die Benutzererfahrung zu optimieren.",
+        "instruction" => "PanelAlpha nutzt eine kostenlose Geolokalisierungsdatenbank, die von DB-IP bereitgestellt wird. Die Bedingung für die Nutzung dieser Datenbank ist, einen Backlink zu DB-IP.com auf allen Seiten einzufügen, die Ergebnisse aus der Datenbank anzeigen oder verwenden.<br>Deshalb wird dieser Link in der E-Mail für die Erkennung neuer Geräte enthalten sein.",
         "fields" => [
             "db-ip-accepted" => [
-                "label" => "I agree with the licensing terms"
+                "label" => "Ich stimme den Lizenzbedingungen zu"
             ]
         ]
     ],
     GooglePageSpeedInsights::class => [
-        "subtitle" => "Used to take screenshots of instances and to calculate pages loading speed",
-        "description" => "Google PageSpeed Insights is a tool that analyzes your website's speed and performance on desktop and mobile devices. It provides actionable suggestions to improve loading times and user experience.",
-        "instruction" => "To use Google PageSpeed Insights, follow these steps:<ol><li>Go to <a href='https://developers.google.com/speed/docs/insights/v5/get-started#key' target='_blank'>developers.google.com/speed/docs/insights/v5/get-started</a>.</li><li>Log in to your Google account if needed.</li><li>Create a new API key by clicking the \"Get a Key\" button.</li><li>Select an existing project or create a new one and click the \"Next\" button.</li><li>Once the API key is created, it will be displayed on the screen. Copy this key and use it to integrate Google PageSpeed Insights.</li></ol>",
+        "subtitle" => "Wird verwendet, um Screenshots von Instanzen zu machen und die Ladegeschwindigkeit von Seiten zu berechnen",
+        "description" => "Google PageSpeed Insights ist ein Tool, das die Geschwindigkeit und Leistung Ihrer Website auf Desktop- und Mobilgeräten analysiert. Es bietet umsetzbare Vorschläge zur Verbesserung der Ladezeiten und der Benutzererfahrung.",
+        "instruction" => "Um Google PageSpeed Insights zu nutzen, folgen Sie diesen Schritten:<ol><li>Gehen Sie zu <a href='https://developers.google.com/speed/docs/insights/v5/get-started#key' target='_blank'>developers.google.com/speed/docs/insights/v5/get-started</a>.</li><li>Melden Sie sich bei Ihrem Google-Konto an, falls erforderlich.</li><li>Erstellen Sie einen neuen API-Schlüssel, indem Sie auf die Schaltfläche \"Get a Key\" klicken.</li><li>Wählen Sie ein bestehendes Projekt aus oder erstellen Sie ein neues und klicken Sie auf die Schaltfläche \"Next\".</li><li>Sobald der API-Schlüssel erstellt wurde, wird er auf dem Bildschirm angezeigt. Kopieren Sie diesen Schlüssel und verwenden Sie ihn, um Google PageSpeed Insights zu integrieren.</li></ol>",
         "fields" => [
             "api-key" => [
-                "label" => "API Key",
-                "placeholder" => "Enter your API key..."
+                "label" => "API-Schlüssel",
+                "placeholder" => "Geben Sie Ihren API-Schlüssel ein..."
             ]
         ]
     ],
     LetsEncrypt::class => [
-        "subtitle" => "Used to issue SSL certificates for instances",
-        "description" => "Let's Encrypt is a free, automated, and open Certificate Authority that provides HTTPS encryption for websites. It's easy to install and use, and it ensures that your website is safe and accessible to everyone.",
-        "instruction" => "To use Let's Encrypt, you should follow these steps:<ol><li>Enter your email address in the Contact Email field.</li><li>Read the \"Let's Encrypt Subscriber Agreement\" carefully and accept the terms of service.</li><li>Your account will then be created, and the SSL certificate integration will be automatically enabled.</li><li>Go to Configuration > Automatic SSL and set the Automatic SSL Provider to \"Let's Encrypt\".</li><li>From now on, Let's Encrypt will automatically issue SSL certificates for instances.</li></ol>",
+        "subtitle" => "Wird verwendet, um SSL-Zertifikate für Instanzen auszustellen",
+        "description" => "Let's Encrypt ist eine kostenlose, automatisierte und offene Zertifizierungsstelle, die HTTPS-Verschlüsselung für Websites bereitstellt. Es ist einfach zu installieren und zu verwenden und stellt sicher, dass Ihre Website sicher und für alle zugänglich ist.",
+        "instruction" => "Um Let's Encrypt zu verwenden, sollten Sie diese Schritte befolgen:<ol><li>Geben Sie Ihre E-Mail-Adresse im Feld Kontakt-E-Mail ein.</li><li>Lesen Sie die \"Let's Encrypt Subscriber Agreement\" sorgfältig durch und akzeptieren Sie die Nutzungsbedingungen.</li><li>Ihr Konto wird dann erstellt und die SSL-Zertifikatsintegration wird automatisch aktiviert.</li><li>Gehen Sie zu Konfiguration > Automatisches SSL und setzen Sie den automatischen SSL-Anbieter auf \"Let's Encrypt\".</li><li>Von nun an wird Let's Encrypt automatisch SSL-Zertifikate für Instanzen ausstellen.</li></ol>",
         "fields" => [
             "account-id" => [
-                "label" => "Let\'s Encrypt Account",
-                "placeholder" => "Account will be generated after saving changes"
+                "label" => "Let's Encrypt Konto",
+                "placeholder" => "Konto wird nach dem Speichern der Änderungen generiert"
             ],
             "contact-email" => [
-                "label" => "Contact Email",
-                "placeholder" => "Enter your email..."
+                "label" => "Kontakt-E-Mail",
+                "placeholder" => "Geben Sie Ihre E-Mail ein..."
             ],
             "tos-accepted" => [
-                "label" => "Accept Terms Of Service"
+                "label" => "Ich stimme den Lizenzbedingungen zu"
             ]
         ]
     ],
     Matomo::class => [
-        "subtitle" => "Employed for Website Traffic Data Collection and Analysis",
-        "description" => "Matomo Analytics is a privacy-focused web analytics platform that helps track website traffic and user behavior. It's a customizable and provides detailed insights while keeping user data secure.",
-        "instruction" => "To use Matomo, follow these steps:<ol><li>Go to the Matomo URL: <a href=\"{{\$url}}\" target=\"_blank\">{{\$url}}</a></li><li>Go through the Matomo installation process.</li><li>Log in to Matomo.</li><li>Navigate to Configuration &gt; Personal &gt; Security.</li><li>At the bottom of the page, click on \"Create new token\" to generate a new token.</li><li>Return to PanelAlpha and enter the API Token.</li></ol>",
+        "subtitle" => "Wird für die Sammlung und Analyse von Website-Traffic-Daten verwendet",
+        "description" => "Matomo Analytics ist eine datenschutzorientierte Webanalyseplattform, die hilft, den Website-Traffic und das Benutzerverhalten zu verfolgen. Es ist anpassbar und bietet detaillierte Einblicke, während die Benutzerdaten sicher bleiben.",
+        "instruction" => "Um Matomo zu verwenden, folgen Sie diesen Schritten:<ol><li>Gehen Sie zur Matomo-URL: <a href=\"{{\$url}}\" target=\"_blank\">{{\$url}}</a></li><li>Durchlaufen Sie den Matomo-Installationsprozess.</li><li>Melden Sie sich bei Matomo an.</li><li>Navigieren Sie zu Konfiguration &gt; Persönlich &gt; Sicherheit.</li><li>Klicken Sie am unteren Rand der Seite auf \"Neues Token erstellen\", um ein neues Token zu generieren.</li><li>Kehren Sie zu PanelAlpha zurück und geben Sie das API-Token ein.</li></ol>",
         "fields" => [
             "url" => [
                 "label" => "URL",
-                "placeholder" => "Enter Matomo URL"
+                "placeholder" => "Geben Sie die Matomo-URL ein"
             ],
             "api-token" => [
-                "label" => "API Token",
-                "placeholder" => "Enter API Token"
+                "label" => "API-Token",
+                "placeholder" => "Geben Sie das API-Token ein"
             ]
         ]
     ],
     Extendify::class => [
-        "subtitle" => "Used for Super Quick Onboarding of instance",
-        "description" => "Extendify provides a website-builder-like onboarding experience for your end customers. Empower your hosting customers to create beautiful, professional-looking websites in minutes using the latest AI technologies natively in WordPress.",
-        "instruction" => "To use <b>Extendify</b>, please use \"Super Quick Onboarding\" method in your plans.<br>Don't have an account yet? <a href=\"https://extendify.com/pricing/\" target=\"_blank\">Set up your account</a>.",
+        "subtitle" => "Wird für das super schnelle Onboarding von Instanzen verwendet",
+        "description" => "Extendify bietet ein Website-Builder-ähnliches Onboarding-Erlebnis für Ihre Endkunden. Ermöglichen Sie Ihren Hosting-Kunden, in wenigen Minuten schöne, professionell aussehende Websites mit den neuesten KI-Technologien direkt in WordPress zu erstellen.",
+        "instruction" => "Um <b>Extendify</b> zu verwenden, verwenden Sie bitte die Methode \"Super Quick Onboarding\" in Ihren Plänen.<br>Haben Sie noch kein Konto? <a href=\"https://extendify.com/pricing/\" target=\"_blank\">Richten Sie Ihr Konto ein</a>.",
         "fields" => [
             "partner_id" => [
-                "label" => "Partner ID",
-                "placeholder" => "Enter Partner ID"
+                "label" => "Partner-ID",
+                "placeholder" => "Geben Sie die Partner-ID ein"
             ]
         ]
     ],
     GoogleAnalytics::class => [
-        "subtitle" => "Employed for Gathering and Analyzing Website Traffic Data",
-        "description" => "Google Analytics offers free tools for consolidating and analyzing your company's data, enabling the decision process to be data-oriented",
-        "instruction" => "To use Google Analytics, follow these steps:<ol><li>Go to the Google Analytics site: <a href=\"https://analytics.google.com\" target=\"_blank\">https://analytics.google.com/</a></li><li>Log into your Google account if not already logged in.</li><li>Create a Google Analytics account.</li><li>Navigate to Administration > Account Settings > Account Details and find your Account ID.</li><li>Copy and paste the Property ID in the form below.</li><li>Create a credentials JSON file as <a href=\"https://www.panelalpha.com/documentation/integrations/google-analytics/#google-anlytics-json-file\" target=\"_blank\">described in the documentation</a>.</li><li>Attach the JSON file in the Service Account Credentials field below.</li></ol><br>Warning! This integration works based on javascript code automatically installed on customer instances. The user can remove this code and the integration will stop working.",
+        "subtitle" => "Wird für die Sammlung und Analyse von Website-Traffic-Daten verwendet",
+        "description" => "Google Analytics bietet kostenlose Tools zur Konsolidierung und Analyse der Daten Ihres Unternehmens, um den Entscheidungsprozess datenorientiert zu gestalten.",
+        "instruction" => "Um Google Analytics zu verwenden, folgen Sie diesen Schritten:<ol><li>Gehen Sie zur Google Analytics-Website: <a href=\"https://analytics.google.com\" target=\"_blank\">https://analytics.google.com/</a></li><li>Melden Sie sich bei Ihrem Google-Konto an, falls Sie noch nicht angemeldet sind.</li><li>Erstellen Sie ein Google Analytics-Konto.</li><li>Navigieren Sie zu Verwaltung > Kontoeinstellungen > Kontodetails und finden Sie Ihre Konto-ID.</li><li>Kopieren und fügen Sie die Property-ID in das untenstehende Formular ein.</li><li>Erstellen Sie eine Anmeldeinformationen-JSON-Datei, wie in der <a href=\"https://www.panelalpha.com/documentation/integrations/google-analytics/#google-anlytics-json-file\" target=\"_blank\">Dokumentation beschrieben</a>.</li><li>Fügen Sie die JSON-Datei im Feld Service Account Credentials unten an.</li></ol><br>Warnung! Diese Integration funktioniert basierend auf JavaScript-Code, der automatisch auf Kundeninstanzen installiert wird. Der Benutzer kann diesen Code entfernen und die Integration wird nicht mehr funktionieren.",
         "fields" => [
             "account-id" => [
-                "label" => "Account ID",
-                "placeholder" => "Enter Account ID"
+                "label" => "Konto-ID",
+                "placeholder" => "Geben Sie die Konto-ID ein"
             ],
             "service-account-credentials-json" => [
                 "label" => "Service Account Credentials",
-                "placeholder" => "Attach Service Credentials JSON File"
+                "placeholder" => "Fügen Sie die Service-Credentials-JSON-Datei an"
             ]
         ]
     ],
 ];
-
