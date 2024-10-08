@@ -53,7 +53,7 @@ return [
     'dns_record_not_found' => 'Eintrag nicht gefunden',
     'sso_login_webmail_disabled' => 'SSO-Login zu Webmail ist deaktiviert. Bitte kontaktieren Sie den Serveradministrator.',
     'engine_or_user_template_outdated' => 'PanelAlpha-Engine oder Benutzervorlage ist veraltet, ein Update ist erforderlich',
-    'parent_domain_required' => 'Elterndomain ist erforderlich',
+    'parent_domain_required' => 'Parent-Domain ist erforderlich',
     'not_matched_php_version' => 'PHP-Version stimmt nicht überein',
     'invalid_plesk_edition' => 'Plesk-Edition ist ungültig. Bitte lesen Sie mehr in der Dokumentation',
     'ssl_no_order_model' => 'SSL-Bestellmodell nicht festgelegt',
@@ -75,7 +75,7 @@ return [
     'cannot_validate_dns_propagation_after_maximum_time' => "DNS-Propagation konnte nach maximal konfigurierter Zeit nicht validiert werden",
     'error_connect_lets_encrypt' => "Fehler beim Verbinden mit der Let's Encrypt API",
     'invalid_ssl_order' => "SSL-Bestellmodell nicht festgelegt",
-    'parent_zone_not_found' => 'Elternzone nicht gefunden',
+    'parent_zone_not_found' => 'Parent-Zone nicht gefunden',
     'new_site' => 'Neue Seite',
     'report_provider' => [
         'unknown_after_created' => 'Überwachung funktioniert wahrscheinlich, aber der Status wird innerhalb der nächsten 24 Stunden bestätigt.',
