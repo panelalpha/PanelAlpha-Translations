@@ -1062,7 +1062,7 @@
             "authenticationMethod": "Methode der Authentifizierung",
             "backupDirectory": "Backup-Verzeichnis",
             "backupDatabase": "Datenbank sichern",
-            "backupNote": "Sicherungsnotiz",
+            "backupNote": "Backup-Notiz",
             "cabundle": "Bündel von Zertifizierungsstellen (CABUNDLE)",
             "certificate": "Zertifikat (CRT)",
             "chooseTime": "Zeit wählen",
