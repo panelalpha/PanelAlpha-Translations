@@ -1,1 +1,1 @@
-Service #{{ $service_id }} {{ $service_domain }} Mis à niveau
+Mise à niveau du service #{{ $service_id }} {{ $service_domain }}

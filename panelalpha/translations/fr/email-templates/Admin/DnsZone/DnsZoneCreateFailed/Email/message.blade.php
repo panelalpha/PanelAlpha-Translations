@@ -1,7 +1,7 @@
-<p>Cher <strong>{{ $admin_name }}</strong>,</p>
+<p><strong>{{ $admin_name }}</strong>,</p>
 <p>La création de la zone DNS pour le domaine <strong>{{ $zone_name }}</strong> a échoué.</p>
-<p>Message: {{ $exception_message }}</p>
-<p>Détails de la zone DNS:</p>
+<p>Message : {{ $exception_message }}</p>
+<p>Détails de la zone DNS :</p>
 <table>
     <tbody>
     <tr>

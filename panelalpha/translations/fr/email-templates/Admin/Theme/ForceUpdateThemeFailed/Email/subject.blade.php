@@ -1,1 +1,1 @@
-Échec de la mise à jour forcée du thème {{ $theme_title }} dans {{ $instance_name }}
+Échec de la mise à jour forcée de {{ $theme_title }} pour {{ $instance_name }}

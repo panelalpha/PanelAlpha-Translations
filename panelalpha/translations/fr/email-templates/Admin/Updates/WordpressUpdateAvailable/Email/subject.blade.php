@@ -1,1 +1,1 @@
-Les mises à jour des instances de WordPress sont disponibles
+Mises à jour WordPress disponibles

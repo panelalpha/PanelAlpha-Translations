@@ -1,6 +1,6 @@
-<p>Cher <strong>{{ $admin_name }}</strong>,</p>
-<p>La tâche <strong>{{ $task_name }}</strong> a été complétée avec succès.</p>
-<p>Détails de la tâche:</p>
+<p><strong>{{ $admin_name }}</strong>,</p>
+<p>La tâche <strong>{{ $task_name }}</strong> s’est correctement exécuté.</p>
+<p>Task details:</p>
 <table>
     <tbody>
     <tr>
@@ -8,24 +8,24 @@
         <td>{{ $task_name }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">File d'attente</th>
+        <th style="width: 33%;">Fichier</th>
         <td>{{ $task_queue }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">Exécutable</th>
+        <th style="width: 33%;">Dispatchable</th>
         <td>{{ $task_dispatchable }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">Date de début</th>
+        <th style="width: 33%;">Date de démarrage</th>
         <td>{{ $task_started_at }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">Date d'achèvement</th>
+        <th style="width: 33%;">Date d’achèvement</th>
         <td>{{ $task_completed_at }}</td>
     </tr>
     </tbody>
 </table>
-<p>Détails de l'instance associée:</p>
+<p>Détails de l’instance concernée :</p>
 <table>
     <tbody>
     <tr>
@@ -37,7 +37,7 @@
         <td>{{ $instance_domain }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">URL</th>
+        <th style="width: 33%;">Url</th>
         <td><a href="{{$instance_url}}">{{ $instance_url }}</a></td>
     </tr>
     </tbody>

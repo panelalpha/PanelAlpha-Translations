@@ -1,1 +1,1 @@
-<p>Les <a href="/tâches"><strong>{{ $task_name }}</strong></a> tâche achevée avec succès</p> <p class="rtejustify">
+<p>Succès de l’exécution de la tâche {{ $task_name }}</p>

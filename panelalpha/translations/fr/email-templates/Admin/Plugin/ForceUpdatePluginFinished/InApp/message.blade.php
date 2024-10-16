@@ -1,2 +1,1 @@
-</p> <p>La <strong>Structure de l'entreprise</strong>.{{ $plugin_name }}</strong> plugin dans <a
-        href="/instances/{{$instance_id}}"><strong>{{ $instance_name }}</strong></a> a été mis à jour de force</p> <p>.
+<p>La mise à jour forcée de l’extension <strong>{{ $plugin_name }}</strong> pour <a href="/instances/{{ $instance_id }}" target="_blank"><strong>{{ $instance_name }}</strong></a> a été correctemet effectuée.</p>

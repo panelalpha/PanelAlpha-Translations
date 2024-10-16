@@ -1,12 +1,12 @@
-<p>Cher <strong>{{ $admin_name }}</strong>,</p>
+<p><strong>{{ $admin_name }}</strong>,</p>
 <p>La création du domaine de messagerie <strong>{{ $domain }}</strong> a échoué.</p>
-<p>Message: {{ $exception_message }}</p>
+<p>Message : {{ $exception_message }}</p>
 
-<p>Détails du domaine de messagerie:</p>
+<p>Détails du domaine de messagerie :</p>
 <table>
     <tbody>
     <tr>
-        <th>Domaine de messagerie</th>
+        <th>Domaine de messagerie :</th>
         <td>{{ $domain }}</td>
     </tr>
     <tr>

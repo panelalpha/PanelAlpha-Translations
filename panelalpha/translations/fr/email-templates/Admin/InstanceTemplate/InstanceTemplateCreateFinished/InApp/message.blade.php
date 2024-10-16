@@ -1,1 +1,1 @@
-<p>Les <strong>#{{ $template_id }} {{ $template_name }}</strong> le modèle d'instance a été créé</p> <p>.
+<p>La création du modèle d’instance <strong>#{{ $template_id }} {{ $template_name }}</strong> a été correctement effectuée.</p>

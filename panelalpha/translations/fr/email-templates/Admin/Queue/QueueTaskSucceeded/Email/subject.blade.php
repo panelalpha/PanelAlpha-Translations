@@ -1,1 +1,1 @@
-Tâche de file d'attente {{ $task_name }} terminée avec succès
+Succès de l’exécution de la tâche {{ $task_name }}

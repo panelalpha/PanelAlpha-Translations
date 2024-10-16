@@ -1,1 +1,1 @@
-Le domaine email existe déjà sur le serveur de messagerie
+Domaine de messagerie <strong>{{ $domain }}</strong> déjà existant sur le serveur

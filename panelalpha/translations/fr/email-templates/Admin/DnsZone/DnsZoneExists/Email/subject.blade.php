@@ -1,1 +1,1 @@
-Zone DNS pour {{ $zone_name }} existe déjà sur le serveur DNS
+Zone DNS pour {{ $zone_name }} déjà existante

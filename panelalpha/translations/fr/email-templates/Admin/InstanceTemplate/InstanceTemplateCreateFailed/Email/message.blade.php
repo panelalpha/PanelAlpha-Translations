@@ -1,6 +1,6 @@
-<p>Cher <strong>{{ $admin_name }}</strong>,</p>
-<p>La création du modèle d'instance <strong>{{ $template_name }}</strong> a échoué.</p>
-<p>Message: {{ $exception_message }}</p>
+<p><strong>{{ $admin_name }}</strong>,</p>
+<p>La création du modèle d’instance <strong>{{ $template_name }}</strong> a échoué.</p>
+<p>Message : {{ $exception_message }}</p>
 <table>
     <tbody>
     <tr>

@@ -1,2 +1,1 @@
-</p> <p>La <strong>Structure de l'entreprise</strong>.{{ $theme_title }}</strong> dans <a
-        href="/instances/{{$instance_id}}"><strong>{{ $instance_name }}</strong></a> a été mis à jour de force</p> <p>.
+<p>La mise à jour forcée du thème <strong>{{ $theme_title }}</strong> pour <a href="/instances/{{$instance_id}}"><strong>{{ $instance_name }}</strong></a> a été correctement effectuée.</p>

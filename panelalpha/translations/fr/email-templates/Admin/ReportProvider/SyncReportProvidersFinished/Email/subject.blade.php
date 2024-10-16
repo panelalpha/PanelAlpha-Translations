@@ -1,1 +1,1 @@
-Synchronisation des fournisseurs de rapports {{ $instance_name }} terminée
+Synchronisation des fournisseurs de rapports pour {{ $instance_name }} correctement effectuée

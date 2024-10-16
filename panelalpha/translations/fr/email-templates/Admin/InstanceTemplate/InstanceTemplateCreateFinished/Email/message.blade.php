@@ -1,6 +1,6 @@
-<p>Cher <strong>{{ $admin_name }}</strong>,</p>
-<p>Le modèle d'instance <strong>{{ $template_name }}</strong> a été créé avec succès.</p>
-<p>Détails du modèle d'instance:</p>
+<p><strong>{{ $admin_name }}</strong>,</p>
+<p>La création du modèle d’instance <strong>{{ $template_name }}</strong> a été correctement effectuée.</p>
+<p>Détails du modèle d’instance :</p>
 <table>
     <tbody>
     <tr>
