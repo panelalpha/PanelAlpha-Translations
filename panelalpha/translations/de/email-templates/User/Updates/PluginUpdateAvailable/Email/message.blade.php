@@ -9,7 +9,7 @@
             </td>
             <td style="width: 50%; margin-left: auto;">@foreach ($pluginsAssingedToInstance["Plugins"] as $plugin)
                     <p style="text-align: right; margin-bottom: 0px; margin-top: 0px;">{{ $plugin["title"] }}
-                        ({{ $plugin["version"] }} 🠒 {{ $plugin["update_version"] }})</p>
+                        ({{ $plugin["version"] }} → {{ $plugin["update_version"] }})</p>
                 @endforeach</td>
         </tr>
         </tbody>

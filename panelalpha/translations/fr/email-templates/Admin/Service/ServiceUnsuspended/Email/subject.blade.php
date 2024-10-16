@@ -1,1 +1,1 @@
-Service #{{ $service_id }} {{ $service_domain }} Réactivation
+Rétablissement du service #{{ $service_id }} {{ $service_domain }}

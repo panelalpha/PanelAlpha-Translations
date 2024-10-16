@@ -1,1 +1,1 @@
-Modèle d'instance {{ $template_name }} échec de la création
+Échec de la création du modèle d’instance {{ $template_name }}

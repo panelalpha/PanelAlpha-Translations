@@ -1,1 +1,1 @@
-Service #{{ $service_id }} {{ $service_domain }} Suspendu
+Suspension du service #{{ $service_id }} {{ $service_domain }}

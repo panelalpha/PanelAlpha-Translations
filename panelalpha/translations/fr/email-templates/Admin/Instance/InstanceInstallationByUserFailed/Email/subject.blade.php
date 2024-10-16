@@ -1,1 +1,1 @@
-Instance {{ $instance_name }} par {{ $client_name }} Échec de l'installation
+Échec de l’installation de l’instance {{ $instance_name }} par {{ $client_name }}

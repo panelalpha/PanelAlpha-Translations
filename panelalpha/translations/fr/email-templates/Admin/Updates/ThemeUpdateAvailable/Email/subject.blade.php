@@ -1,1 +1,1 @@
-Les mises à jour des thèmes WordPress sont disponibles
+Mises à jour de thèmes WordPress disponibles

@@ -8,7 +8,7 @@
             <tr style="margin-top: 8px;">.
                 <td style="padding-left: 20px;"><strong>{{ $item["instance_name"] }}</strong><br><a
                         href="{{ $item['instance_url'] }}">{{ $item["instance_url"] }}</a></td>
-                <td>{{ $item["instance_version"] }} 🠒 {{ $item["update_version"] }}</td>.
+                <td>{{ $item["instance_version"] }} → {{ $item["update_version"] }}</td>.
             </tr>.
         @endforeach
         </tbody>

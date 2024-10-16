@@ -1,1 +1,1 @@
-<p>Erreur lors du traitement <a href="/tasks"><strong>de la base de données{{ $task_name }}</strong></a>. Message: {{ $exception_message }}</p>
+<p>Échec de l’exécution de la tâche {{ $task_name }}. Message : {{ $exception_message }}</p>

@@ -1,1 +1,1 @@
-<p>La zone DNS pour <strong>La zone DNS pour les{{ $zone_name }}</strong> existe déjà dans le serveur DNS.</p>
+<p>La zone DNS pour <strong>{{ $zone_name }}</strong> existe déjà sur le serveur DNS.</p>

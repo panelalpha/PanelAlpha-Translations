@@ -1,3 +1,1 @@
-<p>Erreur lors de l'importation manuelle de <a href="/instances/{{$instance_id}}"><strong>{{ $instance_name }}</strong></a>
-    instance.
-    Message :{{ $exception_message }}</p>
+<p>Échec de l’importation manuelle de l’instance <strong><a href="/instances/{{ $instance_id }}">{{ $instance_name }}</a></strong>. Message : {{ $exception_message }}</p>

@@ -1,1 +1,1 @@
-Importation manuelle de {{ $import_domain }} a échoué
+Échec de l’importation manuelle de l’instance {{ $import_domain }}

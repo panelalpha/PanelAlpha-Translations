@@ -1,5 +1,5 @@
-<p>Cher <strong>{{ $admin_name }}</strong>,</p>
-<p>Voici une liste d'instances qui pourraient nécessiter des mises à jour de plugins:</p>
+<p><strong>{{ $admin_name }}</strong>,</p>
+<p>Voici une liste d’instances qui nécessitent des mises à jour d’extensions :</p>
 @foreach ($users_with_plugins_to_update as $user)
     <p><strong>#{{ $user['user_id'] }} {{ $user['user_name'] }}</strong></p>
     @foreach ($user['items'] as $item)
@@ -13,7 +13,7 @@
             <tr style="margin-top: 8px;">
                 <td style="padding-left: 20px;">
                     <ul style="padding: 0; margin: 0;">@foreach ($item["plugins"] as $plugin)
-                            <li>{{ $plugin["title"] }} ({{ $plugin["version"] }} 🠒 {{ $plugin["update_version"] }})</li>
+                            <li>{{ $plugin["title"] }} ({{ $plugin["version"] }} → {{ $plugin["update_version"] }})</li>
                         @endforeach</ul>
                 </td>
             </tr>

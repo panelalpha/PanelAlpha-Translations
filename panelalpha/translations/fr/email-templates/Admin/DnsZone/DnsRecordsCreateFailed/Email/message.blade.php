@@ -1,5 +1,5 @@
-<p>Cher <strong>{{ $admin_name }}</strong>,</p>
-<p>Les enregistrements DNS suivants pour la zone <strong>{{ $zone_name }}</strong> ne peuvent pas être créés:</p>
+<p><strong>{{ $admin_name }}</strong>,</p>
+<p>Les enregistrements DNS suivants pour la zone <strong>{{ $zone_name }}</strong> ne peuvent pas être créés :</p>
 <table>
     <tbody>
     <tr>
@@ -14,7 +14,7 @@
     @endforeach
     </tbody>
 </table>
-<p>Détails de la zone DNS :</p>
+<p>Détails de la zone DNS :</p>
 <table>
     <tbody>
     <tr>

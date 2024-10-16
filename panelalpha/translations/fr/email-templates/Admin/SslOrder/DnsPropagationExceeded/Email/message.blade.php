@@ -1,6 +1,6 @@
-<p>Cher <strong>{{ $admin_name }}</strong>,</p>
-<p>La validation de la propagation DNS pour <strong>{{ $ssl_order_domain }}</strong> a dépassé le temps maximum configuré.</p>
-<p>Détails de la commande SSL:</p>
+<p><strong>{{ $admin_name }}</strong>,</p>
+<p>La validation de la propagation DNS pour <strong>{{ $ssl_order_domain }}</strong> a dépassé le temps maximum imparti.</p>
+<p>Détails de la commande SSL :</p>
 <table>
     <tbody>
     <tr>
@@ -24,7 +24,7 @@
         <td>{{ $client_name }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">Société</th>
+        <th style="width: 33%;">Entreprise</th>
         <td>{{ $client_company_name }}</td>
     </tr>
     <tr>

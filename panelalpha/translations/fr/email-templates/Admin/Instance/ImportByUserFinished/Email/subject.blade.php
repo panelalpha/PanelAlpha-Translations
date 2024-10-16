@@ -1,1 +1,1 @@
-Instance {{ $instance_name }} par {{ $client_name }} importée avec succès
+Importation de l’instance {{ $instance_name }} par {{ $client_name }} correctement effectuée

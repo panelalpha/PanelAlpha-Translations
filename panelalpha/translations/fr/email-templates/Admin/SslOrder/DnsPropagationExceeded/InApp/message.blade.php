@@ -1,1 +1,1 @@
-<strong>La validation de la propagation du DNS pour <strong>l'utilisation de la technologie de l'information</strong>.{{ $ssl_order_domain }}</strong> a dépassé le temps maximum configuré.</p>
+<p>La validation de la propagation DNS pour <strong>{{ $ssl_order_domain }}</strong> a dépassé le temps maximum imparti.</p>

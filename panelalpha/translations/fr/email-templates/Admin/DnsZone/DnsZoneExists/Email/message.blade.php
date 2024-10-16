@@ -1,6 +1,6 @@
-<p>Cher <strong>{{ $admin_name }}</strong>,</p>
+<p><strong>{{ $admin_name }}</strong>,</p>
 <p>La zone DNS pour le domaine <strong>{{ $zone_name }}</strong> existe déjà sur le serveur DNS.</p>
-<p>Détails de la zone DNS:</p>
+<p>Détails de la zone DNS :</p>
 <table>
     <tbody>
     <tr>

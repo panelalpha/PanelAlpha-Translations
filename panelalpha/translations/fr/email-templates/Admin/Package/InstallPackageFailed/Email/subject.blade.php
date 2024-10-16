@@ -1,1 +1,1 @@
-Le paquet {{ $package_name }} n'a pas pu être installé dans {{ $instance_name }}
+Échec de l’installation du paquet {{ $package_name }} dans {{ $instance_name }}

@@ -1,9 +1,6 @@
-<p>Cher <strong>{{ $admin_name }}</strong>,</p>
-<p>L'<strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}" target="_blank">{{ $instance_name }}</a></strong>
-    instance par
-    <strong><a href="{{ $admin_url }}/users/{{ $client_id }}">{{ $client_name }}</a></strong> a été importée
-    avec succès.</p>
-<p>Détails de l'instance:</p>
+<p><strong>{{ $admin_name }}</strong>,</p>
+<p>L’importation de l’instance <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}" target="_blank">{{ $instance_name }}</a></strong> par <strong><a href="{{ $admin_url }}/users/{{ $client_id }}">{{ $client_name }}</a></strong> a été correctement effectuée.</p>
+<p>Détails de l’instance :</p>
 <table>
     <tbody>
     <tr>
@@ -15,12 +12,12 @@
         <td>{{ $instance_domain }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">URL</th>
+        <th style="width: 33%;">Url</th>
         <td><a href="{{$instance_url}}">{{ $instance_url }}</a></td>
     </tr>
     </tbody>
 </table>
-<p>Détails de l'utilisateur:</p>
+<p>Détails de l’utilisateur :</p>
 <table>
     <tbody>
     <tr>

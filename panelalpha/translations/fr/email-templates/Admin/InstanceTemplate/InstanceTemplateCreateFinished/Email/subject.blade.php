@@ -1,1 +1,1 @@
-Modèle d'instance {{ $template_name }} créé avec succès
+Création du modèle d’instance {{ $template_name }} correctement effectuée

@@ -1,8 +1,7 @@
-<p>Cher <strong>{{ $admin_name }}</strong>,</p>
-<p>L'installation du paquet <strong><a href="{{ $admin_url }}/plugins-and-themes">{{ $package_name }}</a></strong> dans l'instance 
-    <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}" target="_blank">{{ $instance_name }}</a></strong> a échoué.</p>
-<p>Message: {{ $exception_message }}</p>
-<p>Détails de l'instance:</p>
+<p><strong>{{ $admin_name }}</strong>,</p>
+<p>L’installation du paquet <strong><a href="{{ $admin_url }}/plugins-and-themes">{{ $package_name }}</a></strong> dans <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}" target="_blank">{{ $instance_name }}</a></strong> a échoué.</p>
+<p>Message : {{ $exception_message }}</p>
+<p>Détails de l’instance :</p>
 <table>
     <tbody>
     <tr>
