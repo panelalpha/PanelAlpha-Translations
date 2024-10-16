@@ -9,7 +9,7 @@
             </td>
             <td style="width: 50%; margin-left: auto;">@foreach ($themesAssingedToInstance["themes"] as $theme)
                     <p style="text-align: right; margin-bottom: 0px; margin-top: 0px;">{{ $theme["title"] }}
-                        ({{ $theme["version"] }} 🠒 {{ $theme["update_version"] }})</p>
+                        ({{ $theme["version"] }} → {{ $theme["update_version"] }})</p>
                 @endforeach</td>
         </tr>
         </tbody>

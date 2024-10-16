@@ -13,7 +13,7 @@
             <tr style="margin-top: 8px;">
                 <td style="padding-left: 20px;">
                     <ul style="padding: 0; margin: 0;">@foreach ($item["themes"] as $theme)
-                            <li>{{ $theme["title"] }} ({{ $theme["version"] }} 🠒 {{ $theme["update_version"] }})</li>
+                            <li>{{ $theme["title"] }} ({{ $theme["version"] }} → {{ $theme["update_version"] }})</li>
                         @endforeach</ul>
                 </td>
             </tr>
