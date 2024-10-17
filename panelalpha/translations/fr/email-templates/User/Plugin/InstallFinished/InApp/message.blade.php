@@ -1,1 +1,1 @@
-</p> <p>La <strong>Structure de l'entreprise</strong>.{{ $plugin_title }}</strong> le plugin a été installé</p> <p>.
+<p>Installation de l’extension <strong>{{ $plugin_title }}</strong> a été correctement effectuée.</p>

@@ -1,1 +1,1 @@
-La création de la sauvegarde automatique pour {{ $instance_name }} a échoué
+Échec de la sauvegarde automatique de {{ $instance_name }}

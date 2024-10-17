@@ -1,1 +1,1 @@
-Sauvegarde pour {{ $instance_name }} a échoué
+Échec de la sauvegarde de {{ $instance_name }}

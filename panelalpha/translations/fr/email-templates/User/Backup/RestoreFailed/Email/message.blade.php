@@ -1,7 +1,7 @@
-<p>Cher <strong>{{ $client_first_name }}</strong>,</p>
-<p>La restauration de la sauvegarde <strong>{{ $backup_name }}</strong> a échoué.</p>
-<p>Message: {{ $exception_message }}</p>
-<p>Détails de la sauvegarde:</p>
+<p><strong>{{ $client_first_name }}</strong>,</p>
+<p>La restoration de la sauvegarde <strong>{{ $backup_name }}</strong> a échoué.</p>
+<p>Message : {{ $exception_message }}</p>
+<p>Détails de la sauvegarde :</p>
 <table>
     <tbody>
     <tr>
@@ -26,7 +26,7 @@
     </tr>
     </tbody>
 </table>
-<p>Détails de l'instance :</p>
+<p>Détails de l’instance :</p>
 <table>
     <tbody>
     <tr>
@@ -37,9 +37,8 @@
         <th>Domaine</th>
         <td>{{ $instance_domain }}</td>
     </tr>
-    <tr>
-        <th>Url</th>
-        <td><a href="{{$instance_url}}">{{ $instance_url }}</a></td>
+    <th>Url</th>
+    <td><a href="{{$instance_url}}">{{ $instance_url }}</a></td>
     </tr>
     </tbody>
 </table>

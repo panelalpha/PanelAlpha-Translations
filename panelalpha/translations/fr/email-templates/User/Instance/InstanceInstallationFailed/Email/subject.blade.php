@@ -1,1 +1,1 @@
-Instance {{ $instance_name }} Installation Échouée
+Échec de l’installation de {{ $instance_name }}

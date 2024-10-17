@@ -1,1 +1,1 @@
-Sauvegarde automatique pour {{ $instance_name }} créée avec succès
+Sauvegarde automatique {{ $backup_name }} correctement effectuée

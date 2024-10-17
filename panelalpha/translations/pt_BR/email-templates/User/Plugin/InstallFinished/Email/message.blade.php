@@ -1,5 +1,5 @@
 <p>Caro <strong>{{ $client_first_name }}</strong>,</p>
-<p>O <strong>{{ $theme_title }}</strong> o tema foi instalado com sucesso.</p>
+<p>O <strong>{{ $plugin_title }}</strong> o plugin foi instalado com sucesso.</p>
 <p>Detalhes da instância:</p>
 <table>
     <tbody>

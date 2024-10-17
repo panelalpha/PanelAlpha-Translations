@@ -1,1 +1,1 @@
-Échec de l'importation de votre site {{ $import_from_domain }} vers {{ $app_name }}
+Échec de l’importation de {{ $import_from_domain }} dans {{ $app_name }}

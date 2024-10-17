@@ -1,1 +1,1 @@
-La restauration de la sauvegarde {{ $backup_name }} a échoué
+Échec de la restoration de la sauvegarde {{ $backup_name }}

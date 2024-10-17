@@ -1,7 +1,7 @@
-<p>Cher <strong>{{ $client_first_name }}</strong>,</p>
-<p>La sauvegarde automatique <strong>{{ $backup_name }}</strong> a été créée avec succès.</p>
-<p>Détails de la sauvegarde:</p>
-<table>c
+<p><strong>{{ $client_first_name }}</strong>,</p>
+<p>La sauvegarde automatique <strong>{{ $backup_name }}</strong> a été correctement effectuée.</p>
+<p>Détails de la sauvegarde :</p>
+<table>
     <tbody>
     <tr>
         <th>Nom</th>
@@ -25,7 +25,7 @@
     </tr>
     </tbody>
 </table>
-<p>Détails de l'instance :</p>
+<p>Détails de l’instance :</p>
 <table>
     <tbody>
     <tr>
@@ -36,7 +36,7 @@
         <th>Domaine</th>
         <td>{{ $instance_domain }}</td>
     </tr>
-    <th>URL</th>
+    <th>Url</th>
     <td><a href="{{$instance_url}}">{{ $instance_url }}</a></td>
     </tr>
     </tbody>

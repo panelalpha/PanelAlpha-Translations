@@ -1,1 +1,1 @@
-Installation de l'instance de mise en scène {{ $instance_name }} échouée
+Échec de création de staging pour {{ $instance_name }}

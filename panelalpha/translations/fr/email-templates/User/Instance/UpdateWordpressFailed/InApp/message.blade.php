@@ -1,1 +1,1 @@
-<strong>Erreur lors de la mise à jour</strong>{{ $instance_name }}</strong> instance. Message: {{ $exception_message }}</p>
+<p>La mise à jour de <strong>{{ $instance_name }}</strong> a échoué. Message : {{ $exception_message }}</p>

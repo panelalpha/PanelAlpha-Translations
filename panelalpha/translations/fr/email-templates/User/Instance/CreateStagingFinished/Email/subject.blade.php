@@ -1,1 +1,1 @@
-Instance {{ $instance_name }} installée avec succès
+Staging pour  {{ $instance_name }} correctement créé

@@ -1,5 +1,5 @@
 <p>Dear <strong>{{ $client_first_name }}</strong>,</p>
-<p>The <strong>{{ $theme_title }}</strong> theme has been installed successfully.</p>
+<p>The <strong>{{ $plugin_title }}</strong> plugin has been installed successfully.</p>
 <p>Instance details:</p>
 <table>
     <tbody>

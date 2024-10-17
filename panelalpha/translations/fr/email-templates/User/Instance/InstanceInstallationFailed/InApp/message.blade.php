@@ -1,1 +1,1 @@
-<strong>Erreur lors de l'installation</strong>{{ $instance_name }}</strong> instance. Message: {{ $exception_message }}</p>
+<p>Échec de l’installation de <strong>{{ $instance_name }}</strong>. Message : {{ $exception_message }}</p>

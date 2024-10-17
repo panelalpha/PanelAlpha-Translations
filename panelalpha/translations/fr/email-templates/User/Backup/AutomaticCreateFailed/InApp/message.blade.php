@@ -1,1 +1,1 @@
-<p>Erreur lors de la création d'une sauvegarde automatique pour <strong>La sauvegarde de l'ordinateur{{ $instance_name }}</strong>. Message: {{ $exception_message }}</p>
+<p>Échec de la sauvegarde automatique de  <strong>{{ $instance_name }}</strong>. Message : {{ $exception_message }}</p>

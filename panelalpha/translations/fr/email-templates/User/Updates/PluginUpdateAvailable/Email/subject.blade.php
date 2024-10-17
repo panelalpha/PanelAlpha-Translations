@@ -1,1 +1,1 @@
-Mises à jour disponibles: Plugins WordPress
+Mises à jour d’extensions WordPress disponibles

@@ -1,1 +1,1 @@
-<strong>Erreur lors de la suppression</strong>.{{ $backup_name }}</strong> backup. Message: {{ $exception_message }}</p>
+<p>Échec de la suppression de la sauvegarde <strong>{{ $backup_name }}</strong>. Message : {{ $exception_message }}</p>

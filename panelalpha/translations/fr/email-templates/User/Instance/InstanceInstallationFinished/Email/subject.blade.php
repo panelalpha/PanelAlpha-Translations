@@ -1,1 +1,1 @@
-Instance {{ $instance_name }} installée avec succès
+Installation de {{ $instance_name }} correctement effectuée

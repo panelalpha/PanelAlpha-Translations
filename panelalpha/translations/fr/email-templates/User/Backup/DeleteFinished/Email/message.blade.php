@@ -1,6 +1,6 @@
-<p>Cher <strong>{{ $client_first_name }}</strong>,</p>
-<p>La sauvegarde <strong>{{ $backup_name }}</strong> a été supprimée avec succès.</p>
-<p>Détails de l'instance:</p>
+<p><strong>{{ $client_first_name }}</strong>,</p>
+<p>La sauvegarde <strong>{{ $backup_name }}</strong> a été supprimée.</p>
+<p>Détails de l’instance :</p>
 <table>
     <tbody>
     <tr>

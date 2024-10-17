@@ -1,1 +1,1 @@
-Plugin {{ $plugin_title }} mis à jour avec succès
+Mise à jour de l’extension {{ $plugin_title }} correctement effectuée
