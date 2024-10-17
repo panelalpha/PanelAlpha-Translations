@@ -1,1 +1,1 @@
-<p>Error during processing <a href="/tasks"><strong>{{ $task_name }}</strong></a>. Message: {{ $exception_message }}</p>
+<p>Fout tijdens het verwerken van <a href="/tasks"><strong>{{ $task_name }}</strong></a>. Bericht: {{ $exception_message }}</p>

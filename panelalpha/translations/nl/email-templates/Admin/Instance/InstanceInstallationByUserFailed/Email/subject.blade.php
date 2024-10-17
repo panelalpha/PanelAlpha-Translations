@@ -1,1 +1,1 @@
-Instance {{ $instance_name }} by {{ $client_name }} Installation Failed
+Instantie {{ $instance_name }} door {{ $client_name }} Installatie Mislukt

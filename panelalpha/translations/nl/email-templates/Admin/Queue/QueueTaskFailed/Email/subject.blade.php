@@ -1,1 +1,1 @@
-Queue Task {{ $task_name }} Failed
+Queue Task {{ $task_name }} Mislukt

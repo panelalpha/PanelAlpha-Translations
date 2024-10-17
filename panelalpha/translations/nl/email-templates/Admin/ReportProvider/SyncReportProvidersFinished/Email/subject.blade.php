@@ -1,1 +1,1 @@
-Synchronisation of report providers {{ $instance_name }} Completed
+Synchronisatie van rapportleveranciers {{ $instance_name }} voltooid

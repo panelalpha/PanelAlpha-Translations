@@ -1,1 +1,1 @@
-DNS Zone for {{ $zone_name }} Create Failed
+DNS-zone voor {{ $zone_name }} Aanmaken Mislukt

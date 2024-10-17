@@ -1,1 +1,1 @@
-<p>The <strong>#{{ $template_id }} {{ $template_name }}</strong> instance template has been created</p>
+<p>Het <strong>#{{ $template_id }} {{ $template_name }}</strong> instantie-sjabloon is aangemaakt</p>

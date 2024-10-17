@@ -1,1 +1,1 @@
-Force Update {{ $plugin_title }} Plugin In {{ $instance_name }} Completed Successfully
+Forceren van de update van de {{ $plugin_title }} plugin in {{ $instance_name }} is succesvol afgerond

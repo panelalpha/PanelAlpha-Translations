@@ -1,1 +1,1 @@
-Force Update {{ $plugin_title }} Plugin In {{ $instance_name }} Failed
+Forceren van update van de {{ $plugin_title }} plugin in {{ $instance_name }} is mislukt

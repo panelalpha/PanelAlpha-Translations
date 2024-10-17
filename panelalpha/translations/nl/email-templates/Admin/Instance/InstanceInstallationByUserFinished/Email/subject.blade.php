@@ -1,1 +1,1 @@
-Instance {{ $instance_name }} by {{ $client_name }} Installation Successfully
+Instantie {{ $instance_name }} door {{ $client_name }} succesvol geïnstalleerd

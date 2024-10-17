@@ -1,18 +1,17 @@
-<p>Dear <strong>{{ $admin_name }}</strong>,</p>
-<p>The installation of the <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}"
-                                      target="_blank">{{ $instance_name }}</a></strong> instance by <strong><a
-            href="{{ $admin_url }}/users/{{ $client_id }}">{{ $client_name }}</a></strong> failed.
-</p>
-<p>Message: {{ $exception_message }}</p>
-<p>Instance Details:</p>
+<p>Geachte <strong>{{ $admin_name }}</strong>,</p>
+<p>De installatie van de <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}"
+                                      target="_blank">{{ $instance_name }}</a></strong> instantie door <strong><a
+            href="{{ $admin_url }}/users/{{ $client_id }}">{{ $client_name }}</a></strong> is mislukt.</p>
+<p>Bericht: {{ $exception_message }}</p>
+<p>Instantiegegevens:</p>
 <table>
     <tbody>
     <tr>
-        <th style="width: 33%;">Site Name</th>
+        <th style="width: 33%;">Site Naam</th>
         <td>{{ $instance_name }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">Domain</th>
+        <th style="width: 33%;">Domein</th>
         <td>{{ $instance_domain }}</td>
     </tr>
     <tr>
@@ -21,15 +20,15 @@
     </tr>
     </tbody>
 </table>
-<p>User Details:</p>
+<p>Gegevens gebruiker:</p>
 <table>
     <tbody>
     <tr>
-        <th style="width: 33%;">Name</th>
+        <th style="width: 33%;">Naam</th>
         <td>{{ $client_name }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">Company</th>
+        <th style="width: 33%;">Bedrijf</th>
         <td>{{ $client_company_name }}</td>
     </tr>
     <tr>

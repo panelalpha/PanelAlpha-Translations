@@ -1,6 +1,6 @@
-<p>Dear <strong>{{ $admin_name }}</strong>,</p>
-<p>The creation <strong>{{ $template_name }}</strong> instance template failed.</p>
-<p>Message: {{ $exception_message }}</p>
+<p>Beste <strong>{{ $admin_name }}</strong>,</p>
+<p>De creatie van het <strong>{{ $template_name }}</strong> instantie-sjabloon is mislukt.</p>
+<p>Bericht: {{ $exception_message }}</p>
 <table>
     <tbody>
     <tr>
@@ -8,11 +8,11 @@
         <td>#{{ $template_id }}</td>
     </tr>
     <tr>
-        <th>Name</th>
+        <th>Naam</th>
         <td>{{ $template_name }}</td>
     </tr>
     <tr>
-        <th>WordPress Version</th>
+        <th>WordPress Versie</th>
         <td>{{ $wordpress_version }}</td>
     </tr>
     </tbody>

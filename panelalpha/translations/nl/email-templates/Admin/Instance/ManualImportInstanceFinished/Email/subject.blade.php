@@ -1,1 +1,1 @@
-Instance {{ $import_domain }} Imported Manually Successfully
+Handmatige import van {{ $import_domain }} is succesvol voltooid

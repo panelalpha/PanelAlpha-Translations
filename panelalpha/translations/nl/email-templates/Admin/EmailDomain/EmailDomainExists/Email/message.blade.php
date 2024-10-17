@@ -1,11 +1,11 @@
-<p>Dear <strong>{{ $admin_name }}</strong>,</p>
-<p>Email domain <strong>{{ $domain }}</strong> already exists on the Email Server.</p>
+<p>Beste <strong>{{ $admin_name }}</strong>,</p>
+<p>Het e-maildomein <strong>{{ $domain }}</strong> bestaat al op de e-mailserver.</p>
 
-<p>Email Domain details:</p>
+<p>Details van het e-maildomein:</p>
 <table>
     <tbody>
     <tr>
-        <th>Email Domain</th>
+        <th>E-maildomein</th>
         <td>{{ $domain }}</td>
     </tr>
     <tr>
@@ -13,7 +13,7 @@
         <td><strong>#{{ $service_id }}</strong> {{ $service_main_domain }}</td>
     </tr>
     <tr>
-        <th>Email Server</th>
+        <th>E-mailserver</th>
         <td><strong>#{{ $email_server_id }}</strong> {{ $email_server_name }}</td>
     </tr>
     </tbody>

@@ -1,1 +1,1 @@
-<p>Error during creation DNS Zone for <strong>{{ $zone_name }}</strong>. Message: {{ $exception_message }}</p>
+<p>Fout tijdens het aanmaken van de DNS-zone voor <strong>{{ $zone_name }}</strong>. Bericht: {{ $exception_message }}</p>

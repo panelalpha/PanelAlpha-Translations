@@ -1,8 +1,8 @@
-<p>Dear <strong>{{ $admin_name }}</strong>,</p>
-<p>The manual import of the <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}"
-                                       target="_blank">{{ $instance_name }}</a></strong> instance has been completed.
+<p>Beste <strong>{{ $admin_name }}</strong>,</p>
+<p>De handmatige import van de <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}"
+                                       target="_blank">{{ $instance_name }}</a></strong> instance is voltooid.
 </p>
-<p>Import Details:</p>
+<p>Importdetails:</p>
 <table>
     <tbody>
     <tr>
@@ -11,15 +11,15 @@
     </tr>
     </tbody>
 </table>
-<p>Instance Details:</p>
+<p>Instancegegevens:</p>
 <table>
     <tbody>
     <tr>
-        <th style="width: 33%;">Site Name</th>
+        <th style="width: 33%;">Site Naam</th>
         <td>{{ $instance_name }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">Domain</th>
+        <th style="width: 33%;">Domein</th>
         <td>{{ $instance_domain }}</td>
     </tr>
     <tr>
@@ -28,4 +28,3 @@
     </tr>
     </tbody>
 </table>
-

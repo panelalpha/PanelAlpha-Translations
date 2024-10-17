@@ -1,1 +1,1 @@
-Service #{{ $service_id }} {{ $service_domain }} Unsuspend
+Service #{{ $service_id }} {{ $service_domain }} Herstel

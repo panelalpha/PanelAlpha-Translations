@@ -1,1 +1,1 @@
-Instance {{ $instance_name }} by {{ $client_name }} Imported Successfully
+Instantie {{ $instance_name }} door {{ $client_name }} Succesvol Geïmporteerd

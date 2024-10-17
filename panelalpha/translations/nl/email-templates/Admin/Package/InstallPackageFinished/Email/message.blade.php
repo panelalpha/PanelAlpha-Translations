@@ -1,15 +1,14 @@
-<p>Dear <strong>{{ $admin_name }}</strong>,</p>
-<p>The <strong><a href="{{ $admin_url }}/plugins-and-themes">{{ $package_name }}</a></strong> has been installed successfully in <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}" target="_blank">{{ $instance_name }}</a></strong>
-    instance.</p>
-<p>Instance details:</p>
+<p>Beste <strong>{{ $admin_name }}</strong>,</p>
+<p>Het <strong><a href="{{ $admin_url }}/plugins-and-themes">{{ $package_name }}</a></strong> is succesvol geïnstalleerd in de <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}" target="_blank">{{ $instance_name }}</a></strong> instantie.</p>
+<p>Instantiegegevens:</p>
 <table>
     <tbody>
     <tr>
-        <th style="width: 33%;">Site Name</th>
+        <th style="width: 33%;">Site Naam</th>
         <td>{{ $instance_name }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">Domain</th>
+        <th style="width: 33%;">Domein</th>
         <td>{{ $instance_domain }}</td>
     </tr>
     <tr>

@@ -1,1 +1,1 @@
-Email Domain {{ $domain }} Create Failed
+E-maildomein {{ $domain }} Aanmaken Mislukt

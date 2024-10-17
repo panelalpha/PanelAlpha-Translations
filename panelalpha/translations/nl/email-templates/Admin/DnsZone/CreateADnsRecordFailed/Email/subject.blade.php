@@ -1,1 +1,1 @@
-DNS Record A for {{ $domain }} Create Failed
+DNS Record A voor {{ $domain }} Aanmaken Mislukt

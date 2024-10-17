@@ -1,1 +1,1 @@
-<p>Some DNS records for zone <strong>{{ $zone_name }}</strong> cannot be created.</p>
+<p>Enkele DNS-records voor zone <strong>{{ $zone_name }}</strong> kunnen niet worden aangemaakt.</p>

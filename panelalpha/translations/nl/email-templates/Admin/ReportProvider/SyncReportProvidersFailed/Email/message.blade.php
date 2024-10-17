@@ -1,18 +1,18 @@
-<p>Dear <strong>{{ $admin_name }}</strong>,</p>
-<p>Synchronisation of report providers <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}"
-                                                  target="_blank">{{ $instance_name }}</a></strong> instance failed.
+<p>Geachte <strong>{{ $admin_name }}</strong>,</p>
+<p>De synchronisatie van rapportleveranciers voor de <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}"
+                                                      target="_blank">{{ $instance_name }}</a></strong> instantie is mislukt.
 </p>
-<p>Message: {{ $exception_message }}</p>
+<p>Bericht: {{ $exception_message }}</p>
 
-<p>Instance Details:</p>
+<p>Instantiegegevens:</p>
 <table>
     <tbody>
     <tr>
-        <th style="width: 33%;">Site Name</th>
+        <th style="width: 33%;">Site Naam</th>
         <td>{{ $instance_name }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">Domain</th>
+        <th style="width: 33%;">Domein</th>
         <td>{{ $instance_domain }}</td>
     </tr>
     <tr>
@@ -21,15 +21,15 @@
     </tr>
     </tbody>
 </table>
-<p>User Details:</p>
+<p>Gegevens van de gebruiker:</p>
 <table>
     <tbody>
     <tr>
-        <th style="width: 33%;">Name</th>
+        <th style="width: 33%;">Naam</th>
         <td>{{ $client_name }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">Company</th>
+        <th style="width: 33%;">Bedrijf</th>
         <td>{{ $client_company_name }}</td>
     </tr>
     <tr>

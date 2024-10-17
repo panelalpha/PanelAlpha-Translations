@@ -1,1 +1,1 @@
-Manual Import {{ $import_domain }} Failed
+Handmatige import van {{ $import_domain }} mislukt

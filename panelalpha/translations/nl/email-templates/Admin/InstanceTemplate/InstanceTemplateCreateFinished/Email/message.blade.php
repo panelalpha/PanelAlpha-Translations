@@ -1,6 +1,6 @@
-<p>Dear <strong>{{ $admin_name }}</strong>,</p>
-<p>The <strong>{{ $template_name }}</strong> instance template has been created successfully.</p>
-<p>Instance Template details:</p>
+<p>Beste <strong>{{ $admin_name }}</strong>,</p>
+<p>De <strong>{{ $template_name }}</strong> instantie-sjabloon is succesvol aangemaakt.</p>
+<p>Details van het instantie-sjabloon:</p>
 <table>
     <tbody>
     <tr>
@@ -8,11 +8,11 @@
         <td>#{{ $template_id }}</td>
     </tr>
     <tr>
-        <th>Name</th>
+        <th>Naam</th>
         <td>{{ $template_name }}</td>
     </tr>
     <tr>
-        <th>WordPress Version</th>
+        <th>WordPress Versie</th>
         <td>{{ $wordpress_version }}</td>
     </tr>
     </tbody>

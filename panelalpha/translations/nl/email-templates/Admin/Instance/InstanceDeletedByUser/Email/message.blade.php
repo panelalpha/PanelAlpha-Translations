@@ -1,16 +1,16 @@
-<p>Dear <strong>{{ $admin_name }}</strong>,</p>
-<p>The <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}" target="_blank">{{ $instance_name }}</a></strong>
-    instance by <strong><a href="{{ $admin_url }}/users/{{ $client_id }}">{{ $client_name }}</a></strong> has been
-    deleted successfully.</p>
-<p>Instance Details:</p>
+<p>Geachte <strong>{{ $admin_name }}</strong>,</p>
+<p>De <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}" target="_blank">{{ $instance_name }}</a></strong>
+    instantie door <strong><a href="{{ $admin_url }}/users/{{ $client_id }}">{{ $client_name }}</a></strong> is
+    succesvol verwijderd.</p>
+<p>Instantiedetails:</p>
 <table>
     <tbody>
     <tr>
-        <th style="width: 33%;">Site Name</th>
+        <th style="width: 33%;">Site Naam</th>
         <td>{{ $instance_name }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">Domain</th>
+        <th style="width: 33%;">Domein</th>
         <td>{{ $instance_domain }}</td>
     </tr>
     <tr>
@@ -19,15 +19,15 @@
     </tr>
     </tbody>
 </table>
-<p>User Details:</p>
+<p>Gegevens gebruiker:</p>
 <table>
     <tbody>
     <tr>
-        <th style="width: 33%;">Name</th>
+        <th style="width: 33%;">Naam</th>
         <td>{{ $client_name }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">Company</th>
+        <th style="width: 33%;">Bedrijf</th>
         <td>{{ $client_company_name }}</td>
     </tr>
     <tr>

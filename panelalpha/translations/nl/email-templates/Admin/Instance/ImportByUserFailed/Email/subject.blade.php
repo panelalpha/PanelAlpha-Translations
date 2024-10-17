@@ -1,1 +1,1 @@
-Instance {{ $instance_name }} by {{ $client_name }} Import Failed
+Instantie {{ $instance_name }} door {{ $client_name }} Import Mislukt

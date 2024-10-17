@@ -1,1 +1,1 @@
-Synchronisation of report providers {{ $instance_name }} Failed
+Synchronisatie van rapportleveranciers {{ $instance_name }} mislukt

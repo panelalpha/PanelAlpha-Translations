@@ -1,2 +1,1 @@
-<p>Error during creation <strong>#{{ $template_id }} {{ $template_name }}</strong> instance template. Message: {{ $exception_message }}</p>
-
+<p>Fout bij het aanmaken van <strong>#{{ $template_id }} {{ $template_name }}</strong> instantie-sjabloon. Bericht: {{ $exception_message }}</p>

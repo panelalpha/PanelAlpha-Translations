@@ -1,1 +1,1 @@
-Instance Template {{ $template_name }} Create Failed
+Instantie-sjabloon {{ $template_name }} aanmaken is mislukt

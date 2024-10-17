@@ -1,1 +1,1 @@
-Instance {{ $instance_name }} by {{ $client_name }} Deleted Successfully
+Instance {{ $instance_name }} door {{ $client_name }} succesvol verwijderd

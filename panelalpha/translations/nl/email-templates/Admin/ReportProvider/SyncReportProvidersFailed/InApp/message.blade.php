@@ -1,3 +1,2 @@
-<p>Error during synchronisation of report providers <a
-        href="/instances/{{$instance_id}}"><strong>{{ $instance_name }}</strong></a> failed.
-    Message: {{ $exception_message }}</p>
+<p>Fout tijdens de synchronisatie van rapportleveranciers <a href="/instances/{{$instance_id}}"><strong>{{ $instance_name }}</strong></a> mislukt. 
+   Bericht: {{ $exception_message }}</p>

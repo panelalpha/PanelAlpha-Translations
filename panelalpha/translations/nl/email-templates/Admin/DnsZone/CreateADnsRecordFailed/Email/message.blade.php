@@ -1,20 +1,20 @@
-<p>Dear <strong>{{ $admin_name }}</strong>,</p>
-<p>The creation DNS Record A for <strong>{{ $domain }}</strong> failed.</p>
-<p>Message: {{ $exception_message }}</p>
-<p>DNS Zone details:</p>
+<p>Beste <strong>{{ $admin_name }}</strong>,</p>
+<p>Het aanmaken van DNS Record A voor <strong>{{ $domain }}</strong> is mislukt.</p>
+<p>Bericht: {{ $exception_message }}</p>
+<p>Details van de DNS-zone:</p>
 <table>
     <tbody>
     <tr>
-        <th>Domain</th>
+        <th>Domein</th>
         <td>{{ $domain }}</td>
     </tr>
     <tr>
-        <th>Service</th>
+        <th>Dienst</th>
         <td>#{{ $service_id }} {{ $service_main_domain }}</td>
     </tr>
     @if($dns_server_id)
         <tr>
-            <th>DNS Server</th>
+            <th>DNS-server</th>
             <td>#{{ $dns_server_id }} {{ $dns_server_name }}</td>
         </tr>
     @endif

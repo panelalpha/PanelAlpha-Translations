@@ -1,10 +1,10 @@
-<p>Dear <strong>{{ $admin_name }}</strong>,</p>
-<p>The following DNS records for zone <strong>{{ $zone_name }}</strong> cannot be created:</p>
+<p>Beste <strong>{{ $admin_name }}</strong>,</p>
+<p>De volgende DNS-records voor zone <strong>{{ $zone_name }}</strong> kunnen niet worden aangemaakt:</p>
 <table>
     <tbody>
     <tr>
         <th style="text-align: left">DNS Record</th>
-        <th style="text-align: left">Message</th>
+        <th style="text-align: left">Bericht</th>
     </tr>
     @foreach($dns_records as $dns_record)
         <tr>
@@ -14,7 +14,7 @@
     @endforeach
     </tbody>
 </table>
-<p>DNS Zone details:</p>
+<p>Details van de DNS-zone:</p>
 <table>
     <tbody>
     <tr>
@@ -22,12 +22,12 @@
         <td>{{ $zone_name }}</td>
     </tr>
     <tr>
-        <th style="text-align: left">Service</th>
+        <th style="text-align: left">Dienst</th>
         <td>#{{ $service_id }} {{ $service_main_domain }}</td>
     </tr>
     @if($dns_server_id)
         <tr>
-            <th style="text-align: left">DNS Server</th>
+            <th style="text-align: left">DNS-server</th>
             <td>#{{ $dns_server_id }} {{ $dns_server_name }}</td>
         </tr>
     @endif

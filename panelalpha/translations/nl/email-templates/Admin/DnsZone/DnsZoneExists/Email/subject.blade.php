@@ -1,1 +1,1 @@
-DNS Zone for {{ $zone_name }} Already Exists in DNS Server
+DNS-zone voor {{ $zone_name }} Bestaat Al op de DNS-server

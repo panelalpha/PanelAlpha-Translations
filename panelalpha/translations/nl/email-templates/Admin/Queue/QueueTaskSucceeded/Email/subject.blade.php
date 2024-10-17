@@ -1,1 +1,1 @@
-Queue Task {{ $task_name }} Completed Successfully
+Wachtrijtaak {{ $task_name }} succesvol voltooid

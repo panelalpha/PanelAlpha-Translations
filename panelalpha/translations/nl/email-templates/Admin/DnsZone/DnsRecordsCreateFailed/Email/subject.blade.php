@@ -1,1 +1,1 @@
-DNS Records for {{ $zone_name }} Create Failed
+DNS Records voor {{ $zone_name }} Aanmaken Mislukt

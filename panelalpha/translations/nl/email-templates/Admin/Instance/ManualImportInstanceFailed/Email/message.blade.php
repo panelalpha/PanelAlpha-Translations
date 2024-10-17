@@ -1,8 +1,8 @@
-<p>Dear <strong>{{ $admin_name }}</strong>,</p>
-<p>The manual import of the <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}"
-                                      target="_blank">{{ $instance_name }}</a></strong> instance failed.</p>
-<p>Message: {{ $exception_message }}</p>
-<p>Import Details:</p>
+<p>Beste <strong>{{ $admin_name }}</strong>,</p>
+<p>De handmatige import van de <strong><a href="{{ $admin_url }}/instances/{{ $instance_id }}"
+                                      target="_blank">{{ $instance_name }}</a></strong> instantie is mislukt.</p>
+<p>Boodschap: {{ $exception_message }}</p>
+<p>Importdetails:</p>
 <table>
     <tbody>
     <tr>
@@ -14,24 +14,24 @@
         <td>{{ $import_status }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">Message</th>
+        <th style="width: 33%;">Boodschap</th>
         <td>{{ $import_message }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">Current Step</th>
+        <th style="width: 33%;">Huidige Stap</th>
         <td>{{ $import_current_step  }}</td>
     </tr>
     </tbody>
 </table>
-<p>Instance Details:</p>
+<p>Instantiedetails:</p>
 <table>
     <tbody>
     <tr>
-        <th style="width: 33%;">Site Name</th>
+        <th style="width: 33%;">Site Naam</th>
         <td>{{ $instance_name }}</td>
     </tr>
     <tr>
-        <th style="width: 33%;">Domain</th>
+        <th style="width: 33%;">Domein</th>
         <td>{{ $instance_domain }}</td>
     </tr>
     <tr>
@@ -40,4 +40,3 @@
     </tr>
     </tbody>
 </table>
-

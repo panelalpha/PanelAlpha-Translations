@@ -1,1 +1,1 @@
-Service #{{ $service_id }} {{ $service_domain }} Upgraded
+Service #{{ $service_id }} {{ $service_domain }} Opgewaardeerd
