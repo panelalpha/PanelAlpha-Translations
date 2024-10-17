@@ -1,1 +1,1 @@
-Reset Password Notification
+Melding voor wachtwoord resetten

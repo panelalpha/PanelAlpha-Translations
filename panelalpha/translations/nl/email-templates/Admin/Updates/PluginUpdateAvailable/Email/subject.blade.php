@@ -1,1 +1,1 @@
-WordPress Plugins Updates Are Available
+WordPress-pluginsupdates zijn beschikbaar

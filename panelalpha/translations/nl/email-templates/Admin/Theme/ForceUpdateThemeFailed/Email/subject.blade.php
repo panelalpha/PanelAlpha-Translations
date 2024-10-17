@@ -1,1 +1,1 @@
-Force Update {{ $theme_title }} Theme In {{ $instance_name }} Failed
+Geforceerde update van {{ $theme_title }} thema in {{ $instance_name }} mislukt
