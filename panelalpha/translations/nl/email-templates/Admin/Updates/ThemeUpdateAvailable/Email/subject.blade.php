@@ -1,1 +1,1 @@
-WordPress Themes Updates Are Available
+WordPress Thema-updates zijn beschikbaar

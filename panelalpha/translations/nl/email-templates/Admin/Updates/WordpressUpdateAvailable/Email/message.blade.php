@@ -1,5 +1,5 @@
-<p>Dear <strong>{{ $admin_name }}</strong>,</p>
-<p>Below is a list of instances that may require WordPress updates:</p>
+<p>Beste <strong>{{ $admin_name }}</strong>,</p>
+<p>Hieronder vindt u een lijst van instanties die mogelijk WordPress-updates vereisen:</p>
 @foreach($users_with_instances_to_update as $user)
     <p><strong>#{{ $user['user_id'] }} {{ $user['user_name'] }}</strong></p>
     <table style="margin-top: 16px; padding: 10px 16px;">

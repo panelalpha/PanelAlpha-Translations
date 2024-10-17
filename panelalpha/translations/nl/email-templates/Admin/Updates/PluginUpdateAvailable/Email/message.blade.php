@@ -1,5 +1,5 @@
-<p>Dear <strong>{{ $admin_name }}</strong>,</p>
-<p>Below is a list of instances that may require plugins updates:</p>
+<p>Beste <strong>{{ $admin_name }}</strong>,</p>
+<p>Hieronder staat een lijst van instanties die mogelijk updates voor plugins vereisen:</p>
 @foreach ($users_with_plugins_to_update as $user)
     <p><strong>#{{ $user['user_id'] }} {{ $user['user_name'] }}</strong></p>
     @foreach ($user['items'] as $item)

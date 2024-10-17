@@ -1,1 +1,1 @@
-WordPress Instance Updates Are Available
+WordPress-instantie-updates zijn beschikbaar

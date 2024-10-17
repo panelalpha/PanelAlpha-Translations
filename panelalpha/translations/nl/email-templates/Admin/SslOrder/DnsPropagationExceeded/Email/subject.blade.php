@@ -1,1 +1,1 @@
-DNS Propagation Exceeded for {{ $ssl_order_domain }}
+DNS-propagatie overschreden voor {{ $ssl_order_domain }}
