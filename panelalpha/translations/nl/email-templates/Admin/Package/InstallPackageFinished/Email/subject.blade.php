@@ -1,0 +1,1 @@
+Pakket {{ $package_name }} succesvol geïnstalleerd In {{ $instance_name }}

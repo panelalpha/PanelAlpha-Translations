@@ -1,0 +1,1 @@
+<p>Fout tijdens het aanmaken van de DNS-zone voor <strong>{{ $zone_name }}</strong>. Bericht: {{ $exception_message }}</p>

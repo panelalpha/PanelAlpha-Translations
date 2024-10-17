@@ -1,0 +1,1 @@
+<p>Fout bij het aanmaken van <strong>#{{ $template_id }} {{ $template_name }}</strong> instantie-sjabloon. Bericht: {{ $exception_message }}</p>

@@ -1,0 +1,1 @@
+Instantie-sjabloon {{ $template_name }} aanmaken is mislukt

@@ -1,0 +1,1 @@
+<p>Het <strong>#{{ $template_id }} {{ $template_name }}</strong> instantie-sjabloon is aangemaakt</p>

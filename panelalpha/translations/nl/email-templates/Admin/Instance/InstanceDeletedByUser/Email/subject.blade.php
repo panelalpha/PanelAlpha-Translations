@@ -1,0 +1,1 @@
+Instance {{ $instance_name }} door {{ $client_name }} succesvol verwijderd
