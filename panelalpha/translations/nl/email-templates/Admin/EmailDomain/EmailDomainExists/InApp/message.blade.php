@@ -1,0 +1,1 @@
+<p>E-maildomein <strong>{{ $domain }}</strong> bestaat al op de e-mailserver.</p>

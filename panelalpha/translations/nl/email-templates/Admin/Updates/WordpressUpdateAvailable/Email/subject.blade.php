@@ -1,0 +1,1 @@
+WordPress-instantie-updates zijn beschikbaar

@@ -1,0 +1,1 @@
+<p>Fout tijdens het aanmaken van het e-maildomein <strong>{{ $domain }}</strong>. Bericht: {{ $exception_message }}</p>

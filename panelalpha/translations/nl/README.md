@@ -10,7 +10,7 @@ Om deze vertalingen automatisch te installeren en gebruiken met PanelAlpha, volg
 
 1. <b>Download het script naar /opt/panelalpha:</b>
     ```sh
-    curl -sL -o /opt/panelalpha/sync-translations.sh https://raw.githubusercontent.com/panelalpha/PanelAlpha-Translations/feature/sync-translations/scripts/sync-translations.sh
+    curl -sL -o /opt/panelalpha/sync-translations.sh https://raw.githubusercontent.com/panelalpha/PanelAlpha-Translations/refs/heads/main/scripts/sync-translations.sh
     ```
 
 2. <b>Voer het script uit met de gewenste taal:</b>

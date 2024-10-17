@@ -1,0 +1,1 @@
+<p>Fout tijdens het aanmaken van A DNS Record voor <strong>{{ $domain }}</strong>. Bericht: {{ $exception_message }}</p>

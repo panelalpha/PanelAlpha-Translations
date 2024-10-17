@@ -1,0 +1,1 @@
+Geforceerde update van {{ $theme_title }} thema in {{ $instance_name }} mislukt
