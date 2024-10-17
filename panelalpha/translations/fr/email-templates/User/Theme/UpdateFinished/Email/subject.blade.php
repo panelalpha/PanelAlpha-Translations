@@ -1,1 +1,1 @@
-Thème {{ $theme_title }} mis à jour avec succès
+Mise à jour du thème {{ $theme_title }} correctement effectuée

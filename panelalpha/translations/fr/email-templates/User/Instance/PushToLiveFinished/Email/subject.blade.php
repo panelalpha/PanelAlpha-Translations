@@ -1,1 +1,1 @@
-'Passage en Production' sur {{ $instance_name }} terminé avec succès
+Mise en production de {{ $instance_name }} correctement effectuée

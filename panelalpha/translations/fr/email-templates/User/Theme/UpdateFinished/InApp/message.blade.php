@@ -1,1 +1,1 @@
-</p> <p>La <strong>Structure de l'entreprise</strong>.{{ $theme_title }}</strong> thème a été mis à jour</p> <p class="rtejustify">.
+<p>Mise à jour du thème <strong>{{ $theme_title }}</strong> correctement effectuée vers la version <strong>{{ $theme_version }}</strong>.</p>

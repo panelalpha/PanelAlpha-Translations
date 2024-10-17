@@ -1,1 +1,1 @@
-Plugin '{{ $plugin_title }}' installé avec succès
+Installation de l’extension {{ $plugin_title }} correctement effectuée

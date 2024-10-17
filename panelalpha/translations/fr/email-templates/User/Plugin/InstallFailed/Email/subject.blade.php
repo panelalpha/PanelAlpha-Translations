@@ -1,1 +1,1 @@
-Échec de l'installation du plugin {{ $plugin_title }}
+Échec de l’installation de l’extension {{ $plugin_title }}

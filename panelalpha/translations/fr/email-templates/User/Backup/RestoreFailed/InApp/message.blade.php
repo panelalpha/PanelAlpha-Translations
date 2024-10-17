@@ -1,1 +1,1 @@
-<strong>Erreur lors de la restauration</strong>{{ $backup_name }}</strong> backup. Message: {{ $exception_message }}</p>
+<p>Échec de la restoration de la sauvegarde <strong>{{ $backup_name }}</strong>. Message : {{ $exception_message }}</p>

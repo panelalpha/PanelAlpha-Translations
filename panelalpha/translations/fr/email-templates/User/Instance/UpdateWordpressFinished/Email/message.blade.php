@@ -1,6 +1,6 @@
-<p>Cher <strong>{{ $client_first_name }}</strong>,</p>
-<p>L'instance <strong>{{ $instance_name }}</strong> a été mise à jour vers la version WordPress <strong>{{ $instance_version }}</strong>.</p>
-<p>Détails de l'instance:</p>
+<p><strong>{{ $client_first_name }}</strong>,</p>
+<p>La mise à jour de <strong>{{ $instance_name }}</strong> vers <strong>WordPress {{ $instance_version }}</strong> a été correctement effectuée.</p>
+<p>Détails de l’instance :</p>
 <table>
     <tbody>
     <tr>
@@ -12,7 +12,7 @@
         <td>{{ $instance_domain }}</td>
     </tr>
     <tr>
-        <th>URL</th>
+        <th>Url</th>
         <td><a href="{{$instance_url}}">{{ $instance_url }}</a></td>
     </tr>
     </tbody>

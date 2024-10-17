@@ -1,1 +1,1 @@
-Thème {{ $theme_title }} installé avec succès
+Installation du thème {{ $theme_title }} correctement effectuée

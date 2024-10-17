@@ -1,1 +1,1 @@
-Instances WordPress: Dernières mises à jour disponibles
+Mises à jour WordPress disponibles

@@ -1,1 +1,1 @@
-Sauvegarde pour {{ $instance_name }} créée avec succès
+Sauvegarde {{ $backup_name }} correctement effectuée

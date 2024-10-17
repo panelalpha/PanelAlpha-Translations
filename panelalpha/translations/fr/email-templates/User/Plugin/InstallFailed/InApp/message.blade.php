@@ -1,1 +1,1 @@
-<strong>Erreur lors de l'installation</strong>{{ $plugin_title }}</strong> plugin. Message: {{ $exception_message }}</p>
+<p>L’installation de l’extension <strong>{{ $plugin_title }}</strong> a échoué. Message : {{ $exception_message }}</p>

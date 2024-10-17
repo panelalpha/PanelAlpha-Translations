@@ -1,1 +1,1 @@
-Push to Live de {{ $instance_name }} a échoué
+Échec de la mise en production de {{ $instance_name }}

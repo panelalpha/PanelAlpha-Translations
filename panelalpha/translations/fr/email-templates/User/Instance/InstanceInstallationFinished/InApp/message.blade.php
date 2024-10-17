@@ -1,1 +1,1 @@
-</p> <p>La <strong>Structure de l'entreprise</strong>.{{ $instance_name }}</strong> a été installée</p> <p>.
+<p>Installation de <strong>{{ $instance_name }}</strong> correctement effectuée.</p>

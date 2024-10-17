@@ -1,1 +1,1 @@
-</p> <p>La <strong>Structure de l'entreprise</strong>.{{ $backup_name }}</strong> une sauvegarde automatique a été créée</p> <p>.
+<p>Sauvegarde automatique <strong>{{ $backup_name }}</strong> correctement effectuée.</p>

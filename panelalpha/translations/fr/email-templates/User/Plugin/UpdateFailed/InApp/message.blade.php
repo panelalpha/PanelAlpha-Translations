@@ -1,1 +1,1 @@
-<strong>Erreur lors de la mise à jour</strong>{{ $plugin_title }}</strong> plugin. Message: {{ $exception_message }}</p>
+<p>La mise à jour de l’extension <strong>{{ $plugin_title }}</strong> a échoué. Message : {{ $exception_message }}</p>

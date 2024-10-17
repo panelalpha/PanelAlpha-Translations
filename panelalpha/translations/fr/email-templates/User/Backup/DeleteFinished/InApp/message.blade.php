@@ -1,1 +1,1 @@
-</p> <p>La <strong>Structure de l'entreprise</strong>.{{ $backup_name }}</strong> la sauvegarde a été supprimée</p> <p>.
+<p>Sauvegarde <strong>{{ $backup_name }}</strong> supprimée.</p>

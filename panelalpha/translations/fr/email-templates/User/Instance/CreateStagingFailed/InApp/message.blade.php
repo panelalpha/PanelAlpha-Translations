@@ -1,2 +1,1 @@
-<strong>Erreur lors de l'installation</strong>{{ $instance_name }}</strong> staging instance. Message: {{ $exception_message }}
-</p>
+<p>La création d’un staging pour <strong>{{ $instance_name }}</strong> a échoué. Message : {{ $exception_message }}</p>

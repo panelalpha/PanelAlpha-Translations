@@ -1,12 +1,12 @@
-<p>Cher <strong>{{ $client_first_name }}</strong>,</p>
-<p>La création de la sauvegarde pour l'instance <strong>{{ $instance_name }}</strong> a échoué.</p>
-<p>Message : {{ $exception_message }}</p>
-<p>Détails de la sauvegarde:</p>
+<p><strong>{{ $client_first_name }}</strong>,</p>
+<p>La sauvegarde de <strong>{{ $instance_name }}</strong> a échoué.</p>
+<p>Message : {{ $exception_message }}</p>
+<p>Détails de la sauvegarde :</p>
 <table>
     <tbody>
     <tr>
         <th>Nom</th>
-        <td>{{ $backup_name }}</td>
+        <td>{{ $backup_name  }}</td>
     </tr>
     <tr>
         <th>Type</th>
@@ -14,19 +14,19 @@
     </tr>
     <tr>
         <th>Taille</th>
-        <td>{{ $backup_size }} MB</td>
+        <td>{{ $backup_size  }} MB</td>
     </tr>
     <tr>
         <th>Version</th>
-        <td>{{ $backup_version }}</td>
+        <td>{{ $backup_version  }}</td>
     </tr>
     <tr>
         <th>Date</th>
-        <td>{{ $backup_date }}</td>
+        <td>{{ $backup_date  }}</td>
     </tr>
     </tbody>
 </table>
-<p>Détails de l'instance :</p>
+<p>Détails de l’instance :</p>
 <table>
     <tbody>
     <tr>
@@ -37,9 +37,8 @@
         <th>Domaine</th>
         <td>{{ $instance_domain }}</td>
     </tr>
-    <tr>
-        <th>URL</th>
-        <td><a href="{{$instance_url}}">{{ $instance_url }}</a></td>
+    <th>Url</th>
+    <td><a href="{{$instance_url}}">{{ $instance_url }}</a></td>
     </tr>
     </tbody>
 </table>
