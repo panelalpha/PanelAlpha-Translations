@@ -1,5 +1,5 @@
 <p>Estimado <strong>{{ $client_first_name }}</strong>,</p>
-<p>El <strong>{{ $theme_title }}</strong> tema se ha instalado correctamente.</p> <p>
+<p>El <strong>{{ $plugin_title }}</strong> plugin se ha instalado correctamente.</p> <p>
 <p>Detalles de la instancia:</p>
 <table>
     <cuerpo>

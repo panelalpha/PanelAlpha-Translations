@@ -1,5 +1,5 @@
 <p>Caro <strong>{{ $client_first_name }}</strong>,</p>
-<p>La <strong>società di consulenza{{ $theme_title }}</strong>il tema è stato installato con successo.</p>
+<p>La <strong>società di consulenza {{ $plugin_title }}</strong>il plugin è stato installato con successo.</p>
 <p>Dettagli dell'istanza:</p>
 <tabella>
     <tbody>
