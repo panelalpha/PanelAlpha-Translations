@@ -1,0 +1,1 @@
+<p>Hébergement <strong>#{{ $server_account_id  }} {{ $server_account_main_domain  }}</strong> en erreur : {{ $exception_message }}</p>
