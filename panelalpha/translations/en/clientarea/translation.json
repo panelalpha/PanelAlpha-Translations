@@ -862,6 +862,7 @@
         "purgeEverything": "Purge Everything",
         "pushToLive": "Push To Live",
         "readMore": "Read More",
+        "refresh.thumbnail": "Refresh Thumbnail",
         "register": "Register",
         "remove": "Remove",
         "restore": "Restore",
@@ -1017,6 +1018,7 @@
         "instance": {
             "tab.monitoring.warning": "Monitoring does not work properly. Please contact with support.",
             "tab.backup.recent": "Backup has been recently created.",
+            "tab.backup.scheduled": "An initial backup is scheduled.",
             "tab.backup.empty": "Your website has no recently created backups.",
             "tab.backup.disabled": "Automatic backups are disabled. Enable automatic backups to protect your data.",
             "tab.plugins.update_one": "{{count}} plugin has an update available.",
