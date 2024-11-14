@@ -593,7 +593,7 @@
             "activeDevices.description": "Es wurden keine aktiven Geräte für diese Instanz gefunden. Wenn sich ein Benutzer von einem beliebigen Gerät aus anmeldet, wird er automatisch in der Liste angezeigt."
         },
         "status": {
-            "active": "Aktiv",
+            "active": "Aktivieren",
             "activated": "Aktiviert",
             "disabled": "Deaktiviert",
             "enabled": "Aktiviert",
