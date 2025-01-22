@@ -1,15 +1,20 @@
 <?php
 
+use App\Notifications\Admin\Connection\ServerAccountConnectionError;
+use App\Notifications\Admin\DiagnosticMode\DiagnosticModeEnabled;
 use App\Notifications\Admin\DnsZone\CreateADnsRecordFailed;
 use App\Notifications\Admin\DnsZone\DnsRecordsCreateFailed;
 use App\Notifications\Admin\Instance\ImportByUserFailed;
 use App\Notifications\Admin\Instance\ImportByUserFinished;
 use App\Notifications\Admin\Instance\ManualImportInstanceFailed;
 use App\Notifications\Admin\Instance\ManualImportInstanceFinished;
+use App\Notifications\Admin\Instance\RestoreInstanceFailed;
+use App\Notifications\Admin\Instance\RestoreInstanceFinished;
 use App\Notifications\Admin\InstanceTemplate\InstanceTemplateCreateFailed;
 use App\Notifications\Admin\InstanceTemplate\InstanceTemplateCreateFinished;
 use App\Notifications\Admin\EmailDomain\EmailDomainCreateFailed;
 use App\Notifications\Admin\EmailDomain\EmailDomainExists;
+use App\Notifications\Admin\Plan\PlanConfigurationError;
 use App\Notifications\Admin\ReportProvider\SyncReportProvidersFailed;
 use App\Notifications\Admin\ReportProvider\SyncReportProvidersFinished;
 use App\Notifications\Admin\SslOrder\DnsPropagationExceeded;
@@ -318,6 +323,25 @@ return [
     ManualImportInstanceFinished::class => [
         "name" => "Manual Import Instance Finished",
         "description" => 'Notification is informing the recipient that the instance manual import by admin has successful.'
-    ]
+    ],
+    ServerAccountConnectionError::class => [
+        "name" => "Hosting Account Connection Error",
+        "description" => 'Notification is informing the recipient that connection to hosting account has failed.'
+    ],
+    RestoreInstanceFailed::class => [
+        "name" => "Instance Restore Failed",
+        "description" => 'The notification is informing the recipient that an attempt to restore the instance from backup has failed. The notification may include details on why the restore failed and what steps should be taken to resolve the issue.'
+    ],
+    RestoreInstanceFinished::class => [
+        "name" => "Instance Restore Finished",
+        "description" => 'The notification is informing the recipient that the instance has been successfully restored from backup. The notification may include details on which backup was restored and any further steps that should be taken.'
+    ],
+    PlanConfigurationError::class => [
+        "name" => "Plan Configuration Error",
+        "description" => 'Notification is informing the recipient that the plan configuration is misconfigured.'
+    ],
+    DiagnosticModeEnabled::class => [
+        "name" => "Diagnostic Mode Enabled",
+        "description" => 'The notification is informing the recipient that the diagnostic mode has been activated. This mode allows for enhanced logging and monitoring, which can assist in troubleshooting and identifying issues within the system.'
+    ],
 ];
-

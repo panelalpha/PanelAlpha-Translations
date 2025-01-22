@@ -1,6 +1,7 @@
 <?php
 
 use App\Jobs\Admin\ManualImportInstance;
+use App\Jobs\Admin\RestoreBackup as AdminRestoreBackup;
 use App\Jobs\Admin\SyncReportProviders;
 use App\Jobs\System\AdminSendAvailableUpdateNotification;
 use App\Jobs\System\DeleteRedundantBackups;
@@ -11,6 +12,7 @@ use App\Jobs\System\CreateAutomaticBackup;
 use App\Jobs\System\CacheInstancePageSpeed;
 use App\Jobs\System\CacheInstanceDetails;
 use App\Jobs\System\PostStagingSteps;
+use App\Jobs\System\SyncBackupsWithRemoteContainer;
 use App\Jobs\System\SyncInstanceSiteName;
 use App\Jobs\System\UserSendAvailableUpdateNotification;
 use App\Jobs\User\ImportInstance;
@@ -25,6 +27,7 @@ use App\Jobs\Admin\ForceUpdatePlugin;
 use App\Jobs\Admin\InstallPackage;
 use App\Jobs\User\CreateBackup;
 use App\Jobs\User\DeleteBackup;
+use App\Jobs\User\PushToStaging;
 use App\Jobs\User\RestoreBackup;
 use App\Jobs\User\CreateStaging;
 use App\Jobs\User\PushToLive;
@@ -69,6 +72,9 @@ return [
     UserSendAvailableUpdateNotification::class => "User Notification Of Available Updates",
     AdminSendAvailableUpdateNotification::class => "Admin Notification Of Available Updates",
     ManualImportInstance::class => "Manual Import Instance",
-    DeleteRedundantBackups::class => "Delete Redundant Backups"
+    DeleteRedundantBackups::class => "Delete Redundant Backups",
+    AdminRestoreBackup::class => "Restore Instance From Backup",
+    SyncBackupsWithRemoteContainer::class => "Sync Backups With Backup Container",
+    PushToStaging::class => "Push To Staging",
 ];
 
