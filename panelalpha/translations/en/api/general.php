@@ -1,6 +1,10 @@
 <?php
 
 return [
+    "instance" => "instance",
+    "hosting_account" => "hosting account",
+    "service" => "service",
+    "self_signed" => "Self Signed",
     "import_steps" => [
         "downloading-files" => "Downloading files",
         "downloading-database" => "Downloading database",
@@ -17,6 +21,8 @@ return [
         "removing-ftp-account" => "Removing FTP account",
         "creating-ftp-account" => "Creating FTP account",
         "creating-temporary-directory" => "Creating temporary directory",
+        "creating-site" => "Creating site",
+        "checking-domain" => "Checking domain",
     ],
     "health-checks" => [
         "server" => [
