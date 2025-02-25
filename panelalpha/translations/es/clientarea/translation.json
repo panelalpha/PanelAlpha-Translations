@@ -27,7 +27,10 @@
         "developer-settings": "{{- app_name}}: {{instance_name}} - Configuración del desarrollador",
         "forgot-password": "{{- app_name}} - Contraseña olvidada",
         "reset-password": "{{- app_name}} - Restablecer contraseña",
-        "my-account": "{{- app_name}} - Mi cuenta"
+        "my-account": "{{- app_name}} - Mi cuenta",
+        "sftp": "{{- app_name}} - Cuentas SSH/SFTP",
+        "file-manager": "{{- app_name}} - Gestor de archivos",
+        "page-not-found": "{{- app_name}} - Página no encontrada"
     },
     "general": {
         "adventurer": "Aventurero",
@@ -85,8 +88,19 @@
         "time": {
             "h": "h",
             "min": "min",
-            "sec": "sec"
-        }
+            "sec": "sec",
+            "minute_one": "{{count}} minuto",
+            "minute_other": "{{count}} minutos",
+            "hour_one": "{{cuenta}} hora",
+            "hour_other": "{{count}} horas",
+            "day_one": "{{count}} día",
+            "day_other": "{{count}} días"
+        },
+        "nodata": "Sin datos",
+        "backup_one": "copia de seguridad",
+        "backup_other": "copias de seguridad",
+        "ssh": "SSH",
+        "sftp": "SFTP"
     },
     "heading": {
         "notFoundPage.title": "Página no encontrada",
@@ -358,7 +372,40 @@
             "changeSslModal.serverCertificate": "Certificado SSL instalado en el servidor",
             "changeSslModal.detectedCertificate": "Certificado SSL detectado",
             "disableSsl.modal.title": "¿Desactivar SSL?",
-            "disableSsl.modal.message": "¿Está seguro de que desea desactivar SSL para {title} instancia?"
+            "disableSsl.modal.message": "¿Está seguro de que desea desactivar SSL para {title} instancia?",
+            "pushToStaging.title": "Empujar a la puesta en escena",
+            "pushToLoadingState.messageTitle": "Obtención de los últimos cambios en la base de datos",
+            "pushToLoadingState.message": "Este proceso puede tardar unos minutos. Si cierra este mensaje, seguirá ejecutándose en segundo plano.",
+            "dnsTooltip.desc": "El DNS no se resuelve correctamente. Asegúrese de que está configurado correctamente.",
+            "dnsTooltip.button": "Fix it now",
+            "modal.createStaging.calculatingUsage": "Calcular el uso del disco",
+            "modal.createStaging.wordpressUsage": "Uso del disco de WordPress",
+            "modal.createStaging.uploadsDirUsage": "Carga dir uso",
+            "modal.createStaging.availableDiskSpace": "Available disk space",
+            "modal.createStaging.unlimited": "Unlimited",
+            "modal.setDomain.config.map": "Map your domain.",
+            "modal.setDomain.config.tab.cnameRecords.title": "Set CNAME Records",
+            "modal.setDomain.config.tab.cname.title": "Configuración de CNAME",
+            "modal.setDomain.config.tab.cname.verification_failed": "Ha fallado la verificación de la configuración de CNAME para su dominio.",
+            "modal.setDomain.config.tab.cname.detected_address": "Dirección CNAME detectada",
+            "modal.previewSite.title": "Preview Site",
+            "modal.previewSite.message": "Your site can be previewed on a temporary URL before you move to the real domain.",
+            "modal.previewSite.field": "Your Site Temporary URL:",
+            "backups.usage.backups_number.max.suffix_one": "Copia de seguridad",
+            "backups.usage.backups_number.max.suffix_other": "Backups",
+            "backups.usage.backups_number.tooltip": "Número de copias de seguridad creadas del máximo permitido.",
+            "backups.usage.backups_size.total.suffix": "GB",
+            "backups.usage.backups_size.max.suffix": "GB",
+            "backups.usage.backups_size.tooltip": "Cantidad de almacenamiento utilizado del total disponible para copias de seguridad.",
+            "backups.usage.database_manual_backups_number.max.suffix_one": "Manual Database Backup",
+            "backups.usage.database_manual_backups_number.max.suffix_other": "Manual Database Backups",
+            "backups.usage.database_manual_backups_number.tooltip": "Number of manual database backups created out of the maximum allowed",
+            "backups.usage.directory_manual_backups_number.max.suffix_one": "Manual Directory Backup",
+            "backups.usage.directory_manual_backups_number.max.suffix_other": "Manual Directory Backups",
+            "backups.usage.directory_manual_backups_number.tooltip": "Number of manual directory backups created out of the maximum allowed.",
+            "plugin.deactivate.message": "¿Está seguro de que desea desactivar este plugin?",
+            "advanced.developer.controlpanel.title": "Panel de control",
+            "advanced.developer.controlpanel.subtitle": "Utilice el botón para acceder directamente al panel de control."
         },
         "hosting": {
             "sidebar.manage.title": "Gestione",
@@ -440,7 +487,32 @@
             "emailAddress.modal.show.smtpPort": " Puerto SMTP",
             "emailForwarders.title": "Remitentes de correo electrónico",
             "emailForwarders.modal.add.title": "Añadir reenvío de correo electrónico",
-            "emailForwarders.modal.delete.title": "Eliminar el reenviador de correo electrónico"
+            "emailForwarders.modal.delete.title": "Eliminar el reenviador de correo electrónico",
+            "summary.nameserverCard.cname.headline": "CNAME Setup",
+            "summary.nameserverCard.cname.text": "Ha fallado la verificación de la configuración CNAME para algunos de sus dominios.",
+            "summary.planCard.usage.sftp": "Cuentas SSH/SFTP",
+            "summary.planCard.usage.aliases": "Alias",
+            "domains.domain.alias": "Alias",
+            "domains.domain.primary": "Primary Domain",
+            "domains.modal.setAsPrimary.title": "Establecer como dominio primario",
+            "domains.modal.setAsPrimary.message": "Are you sure you want to change your primary domain to <strong class='font-weight-bold'>{{ domain }}</strong>? Please note that this action will cause all other domains to redirect to this domain.",
+            "sftp.title": "Cuentas SSH/SFTP",
+            "sftp.modal.add.title": "Añadir nueva cuenta SSH/SFTP",
+            "sftp.modal.show.title": "Datos de acceso a la cuenta: {{- user}}",
+            "sftp.modal.show.info.username": "Nombre de usuario SSH/SFTP",
+            "sftp.modal.show.info.host": "Host SSH/SFTP",
+            "sftp.modal.show.info.port": "Puerto SSH/SFTP",
+            "sftp.modal.update.title": "Editar cuenta SSH/SFTP",
+            "sftp.modal.update.info": "Usuario",
+            "sftp.modal.delete.title": "Eliminar cuenta SSH/SFTP",
+            "sftp.modal.disconnect.title": "Desconectar todo",
+            "sftp.modal.disconnect.message": "¿Está seguro de desconectar a todos los usuarios SSH/SFTP?",
+            "sftp.modal.manageSSH.title": "Gestionar el acceso",
+            "sftp.modal.manageSSH.message": "Elija el tipo de acceso remoto a su instancia.",
+            "sftp.modal.manageSSH.field": "Tipo de acceso",
+            "dns.zone.title": "Zona DNS",
+            "emailDomain.title": "Correo electrónico Dominio",
+            "fileManager.title": "Gestor de archivos"
         },
         "onboarding": {
             "selectType.title": "Añadir nueva instancia",
@@ -496,7 +568,15 @@
             "limit.info.order.service": "Por favor, solicite un nuevo plan para proceder.",
             "noPlan.title": "No hay planes activos",
             "noPlan.info": "No tiene planes activos en su cuenta, por lo que no puede añadir nuevas instancias.",
-            "newSite": "Nuevo sitio"
+            "newSite": "Nuevo sitio",
+            "installation.info.setDnsRecords": "WordPress ha sido instalado en {domain}. Para completar la configuración, establezca los siguientes registros DNS:",
+            "newInstance.location.subtitle": "Elija la ubicación",
+            "newInstance.location.label": "Ubicación",
+            "newInstance.location.info": "You can choose the location of your site from the following options:",
+            "transferDomain.title": "Transferencia de dominio",
+            "transferDomain.subtitle": "Dominio {domain} ya ha sido utilizado en nuestro sistema.",
+            "transferDomain.message.possible": "Si desea transferirlo a nuestro sistema, configure el siguiente registro {recordType} en {domain} e inicie el proceso haciendo clic en el botón Transferir ahora que aparece a continuación.",
+            "transferDomain.message.impossible": "No puedes utilizar este dominio."
         },
         "navbar": {
             "tab.myInstances": "Mis instancias",
@@ -589,7 +669,9 @@
             "monitoring.title": "Aún no hay datos para mostrar",
             "monitoring.description": "Nuestro sistema actualiza las estadísticas una vez al día y aún no hemos recogido ninguna información de su sitio web. Por favor, compruébelo mañana.",
             "activeDevices.title": "No se han encontrado dispositivos activos",
-            "activeDevices.description": "No se han encontrado dispositivos activos para esta instancia. Cuando un usuario se conecte desde cualquier dispositivo, aparecerá automáticamente en la lista."
+            "activeDevices.description": "No se han encontrado dispositivos activos para esta instancia. Cuando un usuario se conecte desde cualquier dispositivo, aparecerá automáticamente en la lista.",
+            "sftp.title": "No Account Created",
+            "sftp.description": "No hay cuentas SSH/SFTP disponibles."
         },
         "status": {
             "active": "Activar",
@@ -627,8 +709,11 @@
             "update.inProgress": "La actualización está en curso.",
             "importing.failed": "La importación de la instancia ha fallado.",
             "importing.site": "Importar su sitio.",
-            "importing.wait": "Puede tardar un poco."
-        }
+            "importing.wait": "Puede tardar un poco.",
+            "instanceInstall.failed": "Fallo en la instalación de la instancia."
+        },
+        "instanceInDiagnosticMode": "Actualmente no es posible gestionar el sitio (Modo Diagnóstico). Póngase en contacto con el servicio de asistencia para obtener más información.",
+        "hostingAccountInDiagnosticMode": "Actualmente no es posible gestionar el alojamiento (Modo Diagnóstico). Póngase en contacto con el servicio de asistencia para obtener más información."
     },
     "notification": {
         "account": {
@@ -711,7 +796,8 @@
             "backup.restore.success": "Se está restaurando la copia de seguridad",
             "installation.created": "Instancia creada. Instalación en curso.",
             "installation.inProgress": "Instalación en curso.",
-            "copyInstance.completed": "Instancia de copia en curso"
+            "copyInstance.completed": "Instancia de copia en curso",
+            "modal.pushToStaging.success": "Empuje a la puesta en escena en curso"
         },
         "hosting": {
             "domain.create.success": "Se ha añadido {{type}}.",
@@ -738,14 +824,26 @@
             "emailAddress.update.success": "Se ha actualizado la cuenta de correo electrónico.",
             "emailAddress.delete.success": "Se ha eliminado la cuenta de correo electrónico.",
             "emailForwarders.add.success": "Se ha añadido el reenvío de correo electrónico.",
-            "emailForwarders.delete.success": "Se ha eliminado el reenviador de correo electrónico."
+            "emailForwarders.delete.success": "Se ha eliminado el reenviador de correo electrónico.",
+            "domain.setAsPrimaryDomain.success": "{{dominio}} se ha establecido como dominio principal.",
+            "sftp.add.success": "Se ha añadido la cuenta SSH/SFTP.",
+            "sftp.update.success": "Se ha actualizado la cuenta SSH/SFTP",
+            "sftp.delete.success": "La cuenta SSH/SFTP ha sido eliminada.",
+            "sftp.disconnect.success": "Se han desconectado las conexiones SSH/SFTP.",
+            "sftp.setAccessType.success": "Se ha establecido un nuevo tipo de acceso a la instancia."
         },
         "emptyFields": "Rellene todos los campos.",
         "connectionFailed": "Conexión fallida.",
         "noService": "No tienes un servicio activo en tu cuenta",
         "limitReached": "Se ha alcanzado el límite de instancias de su servicio.",
         "wordpress.notDetected": "No se ha podido detectar WordPress en esta URL.",
-        "style.update.success": "Tus estilos se han personalizado."
+        "style.update.success": "Tus estilos se han personalizado.",
+        "topBar.subInstance.newStaging": "Create Staging Instance",
+        "topBar.staging.create.inProgress": "Puesta en escena ya creada. No se puede asignar más de un entorno de puesta en escena.",
+        "topBar.staging.create.clone": "La clonación está en curso.",
+        "topBar.staging.create.error.plain": "Se ha producido un error inesperado, {highlighted}.",
+        "topBar.staging.create.error.highlighted": "La instalación de la puesta en escena ha fallado.",
+        "topBar.update": "No hay actualizaciones disponibles."
     },
     "button": {
         "activate": "Activar",
@@ -909,7 +1007,32 @@
         "why": "¿Por qué?",
         "wpAdmin": "WP Admin",
         "verify": "Verifique",
-        "visit": "Visitar el sitio web"
+        "visit": "Visitar el sitio web",
+        "actions": "Acciones",
+        "backup.convertToFull": "Convertir a copia de seguridad completa",
+        "disconnect.default": "Desconecte",
+        "disconnect.all": "Desconectar todo",
+        "enable.default": "Enable",
+        "enable.defensiveMode": "Activar el modo defensivo",
+        "login.controlPanel": "Acceder al panel de control",
+        "manageSshAccess": "Gestionar el acceso SSH/SFTP",
+        "previewSite": "Vista previa del sitio",
+        "pushToStaging": "Empujar a la puesta en escena",
+        "refresh.thumbnail": "Actualizar miniatura",
+        "retry": "Retry",
+        "retry.default": "Reintentar",
+        "retry.ssl": "Reintentar el aprovisionamiento de certificados SSL",
+        "sftp.edit": "Editar cuenta SSH/SFTP",
+        "sftp.delete": "Eliminar cuenta SSH/SFTP",
+        "sftp.show": "Mostrar detalles de acceso",
+        "temporaryUrl.get": "Obtener URL temporal",
+        "visitWebsite": "Visitar el sitio web",
+        "visitSite": "Visitar el sitio",
+        "copyUrl": "Copiar URL",
+        "setAsPrimaryDomain": "Establecer como dominio primario",
+        "setAccessMethod": "Establecer tipo de acceso",
+        "sftp.add": "Añadir cuenta",
+        "transferNow": "Transferir ahora"
     },
     "tooltip": {
         "create_backup.backup_directory": "Directorio de copia de seguridad.",
@@ -1050,7 +1173,8 @@
             "sharedAccess.role.viewAndSso": "'Permitir mostrar los detalles del sitio web y utilizar la opción \"WP Admin\" para iniciar sesión en WordPress como administrador.",
             "sharedAccess.role.developer": "Proporcionar acceso a todas las opciones de gestión de su sitio web sin acceder a la gestión de la instancia de alojamiento.",
             "sharedAccess.role.fullAccess": "Proporcionar acceso a todas las opciones de gestión para su sitio web, así como la instancia de alojamiento relacionados. Tenga en cuenta que si esta instancia de alojamiento viene con otros sitios también, tendrán acceso a ellos también.",
-            "sharedAccess.role.custom": "Personalizar el acceso a nivel de características."
+            "sharedAccess.role.custom": "Personalizar el acceso a nivel de características.",
+            "tab.backup.scheduled": "Se ha programado la copia de seguridad."
         },
         "hosting": {
             "service.suspended": "Su servicio ha sido suspendido.",
@@ -1067,8 +1191,24 @@
             "dns.status.pending.list.first": "El sistema actualizará el estado en cuanto el certificado se haya instalado correctamente.",
             "dns.status.pending.list.second": "Asegúrese de que durante el proceso las DNS del dominio apuntan correctamente a nuestros servidores.",
             "dns.status.pending.list.third": "Si el certificado no se instala automáticamente en 24 horas, póngase en contacto con el servicio de asistencia.",
-            "ftp.usageNotSupported": "El servidor no admite el uso y la cuota."
-        }
+            "ftp.usageNotSupported": "El servidor no admite el uso y la cuota.",
+            "summary.cname.notPointed": "Ha fallado la verificación de la configuración CNAME para algunos de sus dominios.",
+            "summary.cname.notResolve": "No se puede resolver el registro CNAME de algunos de sus dominios",
+            "sftp.accessMethod": "Tipo de acceso remoto: SSH o SFTP."
+        },
+        "backup_data.number_of_backups": "Number of backups created out of the maximum allowed.",
+        "backup_data.amount_of_storage": "Amount of storage used out of the total available for backups.",
+        "create_staging.skip_uploads_dir": "wp-content/uploads directory will not be copied.",
+        "add_sftp_account.username": "Enter the SSH/SFTP account username.",
+        "add_sftp_account.password": "Introduce la contraseña.",
+        "add_sftp_account.type": "Seleccione Método de autenticación.",
+        "add_sftp_account.public_key": "Por motivos de seguridad, sólo se permiten los siguientes tipos y longitudes de clave: * claves ssh-rsa de 2048 a 16384 bits * claves ecdsa-sha2-nistp256 de 256 bits * claves ssh-ed25519 de 256 bits",
+        "edit_sftp_account.public_key": "Por motivos de seguridad, sólo se permiten los siguientes tipos y longitudes de clave: * claves ssh-rsa de 2048 a 16384 bits * claves ecdsa-sha2-nistp256 de 256 bits * claves ssh-ed25519 de 256 bits",
+        "onboarding.newInstance.onlyLatestVersion": "Sólo es compatible con la última versión de WordPress.",
+        "changeSslModal.disableProxy": "Ha proxyado un registro DNS A. Para cambiar el certificado SSL, debe desactivar el proxy en su registro DNS A.",
+        "changeSslModal.cannotChangeCertificate": "Su certificado SSL se ha generado automáticamente porque su dominio es proxy. No puede cambiar el certificado SSL.",
+        "edit_sftp_account.password": "Introduce la contraseña.",
+        "changeSslModal.sslCertificate": "Elija el certificado SSL que se configurará en el servidor. Nota: El certificado que configure puede ser diferente del detectado."
     },
     "form": {
         "label": {
@@ -1169,7 +1309,13 @@
             "unlimitedQuota": "Cuota ilimitada",
             "value": "Valor",
             "weight": "Peso",
-            "version": "Versión"
+            "version": "Versión",
+            "skip_uploads_dir": "Saltar directorio de cargas",
+            "location": "Ubicación",
+            "set_location": "Establecer ubicación",
+            "geo_affinity": "Elija la ubicación",
+            "public_key": "Clave pública",
+            "sslCertificate": "Certificado SSL"
         },
         "placeholder": {
             "cabundle": "Introduzca el paquete CA",
@@ -1401,7 +1547,8 @@
             "wordpressConfig": "Sí, entiendo y quiero eliminar esta configuración.",
             "user": "Sí, entiendo y quiero eliminar este usuario.",
             "theme_one": "Sí, entiendo y quiero eliminar este tema.",
-            "theme_other": "Sí, entiendo y quiero eliminar estos temas."
+            "theme_other": "Sí, entiendo y quiero eliminar estos temas.",
+            "sftp": "Sí, entiendo y quiero eliminar esta cuenta SSH/SFTP."
         }
     },
     "table": {
@@ -1595,7 +1742,12 @@
             "user.account.password_update": "Contraseña actualizada",
             "user.two_factor.confirm": "Autenticación de dos factores activada",
             "user.two_factor.disable": "Autenticación de dos factores desactivada",
-            "user.two_factor.create_recovery_codes": "Código de recuperación de dos factores creado"
+            "user.two_factor.create_recovery_codes": "Código de recuperación de dos factores creado",
+            "user.instance.refresh_thumbnail": "Miniatura actualizada",
+            "user.instance.wordpress.copy": "Instancia copiada",
+            "user.hosting.sftp_account.delete": "Cuenta SSH/SFTP eliminada",
+            "user.hosting.sftp_account.update": "Cuenta SSH/SFTP actualizada",
+            "user.hosting.sftp_account.create": "Cuenta SSH/SFTP creada"
         },
         "suffix": {
             "toStatus": "a {{status}}",
@@ -1643,7 +1795,11 @@
             "hosting.manage_mysql": "Gestionar bases de datos MySQL",
             "hosting.manage_cron": "Gestión de Cron Jobs",
             "hosting.phpmyadmin_sso": "PHPMyAdmin SSO",
-            "general.manage_shared_access": "Gestionar el acceso compartido"
+            "general.manage_shared_access": "Gestionar el acceso compartido",
+            "general.refresh_thumbnail": "Actualizar miniatura",
+            "hosting.manage_file_manager": "Gestión de archivos",
+            "hosting.manage_sftp": "Gestionar cuentas SSH/SFTP",
+            "hosting.control_panel_sso": "Panel de control SSO"
         }
     },
     "languages": {
