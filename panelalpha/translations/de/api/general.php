@@ -1,46 +1,52 @@
 <?php
 
 return [
-    "import_steps" => [
-        "downloading-files" => "Downloading files",
-        "downloading-database" => "Downloading database",
-        "creating-hosting-account" => "Creating hosting account",
-        "creating-domain" => "Creating domain",
-        "creating-database" => "Creating database",
-        "uploading-files" => "Uploading files",
-        "uploading-database" => "Uploading database",
-        'extracting-files' => 'Extracting files',
-        'extracting-database' => 'Extracting database',
-        'importing-database' => 'Importing database',
-        "configuring-wordpress" => "Configuring WordPress",
-        "cleaning-files" => "Cleaning files",
-        "removing-ftp-account" => "Removing FTP account",
-        "creating-ftp-account" => "Creating FTP account",
-        "creating-temporary-directory" => "Creating temporary directory",
+    'instance' => 'Instanz',
+    'hosting_account' => 'Hosting-Account',
+    'service' => 'Dienstleistung',
+    'self_signed' => 'Selbst unterschrieben',
+    'import_steps' => [
+        'creating-site' => 'Website erstellen',
+        'checking-domain' => 'Prüfen des Bereichs',
+        'downloading-files' => 'Herunterladen von Dateien',
+        'downloading-database' => 'Herunterladen der Datenbank',
+        'creating-hosting-account' => 'Hosting-Konto erstellen',
+        'creating-domain' => 'Domäne erstellen',
+        'creating-database' => 'Datenbank erstellen',
+        'uploading-files' => 'Hochladen von Dateien',
+        'uploading-database' => 'Hochladen der Datenbank',
+        'extracting-files' => 'Extrahieren von Dateien',
+        'extracting-database' => 'Datenbank extrahieren',
+        'importing-database' => 'Datenbank importieren',
+        'configuring-wordpress' => 'WordPress konfigurieren',
+        'cleaning-files' => 'Dateien reinigen',
+        'removing-ftp-account' => 'FTP-Konto entfernen',
+        'creating-ftp-account' => 'FTP-Konto erstellen',
+        'creating-temporary-directory' => 'Temporäres Verzeichnis erstellen',
     ],
-    "health-checks" => [
-        "server" => [
-            "ping" => "Server Test Connection",
-            "api" => "Server Test API Connection",
-            "wp_cli" => "Server Test WP CLI Connection",
+    'health-checks' => [
+        'server' => [
+            'ping' => 'Server Testverbindung',
+            'api' => 'Server-Test-API-Verbindung',
+            'wp_cli' => 'Server Test WP CLI Verbindung',
         ],
-        "hosting_account" => [
-            "exists" => "Hosting Server Exists",
-            "local_data" => "Hosting Server Checking Correct Local Data",
-            "ping" => "Hosting Server Test Connection",
-            "ip_addresses" => "Hosting Server IP Addresses",
+        'hosting_account' => [
+            'exists' => 'Hosting-Server vorhanden',
+            'local_data' => 'Hosting-Server Überprüfung korrekter lokaler Daten',
+            'ping' => 'Hosting Server Testverbindung',
+            'ip_addresses' => 'IP-Adressen der Hosting-Server',
         ],
-        "domain" => [
-            "exists" => "Domain Exists",
-            "local_data" => "Domain Checking Correct Local Data",
-            "ping" => "Domain Test Connection",
-            "ip_addresses" => "Domain IP Addresses",
-            "installed_ssl_cert" => "Domain Installed SSL Certificate",
+        'domain' => [
+            'exists' => 'Bereich existiert',
+            'local_data' => 'Domänenprüfung Korrekte lokale Daten',
+            'ping' => 'Domäne Testverbindung',
+            'ip_addresses' => 'Domänen-IP-Adressen',
+            'installed_ssl_cert' => 'Domain Installiertes SSL-Zertifikat',
         ],
-        "app" => [
-            "wp_exists" => "WordPress Exists",
-            "ping" => "Wordpress Instance Test Connection",
-            "local_data" => "WordPress Checking Correct Local Data",
-        ]
-    ]
+        'app' => [
+            'wp_exists' => 'WordPress existiert',
+            'ping' => 'Wordpress-Instanz Testverbindung',
+            'local_data' => 'WordPress prüft korrekte lokale Daten',
+        ],
+    ],
 ];
