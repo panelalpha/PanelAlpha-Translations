@@ -1,1 +1,1 @@
-DNS Zone for {{ $zone_name }} Create Failed
+Domain DNS Setup {{ $zone_name }} Failed

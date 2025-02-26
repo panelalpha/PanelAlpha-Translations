@@ -1,5 +1,5 @@
 <p>Dear <strong>{{ $admin_name }}</strong>,</p>
-<p>The creation DNS Record A for <strong>{{ $domain }}</strong> failed.</p>
+<p>Subdomain DNS Setup for <strong>{{ $domain }}</strong> failed.</p>
 <p>Message: {{ $exception_message }}</p>
 <p>DNS Zone details:</p>
 <table>

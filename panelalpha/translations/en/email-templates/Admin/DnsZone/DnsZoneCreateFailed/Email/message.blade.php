@@ -1,5 +1,5 @@
 <p>Dear <strong>{{ $admin_name }}</strong>,</p>
-<p>The creation DNS Zone for <strong>{{ $zone_name }}</strong> domain failed.</p>
+<p>Domain DNS Setup for <strong>{{ $zone_name }}</strong> failed.</p>
 <p>Message: {{ $exception_message }}</p>
 <p>DNS Zone details:</p>
 <table>
