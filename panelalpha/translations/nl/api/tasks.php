@@ -1,7 +1,6 @@
 <?php
 
 return [
-    'App\\Jobs\\Admin\\InstallPackage' => 'Install Package: :name',
     'App\\Jobs\\Admin\\ForceUpdatePlugin' => 'Forceer update-plugin: :naam',
     'App\\Jobs\\Admin\\ForceUpdateTheme' => 'Forceer update thema: :naam',
     'App\\Jobs\\System\\ScanPluginsAndThemes' => 'Plugins en thema\'s scannen',
@@ -22,7 +21,6 @@ return [
     'App\\Jobs\\Admin\\SyncReportProviders' => 'Rapportaanbieders synchroniseren',
     'App\\Jobs\\System\\InstanceHealthCheck' => 'Instance gezondheidscontrole',
     'App\\Jobs\\Admin\\ConvertInstanceToTemplate' => 'Instance-sjabloon aanmaken: :name',
-    'App\\Jobs\\System\\UserSendAvailableUpdateNotification' => 'User Notification Of Available Updates',
     'App\\Jobs\\System\\AdminSendAvailableUpdateNotification' => 'Administratieve melding van beschikbare updates',
     'App\\Jobs\\System\\DeleteRedundantBackups' => 'Overtollige back-ups verwijderen',
     'App\\Jobs\\System\\SyncBackupsWithRemoteContainer' => 'Back-ups synchroniseren met Backup Container',
@@ -38,4 +36,6 @@ return [
     'App\\Jobs\\System\\SyncInstanceSiteName' => 'Naam synchronisatie-instantie',
     'App\\Jobs\\Admin\\ManualImportInstance' => 'Handmatig importeren Instantie',
     'App\\Jobs\\Admin\\RestoreBackup' => 'Instance herstellen vanuit back-up',
+    'App\\Jobs\\Admin\\InstallPackage' => 'Pakket installeren: :naam',
+    'App\\Jobs\\System\\UserSendAvailableUpdateNotification' => 'Gebruikersmelding van beschikbare updates',
 ];

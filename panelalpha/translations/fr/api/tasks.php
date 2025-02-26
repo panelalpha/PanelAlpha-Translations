@@ -1,20 +1,14 @@
 <?php
 
 return [
-    'App\\Jobs\\Admin\\InstallPackage' => 'Install Package: :name',
-    'App\\Jobs\\Admin\\ForceUpdatePlugin' => 'Force Update Plugin : :name',
     'App\\Jobs\\Admin\\ForceUpdateTheme' => 'Thème de la mise à jour forcée : :name',
-    'App\\Jobs\\System\\ScanPluginsAndThemes' => 'Scan Plugins And Themes',
-    'App\\Jobs\\System\\ProcessSslOrder' => 'Process SSL Order: :name',
     'App\\Jobs\\System\\RefreshReportData' => 'Actualiser les données du rapport',
     'App\\Jobs\\System\\InstallAndActivatePlugin' => 'Installer le plugin : :name',
     'App\\Jobs\\System\\InstallTheme' => 'Installer le thème : :name',
-    'App\\Jobs\\System\\ImportVisitors' => 'Import Visitors',
     'App\\Jobs\\User\\CreateBackup' => 'Créer une sauvegarde',
     'App\\Jobs\\User\\CreateStaging' => 'Créer une mise en scène',
     'App\\Jobs\\User\\PushToLive' => 'Pousser pour vivre',
     'App\\Jobs\\User\\ImportInstance' => 'Instance d\'importation',
-    'App\\Jobs\\User\\InstallInstance' => 'Create Instance',
     'App\\Jobs\\User\\InstallPlugin' => 'Installer le plugin : :name',
     'App\\Jobs\\User\\UpdateTheme' => 'Mise à jour du thème : :name',
     'App\\Jobs\\User\\UpdateWordpress' => 'Mise à jour de WordPress',
@@ -38,4 +32,10 @@ return [
     'App\\Jobs\\System\\UserSendAvailableUpdateNotification' => 'Notification à l\'utilisateur des mises à jour disponibles',
     'App\\Jobs\\System\\AdminSendAvailableUpdateNotification' => 'Notification administrative des mises à jour disponibles',
     'App\\Jobs\\Admin\\ManualImportInstance' => 'Instance d\'importation manuelle',
+    'App\\Jobs\\Admin\\InstallPackage' => 'Installer le paquet : :name',
+    'App\\Jobs\\Admin\\ForceUpdatePlugin' => 'Force Update Plugin : :name',
+    'App\\Jobs\\System\\ScanPluginsAndThemes' => 'Scanner les plugins et les thèmes',
+    'App\\Jobs\\System\\ProcessSslOrder' => 'Traiter la commande SSL : :name',
+    'App\\Jobs\\System\\ImportVisitors' => 'Importation de visiteurs',
+    'App\\Jobs\\User\\InstallInstance' => 'Créer une instance',
 ];

@@ -138,8 +138,6 @@ return [
     'wordpress_version_not_available' => 'Die WordPress-Version ist nicht verfügbar.',
     'ssh_connect_failed' => 'SSH-Verbindung fehlgeschlagen.',
     'host_is_not_available' => 'Host ist nicht verfügbar.',
-    'private_key_is_not_set' => 'Private key is not set.',
-    'cannot_get_disk_usage' => 'Cannot get disk usage with message: ',
     'email_domain_not_found' => 'E-Mail-Domäne nicht gefunden',
     'server_account_exception_message' => 'Etwas läuft schief. Der Fehler wurde gemeldet. Bitte wenden Sie sich an den Serveradministrator.',
     'without_dns_limit_exceeded' => 'Temporäre URL kann nicht erstellt werden (WithoutDNS-Limit überschritten).',
@@ -156,4 +154,6 @@ return [
     'cannot_create_file' => 'Datei kann nicht erstellt werden.',
     'file_moved' => 'Umgezogen!',
     'upload_error' => 'Beim Hochladen der Datei ist ein Fehler mit der Meldung aufgetreten:',
+    'private_key_is_not_set' => 'Der private Schlüssel ist nicht gesetzt.',
+    'cannot_get_disk_usage' => 'Kann keine Festplattennutzung mit Meldung erhalten:',
 ];

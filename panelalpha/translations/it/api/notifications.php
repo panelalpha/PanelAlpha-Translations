@@ -7,27 +7,27 @@ return [
     ],
     'App\\Notifications\\Admin\\Plugin\\ForceUpdatePluginFinished' => [
         'name' => 'Aggiornamento forzato del plugin terminato',
-        'description' => 'The notification is informing the recipient that an attempt to force an update plugin in the instance has been successfully finished. The notification may include details on the plugin and the related instance and any further steps that should be taken.',
+        'description' => 'La notifica informa il destinatario che il tentativo di forzare un plugin di aggiornamento nell\'istanza è stato portato a termine con successo. La notifica può includere dettagli sul plugin e sull\'istanza correlata ed eventuali ulteriori passi da compiere.',
     ],
     'App\\Notifications\\Admin\\Theme\\ForceUpdateThemeFailed' => [
         'description' => 'La notifica informa il destinatario che il tentativo di forzare un tema di aggiornamento nell\'istanza è fallito. La notifica può includere dettagli sul tema e sull\'istanza correlata ed eventuali ulteriori passi da compiere.',
         'name' => 'Aggiornamento forzato del tema non riuscito',
     ],
     'App\\Notifications\\Admin\\Theme\\ForceUpdateThemeFinished' => [
-        'description' => 'The notification is informing the recipient that an attempt to force an update theme in the instance has been successfully finished. The notification may include details on the theme and the related instance and any further steps that should be taken.',
         'name' => 'Aggiornamento del tema della forza terminato',
+        'description' => 'La notifica informa il destinatario che il tentativo di forzare un tema di aggiornamento nell\'istanza è stato portato a termine con successo. La notifica può includere dettagli sul tema e sull\'istanza correlata ed eventuali ulteriori passi da compiere.',
     ],
     'App\\Notifications\\Admin\\Package\\InstallPackageFailed' => [
         'name' => 'Installazione del pacchetto fallita',
         'description' => 'La notifica informa il destinatario che il tentativo di installare e attivare plugin e temi dai pacchetti assegnati all\'istanza è fallito. La notifica può includere dettagli sull\'istanza in questione ed eventuali ulteriori passi da compiere.',
     ],
     'App\\Notifications\\Admin\\Package\\InstallPackageFinished' => [
-        'description' => 'The notification is informing the recipient that an attempt to install and activate plugins and themes from packages in instance has been successfully finished. The notification may include details on the related instance and any further steps that should be taken.',
         'name' => 'Pacchetto di installazione terminato',
+        'description' => 'La notifica informa il destinatario che il tentativo di installare e attivare plugin e temi dai pacchetti dell\'istanza è stato portato a termine con successo. La notifica può includere dettagli sull\'istanza correlata ed eventuali ulteriori passi da compiere.',
     ],
     'App\\Notifications\\Admin\\Instance\\InstanceInstallationByUserFinished' => [
         'name' => 'Installazione dell\'istanza per utente terminata',
-        'description' => 'The notification is informing the recipient that a new WordPress instance installation by user finished. The notification may include details on who created the instance, the location of the instance and any further steps that should be taken.',
+        'description' => 'La notifica informa il destinatario che l\'installazione di una nuova istanza di WordPress da parte dell\'utente è terminata. La notifica può includere dettagli su chi ha creato l\'istanza, sulla posizione dell\'istanza e su eventuali ulteriori passi da compiere.',
     ],
     'App\\Notifications\\Admin\\Instance\\InstanceInstallationByUserFailed' => [
         'name' => 'Installazione dell\'istanza da parte dell\'utente non riuscita',
@@ -35,7 +35,7 @@ return [
     ],
     'App\\Notifications\\Admin\\Instance\\InstanceDeletedByUser' => [
         'name' => 'Istanza eliminata dall\'utente',
-        'description' => 'The notification is informing the recipient that a WordPress instance has been deleted by a user. The notification may include details on who deleted the instance, the instance name, and any further steps that should be taken.',
+        'description' => 'La notifica informa il destinatario che un\'istanza di WordPress è stata eliminata da un utente. La notifica può includere dettagli su chi ha eliminato l\'istanza, sul nome dell\'istanza e su eventuali ulteriori passi da compiere.',
     ],
     'App\\Notifications\\Admin\\Updates\\ThemeUpdateAvailable' => [
         'name' => 'Aggiornamento del tema disponibile',
@@ -62,16 +62,16 @@ return [
         'name' => 'Servizio non sospeso',
     ],
     'App\\Notifications\\Admin\\DnsZone\\DnsZoneExists' => [
-        'description' => 'The notification is informing the recipient that the DNS zone creation attempt has failed because the DNS zone already exists. The notification may include details about the existing DNS zone, the affected service, and the DNS server involved.',
         'name' => 'La zona DNS esiste',
+        'description' => 'La notifica informa il destinatario che il tentativo di creazione della zona DNS è fallito perché la zona DNS esiste già. La notifica può includere dettagli sulla zona DNS esistente, sul servizio interessato e sul server DNS coinvolto.',
     ],
     'App\\Notifications\\Admin\\DnsZone\\DnsZoneCreateFailed' => [
         'name' => 'Creazione zona DNS fallita',
-        'description' => 'The notification is informing the recipient that the DNS zone creation attempt has failed. The message may provide information on the attempted DNS zone, the service in use, and the server on which the creation failed.',
+        'description' => 'La notifica informa il destinatario che il tentativo di creazione di una zona DNS è fallito. Il messaggio può fornire informazioni sulla zona DNS tentata, sul servizio in uso e sul server su cui la creazione non è riuscita.',
     ],
     'App\\Notifications\\User\\Backup\\CreateFailed' => [
         'name' => 'Creazione del backup non riuscita',
-        'description' => 'The notification is informing the recipient that a backup of their website or system failed to be created. The notification may include details on why the backup failed and what steps should be taken to resolve the issue.',
+        'description' => 'La notifica informa il destinatario che non è stato creato un backup del sito web o del sistema. La notifica può includere dettagli sul motivo del fallimento del backup e sulle misure da adottare per risolvere il problema.',
     ],
     'App\\Notifications\\User\\Backup\\CreateFinished' => [
         'description' => 'La notifica informa il destinatario che è stato creato con successo un backup del suo sito web o del suo sistema. La notifica può includere dettagli su dove è stato salvato il backup e su come accedervi.',
@@ -107,7 +107,7 @@ return [
     ],
     'App\\Notifications\\User\\Plugin\\UpdateFinished' => [
         'name' => 'Installazione del plugin completata',
-        'description' => 'The notification is informing the recipient that a plugin for their WordPress website has been successfully updated. The notification may include details on which plugin was updated and any further steps that should be taken.',
+        'description' => 'La notifica informa il destinatario che un plugin per il suo sito web WordPress è stato aggiornato con successo. La notifica può includere dettagli su quale plugin è stato aggiornato ed eventuali ulteriori passi da compiere.',
     ],
     'App\\Notifications\\User\\Theme\\InstallFailed' => [
         'description' => 'La notifica informa il destinatario che il tentativo di installare un tema per il proprio sito web WordPress è fallito. La notifica può includere dettagli sul motivo del fallimento dell\'installazione e sulle misure da adottare per risolvere il problema.',
@@ -127,31 +127,31 @@ return [
     ],
     'App\\Notifications\\User\\Instance\\InstanceInstallationFailed' => [
         'name' => 'Installazione dell\'istanza fallita',
-        'description' => 'The notification is informing the recipient that an attempt to install a WordPress instance has failed. The notification may include details on why the installation failed and what steps should be taken to resolve the issue.',
+        'description' => 'La notifica informa il destinatario che il tentativo di installare un\'istanza di WordPress è fallito. La notifica può includere dettagli sul motivo del fallimento dell\'installazione e sulle misure da adottare per risolvere il problema.',
     ],
     'App\\Notifications\\User\\Instance\\InstanceInstallationFinished' => [
-        'name' => 'Instance Installation Finished',
         'description' => 'La notifica informa il destinatario che un\'istanza di WordPress è stata installata con successo. La notifica può includere dettagli su dove è possibile accedere all\'istanza e su eventuali ulteriori passi da compiere.',
+        'name' => 'Installazione dell\'istanza terminata',
     ],
     'App\\Notifications\\User\\Instance\\ImportFailed' => [
-        'name' => 'Instance Import Failed',
-        'description' => 'The notification is informing the recipient that an attempt to import a WordPress instance has failed. The notification may include details on why the import failed and what steps should be taken to resolve the issue.',
+        'name' => 'Importazione dell\'istanza non riuscita',
+        'description' => 'La notifica informa il destinatario che il tentativo di importare un\'istanza di WordPress è fallito. La notifica può includere dettagli sul motivo del fallimento dell\'importazione e sulle misure da adottare per risolvere il problema.',
     ],
     'App\\Notifications\\User\\Instance\\ImportFinished' => [
-        'name' => 'Instance Import Finished',
-        'description' => 'The notification is informing the recipient that a WordPress instance has been successfully imported. The notification may include details on where the instance can be accessed and any further steps that should be taken.',
+        'name' => 'Importazione dell\'istanza terminata',
+        'description' => 'La notifica informa il destinatario che un\'istanza di WordPress è stata importata con successo. La notifica può includere dettagli su dove è possibile accedere all\'istanza e su eventuali ulteriori passi da compiere.',
     ],
     'App\\Notifications\\User\\Instance\\InstanceInvitationReceived' => [
         'name' => 'Istanza Invito ricevuto',
-        'description' => 'The notification is informing the recipient that they have received an invitation to manage a specific instance. The notification may include details on who sent the invitation, the instance being managed and the actions that can be performed on the instance.',
+        'description' => 'La notifica informa il destinatario che ha ricevuto un invito a gestire un\'istanza specifica. La notifica può includere dettagli su chi ha inviato l\'invito, sull\'istanza da gestire e sulle azioni che possono essere eseguite sull\'istanza.',
     ],
     'App\\Notifications\\User\\System\\NewDeviceLogin' => [
         'name' => 'Accesso da un nuovo dispositivo',
-        'description' => 'Notification is an alert that is generated when a new device or new browser or new ip address, sign in to the website. The notification typically includes information about the device, such as its IP address, and the date and time of the connection.',
+        'description' => 'La notifica è un avviso che viene generato quando un nuovo dispositivo o un nuovo browser o un nuovo indirizzo IP si connette al sito web. La notifica include tipicamente informazioni sul dispositivo, come l\'indirizzo IP e la data e l\'ora della connessione.',
     ],
     'App\\Notifications\\User\\Instance\\PushToLiveFailed' => [
         'name' => 'La spinta a vivere è fallita',
-        'description' => 'The notification is informing the recipient that an attempt to push the changes made on the staging instance to the live version of the website has failed. The notification may include details on why the push failed and what steps should be taken to resolve the issue.',
+        'description' => 'La notifica informa il destinatario che il tentativo di eseguire il push delle modifiche apportate sull\'istanza di staging alla versione live del sito web è fallito. La notifica può includere dettagli sul motivo del fallimento del push e sulle misure da adottare per risolvere il problema.',
     ],
     'App\\Notifications\\User\\Instance\\PushToLiveFinished' => [
         'description' => 'La notifica informa il destinatario che le modifiche apportate all\'istanza di staging sono state trasferite con successo alla versione live del sito web o del sistema. La notifica può includere dettagli sulle modifiche apportate ed eventuali ulteriori passi da compiere.',
@@ -170,56 +170,56 @@ return [
         'description' => 'La notifica informa il destinatario che è disponibile un nuovo aggiornamento per un tema che sta utilizzando sul proprio sito web WordPress. L\'aggiornamento include correzioni di bug e nuove funzioni che miglioreranno le prestazioni e le funzionalità complessive del tema.',
     ],
     'App\\Notifications\\User\\Updates\\WordpressUpdateAvailable' => [
-        'name' => 'WordPress Update Available',
         'description' => 'La notifica informa il destinatario che è disponibile un nuovo aggiornamento per il suo sito web WordPress. L\'aggiornamento include importanti correzioni di sicurezza e nuove funzioni che miglioreranno le prestazioni e le funzionalità complessive del sito web.',
+        'name' => 'Disponibile l\'aggiornamento di WordPress',
     ],
     'App\\Notifications\\Admin\\InstanceTemplate\\InstanceTemplateCreateFailed' => [
         'name' => 'Creazione modello di istanza non riuscita',
-        'description' => 'Notification is informing the recipient that the instance template is not created.',
+        'description' => 'La notifica informa il destinatario che il modello di istanza non è stato creato.',
     ],
     'App\\Notifications\\Admin\\InstanceTemplate\\InstanceTemplateCreateFinished' => [
         'name' => 'Creazione del modello di istanza terminata',
-        'description' => 'Notification is informing the recipient that the instance template has been successfully created.',
+        'description' => 'La notifica informa il destinatario che il modello di istanza è stato creato con successo.',
     ],
     'App\\Notifications\\Admin\\EmailDomain\\EmailDomainCreateFailed' => [
         'name' => 'Creazione dominio e-mail non riuscita',
-        'description' => 'Notification is informing the recipient that the creation of email domain has failed.',
+        'description' => 'La notifica informa il destinatario che la creazione del dominio e-mail non è riuscita.',
     ],
     'App\\Notifications\\Admin\\EmailDomain\\EmailDomainExists' => [
         'name' => 'Il dominio e-mail esiste',
         'description' => 'La notifica informa il destinatario che il dominio e-mail esiste già sul server e-mail.',
     ],
     'App\\Notifications\\Admin\\ReportProvider\\SyncReportProvidersFailed' => [
-        'name' => 'Sync Report Providers Failed',
         'description' => 'Una notifica informa il destinatario che la sincronizzazione dei fornitori di report non è riuscita. La notifica può contenere informazioni sull\'istanza e sul messaggio di errore.',
+        'name' => 'Sincronizzazione dei fornitori di report fallita',
     ],
     'App\\Notifications\\Admin\\ReportProvider\\SyncReportProvidersFinished' => [
-        'name' => 'Sync Report Providers Completed',
-        'description' => 'The notification informs the recipient that the synchronisation of report providers has been completed The notification may contain instance information.',
+        'name' => 'Sincronizzazione dei fornitori di rapporti completata',
+        'description' => 'La notifica informa il destinatario che la sincronizzazione dei fornitori di report è stata completata La notifica può contenere informazioni sull\'istanza.',
     ],
     'App\\Notifications\\Admin\\DnsZone\\DnsRecordsCreateFailed' => [
-        'name' => 'Creation DNS Records Failed',
-        'description' => 'The notification informs the recipient that the listed dns records have not been created for the zone. The notification may contain information about dns records or dns zone.',
+        'name' => 'Creazione record DNS fallita',
+        'description' => 'La notifica informa il destinatario che i record dns elencati non sono stati creati per la zona. La notifica può contenere informazioni sui record dns o sulla zona dns.',
     ],
     'App\\Notifications\\Admin\\Instance\\ImportByUserFailed' => [
         'name' => 'Importazione dell\'istanza da parte dell\'utente non riuscita',
         'description' => 'La notifica informa il destinatario che l\'importazione dell\'istanza da parte dell\'utente non è riuscita.',
     ],
     'App\\Notifications\\Admin\\Instance\\ImportByUserFinished' => [
-        'name' => 'Instance Import By User Finished',
         'description' => 'La notifica informa il destinatario che l\'importazione dell\'istanza da parte dell\'utente è avvenuta con successo.',
+        'name' => 'Importazione di istanze per utente terminata',
     ],
     'App\\Notifications\\Admin\\Instance\\ManualImportInstanceFailed' => [
         'name' => 'Importazione manuale dell\'istanza fallita',
-        'description' => 'Notification is informing the recipient that the instance manual import by admin has failed.',
+        'description' => 'La notifica informa il destinatario che l\'importazione manuale dell\'istanza da parte dell\'amministratore non è riuscita.',
     ],
     'App\\Notifications\\Admin\\Instance\\ManualImportInstanceFinished' => [
         'name' => 'Importazione manuale Istanza terminata',
-        'description' => 'Notification is informing the recipient that the instance manual import by admin has successful.',
+        'description' => 'La notifica informa il destinatario che l\'importazione manuale dell\'istanza da parte dell\'amministratore è avvenuta con successo.',
     ],
     'App\\Notifications\\Admin\\Connection\\ServerAccountConnectionError' => [
-        'name' => 'Hosting Account Connection Error',
         'description' => 'La notifica informa il destinatario che la connessione all\'account di hosting è fallita.',
+        'name' => 'Errore di connessione dell\'account di hosting',
     ],
     'App\\Notifications\\Admin\\Instance\\RestoreInstanceFinished' => [
         'description' => 'La notifica informa il destinatario che l\'istanza è stata ripristinata con successo dal backup. La notifica può includere dettagli su quale backup è stato ripristinato ed eventuali ulteriori passi da compiere.',
@@ -227,11 +227,11 @@ return [
     ],
     'App\\Notifications\\Admin\\Plan\\PlanConfigurationError' => [
         'name' => 'Errore di configurazione del piano',
-        'description' => 'Notification is informing the recipient that the plan configuration is misconfigured.',
+        'description' => 'La notifica informa il destinatario che la configurazione del piano è errata.',
     ],
     'App\\Notifications\\Admin\\DiagnosticMode\\DiagnosticModeEnabled' => [
         'name' => 'Modalità diagnostica abilitata',
-        'description' => 'The notification is informing the recipient that the diagnostic mode has been activated. This mode allows for enhanced logging and monitoring, which can assist in troubleshooting and identifying issues within the system.',
+        'description' => 'La notifica informa il destinatario che è stata attivata la modalità diagnostica. Questa modalità consente una registrazione e un monitoraggio avanzati, che possono aiutare nella risoluzione dei problemi e nell\'identificazione dei problemi all\'interno del sistema.',
     ],
     'App\\Notifications\\User\\Instance\\PushToStagingFailed' => [
         'name' => 'Spinta allo Staging fallita',

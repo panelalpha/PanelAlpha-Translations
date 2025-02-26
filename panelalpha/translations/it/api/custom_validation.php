@@ -2,7 +2,6 @@
 
 return [
     'backup_already_created' => 'Backup già creato',
-    'cannot_delete_account' => 'Cannot delete account. Account currently in use.',
     'cannot_delete_backup' => 'Impossibile eliminare il backup in corso',
     'domain_name_not_available' => 'Il nome di dominio non è disponibile',
     'domain_exists' => 'Il dominio esiste già',
@@ -64,4 +63,5 @@ return [
     'domain_restricted' => 'Dominio limitato.',
     'domain_cannot_be_hosted' => 'Il dominio non può essere ospitato.',
     'service_not_found' => 'Servizio non trovato.',
+    'cannot_delete_account' => 'Impossibile eliminare l\'account. Account attualmente in uso.',
 ];

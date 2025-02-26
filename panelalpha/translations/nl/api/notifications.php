@@ -6,8 +6,8 @@ return [
         'name' => 'Forceer update-plugin mislukt',
     ],
     'App\\Notifications\\Admin\\Plugin\\ForceUpdatePluginFinished' => [
-        'description' => 'The notification is informing the recipient that an attempt to force an update plugin in the instance has been successfully finished. The notification may include details on the plugin and the related instance and any further steps that should be taken.',
         'name' => 'Forceer update plugin voltooid',
+        'description' => 'De melding informeert de ontvanger dat een poging om een update-plugin in de instantie te forceren met succes is voltooid. De notificatie kan details bevatten over de plugin en de gerelateerde instantie en eventuele verdere stappen die moeten worden genomen.',
     ],
     'App\\Notifications\\Admin\\Theme\\ForceUpdateThemeFailed' => [
         'name' => 'Thema geforceerd bijwerken mislukt',
@@ -23,15 +23,15 @@ return [
     ],
     'App\\Notifications\\Admin\\Instance\\InstanceInstallationByUserFinished' => [
         'name' => 'Installatie van instantie door gebruiker voltooid',
-        'description' => 'The notification is informing the recipient that a new WordPress instance installation by user finished. The notification may include details on who created the instance, the location of the instance and any further steps that should be taken.',
+        'description' => 'De melding informeert de ontvanger dat de installatie van een nieuwe WordPress instantie door een gebruiker is voltooid. De melding kan details bevatten over wie de instantie heeft aangemaakt, de locatie van de instantie en eventuele verdere stappen die moeten worden genomen.',
     ],
     'App\\Notifications\\Admin\\System\\ResetPassword' => [
         'name' => 'Wachtwoord opnieuw instellen',
-        'description' => 'A reset password email is an automated message sent to a user\'s email address when they request to reset their password for an account. The email typically contains a link or instructions for resetting the password, as well as a time limit for the link\'s validity.',
+        'description' => 'Een e-mail om het wachtwoord te resetten is een geautomatiseerd bericht dat naar het e-mailadres van een gebruiker wordt gestuurd wanneer deze een verzoek indient om zijn wachtwoord voor een account te resetten. De e-mail bevat meestal een koppeling of instructies om het wachtwoord opnieuw in te stellen, evenals een tijdslimiet voor de geldigheid van de koppeling.',
     ],
     'App\\Notifications\\Admin\\Updates\\PluginUpdateAvailable' => [
         'name' => 'Plugin-update beschikbaar',
-        'description' => 'Notification is informing the recipient that a new update for a plugin they are using on their WordPress website is now available. The update includes bug fixes and new features that will improve the overall performance and functionality of the plugin.',
+        'description' => 'Een melding informeert de ontvanger dat er nu een nieuwe update beschikbaar is voor een plugin die ze gebruiken op hun WordPress website. De update bevat bugfixes en nieuwe functies die de algehele prestaties en functionaliteit van de plugin verbeteren.',
     ],
     'App\\Notifications\\Admin\\Updates\\ThemeUpdateAvailable' => [
         'name' => 'Thema-update beschikbaar',
@@ -82,8 +82,8 @@ return [
         'description' => 'De melding informeert de ontvanger dat een back-up van hun website met succes is verwijderd. De kennisgeving kan details bevatten over welke back-up is verwijderd en eventuele verdere stappen die moeten worden ondernomen.',
     ],
     'App\\Notifications\\User\\Backup\\RestoreFailed' => [
-        'name' => 'Backup Restore Failed',
         'description' => 'De melding informeert de ontvanger dat een poging om een back-up van hun website te herstellen is mislukt. De melding kan details bevatten over waarom het herstellen is mislukt en welke stappen moeten worden ondernomen om het probleem op te lossen.',
+        'name' => 'Back-up herstellen mislukt',
     ],
     'App\\Notifications\\User\\Backup\\RestoreFinished' => [
         'name' => 'Back-up herstellen voltooid',
@@ -122,12 +122,12 @@ return [
         'description' => 'De melding informeert de ontvanger dat een thema voor zijn WordPress website met succes is geïnstalleerd. De melding kan details bevatten over welk thema is geïnstalleerd en eventuele verdere stappen die moeten worden genomen.',
     ],
     'App\\Notifications\\User\\Theme\\UpdateFailed' => [
-        'name' => 'Theme Update Failed',
         'description' => 'De melding informeert de ontvanger dat een poging om een thema voor hun WordPress website bij te werken is mislukt. De melding kan details bevatten over waarom de update is mislukt en welke stappen moeten worden ondernomen om het probleem op te lossen.',
+        'name' => 'Thema-update mislukt',
     ],
     'App\\Notifications\\User\\Theme\\UpdateFinished' => [
-        'name' => 'Theme Update Completed',
         'description' => 'De melding informeert de ontvanger dat een thema voor zijn WordPress-website met succes is bijgewerkt. De melding kan details bevatten over welk thema is bijgewerkt en eventuele verdere stappen die moeten worden genomen.',
+        'name' => 'Thema-update voltooid',
     ],
     'App\\Notifications\\User\\Instance\\CreateStagingFailed' => [
         'name' => 'Staging maken mislukt',
@@ -154,8 +154,8 @@ return [
         'description' => 'De notificatie informeert de ontvanger dat hij een uitnodiging heeft ontvangen om een specifieke instantie te beheren. De notificatie kan details bevatten over wie de uitnodiging heeft verstuurd, de instantie die wordt beheerd en de acties die op de instantie kunnen worden uitgevoerd.',
     ],
     'App\\Notifications\\User\\System\\NewDeviceLogin' => [
-        'name' => 'Login from New Device',
         'description' => 'Een notificatie is een waarschuwing die wordt gegenereerd wanneer een nieuw apparaat, een nieuwe browser of een nieuw ip-adres zich aanmeldt op de website. De melding bevat meestal informatie over het apparaat, zoals het IP-adres en de datum en tijd van de verbinding.',
+        'name' => 'Inloggen vanaf nieuw apparaat',
     ],
     'App\\Notifications\\User\\Instance\\PushToLiveFailed' => [
         'name' => 'Push To Live mislukt',
@@ -179,7 +179,7 @@ return [
     ],
     'App\\Notifications\\User\\Updates\\WordpressUpdateAvailable' => [
         'name' => 'WordPress Update beschikbaar',
-        'description' => 'Notification is informing the recipient that a new update for their WordPress website is now available. The update includes important security fixes and new features that will improve the overall performance and functionality of the website.',
+        'description' => 'Met deze melding wordt de ontvanger geïnformeerd dat er nu een nieuwe update voor hun WordPress website beschikbaar is. De update bevat belangrijke beveiligingsoplossingen en nieuwe functies die de algehele prestaties en functionaliteit van de website verbeteren.',
     ],
     'App\\Notifications\\Admin\\SslOrder\\DnsPropagationExceeded' => [
         'name' => 'DNS Propagatie overschreden voor SSL-opdracht',
@@ -194,8 +194,8 @@ return [
         'description' => 'Melding informeert de ontvanger dat de instantie sjabloon niet is aangemaakt.',
     ],
     'App\\Notifications\\Admin\\InstanceTemplate\\InstanceTemplateCreateFinished' => [
-        'name' => 'Instance Template Create Finished',
         'description' => 'Melding informeert de ontvanger dat de instantie sjabloon met succes is aangemaakt.',
+        'name' => 'Instance sjabloon maken voltooid',
     ],
     'App\\Notifications\\Admin\\EmailDomain\\EmailDomainCreateFailed' => [
         'description' => 'De ontvanger wordt geïnformeerd dat het aanmaken van het e-maildomein is mislukt.',
@@ -206,8 +206,8 @@ return [
         'description' => 'Kennisgeving informeert de ontvanger dat het e-maildomein al bestaat op de e-mailserver.',
     ],
     'App\\Notifications\\Admin\\ReportProvider\\SyncReportProvidersFailed' => [
-        'name' => 'Sync Report Providers Failed',
         'description' => 'Een melding informeert de ontvanger dat de synchronisatie van rapportaanbieders is mislukt. De melding kan informatie over de instantie en het foutbericht bevatten.',
+        'name' => 'Sync Report Providers mislukt',
     ],
     'App\\Notifications\\Admin\\ReportProvider\\SyncReportProvidersFinished' => [
         'name' => 'Synchroniseer rapportaanbieders Voltooid',

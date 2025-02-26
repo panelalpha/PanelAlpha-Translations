@@ -96,7 +96,7 @@ return [
     'dns_records_already_exists' => 'Tale record DNS esiste già nella zona.',
     'hosting_account_not_found' => 'Account di hosting non trovato sul server',
     'main_domain_not_found' => 'Dominio principale non trovato sull\'account di hosting',
-    'domain_not_found_on_hosting_account' => 'Dominio :dominio, non trovato nell\'account di hosting.',
+    'domain_not_found_on_hosting_account' => 'Dominio :domain, non trovato nell\'account di hosting.',
     'invalid_domain_type' => 'Tipo di dominio non valido.',
     'invalid_local_data' => 'Dati locali non validi: :data.',
     'no_ips_assigned_to_server_account' => 'Nessun indirizzo IP assegnato all\'account del server.',

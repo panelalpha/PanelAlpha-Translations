@@ -76,7 +76,6 @@ return [
     ],
     'App\\Lib\\Integrations\\ReportProviders\\GoogleAnalytics' => [
         'title' => 'Google Analytics',
-        'subtitle' => 'Employed for Gathering and Analyzing Website Traffic Data',
         'description' => 'Google Analytics ofrece herramientas gratuitas para consolidar y analizar los datos de su empresa, lo que permite que el proceso de toma de decisiones esté orientado a los datos',
         'instruction' => 'Para utilizar Google Analytics, siga estos pasos:<ol><li>Vaya al sitio de Google Analytics: <a href="https://analytics.google.com" target="_blank">https://analytics.google.com/</a></li><li>Ingrese en su cuenta de Google si aún no lo ha hecho.</li><li>Cree una cuenta de Google Analytics.</li><li>Vaya a Administración > Configuración de la cuenta > Detalles de la cuenta y busque su ID de cuenta.</li><li>Copie y pegue el ID de propiedad en el siguiente formulario.</li><li>Cree un archivo JSON de credenciales como <a href="https://www.panelalpha.com/documentation/integrations/google-analytics/#google-anlytics-json-file" target="_blank">se describe en la documentación</a>.</li><li>Adjunte el archivo JSON en el campo Credenciales de cuenta de servicio que aparece a continuación.</li></ol><br>¡Atención! Esta integración funciona en base a código javascript instalado automáticamente en las instancias del cliente. El usuario puede eliminar este código y la integración dejará de funcionar.',
         'fields' => [
@@ -89,16 +88,15 @@ return [
                 'placeholder' => 'Adjuntar archivo JSON de credenciales de servicio',
             ],
         ],
+        'subtitle' => 'Empleado para recopilar y analizar datos sobre el tráfico del sitio web',
     ],
     'App\\Lib\\Integrations\\PreviewSiteProvider\\WithoutDns' => [
         'title' => 'WithoutDNS',
-        'subtitle' => 'Enables quick preview of WordPress',
-        'description' => 'WithoutDNS provides a comprehensive toolkit that simplifies testing and migration processes. It provides a temporary URL that directs your domain to a specified server IP address through one of our proxy servers.',
         'instruction' => 'Para utilizar WithoutDNS, siga estos pasos:<ol><li>Vaya a <a href="https://withoutdns.com/api-configuration" target="_blank">https://withoutdns.com/</a></li><li>Ingrese en su cuenta si es necesario.</li><li>Cree un nuevo token de API haciendo clic en el botón "Generar token".</li><li>Copie y pegue el token de API en el siguiente formulario.</li><li>Realice una conexión de prueba.</li><li>Después de realizar la conexión de prueba, aparecerán las opciones de Dominio temporal y Duración de URL temporal. Una vez que las seleccione, la integración estará lista para su uso.</li></ol><br>Sin completar totalmente la configuración, la integración permite la generación de hasta tres enlaces temporales.',
         'fields' => [
             'api-token' => [
-                'label' => 'API Token',
                 'placeholder' => 'Introduzca su token de API',
+                'label' => 'Token API',
             ],
             'temporary-url-duration' => [
                 'label' => 'URL temporal Duración',
@@ -117,6 +115,8 @@ return [
                 'tooltip' => 'Seleccione el dominio que se utilizará para generar la URL temporal para que los clientes puedan previsualizar el sitio.',
             ],
         ],
+        'subtitle' => 'Permite previsualizar rápidamente WordPress',
+        'description' => 'WithoutDNS proporciona un completo conjunto de herramientas que simplifica los procesos de prueba y migración. Proporciona una URL temporal que dirige su dominio a una dirección IP de servidor especificada a través de uno de nuestros servidores proxy.',
     ],
     'App\\Lib\\Integrations\\EmailProvider\\Smtp' => [
         'title' => 'SMTP',
@@ -126,13 +126,13 @@ return [
                 'tooltip' => 'El puerto de correo electrónico se refiere a un puerto específico dedicado a gestionar el tráfico de correo electrónico.',
             ],
             'encryption' => [
-                'label' => 'SSL Type',
                 'tooltip' => 'El tipo de SSL se refiere al método de cifrado (SSL o TLS) utilizado para proteger la conexión entre el cliente de correo electrónico y el servidor.',
                 'options' => [
                     'none' => 'Ninguno',
                     'ssl' => 'SSL',
                     'tls' => 'TLS',
                 ],
+                'label' => 'Tipo SSL',
             ],
             'password' => [
                 'label' => 'Contraseña',
@@ -161,8 +161,8 @@ return [
         'title' => 'MailerSend',
         'fields' => [
             'api_token' => [
-                'label' => 'Token API',
                 'tooltip' => 'El token de la API se utiliza para autenticar las solicitudes realizadas al enviar correos electrónicos.',
+                'label' => 'Token API',
             ],
         ],
     ],

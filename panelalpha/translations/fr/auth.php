@@ -1,7 +1,7 @@
 <?php
 
-return array (
-  'failed' => 'Ces références ne correspondent pas à nos dossiers.',
-  'password' => 'Le mot de passe fourni est incorrect.',
-  'throttle' => 'Trop de tentatives de connexion. Veuillez réessayer dans :secondes secondes.',
-);
+return [
+    'failed' => 'Ces références ne correspondent pas à nos dossiers.',
+    'password' => 'Le mot de passe fourni est incorrect.',
+    'throttle' => 'Trop de tentatives de connexion. Veuillez réessayer dans :secondes secondes.',
+];

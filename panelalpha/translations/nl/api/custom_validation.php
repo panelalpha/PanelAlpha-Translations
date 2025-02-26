@@ -1,7 +1,6 @@
 <?php
 
 return [
-    'backup_already_created' => 'Backup already created',
     'cannot_delete_account' => 'Kan account niet verwijderen. Account is momenteel in gebruik.',
     'cannot_delete_backup' => 'Kan lopende back-up niet verwijderen',
     'cannot_connect_to_url' => 'Kan geen verbinding maken met de URL.',
@@ -64,4 +63,5 @@ return [
     'control_panel_sso_disabled' => 'SSO naar configuratiescherm is uitgeschakeld voor uw account. Neem contact op met de beheerder.',
     'create_backup_failed' => 'Fout bij het maken van de back-up. Neem contact op met de beheerder.',
     'domain_cannot_be_hosted' => 'Domein kan niet worden gehost.',
+    'backup_already_created' => 'Back-up al gemaakt',
 ];

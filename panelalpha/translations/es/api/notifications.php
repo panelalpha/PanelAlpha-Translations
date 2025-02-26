@@ -202,12 +202,12 @@ return [
         'description' => 'La notificación informa al destinatario de que ya está disponible una nueva actualización de un plugin que está utilizando en su sitio web de WordPress. La actualización incluye correcciones de errores y nuevas funciones que mejorarán el rendimiento general y la funcionalidad del plugin.',
     ],
     'App\\Notifications\\User\\Updates\\ThemeUpdateAvailable' => [
-        'name' => 'Theme Update Available',
         'description' => 'La notificación informa al destinatario de que ya está disponible una nueva actualización de un tema que está utilizando en su sitio web de WordPress. La actualización incluye correcciones de errores y nuevas funciones que mejorarán el rendimiento general y la funcionalidad del tema.',
+        'name' => 'Actualización de temas disponible',
     ],
     'App\\Notifications\\User\\Updates\\WordpressUpdateAvailable' => [
-        'name' => 'WordPress Update Available',
         'description' => 'Notification is informing the recipient that a new update for their WordPress website is now available. The update includes important security fixes and new features that will improve the overall performance and functionality of the website.',
+        'name' => 'Actualización de WordPress disponible',
     ],
     'App\\Notifications\\Admin\\SslOrder\\DnsPropagationExceeded' => [
         'name' => 'Propagación DNS excedida para pedido SSL',
@@ -218,8 +218,8 @@ return [
         'description' => 'Notification is informing the recipient that the creation of DNS record A has failed.',
     ],
     'App\\Notifications\\Admin\\InstanceTemplate\\InstanceTemplateCreateFailed' => [
-        'name' => 'Instance Template Create Failed',
         'description' => 'La notificación informa al destinatario de que la plantilla de instancia no se ha creado.',
+        'name' => 'Fallo en la creación de la plantilla de instancia',
     ],
     'App\\Notifications\\Admin\\InstanceTemplate\\InstanceTemplateCreateFinished' => [
         'name' => 'Plantilla de instancia Crear Finalizado',
@@ -227,11 +227,11 @@ return [
     ],
     'App\\Notifications\\Admin\\EmailDomain\\EmailDomainCreateFailed' => [
         'name' => 'Fallo en la creación del dominio de correo electrónico',
-        'description' => 'Notification is informing the recipient that the creation of email domain has failed.',
+        'description' => 'La notificación informa al destinatario de que la creación del dominio de correo electrónico ha fallado.',
     ],
     'App\\Notifications\\Admin\\EmailDomain\\EmailDomainExists' => [
         'name' => 'El dominio de correo electrónico existe',
-        'description' => 'Notification is informing the recipient that email domain already exists on the email server.',
+        'description' => 'La notificación informa al destinatario de que el dominio de correo electrónico ya existe en el servidor de correo electrónico.',
     ],
     'App\\Notifications\\Admin\\ReportProvider\\SyncReportProvidersFailed' => [
         'name' => 'Fallo en la sincronización de proveedores de informes',
@@ -250,8 +250,8 @@ return [
         'description' => 'La notificación informa al destinatario de que la importación de la instancia por parte del usuario se ha realizado correctamente.',
     ],
     'App\\Notifications\\Admin\\Instance\\ManualImportInstanceFailed' => [
-        'name' => 'Manual Import Instance Failed',
         'description' => 'La notificación informa al destinatario de que la importación manual de la instancia por parte del administrador ha fallado.',
+        'name' => 'Instancia de importación manual fallida',
     ],
     'App\\Notifications\\Admin\\Instance\\RestoreInstanceFinished' => [
         'name' => 'Restauración de instancia finalizada',
@@ -262,12 +262,12 @@ return [
         'description' => 'La notificación informa al destinatario de que se ha activado el modo de diagnóstico. Este modo permite mejorar el registro y la supervisión, lo que puede ayudar a solucionar e identificar problemas en el sistema.',
     ],
     'App\\Notifications\\User\\Instance\\PushToStagingFailed' => [
-        'name' => 'Push to Staging Failed',
         'description' => 'La notificación informa al destinatario de que ha fallado el intento de transferir los cambios realizados en la instancia activa a la versión de prueba del sitio web. La notificación puede incluir detalles sobre por qué falló el push y qué pasos deben seguirse para resolver el problema.',
+        'name' => 'Empuje fallido a la puesta en escena',
     ],
     'App\\Notifications\\User\\Instance\\PushToStagingFinished' => [
-        'name' => 'Push to Staging Finished',
         'description' => 'La notificación informa al destinatario de que los cambios realizados en la instancia activa se han transferido correctamente a la versión de prueba del sitio web o sistema. La notificación puede incluir detalles sobre los cambios realizados y cualquier otro paso que deba darse.',
+        'name' => 'Empuje finalizado a la puesta en escena',
     ],
     'App\\Notifications\\Admin\\Instance\\ImportByUserFailed' => [
         'name' => 'Fallo en la importación de instancias por el usuario',

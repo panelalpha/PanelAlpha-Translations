@@ -29,7 +29,6 @@ return [
     'staging_cannot_shared_directly' => 'Las instancias de puesta en escena no pueden tener acceso compartido directamente',
     'sort_possible_values' => 'Los valores posibles son: asc,desc',
     'sso_generate_token_limit' => 'Puede generar el token SSO una vez cada 5 segundos.',
-    'wordpress_not_found' => 'Wordpress not found in path :path',
     'integration_disabled' => 'Integración desactivada',
     'invalid_email_domain' => 'Dominio de correo electrónico no válido',
     'not_allowed_dns_record_type' => 'El tipo de registro no está permitido.',
@@ -64,4 +63,5 @@ return [
     'create_backup_failed' => 'Error al crear la copia de seguridad. Póngase en contacto con el administrador.',
     'plan_not_found' => 'No se encuentra el plan.',
     'user_not_found' => 'Usuario no encontrado.',
+    'wordpress_not_found' => 'Wordpress no se encuentra en la ruta :ruta',
 ];

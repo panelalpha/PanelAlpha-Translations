@@ -266,20 +266,20 @@ return [
         'description' => 'Die Benachrichtigung informiert den Empfänger, dass die Verbindung zum Hosting-Konto fehlgeschlagen ist.',
     ],
     'App\\Notifications\\Admin\\Instance\\RestoreInstanceFailed' => [
-        'name' => 'Instance Restore Failed',
         'description' => 'Die Benachrichtigung informiert den Empfänger darüber, dass ein Versuch, die Instanz aus der Sicherung wiederherzustellen, fehlgeschlagen ist. Die Benachrichtigung kann Einzelheiten darüber enthalten, warum die Wiederherstellung fehlgeschlagen ist und welche Schritte unternommen werden sollten, um das Problem zu beheben.',
+        'name' => 'Wiederherstellung der Instanz fehlgeschlagen',
     ],
     'App\\Notifications\\Admin\\Instance\\RestoreInstanceFinished' => [
-        'name' => 'Instance Restore Finished',
         'description' => 'Die Benachrichtigung informiert den Empfänger, dass die Instanz erfolgreich aus der Sicherung wiederhergestellt wurde. Die Benachrichtigung kann Einzelheiten darüber enthalten, welche Sicherung wiederhergestellt wurde und welche weiteren Schritte unternommen werden sollten.',
+        'name' => 'Wiederherstellung der Instanz abgeschlossen',
     ],
     'App\\Notifications\\Admin\\Plan\\PlanConfigurationError' => [
         'name' => 'Fehler in der Plankonfiguration',
-        'description' => 'Notification is informing the recipient that the plan configuration is misconfigured.',
+        'description' => 'Die Benachrichtigung informiert den Empfänger, dass die Plankonfiguration falsch konfiguriert ist.',
     ],
     'App\\Notifications\\Admin\\DiagnosticMode\\DiagnosticModeEnabled' => [
         'name' => 'Diagnosemodus Aktiviert',
-        'description' => 'The notification is informing the recipient that the diagnostic mode has been activated. This mode allows for enhanced logging and monitoring, which can assist in troubleshooting and identifying issues within the system.',
+        'description' => 'Die Benachrichtigung teilt dem Empfänger mit, dass der Diagnosemodus aktiviert wurde. Dieser Modus ermöglicht eine erweiterte Protokollierung und Überwachung, die bei der Fehlersuche und Identifizierung von Problemen im System helfen kann.',
     ],
     'App\\Notifications\\User\\Instance\\PushToStagingFailed' => [
         'name' => 'Push to Staging fehlgeschlagen',

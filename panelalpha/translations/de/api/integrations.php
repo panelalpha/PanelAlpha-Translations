@@ -192,7 +192,7 @@ return [
         'fields' => [
             'api_key' => [
                 'label' => 'API-Schlüssel',
-                'tooltip' => 'API Key is used to authenticate requests made when sending emails.',
+                'tooltip' => 'Der API-Schlüssel wird zur Authentifizierung von Anfragen beim Versand von E-Mails verwendet.',
             ],
         ],
     ],
