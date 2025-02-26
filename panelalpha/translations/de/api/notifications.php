@@ -263,11 +263,11 @@ return [
     ],
     'App\\Notifications\\Admin\\Connection\\ServerAccountConnectionError' => [
         'name' => 'Hosting-Konto Verbindungsfehler',
-        'description' => 'Notification is informing the recipient that connection to hosting account has failed.',
+        'description' => 'Die Benachrichtigung informiert den Empfänger, dass die Verbindung zum Hosting-Konto fehlgeschlagen ist.',
     ],
     'App\\Notifications\\Admin\\Instance\\RestoreInstanceFailed' => [
         'name' => 'Instance Restore Failed',
-        'description' => 'The notification is informing the recipient that an attempt to restore the instance from backup has failed. The notification may include details on why the restore failed and what steps should be taken to resolve the issue.',
+        'description' => 'Die Benachrichtigung informiert den Empfänger darüber, dass ein Versuch, die Instanz aus der Sicherung wiederherzustellen, fehlgeschlagen ist. Die Benachrichtigung kann Einzelheiten darüber enthalten, warum die Wiederherstellung fehlgeschlagen ist und welche Schritte unternommen werden sollten, um das Problem zu beheben.',
     ],
     'App\\Notifications\\Admin\\Instance\\RestoreInstanceFinished' => [
         'name' => 'Instance Restore Finished',
