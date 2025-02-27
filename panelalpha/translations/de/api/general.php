@@ -19,7 +19,7 @@ return [
         'extracting-database' => 'Datenbank extrahieren',
         'importing-database' => 'Datenbank importieren',
         'configuring-wordpress' => 'WordPress konfigurieren',
-        'cleaning-files' => 'Dateien reinigen',
+        'cleaning-files' => 'Dateien bereinigen',
         'removing-ftp-account' => 'FTP-Konto entfernen',
         'creating-ftp-account' => 'FTP-Konto erstellen',
         'creating-temporary-directory' => 'Temporäres Verzeichnis erstellen',
