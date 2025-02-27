@@ -1,1 +1,1 @@
-DNS Record A for {{ $domain }} Create Failed
+Subdomain DNS Setup for {{ $domain }} Failed

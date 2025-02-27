@@ -17,6 +17,6 @@ return [
     'sent' => 'Wir haben Ihnen Ihre Passwort-Wiederherstellungs-E-Mail gesendet!',
     'throttled' => 'Bitte warten Sie, bevor Sie es erneut versuchen.',
     'token' => 'Dieses Backup-Token ist ungültig.',
-    'user' => "Wir können keinen Benutzer mit dieser E-Mail-Adresse finden.",
+    'user' => 'Wir können keinen Benutzer mit dieser E-Mail-Adresse finden.',
 
 ];
