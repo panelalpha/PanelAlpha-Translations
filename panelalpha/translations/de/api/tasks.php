@@ -37,5 +37,5 @@ return [
     'App\\Jobs\\System\\DeleteRedundantBackups' => 'Redundante Backups löschen',
     'App\\Jobs\\Admin\\RestoreBackup' => 'Instanz aus Sicherung wiederherstellen',
     'App\\Jobs\\System\\SyncBackupsWithRemoteContainer' => 'Backups mit Backup Container synchronisieren',
-    'App\\Jobs\\User\\PushToStaging' => 'Auf die Bereitstellung schieben',
+    'App\\Jobs\\User\\PushToStaging' => 'Auf Staging übertragen',
 ];
