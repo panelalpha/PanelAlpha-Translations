@@ -513,7 +513,7 @@
             "sftp.modal.manageSSH.field": "Zugangstyp",
             "dns.zone.title": "DNS-Zone",
             "emailDomain.title": "E-Mail-Bereich",
-            "fileManager.title": "Datei-Manager"
+            "fileManager.title": "Dateimanager"
         },
         "onboarding": {
             "selectType.title": "Neue Instanz hinzufügen",
