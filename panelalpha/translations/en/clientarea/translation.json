@@ -30,7 +30,7 @@
         "forgot-password": "{{- app_name}} - Forgot Password",
         "reset-password": "{{- app_name}} - Reset Password",
         "my-account": "{{- app_name}} - My Account",
-        "page-not-found" : "{{- app_name}} - Page Not Found"
+        "page-not-found": "{{- app_name}} - Page Not Found"
     },
     "general": {
         "adventurer": "Adventurer",
@@ -154,6 +154,7 @@
             "unsuspend.title": "Service Suspended",
             "unsuspend.message": "Your site is under a service that has been <b>suspended</b>.",
             "ssoLogin.title": "Log In to WordPress",
+            "modal.ssoLogin.title": "Log In to WordPress",
             "ssoSingleLogin.title": "Logging in to WordPress",
             "ssoSingleLogin.message": "Generating an SSO link in progress...",
             "staging.title": "Create Staging",
@@ -165,6 +166,7 @@
             "delete.title_other": "Delete Instances",
             "delete.message_one": "Are you sure that you want to delete this instance? Any data stored on the server will be permanently erased, note that <b>this action cannot be undone!</b>",
             "delete.message_other": "Are you sure that you want to delete {{count}} instances? Any data stored on the servers will be permanently erased, note that <b>this action cannot be undone!</b>",
+            "delete.wpCloud.alert": "You cannot delete the instance if there are existing manual backups",
             "woocommerce.title": "Install WooCommerce",
             "woocommerce.message": "Are you sure that you want to install WooCommerce?",
             "pushToLive.title": "Push To Live",
@@ -220,7 +222,7 @@
             "siteDetails.loadingSpeed.disabled": "Data Unavailable.",
             "siteDetails.analytics.title": "Instance Analytics",
             "siteDetails.analytics.visitors.unique": "Unique Visitors",
-            "siteDetails.analytics.visitors.session": "Session Time",
+            "siteDetails.analytics.visitors.session": "Average Session Time",
             "siteDetails.analytics.visitors.bandwidth": "Bandwidth",
             "monitoring.chart.visitors": "Visitors Chart",
             "monitoring.chart.visits.page": "Visitors Chart",
@@ -311,6 +313,8 @@
             "advanced.security.forceRedirect.subtitle": "If enabled, http:// requests will be redirected to https:// on this domain.",
             "advanced.security.modal.forceRedirect.title": "Warning",
             "advanced.security.modal.forceRedirect.info": "This instance is installed on {{domain}} along with other instances. Changing this option, it will also affect the following instances:",
+            "advanced.security.disableSearchEngineIndexing.title": "Disable Search Engine Indexing",
+            "advanced.security.disableSearchEngineIndexing.subtitle": "If enabled, search engines will be discouraged from indexing this domain.",
             "advanced.autoUpdates.title": "Auto Updates",
             "advanced.autoUpdates.upgrade.title": "Auto Upgrade",
             "advanced.autoUpdates.upgrade.subtitle": "If enabled, WordPress will be automatically updated when a new version is available.",
@@ -396,6 +400,16 @@
             "advanced.theme.modal.delete.info_one": "Are you sure that you want to delete this theme?",
             "advanced.theme.modal.delete.info_other": "Are you sure that you want to delete the {{count}} selected themes?",
             "advanced.log.title": "Instance Logs",
+
+            "advanced.logs.title": "Logs",
+            "advanced.logs.loader": "Logs are loading, please wait...",
+            "advanced.logs.instanceLogs.title": "Instance Logs",
+            "advanced.logs.wordpressLogs.title": "WordPress Error Logs",
+            "advanced.logs.phpLogs.title": "PHP Logs",
+            "advanced.logs.phpLogs.tooltip": "You can also find more detailed PHP logs in the web server error log.",
+            "advanced.logs.webserverLogs.title": "Webserver Logs",
+            "advanced.logs.noLogs": "No logs",
+
             "advanced.copyInstance.title": "Copy Instance",
             "advanced.copyInstance.copy.title": "Copy Instance",
             "advanced.copyInstance.copy.subtitle": "This feature allows you to duplicate this instance to one of your services.",
@@ -538,6 +552,7 @@
             "installation.info.failed": "Something went wrong, please try again.",
             "installation.info.completed": "Your website has been successfully installed, you can now start managing it by clicking on the below button.",
             "installation.info.setDnsRecords": "WordPress has been installed on {domain}. To complete configuration, set the following DNS records:",
+            "installation.info.builderInProgress": "Setting up your AI-powered site… Please wait a moment while the builder initializes.",
             "chooseTheme.title": "Choose Theme",
             "chooseTheme.subtitle": "No sweat, you can always change it later.",
             "chooseTheme.popular": "Popular",
@@ -589,7 +604,9 @@
             "colorScheme.title": "Choose Color Scheme",
             "primaryColor.title": "Customize Primary Colors",
             "additionalSettings.title": "Additional Settings",
-            "additionalSettings.disableShadows.title": "Disable shadows"
+            "additionalSettings.disableShadows.title": "Disable shadows",
+            "darkMode.title": "Change Mode",
+            "darkMode.description": "Dark/Light Mode"
         }
     },
     "message": {
@@ -673,7 +690,15 @@
             "monitoring.title": "There is no data to display yet",
             "monitoring.description": "Our system updates the statistics once per day and we haven't collected any information from your website yet. Please check tomorrow.",
             "activeDevices.title": "No Active Devices Found",
-            "activeDevices.description": "No active devices were found for this instance. When a user logs in from any device, they will automatically appear on the list."
+            "activeDevices.description": "No active devices were found for this instance. When a user logs in from any device, they will automatically appear on the list.",
+            "wpErrorLogs.title": "No WordPress Error Logs Were Found...",
+            "wpErrorLogs.description": "WordPress Error Logs are available when the wp-config.php file has the following settings: WP_DEBUG set to true and WP_DEBUG_LOG set to true.",
+            "phpLogs.title": "No PHP Logs Were Found...",
+            "phpLogs.description": "You can also find more detailed PHP logs in the web server error log.",
+            "webserverLogs.title": "No Webserver Logs Were Found...",
+            "webserverLogs.description": "No logs found...",
+            "webserverLogs.downloadTitle": "You Cannot Preview the Contents of This File.",
+            "webserverLogs.downloadDescription": "Please download Webserver Logs logs."
         },
         "status": {
             "active": "Activate",
@@ -729,6 +754,7 @@
             "device.logout.success": "Associated device has been logged out."
         },
         "instance": {
+            "advanced.logs.maxEntries": "100 entries from the log are displayed. To see more, please download.",
             "installation.cancelled": "The instance installation has been cancelled.",
             "label.delete.error": "This label is currently in use.",
             "sharedAccess.invite.success": "Access has been shared.",
@@ -765,6 +791,7 @@
             "plugin.delete.success_other": "Plugins have been deleted.",
             "settings.update": "Settings have been updated.",
             "cloudflare.securityLevel.success": "Security level has been updated.",
+            "disableSearchEngineIndexing.success": "Search Engine Indexing has been updated.",
             "cloudflare.browser.success": "Browser check has been updated.",
             "cloudflare.development.success": "Development mode has been updated.",
             "cloudflare.cache.success": "Cache has been purged.",
@@ -911,6 +938,7 @@
         "domain.delete": "Delete Domain",
         "domain.order": "Don't have one yet? Order here",
         "domain.set": "Set Domain",
+        "download": "Download",
         "emailAddress.add": "Add Email Account",
         "emailAddress.change": "Change Email Address",
         "emailAddress.show": "Show Details",
@@ -1039,6 +1067,7 @@
         "create_backup.backup_database": "Backup note.",
         "create_backup.backup_location": "Select the destination location for your backup.",
         "create_backup.backup_note": "Add any notes or comments regarding this backup.",
+        "create_backup.backup_type": "Select the type of backup to be performed: choose 'Database' for a backup of the database, or 'Directory' for a backup of files.",
         "backup_data.number_of_backups": "Number of backups created out of the maximum allowed.",
         "backup_data.amount_of_storage": "Amount of storage used out of the total available for backups.",
         "automatic_backup.backup_location": "Select the destination location for your backup.",
@@ -1220,6 +1249,7 @@
             "backupDirectory": "Backup Directory",
             "backupDatabase": "Backup Database",
             "backupNote": "Backup Note",
+            "backupType": "Backup Type",
             "cabundle": "Certificate Authority Bundle (CABUNDLE)",
             "certificate": "Certificate (CRT)",
             "chooseTime": "Choose Time",
@@ -1231,7 +1261,7 @@
             "companyName": "Company Name",
             "createBackup": "Create Backup",
             "cronExpression": "Cron Expression",
-            "database": "New Database",
+            "database": "Database",
             "databaseName": "Database Name",
             "databasePrefix": "Database Prefix",
             "dataChangeTables": "Push tables with changed data",
@@ -1258,7 +1288,9 @@
             "howOften": "How Often",
             "image": {
                 "title": "Upload Graphic",
-                "subtitle": ".jpg, .png, .svg files allowed"
+                "subtitle": ".jpg, .png, .svg files allowed",
+                "lightMode": "Light Mode",
+                "darkMode": "Dark Mode"
             },
             "installedPath": "Installed Path",
             "item": "Item",
@@ -1691,6 +1723,7 @@
             "user.instance.cloudflare.purge_cache": "Purged Cloudflare Cache",
             "user.instance.refresh_thumbnail": "Refreshed Thumbnail",
             "user.instance.wordpress.copy": "Copied Instance",
+            "user.instance.search_engine_indexing.update": "Updated Search Engine Indexing",
             "user.hosting.ssl_certificate.install": "Installed SSL Certificate",
             "user.hosting.ssl_certificate.order": "Ordered SSL Certificate",
             "user.hosting.domain.create": "Created Domain",
@@ -1741,7 +1774,7 @@
         },
         "suffix": {
             "toStatus": "to {{status}}",
-            "toRole": "{{- name}} to {{- role}}",
+            "toRole": "{{- name}}",
             "wordpressStatus": "WordPress: {{status}}",
             "pluginStatus": "Plugins: {{status}}",
             "themeStatus": "Themes: {{status}}"
@@ -1760,10 +1793,14 @@
             "general.change_domain": "Set Domain",
             "general.create_staging": "Create Staging",
             "general.push_to_live": "Push to Live",
+            "general.view_php_logs": "View PHP Logs",
+            "general.view_webserver_logs": "View Webserver Logs",
+            "general.push_to_staging": "Push to Staging",
             "general.view_logs": "View Logs",
             "general.view_reports": "View Reports",
             "general.delete_instance": "Delete Instance",
             "general.copy_instance": "Copy Instance",
+            "general.preview_instance": "Preview Instance",
             "wordpress.create_sso_link": "WP Admin SSO",
             "wordpress.update": "Update WordPress",
             "wordpress.manage_auto_update": "Manage Auto Update",
@@ -1778,6 +1815,9 @@
             "wordpress.manage_config": "Manage WordPress Config",
             "wordpress.manage_users": "Manage WordPress Users",
             "wordpress.manage_edge_cache": "Manage Edge Cache",
+            "wordpress.manage_search_engine_indexing": "Manage Search Engine Indexing",
+            "wordpress.view_logs": "View WordPress Error Logs",
+            "wordpress.manage_cloudflare": "Manage Cloudflare",
             "hosting.manage_email": "Manage Email Accounts",
             "hosting.manage_dns": "Manage DNS",
             "hosting.manage_domains": "Manage Domains",
