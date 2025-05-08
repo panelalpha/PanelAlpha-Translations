@@ -1,0 +1,4 @@
+<p>Si {{ $client_first_name }},</p> <p>Je vous rappelle que votre essai gratuit pour {{ $trial_instance_name }} est en cours.
+<p>Juste un rappel que votre essai gratuit pour {{ $trial_instance_name }} (<a href="{{ $trial_instance_url }}">{{ $trial_instance_domain }}</a>) se termine dans {{ $before_expiration_days }} jours.</p>
+</p> <p>Nous espérons que vous avez pris plaisir à explorer les outils et à créer votre site web ! Pour que votre site reste en ligne et que votre travail soit sauvegardé, assurez-vous de passer à un plan complet avant que votre version d'essai n'expire.</p> <p>La version d'évaluation de votre site est en cours d'élaboration.
+</p> <p>Pour que votre site reste en ligne, <a href="{{ $trial_upgrade_url }}">mettez votre plan à niveau aujourd'hui</a>.</p>

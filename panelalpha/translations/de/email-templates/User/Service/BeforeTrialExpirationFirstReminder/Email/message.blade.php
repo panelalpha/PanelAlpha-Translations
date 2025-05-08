@@ -1,0 +1,4 @@
+<p>Hallo {{ $Customer_first_name }},</p>
+<p>Nur zur Erinnerung: Ihre kostenlose Testversion für {{ $trial_instance_name }} (<a href="{{ $trial_instance_url }}">{{ $trial_instance_domain }}</a>) in {{ $before_expiration_days }} Tagen endet.</p>
+<p>Wir hoffen, Sie hatten viel Spaß beim Erkunden der Tools und beim Erstellen Ihrer Website! Um Ihre Website live zu halten und Ihre Arbeit zu speichern, stellen Sie sicher, dass Sie ein Upgrade auf ein volles Paket durchführen, bevor Ihre Testversion abläuft.</p>
+<p>Um Ihre Website live zu halten, <a href="{{ $trial_upgrade_url }}">upgraden Sie Ihr Paket noch heute</a>.</p>

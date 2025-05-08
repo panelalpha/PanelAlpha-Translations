@@ -1,0 +1,1 @@
+Su prueba gratuita finaliza en {{ $before_expiration_days }} Días

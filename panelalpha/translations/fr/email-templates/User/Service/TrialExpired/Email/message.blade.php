@@ -1,0 +1,4 @@
+<p>Si {{ $client_first_name }},</p> <p>Votre essai gratuit {{ $trial_instance_name }} est en cours.
+<p>Votre essai gratuit {{ $trial_instance_name }} (<a href="{{ $trial_instance_url }}">{{ $trial_instance_domain }}</a>) est officiellement terminé, et votre site web est maintenant hors ligne.</p> <p>Mais ne vous inquiétez pas, votre site web est maintenant hors ligne.
+</p> <p>Mais ne vous inquiétez pas, vous avez encore le temps de le ramener.</p> <p>
+</p><a href="{{ $trial_upgrade_url }}">Choisissez un plan</a> pour restaurer votre site exactement comme vous l'avez laissé et conserver votre contenu et vos paramètres.</p><a href="{{ $trial_upgrade_url }}".
