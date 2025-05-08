@@ -1,0 +1,1 @@
+Ihre kostenlose Testversion endet in {{ $before_expiration_days }} Tagen

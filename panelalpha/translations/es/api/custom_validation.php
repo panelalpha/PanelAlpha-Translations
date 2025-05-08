@@ -64,4 +64,9 @@ return [
     'plan_not_found' => 'No se encuentra el plan.',
     'user_not_found' => 'Usuario no encontrado.',
     'wordpress_not_found' => 'Wordpress no se encuentra en la ruta :ruta',
+    'registration_disabled' => 'El registro está desactivado.',
+    'email_already_registered' => 'Dirección de correo electrónico ya registrada',
+    'invalid_ssl_provider' => 'Proveedor SSL no válido',
+    'invalid_php_directive' => 'Directiva PHP inválida: :directive.',
+    'hosting_server_not_accessible' => 'No se puede acceder al servidor de alojamiento.',
 ];

@@ -29,8 +29,11 @@
         "reset-password": "{{- app_name}} - Wachtwoord resetten",
         "my-account": "{{- app_name}} - Mijn account",
         "file-manager": "{{- app_name}} - File Manager",
-        "page-not-found": "{{- app_naam}} - Pagina niet gevonden",
-        "sftp": "{{- app_naam}} - SSH/SFTP-accounts"
+        "page-not-found": "{{- app_name}} - Pagina niet gevonden",
+        "sftp": "{{- app_name}} - SSH/SFTP-accounts",
+        "register": "{{- app_name}} - Registreren",
+        "services": "{{- app_name}} - Mijn plannen",
+        "billing": "{{- app_name}} - Mijn facturering"
     },
     "general": {
         "adventurer": "Avonturier",
@@ -100,7 +103,27 @@
         "backup_one": "back-up",
         "backup_other": "back-ups",
         "ssh": "SSH",
-        "sftp": "SFTP"
+        "sftp": "SFTP",
+        "trialExpires": "Uw proefperiode verloopt",
+        "trialUpgradePlan": "Upgrade je plan om beperkingen in de systeemfunctionaliteit te voorkomen.",
+        "trialExpired": "Uw proefperiode is verlopen",
+        "trialExpiredUpgradePlan": "en systeemfuncties zijn beperkt. Werk je plan bij om volledige toegang te herstellen.",
+        "instancesSuspended": "Hostinginstanties worden opgeschort",
+        "instancesSuspendedDescription": "Al je hostinginstanties zijn momenteel opgeschort. Dit kan het gevolg zijn van een onbetaalde factuur of het overschrijden van de limieten van uw huidige plan. Uw services blijven inactief totdat het probleem is opgelost.",
+        "upgradePlan": "Upgrade plan",
+        "upgradeNow": "Nu upgraden",
+        "plan": "Plan",
+        "myPlans": "Mijn plannen",
+        "myBilling": "Mijn facturering",
+        "contactSupport": "Contact Ondersteuning",
+        "support": "Ondersteuning",
+        "please": "Graag",
+        "logInLink": "inloggen",
+        "toYourAccount": "naar uw account",
+        "contactSupportLink": "contact ondersteuning",
+        "language": "Taal",
+        "cancelled": "Geannuleerd",
+        "sites": "Sites"
     },
     "heading": {
         "notFoundPage.title": "Pagina Niet Gevonden",
@@ -405,7 +428,24 @@
             "modal.previewSite.title": "Voorbeeld website",
             "modal.previewSite.message": "Je site kan worden bekeken op een tijdelijke URL voordat je naar het echte domein gaat.",
             "backups.usage.backups_number.max.suffix_other": "Back-ups",
-            "backups.usage.backups_size.tooltip": "Hoeveelheid gebruikte opslagruimte van het totaal dat beschikbaar is voor back-ups."
+            "backups.usage.backups_size.tooltip": "Hoeveelheid gebruikte opslagruimte van het totaal dat beschikbaar is voor back-ups.",
+            "modal.ssoLogin.title": "Aanmelden bij WordPress",
+            "delete.wpCloud.alert": "Je kunt de instantie niet verwijderen als er bestaande handmatige back-ups zijn",
+            "advanced.security.disableSearchEngineIndexing.title": "Indexering van zoekmachines uitschakelen",
+            "advanced.security.disableSearchEngineIndexing.subtitle": "Als deze optie is ingeschakeld, zullen zoekmachines worden ontmoedigd om dit domein te indexeren.",
+            "advanced.developer.phpSettings.title": "PHP-instellingen",
+            "advanced.developer.phpSettings.subtitle": "PHP-instellingen voor het domein instellen.",
+            "advanced.developer.phpSettings.alert": "PHP-instellingen kunnen niet worden gewijzigd in dit domein.",
+            "advanced.modal.phpSettings.title": "PHP-instellingen instellen",
+            "advanced.modal.phpSettings.field": "Domein:",
+            "advanced.logs.title": "Logboeken",
+            "advanced.logs.loader": "Logs worden geladen, even geduld...",
+            "advanced.logs.instanceLogs.title": "Instance logboeken",
+            "advanced.logs.wordpressLogs.title": "WordPress foutenlogboeken",
+            "advanced.logs.phpLogs.title": "PHP logboeken",
+            "advanced.logs.phpLogs.tooltip": "U kunt ook meer gedetailleerde PHP logs vinden in het foutlogboek van de webserver.",
+            "advanced.logs.webserverLogs.title": "Webserverlogboeken",
+            "advanced.logs.noLogs": "Geen logboeken"
         },
         "hosting": {
             "sidebar.manage.title": "Beheren",
@@ -576,7 +616,13 @@
             "transferDomain.message.impossible": "U kunt dit domein niet gebruiken.",
             "installation.info.setDnsRecords": "WordPress is geïnstalleerd op {domein}. Om de configuratie te voltooien, stelt u de volgende DNS-records in:",
             "newInstance.location.label": "Locatie",
-            "newInstance.location.info": "Je kunt de locatie van je site kiezen uit de volgende opties:"
+            "newInstance.location.info": "Je kunt de locatie van je site kiezen uit de volgende opties:",
+            "installation.info.redirecting": "Omleiden... Het kan even duren.",
+            "installation.info.builderInProgress": "Je AI-website opzetten... Dit duurt niet lang!",
+            "newInstance.geo_affinity.subtitle": "Kies locatie",
+            "newInstance.geo_affinity.info": "Je kunt de locatie van je site kiezen uit de volgende opties:",
+            "newInstance.hosting_plan.subtitle": "Kies hostingplan",
+            "newInstance.hosting_plan.info": "Je kunt het hostingplan voor je abonnement kiezen uit de volgende opties:"
         },
         "navbar": {
             "tab.myInstances": "Sites",
@@ -589,7 +635,79 @@
             "colorScheme.title": "Kleurenschema kiezen",
             "primaryColor.title": "Primaire kleuren aanpassen",
             "additionalSettings.title": "Aanvullende instellingen",
-            "additionalSettings.disableShadows.title": "Schaduwen uitschakelen"
+            "additionalSettings.disableShadows.title": "Schaduwen uitschakelen",
+            "darkMode.title": "Modus wijzigen",
+            "darkMode.description": "Modus donker/licht"
+        },
+        "loginPage.emailVerification.title": "Controleer uw e-mailadres",
+        "loginPage.emailVerification.info1": "We hebben je een viercijferige code gemaild om",
+        "loginPage.emailVerification.info2": "Voer de onderstaande code in om je e-mailadres te bevestigen.",
+        "loginPage.emailVerification.info3": "Als je geen e-mail van ons hebt ontvangen, controleer dan je spamfolder of genereer de code opnieuw met bovenstaande knop.",
+        "loginPage.emailVerification.confirmEmailAddress": "Bevestig e-mailadres",
+        "loginPage.emailVerification.resendCodeMessage": "Code opnieuw verzenden in {{seconds}} seconden",
+        "loginPage.emailVerification.questions": {
+            "title": "Vragen?",
+            "link": "We zijn er om te helpen"
+        },
+        "loginPage.noAccount": "Heb je nog geen account?",
+        "loginPage.setPassword": {
+            "title": "Beveilig uw account",
+            "text": "Stel voordat je verder gaat een wachtwoord in voor je account om alles veilig te houden."
+        },
+        "registerPage.confirmEmail": "Bevestig e-mail",
+        "registerPage.confirmPassword": "Wachtwoord bevestigen",
+        "registerPage.alreadyRegistered": "Al geregistreerd?",
+        "registerPage.registeringAccept": "Door te registreren accepteert u",
+        "registerPage.termsOfService": "Servicevoorwaarden",
+        "registerPage.registerAccount": "Account registreren",
+        "registerPage.signInWith": "Aanmelden met",
+        "registerPage.fillForm": "of vul de onderstaande formulieren in",
+        "registerPage.creatingAccount": {
+            "title": "Uw account aanmaken...",
+            "text": "Dit duurt maar een paar seconden - hou je vast terwijl we beginnen."
+        },
+        "trialExpiredModal": {
+            "headline": "Uw proefperiode is verlopen",
+            "text": "Bedankt voor het uitproberen van onze oplossing! Om uw service actief te houden, gelieve <span class=\"font-weight-600\">upgrade uw proefversie</span> naar een betaald abonnement."
+        },
+        "cancelServiceModal": {
+            "title": "Plan Annuleren",
+            "alert": {
+                "title": "Deel uw mening",
+                "text": "Als je even tijd hebt, laat ons dan weten waarom je je abonnement opzegt. Uw feedback helpt ons te verbeteren en in de toekomst beter aan uw behoeften te voldoen."
+            },
+            "reason": {
+                "label": "Reden",
+                "placeholder": "Kies reden",
+                "option": {
+                    "performance": "Snelheid of prestatieproblemen van de website",
+                    "expensive": "Het plan was te duur",
+                    "support": "Ontevreden over klantenservice",
+                    "technical": "Voortdurende technische problemen of problemen met het beheer van de site",
+                    "panel": "Ik vind het bedieningspaneel niet leuk",
+                    "other": "Andere"
+                }
+            },
+            "describe": {
+                "label": "Beschrijf je reden in een paar woorden",
+                "minimum": "Minimaal 10 tekens"
+            }
+        },
+        "billing": {
+            "title": "Mijn facturering",
+            "noData": {
+                "title": "Geen informatie om weer te geven",
+                "text": "Je gebruikt momenteel een proefaccount. Zodra je een upgrade naar een betaald plan uitvoert, krijg je toegang tot dit gedeelte en alle informatie die het bevat."
+            },
+            "details": {
+                "title": "Factureringsgegevens",
+                "trialInfo": "Je hebt momenteel een proefaccount.",
+                "firstPaymentInfo": "Bij de eerste betaling wordt een factureringsaccount aangemaakt."
+            },
+            "invoice": {
+                "title": "Mijn facturen",
+                "noData.title": "Geen facturen gevonden"
+            }
         }
     },
     "message": {
@@ -671,7 +789,18 @@
             "activeDevices.title": "Geen actieve apparaten gevonden",
             "activeDevices.description": "Er zijn geen actieve apparaten gevonden voor deze instantie. Wanneer een gebruiker inlogt vanaf een apparaat, zullen ze automatisch op de lijst verschijnen.",
             "sftp.title": "Geen account aangemaakt",
-            "sftp.description": "Geen SSH/SFTP-accounts beschikbaar."
+            "sftp.description": "Geen SSH/SFTP-accounts beschikbaar.",
+            "wpErrorLogs.title": "Geen WordPress Foutlogs gevonden...",
+            "wpErrorLogs.description": "WordPress Foutlogs zijn beschikbaar wanneer het wp-config.php bestand de volgende instellingen heeft: WP_DEBUG ingesteld op true en WP_DEBUG_LOG ingesteld op true.",
+            "phpLogs.title": "Geen PHP logs gevonden...",
+            "phpLogs.description": "U kunt ook meer gedetailleerde PHP logs vinden in het foutlogboek van de webserver.",
+            "webserverLogs.title": "Geen Webserver Logs gevonden...",
+            "webserverLogs.description": "Geen logs gevonden...",
+            "webserverLogs.downloadTitle": "U kunt de inhoud van dit bestand niet weergeven.",
+            "webserverLogs.downloadDescription": "Download de logbestanden van de webserver.",
+            "noRecords": "Geen records gevonden",
+            "templates.title": "Geen sjablonen beschikbaar!",
+            "services.title": "Geen services gevonden"
         },
         "status": {
             "active": "Activeren",
@@ -797,7 +926,9 @@
             "installation.created": "Instantie aangemaakt. Installatie is bezig.",
             "installation.inProgress": "Installatie is bezig.",
             "copyInstance.completed": "Instantie kopiëren is bezig",
-            "modal.pushToStaging.success": "Push naar enscenering in uitvoering"
+            "modal.pushToStaging.success": "Push naar enscenering in uitvoering",
+            "advanced.logs.maxEntries": "100 items uit het logboek worden weergegeven. Download om meer te zien.",
+            "disableSearchEngineIndexing.success": "Zoekmachine-indexering is bijgewerkt."
         },
         "hosting": {
             "domain.create.success": "{{type}} is toegevoegd.",
@@ -1032,7 +1163,23 @@
         "setAsPrimaryDomain": "Instellen als primair domein",
         "transferNow": "Nu overstappen",
         "visitWebsite": "Bezoek website",
-        "visitSite": "Bezoek Site"
+        "visitSite": "Bezoek Site",
+        "addDirective": "Richtlijn toevoegen",
+        "billing.pay_now": "Nu betalen",
+        "contactSupport": "Contact Ondersteuning",
+        "download": "Downloaden",
+        "edit": "Bewerk",
+        "resentCode": "Code opnieuw verzenden",
+        "service.upgrade_plan": "Upgrade plan",
+        "signUp": "Aanmelden",
+        "startCreating": "Begin met creëren",
+        "upgradeNow": "Nu upgraden",
+        "website.details": "Locatiedetails",
+        "submit": "Stuur  in",
+        "set": {
+            "geo_affinity": "Locatie instellen",
+            "hosting_plan": "Stel hostingplan in"
+        }
     },
     "tooltip": {
         "create_backup.backup_directory": "Back-up map.",
@@ -1177,7 +1324,27 @@
             "sharedAccess.role.developer": "Toegang tot alle beheeropties voor uw website zonder toegang tot het beheer van de hostinginstantie.",
             "sharedAccess.role.fullAccess": "Toegang tot alle beheeropties voor uw website en de bijbehorende hostinginstantie. Let op: als deze hostinginstantie ook andere sites bevat, zullen ze ook toegang hebben tot die sites.",
             "sharedAccess.role.custom": "Pas toegang aan op functieniveau.",
-            "tab.backup.scheduled": "Back-up is gepland."
+            "tab.backup.scheduled": "Back-up is gepland.",
+            "phpSetting": {
+                "allow_url_fopen": "Deze optie schakelt URL-bewuste fopen-wrappers in die het mogelijk maken om URL-objecten zoals bestanden te benaderen. Standaard worden wrappers geleverd voor het benaderen van bestanden op afstand via het ftp of http protocol; sommige extensies zoals zlib kunnen aanvullende wrappers registreren.",
+                "display_errors": "Dit bepaalt of fouten naar het scherm moeten worden afgedrukt als onderdeel van de uitvoer of dat ze verborgen moeten worden voor de gebruiker.",
+                "enable_dl": "Deze richtlijn is eigenlijk alleen nuttig in de Apache module versie van PHP. Je kunt het dynamisch laden van PHP-extensies met dl() aan- en uitzetten per virtuele server of per directory. De belangrijkste reden om dynamisch laden uit te schakelen is veiligheid. Met dynamisch laden is het mogelijk om alle open_basedir beperkingen te negeren. De standaard is om dynamisch laden toe te staan, behalve wanneer je de veilige modus gebruikt. Deze functie is verouderd en zal in de toekomst verwijderd worden.",
+                "file_uploads": "Het al dan niet toestaan van HTTP-bestandsuploads.",
+                "max_execution_time": "Dit stelt de maximale tijd in seconden in die een script mag draaien voordat het wordt afgesloten door de parser. Dit helpt voorkomen dat slecht geschreven scripts de server overbelasten.",
+                "max_input_time": "Dit stelt de maximale tijd in seconden in die een script krijgt om invoergegevens te parseren, zoals POST, GET en bestandsuploads.",
+                "max_input_vars": "Dit stelt het maximum aantal toegestane invoervariabelen per verzoek in en kan worden gebruikt om denial-of-service-aanvallen met hash-botsingen op de namen van invoervariabelen tegen te gaan.",
+                "memory_limit": "Dit stelt de maximale hoeveelheid geheugen in bytes in die een script mag toewijzen. Dit helpt voorkomen dat slecht geschreven scripts al het beschikbare geheugen op een server gebruiken. Als je geen geheugenlimiet wilt, stel je deze richtlijn in op -1.",
+                "post_max_size": "Stelt de maximaal toegestane grootte van postgegevens in. Deze instelling beïnvloedt ook het uploaden van bestanden. Om grote bestanden te uploaden, moet deze waarde groter zijn dan upload_max_filesize. Over het algemeen moet memory_limit groter zijn dan post_max_size.",
+                "session.gc_maxlifetime": "Dit specificeert het aantal seconden waarna gegevens als 'rommel' worden gezien en mogelijk worden opgeschoond.",
+                "session.save_path": "session.save_path definieert het argument dat wordt doorgegeven aan de save handler. Als je de standaard bestandsafhandeling kiest, is dit het pad waar de bestanden worden aangemaakt.",
+                "upload_max_filesize": "De maximale grootte van een geüpload bestand.",
+                "zlib.output_compression": "Of pagina's transparant gecomprimeerd moeten worden. Als deze optie is ingesteld op 'Aan' in php.ini of de Apache configuratie, worden pagina's gecomprimeerd als de browser een 'Accept-Encoding: gzip' of 'deflate' header stuurt.",
+                "error_reporting": "Deze instelling bepaalt welke PHP fouten gerapporteerd worden. Het kan worden ingesteld op een specifiek niveau van foutrapportage, zoals E_ALL, dat alle fouten rapporteert, of het kan worden ingesteld op 0 om foutrapportage uit te schakelen.",
+                "log_errors": "Deze directief schakelt het loggen van fouten in een gespecificeerd bestand in of uit. Als deze optie is ingeschakeld, worden fouten gelogd in plaats van op het scherm weergegeven, wat handig is voor productieomgevingen.",
+                "max_file_uploads": "Dit stelt het maximum aantal bestanden in dat via één verzoek kan worden geüpload. Dit helpt misbruik te voorkomen door het aantal bestanden dat in één keer kan worden geüpload te beperken.",
+                "register_globals": "Deze richtlijn importeert, indien ingeschakeld, automatisch variabelen van het verzoek in het globale bereik. Het is deprecated en moet worden uitgeschakeld om veiligheidsredenen, omdat het kan leiden tot het overschrijven van variabelen en andere veiligheidsproblemen.",
+                "short_open_tag": "Deze instelling staat het gebruik van korte openingstags (<?) voor PHP-code toe. Als deze optie is uitgeschakeld, kan alleen de volledige openingstag (<?php) worden gebruikt. Het wordt aanbevolen om de volledige openingstag te gebruiken voor een betere compatibiliteit."
+            }
         },
         "hosting": {
             "service.suspended": "Uw dienst is opgeschort.",
@@ -1208,7 +1375,11 @@
         "edit_sftp_account.password": "Wachtwoord invoeren.",
         "edit_sftp_account.public_key": "Om veiligheidsredenen zijn alleen de volgende sleuteltypes en lengtes toegestaan: * ssh-rsa-sleutels van 2048 tot 16384 bits * ecdsa-sha2-nistp256-sleutels van 256 bits * ssh-ed25519-sleutels van 256 bits",
         "onboarding.newInstance.onlyLatestVersion": "Alleen de nieuwste WordPress versie wordt ondersteund.",
-        "add_sftp_account.password": "Wachtwoord invoeren."
+        "add_sftp_account.password": "Wachtwoord invoeren.",
+        "create_backup.backup_type": "Selecteer het type back-up dat moet worden uitgevoerd: kies 'Database' voor een back-up van de database, of 'Directory' voor een back-up van bestanden.",
+        "billing": {
+            "invoice.duedate.exceeded": "De betalingstermijn is overschreden. Betaal de factuur onmiddellijk om opschorting van de service te voorkomen."
+        }
     },
     "form": {
         "label": {
@@ -1254,7 +1425,9 @@
             "howOften": "Hoe vaak",
             "image": {
                 "title": "Afbeelding uploaden",
-                "subtitle": ".jpg, .png, .svg bestanden toegestaan"
+                "subtitle": ".jpg, .png, .svg bestanden toegestaan",
+                "lightMode": "Lichtmodus",
+                "darkMode": "Donkere modus"
             },
             "installedPath": "Geïnstalleerd pad",
             "item": "Item",
@@ -1315,7 +1488,9 @@
             "geo_affinity": "Kies locatie",
             "public_key": "Openbare sleutel",
             "location": "Locatie",
-            "set_location": "Locatie instellen"
+            "set_location": "Locatie instellen",
+            "backupType": "Type back-up",
+            "hosting_plan": "Hosting Plan"
         },
         "placeholder": {
             "cabundle": "Voer CA-bundle in",
@@ -1345,7 +1520,8 @@
             "type": "Voer type in",
             "username": "Voer gebruikersnaam in",
             "website": "Voer websitenaam in",
-            "value": "Voer waarde in"
+            "value": "Voer waarde in",
+            "emailDelegatedUser": "Voer het e-mailadres van de gedelegeerde gebruiker in"
         },
         "option": {
             "constant": "Constante",
@@ -1502,7 +1678,9 @@
             "storage": "Opslag",
             "tags": "Tags",
             "version": "Versie",
-            "visitors": "Bezoekers"
+            "visitors": "Bezoekers",
+            "only_me": "Alleen ik",
+            "me_and_delegated_user": "Ik en gedelegeerde gebruiker"
         },
         "value": {
             "unlimited": "Onbeperkt",
@@ -1600,7 +1778,16 @@
             "user": "Gebruiker",
             "value": "Waarde",
             "version": "Versie",
-            "visitors": "Bezoekers"
+            "visitors": "Bezoekers",
+            "directive": "Richtlijn",
+            "due_date": "Vervaldatum",
+            "instance_limit": "Instantielimiet",
+            "invoice_date": "Factuurdatum",
+            "number": "Nummer #",
+            "plan_name": "Plan Naam",
+            "sites": "Sites",
+            "total": "Totaal",
+            " ": ""
         },
         "field": {
             "userOwner": "{{name}} (jij)",
@@ -1623,7 +1810,9 @@
             "user": "Gebruikers per pagina:",
             "log": "Logs per pagina:",
             "device": "Apparaten per pagina:",
-            "instance": "Instanties per pagina:"
+            "instance": "Instanties per pagina:",
+            "plan": "Plannen per pagina",
+            "invoice": "Facturen per pagina:"
         },
         "snackbar": {
             "selectAll": "Selecteer alles",
@@ -1747,7 +1936,8 @@
             "user.instance.wordpress.copy": "Gekopieerde instantie",
             "user.hosting.sftp_account.create": "SSH/SFTP-account aangemaakt",
             "user.hosting.sftp_account.delete": "Verwijderde SSH/SFTP-account",
-            "user.hosting.sftp_account.update": "Bijgewerkt SSH/SFTP-account"
+            "user.hosting.sftp_account.update": "Bijgewerkt SSH/SFTP-account",
+            "user.instance.search_engine_indexing.update": "Bijgewerkte zoekmachine-indexering"
         },
         "suffix": {
             "toStatus": "naar {{status}}",
@@ -1799,7 +1989,14 @@
             "general.manage_shared_access": "Gedeelde toegang beheren",
             "general.refresh_thumbnail": "Refresh Thumbnail",
             "hosting.manage_sftp": "SSH/SFTP-accounts beheren",
-            "hosting.manage_file_manager": "Bestandsbeheer beheren"
+            "hosting.manage_file_manager": "Bestandsbeheer beheren",
+            "general.view_php_logs": "PHP-logboeken bekijken",
+            "general.view_webserver_logs": "Webserverlogboeken bekijken",
+            "general.push_to_staging": "Push naar Staging",
+            "general.preview_instance": "Voorbeeld",
+            "wordpress.manage_search_engine_indexing": "Indexering van zoekmachines beheren",
+            "wordpress.view_logs": "WordPress foutenlogboeken bekijken",
+            "wordpress.manage_cloudflare": "Cloudflare beheren"
         }
     },
     "languages": {

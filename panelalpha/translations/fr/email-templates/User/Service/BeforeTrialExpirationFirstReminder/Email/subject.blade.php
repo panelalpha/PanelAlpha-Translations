@@ -1,0 +1,1 @@
+Votre essai gratuit se termine dans {{ $before_expiration_days }} Jours

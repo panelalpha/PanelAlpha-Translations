@@ -236,4 +236,129 @@ return [
             ],
         ],
     ],
+    'App\\Lib\\Integrations\\Auth\\Google' => [
+        'title' => 'Google',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Befolgen Sie diese Schritte, um die Authentifizierung mit diesem Anbieter zu aktivieren und eine neue Anwendung zu registrieren:
+                <ol>
+                <li>Weiter zu:: <a href="https://console.developers.google.com/iam-admin/projects">https://console.developers.google.com/iam-admin/projects</a> und melden Sie sich ggf. an.</li>
+                <li>Klicken Sie auf <b>Projekt auswählen</b>, dann auf <b>Projekt erstellen</b> und wählen Sie es nach der Erstellung aus. </li>
+                <li>Gehen Sie zum <b>API Manager → Credentials → OAuth</b> Zustimmungsbildschirm und füllen Sie dort das Formular aus. </li>
+                <li>Nachfolgend gehen Sie zu <b>Credentials → Create credentials (OAuth client ID type)</b> und wählen <b>Web application</b>.</li>
+                <li>Setzen Sie <b>Authorize redirect URIs</b> auf <br /><b>{{$callback_url}}</b></li>
+                <li>Nach der Registrierung fügen Sie die erstellten Anmeldedaten (Client ID für die Anwendungs-ID und Client Secret für das Anwendungsgeheimnis) in das untenstehende Formular ein.</li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Kunden-ID',
+            ],
+            'client_secret' => [
+                'label' => 'Geheimnis des Kunden',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Apple' => [
+        'title' => 'Apple',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Gehen Sie folgendermaßen vor, um die Authentifizierung mit diesem Anbieter zu aktivieren und eine neue Anwendung zu registrieren:
+            ',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Kunden-ID',
+            ],
+            'client_secret' => [
+                'label' => 'Geheimnis des Kunden',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Microsoft' => [
+        'title' => 'Microsoft',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Befolgen Sie diese Schritte, um die Authentifizierung mit diesem Anbieter zu aktivieren und eine neue Anwendung zu registrieren:
+                <ol>
+                <li>Weiter zu: <a href="https://account.live.com/developers/applications/create" target="_blank">https://account.live.com/developers/applications/create</a> und melden Sie sich ggf. an</li>
+                <li>Erstellen Sie einen neuen Antrag.</li>
+                <li>Füllen Sie alle erforderlichen Felder aus, z. B. den Namen der Anwendung und ihre Beschreibung.</li>
+                <li>Setzen Sie <b>Redirect URL</b> auf <br /><b>{{$callback_url}}</b></li>
+                <li>Nachdem Sie sich registriert haben, fügen Sie die erstellten Anmeldedaten in das folgende Formular ein. </li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Kunden-ID',
+            ],
+            'client_secret' => [
+                'label' => 'Geheimnis des Kunden',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Linkedin' => [
+        'title' => 'LinkedIn',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Befolgen Sie diese Schritte, um die Authentifizierung mit diesem Anbieter zu aktivieren und eine neue Anwendung zu registrieren:
+            <ol>
+                <li>Weiter zu: <a href="https://www.linkedin.com/secure/developer" target="_blank">https://www.linkedin.com/secure/developer</a> und melden Sie sich ggf. an.</li>
+                <li>Erstellen Sie einen neuen Antrag.</li>
+                <li>Füllen Sie alle erforderlichen Felder aus, z. B. den Namen der Anwendung und ihre Beschreibung</li>
+                <li>Wählen Sie <b>Live</b> unter <b>Live Status</b>.</li>
+                <li>Wählen Sie die Berechtigungen <b>r_liteprofile</b> und <b>r_emailaddress</b> aus.</li>
+                <li>Setzen Sie <b>Redirect URL</b> auf <br /><b>{{$callback_url}}</b></li>
+                <li>Nachdem Sie sich registriert haben, fügen Sie die erstellten Anmeldedaten in das unten stehende Formular ein.</li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Kunden-ID',
+            ],
+            'client_secret' => [
+                'label' => 'Geheimnis des Kunden',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Facebook' => [
+        'title' => 'Facebook',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Befolgen Sie diese Schritte, um die Authentifizierung mit diesem Anbieter zu aktivieren und eine neue Anwendung zu registrieren:
+            <ol>
+                <li>Weiter zu: <a href="https://developers.facebook.com/apps" target="_blank">https://developers.facebook.com/apps</a> und melden Sie sich ggf. an.</li>
+                <li>Erstellen Sie eine neue Anwendung.</li>
+                <li>Füllen Sie <b>Name anzeigen</b>, <b>Kontakt-E-Mail</b> aus, wählen Sie eine Kategorie und klicken Sie auf <b>App-ID erstellen</b>. </li>
+                <li>Gehen Sie zur Seite <b>Einstellungen</b> und kopieren Sie <b>App ID</b> und <b>App Secret</b> in dieses Formular.</li>
+                <li>Zurück zu <b>+Produkt hinzufügen</b> und wähle <b>Facebook Login</b></li>
+                <li>Setzen Sie <b>Gültige OAuth Redirect URIs</b> auf <br /><b>{{$callback_url}}</b></li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Kunden-ID',
+            ],
+            'client_secret' => [
+                'label' => 'Geheimnis des Kunden',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Github' => [
+        'title' => 'GitHub',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Befolgen Sie diese Schritte, um die Authentifizierung mit diesem Anbieter zu aktivieren und eine neue Anwendung zu registrieren:
+            <ol>
+                <li>Weiter zu: <a href="https://github.com/settings/developers" target="_blank">https://github.com/settings/developers</a> und melden Sie sich ggf. an.</li>
+                <li>Erstellen Sie eine neue Anwendung.</li>
+                <li>Füllen Sie <b>Name, Beschreibung, Website URL</b> aus.</li>
+                <li>Setzen Sie <b>Redirect URL</b> auf <br /><b>{{$callback_url}}</b></li>
+                <li>Senden Sie das Formular ab und aktualisieren Sie die Anwendungseinstellungen. </li>
+                <li>Suchen Sie auf der nächsten Seite und kopieren Sie die Client-ID und das Client-Geheimnis aus <b>Authentifizierungsinformationen</b> in die Felder darunter.</li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Kunden-ID',
+            ],
+            'client_secret' => [
+                'label' => 'Geheimnis des Kunden',
+            ],
+        ],
+    ],
 ];

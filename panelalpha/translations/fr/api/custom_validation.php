@@ -64,4 +64,9 @@ return [
     'plan_not_found' => 'Plan introuvable.',
     'one_type_for_backup' => 'Un seul type de sauvegarde peut être sélectionné.',
     'instance_has_already_has_staging' => 'Cette instance dispose déjà d\'un environnement d\'essai.',
+    'registration_disabled' => 'L\'enregistrement est désactivé.',
+    'email_already_registered' => 'Adresse électronique déjà enregistrée',
+    'invalid_ssl_provider' => 'Fournisseur SSL non valide',
+    'invalid_php_directive' => 'Directive PHP non valide : :directive.',
+    'hosting_server_not_accessible' => 'Le serveur d\'hébergement n\'est pas accessible.',
 ];

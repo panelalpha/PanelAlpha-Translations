@@ -289,4 +289,48 @@ return [
         'name' => 'Atualização de plug-in disponível',
         'description' => 'A notificação está informando ao destinatário que uma nova atualização para um plug-in que ele está usando em seu site WordPress já está disponível. A atualização inclui correções de bugs e novos recursos que melhorarão o desempenho geral e a funcionalidade do plug-in.',
     ],
+    'App\\Notifications\\User\\System\\VerifyEmailAddress' => [
+        'name' => 'Verificar endereço de e-mail',
+        'description' => 'Um código de verificação é enviado para o endereço de e-mail do usuário quando ele se registra.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationFirstReminder' => [
+        'name' => 'Antes da expiração do período de avaliação Primeiro lembrete',
+        'description' => 'Um lembrete é enviado ao endereço de e-mail do usuário antes da expiração do serviço de avaliação.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationSecondReminder' => [
+        'name' => 'Antes da expiração do período de avaliação Segundo lembrete',
+        'description' => 'Um lembrete é enviado ao endereço de e-mail do usuário antes da expiração do serviço de avaliação.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationThirdReminder' => [
+        'name' => 'Terceiro lembrete antes da expiração do período de avaliação',
+        'description' => 'Um lembrete é enviado ao endereço de e-mail do usuário antes da expiração do serviço de avaliação.',
+    ],
+    'App\\Notifications\\User\\Service\\TrialExpired' => [
+        'name' => 'Teste expirado',
+        'description' => 'Uma notificação é enviada ao endereço de e-mail do usuário quando o serviço de avaliação expirar.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationFirstReminder' => [
+        'name' => 'Após a expiração do período de avaliação Primeiro lembrete',
+        'description' => 'Um lembrete é enviado ao endereço de e-mail do usuário após a expiração do serviço de avaliação.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationSecondReminder' => [
+        'name' => 'Após a expiração do período de avaliação, segundo lembrete',
+        'description' => 'Um lembrete é enviado ao endereço de e-mail do usuário após a expiração do serviço de avaliação.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationThirdReminder' => [
+        'name' => 'Terceiro lembrete após a expiração do período de avaliação',
+        'description' => 'Um lembrete é enviado ao endereço de e-mail do usuário após a expiração do serviço de avaliação.',
+    ],
+    'App\\Notifications\\Admin\\SslOrder\\SslOrderFailed' => [
+        'name' => 'Falha no pedido SSL',
+        'description' => 'A notificação informa ao administrador que houve falha em um pedido de SSL para o domínio especificado. Ela inclui detalhes relevantes, como o nome do domínio, o tipo, o provedor de SSL e as informações do cliente. Pode ser necessária atenção imediata para resolver o problema.',
+    ],
+    'App\\Notifications\\User\\Instance\\CreateFtpAccountForInstance' => [
+        'name' => 'Conta FTP criada para a instância',
+        'description' => 'Essa notificação informa ao usuário que uma nova conta de FTP foi criada com êxito. Ela inclui detalhes essenciais, como o nome de usuário do FTP, a senha e o endereço do servidor, permitindo que o usuário acesse seus arquivos.',
+    ],
+    'App\\Notifications\\User\\System\\CreateUser' => [
+        'name' => 'Usuário bem-vindo',
+        'description' => 'Essa notificação informa ao usuário que sua conta foi criada com sucesso. Ela inclui os detalhes de login necessários, como nome de usuário e senha, permitindo que o usuário acesse sua conta.',
+    ],
 ];

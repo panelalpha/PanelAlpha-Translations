@@ -1,0 +1,5 @@
+<p>Si {{ $client_first_name }},</p> <p>Vous avez commencé quelque chose de formidable avec {{ $trial_instance_name }}.
+<p>Vous avez commencé quelque chose de formidable avec {{ $trial_instance_name }} (<a href="{{ $trial_instance_url }}">{{ $trial_instance_domain }}</a>), et même si votre essai est terminé, votre site et vos progrès sont toujours sauvegardés.</p> <p>Si vous êtes de nouveau à l'écoute de votre client, vous pouvez le faire.
+<Si vous êtes prêt à passer à l'étape suivante, la réactivation de votre site est simple et rapide. Vous n'avez pas besoin de reconstruire quoi que ce soit - il vous suffit de reprendre votre site là où vous l'avez laissé.</p> <p>La réactivation de votre site est rapide et simple.
+</p><a href="{{ $trial_upgrade_url }}">Continuer à construire</a></p> <p>Nous serions ravis de pouvoir vous aider.
+</p> <p>Nous serions ravis de voir votre site mis en ligne.</p> <p>

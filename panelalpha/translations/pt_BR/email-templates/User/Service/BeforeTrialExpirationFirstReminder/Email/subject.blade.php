@@ -1,0 +1,1 @@
+Sua avaliação gratuita termina em {{ $before_expiration_days }} Dias

@@ -289,4 +289,48 @@ return [
         'name' => 'Ripristino dell\'istanza non riuscito',
         'description' => 'La notifica informa il destinatario che il tentativo di ripristinare l\'istanza dal backup è fallito. La notifica può includere dettagli sul motivo del fallimento del ripristino e sulle misure da adottare per risolvere il problema.',
     ],
+    'App\\Notifications\\User\\System\\VerifyEmailAddress' => [
+        'name' => 'Verifica dell\'indirizzo e-mail',
+        'description' => 'Un codice di verifica viene inviato all\'indirizzo e-mail dell\'utente al momento della registrazione.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationFirstReminder' => [
+        'name' => 'Prima della scadenza della prova Primo promemoria',
+        'description' => 'Un promemoria viene inviato all\'indirizzo e-mail dell\'utente prima della scadenza del servizio di prova.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationSecondReminder' => [
+        'name' => 'Prima della scadenza della prova Secondo promemoria',
+        'description' => 'Un promemoria viene inviato all\'indirizzo e-mail dell\'utente prima della scadenza del servizio di prova.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationThirdReminder' => [
+        'name' => 'Prima della scadenza della prova Terzo promemoria',
+        'description' => 'Un promemoria viene inviato all\'indirizzo e-mail dell\'utente prima della scadenza del servizio di prova.',
+    ],
+    'App\\Notifications\\User\\Service\\TrialExpired' => [
+        'name' => 'Prova scaduta',
+        'description' => 'Una notifica viene inviata all\'indirizzo e-mail dell\'utente quando il servizio di prova scade.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationFirstReminder' => [
+        'name' => 'Dopo la scadenza della prova Primo promemoria',
+        'description' => 'Un promemoria viene inviato all\'indirizzo e-mail dell\'utente dopo la scadenza del servizio di prova.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationSecondReminder' => [
+        'name' => 'Dopo la scadenza della prova, secondo promemoria',
+        'description' => 'Un promemoria viene inviato all\'indirizzo e-mail dell\'utente dopo la scadenza del servizio di prova.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationThirdReminder' => [
+        'name' => 'Dopo la scadenza della prova Terzo promemoria',
+        'description' => 'Un promemoria viene inviato all\'indirizzo e-mail dell\'utente dopo la scadenza del servizio di prova.',
+    ],
+    'App\\Notifications\\Admin\\SslOrder\\SslOrderFailed' => [
+        'name' => 'Fallimento dell\'ordine SSL',
+        'description' => 'La notifica informa l\'amministratore che un ordine SSL è fallito per il dominio specificato. Include dettagli rilevanti come il nome del dominio, il tipo, il provider SSL e le informazioni sul cliente. Potrebbe essere necessaria un\'attenzione immediata per risolvere il problema.',
+    ],
+    'App\\Notifications\\User\\Instance\\CreateFtpAccountForInstance' => [
+        'name' => 'Account FTP creato per l\'istanza',
+        'description' => 'Questa notifica informa l\'utente che è stato creato con successo un nuovo account FTP. Include dettagli essenziali come il nome utente FTP, la password e l\'indirizzo del server, consentendo all\'utente di accedere ai propri file.',
+    ],
+    'App\\Notifications\\User\\System\\CreateUser' => [
+        'name' => 'Benvenuto utente',
+        'description' => 'Questa notifica informa l\'utente che il suo account è stato creato con successo. Include i dati di accesso necessari, come nome utente e password, che consentono all\'utente di accedere al proprio account.',
+    ],
 ];

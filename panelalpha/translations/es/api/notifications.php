@@ -289,4 +289,48 @@ return [
         'name' => 'Error de configuración del plan',
         'description' => 'La notificación informa al destinatario de que la configuración del plan está mal configurada.',
     ],
+    'App\\Notifications\\User\\System\\VerifyEmailAddress' => [
+        'name' => 'Verificar la dirección de correo electrónico',
+        'description' => 'Al registrarse, se envía un código de verificación a la dirección de correo electrónico del usuario.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationFirstReminder' => [
+        'name' => 'Primer recordatorio antes del vencimiento del plazo de prueba',
+        'description' => 'Se envía un recordatorio a la dirección de correo electrónico del usuario antes de que expire su servicio de prueba.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationSecondReminder' => [
+        'name' => 'Segundo recordatorio antes de la expiración del plazo de prueba',
+        'description' => 'Se envía un recordatorio a la dirección de correo electrónico del usuario antes de que expire su servicio de prueba.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationThirdReminder' => [
+        'name' => 'Tercer recordatorio antes de la expiración del plazo de prueba',
+        'description' => 'Se envía un recordatorio a la dirección de correo electrónico del usuario antes de que expire su servicio de prueba.',
+    ],
+    'App\\Notifications\\User\\Service\\TrialExpired' => [
+        'name' => 'Prueba caducada',
+        'description' => 'Se envía una notificación a la dirección de correo electrónico del usuario cuando caduca su servicio de prueba.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationFirstReminder' => [
+        'name' => 'Tras la expiración del periodo de prueba Primer recordatorio',
+        'description' => 'Se envía un recordatorio a la dirección de correo electrónico del usuario después de que expire su servicio de prueba.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationSecondReminder' => [
+        'name' => 'Segundo recordatorio tras la expiración del plazo de prueba',
+        'description' => 'Se envía un recordatorio a la dirección de correo electrónico del usuario después de que expire su servicio de prueba.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationThirdReminder' => [
+        'name' => 'Tercer recordatorio tras la expiración del plazo de prueba',
+        'description' => 'Se envía un recordatorio a la dirección de correo electrónico del usuario después de que expire su servicio de prueba.',
+    ],
+    'App\\Notifications\\Admin\\SslOrder\\SslOrderFailed' => [
+        'name' => 'Fallo de pedido SSL',
+        'description' => 'La notificación informa al administrador de que un Pedido SSL ha fallado para el dominio especificado. Incluye detalles relevantes como el nombre de dominio, tipo, proveedor SSL e información del cliente. Es posible que se requiera atención inmediata para resolver el problema.',
+    ],
+    'App\\Notifications\\User\\Instance\\CreateFtpAccountForInstance' => [
+        'name' => 'Cuenta FTP creada para la instancia',
+        'description' => 'Esta notificación informa al usuario de que se ha creado correctamente una nueva cuenta FTP. Incluye detalles esenciales como el nombre de usuario FTP, la contraseña y la dirección del servidor, lo que permite al usuario acceder a sus archivos.',
+    ],
+    'App\\Notifications\\User\\System\\CreateUser' => [
+        'name' => 'Bienvenido Usuario',
+        'description' => 'Esta notificación informa al usuario de que su cuenta se ha creado correctamente. Incluye los datos de acceso necesarios, como el nombre de usuario y la contraseña, que permiten al usuario acceder a su cuenta.',
+    ],
 ];

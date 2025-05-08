@@ -64,4 +64,9 @@ return [
     'plan_not_found' => 'Plan nicht gefunden werden.',
     'one_type_for_backup' => 'Es kann nur eine Art der Sicherung ausgewählt werden.',
     'instance_has_already_has_staging' => 'Diese Instanz verfügt bereits über eine Staging-Umgebung.',
+    'registration_disabled' => 'Die Registrierung ist deaktiviert.',
+    'email_already_registered' => 'E-Mail Adresse bereits registriert',
+    'invalid_ssl_provider' => 'Ungültiger SSL-Anbieter',
+    'invalid_php_directive' => 'Ungültige PHP-Anweisung: :directive.',
+    'hosting_server_not_accessible' => 'Hosting Server ist nicht erreichbar.',
 ];

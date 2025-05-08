@@ -1,0 +1,1 @@
+Sua avaliação gratuita foi encerrada

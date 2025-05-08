@@ -236,4 +236,129 @@ return [
             ],
         ],
     ],
+    'App\\Lib\\Integrations\\Auth\\Google' => [
+        'title' => 'Google',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Suivez ces étapes pour activer l\'authentification avec ce fournisseur et pour enregistrer une nouvelle application :
+                <ol>
+                <li>Procédez jusqu\'à: : <a href="https://console.developers.google.com/iam-admin/projects">https://console.developers.google.com/iam-admin/projects</a> et connectez-vous si nécessaire.</li>
+                <li>Cliquez sur <b>Sélectionner un projet</b>, puis appuyez sur <b>Créer un projet</b> et sélectionnez-le une fois créé. </li>
+                <li>Passez à l\'écran de consentement <b>API Manager → Credentials → OAuth</b> et remplissez le formulaire qui s\'y trouve. </li>
+                <li>Par la suite, allez dans <b>Credentials → Create credentials (OAuth client ID type)</b> et sélectionnez <b>Web application</b>.</li>
+                <li>Configurez <b>Autoriser les URI de redirection</b> à <br /><b>{{$callback_url}}</b></li>.
+                <li>Une fois inscrit, collez les informations d\'identification de l\'application créée (Client ID pour l\'ID de l\'application et Client Secret pour le secret de l\'application) dans le formulaire ci-dessous.</li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Identifiant du client',
+            ],
+            'client_secret' => [
+                'label' => 'Secret du client',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Apple' => [
+        'title' => 'Apple',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Suivez ces étapes pour activer l\'authentification avec ce fournisseur et pour enregistrer une nouvelle application :
+            ',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Identifiant du client',
+            ],
+            'client_secret' => [
+                'label' => 'Secret du client',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Microsoft' => [
+        'title' => 'Microsoft',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Suivez ces étapes pour activer l\'authentification avec ce fournisseur et pour enregistrer une nouvelle application :
+                <ol>
+                <li>Procédez à : <a href="https://account.live.com/developers/applications/create" target="_blank">https://account.live.com/developers/applications/create</a> et connectez-vous si nécessaire</li>.
+                <li>Créer une nouvelle demande.</li>
+                <li>Remplir les champs obligatoires tels que le nom de l\'application et sa description.</li>
+                <li>Configurer <b>l\'URL de redirection</b> à <br /><b>{{$callback_url}}</b></li>.
+                <li>Une fois que vous vous êtes inscrit, collez les informations d\'identification de l\'application créée dans le formulaire ci-dessous. </li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Identifiant du client',
+            ],
+            'client_secret' => [
+                'label' => 'Secret du client',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Linkedin' => [
+        'title' => ' LinkedIn',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Suivez ces étapes pour activer l\'authentification avec ce fournisseur et pour enregistrer une nouvelle application :
+            <ol>
+                <li>Procédez à : <a href="https://www.linkedin.com/secure/developer" target="_blank">https://www.linkedin.com/secure/developer</a> et connectez-vous si nécessaire.</li>
+                <li>Créer une nouvelle application.</li>
+                <li>Remplir les champs obligatoires, tels que le nom de l\'application et sa description</li>.
+                <li>Choisissez <b>Live</b> sous <b>Live Status</b>.</li>
+                <li>Sélectionnez les autorisations <b>r_liteprofile</b> et <b>r_emailaddress</b>.</li>
+                <li>Set <b>Redirect URL</b> to <br /><b>{{$callback_url}}</b></li>
+                <li>Une fois que vous vous êtes inscrit, collez les informations d\'identification de l\'application créée dans le formulaire ci-dessous.</li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Identifiant du client',
+            ],
+            'client_secret' => [
+                'label' => 'Secret du client',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Facebook' => [
+        'title' => 'Facebook',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Suivez ces étapes pour activer l\'authentification avec ce fournisseur et pour enregistrer une nouvelle application :
+            <ol>
+                <li>Procédez à : <a href="https://developers.facebook.com/apps" target="_blank">https://developers.facebook.com/apps</a> et connectez-vous si nécessaire.</li>
+                <li>Créer une nouvelle application.</li>
+                <li>Remplir le <b>Nom d\'affichage</b>, l\'<b>E-mail de contact</b>, choisir une catégorie et cliquer sur <b>Créer l\'identifiant de l\'application</b>. </li>
+                <li>Allez à la page <b>Paramètres</b> et copiez <b>Identifiant de l\'application</b> et <b>Secret de l\'application</b> dans ce formulaire.</li>
+                <li>Revenez sur <b>+Ajouter un produit</b> et sélectionnez <b>Connexion Facebook</b></li>.
+                <li>Configurez <b>URIs de redirection OAuth valides</b> à <br /><b>{{$callback_url}}</b></li>.
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Identifiant du client',
+            ],
+            'client_secret' => [
+                'label' => 'Secret du client',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Github' => [
+        'title' => 'GitHub',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Suivez ces étapes pour activer l\'authentification avec ce fournisseur et pour enregistrer une nouvelle application :
+            <ol>
+                <li>Procédez à : <a href="https://github.com/settings/developers" target="_blank">https://github.com/settings/developers</a> et connectez-vous si nécessaire.</li>
+                <li>Créer une nouvelle application.</li>
+                <li>Remplir les champs <b>Nom, Description, URL du site web</b>.</li>
+                <li>Set <b>Redirect URL</b> to <br /><b>{{$callback_url}}</b></li>
+                <li>Soumettez le formulaire et mettez à jour les paramètres de l\'application. </li>
+                <li>Retrouvez la page suivante et copiez l\'ID du client et le Secret du client de <b>OAuth Information</b> dans les champs ci-dessous.</li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Identifiant du client',
+            ],
+            'client_secret' => [
+                'label' => 'Secret du client',
+            ],
+        ],
+    ],
 ];

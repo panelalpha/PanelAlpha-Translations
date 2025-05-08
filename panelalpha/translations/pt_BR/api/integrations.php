@@ -236,4 +236,129 @@ return [
             ],
         ],
     ],
+    'App\\Lib\\Integrations\\Auth\\Google' => [
+        'title' => 'Google',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Siga estas etapas para ativar a autenticação com esse provedor e para registrar um novo aplicativo:
+                <ol>
+                <li>Proceda para:: <a href="https://console.developers.google.com/iam-admin/projects">https://console.developers.google.com/iam-admin/projects</a> e faça login, se necessário.</li>
+                <li>Clique em <b>Select Project</b>, depois pressione <b>Create Project</b> e selecione-o quando for criado. </li>
+                <li>Mova para a tela de consentimento <b>API Manager → Credentials → OAuth</b> e preencha o formulário lá. </li>
+                <li>Em seguida, vá para <b>Credenciais → Criar credenciais (tipo de ID de cliente OAuth)</b> e selecione <b>Aplicativo Web</b>.</li>
+                <li>Defina <b>Autorizar URIs de redirecionamento</b> como <br /><b>{{$callback_url}}</b></li>
+                <li>Depois de se registrar, cole as credenciais do aplicativo criadas (Client ID para o ID do aplicativo e Client Secret para o Application secret) no formulário abaixo.</li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'ID do cliente',
+            ],
+            'client_secret' => [
+                'label' => 'Segredo do cliente',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Apple' => [
+        'title' => 'Apple',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Siga estas etapas para ativar a autenticação com esse provedor e para registrar um novo aplicativo:
+            ',
+        'fields' => [
+            'client_id' => [
+                'label' => 'ID do cliente',
+            ],
+            'client_secret' => [
+                'label' => 'Segredo do cliente',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Microsoft' => [
+        'title' => 'Microsoft',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Siga estas etapas para ativar a autenticação com esse provedor e para registrar um novo aplicativo:
+                <ol>
+                <li>Proceda para: <a href="https://account.live.com/developers/applications/create" target="_blank">https://account.live.com/developers/applications/create</a> e faça login, se necessário</li>
+                <li>Crie um novo aplicativo.</li>
+                <li>Preencha todos os campos obrigatórios, como o nome do aplicativo e sua descrição.</li>
+                <li>Defina o <b>URL de redirecionamento</b> como <br /><b>{{$callback_url}}</b></li>
+                <li>Depois de se registrar, cole as credenciais de aplicativo criadas no formulário abaixo. </li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'ID do cliente',
+            ],
+            'client_secret' => [
+                'label' => 'Segredo do cliente',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Linkedin' => [
+        'title' => 'LinkedIn',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Siga estas etapas para ativar a autenticação com esse provedor e para registrar um novo aplicativo:
+            <ol>
+                <li>Proceda para: <a href="https://www.linkedin.com/secure/developer" target="_blank">https://www.linkedin.com/secure/developer</a> e faça login, se necessário.</li>
+                <li>Crie um novo aplicativo.</li>
+                <li>Preencha todos os campos obrigatórios, como o nome do aplicativo e sua descrição</li>
+                <li>Escolha <b>Ativo</b> em <b>Status ativo</b>.</li>
+                <li>Selecione as permissões <b>r_liteprofile</b> e <b>r_emailaddress</b>.
+                <li>Definir <b>Redirecionamento de URL</b> para <br /><b>{{$callback_url}}</b></li>
+                <li>Depois de se registrar, cole as credenciais de aplicativo criadas no formulário abaixo.</li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'ID do cliente',
+            ],
+            'client_secret' => [
+                'label' => 'Segredo do cliente',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Facebook' => [
+        'title' => 'Facebook',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Siga estas etapas para ativar a autenticação com esse provedor e para registrar um novo aplicativo:
+            <ol>
+                <li>Proceda para: <a href="https://developers.facebook.com/apps" target="_blank">https://developers.facebook.com/apps</a> e faça login, se necessário.</li>
+                <li>Crie um novo aplicativo.</li>
+                <li>Preencha <b>Display Name</b>, <b>Contact Email</b>, escolha uma categoria e clique em <b>Create App ID</b>. </li>
+                <li>Vá para a página <b>Settings</b> e copie <b>App ID</b> e <b>App Secret</b> para esse formulário.</li>
+                <li>Volte para <b>+Add Product</b> e selecione <b>Facebook Login</b></li>
+                <li>Defina <b>Valid OAuth redirect URIs</b> como <br /><b>{{$callback_url}}</b></li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'ID do cliente',
+            ],
+            'client_secret' => [
+                'label' => 'Segredo do cliente',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Github' => [
+        'title' => 'GitHub',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Siga estas etapas para ativar a autenticação com esse provedor e para registrar um novo aplicativo:
+            <ol>
+                <li>Proceda para: <a href="https://github.com/settings/developers" target="_blank">https://github.com/settings/developers</a> e faça login, se necessário.</li>
+                <li>Crie um novo aplicativo.</li>
+                <li>Preencha <b>Nome, Descrição, URL do site</b>.</li>
+                <li>Definir <b>Redirecionar URL</b> para <br /><b>{{$callback_url}}</b></li>
+                <li>Submeta o formulário e atualize as configurações do aplicativo. </li>
+                <li>Localize na próxima página e copie o Client ID e o Client Secret de <b>OAuth Information</b> para os campos abaixo.</li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'ID do cliente',
+            ],
+            'client_secret' => [
+                'label' => 'Segredo do cliente',
+            ],
+        ],
+    ],
 ];

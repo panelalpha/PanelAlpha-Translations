@@ -64,4 +64,9 @@ return [
     'user_not_found' => 'Usuário não encontrado.',
     'plan_not_found' => 'O plano não foi encontrado.',
     'instance_has_already_has_staging' => 'Essa instância já tem um ambiente de preparação.',
+    'registration_disabled' => 'O registro está desativado.',
+    'email_already_registered' => 'Endereço de e-mail já registrado',
+    'invalid_ssl_provider' => 'Provedor SSL inválido',
+    'invalid_php_directive' => 'Diretiva PHP inválida: :directive.',
+    'hosting_server_not_accessible' => 'O servidor de hospedagem não está acessível.',
 ];

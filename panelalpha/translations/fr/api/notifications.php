@@ -289,4 +289,48 @@ return [
         'description' => 'La notification informe le destinataire que les modifications apportées à l\'instance en direct ont été transférées avec succès à la version d\'essai du site web ou du système. La notification peut contenir des détails sur les modifications apportées et sur les mesures à prendre.',
         'name' => 'Envoi vers la mise en scène terminé',
     ],
+    'App\\Notifications\\User\\System\\VerifyEmailAddress' => [
+        'name' => 'Vérifier l\'adresse électronique',
+        'description' => 'Un code de vérification est envoyé à l\'adresse électronique de l\'utilisateur lors de son inscription.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationFirstReminder' => [
+        'name' => 'Avant l\'expiration de la période d\'essai Premier rappel',
+        'description' => 'Un rappel est envoyé à l\'adresse électronique de l\'utilisateur avant l\'expiration du service d\'essai.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationSecondReminder' => [
+        'name' => 'Avant l\'expiration de la période d\'essai Deuxième rappel',
+        'description' => 'Un rappel est envoyé à l\'adresse électronique de l\'utilisateur avant l\'expiration du service d\'essai.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationThirdReminder' => [
+        'name' => 'Avant l\'expiration de la période d\'essai Troisième rappel',
+        'description' => 'Un rappel est envoyé à l\'adresse électronique de l\'utilisateur avant l\'expiration du service d\'essai.',
+    ],
+    'App\\Notifications\\User\\Service\\TrialExpired' => [
+        'name' => 'Essai expiré',
+        'description' => 'Une notification est envoyée à l\'adresse électronique de l\'utilisateur lorsque son service d\'essai expire.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationFirstReminder' => [
+        'name' => 'Après l\'expiration de la période d\'essai Premier rappel',
+        'description' => 'Un rappel est envoyé à l\'adresse électronique de l\'utilisateur après l\'expiration du service d\'essai.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationSecondReminder' => [
+        'name' => 'Après l\'expiration de la période d\'essai Deuxième rappel',
+        'description' => 'Un rappel est envoyé à l\'adresse électronique de l\'utilisateur après l\'expiration du service d\'essai.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationThirdReminder' => [
+        'name' => 'Après l\'expiration de la période d\'essai Troisième rappel',
+        'description' => 'Un rappel est envoyé à l\'adresse électronique de l\'utilisateur après l\'expiration du service d\'essai.',
+    ],
+    'App\\Notifications\\Admin\\SslOrder\\SslOrderFailed' => [
+        'name' => 'Échec de la commande SSL',
+        'description' => 'La notification informe l\'administrateur qu\'une commande SSL a échoué pour le domaine spécifié. Elle inclut des détails pertinents tels que le nom de domaine, le type, le fournisseur SSL et les informations sur le client. Une attention immédiate peut être requise pour résoudre le problème.',
+    ],
+    'App\\Notifications\\User\\Instance\\CreateFtpAccountForInstance' => [
+        'name' => 'Compte FTP créé pour l\'instance',
+        'description' => 'Cette notification informe l\'utilisateur qu\'un nouveau compte FTP a été créé avec succès. Elle contient des informations essentielles telles que le nom d\'utilisateur FTP, le mot de passe et l\'adresse du serveur, ce qui permet à l\'utilisateur d\'accéder à ses fichiers.',
+    ],
+    'App\\Notifications\\User\\System\\CreateUser' => [
+        'name' => 'Bienvenue à l\'utilisateur',
+        'description' => 'Cette notification informe l\'utilisateur que son compte a été créé avec succès. Elle contient les données de connexion nécessaires, telles que le nom d\'utilisateur et le mot de passe, qui permettent à l\'utilisateur d\'accéder à son compte.',
+    ],
 ];
