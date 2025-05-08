@@ -1,5 +1,11 @@
 <?php
 
+use App\Lib\Integrations\Auth\Apple;
+use App\Lib\Integrations\Auth\Facebook;
+use App\Lib\Integrations\Auth\Github;
+use App\Lib\Integrations\Auth\Google;
+use App\Lib\Integrations\Auth\Linkedin;
+use App\Lib\Integrations\Auth\Microsoft;
 use App\Lib\Integrations\DbIp;
 use App\Lib\Integrations\EmailProvider\MailerSend;
 use App\Lib\Integrations\EmailProvider\Mailgun;
@@ -254,6 +260,131 @@ return [
             'whm_package' => [
                 'label' => 'WHM Package',
             ]
+        ]
+    ],
+    Google::class => [
+        "title" => "Google",
+        "subtitle" => "",
+        "description" => "",
+        "instruction" => 'Follow these steps to enable the authentication with this provider and to register a new application:
+                <ol>
+                <li>Proceed to:: <a href="https://console.developers.google.com/iam-admin/projects">https://console.developers.google.com/iam-admin/projects</a> and log in if necessary.</li>
+                <li>Click on <b>Select Project</b>, then press <b>Create Project</b> and select it when created. </li>
+                <li>Move to <b>API Manager → Credentials → OAuth</b> consent screen and fill out the form there. </li>
+                <li>Next, go to <b>Credentials → Create credentials (OAuth client ID type)</b> and select <b>Web application</b>.</li>
+                <li>Set <b>Authorize redirect URIs</b> to  <br /><b>{{$callback_url}}</b></li>
+                <li>Once you have registered paste the created application credentials (Client ID for application ID and Client Secret for Application secret) into the form below.</li>
+            </ol>',
+        "fields" => [
+            'client_id' => [
+                'label' => 'Client ID',
+            ],
+            'client_secret' => [
+                'label' => 'Client Secret',
+            ],
+        ]
+    ],
+    Apple::class => [
+        "title" => "Apple",
+        "subtitle" => "",
+        "description" => "",
+        "instruction" => 'Follow these steps to enable the authentication with this provider and to register a new application:
+            ',
+        "fields" => [
+            'client_id' => [
+                'label' => 'Client ID',
+            ],
+            'client_secret' => [
+                'label' => 'Client Secret',
+            ],
+        ]
+    ],
+    Microsoft::class => [
+        "title" => "Microsoft",
+        "subtitle" => "",
+        "description" => "",
+        "instruction" => 'Follow these steps to enable the authentication with this provider and to register a new application:
+                <ol>
+                <li>Proceed to: <a href="https://account.live.com/developers/applications/create" target="_blank">https://account.live.com/developers/applications/create</a> and log in if necessary</li>
+                <li>Create a new application.</li>
+                <li>Fill out any required fields such as the application name and its description.</li>
+                <li>Set <b>Redirect URL</b> to <br /><b>{{$callback_url}}</b></li>
+                <li>Once you have registered, paste the created application credentials into the form below. </li>
+            </ol>',
+        "fields" => [
+            'client_id' => [
+                'label' => 'Client ID',
+            ],
+            'client_secret' => [
+                'label' => 'Client Secret',
+            ],
+        ]
+    ],
+    Linkedin::class => [
+        "title" => "LinkedIn",
+        "subtitle" => "",
+        "description" => "",
+        "instruction" => 'Follow these steps to enable the authentication with this provider and to register a new application:
+            <ol>
+                <li>Proceed to: <a href="https://www.linkedin.com/secure/developer" target="_blank">https://www.linkedin.com/secure/developer</a> and log in if necessary.</li>
+                <li>Create a new application.</li>
+                <li>Fill out any required fields, such as the application name and its description</li>
+                <li>Choose <b>Live</b> under <b>Live Status</b>.</li>
+                <li>Select <b>r_liteprofile</b> and <b>r_emailaddress</b> permissions.</li>
+                <li>Set <b>Redirect URL</b> to <br /><b>{{$callback_url}}</b></li>
+                <li>Once you have registered, paste the created application credentials into the form below.</li>
+            </ol>',
+        "fields" => [
+            'client_id' => [
+                'label' => 'Client ID',
+            ],
+            'client_secret' => [
+                'label' => 'Client Secret',
+            ],
+        ]
+    ],
+    Facebook::class => [
+        "title" => "Facebook",
+        "subtitle" => "",
+        "description" => "",
+        "instruction" => 'Follow these steps to enable the authentication with this provider and to register a new application:
+            <ol>
+                <li>Proceed to: <a href="https://developers.facebook.com/apps" target="_blank">https://developers.facebook.com/apps</a> and log in if necessary.</li>
+                <li>Create a new application.</li>
+                <li>Fill out <b>Display Name</b>, <b>Contact Email</b>, choose a category and click <b>Create App ID</b>. </li>
+                <li>Go to <b>Settings</b> page and copy <b>App ID</b> and <b>App Secret</b> to this form.</li>
+                <li>Come back to <b>+Add Product</b> and select <b>Facebook Login</b></li>
+                <li>Set <b>Valid OAuth redirect URIs</b> to <br /><b>{{$callback_url}}</b></li>
+            </ol>',
+        "fields" => [
+            'client_id' => [
+                'label' => 'Client ID',
+            ],
+            'client_secret' => [
+                'label' => 'Client Secret',
+            ],
+        ]
+    ],
+    Github::class => [
+        "title" => "GitHub",
+        "subtitle" => "",
+        "description" => "",
+        "instruction" => 'Follow these steps to enable the authentication with this provider and to register a new application:
+            <ol>
+                <li>Proceed to: <a href="https://github.com/settings/developers" target="_blank">https://github.com/settings/developers</a> and log in if necessary.</li> 
+                <li>Create a new application.</li> 
+                <li>Fill out <b>Name, Description, Website URL</b>.</li> 
+                <li>Set <b>Redirect URL</b> to <br /><b>{{$callback_url}}</b></li> 
+                <li>Submit the form and update the application settings. </li> 
+                <li>Find on the next page and copy Client ID and Client Secret from <b>OAuth Information</b> to the fields below.</li> 
+            </ol>',
+        "fields" => [
+            'client_id' => [
+                'label' => 'Client ID',
+            ],
+            'client_secret' => [
+                'label' => 'Client Secret',
+            ],
         ]
     ],
 ];

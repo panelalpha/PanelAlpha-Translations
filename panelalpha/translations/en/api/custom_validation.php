@@ -21,6 +21,8 @@ return [
     'invalid_protocol' => 'Invalid protocol',
     'invalid_frequency_settings' => 'Invalid Frequency Settings',
     "incorrect_credentials" => "Looks like the access details you entered are incorrect. Please try again.",
+    "registration_disabled" => "Registration is disabled.",
+    "email_already_registered" => "Email Address Already Registered",
     'invitation_sent' => 'Invitation has been sent to :email',
     'invitation_cannot_yourself' => 'Cannot invite yourself',
     'invitation_resent' => 'You can resend the invitation again :time',
@@ -64,5 +66,7 @@ return [
     'plan_not_found' => 'Plan not be found.',
     'one_type_for_backup' => 'Only one type of backup can be selected.',
     'instance_has_already_has_staging' => 'This instance already has staging environment.',
-    'invalid_ssl_provider' => "Invalid SSL Provider"
+    'invalid_ssl_provider' => "Invalid SSL Provider",
+    'invalid_php_directive' => 'Invalid PHP directive: :directive.',
+    'hosting_server_not_accessible' => 'Hosting Server is not accessible.',
 ];

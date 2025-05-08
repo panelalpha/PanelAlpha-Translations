@@ -19,6 +19,7 @@ use App\Notifications\Admin\ReportProvider\SyncReportProvidersFailed;
 use App\Notifications\Admin\ReportProvider\SyncReportProvidersFinished;
 use App\Notifications\Admin\SslOrder\DnsPropagationExceeded;
 use App\Notifications\Admin\SslOrder\SslOrderFailed;
+use App\Notifications\User\Instance\CreateFtpAccountForInstance;
 use App\Notifications\User\Instance\PushToStagingFailed;
 use App\Notifications\User\Instance\PushToStagingFinished;
 use App\Notifications\User\Instance\UpdateWordpressFinished;
@@ -64,7 +65,16 @@ use App\Notifications\Admin\Plugin\ForceUpdatePluginFinished;
 use App\Notifications\Admin\Plugin\ForceUpdatePluginFailed;
 use App\Notifications\User\Instance\ImportFailed;
 use App\Notifications\User\Instance\ImportFinished;
+use App\Notifications\User\System\CreateUser;
+use App\Notifications\User\Service\AfterTrialExpirationFirstReminder;
+use App\Notifications\User\Service\AfterTrialExpirationSecondReminder;
+use App\Notifications\User\Service\AfterTrialExpirationThirdReminder;
+use App\Notifications\User\Service\BeforeTrialExpirationFirstReminder;
+use App\Notifications\User\Service\BeforeTrialExpirationSecondReminder;
+use App\Notifications\User\Service\BeforeTrialExpirationThirdReminder;
+use App\Notifications\User\Service\TrialExpired;
 use App\Notifications\User\System\NewDeviceLogin;
+use App\Notifications\User\System\VerifyEmailAddress;
 
 return [
     ForceUpdatePluginFailed::class => [
@@ -106,6 +116,38 @@ return [
     ResetPassword::class => [
         "name" => "Reset Password",
         "description" => "A reset password email is an automated message sent to a user's email address when they request to reset their password for an account. The email typically contains a link or instructions for resetting the password, as well as a time limit for the link's validity."
+    ],
+    VerifyEmailAddress::class => [
+        "name" => "Verify Email Address",
+        "description" => "A verification code is sent to user's email address when they register."
+    ],
+    BeforeTrialExpirationFirstReminder::class => [
+        "name" => "Before Trial Expiration First Reminder",
+        "description" => "A reminder is sent to user's email address before their trial service expiration."
+    ],
+    BeforeTrialExpirationSecondReminder::class => [
+        "name" => "Before Trial Expiration Second Reminder",
+        "description" => "A reminder is sent to user's email address before their trial service expiration."
+    ],
+    BeforeTrialExpirationThirdReminder::class => [
+        "name" => "Before Trial Expiration Third Reminder",
+        "description" => "A reminder is sent to user's email address before their trial service expiration."
+    ],
+    TrialExpired::class => [
+        "name" => "Trial Expired",
+        "description" => "A notification is sent to user's email address when their trial service expire."
+    ],
+    AfterTrialExpirationFirstReminder::class => [
+        "name" => "After Trial Expiration First Reminder",
+        "description" => "A reminder is sent to user's email address after their trial service expiration."
+    ],
+    AfterTrialExpirationSecondReminder::class => [
+        "name" => "After Trial Expiration Second Reminder",
+        "description" => "A reminder is sent to user's email address after their trial service expiration."
+    ],
+    AfterTrialExpirationThirdReminder::class => [
+        "name" => "After Trial Expiration Third Reminder",
+        "description" => "A reminder is sent to user's email address after their trial service expiration."
     ],
     PluginUpdateAvailable::class => [
         "name" => "Plugin Update Available",
@@ -358,5 +400,13 @@ return [
     SslOrderFailed::class => [
         "name" => "SSL Order Failure",
         "description" => 'Notification is informing the admin that an SSL Order has failed for the specified domain. It includes relevant details such as the domain name, type, SSL provider, and client information. Immediate attention may be required to resolve the issue.'
-    ]
+    ],
+    CreateFtpAccountForInstance::class => [
+        "name" => "FTP Account Created For Instance",
+        "description" => 'This notification informs the user that a new FTP account has been successfully created. It includes essential details such as the FTP username, password, and server address, enabling the user to access their files.',
+    ],
+    CreateUser::class  => [
+        "name" => "Welcome User",
+        "description" => 'This notification informs the user that their account has been successfully created. It includes the necessary login details such as username and password, allowing the user to access their account.',
+    ],
 ];

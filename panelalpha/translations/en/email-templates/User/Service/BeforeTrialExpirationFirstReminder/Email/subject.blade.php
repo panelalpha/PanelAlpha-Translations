@@ -1,0 +1,1 @@
+Your Free Trial Ends in {{ $before_expiration_days }} Days

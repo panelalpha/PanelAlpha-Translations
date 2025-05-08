@@ -1,6 +1,7 @@
 {
     "title": {
         "login": "{{- app_name}} - Login",
+        "register":  "{{- app_name}} - Register",
         "accept-invite": "{{- app_name}} - Accept Invitation",
         "summary": "{{- app_name}} - Summary",
         "domains": "{{- app_name}} - Domains",
@@ -30,6 +31,8 @@
         "forgot-password": "{{- app_name}} - Forgot Password",
         "reset-password": "{{- app_name}} - Reset Password",
         "my-account": "{{- app_name}} - My Account",
+        "services": "{{- app_name}} - My Plans",
+        "billing": "{{- app_name}} - My Billing",
         "page-not-found": "{{- app_name}} - Page Not Found"
     },
     "general": {
@@ -100,7 +103,27 @@
             "hour_other": "{{count}} hours",
             "day_one": "{{count}} day",
             "day_other": "{{count}} days"
-        }
+        },
+        "trialExpires": "Your trial expires",
+        "trialUpgradePlan": "To avoid limitations on system functionality, upgrade your plan.",
+        "trialExpired": "Your trial has expired",
+        "trialExpiredUpgradePlan": "and system functions have been limited. Update your plan to restore full access.",
+        "instancesSuspended": "Hosting Instances Are Suspended",
+        "instancesSuspendedDescription": "All of your hosting instances are currently suspended. This may be due to an unpaid invoice or exceeding the limits of your current plan. Your services will remain inactive until the issue is resolved.",
+        "upgradePlan": "Upgrade Plan",
+        "upgradeNow": "Upgrade Now",
+        "plan": "Plan",
+        "myPlans": "My Plans",
+        "myBilling": "My Billing",
+        "contactSupport": "Contact Support",
+        "support": "Support",
+        "please": "Please",
+        "logInLink": "log in",
+        "toYourAccount": "to your account",
+        "contactSupportLink": "contact support",
+        "language": "Language",
+        "cancelled": "Cancelled",
+        "sites": "Sites"
     },
     "heading": {
         "notFoundPage.title": "Page Not Found",
@@ -109,16 +132,86 @@
         "errorPage.subtitle": "Try again in a minute",
         "loginPage.twoFactorAuthentication.title": "Two-Factor Authentication",
         "loginPage.twoFactorAuthentication.info": "If you don't have access to your Two-Factor Authentication code, use your backup code here.",
+        "loginPage.emailVerification.title": "Verify your email address",
+        "loginPage.emailVerification.info1": "We emailed you a four-digit code to",
+        "loginPage.emailVerification.info2": "Enter the code below to confirm your email address.",
+        "loginPage.emailVerification.info3": "If you have not received an email from us, please check your spam folder or generate the code again using the button above",
+        "loginPage.emailVerification.confirmEmailAddress": "Confirm Email Address",
+        "loginPage.emailVerification.resendCodeMessage": "Resend code in {{seconds}} seconds",
+        "loginPage.emailVerification.questions": {
+            "title": "Questions?",
+            "link": "We're here to help"
+        },
         "loginPage.recoveryCode.title": "Two-Factor Authentication",
         "loginPage.recoveryCode.alert": "Treat the backup code the same as you would your password. We recommend saving it with a password manager.",
         "loginPage.recoveryCode.confirmationCheckbox": "I confirm that I have copied and saved the backup code in a safe place.",
         "loginPage.login.title": "Welcome Back",
+        "loginPage.noAccount": "Don't have an account yet?",
+        "loginPage.setPassword": {
+            "title": "Secure Your Account",
+            "text": "Before moving ahead, please set a password for your account to keep things secure."
+        },
+        "registerPage.confirmEmail": "Confirm Email",
+        "registerPage.confirmPassword": "Confirm Password",
+        "registerPage.alreadyRegistered": "Already Registered?",
+        "registerPage.registeringAccept": "By registering, you accept",
+        "registerPage.termsOfService": "Terms of Service",
+        "registerPage.registerAccount": "Register Account",
+        "registerPage.signInWith": "Sign in with",
+        "registerPage.fillForm": "or fill in the forms below",
+        "registerPage.creatingAccount": {
+            "title": "Creating Your Account...",
+            "text": "This will only take a few seconds - hang tight while we get started."
+        },
         "acceptInvitePage.error.title": "Invalid Invitation",
         "acceptInvitePage.error.info": "Your link is invalid or invitation may no longer exist if already accepted, expired or cancelled.",
         "acceptInvitePage.password.title": "Set Your Password",
         "forgotPasswordPage.title": "Forgot password",
         "resetPasswordPage.title": "Reset password",
         "ssoLoginPage.title": "Redirecting... Please wait.",
+        "trialExpiredModal": {
+            "headline": "Your trial has expired",
+            "text": "Thank you for trying out our solution! To keep your service running, please <span class=\"font-weight-600\">upgrade your trial</span> to a  paid subscription."
+        },
+        "cancelServiceModal": {
+            "title": "Plan Cancellation",
+            "alert": {
+                "title": "Share Your Thoughts",
+                "text": "If you have a moment, please let us know why you’re canceling your plan. Your feedback helps us improve and better meet your needs in the future."
+            },
+            "reason": {
+                "label": "Reason",
+                "placeholder": "Choose reason",
+                "option": {
+                    "performance": "Website speed or performance issues",
+                    "expensive": "The plan was too expensive",
+                    "support": "Unsatisfied with customer support",
+                    "technical": "Ongoing technical or site management issues",
+                    "panel": "Don't like the control panel",
+                    "other": "Other"
+                }
+            },
+            "describe": {
+                "label": "Describe your reason in a few words",
+                "minimum": "Minimum 10 characters"
+            }
+        },
+        "billing": {
+            "title": "My Billing",
+            "noData": {
+                "title": "No Information To Display",
+                "text": "You're currently using a trial account. Once you upgrade to a paid plan, you'll get access to this section and all the information it contains."
+            },
+            "details": {
+                "title": "Billing Details",
+                "trialInfo": "You are currently having a Trial account.",
+                "firstPaymentInfo": "Billing account will be created with first payment."
+            },
+            "invoice": {
+                "title": "My Invoices",
+                "noData.title": "No Invoices Were Found"
+            }
+        },
         "accountPage": {
             "title": "My Account",
             "tab.user.title": "Personal Information",
@@ -368,6 +461,11 @@
             "advanced.developer.phpVersion.status": "Current PHP version: {{version}}",
             "advanced.modal.phpVersion.title": "Set PHP Version",
             "advanced.modal.phpVersion.field": "Domain: ",
+            "advanced.developer.phpSettings.title": "PHP Settings",
+            "advanced.developer.phpSettings.subtitle": "Set PHP settings for the domain.",
+            "advanced.developer.phpSettings.alert": "PHP Settings cannot be changed in this domain.",
+            "advanced.modal.phpSettings.title": "Set PHP Settings",
+            "advanced.modal.phpSettings.field": "Domain: ",
             "advanced.wordpressConfig.title": "System Configuration",
             "advanced.wordpressConfig.modal.delete.title": "Delete Configuration",
             "advanced.wordpressConfig.modal.delete.info": "Are you sure that you want to delete the {{name}} configuration?",
@@ -545,14 +643,15 @@
             "chooseProduct.website.subtitle": "No worries, it can be changed at any time later on.",
             "installation.title.completed": "Congratulations!",
             "installation.title.failed": "Error!",
-            "installation.subtitle.inProgress": "Your site is now being installed for you!",
+            "installation.subtitle.inProgress": "Your site is now being created for you!",
             "installation.subtitle.completed": "Your site has been installed!",
             "installation.subtitle.failed": "Installation was unsuccessful. Please try again.",
             "installation.info.inProgress": "This process may take even a few minutes, so in the meantime relax and enjoy the moment.",
             "installation.info.failed": "Something went wrong, please try again.",
             "installation.info.completed": "Your website has been successfully installed, you can now start managing it by clicking on the below button.",
             "installation.info.setDnsRecords": "WordPress has been installed on {domain}. To complete configuration, set the following DNS records:",
-            "installation.info.builderInProgress": "Setting up your AI-powered site… Please wait a moment while the builder initializes.",
+            "installation.info.redirecting": "Redirecting... It may take a moment.",
+            "installation.info.builderInProgress": "Setting up your AI-powered site... This won't take long!",
             "chooseTheme.title": "Choose Theme",
             "chooseTheme.subtitle": "No sweat, you can always change it later.",
             "chooseTheme.popular": "Popular",
@@ -567,8 +666,11 @@
             "newInstance.type.template.tab": "Create From Template",
             "newInstance.type.template.empty": "No Instance Templates Available!",
             "newInstance.location.subtitle": "Choose Location",
-            "newInstance.location.label": "Location",
             "newInstance.location.info": "You can choose the location of your site from the following options:",
+            "newInstance.geo_affinity.subtitle": "Choose Location",
+            "newInstance.geo_affinity.info": "You can choose the location of your site from the following options:",
+            "newInstance.hosting_plan.subtitle": "Choose Hosting Plan",
+            "newInstance.hosting_plan.info": "You can choose the hosting plan for your subscription from the following options:",
             "import.success.title": "Congratulations!",
             "import.success.subtitle": "The import process has been started!",
             "import.success.info.general": "Thank you for submitting the details required for import. This may take some time, so sit back and take a breather. Our system will notify you as soon as the import has been completed.",
@@ -698,7 +800,10 @@
             "webserverLogs.title": "No Webserver Logs Were Found...",
             "webserverLogs.description": "No logs found...",
             "webserverLogs.downloadTitle": "You Cannot Preview the Contents of This File.",
-            "webserverLogs.downloadDescription": "Please download Webserver Logs logs."
+            "webserverLogs.downloadDescription": "Please download Webserver Logs logs.",
+            "noRecords": "No records found",
+            "templates.title": "No Templates Available!",
+            "services.title": "No Services Were Found"
         },
         "status": {
             "active": "Activate",
@@ -878,6 +983,7 @@
         "account.back": "Back to My Account",
         "account.details": "Account Details",
         "action.cancel": "Cancel Action",
+        "addDirective": "Add Directive",
         "addNew": "Add New",
         "apply": "Apply",
         "automaticBackup.edit": "Edit Automatic Backups",
@@ -885,6 +991,7 @@
         "back": "Back",
         "backup.download": "Download Backup",
         "backup.convertToFull": "Convert to Full Backup",
+        "billing.pay_now": "Pay Now",
         "cancel": "Cancel",
         "cache": "Cache",
         "cancelClone": "Cancel Clone",
@@ -905,6 +1012,7 @@
         "confirm": "Confirm",
         "continue": "Continue",
         "continueAnyway": "Continue Anyway",
+        "contactSupport": "Contact Support",
         "createStaging": "Create Staging",
         "createBackup": "Create Backup",
         "cron.add": "Add Cron Job",
@@ -939,6 +1047,7 @@
         "domain.order": "Don't have one yet? Order here",
         "domain.set": "Set Domain",
         "download": "Download",
+        "edit": "Edit",
         "emailAddress.add": "Add Email Account",
         "emailAddress.change": "Change Email Address",
         "emailAddress.show": "Show Details",
@@ -1001,6 +1110,7 @@
         "restore": "Restore",
         "replace": "Replace",
         "retry": "Retry",
+        "resentCode": "Resent Code",
         "resetPassword": "Reset Password",
         "resetPasswordSend": "Send Password Reset Link",
         "restoreDefault": "Restore Default",
@@ -1015,6 +1125,7 @@
         "sharedAccess.invite": "Invite User",
         "sharedAccess.pending": "(pending changes) Save",
         "service.upgrade": "Upgrade Your Package",
+        "service.upgrade_plan": "Upgrade Plan",
         "service.change": "Change Service",
         "setAsPrimaryDomain": "Set as Primary Domain",
         "setDomain.changeDomain": "Change Domain",
@@ -1025,10 +1136,12 @@
         "sftp.delete": "Delete SSH/SFTP Account",
         "sftp.show": "Show Access Details",
         "signIn": "Sign In",
+        "signUp": "Sign Up",
         "site.manage": "Manage Site",
         "ssoLogin": "Log in to WordPress",
         "ssl.edit": "Edit SSL",
         "staging": "Staging",
+        "startCreating": "Start Creating",
         "subdirectory.set": "Set Subdirectory",
         "tag.assign": "Assign tags",
         "tag.add": "Add new tag",
@@ -1041,6 +1154,7 @@
         "try": "Try Again",
         "unsuspend": "Unsuspend Now",
         "upgrade": "Upgrade",
+        "upgradeNow": "Upgrade Now",
         "update": "Update",
         "updating": "Updating",
         "user.add": "Add User",
@@ -1052,6 +1166,7 @@
         "website.create": "Create Site",
         "website.manage": "Manage Your Site",
         "website.visit": "Visit Website",
+        "website.details": "Site Details",
         "woocommerce.update": "Update WooCommerce",
         "wordpress.update": "Update WordPress",
         "why": "Why?",
@@ -1060,7 +1175,12 @@
         "visit": "Visit",
         "visitWebsite": "Visit Website",
         "visitSite": "Visit Site",
-        "copyUrl": "Copy URL"
+        "copyUrl": "Copy URL",
+        "submit": "Submit",
+        "set": {
+            "geo_affinity": "Set Location",
+            "hosting_plan": "Set Hosting Plan"
+        }
     },
     "tooltip": {
         "create_backup.backup_directory": "Backup directory.",
@@ -1216,7 +1336,27 @@
             "sharedAccess.role.viewAndSso": "'Allowing to display website details and use the \"WP Admin\" option to log in to WordPress as an administrator.",
             "sharedAccess.role.developer": "Providing access to all management options for your website without access to the hosting instance management.",
             "sharedAccess.role.fullAccess": "Providing access to all management options for your website as well as the related hosting instance. Please note that if this hosting instance comes with other sites too, they will have access to them as well.",
-            "sharedAccess.role.custom": "Customize access on features level."
+            "sharedAccess.role.custom": "Customize access on features level.",
+            "phpSetting": {
+                "allow_url_fopen": "This option enables the URL-aware fopen wrappers that enable accessing URL objects like files. Default wrappers are provided for the access of remote files using the ftp or http protocol; some extensions like zlib may register additional wrappers.",
+                "display_errors": "This determines whether errors should be printed to the screen as part of the output or if they should be hidden from the user.",
+                "enable_dl": "This directive is really only useful in the Apache module version of PHP. You can turn dynamic loading of PHP extensions with dl() on and off per virtual server or per directory. The main reason for turning dynamic loading off is security. With dynamic loading, it is possible to ignore all open_basedir restrictions. The default is to allow dynamic loading, except when using safe mode. This feature is deprecated and will be removed at a future time.",
+                "file_uploads": "Whether or not to allow HTTP file uploads.",
+                "max_execution_time": "This sets the maximum time in seconds a script is allowed to run before it is terminated by the parser. This helps prevent poorly written scripts from tying up the server.",
+                "max_input_time": "This sets the maximum time in seconds a script is allowed to parse input data, like POST, GET, and file uploads.",
+                "max_input_vars": "This sets the maximum number of input variables allowed per request and can be used to deter denial of service attacks involving hash collisions on the input variable names.",
+                "memory_limit": "This sets the maximum amount of memory in bytes that a script is allowed to allocate. This helps prevent poorly written scripts from consuming all available memory on a server. Note that to have no memory limit, set this directive to -1.",
+                "post_max_size": "Sets the maximum size of post data allowed. This setting also affects file uploads. To upload large files, this value must be larger than upload_max_filesize. Generally speaking, memory_limit should be larger than post_max_size.",
+                "session.gc_maxlifetime": "This specifies the number of seconds after which data will be seen as 'garbage' and potentially cleaned up.",
+                "session.save_path": "session.save_path defines the argument which is passed to the save handler. If you choose the default files handler, this is the path where the files are created.",
+                "upload_max_filesize": "The maximum size of an uploaded file.",
+                "zlib.output_compression": "Whether to transparently compress pages. If this option is set to 'On' in php.ini or the Apache configuration, pages are compressed if the browser sends an 'Accept-Encoding: gzip' or 'deflate' header.",
+                "error_reporting": "This setting determines which PHP errors are reported. It can be set to a specific level of error reporting, such as E_ALL, which reports all errors, or it can be set to 0 to disable error reporting.",
+                "log_errors": "This directive enables or disables the logging of errors to a specified file. When enabled, errors are logged instead of being displayed on the screen, which is useful for production environments.",
+                "max_file_uploads": "This sets the maximum number of files that can be uploaded via a single request. This helps prevent abuse by limiting the number of files that can be uploaded at once.",
+                "register_globals": "This directive, when enabled, automatically imports variables from the request into the global scope. It is deprecated and should be disabled for security reasons, as it can lead to variable overwriting and other security issues.",
+                "short_open_tag": "This setting allows the use of short opening tags (<?) for PHP code. If disabled, only the full opening tag (<?php) can be used. It is recommended to use the full opening tag for better compatibility."
+            }
         },
         "hosting": {
             "service.suspended": "Your service has been suspended.",
@@ -1237,6 +1377,9 @@
             "dns.status.pending.list.third": "If certificate is not installed automatically within 24 hours, please contact support.",
             "ftp.usageNotSupported": "Usage and quota is unsupported by server.",
             "sftp.accessMethod": "Remote Access Type: SSH or SFTP."
+        },
+        "billing": {
+            "invoice.duedate.exceeded": "The payment deadline has been exceeded. Please pay the invoice immediately to avoid service suspension."
         }
     },
     "form": {
@@ -1284,6 +1427,7 @@
             "location": "Location",
             "set_location": "Set Location",
             "geo_affinity": "Choose Location",
+            "hosting_plan": "Hosting Plan",
             "hostname": "Hostname/IP Address",
             "howOften": "How Often",
             "image": {
@@ -1358,6 +1502,7 @@
             "documentRoot": "Enter document root",
             "domain": "Enter domain name",
             "email": "Enter email address",
+            "emailDelegatedUser": "Enter delegated user email address",
             "ftp.user": "Username",
             "ftp.password": "Password",
             "name": "Enter name",
@@ -1534,7 +1679,9 @@
             "storage": "Storage",
             "tags": "Tags",
             "version": "Version",
-            "visitors": "Visitors"
+            "visitors": "Visitors",
+            "only_me": "Only me",
+            "me_and_delegated_user": "Me and delegated user"
         },
         "value": {
             "unlimited": "Unlimited",
@@ -1597,20 +1744,26 @@
             "description": "Description",
             "device": "Device",
             "directory": "Directory",
+            "directive": "Directive",
             "documentRoot": "Document Root",
             "domain": "Domain",
             "displayName": "Display Name",
+            "due_date": "Due Date",
             "email": "Email",
             "forwardTo": "Forward To",
             "id": "ID",
             "ip": "IP Address",
             "installations": "Installations",
+            "instance_limit": "Instance Limit",
+            "invoice_date": "Invoice Date",
             "lastLogin": "Last Login",
             "lastUpdated": "Last Updated",
             "login": "Login",
             "name": "Name",
             "newest": "Newest",
             "note": "Note",
+            "number": "Number #",
+            "plan_name": "Plan Name",
             "proxy": "Proxied",
             "rating": "Rating",
             "record": "Record",
@@ -1620,11 +1773,13 @@
             "role": "Role",
             "shares": "Shares",
             "size": "Size",
+            "sites": "Sites",
             "ssl": "SSL Status",
             "status": "Status",
             "storage": "Storage",
             "tags": "Tags",
             "title": "Title",
+            "total": "Total",
             "ttl": "TTL",
             "type": "Type",
             "updated": "Updated",
@@ -1632,7 +1787,8 @@
             "user": "User",
             "value": "Value",
             "version": "Version",
-            "visitors": "Visitors"
+            "visitors": "Visitors",
+            " ": ""
         },
         "field": {
             "userOwner": "{{name}} (you)",
@@ -1645,7 +1801,9 @@
             "user": "Users Per Page:",
             "log": "Logs Per Page:",
             "device": "Devices Per Page:",
-            "instance": "Instances Per Page:"
+            "instance": "Instances Per Page:",
+            "plan": "Plans Per Page",
+            "invoice": "Invoices Per Page:"
         },
         "snackbar": {
             "selectAll": "Select All",
