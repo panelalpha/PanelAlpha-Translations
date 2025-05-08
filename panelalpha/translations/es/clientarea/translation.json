@@ -30,7 +30,10 @@
         "my-account": "{{- app_name}} - Mi cuenta",
         "sftp": "{{- app_name}} - Cuentas SSH/SFTP",
         "file-manager": "{{- app_name}} - Gestor de archivos",
-        "page-not-found": "{{- app_name}} - Página no encontrada"
+        "page-not-found": "{{- app_name}} - Página no encontrada",
+        "register": "{{- app_name}} - Registro",
+        "services": "{{- app_name}} - Mis planes",
+        "billing": "{{- app_name}} - Mi facturación"
     },
     "general": {
         "adventurer": "Aventurero",
@@ -100,7 +103,27 @@
         "backup_one": "copia de seguridad",
         "backup_other": "copias de seguridad",
         "ssh": "SSH",
-        "sftp": "SFTP"
+        "sftp": "SFTP",
+        "trialExpires": "Su periodo de prueba expira",
+        "trialUpgradePlan": "Para evitar limitaciones en la funcionalidad del sistema, actualice su plan.",
+        "trialExpired": "Su prueba ha caducado",
+        "trialExpiredUpgradePlan": "y las funciones del sistema se han limitado. Actualiza tu plan para restaurar el acceso completo.",
+        "instancesSuspended": "Se suspenden las instancias de alojamiento",
+        "instancesSuspendedDescription": "Todas sus instancias de alojamiento están actualmente suspendidas. Esto puede deberse a una factura impagada o a que se han superado los límites de su plan actual. Sus servicios permanecerán inactivos hasta que se resuelva el problema.",
+        "upgradePlan": "Plan de actualización",
+        "upgradeNow": "Actualizar ahora",
+        "plan": "Plan",
+        "myPlans": "Mis planes",
+        "myBilling": "Mi facturación",
+        "contactSupport": "Contacto",
+        "support": "Ayuda",
+        "please": "Por favor,",
+        "logInLink": "conectarse",
+        "toYourAccount": "a su cuenta",
+        "contactSupportLink": "contactar con el servicio de asistencia",
+        "language": "Idioma",
+        "cancelled": "Cancelado",
+        "sites": "Sitios"
     },
     "heading": {
         "notFoundPage.title": "Página no encontrada",
@@ -405,7 +428,24 @@
             "backups.usage.directory_manual_backups_number.tooltip": "Number of manual directory backups created out of the maximum allowed.",
             "plugin.deactivate.message": "¿Está seguro de que desea desactivar este plugin?",
             "advanced.developer.controlpanel.title": "Panel de control",
-            "advanced.developer.controlpanel.subtitle": "Utilice el botón para acceder directamente al panel de control."
+            "advanced.developer.controlpanel.subtitle": "Utilice el botón para acceder directamente al panel de control.",
+            "modal.ssoLogin.title": "Iniciar sesión en WordPress",
+            "delete.wpCloud.alert": "No puede eliminar la instancia si existen copias de seguridad manuales",
+            "advanced.security.disableSearchEngineIndexing.title": "Desactivar la indexación en buscadores",
+            "advanced.security.disableSearchEngineIndexing.subtitle": "Si se activa, los motores de búsqueda no indexarán este dominio.",
+            "advanced.developer.phpSettings.title": "Configuración PHP",
+            "advanced.developer.phpSettings.subtitle": "Establezca la configuración PHP para el dominio.",
+            "advanced.developer.phpSettings.alert": "La configuración de PHP no se puede cambiar en este dominio.",
+            "advanced.modal.phpSettings.title": "Configurar PHP",
+            "advanced.modal.phpSettings.field": "Dominio:",
+            "advanced.logs.title": "Registros",
+            "advanced.logs.loader": "Los registros se están cargando, por favor espere...",
+            "advanced.logs.instanceLogs.title": "Registros de instancias",
+            "advanced.logs.wordpressLogs.title": "Registros de errores de WordPress",
+            "advanced.logs.phpLogs.title": "Registros PHP",
+            "advanced.logs.phpLogs.tooltip": "También puede encontrar registros PHP más detallados en el registro de errores del servidor web.",
+            "advanced.logs.webserverLogs.title": "Registros del servidor web",
+            "advanced.logs.noLogs": "No hay registros"
         },
         "hosting": {
             "sidebar.manage.title": "Gestione",
@@ -576,7 +616,13 @@
             "transferDomain.title": "Transferencia de dominio",
             "transferDomain.subtitle": "Dominio {domain} ya ha sido utilizado en nuestro sistema.",
             "transferDomain.message.possible": "Si desea transferirlo a nuestro sistema, configure el siguiente registro {recordType} en {domain} e inicie el proceso haciendo clic en el botón Transferir ahora que aparece a continuación.",
-            "transferDomain.message.impossible": "No puedes utilizar este dominio."
+            "transferDomain.message.impossible": "No puedes utilizar este dominio.",
+            "installation.info.redirecting": "Redirigiendo... Puede tardar un momento.",
+            "installation.info.builderInProgress": "Configurar su sitio con IA... No te llevará mucho tiempo.",
+            "newInstance.geo_affinity.subtitle": "Elija la ubicación",
+            "newInstance.geo_affinity.info": "Puede elegir la ubicación de su sitio entre las siguientes opciones:",
+            "newInstance.hosting_plan.subtitle": "Elegir plan de alojamiento",
+            "newInstance.hosting_plan.info": "Puede elegir el plan de alojamiento para su suscripción entre las siguientes opciones:"
         },
         "navbar": {
             "tab.myInstances": "Mis instancias",
@@ -589,7 +635,79 @@
             "colorScheme.title": "Elija la combinación de colores",
             "primaryColor.title": "Personalizar los colores primarios",
             "additionalSettings.title": "Ajustes adicionales",
-            "additionalSettings.disableShadows.title": "Desactivar sombras"
+            "additionalSettings.disableShadows.title": "Desactivar sombras",
+            "darkMode.title": "Cambiar modo",
+            "darkMode.description": "Modo oscuro/claro"
+        },
+        "loginPage.emailVerification.title": "Verifique su dirección de correo electrónico",
+        "loginPage.emailVerification.info1": "Le enviamos por correo electrónico un código de cuatro dígitos para",
+        "loginPage.emailVerification.info2": "Introduzca el código siguiente para confirmar su dirección de correo electrónico.",
+        "loginPage.emailVerification.info3": "Si no ha recibido nuestro correo electrónico, compruebe su carpeta de correo no deseado o vuelva a generar el código utilizando el botón de arriba.",
+        "loginPage.emailVerification.confirmEmailAddress": "Confirmar dirección de correo electrónico",
+        "loginPage.emailVerification.resendCodeMessage": "Reenviar código en {{seconds}} segundos",
+        "loginPage.emailVerification.questions": {
+            "title": "¿Preguntas?",
+            "link": "Estamos aquí para ayudar"
+        },
+        "loginPage.noAccount": "¿Aún no tiene cuenta?",
+        "loginPage.setPassword": {
+            "title": "Proteja su cuenta",
+            "text": "Antes de seguir adelante, por favor, establezca una contraseña para su cuenta para mantener las cosas seguras."
+        },
+        "registerPage.confirmEmail": "Confirmar correo electrónico",
+        "registerPage.confirmPassword": "Confirmar contraseña",
+        "registerPage.alreadyRegistered": "¿Ya está registrado?",
+        "registerPage.registeringAccept": "Al registrarse, acepta",
+        "registerPage.termsOfService": "Condiciones de uso",
+        "registerPage.registerAccount": "Registrar cuenta",
+        "registerPage.signInWith": "Identifícate con",
+        "registerPage.fillForm": "o rellene los formularios siguientes",
+        "registerPage.creatingAccount": {
+            "title": "Crear su cuenta...",
+            "text": "Sólo le llevará unos segundos. Espere a que empecemos."
+        },
+        "trialExpiredModal": {
+            "headline": "Su prueba ha caducado",
+            "text": "Gracias por probar nuestra solución. Para que el servicio siga funcionando, <span class=\"font-weight-600\">actualiza tu versión de prueba</span> a una suscripción de pago."
+        },
+        "cancelServiceModal": {
+            "title": "Cancelación del plan",
+            "alert": {
+                "title": "Comparta su opinión",
+                "text": "Si tienes un momento, dinos por qué cancelas tu plan. Tus comentarios nos ayudan a mejorar y satisfacer mejor tus necesidades en el futuro."
+            },
+            "reason": {
+                "label": "Razón",
+                "placeholder": "Elija la razón",
+                "option": {
+                    "performance": "Problemas de velocidad o rendimiento del sitio web",
+                    "expensive": "El plan era demasiado caro",
+                    "support": "Insatisfechos con la atención al cliente",
+                    "technical": "Problemas técnicos o de gestión del sitio en curso",
+                    "panel": "No me gusta el panel de control",
+                    "other": "Otros"
+                }
+            },
+            "describe": {
+                "label": "Describa su motivo en pocas palabras",
+                "minimum": "Mínimo 10 caracteres"
+            }
+        },
+        "billing": {
+            "title": "Mi facturación",
+            "noData": {
+                "title": "No hay información que mostrar",
+                "text": "Actualmente estás utilizando una cuenta de prueba. Cuando pases a un plan de pago, tendrás acceso a esta sección y a toda la información que contiene."
+            },
+            "details": {
+                "title": "Datos de facturación",
+                "trialInfo": "Actualmente tiene una cuenta de prueba.",
+                "firstPaymentInfo": "La cuenta de facturación se creará con el primer pago."
+            },
+            "invoice": {
+                "title": "Mis facturas",
+                "noData.title": "No se han encontrado facturas"
+            }
         }
     },
     "message": {
@@ -671,7 +789,18 @@
             "activeDevices.title": "No se han encontrado dispositivos activos",
             "activeDevices.description": "No se han encontrado dispositivos activos para esta instancia. Cuando un usuario se conecte desde cualquier dispositivo, aparecerá automáticamente en la lista.",
             "sftp.title": "No Account Created",
-            "sftp.description": "No hay cuentas SSH/SFTP disponibles."
+            "sftp.description": "No hay cuentas SSH/SFTP disponibles.",
+            "wpErrorLogs.title": "No se encontraron registros de errores de WordPress...",
+            "wpErrorLogs.description": "Los registros de errores de WordPress están disponibles cuando el archivo wp-config.php tiene la siguiente configuración: WP_DEBUG en true y WP_DEBUG_LOG en true.",
+            "phpLogs.title": "No se encontraron registros PHP...",
+            "phpLogs.description": "También puede encontrar registros PHP más detallados en el registro de errores del servidor web.",
+            "webserverLogs.title": "No se encontraron registros del servidor web...",
+            "webserverLogs.description": "No se han encontrado registros...",
+            "webserverLogs.downloadTitle": "No puede previsualizar el contenido de este archivo.",
+            "webserverLogs.downloadDescription": "Por favor, descargue los registros de Webserver Logs.",
+            "noRecords": "No se han encontrado registros",
+            "templates.title": "No hay plantillas disponibles",
+            "services.title": "No se encontraron servicios"
         },
         "status": {
             "active": "Activar",
@@ -797,7 +926,9 @@
             "installation.created": "Instancia creada. Instalación en curso.",
             "installation.inProgress": "Instalación en curso.",
             "copyInstance.completed": "Instancia de copia en curso",
-            "modal.pushToStaging.success": "Empuje a la puesta en escena en curso"
+            "modal.pushToStaging.success": "Empuje a la puesta en escena en curso",
+            "advanced.logs.maxEntries": "Se muestran 100 entradas del registro. Para ver más, descárgatelas.",
+            "disableSearchEngineIndexing.success": "Se ha actualizado la indexación en los motores de búsqueda."
         },
         "hosting": {
             "domain.create.success": "Se ha añadido {{type}}.",
@@ -1032,7 +1163,23 @@
         "setAsPrimaryDomain": "Establecer como dominio primario",
         "setAccessMethod": "Establecer tipo de acceso",
         "sftp.add": "Añadir cuenta",
-        "transferNow": "Transferir ahora"
+        "transferNow": "Transferir ahora",
+        "addDirective": "Añadir Directiva",
+        "billing.pay_now": "Pagar ahora",
+        "contactSupport": "Contacto",
+        "download": "Descargar",
+        "edit": "Editar",
+        "resentCode": "Código reenviado",
+        "service.upgrade_plan": "Plan de actualización",
+        "signUp": "Inscribirse",
+        "startCreating": "Empezar a crear",
+        "upgradeNow": "Actualizar ahora",
+        "website.details": "Detalles del sitio",
+        "submit": "Enviar",
+        "set": {
+            "geo_affinity": "Establecer ubicación",
+            "hosting_plan": "Establecer plan de alojamiento"
+        }
     },
     "tooltip": {
         "create_backup.backup_directory": "Directorio de copia de seguridad.",
@@ -1174,7 +1321,27 @@
             "sharedAccess.role.developer": "Proporcionar acceso a todas las opciones de gestión de su sitio web sin acceder a la gestión de la instancia de alojamiento.",
             "sharedAccess.role.fullAccess": "Proporcionar acceso a todas las opciones de gestión para su sitio web, así como la instancia de alojamiento relacionados. Tenga en cuenta que si esta instancia de alojamiento viene con otros sitios también, tendrán acceso a ellos también.",
             "sharedAccess.role.custom": "Personalizar el acceso a nivel de características.",
-            "tab.backup.scheduled": "Se ha programado la copia de seguridad."
+            "tab.backup.scheduled": "Se ha programado la copia de seguridad.",
+            "phpSetting": {
+                "allow_url_fopen": "Esta opción activa las envolturas fopen que permiten acceder a objetos URL como archivos. Las envolturas predeterminadas se proporcionan para el acceso a archivos remotos utilizando el protocolo ftp o http; algunas extensiones como zlib pueden registrar envolturas adicionales.",
+                "display_errors": "Determina si los errores deben imprimirse en la pantalla como parte de la salida o si deben ocultarse al usuario.",
+                "enable_dl": "Esta directiva es realmente útil sólo en la versión del módulo Apache de PHP. Puede activar o desactivar la carga dinámica de extensiones PHP con dl() por servidor virtual o por directorio. La razón principal para desactivar la carga dinámica es la seguridad. Con la carga dinámica, es posible ignorar todas las restricciones de open_basedir. Por defecto se permite la carga dinámica, excepto cuando se utiliza el modo seguro. Esta característica está obsoleta y será eliminada en el futuro.",
+                "file_uploads": "Permitir o no la carga de archivos HTTP.",
+                "max_execution_time": "Establece el tiempo máximo en segundos que un script puede ejecutarse antes de ser terminado por el analizador. Esto ayuda a evitar que los scripts mal escritos saturen el servidor.",
+                "max_input_time": "Establece el tiempo máximo en segundos que se permite a un script analizar datos de entrada, como POST, GET y cargas de archivos.",
+                "max_input_vars": "Establece el número máximo de variables de entrada permitidas por petición y puede utilizarse para impedir ataques de denegación de servicio que impliquen colisiones de hash en los nombres de las variables de entrada.",
+                "memory_limit": "Establece la cantidad máxima de memoria en bytes que un script puede asignar. Esto ayuda a prevenir que scripts mal escritos consuman toda la memoria disponible en un servidor. Tenga en cuenta que para no tener límite de memoria, establezca esta directiva a -1.",
+                "post_max_size": "Establece el tamaño máximo permitido para los datos de la entrada. Este ajuste también afecta a la subida de archivos. Para subir archivos grandes, este valor debe ser mayor que upload_max_filesize. En general, memory_limit debe ser mayor que post_max_size.",
+                "session.gc_maxlifetime": "Especifica el número de segundos tras los cuales los datos se considerarán \"basura\" y se limpiarán potencialmente.",
+                "session.save_path": "session.save_path define el argumento que se pasa al manejador de guardado. Si elige el gestor de archivos por defecto, esta es la ruta donde se crean los archivos.",
+                "upload_max_filesize": "El tamaño máximo de un archivo cargado.",
+                "zlib.output_compression": "Si se comprimen las páginas de forma transparente. Si esta opción está a 'On' en php.ini o en la configuración de Apache, las páginas se comprimen si el navegador envía una cabecera 'Accept-Encoding: gzip' o 'deflate'.",
+                "error_reporting": "Este parámetro determina que errores PHP son reportados. Puede establecerse a un nivel específico de reporte de errores, como E_ALL, que reporta todos los errores, o puede establecerse a 0 para deshabilitar el reporte de errores.",
+                "log_errors": "Esta directiva activa o desactiva el registro de errores en un archivo especificado. Cuando está activada, los errores se registran en lugar de mostrarse en pantalla, lo que resulta útil para entornos de producción.",
+                "max_file_uploads": "Establece el número máximo de archivos que se pueden subir a través de una única solicitud. Esto ayuda a evitar abusos limitando el número de archivos que se pueden subir a la vez.",
+                "register_globals": "Esta directiva, cuando está activada, importa automáticamente variables de la petición al ámbito global. Está obsoleta y debería deshabilitarse por motivos de seguridad, ya que puede provocar la sobreescritura de variables y otros problemas de seguridad.",
+                "short_open_tag": "Esta configuración permite el uso de etiquetas de apertura cortas (<?) para el código PHP. Si se desactiva, sólo se puede utilizar la etiqueta de apertura completa (<?php). Se recomienda utilizar la etiqueta de apertura completa para mejorar la compatibilidad."
+            }
         },
         "hosting": {
             "service.suspended": "Su servicio ha sido suspendido.",
@@ -1208,7 +1375,11 @@
         "changeSslModal.disableProxy": "Ha proxyado un registro DNS A. Para cambiar el certificado SSL, debe desactivar el proxy en su registro DNS A.",
         "changeSslModal.cannotChangeCertificate": "Su certificado SSL se ha generado automáticamente porque su dominio es proxy. No puede cambiar el certificado SSL.",
         "edit_sftp_account.password": "Introduce la contraseña.",
-        "changeSslModal.sslCertificate": "Elija el certificado SSL que se configurará en el servidor. Nota: El certificado que configure puede ser diferente del detectado."
+        "changeSslModal.sslCertificate": "Elija el certificado SSL que se configurará en el servidor. Nota: El certificado que configure puede ser diferente del detectado.",
+        "create_backup.backup_type": "Seleccione el tipo de copia de seguridad que desea realizar: elija \"Base de datos\" para una copia de seguridad de la base de datos, o \"Directorio\" para una copia de seguridad de los archivos.",
+        "billing": {
+            "invoice.duedate.exceeded": "Se ha superado el plazo de pago. Por favor, abone la factura inmediatamente para evitar la suspensión del servicio."
+        }
     },
     "form": {
         "label": {
@@ -1254,7 +1425,9 @@
             "howOften": "Con qué frecuencia",
             "image": {
                 "title": "Cargar gráfico",
-                "subtitle": "Se admiten archivos .jpg, .png, .svg"
+                "subtitle": "Se admiten archivos .jpg, .png, .svg",
+                "lightMode": "Modo Luz",
+                "darkMode": "Modo oscuro"
             },
             "installedPath": "Ruta instalada",
             "item": "Artículo",
@@ -1315,7 +1488,9 @@
             "set_location": "Establecer ubicación",
             "geo_affinity": "Elija la ubicación",
             "public_key": "Clave pública",
-            "sslCertificate": "Certificado SSL"
+            "sslCertificate": "Certificado SSL",
+            "backupType": "Tipo de copia de seguridad",
+            "hosting_plan": "Plan de alojamiento"
         },
         "placeholder": {
             "cabundle": "Introduzca el paquete CA",
@@ -1345,7 +1520,8 @@
             "type": "Introducir tipo",
             "username": "Nombre de usuario",
             "website": "Introduzca el nombre del sitio web",
-            "value": "Introduzca el valor"
+            "value": "Introduzca el valor",
+            "emailDelegatedUser": "Introduzca la dirección de correo electrónico del usuario delegado"
         },
         "option": {
             "constant": "Constante",
@@ -1502,7 +1678,9 @@
             "storage": "Almacenamiento",
             "tags": "Etiquetas",
             "version": "Versión",
-            "visitors": "Visitantes"
+            "visitors": "Visitantes",
+            "only_me": "Sólo yo",
+            "me_and_delegated_user": "Yo y usuario delegado"
         },
         "value": {
             "unlimited": "Sin límites",
@@ -1600,7 +1778,16 @@
             "user": "Usuario",
             "value": "Valor",
             "version": "Versión",
-            "visitors": "Visitantes"
+            "visitors": "Visitantes",
+            "directive": "Directiva",
+            "due_date": "Fecha de vencimiento",
+            "instance_limit": "Límite de instancia",
+            "invoice_date": "Fecha de la factura",
+            "number": "Número",
+            "plan_name": "Nombre del plan",
+            "sites": "Sitios",
+            "total": "Total",
+            " ": ""
         },
         "field": {
             "userOwner": "{{name}} (tú)",
@@ -1623,7 +1810,9 @@
             "user": "Usuarios por página:",
             "log": "Registros por página:",
             "device": "Dispositivos por página:",
-            "instance": "Instancias por página:"
+            "instance": "Instancias por página:",
+            "plan": "Planos por página",
+            "invoice": "Facturas por página:"
         },
         "snackbar": {
             "selectAll": "Seleccionar todo",
@@ -1747,7 +1936,8 @@
             "user.instance.wordpress.copy": "Instancia copiada",
             "user.hosting.sftp_account.delete": "Cuenta SSH/SFTP eliminada",
             "user.hosting.sftp_account.update": "Cuenta SSH/SFTP actualizada",
-            "user.hosting.sftp_account.create": "Cuenta SSH/SFTP creada"
+            "user.hosting.sftp_account.create": "Cuenta SSH/SFTP creada",
+            "user.instance.search_engine_indexing.update": "Indexación actualizada en los motores de búsqueda"
         },
         "suffix": {
             "toStatus": "a {{status}}",
@@ -1799,7 +1989,14 @@
             "general.refresh_thumbnail": "Actualizar miniatura",
             "hosting.manage_file_manager": "Gestión de archivos",
             "hosting.manage_sftp": "Gestionar cuentas SSH/SFTP",
-            "hosting.control_panel_sso": "Panel de control SSO"
+            "hosting.control_panel_sso": "Panel de control SSO",
+            "general.view_php_logs": "Ver registros PHP",
+            "general.view_webserver_logs": "Ver registros del servidor web",
+            "general.push_to_staging": "Push to Staging",
+            "general.preview_instance": "Instancia de vista previa",
+            "wordpress.manage_search_engine_indexing": "Gestionar la indexación en buscadores",
+            "wordpress.view_logs": "Ver registros de errores de WordPress",
+            "wordpress.manage_cloudflare": "Gestionar Cloudflare"
         }
     },
     "languages": {

@@ -289,4 +289,48 @@ return [
         'name' => 'Zum Staging schieben Beendet',
         'description' => 'Die Benachrichtigung informiert den Empfänger darüber, dass die auf der Live-Instanz vorgenommenen Änderungen erfolgreich auf die Staging-Version der Website oder des Systems übertragen wurden. Die Benachrichtigung kann Einzelheiten zu den vorgenommenen Änderungen und zu weiteren Schritten enthalten.',
     ],
+    'App\\Notifications\\User\\System\\VerifyEmailAddress' => [
+        'name' => 'E-Mail Adresse überprüfen',
+        'description' => 'Bei der Registrierung wird ein Verifizierungscode an die E-Mail-Adresse des Nutzers gesendet.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationFirstReminder' => [
+        'name' => 'Vor Ablauf der Probezeit Erste Erinnerung',
+        'description' => 'Vor Ablauf des Testzeitraums wird eine Erinnerung an die E-Mail-Adresse des Benutzers gesendet.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationSecondReminder' => [
+        'name' => 'Vor Ablauf der Probezeit Zweite Erinnerung',
+        'description' => 'Vor Ablauf des Testzeitraums wird eine Erinnerung an die E-Mail-Adresse des Benutzers gesendet.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationThirdReminder' => [
+        'name' => 'Vor Ablauf der Probezeit Dritte Mahnung',
+        'description' => 'Vor Ablauf des Testzeitraums wird eine Erinnerung an die E-Mail-Adresse des Benutzers gesendet.',
+    ],
+    'App\\Notifications\\User\\Service\\TrialExpired' => [
+        'name' => 'Probezeit abgelaufen',
+        'description' => 'Eine Benachrichtigung wird an die E-Mail-Adresse des Benutzers gesendet, wenn der Testdienst abläuft.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationFirstReminder' => [
+        'name' => 'Nach Ablauf der Probezeit erste Erinnerung',
+        'description' => 'Nach Ablauf des Testzeitraums wird eine Erinnerung an die E-Mail-Adresse des Benutzers gesendet.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationSecondReminder' => [
+        'name' => 'Nach Ablauf der Probezeit zweite Erinnerung',
+        'description' => 'Nach Ablauf des Testzeitraums wird eine Erinnerung an die E-Mail-Adresse des Benutzers gesendet.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationThirdReminder' => [
+        'name' => 'Nach Ablauf der Probezeit Dritte Erinnerung',
+        'description' => 'Nach Ablauf des Testzeitraums wird eine Erinnerung an die E-Mail-Adresse des Benutzers gesendet.',
+    ],
+    'App\\Notifications\\Admin\\SslOrder\\SslOrderFailed' => [
+        'name' => 'SSL-Bestellung fehlgeschlagen',
+        'description' => 'Die Benachrichtigung informiert den Administrator, dass ein SSL-Auftrag für die angegebene Domain fehlgeschlagen ist. Sie enthält relevante Details wie den Domainnamen, den Typ, den SSL-Anbieter und die Kundeninformationen. Möglicherweise ist sofortige Aufmerksamkeit erforderlich, um das Problem zu beheben.',
+    ],
+    'App\\Notifications\\User\\Instance\\CreateFtpAccountForInstance' => [
+        'name' => 'FTP-Konto für Instanz erstellt',
+        'description' => 'Diese Benachrichtigung informiert den Benutzer, dass ein neues FTP-Konto erfolgreich erstellt wurde. Sie enthält wichtige Details wie den FTP-Benutzernamen, das Kennwort und die Serveradresse, damit der Benutzer auf seine Dateien zugreifen kann.',
+    ],
+    'App\\Notifications\\User\\System\\CreateUser' => [
+        'name' => 'Willkommen Benutzer',
+        'description' => 'Diese Benachrichtigung informiert den Nutzer, dass sein Konto erfolgreich erstellt wurde. Sie enthält die erforderlichen Anmeldedaten wie Benutzername und Passwort, damit der Nutzer auf sein Konto zugreifen kann.',
+    ],
 ];

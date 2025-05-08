@@ -289,4 +289,48 @@ return [
         'name' => 'Instance importeren door gebruiker voltooid',
         'description' => 'De melding informeert de ontvanger dat het importeren van de instantie door de gebruiker is gelukt.',
     ],
+    'App\\Notifications\\User\\System\\VerifyEmailAddress' => [
+        'name' => 'E-mailadres controleren',
+        'description' => 'Er wordt een verificatiecode naar het e-mailadres van de gebruiker gestuurd wanneer deze zich registreert.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationFirstReminder' => [
+        'name' => 'Voor afloop proefperiode Eerste herinnering',
+        'description' => 'Er wordt een herinnering verstuurd naar het e-mailadres van de gebruiker voordat de testservice verloopt.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationSecondReminder' => [
+        'name' => 'Voor afloop proef Tweede herinnering',
+        'description' => 'Er wordt een herinnering verstuurd naar het e-mailadres van de gebruiker voordat de testservice verloopt.',
+    ],
+    'App\\Notifications\\User\\Service\\BeforeTrialExpirationThirdReminder' => [
+        'name' => 'Voor afloop proef Derde herinnering',
+        'description' => 'Er wordt een herinnering verstuurd naar het e-mailadres van de gebruiker voordat de testservice verloopt.',
+    ],
+    'App\\Notifications\\User\\Service\\TrialExpired' => [
+        'name' => 'Proef Verlopen',
+        'description' => 'Er wordt een melding naar het e-mailadres van de gebruiker gestuurd wanneer hun testservice verloopt.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationFirstReminder' => [
+        'name' => 'Na afloop proefperiode Eerste herinnering',
+        'description' => 'Er wordt een herinnering verstuurd naar het e-mailadres van de gebruiker nadat de testservice is verlopen.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationSecondReminder' => [
+        'name' => 'Na afloop proefperiode Tweede herinnering',
+        'description' => 'Er wordt een herinnering verstuurd naar het e-mailadres van de gebruiker nadat de testservice is verlopen.',
+    ],
+    'App\\Notifications\\User\\Service\\AfterTrialExpirationThirdReminder' => [
+        'name' => 'Na afloop proef Derde herinnering',
+        'description' => 'Er wordt een herinnering verstuurd naar het e-mailadres van de gebruiker nadat de testservice is verlopen.',
+    ],
+    'App\\Notifications\\Admin\\SslOrder\\SslOrderFailed' => [
+        'name' => 'SSL Bestelling mislukt',
+        'description' => 'De melding informeert de beheerder dat een SSL-bevel is mislukt voor het opgegeven domein. Het bevat relevante details zoals de domeinnaam, het type, de SSL provider en klantinformatie. Er kan onmiddellijke aandacht nodig zijn om het probleem op te lossen.',
+    ],
+    'App\\Notifications\\User\\Instance\\CreateFtpAccountForInstance' => [
+        'name' => 'FTP-account aangemaakt voor instantie',
+        'description' => 'Deze melding informeert de gebruiker dat een nieuw FTP account succesvol is aangemaakt. Het bevat essentiële details zoals de FTP gebruikersnaam, het wachtwoord en het serveradres, zodat de gebruiker toegang heeft tot zijn bestanden.',
+    ],
+    'App\\Notifications\\User\\System\\CreateUser' => [
+        'name' => 'Welkom gebruiker',
+        'description' => 'Deze melding informeert de gebruiker dat zijn account met succes is aangemaakt. De melding bevat de benodigde aanmeldgegevens zoals gebruikersnaam en wachtwoord, zodat de gebruiker toegang krijgt tot zijn account.',
+    ],
 ];

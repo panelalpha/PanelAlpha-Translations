@@ -30,7 +30,10 @@
         "forgot-password": "{{- app_name}} - Mot de passe oublié",
         "reset-password": "{{- app_name}} - Réinitialiser le mot de passe",
         "my-account": "{{- app_name}} - Mon compte",
-        "page-not-found": "{{- app_name}} - Page non trouvée"
+        "page-not-found": "{{- app_name}} - Page non trouvée",
+        "register": "{{- app_name}} - S'inscrire",
+        "services": "{{- app_name}} - Mes projets",
+        "billing": "{{- nom_app}} - Ma facturation"
     },
     "general": {
         "adventurer": "Aventurier",
@@ -100,7 +103,27 @@
             "hour_other": "{{count}} heures",
             "day_one": "{{count}} jour",
             "day_other": "{{count}} jours"
-        }
+        },
+        "trialExpires": "Votre période d'essai expire",
+        "trialUpgradePlan": "Pour éviter toute limitation des fonctionnalités du système, mettez votre plan à niveau.",
+        "trialExpired": "Votre période d'essai a expiré",
+        "trialExpiredUpgradePlan": "et les fonctions du système ont été limitées. Mettez à jour votre plan pour rétablir l'accès complet.",
+        "instancesSuspended": "Les instances d'hébergement sont suspendues",
+        "instancesSuspendedDescription": "Toutes vos instances d'hébergement sont actuellement suspendues. Cela peut être dû à une facture impayée ou au dépassement des limites de votre plan actuel. Vos services resteront inactifs jusqu'à ce que le problème soit résolu.",
+        "upgradePlan": "Plan de mise à niveau",
+        "upgradeNow": "Mettre à niveau maintenant",
+        "plan": "Plan",
+        "myPlans": "Mes projets",
+        "myBilling": "Ma facturation",
+        "contactSupport": "Support de contact",
+        "support": "Soutien",
+        "please": "S'il vous plaît",
+        "logInLink": "se connecter",
+        "toYourAccount": "sur votre compte",
+        "contactSupportLink": "Contacter l'assistance",
+        "language": "Langue",
+        "cancelled": "Annulé",
+        "sites": "Sites"
     },
     "heading": {
         "notFoundPage.title": "Page non trouvée",
@@ -405,7 +428,24 @@
             "changeSslModal.serverCertificate": "Certificat SSL installé sur le serveur",
             "changeSslModal.detectedCertificate": "Certificat SSL détecté",
             "disableSsl.modal.title": "Disable SSL ?",
-            "disableSsl.modal.message": "Êtes-vous sûr de vouloir désactiver SSL pour l’instance {title} ?"
+            "disableSsl.modal.message": "Êtes-vous sûr de vouloir désactiver SSL pour l’instance {title} ?",
+            "modal.ssoLogin.title": "Se connecter à WordPress",
+            "delete.wpCloud.alert": "Vous ne pouvez pas supprimer l'instance s'il existe des sauvegardes manuelles.",
+            "advanced.security.disableSearchEngineIndexing.title": "Désactiver l'indexation des moteurs de recherche",
+            "advanced.security.disableSearchEngineIndexing.subtitle": "Si cette option est activée, les moteurs de recherche seront dissuadés d'indexer ce domaine.",
+            "advanced.developer.phpSettings.title": "Paramètres PHP",
+            "advanced.developer.phpSettings.subtitle": "Définir les paramètres PHP pour le domaine.",
+            "advanced.developer.phpSettings.alert": "Les paramètres PHP ne peuvent pas être modifiés dans ce domaine.",
+            "advanced.modal.phpSettings.title": "Paramètres PHP",
+            "advanced.modal.phpSettings.field": "Domaine :",
+            "advanced.logs.title": "Journaux",
+            "advanced.logs.loader": "Les journaux sont en cours de chargement, veuillez patienter...",
+            "advanced.logs.instanceLogs.title": "Journaux d'instance",
+            "advanced.logs.wordpressLogs.title": "Journaux d'erreurs de WordPress",
+            "advanced.logs.phpLogs.title": "Journaux PHP",
+            "advanced.logs.phpLogs.tooltip": "Vous pouvez également trouver des journaux PHP plus détaillés dans le journal des erreurs du serveur web.",
+            "advanced.logs.webserverLogs.title": "Journaux du serveur web",
+            "advanced.logs.noLogs": "Pas de billes"
         },
         "hosting": {
             "sidebar.manage.title": "Gérer",
@@ -576,7 +616,13 @@
             "transferDomain.title": "Transfert de domaine",
             "transferDomain.subtitle": "Le transfert de domaine a déjà été utilisé sur ce système.",
             "transferDomain.message.possible": "Si vous souhaitez le transférer vers notre système, veuillez configurer l’enregistrement {recordType} suivant dans {domaine} et lancer le processus en cliquant sur le bouton « transférer maintenant » ci-dessous.",
-            "transferDomain.message.impossible": "Vous ne pouvez pas utiliser ce domaine."
+            "transferDomain.message.impossible": "Vous ne pouvez pas utiliser ce domaine.",
+            "installation.info.redirecting": "Redirection... Cela peut prendre un moment.",
+            "installation.info.builderInProgress": "Mise en place de votre site alimenté par l'IA... Ce ne sera pas long !",
+            "newInstance.geo_affinity.subtitle": "Choisir l'emplacement",
+            "newInstance.geo_affinity.info": "Vous pouvez choisir l'emplacement de votre site parmi les options suivantes :",
+            "newInstance.hosting_plan.subtitle": "Choisir un plan d'hébergement",
+            "newInstance.hosting_plan.info": "Vous pouvez choisir le plan d'hébergement pour votre abonnement parmi les options suivantes :"
         },
         "navbar": {
             "tab.myInstances": "Mes instances",
@@ -589,7 +635,79 @@
             "colorScheme.title": "Choisir une palette de couleurs",
             "primaryColor.title": "Personnaliser les couleurs primaires",
             "additionalSettings.title": "Paramètres supplémentaires",
-            "additionalSettings.disableShadows.title": "Désactiver les ombres"
+            "additionalSettings.disableShadows.title": "Désactiver les ombres",
+            "darkMode.title": "Mode de changement",
+            "darkMode.description": "Mode sombre/clair"
+        },
+        "loginPage.emailVerification.title": "Vérifiez votre adresse électronique",
+        "loginPage.emailVerification.info1": "Nous vous avons envoyé un code à quatre chiffres pour",
+        "loginPage.emailVerification.info2": "Saisissez le code ci-dessous pour confirmer votre adresse électronique.",
+        "loginPage.emailVerification.info3": "Si vous n'avez pas reçu d'e-mail de notre part, veuillez vérifier votre dossier spam ou générer à nouveau le code en utilisant le bouton ci-dessus.",
+        "loginPage.emailVerification.confirmEmailAddress": "Confirmer l'adresse électronique",
+        "loginPage.emailVerification.resendCodeMessage": "Renvoi du code dans {{seconds}} secondes",
+        "loginPage.emailVerification.questions": {
+            "title": "Des questions ?",
+            "link": "Nous sommes là pour vous aider"
+        },
+        "loginPage.noAccount": "Vous n'avez pas encore de compte ?",
+        "loginPage.setPassword": {
+            "title": "Sécurisez votre compte",
+            "text": "Avant de poursuivre, veuillez définir un mot de passe pour votre compte afin de garantir la sécurité."
+        },
+        "registerPage.confirmEmail": "Confirmer l'e-mail",
+        "registerPage.confirmPassword": "Confirmer le mot de passe",
+        "registerPage.alreadyRegistered": "Déjà inscrit ?",
+        "registerPage.registeringAccept": "En vous inscrivant, vous acceptez",
+        "registerPage.termsOfService": "Conditions d'utilisation",
+        "registerPage.registerAccount": "Enregistrer un compte",
+        "registerPage.signInWith": "S'identifier avec",
+        "registerPage.fillForm": "ou remplir les formulaires ci-dessous",
+        "registerPage.creatingAccount": {
+            "title": "Création de votre compte...",
+            "text": "Cela ne prendra que quelques secondes - accrochez-vous bien pendant que nous commençons."
+        },
+        "trialExpiredModal": {
+            "headline": "Votre période d'essai a expiré",
+            "text": "Merci d'avoir essayé notre solution ! Pour que votre service continue à fonctionner, veuillez <span class=\"font-weight-600\">mettre à niveau votre version d'essai</span> vers un abonnement payant."
+        },
+        "cancelServiceModal": {
+            "title": "Annulation du plan",
+            "alert": {
+                "title": "Faites part de vos réflexions",
+                "text": "Si vous avez un moment, veuillez nous indiquer la raison pour laquelle vous annulez votre plan. Vos commentaires nous aident à nous améliorer et à mieux répondre à vos besoins à l'avenir."
+            },
+            "reason": {
+                "label": "Raison",
+                "placeholder": "Choisir la raison",
+                "option": {
+                    "performance": "Problèmes de vitesse ou de performance du site web",
+                    "expensive": "Le plan était trop cher",
+                    "support": "Insatisfait du support client",
+                    "technical": "Problèmes techniques ou de gestion du site en cours",
+                    "panel": "Je n'aime pas le panneau de contrôle",
+                    "other": "Autres"
+                }
+            },
+            "describe": {
+                "label": "Décrivez votre raison en quelques mots",
+                "minimum": "Minimum 10 caractères"
+            }
+        },
+        "billing": {
+            "title": "Ma facturation",
+            "noData": {
+                "title": "Aucune information à afficher",
+                "text": "Vous utilisez actuellement un compte d'essai. Lorsque vous passerez à un plan payant, vous aurez accès à cette section et à toutes les informations qu'elle contient."
+            },
+            "details": {
+                "title": "Détails de la facturation",
+                "trialInfo": "Vous avez actuellement un compte d'essai.",
+                "firstPaymentInfo": "Le compte de facturation sera créé lors du premier paiement."
+            },
+            "invoice": {
+                "title": "Mes factures",
+                "noData.title": "Aucune facture n'a été trouvée"
+            }
         }
     },
     "message": {
@@ -673,7 +791,18 @@
             "monitoring.title": "Il n’y a pas encore de données à afficher",
             "monitoring.description": "Notre système rafraîchit les statistiques une fois par jour et nous n’avons pas encore collecté d’informations sur votre site web. Veuillez vérifier demain.",
             "activeDevices.title": "Aucun appareil actif n’a été trouvé",
-            "activeDevices.description": "Aucun appareil actif n’a été trouvé pour cette instance. Lorsqu’un utilisateur se connecte à partir d’un appareil, il apparaît automatiquement dans la liste."
+            "activeDevices.description": "Aucun appareil actif n’a été trouvé pour cette instance. Lorsqu’un utilisateur se connecte à partir d’un appareil, il apparaît automatiquement dans la liste.",
+            "wpErrorLogs.title": "Aucun journal d'erreur WordPress n'a été trouvé...",
+            "wpErrorLogs.description": "Les journaux d'erreurs de WordPress sont disponibles lorsque le fichier wp-config.php contient les paramètres suivants : WP_DEBUG à true et WP_DEBUG_LOG à true.",
+            "phpLogs.title": "Aucun journal PHP n'a été trouvé...",
+            "phpLogs.description": "Vous pouvez également trouver des journaux PHP plus détaillés dans le journal des erreurs du serveur web.",
+            "webserverLogs.title": "Aucun journal de serveur web n'a été trouvé...",
+            "webserverLogs.description": "Aucun journal n'a été trouvé...",
+            "webserverLogs.downloadTitle": "Vous ne pouvez pas prévisualiser le contenu de ce fichier.",
+            "webserverLogs.downloadDescription": "Veuillez télécharger les journaux du serveur web.",
+            "noRecords": "Aucun enregistrement n'a été trouvé",
+            "templates.title": "Pas de modèles disponibles !",
+            "services.title": "Aucun service n'a été trouvé"
         },
         "status": {
             "active": "Activer",
@@ -797,7 +926,9 @@
             "backup.restore.success": "La restauration de la sauvegarde est en cours…",
             "installation.created": "Instance créée. L’installation est en cours…",
             "installation.inProgress": "Installation en cours…",
-            "copyInstance.completed": "Clonage de l’instance en cours…"
+            "copyInstance.completed": "Clonage de l’instance en cours…",
+            "advanced.logs.maxEntries": "100 entrées du journal sont affichées. Pour en voir plus, veuillez télécharger.",
+            "disableSearchEngineIndexing.success": "L'indexation des moteurs de recherche a été mise à jour."
         },
         "hosting": {
             "domain.create.success": "{{type}} a été ajouté.",
@@ -1032,7 +1163,23 @@
         "visit": "Visiter le site web",
         "visitWebsite": "Visiter le site web",
         "visitSite": "Visiter le site",
-        "copyUrl": "Copier l’URL"
+        "copyUrl": "Copier l’URL",
+        "addDirective": "Ajouter une directive",
+        "billing.pay_now": "Payer maintenant",
+        "contactSupport": "Support de contact",
+        "download": "Télécharger",
+        "edit": "Editer",
+        "resentCode": "Renvoyer le code",
+        "service.upgrade_plan": "Plan de mise à niveau",
+        "signUp": "S'inscrire",
+        "startCreating": "Commencer à créer",
+        "upgradeNow": "Mettre à niveau maintenant",
+        "website.details": "Détails du site",
+        "submit": "Soumettre",
+        "set": {
+            "geo_affinity": "Lieu d'implantation",
+            "hosting_plan": "Définir le plan d'hébergement"
+        }
     },
     "tooltip": {
         "create_backup.backup_directory": "Fichiers de site.",
@@ -1187,7 +1334,27 @@
             "sharedAccess.role.viewAndSso": "Permet d’afficher les détails du site web et d’utiliser l’option « WP Admin » pour se connecter à WordPress en tant qu’administrateur.",
             "sharedAccess.role.developer": "Accès à toutes les options de gestion de votre site web sans accès à la gestion du service d’hébergement.",
             "sharedAccess.role.fullAccess": "Accès à toutes les options de gestion de votre site web et dus service d’hébergement correspondant. Veuillez noter que si ce service héberge d’autres sites, ils y auront également accès.",
-            "sharedAccess.role.custom": "Personnaliser le niveau d’accès."
+            "sharedAccess.role.custom": "Personnaliser le niveau d’accès.",
+            "phpSetting": {
+                "allow_url_fopen": "Cette option active les wrappers fopen sensibles à l'URL qui permettent d'accéder à des objets URL tels que des fichiers. Les wrappers par défaut sont fournis pour l'accès aux fichiers distants en utilisant le protocole ftp ou http ; certaines extensions comme zlib peuvent enregistrer des wrappers supplémentaires.",
+                "display_errors": "Cela détermine si les erreurs doivent être imprimées à l'écran ou si elles doivent être cachées à l'utilisateur.",
+                "enable_dl": "Cette directive n'est vraiment utile que dans la version du module Apache de PHP. Vous pouvez activer ou désactiver le chargement dynamique des extensions PHP avec dl() par serveur virtuel ou par répertoire. La principale raison de désactiver le chargement dynamique est la sécurité. Avec le chargement dynamique, il est possible d'ignorer toutes les restrictions open_basedir. Par défaut, le chargement dynamique est autorisé, sauf en mode sans échec. Cette fonctionnalité est obsolète et sera supprimée ultérieurement.",
+                "file_uploads": "Autoriser ou non les téléchargements de fichiers HTTP.",
+                "max_execution_time": "Ce paramètre définit la durée maximale en secondes pendant laquelle un script est autorisé à s'exécuter avant d'être interrompu par l'analyseur syntaxique. Cela permet d'éviter que des scripts mal écrits n'encombrent le serveur.",
+                "max_input_time": "Ce paramètre définit la durée maximale en secondes pendant laquelle un script est autorisé à analyser les données d'entrée, telles que POST, GET et les téléchargements de fichiers.",
+                "max_input_vars": "Ce paramètre fixe le nombre maximal de variables d'entrée autorisées par demande et peut être utilisé pour empêcher les attaques par déni de service impliquant des collisions de hachage sur les noms des variables d'entrée.",
+                "memory_limit": "Ce paramètre définit la quantité maximale de mémoire (en octets) qu'un script est autorisé à allouer. Cela permet d'éviter que des scripts mal écrits consomment toute la mémoire disponible sur un serveur. Notez que pour ne pas avoir de limite de mémoire, définissez cette directive à -1.",
+                "post_max_size": "Définit la taille maximale autorisée pour les données de l'article. Ce paramètre affecte également le téléchargement de fichiers. Pour télécharger des fichiers volumineux, cette valeur doit être supérieure à upload_max_filesize. D'une manière générale, memory_limit doit être plus grand que post_max_size.",
+                "session.gc_maxlifetime": "Cette valeur indique le nombre de secondes au bout desquelles les données seront considérées comme des \"déchets\" et potentiellement nettoyées.",
+                "session.save_path": "session.save_path définit l'argument qui est transmis au gestionnaire d'enregistrement. Si vous choisissez le gestionnaire de fichiers par défaut, il s'agit du chemin où les fichiers sont créés.",
+                "upload_max_filesize": "Taille maximale d'un fichier téléchargé.",
+                "zlib.output_compression": "Indique s'il faut compresser les pages de manière transparente. Si cette option est définie à \"On\" dans le php.ini ou dans la configuration d'Apache, les pages sont compressées si le navigateur envoie un en-tête \"Accept-Encoding : gzip\" ou \"deflate\".",
+                "error_reporting": "Ce paramètre détermine quelles erreurs PHP sont rapportées. Il peut être défini à un niveau spécifique de rapport d'erreur, tel que E_ALL, qui rapporte toutes les erreurs, ou il peut être défini à 0 pour désactiver le rapport d'erreur.",
+                "log_errors": "Cette directive permet d'activer ou de désactiver l'enregistrement des erreurs dans un fichier spécifié. Lorsqu'elle est activée, les erreurs sont enregistrées au lieu d'être affichées à l'écran, ce qui est utile pour les environnements de production.",
+                "max_file_uploads": "Ce paramètre définit le nombre maximum de fichiers pouvant être téléchargés en une seule fois. Cela permet d'éviter les abus en limitant le nombre de fichiers pouvant être téléchargés en une seule fois.",
+                "register_globals": "Cette directive, lorsqu'elle est activée, importe automatiquement les variables de la requête dans la portée globale. Elle est dépréciée et doit être désactivée pour des raisons de sécurité, car elle peut entraîner l'écrasement de variables et d'autres problèmes de sécurité.",
+                "short_open_tag": "Ce paramètre permet d'utiliser des balises d'ouverture courtes (< ?) pour le code PHP. S'il est désactivé, seule la balise d'ouverture complète (<?php) peut être utilisée. Il est recommandé d'utiliser la balise d'ouverture complète pour une meilleure compatibilité."
+            }
         },
         "hosting": {
             "service.suspended": "Votre service a été suspendu.",
@@ -1208,6 +1375,10 @@
             "dns.status.pending.list.third": "Si le certificat n’est pas installé automatiquement dans les 24 heures, veuillez contacter le service d’assistance.",
             "ftp.usageNotSupported": "L’utilisation et le quota ne sont pas pris en charge par le serveur.",
             "sftp.accessMethod": "Type d’accès à distance : SSH ou SFTP."
+        },
+        "create_backup.backup_type": "Sélectionnez le type de sauvegarde à effectuer : choisissez \"Base de données\" pour une sauvegarde de la base de données ou \"Répertoire\" pour une sauvegarde des fichiers.",
+        "billing": {
+            "invoice.duedate.exceeded": "Le délai de paiement a été dépassé. Veuillez payer la facture immédiatement afin d'éviter une suspension du service."
         }
     },
     "form": {
@@ -1258,7 +1429,9 @@
             "howOften": "Combien de fois",
             "image": {
                 "title": "Télécharger le graphique",
-                "subtitle": "Fichiers .jpg, .png, .svg autorisés"
+                "subtitle": "Fichiers .jpg, .png, .svg autorisés",
+                "lightMode": "Mode lumineux",
+                "darkMode": "Mode sombre"
             },
             "installedPath": "Chemin d’accès installé",
             "item": "Objet",
@@ -1315,7 +1488,9 @@
             "unlimitedQuota": "Quota illimité",
             "value": "Valeur",
             "weight": "Poids",
-            "version": "Version"
+            "version": "Version",
+            "backupType": "Type de sauvegarde",
+            "hosting_plan": "Plan d'hébergement"
         },
         "placeholder": {
             "cabundle": "Saisir la liasse CA",
@@ -1345,7 +1520,8 @@
             "type": "Saisir le type",
             "username": "Saisir le nom d’utilisateur",
             "website": "Saisir le nom du site web",
-            "value": "Saisir la valeur"
+            "value": "Saisir la valeur",
+            "emailDelegatedUser": "Saisir l'adresse électronique de l'utilisateur délégué"
         },
         "option": {
             "constant": "Constant",
@@ -1502,7 +1678,9 @@
             "storage": "Stockage",
             "tags": "Étiquettes",
             "version": "Version",
-            "visitors": "Visiteurs"
+            "visitors": "Visiteurs",
+            "only_me": "Seulement moi",
+            "me_and_delegated_user": "Moi et l'utilisateur délégué"
         },
         "value": {
             "unlimited": "Illimité",
@@ -1600,7 +1778,16 @@
             "user": "Utilisateur",
             "value": "Valeur",
             "version": "Version",
-            "visitors": "Visiteurs"
+            "visitors": "Visiteurs",
+            "directive": "Directive",
+            "due_date": "Date d'échéance",
+            "instance_limit": "Limite de l'instance",
+            "invoice_date": "Date de la facture",
+            "number": "Numéro #",
+            "plan_name": "Nom du régime",
+            "sites": "Sites",
+            "total": "Total",
+            " ": ""
         },
         "field": {
             "userOwner": "{{name}} (vous)",
@@ -1613,7 +1800,9 @@
             "user": "Utilisateurs par page :",
             "log": "Logs Per Page :",
             "device": "Appareils par page :",
-            "instance": "Instances par page :"
+            "instance": "Instances par page :",
+            "plan": "Plans par page",
+            "invoice": "Factures par page :"
         },
         "snackbar": {
             "selectAll": "Sélectionner tout",
@@ -1737,7 +1926,8 @@
             "user.account.password_update": "Mot de passe mis à jour",
             "user.two_factor.confirm": "Authentification à deux facteurs activée",
             "user.two_factor.disable": "Désactivé Authentification à deux facteurs",
-            "user.two_factor.create_recovery_codes": "Code de récupération à deux facteurs créé"
+            "user.two_factor.create_recovery_codes": "Code de récupération à deux facteurs créé",
+            "user.instance.search_engine_indexing.update": "Mise à jour de l'indexation des moteurs de recherche"
         },
         "suffix": {
             "toStatus": "à {{status}}",
@@ -1789,7 +1979,14 @@
             "hosting.manage_file_manager": "Utiliser le gestionnaire de fichiers",
             "hosting.control_panel_sso": "SSO du panneau de contrôle",
             "hosting.phpmyadmin_sso": "PHPMyAdmin SSO",
-            "general.manage_shared_access": "Gérer l’accès partagé"
+            "general.manage_shared_access": "Gérer l’accès partagé",
+            "general.view_php_logs": "Afficher les journaux PHP",
+            "general.view_webserver_logs": "Afficher les journaux du serveur web",
+            "general.push_to_staging": "Pousser vers la mise en scène",
+            "general.preview_instance": "Instance de prévisualisation",
+            "wordpress.manage_search_engine_indexing": "Gérer l'indexation des moteurs de recherche",
+            "wordpress.view_logs": "Voir les journaux d'erreurs de WordPress",
+            "wordpress.manage_cloudflare": "Gérer Cloudflare"
         }
     },
     "languages": {

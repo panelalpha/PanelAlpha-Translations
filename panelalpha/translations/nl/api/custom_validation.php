@@ -64,4 +64,9 @@ return [
     'create_backup_failed' => 'Fout bij het maken van de back-up. Neem contact op met de beheerder.',
     'domain_cannot_be_hosted' => 'Domein kan niet worden gehost.',
     'backup_already_created' => 'Back-up al gemaakt',
+    'registration_disabled' => 'Registratie is uitgeschakeld.',
+    'email_already_registered' => 'Reeds geregistreerd e-mailadres',
+    'invalid_ssl_provider' => 'Ongeldige SSL-provider',
+    'invalid_php_directive' => 'Ongeldige PHP-richtlijn: :directive.',
+    'hosting_server_not_accessible' => 'Hosting Server is niet toegankelijk.',
 ];

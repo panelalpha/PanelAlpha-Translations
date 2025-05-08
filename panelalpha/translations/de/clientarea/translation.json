@@ -30,7 +30,10 @@
         "my-account": "{{- app_name}} - Mein Konto",
         "sftp": "{{- app_name}} - SSH/SFTP-Konten",
         "file-manager": "{{- app_name}} - Dateimanager",
-        "page-not-found": "{{- app_name}} - Seite nicht gefunden"
+        "page-not-found": "{{- app_name}} - Seite nicht gefunden",
+        "register": "{{- app_name}} - Registrieren",
+        "services": "{{- app_name}} - Meine Pläne",
+        "billing": "{{- app_name}} - Meine Abrechnung"
     },
     "general": {
         "adventurer": "Abenteurer",
@@ -100,7 +103,27 @@
         "backup_one": "Backup",
         "backup_other": "Backups",
         "ssh": "SSH",
-        "sftp": "SFTP"
+        "sftp": "SFTP",
+        "trialExpires": "Ihre Probezeit läuft ab",
+        "trialUpgradePlan": "Um Einschränkungen der Systemfunktionalität zu vermeiden, sollten Sie Ihren Tarif aktualisieren.",
+        "trialExpired": "Ihr Testzeitraum ist abgelaufen",
+        "trialExpiredUpgradePlan": "und die Systemfunktionen wurden eingeschränkt. Aktualisieren Sie Ihren Plan, um den vollen Zugriff wiederherzustellen.",
+        "instancesSuspended": "Hosting-Instanzen werden suspendiert",
+        "instancesSuspendedDescription": "Alle Ihre Hosting-Instanzen sind derzeit gesperrt. Dies kann auf eine unbezahlte Rechnung oder die Überschreitung der Grenzen Ihres aktuellen Plans zurückzuführen sein. Ihre Dienste bleiben inaktiv, bis das Problem behoben ist.",
+        "upgradePlan": "Upgrade-Plan",
+        "upgradeNow": "Jetzt aktualisieren",
+        "plan": "Plan",
+        "myPlans": "Meine Pläne",
+        "myBilling": "Meine Abrechnung",
+        "contactSupport": "Kontakt zum Support",
+        "support": "Unterstützung",
+        "please": "Bitte",
+        "logInLink": "sich anmelden",
+        "toYourAccount": "auf Ihr Konto",
+        "contactSupportLink": "Kontakt zum Support",
+        "language": "Sprache",
+        "cancelled": "Abgebrochen",
+        "sites": "Standorte"
     },
     "heading": {
         "notFoundPage.title": "Seite nicht gefunden",
@@ -418,7 +441,12 @@
             "backups.usage.directory_manual_backups_number.tooltip": "Anzahl der manuell erstellten Verzeichnissicherungen von der maximal zulässigen Anzahl.",
             "plugin.deactivate.message": "Sind Sie sicher, dass Sie dieses Plugin deaktivieren möchten?",
             "advanced.developer.controlpanel.title": "Bedienfeld",
-            "advanced.developer.controlpanel.subtitle": "Verwenden Sie die Schaltfläche, um sich direkt am Bedienfeld anzumelden."
+            "advanced.developer.controlpanel.subtitle": "Verwenden Sie die Schaltfläche, um sich direkt am Bedienfeld anzumelden.",
+            "advanced.developer.phpSettings.title": "PHP-Einstellungen",
+            "advanced.developer.phpSettings.subtitle": "Legen Sie die PHP-Einstellungen für die Domäne fest.",
+            "advanced.developer.phpSettings.alert": "PHP-Einstellungen können in diesem Bereich nicht geändert werden.",
+            "advanced.modal.phpSettings.title": "PHP-Einstellungen festlegen",
+            "advanced.modal.phpSettings.field": "Bereich:"
         },
         "hosting": {
             "sidebar.manage.title": "Verwalten Sie",
@@ -590,7 +618,12 @@
             "transferDomain.title": "Übertragung der Domäne",
             "transferDomain.subtitle": "Der Bereich {domain} wurde bereits in unserem System verwendet.",
             "transferDomain.message.possible": "Wenn Sie es in unser System übertragen möchten, richten Sie bitte den folgenden {recordType}-Eintrag in {domain} ein und starten Sie den Vorgang, indem Sie unten auf die Schaltfläche Jetzt übertragen klicken.",
-            "transferDomain.message.impossible": "Sie können diese Domäne nicht verwenden."
+            "transferDomain.message.impossible": "Sie können diese Domäne nicht verwenden.",
+            "installation.info.redirecting": "Umleiten... Es kann einen Moment dauern.",
+            "newInstance.geo_affinity.subtitle": "Standort wählen",
+            "newInstance.geo_affinity.info": "Sie können den Standort Ihrer Website unter den folgenden Optionen auswählen:",
+            "newInstance.hosting_plan.subtitle": "Hosting-Plan auswählen",
+            "newInstance.hosting_plan.info": "Sie können den Hosting-Plan für Ihr Abonnement aus den folgenden Optionen auswählen:"
         },
         "navbar": {
             "tab.myInstances": "Meine Instanzen",
@@ -606,6 +639,76 @@
             "additionalSettings.disableShadows.title": "Schatten deaktivieren",
             "darkMode.title": "Modus ändern",
             "darkMode.description": "Dunkler/Heller Modus"
+        },
+        "loginPage.emailVerification.title": "Überprüfen Sie Ihre E-Mail-Adresse",
+        "loginPage.emailVerification.info1": "Wir haben Ihnen einen vierstelligen Code gemailt, um",
+        "loginPage.emailVerification.info2": "Geben Sie den unten stehenden Code ein, um Ihre E-Mail-Adresse zu bestätigen.",
+        "loginPage.emailVerification.info3": "Wenn Sie keine E-Mail von uns erhalten haben, überprüfen Sie bitte Ihren Spam-Ordner oder generieren Sie den Code erneut über die Schaltfläche oben",
+        "loginPage.emailVerification.confirmEmailAddress": "E-Mail Adresse bestätigen",
+        "loginPage.emailVerification.resendCodeMessage": "Code in {{seconds}} Sekunden erneut senden",
+        "loginPage.emailVerification.questions": {
+            "title": "Noch Fragen?",
+            "link": "Wir sind hier, um zu helfen"
+        },
+        "loginPage.noAccount": "Sie haben noch kein Konto?",
+        "loginPage.setPassword": {
+            "title": "Sichern Sie Ihr Konto",
+            "text": "Bevor Sie fortfahren, legen Sie bitte ein Passwort für Ihr Konto fest, um die Sicherheit zu gewährleisten."
+        },
+        "registerPage.confirmEmail": "E-Mail bestätigen",
+        "registerPage.confirmPassword": "Bestätigen Sie Ihr Passwort",
+        "registerPage.alreadyRegistered": "Bereits registriert?",
+        "registerPage.registeringAccept": "Mit der Registrierung akzeptieren Sie",
+        "registerPage.termsOfService": "Bedingungen der Dienstleistung",
+        "registerPage.registerAccount": "Konto registrieren",
+        "registerPage.signInWith": "Anmeldung mit",
+        "registerPage.fillForm": "oder füllen Sie die nachstehenden Formulare aus",
+        "registerPage.creatingAccount": {
+            "title": "Ihr Konto erstellen...",
+            "text": "Dies dauert nur ein paar Sekunden - warten Sie, bis wir anfangen."
+        },
+        "trialExpiredModal": {
+            "headline": "Ihr Testzeitraum ist abgelaufen",
+            "text": "Vielen Dank, dass Sie unsere Lösung ausprobiert haben! Damit Ihr Dienst weiterläuft, aktualisieren Sie bitte <span class=\"font-weight-600\">Ihre Testversion auf ein kostenpflichtiges Abonnement."
+        },
+        "cancelServiceModal": {
+            "title": "Plan Stornierung",
+            "alert": {
+                "title": "Teilen Sie Ihre Gedanken",
+                "text": "Wenn Sie einen Moment Zeit haben, teilen Sie uns bitte mit, warum Sie Ihren Plan kündigen. Ihr Feedback hilft uns, uns zu verbessern und Ihre Bedürfnisse in Zukunft besser zu erfüllen."
+            },
+            "reason": {
+                "label": "Grund",
+                "placeholder": "Grund wählen",
+                "option": {
+                    "performance": "Probleme mit der Geschwindigkeit oder Leistung der Website",
+                    "expensive": "Der Plan war zu teuer",
+                    "support": "Unzufrieden mit der Kundenbetreuung",
+                    "technical": "Laufende technische Probleme oder Probleme mit dem Standortmanagement",
+                    "panel": "Ich mag das Bedienfeld nicht",
+                    "other": "Andere"
+                }
+            },
+            "describe": {
+                "label": "Beschreiben Sie Ihren Grund in wenigen Worten",
+                "minimum": "Mindestens 10 Zeichen"
+            }
+        },
+        "billing": {
+            "title": "Meine Abrechnung",
+            "noData": {
+                "title": "Keine Informationen zum Anzeigen",
+                "text": "Sie verwenden derzeit ein Testkonto. Sobald Sie ein Upgrade auf einen kostenpflichtigen Plan durchführen, erhalten Sie Zugang zu diesem Bereich und allen darin enthaltenen Informationen."
+            },
+            "details": {
+                "title": "Details zur Rechnungsstellung",
+                "trialInfo": "Sie haben derzeit ein Testkonto.",
+                "firstPaymentInfo": "Das Rechnungskonto wird mit der ersten Zahlung eingerichtet."
+            },
+            "invoice": {
+                "title": "Meine Rechnungen",
+                "noData.title": "Es wurden keine Rechnungen gefunden"
+            }
         }
     },
     "message": {
@@ -695,7 +798,10 @@
             "webserverLogs.downloadTitle": "Der Inhalt dieser Datei kann nicht in der Vorschau angezeigt werden.",
             "webserverLogs.downloadDescription": "Bitte laden Sie die Protokolle des Webservers herunter.",
             "sftp.title": "Kein Konto erstellt",
-            "sftp.description": "Keine SSH/SFTP-Konten verfügbar."
+            "sftp.description": "Keine SSH/SFTP-Konten verfügbar.",
+            "noRecords": "Keine Einträge gefunden",
+            "templates.title": "Keine Templates verfügbar!",
+            "services.title": "Es wurden keine Dienste gefunden"
         },
         "status": {
             "active": "Aktivieren",
@@ -1059,7 +1165,22 @@
         "transferNow": "Transfer Now",
         "visitWebsite": "Website besuchen",
         "visitSite": "Website besuchen",
-        "copyUrl": "URL kopieren"
+        "copyUrl": "URL kopieren",
+        "addDirective": "Richtlinie hinzufügen",
+        "billing.pay_now": "Jetzt bezahlen",
+        "contactSupport": "Kontakt zum Support",
+        "edit": "bearbeiten",
+        "resentCode": "Aktueller Code",
+        "service.upgrade_plan": "Upgrade-Plan",
+        "signUp": "Anmeldung",
+        "startCreating": "Erstellen beginnen",
+        "upgradeNow": "Jetzt aktualisieren",
+        "website.details": "Details zum Standort",
+        "submit": "Einreichen",
+        "set": {
+            "geo_affinity": "Standort festlegen",
+            "hosting_plan": "Hosting-Plan festlegen"
+        }
     },
     "tooltip": {
         "create_backup.backup_directory": "Verzeichnis Sichern",
@@ -1202,7 +1323,27 @@
             "sharedAccess.role.developer": "Zugang zu allen Verwaltungsoptionen für Ihre Website ohne Zugriff auf die Verwaltung der Hosting-Instanz.",
             "sharedAccess.role.fullAccess": "Zugang zu allen Verwaltungsoptionen für Ihre Website und die zugehörige Hosting-Instanz. Bitte beachten Sie, dass, wenn diese Hosting-Instanz auch mit anderen Websites verbunden ist, sie ebenfalls Zugang zu diesen haben.",
             "sharedAccess.role.custom": "Passen Sie den Zugang auf Funktionsebene an.",
-            "tab.backup.scheduled": "Die Sicherung wurde geplant."
+            "tab.backup.scheduled": "Die Sicherung wurde geplant.",
+            "phpSetting": {
+                "allow_url_fopen": "Diese Option aktiviert die URL-fähigen fopen-Wrapper, die den Zugriff auf URL-Objekte wie Dateien ermöglichen. Standard-Wrapper werden für den Zugriff auf entfernte Dateien über das ftp- oder http-Protokoll bereitgestellt; einige Erweiterungen wie zlib können zusätzliche Wrapper registrieren.",
+                "display_errors": "Hier wird festgelegt, ob Fehler als Teil der Ausgabe auf den Bildschirm gedruckt werden sollen oder ob sie vor dem Benutzer verborgen werden sollen.",
+                "enable_dl": "Diese Direktive ist eigentlich nur in der Apache-Modulversion von PHP nützlich. Sie können das dynamische Laden von PHP-Erweiterungen mit dl() pro virtuellem Server oder pro Verzeichnis ein- und ausschalten. Der Hauptgrund für das Abschalten des dynamischen Ladens ist die Sicherheit. Mit dynamischem Laden ist es möglich, alle open_basedir-Beschränkungen zu ignorieren. Standardmäßig ist das dynamische Laden erlaubt, außer im abgesicherten Modus. Diese Funktion ist veraltet und wird zu einem späteren Zeitpunkt entfernt werden.",
+                "file_uploads": "Ob HTTP-Datei-Uploads erlaubt werden sollen oder nicht.",
+                "max_execution_time": "Hier wird die maximale Zeit in Sekunden festgelegt, die ein Skript laufen darf, bevor es vom Parser abgebrochen wird. Dies hilft zu verhindern, dass schlecht geschriebene Skripte den Server überlasten.",
+                "max_input_time": "Hier wird die maximale Zeit in Sekunden festgelegt, die ein Skript zum Parsen von Eingabedaten wie POST, GET und Datei-Uploads benötigt.",
+                "max_input_vars": "Dies legt die maximale Anzahl der pro Anfrage zulässigen Eingabevariablen fest und kann verwendet werden, um Denial-of-Service-Angriffe mit Hash-Kollisionen bei den Namen der Eingabevariablen zu verhindern.",
+                "memory_limit": "Hier wird die maximale Menge an Speicher in Bytes festgelegt, die ein Skript zuweisen darf. Dies hilft zu verhindern, dass schlecht geschriebene Skripte den gesamten verfügbaren Speicher auf einem Server verbrauchen. Um keine Speicherbegrenzung zu haben, setzen Sie diese Direktive auf -1.",
+                "post_max_size": "Legt die maximal zulässige Größe der Beitragsdaten fest. Diese Einstellung wirkt sich auch auf Datei-Uploads aus. Um große Dateien hochzuladen, muss dieser Wert größer sein als upload_max_filesize. Im Allgemeinen sollte memory_limit größer sein als post_max_size.",
+                "session.gc_maxlifetime": "Hier wird die Anzahl der Sekunden angegeben, nach denen die Daten als \"Müll\" angesehen und möglicherweise bereinigt werden.",
+                "session.save_path": "session.save_path legt das Argument fest, das an den Speicher-Handler übergeben wird. Wenn Sie den Standard-Dateiverwalter wählen, ist dies der Pfad, in dem die Dateien erstellt werden.",
+                "upload_max_filesize": "Die maximale Größe einer hochgeladenen Datei.",
+                "zlib.output_compression": "Ob Seiten transparent komprimiert werden sollen. Wenn diese Option in der php.ini oder der Apache-Konfiguration auf \"On\" gesetzt ist, werden Seiten komprimiert, wenn der Browser einen \"Accept-Encoding: gzip\"- oder \"deflate\"-Header sendet.",
+                "error_reporting": "Diese Einstellung bestimmt, welche PHP-Fehler gemeldet werden. Sie kann auf eine bestimmte Stufe der Fehlerberichterstattung gesetzt werden, wie z.B. E_ALL, die alle Fehler meldet, oder sie kann auf 0 gesetzt werden, um die Fehlerberichterstattung zu deaktivieren.",
+                "log_errors": "Diese Direktive aktiviert oder deaktiviert die Protokollierung von Fehlern in einer bestimmten Datei. Wenn sie aktiviert ist, werden Fehler protokolliert, anstatt auf dem Bildschirm angezeigt zu werden, was für Produktionsumgebungen nützlich ist.",
+                "max_file_uploads": "Hier wird die maximale Anzahl von Dateien festgelegt, die mit einer einzigen Anfrage hochgeladen werden können. Dies hilft, Missbrauch zu verhindern, indem die Anzahl der Dateien, die auf einmal hochgeladen werden können, begrenzt wird.",
+                "register_globals": "Wenn diese Direktive aktiviert ist, werden Variablen aus der Anfrage automatisch in den globalen Bereich importiert. Sie ist veraltet und sollte aus Sicherheitsgründen deaktiviert werden, da sie zum Überschreiben von Variablen und anderen Sicherheitsproblemen führen kann.",
+                "short_open_tag": "Diese Einstellung erlaubt die Verwendung von kurzen Eröffnungs-Tags (<?) für PHP-Code. Wenn sie deaktiviert ist, kann nur der vollständige Eröffnungs-Tag (<?php) verwendet werden. Für eine bessere Kompatibilität wird die Verwendung des vollständigen Eröffnungs-Tags empfohlen."
+            }
         },
         "hosting": {
             "service.suspended": "Ihr Dienst wurde eingestellt.",
@@ -1236,7 +1377,10 @@
         "onboarding.newInstance.onlyLatestVersion": "Only the latest WordPress version is supported.",
         "changeSslModal.disableProxy": "Sie haben einen A DNS-Eintrag mit Proxy versehen. Um das SSL-Zertifikat zu ändern, müssen Sie den Proxy in Ihrem A-DNS-Eintrag deaktivieren.",
         "changeSslModal.cannotChangeCertificate": "Ihr SSL-Zertifikat wurde automatisch generiert, da Ihre Domain als Proxy fungiert. Sie können das SSL-Zertifikat nicht ändern.",
-        "changeSslModal.sslCertificate": "Wählen Sie das SSL-Zertifikat, das auf dem Server eingerichtet werden soll. Bitte beachten Sie: Das von Ihnen eingerichtete Zertifikat kann sich von dem erkannten Zertifikat unterscheiden."
+        "changeSslModal.sslCertificate": "Wählen Sie das SSL-Zertifikat, das auf dem Server eingerichtet werden soll. Bitte beachten Sie: Das von Ihnen eingerichtete Zertifikat kann sich von dem erkannten Zertifikat unterscheiden.",
+        "billing": {
+            "invoice.duedate.exceeded": "Die Zahlungsfrist wurde überschritten. Bitte bezahlen Sie die Rechnung sofort, um eine Einstellung des Dienstes zu vermeiden."
+        }
     },
     "form": {
         "label": {
@@ -1346,7 +1490,8 @@
             "set_location": "Standort festlegen",
             "geo_affinity": "Standort wählen",
             "public_key": "Öffentlicher Schlüssel",
-            "sslCertificate": "SSL-Zertifikat"
+            "sslCertificate": "SSL-Zertifikat",
+            "hosting_plan": "Hosting-Plan"
         },
         "placeholder": {
             "cabundle": "CA-Bündel eingeben",
@@ -1376,7 +1521,8 @@
             "type": "Typ eingeben",
             "username": "Benutzernamen eingeben",
             "website": "Name der Website eingeben",
-            "value": "Wert eingeben"
+            "value": "Wert eingeben",
+            "emailDelegatedUser": "E-Mail-Adresse des delegierten Benutzers eingeben"
         },
         "option": {
             "constant": "Konstante",
@@ -1533,7 +1679,9 @@
             "storage": "Speicher",
             "tags": "Tags",
             "version": "Version",
-            "visitors": "Besucher"
+            "visitors": "Besucher",
+            "only_me": "Nur ich",
+            "me_and_delegated_user": "Ich und beauftragter Benutzer"
         },
         "value": {
             "unlimited": "Unbegrenzt",
@@ -1631,7 +1779,16 @@
             "user": "Benutzer",
             "value": "Wert",
             "version": "Version",
-            "visitors": "Besucher"
+            "visitors": "Besucher",
+            "directive": "Richtlinie",
+            "due_date": "Fälligkeitsdatum",
+            "instance_limit": "Instanzgrenze",
+            "invoice_date": "Datum der Rechnung",
+            "number": "Nummer #",
+            "plan_name": "Plan Name",
+            "sites": "Standorte",
+            "total": "Insgesamt",
+            " ": ""
         },
         "field": {
             "userOwner": "{{name}} (Sie)",
@@ -1654,7 +1811,9 @@
             "user": "Benutzer pro Seite:",
             "log": "Logs pro Seite:",
             "device": "Geräte pro Seite:",
-            "instance": "Instanzen pro Seite:"
+            "instance": "Instanzen pro Seite:",
+            "plan": "Pläne pro Seite",
+            "invoice": "Rechnungen pro Seite:"
         },
         "snackbar": {
             "selectAll": "Alle auswählen",

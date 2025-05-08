@@ -236,4 +236,129 @@ return [
             ],
         ],
     ],
+    'App\\Lib\\Integrations\\Auth\\Google' => [
+        'title' => 'Google',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Volg deze stappen om de authenticatie met deze provider in te schakelen en een nieuwe applicatie te registreren:
+                <ol>
+                <li>Ga naar:: <a href="https://console.developers.google.com/iam-admin/projects">https://console.developers.google.com/iam-admin/projects</a> en log in indien nodig.</li>
+                <li>Klik op <b>Selecteer project</b>, druk vervolgens op <b>Creëer project</b> en selecteer het als het is aangemaakt. </li>
+                <li>Ga naar <b>API Manager → Credentials → OAuth</b> toestemmingsscherm en vul daar het formulier in. </li>
+                <li>Next, ga naar <b>Credentials → Creëer credentials (OAuth client ID type)</b> en selecteer <b>Webapplicatie</b>.</li>
+                <li>Stel <b>Authorize redirect URIs</b> in op <br /><b>{$callback_url}}</b></li>.
+                <li>Plak na registratie de aangemaakte applicatiegegevens (Client ID voor applicatie-ID en Client Secret voor applicatiegeheim) in het onderstaande formulier.</li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Klant-ID',
+            ],
+            'client_secret' => [
+                'label' => 'Geheim van de klant',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Apple' => [
+        'title' => 'Apple',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Volg deze stappen om de verificatie met deze provider in te schakelen en een nieuwe applicatie te registreren:
+            ',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Klant-ID',
+            ],
+            'client_secret' => [
+                'label' => 'Geheim van de klant',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Microsoft' => [
+        'title' => 'Microsoft',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Volg deze stappen om de authenticatie met deze provider in te schakelen en een nieuwe applicatie te registreren:
+                <ol>
+                <li>Ga naar: <a href="https://account.live.com/developers/applications/create" target="_blank">https://account.live.com/developers/applications/create</a> en log in indien nodig</li>
+                <li>Maak een nieuwe toepassing aan.</li>
+                <li>Vul de verplichte velden in, zoals de naam van de applicatie en de beschrijving.</li>
+                <li>Stel <b>Redirect URL</b> in op <br /><b>{{$callback_url}}</b></li>
+                <li>Als u zich hebt geregistreerd, plakt u de aangemaakte applicatiegegevens in het onderstaande formulier. </li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Klant-ID',
+            ],
+            'client_secret' => [
+                'label' => 'Geheim van de klant',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Linkedin' => [
+        'title' => 'LinkedIn',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Volg deze stappen om de authenticatie met deze provider in te schakelen en een nieuwe applicatie te registreren:
+            <ol>
+                <li>Ga naar: <a href="https://www.linkedin.com/secure/developer" target="_blank">https://www.linkedin.com/secure/developer</a> en log in indien nodig.</li>
+                <li>Maak een nieuwe toepassing aan.</li>
+                <li>Vul de verplichte velden in, zoals de applicatienaam en de beschrijving</li>
+                <li>Kies <b>Live</b> onder <b>Live Status</b>.</li>
+                <li>Selecteer <b>r_liteprofile</b> en <b>r_emailaddress</b>.</li>
+                <li>Stel <b>Redirect URL</b> in op <br /><b>{{$callback_url}}</b></li>.
+                <li>Als je je hebt geregistreerd, plak je de aangemaakte aanmeldingsgegevens in het onderstaande formulier.</li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Klant-ID',
+            ],
+            'client_secret' => [
+                'label' => 'Geheim van de klant',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Facebook' => [
+        'title' => 'Facebook',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Volg deze stappen om de authenticatie met deze provider in te schakelen en een nieuwe applicatie te registreren:
+            <ol>
+                <li>Ga naar: <a href="https://developers.facebook.com/apps" target="_blank">https://developers.facebook.com/apps</a> en log in indien nodig.</li>
+                <li>Maak een nieuwe toepassing aan.</li>
+                <li>Vul <b>Display Name</b>, <b>Contact Email</b> in, kies een categorie en klik op <b>Create App ID</b>. </li>
+                <li>Ga naar de <b>Instellingen</b> pagina en kopieer <b>App ID</b> en <b>App Geheim</b> naar dit formulier.</li>
+                <li>Keer terug naar <b>+Product toevoegen</b> en selecteer <b>Facebook login</b></li>.
+                <li>Stel <b>Valide OAuth redirect URIs</b> in op <br /><b>{{$callback_url}}</b></li>.
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Klant-ID',
+            ],
+            'client_secret' => [
+                'label' => 'Geheim van de klant',
+            ],
+        ],
+    ],
+    'App\\Lib\\Integrations\\Auth\\Github' => [
+        'title' => 'GitHub',
+        'subtitle' => '',
+        'description' => '',
+        'instruction' => 'Volg deze stappen om de authenticatie met deze provider in te schakelen en een nieuwe applicatie te registreren:
+            <ol>
+                <li>Ga naar: <a href="https://github.com/settings/developers" target="_blank">https://github.com/settings/developers</a> en log in indien nodig.</li>
+                <li>Maak een nieuwe toepassing aan.</li>
+                <li>Vul <b>Naam, Beschrijving, Website URL</b> in.</li>
+                <li>Stel <b>Redirect URL</b> in op <br /><b>{$callback_url}}</b></li>.
+                <li>Zend het formulier in en werk de applicatie-instellingen bij. </li>
+                <li>Vind op de volgende pagina en kopieer Client ID en Client Secret van <b>OAuth Information</b> naar de onderstaande velden.</li>
+            </ol>',
+        'fields' => [
+            'client_id' => [
+                'label' => 'Klant-ID',
+            ],
+            'client_secret' => [
+                'label' => 'Geheim van de klant',
+            ],
+        ],
+    ],
 ];

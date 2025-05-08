@@ -64,4 +64,9 @@ return [
     'domain_cannot_be_hosted' => 'Il dominio non può essere ospitato.',
     'service_not_found' => 'Servizio non trovato.',
     'cannot_delete_account' => 'Impossibile eliminare l\'account. Account attualmente in uso.',
+    'registration_disabled' => 'La registrazione è disattivata.',
+    'email_already_registered' => 'Indirizzo e-mail già registrato',
+    'invalid_ssl_provider' => 'Provider SSL non valido',
+    'invalid_php_directive' => 'Direttiva PHP non valida: :directive.',
+    'hosting_server_not_accessible' => 'Il server di hosting non è accessibile.',
 ];
