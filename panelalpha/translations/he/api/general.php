@@ -1,0 +1,51 @@
+<?php
+
+return [
+    'instance' => 'אינסטנס',
+    'hosting_account' => 'חשבון אחסון',
+    'service' => 'שירות',
+    'self_signed' => 'חתום עצמית',
+    'import_steps' => [
+        'downloading-files' => 'מוריד קבצים',
+        'downloading-database' => 'מוריד מסד נתונים',
+        'creating-hosting-account' => 'יוצר חשבון אחסון',
+        'creating-domain' => 'יוצר דומיין',
+        'creating-database' => 'יוצר מסד נתונים',
+        'uploading-files' => 'מעלה קבצים',
+        'uploading-database' => 'מעלה מסד נתונים',
+        'extracting-files' => 'מחלץ קבצים',
+        'extracting-database' => 'מחלץ מסד נתונים',
+        'importing-database' => 'מייבא מסד נתונים',
+        'configuring-wordpress' => 'מגדיר את וורדפרס',
+        'cleaning-files' => 'מנקה קבצים',
+        'removing-ftp-account' => 'מסיר חשבון FTP',
+        'creating-ftp-account' => 'יוצר חשבון FTP',
+        'creating-temporary-directory' => 'יוצר ספרייה זמנית',
+        'creating-site' => 'יוצר אתר',
+        'checking-domain' => 'בודק דומיין',
+    ],
+    'health-checks' => [
+        'server' => [
+            'ping' => 'בדיקת חיבור לשרת',
+            'api' => 'בדיקת חיבור API לשרת',
+            'wp_cli' => 'בדיקת חיבור WP CLI לשרת',
+            'mysql' => 'בדיקת חיבור MySQL לשרת',
+            'git' => 'בדיקת חיבור Git לשרת',
+            'ssh' => 'בדיקת חיבור SSH לשרת',
+        ],
+        'cache' => [
+            'server' => 'Cache Server',
+        ],
+    ],
+    'pending-operations' => [
+        'server-connect' => 'מתחבר לשרת',
+        'server-disconnect' => 'מתנתק מהשרת',
+        'website-connect' => 'מתחבר לאתר',
+        'website-disable' => 'מנטרל אתר',
+        'website-enable' => 'מפעיל אתר',
+        'website-initialize' => 'מאתחל אתר',
+        'modify-website-hardening-options' => 'משנה אפשרויות אבטחת אתר',
+        'website-repair' => 'מתקן אתר',
+        'apply-website-security-headers' => 'מחיל כותרות אבטחה לאתר',
+    ],
+];
