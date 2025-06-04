@@ -1,1 +1,1 @@
-Your site's offline — want to bring it back?
+Your account's offline — want to bring it back?
