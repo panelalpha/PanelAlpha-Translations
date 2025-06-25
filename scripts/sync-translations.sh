@@ -103,7 +103,7 @@ echo -e "${YELLOW}>>> Setting permissions...${NC}"
 chmod -R 755 "$TARGET_DIR" > /dev/null 2>&1
 
 echo -e "${YELLOW}>>> Syncing translations...${NC}"
-docker compose -f /opt/panelalpha/app/docker-compose.yml exec api php artisan notifications:sync --clear > /dev/null 2>&1
+docker compose -f /opt/panelalpha/app/docker-compose.yml exec api php artisan notifications:sync > /dev/null 2>&1
 
 echo -e "${YELLOW}>>> Removing temporary files...${NC}"
 rm -rf "$TEMP_DIR" > /dev/null 2>&1
