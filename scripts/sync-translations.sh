@@ -70,7 +70,7 @@ fi
 
 self_update
 
-if [ -d "$TARGET_DIR/clientarea" ] || [ -d "$TARGET_DIR/email-templates" ]; then
+if [ -d "$TARGET_DIR" ] && [ "$(ls -A "$TARGET_DIR" 2>/dev/null)" ]; then
   echo -e "${YELLOW}>>> Files for language \"$LANG\" already exist in the target directory.${NC}"
   prompt_confirmation "Do you want to proceed and overwrite the existing files?"
 fi
@@ -81,8 +81,8 @@ rm -rf "$TEMP_DIR" > /dev/null 2>&1
 echo -e "${YELLOW}>>> Cloning repository...${NC}"
 git clone --depth 1 "$REPO_URL" "$TEMP_DIR" > /dev/null 2>&1
 
-if [ ! -d "$TEMP_DIR/panelalpha/translations/$LANG/clientarea" ] && [ ! -d "$TEMP_DIR/panelalpha/translations/$LANG/email-templates" ]; then
-  echo -e "${RED}>>> Language directories not found for: $LANG${NC}"
+if [ ! -d "$TEMP_DIR/panelalpha/translations/$LANG" ]; then
+  echo -e "${RED}>>> Language directory not found for: $LANG${NC}"
   exit 1
 fi
 
@@ -91,13 +91,8 @@ mkdir -p "$TARGET_DIR" > /dev/null 2>&1
 
 echo -e "${YELLOW}>>> Copying translation files...${NC}"
 
-if [ -d "$TEMP_DIR/panelalpha/translations/$LANG/clientarea" ]; then
-  cp -r "$TEMP_DIR/panelalpha/translations/$LANG/clientarea" "$TARGET_DIR" > /dev/null 2>&1
-fi
-
-if [ -d "$TEMP_DIR/panelalpha/translations/$LANG/email-templates" ]; then
-  cp -r "$TEMP_DIR/panelalpha/translations/$LANG/email-templates" "$TARGET_DIR" > /dev/null 2>&1
-fi
+# Copy all files and directories from the language directory
+cp -r "$TEMP_DIR/panelalpha/translations/$LANG"/* "$TARGET_DIR" > /dev/null 2>&1
 
 echo -e "${YELLOW}>>> Setting permissions...${NC}"
 chmod -R 755 "$TARGET_DIR" > /dev/null 2>&1
