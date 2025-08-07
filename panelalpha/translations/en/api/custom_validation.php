@@ -35,6 +35,7 @@ return [
     "instance_not_staging" => "Instance is not staging.",
     "instance_not_live" => "Instance is not live.",
     'required_parent_domain' => 'Parent domain required',
+    'required_target_domain' => 'Target domain required',
     'required_value' => 'Required Value',
     'staging_cannot_shared_directly' => 'Staging instances can\'t have access shared directly',
     "sort_possible_values" => "Possible values are: asc,desc",
@@ -74,4 +75,8 @@ return [
     'registration_code_invalid' => 'The code you entered is invalid. Please check the code and try again.',
     'hosting_server_not_found' => 'Hosting Server is not found.',
     'invalid_ip_address' => 'Invalid IP Address',
+    'user_has_active_account' => 'You have currently active account. Please contact administrator.',
+    'hosting_account_already_exists' => 'This hosting account already exists. Please login in or contact with administrator.',
+    'token_expired' => 'Token expired.',
+    'domain_name_cannot_starts_with_www' => 'Domain name cannot start with www.',
 ];

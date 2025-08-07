@@ -1,5 +1,6 @@
 <?php
 
+use App\Lib\Integrations\Atarim;
 use App\Lib\Integrations\Auth\Apple;
 use App\Lib\Integrations\Auth\Facebook;
 use App\Lib\Integrations\Auth\Github;
@@ -371,12 +372,12 @@ return [
         "description" => "",
         "instruction" => 'Follow these steps to enable the authentication with this provider and to register a new application:
             <ol>
-                <li>Proceed to: <a href="https://github.com/settings/developers" target="_blank">https://github.com/settings/developers</a> and log in if necessary.</li> 
-                <li>Create a new application.</li> 
-                <li>Fill out <b>Name, Description, Website URL</b>.</li> 
-                <li>Set <b>Redirect URL</b> to <br /><b>{{$callback_url}}</b></li> 
-                <li>Submit the form and update the application settings. </li> 
-                <li>Find on the next page and copy Client ID and Client Secret from <b>OAuth Information</b> to the fields below.</li> 
+                <li>Proceed to: <a href="https://github.com/settings/developers" target="_blank">https://github.com/settings/developers</a> and log in if necessary.</li>
+                <li>Create a new application.</li>
+                <li>Fill out <b>Name, Description, Website URL</b>.</li>
+                <li>Set <b>Redirect URL</b> to <br /><b>{{$callback_url}}</b></li>
+                <li>Submit the form and update the application settings. </li>
+                <li>Find on the next page and copy Client ID and Client Secret from <b>OAuth Information</b> to the fields below.</li>
             </ol>',
         "fields" => [
             'client_id' => [
@@ -384,6 +385,22 @@ return [
             ],
             'client_secret' => [
                 'label' => 'Client Secret',
+            ],
+        ]
+    ],
+    Atarim::class => [
+        "title" => "Atarim",
+        "subtitle" => "Utilized for Visual Collaboration and Feedback on Websites",
+        "description" => "Atarim streamlines website collaboration by allowing teams and clients to leave visual feedback directly on live sites, turning comments into actionable tasks to speed up project delivery.",
+        "instruction" => "To use Atarim, follow these steps:
+            <ol>
+                <li>Go to <a href=\"https://atarim.firstpromoter.com/signup/32353\" target=\"_blank\">Atarim Sign Up Page</a></li>
+                <li>Create account or log in to an already existing account.</li>
+                <li>Copy the <strong>referral link</strong> and paste it into the form field below.</li>
+            </ol>",
+        "fields" => [
+            'link' => [
+                'label' => 'Link',
             ],
         ]
     ],
