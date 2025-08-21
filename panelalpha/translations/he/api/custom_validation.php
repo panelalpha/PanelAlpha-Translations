@@ -50,7 +50,7 @@ return [
     'cannot_delete_service_with_existing_instances' => 'לא ניתן למחוק שירות עם מופעים קיימים.',
     'import_files_required' => 'נדרשים קבצי ייבוא.',
     'invalid_action' => 'פעולה לא תקינה',
-    'wp_versions_warning' => 'גרסת ה-WordPress שלך היא :version. ההעברה תשדרג אותה אוטומטית לגרסה האחרונה :latest_version. להמשך, לחץ על כפתור 'המשך'.',
+    'wp_versions_warning' => 'גרסת ה-WordPress שלך היא :version. ההעברה תשדרג אותה אוטומטית לגרסה האחרונה :latest_version. להמשך, לחץ על כפתור "המשך".',
     'control_panel_sso_disabled' => 'הגישה ללוח הבקרה באמצעות SSO מושבתת בחשבונך. פנה למנהל המערכת.',
     'control_panel_sso_failed' => 'הכניסה ללוח הבקרה באמצעות SSO נכשלה. פנה למנהל המערכת.',
     'unable_list_files' => 'לא ניתן להציג את הקבצים.',

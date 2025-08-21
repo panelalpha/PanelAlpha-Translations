@@ -33,6 +33,7 @@ use App\Jobs\User\CreateStaging;
 use App\Jobs\User\PushToLive;
 use App\Jobs\User\InstallInstance;
 use App\Jobs\User\InstallPlugin;
+use App\Jobs\User\SyncHostingAccount;
 use App\Jobs\User\UpdatePlugin;
 use App\Jobs\User\InstallTheme as UserInstallTheme;
 use App\Jobs\User\UpdateTheme;
@@ -76,5 +77,6 @@ return [
     AdminRestoreBackup::class => "Restore Instance From Backup",
     SyncBackupsWithRemoteContainer::class => "Sync Backups With Backup Container",
     PushToStaging::class => "Push To Staging",
+    SyncHostingAccount::class => "Sync Hosting Account",
 ];
 

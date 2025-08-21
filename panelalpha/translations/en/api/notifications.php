@@ -65,6 +65,9 @@ use App\Notifications\Admin\Plugin\ForceUpdatePluginFinished;
 use App\Notifications\Admin\Plugin\ForceUpdatePluginFailed;
 use App\Notifications\User\Instance\ImportFailed;
 use App\Notifications\User\Instance\ImportFinished;
+use App\Notifications\User\Service\SyncHostingAccountFailed;
+use App\Notifications\User\Service\SyncHostingAccountFinished;
+use App\Notifications\User\System\ControlPanelUpgrade;
 use App\Notifications\User\System\CreateUser;
 use App\Notifications\User\Service\AfterTrialExpirationFirstReminder;
 use App\Notifications\User\Service\AfterTrialExpirationSecondReminder;
@@ -409,4 +412,16 @@ return [
         "name" => "Welcome User",
         "description" => 'This notification informs the user that their account has been successfully created. It includes the necessary login details such as username and password, allowing the user to access their account.',
     ],
+    SyncHostingAccountFailed::class => [
+        "name" => "Service Sync Hosting Account Failed",
+        "description" => "This notification informs the user that their hosting account on this service has failed to synchronize."
+    ],
+    SyncHostingAccountFinished::class => [
+        "name" => "Service Sync Hosting Account Finished",
+        "description" => "This notification informs the user that their hosting account on this service has been successfully synchronized."
+    ],
+    ControlPanelUpgrade::class => [
+        "name" => "Control Panel Upgrade Welcome Email",
+        "description" => "This notification informs the hosting account hase been successfully upgraded from control panel. It includes the necessary login details, allowing the user to access their account."
+    ]
 ];
