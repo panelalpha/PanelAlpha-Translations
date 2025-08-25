@@ -13,7 +13,7 @@
         "dns": "{{- app_name}} - עורך אזורי DNS",
         "email-addresses": "{{- app_name}} - כתובות אימייל",
         "email-forwarders": "{{- app_name}} - מעבירי אימייל",
-        "instances": "{{- app_name}} - המופעים שלי",
+        "instances": "{{- app_name}} - האתרים שלי",
         "general-information": "{{- app_name}}: {{instance_name}} - מידע כללי",
         "backups": "{{- app_name}}: {{instance_name}} - גיבויים",
         "monitoring": "{{- app_name}}: {{instance_name}} - ניטור",
@@ -236,7 +236,7 @@
             "modal.device.logout.info": "האם אתה בטוח שברצונך להתנתק ממכשיר זה: {{ip}}?"
         },
         "instance": {
-            "title": "המופעים שלי",
+            "title": "האתרים שלי",
             "tag.assignExisting.title": "תגיות שהוקצו",
             "tag.add.title": "הוסף תגית חדשה",
             "tab.siteDetails": "פרטי אתר",
@@ -696,7 +696,7 @@
             "transferDomain.message.impossible": "אינך יכול להשתמש בדומיין זה."
         },
         "navbar": {
-            "tab.myInstances": "המופעים שלי",
+            "tab.myInstances": "האתרים שלי",
             "tab.myHosting": "האחסון שלי"
         },
         "styleManager": {
