@@ -1,1 +1,1 @@
-Welcome to your new WordPress control panel
+ברוכים הבאים ללוח הבקרה החדש שלך ל-WordPress
