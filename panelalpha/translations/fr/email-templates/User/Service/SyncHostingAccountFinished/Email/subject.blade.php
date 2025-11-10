@@ -1,1 +1,1 @@
-Successful Synchronization of Your Hosting Account {{ $hosting_account_username }} with PanelAlpha
+Synchronisation réussie de votre compte d'hébergement {{ $hosting_account_username }} avec PanelAlpha
