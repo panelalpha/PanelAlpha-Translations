@@ -1,2 +1,2 @@
-<p>Dear <strong>{{ $client_first_name }}</strong>,</p>
-<p>The synchronization of your hosting account <strong>{{ $hosting_account_username }}</strong> with PanelAlpha has been successful.</p>
+<p>Gentile <strong>{{ $client_first_name }}</strong>,</p>
+<p>La sincronizzazione del tuo account hosting <strong>{{ $hosting_account_username }}</strong> con PanelAlpha è riuscita.</p>
