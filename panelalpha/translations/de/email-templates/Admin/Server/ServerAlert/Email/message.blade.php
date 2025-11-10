@@ -1,6 +1,6 @@
-<p>Hello <strong>{{ $admin_name }}</strong>,</p>
+<p>Hallo <strong>{{ $admin_name }}</strong>,</p>
 
-<p>The following alerts were detected on {{ $check_time }}:</p>
+<p>Die folgenden Warnungen wurden am {{ $check_time }} erkannt:</p>
 
 @foreach($servers as $server)
 <p>Server: <strong>{{ $server['name'] }}</strong> ({{ $server['hostname'] }})</p>

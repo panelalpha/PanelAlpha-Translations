@@ -1,1 +1,1 @@
-Welcome to your new WordPress control panel
+Willkommen in Ihrem neuen WordPress Control Panel
