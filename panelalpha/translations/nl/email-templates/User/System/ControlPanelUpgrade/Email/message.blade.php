@@ -1,5 +1,5 @@
-<p>Welcome to the new control panel for your WordPress site - a faster, simpler way to manage everything in one place.
-    You’ll find an improved interface, smoother WordPress management and a better setup for working with your team.</p>
-<p><strong>The control panel URL is: </strong><a href="{{ $app_url }}">{{ $app_url }}</a></p>
-<p>You can log in with your email address: {{ $client_email_address }}</p>
-<p>Glad to have you on board — we hope you enjoy the new experience!</p>
+<p>Welkom bij het nieuwe controlepaneel voor uw WordPress-site - een snellere, eenvoudigere manier om alles op één plek te beheren.
+    U vindt een verbeterde interface, soepeler WordPress-beheer en een betere configuratie voor samenwerking met uw team.</p>
+<p><strong>De URL van het controlepaneel is: </strong><a href="{{ $app_url }}">{{ $app_url }}</a></p>
+<p>U kunt inloggen met uw e-mailadres: {{ $client_email_address }}</p>
+<p>Blij dat u erbij bent — we hopen dat u geniet van de nieuwe ervaring!</p>

@@ -1,2 +1,2 @@
-<p>Successful synchronization of your hosting account <strong>{{ $hosting_account_username }}</strong> with your service
+<p>Succesvolle synchronisatie van uw hosting-account <strong>{{ $hosting_account_username }}</strong> met uw service
     <strong>{{ $service_domain }}</strong></p>

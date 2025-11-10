@@ -1,1 +1,1 @@
-Synchronization hosting account {{ $hosting_account_username }} with your service failed
+Synchronisatie van hosting-account {{ $hosting_account_username }} met uw service is mislukt
