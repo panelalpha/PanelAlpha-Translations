@@ -1,3 +1,3 @@
-<p>Dear <strong>{{ $client_first_name }}</strong>,</p>
-<p>The synchronization of your hosting account <strong>{{ $hosting_account_username }}</strong> with PanelAlpha has failed.</p>
-<p>Message: {{ $exception_message }}</p>
+<p>Prezado(a) <strong>{{ $client_first_name }}</strong>,</p>
+<p>A sincronização da sua conta de hospedagem <strong>{{ $hosting_account_username }}</strong> com o PanelAlpha falhou.</p>
+<p>Mensagem: {{ $exception_message }}</p>

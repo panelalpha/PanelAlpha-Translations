@@ -1,2 +1,2 @@
-<p>Error during synchronization hosting account <strong>{{ $hosting_account_username }}</strong> with your service
+<p>Erro durante a sincronização da conta de hospedagem <strong>{{ $hosting_account_username }}</strong> com seu serviço
     <strong>{{ $service_domain }}</strong></p>
