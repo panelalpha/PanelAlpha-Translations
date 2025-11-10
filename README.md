@@ -11,7 +11,7 @@
 Welcome to the PanelAlpha Translations repository! This repository contains translation files for PanelAlpha in multiple languages. Each language has its own directory with translation files organized by category.
 
 > [!NOTE]
-> This repository was created with the help of automated tools, specifically DeepL. As a result, some translations may contain inaccuracies. 
+> This repository was created with the assistance of AI-powered translation tools. As a result, some translations may contain inaccuracies or require refinement.
 
 > [!NOTE]
 > We encourage you to contribute improvements or corrections to ensure the best quality.
@@ -20,7 +20,7 @@ Welcome to the PanelAlpha Translations repository! This repository contains tran
 
 The following languages are currently available:
 
-- NEW: **Hebrew** (`he`)
+- **Hebrew** (`he`)
 - **Dutch** (`nl`)
 - **German** (`de`)
 - **Spanish** (`es`)
