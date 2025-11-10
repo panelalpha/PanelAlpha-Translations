@@ -1,9 +1,9 @@
-<p>Hello <strong>{{ $admin_name }}</strong>,</p>
+<p>Hola <strong>{{ $admin_name }}</strong>,</p>
 
-<p>The following alerts were detected on {{ $check_time }}:</p>
+<p>Se detectaron las siguientes alertas el {{ $check_time }}:</p>
 
 @foreach($servers as $server)
-<p>Server: <strong>{{ $server['name'] }}</strong> ({{ $server['hostname'] }})</p>
+<p>Servidor: <strong>{{ $server['name'] }}</strong> ({{ $server['hostname'] }})</p>
 <ul>
 @foreach($server['alerts'] as $alert)
     <li>{{ $alert['name'] }}: {{ $alert['message'] }}</li>
