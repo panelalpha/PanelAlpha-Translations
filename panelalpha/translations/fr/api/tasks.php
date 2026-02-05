@@ -37,5 +37,7 @@ return [
     'App\\Jobs\\System\\ScanPluginsAndThemes' => 'Scanner les plugins et les thèmes',
     'App\\Jobs\\System\\ProcessSslOrder' => 'Traiter la commande SSL : :name',
     'App\\Jobs\\System\\ImportVisitors' => 'Importation de visiteurs',
+    'App\\Jobs\\User\\SyncHostingAccount' => 'Synchroniser le compte d\'hébergement',
+    'App\\Jobs\\System\\SyncWordPressData' => 'Synchroniser les données WordPress',
     'App\\Jobs\\User\\InstallInstance' => 'Créer une instance',
 ];

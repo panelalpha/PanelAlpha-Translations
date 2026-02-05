@@ -33,7 +33,9 @@
         "page-not-found": "{{- app_name}} - Page non trouvée",
         "register": "{{- app_name}} - S'inscrire",
         "services": "{{- app_name}} - Mes projets",
-        "billing": "{{- nom_app}} - Ma facturation"
+        "billing": "{{- nom_app}} - Ma facturation",
+        "ssh": "{{- app_name}} - Comptes SSH",
+        "copy-instance": "{{- app_name}}: {{instance_name}} - Copier l'instance"
     },
     "general": {
         "adventurer": "Aventurier",
@@ -123,7 +125,11 @@
         "contactSupportLink": "Contacter l'assistance",
         "language": "Langue",
         "cancelled": "Annulé",
-        "sites": "Sites"
+        "sites": "Sites",
+        "value": "Valeur",
+        "never": "Jamais",
+        "none": "Aucun",
+        "notSet": "Non défini"
     },
     "heading": {
         "notFoundPage.title": "Page non trouvée",
@@ -445,7 +451,10 @@
             "advanced.logs.phpLogs.title": "Journaux PHP",
             "advanced.logs.phpLogs.tooltip": "Vous pouvez également trouver des journaux PHP plus détaillés dans le journal des erreurs du serveur web.",
             "advanced.logs.webserverLogs.title": "Journaux du serveur web",
-            "advanced.logs.noLogs": "Pas de billes"
+            "advanced.logs.noLogs": "Pas de billes",
+            "modal.sharedAccess.selectRole": "Sélectionner un rôle",
+            "modal.sharedAccess.stagingQuestion": "Voulez-vous que les modifications s'appliquent aussi à l'instance de mise en scène ?",
+            "modal.setDomain.config.tab.nameservers.list.third": "Vous devez attendre de 2 minutes à quelques heures pour la propagation des serveurs de noms."
         },
         "hosting": {
             "sidebar.manage.title": "Gérer",
@@ -552,7 +561,35 @@
             "emailForwarders.modal.add.title": "Ajouter un redirecteur d’e-mail",
             "emailForwarders.modal.delete.title": "Supprimer l’Email Forwarder",
             "emailDomain.title": "Domaine email",
-            "fileManager.title": "Gestionnaire de fichiers"
+            "fileManager.title": "Gestionnaire de fichiers",
+            "summary.planCard.usage.ssh": "Comptes SSH",
+            "summary.hostingAccount": "Compte d'hébergement",
+            "ssh.title": "Comptes SSH",
+            "ssh.modal.add.title": "Ajouter un compte SSH",
+            "ssh.modal.show.title": "Détails de connexion du compte SSH : {{- user}}",
+            "ssh.modal.show.info.username": "Nom d'utilisateur SSH",
+            "ssh.modal.show.info.password": "Mot de passe SSH",
+            "ssh.modal.show.info.host": "Hôte SSH",
+            "ssh.modal.show.info.port": "Port SSH",
+            "ssh.modal.update.title": "Modifier le compte SSH",
+            "ssh.modal.update.info": "Utilisateur",
+            "ssh.modal.delete.title": "Supprimer le compte SSH",
+            "ssh.modal.disconnect.title": "Tout déconnecter",
+            "ssh.modal.disconnect.message": "Êtes-vous certain·e de vouloir déconnecter tous les utilisateurs SSH ?",
+            "ssh.modal.manageSSH.title": "Gérer les accès SFTP/SSH",
+            "ssh.modal.manageSSH.message": "Choisir le type d'accès à distance pour votre instance.",
+            "ssh.modal.manageSSH.field": "Type d'accès",
+            "emailAddress.emailDomain": "Domaine de messagerie",
+            "emailAddress.emailDomain.record.spf": "Enregistrement SPF",
+            "emailAddress.emailDomain.record.dkim": "Enregistrement DKIM",
+            "emailAddress.emailDomain.record.configured": "configuré",
+            "emailAddress.emailDomain.record.failed": "échoué",
+            "emailAddress.modal.show.spfdkimConfig": "Configuration des enregistrements SPF et DKIM",
+            "emailAddress.modal.show.allowEmail": "Cela permet à votre serveur de messagerie d'envoyer des e-mails au nom de votre domaine.",
+            "emailAddress.modal.show.digitalSignature": "Cela ajoute une signature numérique à vos e-mails pour vérifier qu'ils proviennent bien de vous.",
+            "fileManager.alert": {
+                "wpCloud": "En raison des restrictions du serveur, tous les fichiers ne seront pas visibles dans ce gestionnaire de fichiers. Vous n'avez accès qu'à /wp-content et wp-config.php."
+            }
         },
         "onboarding": {
             "selectType.title": "Ajouter une instance",
@@ -622,11 +659,63 @@
             "newInstance.geo_affinity.subtitle": "Choisir l'emplacement",
             "newInstance.geo_affinity.info": "Vous pouvez choisir l'emplacement de votre site parmi les options suivantes :",
             "newInstance.hosting_plan.subtitle": "Choisir un plan d'hébergement",
-            "newInstance.hosting_plan.info": "Vous pouvez choisir le plan d'hébergement pour votre abonnement parmi les options suivantes :"
+            "newInstance.hosting_plan.info": "Vous pouvez choisir le plan d'hébergement pour votre abonnement parmi les options suivantes :",
+            "syncInstances.title.completed": "Félicitations !",
+            "syncInstances.title.failed": "Échec !",
+            "syncInstances.subtitle.inProgress": "Chargement de votre nouvelle expérience !",
+            "syncInstances.subtitle.completed": "Vos sites ont été préparés !",
+            "syncInstances.subtitle.failed": "La synchronisation des instances a échoué. Veuillez réessayer.",
+            "syncInstances.info.inProgress": "Préparation du tableau de bord avec vos sites WordPress... Cela ne prendra pas longtemps !",
+            "syncInstances.info.failed": "Une erreur est survenue, veuillez réessayer.",
+            "syncInstances.info.completed": "Vos sites ont été préparés avec succès. Vous pouvez maintenant commencer à les gérer en cliquant sur le bouton ci-dessous.",
+            "import.failed.title": "Erreur !",
+            "import.failed.subtitle": "La préparation de l'importation a échoué. Veuillez réessayer.",
+            "import.inProgress.subtitle": "Votre site est en cours de préparation !",
+            "import.inProgress.info.general": "Ce processus peut prendre un certain temps.",
+            "import.failed.info.general": "Une erreur est survenue, veuillez réessayer.",
+            "domainDnsVerificationModal": {
+                "title": "Vérification DNS du domaine",
+                "message.success": "La vérification DNS pour {domain} a été effectuée avec succès.",
+                "message.incorrect": "Les enregistrements DNS pour {domain} sont mal configurés ou le domaine est encore en cours de configuration par le registraire. Pour terminer la configuration, veuillez ajouter les enregistrements DNS suivants ou passer.",
+                "message.tryAgain": "Les enregistrements DNS ne sont pas correctement configurés ou les modifications DNS sont encore en cours de propagation. Veuillez patienter quelques minutes et réessayer."
+            },
+            "chooseImportMethod": {
+                "simple": {
+                    "title": "Méthode simple",
+                    "description": "Utilisez notre <strong>plugin de migration WordPress</strong> pour un processus simple et fluide."
+                },
+                "advanced": {
+                    "title": "Méthode avancée",
+                    "description": "Fournissez-nous les <strong>informations FTP/SFTP</strong> afin que notre système effectue la migration pour vous."
+                }
+            },
+            "simpleImportMethod": {
+                "adminLoginDetails": {
+                    "title": "Utiliser les identifiants d'administration WordPress",
+                    "description": "C'est la manière la plus simple de démarrer la migration. Fournissez simplement vos identifiants d'administrateur et notre système automatisera tout le processus pour vous.",
+                    "please_note": "Veuillez noter",
+                    "note": "Cette méthode peut ne pas fonctionner selon les paramètres de sécurité de votre site et votre hébergeur actuel."
+                },
+                "installPluginManually": {
+                    "title": "Installer le plugin manuellement",
+                    "downloadPluginHeader": "Téléchargez le plugin WordPress.",
+                    "downloadPluginButton": "Télécharger le plugin",
+                    "installPlugin": "Installez et activez le plugin dans votre panneau d'administration WordPress.",
+                    "runMigration": "Cliquez sur le bouton « Continuer » ci-dessous pour démarrer la migration.",
+                    "step": {
+                        "title": "Suivez les étapes ci-dessous pour effectuer une importation manuelle à l'aide de notre plugin WordPress :",
+                        "first": "Téléchargez le plugin 'wordpress-migrator'",
+                        "second": "Installez et activez le plugin dans votre panneau d'administration WordPress.",
+                        "third": "Cliquez sur le bouton « Continuer » ci-dessous pour démarrer la migration.",
+                        "button": "Télécharger le plugin"
+                    }
+                }
+            }
         },
         "navbar": {
             "tab.myInstances": "Mes instances",
-            "tab.myHosting": "Mes services"
+            "tab.myHosting": "Mes services",
+            "tab.resellerArea": "Espace revendeur"
         },
         "styleManager": {
             "title": "Style Manager",
@@ -637,7 +726,10 @@
             "additionalSettings.title": "Paramètres supplémentaires",
             "additionalSettings.disableShadows.title": "Désactiver les ombres",
             "darkMode.title": "Mode de changement",
-            "darkMode.description": "Mode sombre/clair"
+            "darkMode.description": "Mode sombre/clair",
+            "darkMode.allow": "Laisser les utilisateurs changer",
+            "darkMode.darkMode": "Mode sombre",
+            "darkMode.lightMode": "Mode clair"
         },
         "loginPage.emailVerification.title": "Vérifiez votre adresse électronique",
         "loginPage.emailVerification.info1": "Nous vous avons envoyé un code à quatre chiffres pour",
@@ -708,6 +800,15 @@
                 "title": "Mes factures",
                 "noData.title": "Aucune facture n'a été trouvée"
             }
+        },
+        "loginPage.message.accountAlreadyExists": "Un compte avec cet e-mail existe déjà. Veuillez vous connecter avec votre e-mail et votre mot de passe.",
+        "reseller": {
+            "page.users": "Utilisateurs",
+            "page.branding": "Branding",
+            "page.dnsrecord": "Enregistrement DNS",
+            "page.emailSettings": "Paramètres e-mail",
+            "page.logs": "Journaux",
+            "page.api": "API"
         }
     },
     "message": {
@@ -802,7 +903,9 @@
             "webserverLogs.downloadDescription": "Veuillez télécharger les journaux du serveur web.",
             "noRecords": "Aucun enregistrement n'a été trouvé",
             "templates.title": "Pas de modèles disponibles !",
-            "services.title": "Aucun service n'a été trouvé"
+            "services.title": "Aucun service n'a été trouvé",
+            "ssh.title": "Aucun compte créé",
+            "ssh.description": "Aucun compte SSH disponible."
         },
         "status": {
             "active": "Activer",
@@ -842,7 +945,8 @@
             "importing.failed": "L’importation de l’instance a échoué.",
             "importing.site": "Importer votre site.",
             "importing.wait": "Cela peut prendre un certain temps."
-        }
+        },
+        "confirmBeforeProceedingAction": "Veuillez confirmer avant de continuer"
     },
     "notification": {
         "account": {
@@ -961,7 +1065,12 @@
             "emailAddress.update.success": "Le compte e-mail a été mis à jour.",
             "emailAddress.delete.success": "Le compte de messagerie a été supprimé.",
             "emailForwarders.add.success": "Une redirection d’e-mail a été ajoutée.",
-            "emailForwarders.delete.success": "La redirection d’e-mail a été supprimée."
+            "emailForwarders.delete.success": "La redirection d’e-mail a été supprimée.",
+            "ssh.add.success": "Le compte SSH a été ajouté.",
+            "ssh.update.success": "Le compte SSH a été mis à jour.",
+            "ssh.delete.success": "Le compte SSH a été supprimé.",
+            "ssh.disconnect.success": "Les connexions SSH ont été déconnectées.",
+            "ssh.setAccessType.success": "Un nouveau type d'accès à l'instance a été défini."
         },
         "emptyFields": "Veuillez remplir tous les champs.",
         "connectionFailed": "La connexion a échoué.",
@@ -1179,7 +1288,29 @@
         "set": {
             "geo_affinity": "Lieu d'implantation",
             "hosting_plan": "Définir le plan d'hébergement"
-        }
+        },
+        "branding.manage": "Gérer les styles",
+        "checkNameservers": "Vérifier les serveurs de noms",
+        "collaborate": "Collaborer",
+        "customizeResellerTheme": "Personnaliser le thème revendeur",
+        "deleteUser": "Supprimer l'utilisateur",
+        "domain.create": "Créer un domaine",
+        "domain.creating": "Création du domaine...",
+        "domain.verify": "Vérifier le domaine",
+        "getStarted": "Commencer",
+        "plugin.activate_disabled": "",
+        "sendInvite": "Envoyer l'invitation",
+        "ssh.add": "Ajouter un compte",
+        "ssh.edit": "Modifier le compte SSH",
+        "ssh.delete": "Supprimer le compte SSH",
+        "ssh.show": "Afficher les détails d'accès",
+        "skip": "Ignorer",
+        "tag.addTags": "Ajouter des étiquettes",
+        "verifyDomain": "Vérifier le domaine",
+        "testConnection": "Tester la connexion",
+        "sendTestEmail": "Envoyer un e-mail de test",
+        "send": "Envoyer",
+        "apiToken.create": "Créer un jeton API"
     },
     "tooltip": {
         "create_backup.backup_directory": "Fichiers de site.",
@@ -1354,7 +1485,21 @@
                 "max_file_uploads": "Ce paramètre définit le nombre maximum de fichiers pouvant être téléchargés en une seule fois. Cela permet d'éviter les abus en limitant le nombre de fichiers pouvant être téléchargés en une seule fois.",
                 "register_globals": "Cette directive, lorsqu'elle est activée, importe automatiquement les variables de la requête dans la portée globale. Elle est dépréciée et doit être désactivée pour des raisons de sécurité, car elle peut entraîner l'écrasement de variables et d'autres problèmes de sécurité.",
                 "short_open_tag": "Ce paramètre permet d'utiliser des balises d'ouverture courtes (< ?) pour le code PHP. S'il est désactivé, seule la balise d'ouverture complète (<?php) peut être utilisée. Il est recommandé d'utiliser la balise d'ouverture complète pour une meilleure compatibilité."
-            }
+            },
+            "plugin": {
+                "activationIsNotAllowed": "L'activation du plugin n'est pas autorisée."
+            },
+            "user": {
+                "field": {
+                    "passwordLeaveEmpty": "Laissez vide si vous ne souhaitez pas changer le mot de passe."
+                }
+            },
+            "collaborate": {
+                "start": "<strong>Invitez votre équipe</strong> à collaborer visuellement sur chaque partie de votre site web. Laissez des commentaires, suivez les tâches et restez synchronisés, sans e-mails interminables, appels vidéo inutiles ou outils de suivi de bugs désordonnés. <strong>Essayez gratuitement !</strong>"
+            },
+            "plugin.activationIsNotAllowed": "L'activation du plugin n'est pas autorisée.",
+            "user.field.passwordLeaveEmpty": "Laissez vide si vous ne souhaitez pas changer le mot de passe.",
+            "collaborate.start": "<strong>Invitez votre équipe</strong> à collaborer visuellement sur chaque partie de votre site web. Laissez des commentaires, suivez les tâches et restez synchronisés, sans e-mails interminables, appels vidéo inutiles ou outils de suivi de bugs désordonnés. <strong>Essayez gratuitement !</strong>"
         },
         "hosting": {
             "service.suspended": "Votre service a été suspendu.",
@@ -1374,12 +1519,53 @@
             "dns.status.pending.list.second": "Veillez à ce que, pendant la procédure, le DNS du domaine pointe correctement vers nos serveurs.",
             "dns.status.pending.list.third": "Si le certificat n’est pas installé automatiquement dans les 24 heures, veuillez contacter le service d’assistance.",
             "ftp.usageNotSupported": "L’utilisation et le quota ne sont pas pris en charge par le serveur.",
-            "sftp.accessMethod": "Type d’accès à distance : SSH ou SFTP."
+            "sftp.accessMethod": "Type d’accès à distance : SSH ou SFTP.",
+            "summary": {
+                "hostingAccount": {
+                    "tooltip": "Chaque compte d'hébergement possède son propre espace et ses propres paramètres. Sélectionnez celui qui contient le domaine que vous souhaitez gérer."
+                }
+            },
+            "ssh": {
+                "accessMethod": "Type d'accès à distance : SSH ou SFTP."
+            },
+            "emailAddress": {
+                "emailDomain": {
+                    "tooltip": "Les comptes et les transferts d'e-mails sont organisés par domaine. Sélectionnez un domaine pour gérer sa messagerie.",
+                    "record": {
+                        "tooltip": "Configuration des enregistrements SPF et DKIM"
+                    }
+                }
+            },
+            "summary.hostingAccount.tooltip": "Chaque compte d'hébergement possède son propre espace et ses propres paramètres. Sélectionnez celui qui contient le domaine que vous souhaitez gérer.",
+            "ssh.accessMethod": "Type d'accès à distance : SSH ou SFTP.",
+            "emailAddress.emailDomain.tooltip": "Les comptes et les transferts d'e-mails sont organisés par domaine. Sélectionnez un domaine pour gérer sa messagerie.",
+            "emailAddress.emailDomain.record.tooltip": "Configuration des enregistrements SPF et DKIM"
         },
         "create_backup.backup_type": "Sélectionnez le type de sauvegarde à effectuer : choisissez \"Base de données\" pour une sauvegarde de la base de données ou \"Répertoire\" pour une sauvegarde des fichiers.",
         "billing": {
             "invoice.duedate.exceeded": "Le délai de paiement a été dépassé. Veuillez payer la facture immédiatement afin d'éviter une suspension du service."
-        }
+        },
+        "copy": "Copier",
+        "copied": "Copié",
+        "add_domain.domain.addon": "Entrez le nouveau domaine. N'utilisez pas www. dans le nom de domaine. Le système l'ajoutera automatiquement.",
+        "add_domain.domain.sub": "Entrez le nouveau sous-domaine.",
+        "add_domain.domain.alias": "Entrez le nouvel alias de domaine.",
+        "add_domain.target_domain": "Sélectionnez le domaine cible",
+        "add_ssh_account.username": "Entrez le nom d'utilisateur du compte SSH.",
+        "plugin.activationIsNotAllowed": "L'activation du plugin n'est pas autorisée.",
+        "user.field.passwordLeaveEmpty": "Laissez vide si vous ne souhaitez pas changer le mot de passe.",
+        "collaborate.start": "<strong>Invitez votre équipe</strong> à collaborer visuellement sur chaque partie de votre site web. Laissez des commentaires, suivez les tâches et restez synchronisés, sans e-mails interminables, appels vidéo inutiles ou outils de suivi de bugs désordonnés. <strong>Essayez gratuitement !</strong>",
+        "summary.hostingAccount.tooltip": "Chaque compte d'hébergement possède son propre espace et ses propres paramètres. Sélectionnez celui qui contient le domaine que vous souhaitez gérer.",
+        "ssh.accessMethod": "Type d'accès à distance : SSH ou SFTP.",
+        "emailAddress.emailDomain.tooltip": "Les comptes et les transferts d'e-mails sont organisés par domaine. Sélectionnez un domaine pour gérer sa messagerie.",
+        "emailAddress.emailDomain.record.tooltip": "Configuration des enregistrements SPF et DKIM",
+        "instance.plugin.activationIsNotAllowed": "L'activation du plugin n'est pas autorisée.",
+        "instance.user.field.passwordLeaveEmpty": "Laissez vide si vous ne souhaitez pas changer le mot de passe.",
+        "instance.collaborate.start": "<strong>Invitez votre équipe</strong> à collaborer visuellement sur chaque partie de votre site web. Laissez des commentaires, suivez les tâches et restez synchronisés, sans e-mails interminables, appels vidéo inutiles ou outils de suivi de bugs désordonnés. <strong>Essayez gratuitement !</strong>",
+        "hosting.summary.hostingAccount.tooltip": "Chaque compte d'hébergement possède son propre espace et ses propres paramètres. Sélectionnez celui qui contient le domaine que vous souhaitez gérer.",
+        "hosting.ssh.accessMethod": "Type d'accès à distance : SSH ou SFTP.",
+        "hosting.emailAddress.emailDomain.tooltip": "Les comptes et les transferts d'e-mails sont organisés par domaine. Sélectionnez un domaine pour gérer sa messagerie.",
+        "hosting.emailAddress.emailDomain.record.tooltip": "Configuration des enregistrements SPF et DKIM"
     },
     "form": {
         "label": {
@@ -1490,7 +1676,11 @@
             "weight": "Poids",
             "version": "Version",
             "backupType": "Type de sauvegarde",
-            "hosting_plan": "Plan d'hébergement"
+            "hosting_plan": "Plan d'hébergement",
+            "alias": "Alias",
+            "ssh.user": "Utilisateur SSH",
+            "ssh.password": "Mot de passe SSH",
+            "url": "URL"
         },
         "placeholder": {
             "cabundle": "Saisir la liasse CA",
@@ -1521,7 +1711,10 @@
             "username": "Saisir le nom d’utilisateur",
             "website": "Saisir le nom du site web",
             "value": "Saisir la valeur",
-            "emailDelegatedUser": "Saisir l'adresse électronique de l'utilisateur délégué"
+            "emailDelegatedUser": "Saisir l'adresse électronique de l'utilisateur délégué",
+            "alias": "Entrez le nom de l'alias",
+            "ssh.user": "Nom d'utilisateur",
+            "ssh.password": "Mot de passe"
         },
         "option": {
             "constant": "Constant",
@@ -1680,7 +1873,8 @@
             "version": "Version",
             "visitors": "Visiteurs",
             "only_me": "Seulement moi",
-            "me_and_delegated_user": "Moi et l'utilisateur délégué"
+            "me_and_delegated_user": "Moi et l'utilisateur délégué",
+            "collaborate": "Collaboration"
         },
         "value": {
             "unlimited": "Illimité",
@@ -1702,7 +1896,11 @@
             "required": "{{field}} est obligatoire",
             "space": "{{field}} ne doit pas contenir d’espaces",
             "tooLong": "{{field}} est trop long",
-            "valid": "{{field}} doit être valide"
+            "valid": "{{field}} doit être valide",
+            "invalid_www": "{{field}} ne peut pas commencer par 'www.'",
+            "domain": {
+                "blacklisted": "Le nom de domaine n'est pas disponible"
+            }
         },
         "confirmDelete": {
             "domain": "Oui, je comprends et je souhaite supprimer ce domaine.",
@@ -1726,7 +1924,8 @@
             "wordpressConfig": "Oui, je comprends et je souhaite supprimer cette configuration.",
             "user": "Oui, je comprends et je souhaite supprimer cet utilisateur.",
             "theme_one": "Oui, je comprends et je souhaite supprimer ce thème.",
-            "theme_other": "Oui, je comprends et je souhaite supprimer ces thèmes."
+            "theme_other": "Oui, je comprends et je souhaite supprimer ces thèmes.",
+            "ssh": "Oui, je comprends et je veux supprimer ce compte SSH."
         }
     },
     "table": {
@@ -1787,7 +1986,12 @@
             "plan_name": "Nom du régime",
             "sites": "Sites",
             "total": "Total",
-            " ": ""
+            " ": "",
+            "collaborate": "Collaborateurs",
+            "instance": "Instance",
+            "instances": "Instances",
+            "last_used_at": "Dernière utilisation",
+            "created_at": "Créé le"
         },
         "field": {
             "userOwner": "{{name}} (vous)",
@@ -1802,7 +2006,8 @@
             "device": "Appareils par page :",
             "instance": "Instances par page :",
             "plan": "Plans par page",
-            "invoice": "Factures par page :"
+            "invoice": "Factures par page :",
+            "items": "Éléments par page :"
         },
         "snackbar": {
             "selectAll": "Sélectionner tout",
@@ -1927,7 +2132,17 @@
             "user.two_factor.confirm": "Authentification à deux facteurs activée",
             "user.two_factor.disable": "Désactivé Authentification à deux facteurs",
             "user.two_factor.create_recovery_codes": "Code de récupération à deux facteurs créé",
-            "user.instance.search_engine_indexing.update": "Mise à jour de l'indexation des moteurs de recherche"
+            "user.instance.search_engine_indexing.update": "Mise à jour de l'indexation des moteurs de recherche",
+            "user.hosting.ssh_account.create": "Compte SSH créé",
+            "user.hosting.ssh_account.delete": "Compte SSH supprimé",
+            "user.hosting.ssh_account.update": "Compte SSH mis à jour",
+            "user.reseller_area.delete_user": "Utilisateur supprimé",
+            "user.reseller_area.update_branding_settings": "Paramètres de branding mis à jour",
+            "user.reseller_area.update_email_settings": "Paramètres d'e-mail mis à jour",
+            "user.reseller_area.email_settings_test_connection": "Test de connexion des paramètres d'e-mail",
+            "user.reseller_area.send_test_email": "E-mail de test envoyé",
+            "user.reseller_area.create_api_token": "Jeton API créé",
+            "user.reseller_area.delete_api_token": "Jeton API supprimé"
         },
         "suffix": {
             "toStatus": "à {{status}}",
@@ -1986,7 +2201,9 @@
             "general.preview_instance": "Instance de prévisualisation",
             "wordpress.manage_search_engine_indexing": "Gérer l'indexation des moteurs de recherche",
             "wordpress.view_logs": "Voir les journaux d'erreurs de WordPress",
-            "wordpress.manage_cloudflare": "Gérer Cloudflare"
+            "wordpress.manage_cloudflare": "Gérer Cloudflare",
+            "general.collaboration": "Collaboration",
+            "hosting.manage_ssh": "Gérer les comptes SSH"
         }
     },
     "languages": {
@@ -2029,6 +2246,89 @@
         "uk": "Ukrainien",
         "vi": "Vietnamien",
         "zh": "Chinois",
-        "zh_TW": "Chinois traditionnel"
+        "zh_TW": "Chinois traditionnel",
+        "bg_BG": "Bulgare",
+        "cs_CZ": "Tchèque",
+        "da_DK": "Danois",
+        "de_DE": "Allemand",
+        "es_ES": "Espagnol",
+        "fa_IR": "Persan",
+        "fr_FR": "Français",
+        "he_IL": "Hébreu",
+        "hu_HU": "Hongrois",
+        "id_ID": "Indonésien",
+        "it_IT": "Italien",
+        "ko_KR": "Coréen",
+        "nb_NO": "Norvégien",
+        "nl_NL": "Néerlandais",
+        "pl_PL": "Polonais",
+        "pt_PT": "Portugais",
+        "ro_RO": "Roumain",
+        "ru_RU": "Russe",
+        "sk_SK": "Slovaque",
+        "sl_SI": "Slovène",
+        "sv_SE": "Suédois",
+        "tr_TR": "Turc",
+        "zh_CN": "Chinois (simplifié)",
+        "zh_HK": "Chinois (Hong Kong)"
+    },
+    "reseller": {
+        "brandName": "Nom de la marque",
+        "brandName.tooltip": "Nom de la marque",
+        "brandName.placeholder": "Nom de votre entreprise",
+        "domain": "Domaine",
+        "domain.tooltip": "Domaine",
+        "domain.placeholder": "Domaine",
+        "domain.dnsSetupInfo1": "Assurez-vous ",
+        "domain.dnsSetupInfo2": "de pointer votre domaine vers le panneau avec l'enregistrement DNS approprié",
+        "emailSettings.smtpHost": "Hôte SMTP",
+        "emailSettings.smtpHost.tooltip": "Hôte SMTP",
+        "emailSettings.smtpHost.placeholder": "Hôte SMTP",
+        "emailSettings.smtpPort": "Port SMTP",
+        "emailSettings.smtpPort.tooltip": "Port SMTP",
+        "emailSettings.smtpPort.placeholder": "Port SMTP",
+        "emailSettings.smtpUsername": "Nom d'utilisateur SMTP",
+        "emailSettings.smtpUsername.tooltip": "Nom d'utilisateur SMTP",
+        "emailSettings.smtpUsername.placeholder": "Nom d'utilisateur SMTP",
+        "emailSettings.smtpPassword": "Mot de passe SMTP",
+        "emailSettings.smtpPassword.tooltip": "Mot de passe SMTP",
+        "emailSettings.smtpPassword.placeholder": "Mot de passe SMTP",
+        "emailSettings.smtpSslType": "Type SSL SMTP",
+        "emailSettings.smtpSslType.tooltip": "Type SSL SMTP",
+        "emailSettings.smtpSslType.placeholder": "Type SSL SMTP",
+        "emailSettings.fromName": "Nom de l'expéditeur",
+        "emailSettings.fromName.tooltip": "Nom de l'expéditeur",
+        "emailSettings.fromName.placeholder": "Nom de l'expéditeur",
+        "emailSettings.fromEmail": "E-mail de l'expéditeur",
+        "emailSettings.fromEmail.tooltip": "E-mail de l'expéditeur",
+        "emailSettings.fromEmail.placeholder": "E-mail de l'expéditeur",
+        "emailSettings.copyTo": "Messages en copie (CC)",
+        "emailSettings.copyTo.tooltip": "Messages en copie (CC)",
+        "emailSettings.copyTo.placeholder": "Messages en copie (CC)",
+        "emailSettings.blindCopyTo": "Messages en copie cachée (CCI)",
+        "emailSettings.blindCopyTo.tooltip": "Messages en copie cachée (CCI)",
+        "emailSettings.blindCopyTo.placeholder": "Messages en copie cachée (CCI)",
+        "emailSettings.sendTestEmail": "Envoyer un e-mail de test",
+        "emailSettings.sendTestEmailToAddress": "Envoyer un e-mail de test à l'adresse",
+        "apiTokens.modal.create.title": "Créer un jeton API",
+        "apiTokens.modal.created": "<b>Assurez-vous </b> d'enregistrer ce jeton, car il ne sera plus affiché.",
+        "apiTokens.modal.delete.title": "Supprimer le jeton API",
+        "apiTokens.confirmDelete": "Confirmer",
+        "apiTokens.delete": "Supprimer le jeton API",
+        "apiTokens.name": "Nom du jeton",
+        "apiTokens.content": "Contenu du jeton",
+        "apiTokens.savedToken": "Oui, je comprends et j'ai enregistré mon jeton",
+        "apiTokens.removeToken": "Je confirme la suppression du jeton. Je comprends que cette action est irréversible.",
+        "apiTokens.noTokens": "Aucun jeton n'a été trouvé...",
+        "apiTokens.noTokensDesc": "Aucun jeton n'a été créé. Cliquez sur le bouton Créer un jeton API pour créer le premier.",
+        "apiTokens.documentationAt": "<b>La documentation API </b> est disponible à l'adresse :",
+        "user.sharedInstances": "Instances partagées",
+        "user.fullList": "Voir la liste complète",
+        "user.created": "Créé",
+        "user.noUsers": "Aucun utilisateur à afficher pour le moment",
+        "user.noUsersDesc": "Partagez votre instance avec le premier utilisateur pour voir ses détails ici.",
+        "logs.noLogs": "Aucun journal à afficher pour le moment",
+        "logs.noLogsDesc": "Lorsque les utilisateurs des instances partagées effectueront leurs premiers changements, vous verrez leurs journaux ici.",
+        "modal.inviteUsers": "Inviter des utilisateurs"
     }
 }

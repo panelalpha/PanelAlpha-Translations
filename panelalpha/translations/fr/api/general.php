@@ -5,6 +5,8 @@ return [
     'hosting_account' => 'compte d\'hébergement',
     'service' => 'service',
     'self_signed' => 'Signé par l\'intéressé',
+    'files' => 'fichiers',
+    'database' => 'base de données',
     'import_steps' => [
         'downloading-files' => 'Téléchargement de fichiers',
         'downloading-database' => 'Téléchargement de la base de données',
@@ -23,6 +25,23 @@ return [
         'creating-temporary-directory' => 'Création d\'un répertoire temporaire',
         'creating-site' => 'Création du site',
         'checking-domain' => 'Vérification du domaine',
+        'installNewInstance' => 'Installation d\'une nouvelle instance',
+        'installPluginOnNewInstance' => "Installation du plugin 'WordPress Migrator' sur la nouvelle instance",
+        'prepareNewInstanceToMigration' => 'Préparation de la nouvelle instance pour la migration',
+        'installPluginOnImportedInstance' => "Installation du plugin 'WordPress Migrator' sur l'instance importée",
+        'prepareMigrationUsingPlugin' => 'Préparation de la migration',
+        'runMigrationUsingPlugin' => 'Exécution de la migration',
+        'prepareInstance' => 'Préparation de l\'instance pour la migration',
+        'downloadDatabase' => 'Téléchargement de la base de données',
+        'downloadFiles' => 'Téléchargement des fichiers',
+        'uploadFiles' => 'Téléversement des fichiers',
+        'prepareFiles' => 'Préparation des fichiers',
+        'uploadDatabase' => 'Téléversement de la base de données',
+        'importDatabase' => 'Importation de la base de données',
+        'configureWordPress' => 'Configuration de WordPress',
+        'cleanUp' => 'Nettoyage des fichiers',
+        'createFtpAccount' => 'Création d\'un compte FTP/SFTP',
+        'cleanUpPlugins' => 'Nettoyage des plugins',
     ],
     'health-checks' => [
         'server' => [
@@ -48,5 +67,34 @@ return [
             'ping' => 'Connexion de test de l\'instance Wordpress',
             'local_data' => 'WordPress vérifie les données locales correctes',
         ],
+    ],
+    'server_alerts' => [
+        'high_disk_usage' => 'Utilisation élevée du disque',
+        'high_cpu_usage' => 'Utilisation élevée du CPU',
+        'high_ram_usage' => 'Utilisation élevée de la RAM',
+    ],
+    'report_providers' => [
+        'referer' => [
+            'website' => 'Sites web',
+            'direct' => 'Entrée directe',
+            'search_engine' => 'Moteurs de recherche',
+            'unknown' => 'Inconnu',
+            'internal' => 'Interne',
+        ],
+    ],
+    'continent' => [
+        'as' => 'Asie',
+        'eu' => 'Europe',
+        'na' => 'Amérique du Nord',
+        'sa' => 'Amérique du Sud',
+        'af' => 'Afrique',
+        'oc' => 'Océanie',
+        'an' => 'Antarctique',
+    ],
+    'field' => [
+        'onboarding_domain' => [
+            'label' => 'Domaine d\'onboarding (optionnel)',
+            'description' => 'Optionnel. S\'il est défini, il remplacera le domaine d\'onboarding configuré dans les paramètres du plan.'
+        ]
     ],
 ];

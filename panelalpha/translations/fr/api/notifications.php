@@ -69,6 +69,10 @@ return [
         'description' => 'La notification informe le destinataire que son service a été suspendu. La notification peut contenir des informations sur le domaine suspendu et sur les mesures à prendre.',
         'name' => 'Service non suspendu',
     ],
+    'App\\Notifications\\Admin\\Server\\ServerAlert' => [
+        'name' => 'Alerte du serveur',
+        'description' => 'La notification informe le destinataire des alertes détectées sur le serveur d\'hébergement.',
+    ],
     'App\\Notifications\\Admin\\DnsZone\\DnsZoneExists' => [
         'name' => 'La zone DNS existe',
         'description' => 'La notification informe le destinataire que la tentative de création de la zone DNS a échoué parce que la zone DNS existe déjà. La notification peut inclure des détails sur la zone DNS existante, le service affecté et le serveur DNS concerné.',
@@ -332,5 +336,17 @@ return [
     'App\\Notifications\\User\\System\\CreateUser' => [
         'name' => 'Bienvenue à l\'utilisateur',
         'description' => 'Cette notification informe l\'utilisateur que son compte a été créé avec succès. Elle contient les données de connexion nécessaires, telles que le nom d\'utilisateur et le mot de passe, qui permettent à l\'utilisateur d\'accéder à son compte.',
+    ],
+    'App\\Notifications\\User\\Service\\SyncHostingAccountFailed' => [
+        'name' => 'Échec de la synchronisation du compte d\'hébergement du service',
+        'description' => 'Cette notification informe l\'utilisateur que son compte d\'hébergement sur ce service n\'a pas pu être synchronisé.',
+    ],
+    'App\\Notifications\\User\\Service\\SyncHostingAccountFinished' => [
+        'name' => 'Synchronisation du compte d\'hébergement du service terminée',
+        'description' => 'Cette notification informe l\'utilisateur que son compte d\'hébergement sur ce service a été synchronisé avec succès.',
+    ],
+    'App\\Notifications\\User\\System\\ControlPanelUpgrade' => [
+        'name' => 'E-mail de bienvenue après la mise à niveau du panneau de contrôle',
+        'description' => 'Cette notification informe que le compte d\'hébergement a été mis à niveau avec succès depuis le panneau de contrôle. Elle contient les identifiants nécessaires permettant à l\'utilisateur d\'accéder à son compte.',
     ],
 ];
