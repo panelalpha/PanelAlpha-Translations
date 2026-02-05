@@ -3,6 +3,8 @@
 return [
     'hosting_account' => 'cuenta de alojamiento',
     'self_signed' => 'Autofirmado',
+    'files' => 'archivos',
+    'database' => 'base de datos',
     'import_steps' => [
         'downloading-database' => 'Descarga de la base de datos',
         'creating-domain' => 'Creating domain',
@@ -21,6 +23,23 @@ return [
         'creating-temporary-directory' => 'Creación de un directorio temporal',
         'uploading-database' => 'Carga de la base de datos',
         'extracting-files' => 'Extracción de archivos',
+        'installNewInstance' => 'Instalando nueva instancia',
+        'installPluginOnNewInstance' => "Instalando el plugin 'WordPress Migrator' en la nueva instancia",
+        'prepareNewInstanceToMigration' => 'Preparando la nueva instancia para la migración',
+        'installPluginOnImportedInstance' => "Instalando el plugin 'WordPress Migrator' en la instancia importada",
+        'prepareMigrationUsingPlugin' => 'Preparando la migración',
+        'runMigrationUsingPlugin' => 'Ejecutando la migración',
+        'prepareInstance' => 'Preparando la instancia para la migración',
+        'downloadDatabase' => 'Descargando base de datos',
+        'downloadFiles' => 'Descargando archivos',
+        'uploadFiles' => 'Subiendo archivos',
+        'prepareFiles' => 'Preparando archivos',
+        'uploadDatabase' => 'Subiendo base de datos',
+        'importDatabase' => 'Importando base de datos',
+        'configureWordPress' => 'Configurando WordPress',
+        'cleanUp' => 'Limpiando archivos',
+        'createFtpAccount' => 'Creando cuenta FTP/SFTP',
+        'cleanUpPlugins' => 'Limpiar plugins',
     ],
     'health-checks' => [
         'server' => [
@@ -49,4 +68,33 @@ return [
     ],
     'instance' => 'instancia',
     'service' => 'servicio',
+    'server_alerts' => [
+        'high_disk_usage' => 'Uso de disco alto',
+        'high_cpu_usage' => 'Uso de CPU alto',
+        'high_ram_usage' => 'Uso de RAM alto',
+    ],
+    'report_providers' => [
+        'referer' => [
+            'website' => 'Sitios web',
+            'direct' => 'Entrada directa',
+            'search_engine' => 'Motores de búsqueda',
+            'unknown' => 'Desconocido',
+            'internal' => 'Interno',
+        ],
+    ],
+    'continent' => [
+        'as' => 'Asia',
+        'eu' => 'Europa',
+        'na' => 'Norteamérica',
+        'sa' => 'Sudamérica',
+        'af' => 'África',
+        'oc' => 'Oceanía',
+        'an' => 'Antártida',
+    ],
+    'field' => [
+        'onboarding_domain' => [
+            'label' => 'Dominio de onboarding (opcional)',
+            'description' => 'Opcional. Si se configura, reemplazará el dominio de onboarding establecido en los ajustes del plan.'
+        ]
+    ]
 ];

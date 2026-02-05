@@ -38,4 +38,6 @@ return [
     'App\\Jobs\\Admin\\RestoreBackup' => 'Restaurar instancia desde copia de seguridad',
     'App\\Jobs\\System\\SyncBackupsWithRemoteContainer' => 'Sincronizar copias de seguridad con Backup Container',
     'App\\Jobs\\User\\PushToStaging' => 'Empujar a la puesta en escena',
+    'App\\Jobs\\User\\SyncHostingAccount' => 'Sincronizar cuenta de hosting',
+    'App\\Jobs\\System\\SyncWordPressData' => 'Sincronizar datos de WordPress',
 ];

@@ -1,7 +1,39 @@
 <?php
 
+use App\Lib\Integrations\Atarim;
+use App\Lib\Integrations\Auth\Apple;
+use App\Lib\Integrations\Auth\Facebook;
+use App\Lib\Integrations\Auth\Github;
+use App\Lib\Integrations\Auth\Google;
+use App\Lib\Integrations\Auth\Linkedin;
+use App\Lib\Integrations\Auth\Microsoft;
+use App\Lib\Integrations\DbIp;
+use App\Lib\Integrations\DnsServers\Cloudflare;
+use App\Lib\Integrations\DnsServers\CpanelDnsOnly;
+use App\Lib\Integrations\DnsServers\DnsManagerForWhmcs;
+use App\Lib\Integrations\DnsServers\PowerDns;
+use App\Lib\Integrations\EmailProvider\MailerSend;
+use App\Lib\Integrations\EmailProvider\Mailgun;
+use App\Lib\Integrations\EmailProvider\Postmark;
+use App\Lib\Integrations\EmailProvider\Smtp;
+use App\Lib\Integrations\EmailProvider\SendGrid;
+use App\Lib\Integrations\EmailServers\Cpanel as CpanelEmailServer;
+use App\Lib\Integrations\EmailServers\Mailcow;
+use App\Lib\Integrations\GooglePageSpeedInsights;
+use App\Lib\Integrations\HostingServers\Cpanel;
+use App\Lib\Integrations\HostingServers\DirectAdmin;
+use App\Lib\Integrations\HostingServers\PanelAlpha;
+use App\Lib\Integrations\HostingServers\Plesk;
+use App\Lib\Integrations\HostingServers\WpCloud;
+use App\Lib\Integrations\Onboarding\Extendify;
+use App\Lib\Integrations\PreviewSiteProvider\WithoutDns;
+use App\Lib\Integrations\ReportProviders\GoogleAnalytics;
+use App\Lib\Integrations\ReportProviders\Matomo;
+use App\Lib\Integrations\SslProviders\LetsEncrypt;
+use App\Lib\Integrations\SslProviders\SelfSigned;
+
 return [
-    'App\\Lib\\Integrations\\DbIp' => [
+    DbIp::class => [
         'title' => 'DB IP',
         'description' => 'DB-IP es una potente base de datos de geolocalización que asigna direcciones IP a ubicaciones físicas. Permite a las empresas personalizar contenidos y servicios en función de regiones concretas, mejorar la publicidad dirigida y mejorar la experiencia del usuario.',
         'subtitle' => 'Se utiliza para determinar la ubicación al iniciar sesión desde un nuevo dispositivo',
@@ -12,7 +44,7 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\GooglePageSpeedInsights' => [
+    GooglePageSpeedInsights::class => [
         'title' => 'Google PageSpeed Insights',
         'subtitle' => 'Se utiliza para realizar capturas de pantalla de las instancias y calcular la velocidad de carga de las páginas',
         'fields' => [
@@ -24,7 +56,7 @@ return [
         'description' => 'Google PageSpeed Insights es una herramienta que analiza la velocidad y el rendimiento de su sitio web en dispositivos móviles y de escritorio. Proporciona sugerencias prácticas para mejorar los tiempos de carga y la experiencia del usuario.',
         'instruction' => 'Para utilizar Google PageSpeed Insights, siga estos pasos:<ol><li>Vaya a <a href=\'https://developers.google.com/speed/docs/insights/v5/get-started#key\' target=\'_blank\'>developers.google.com/speed/docs/insights/v5/get-started</a>.</li><li>Inicie sesión en su cuenta de Google si es necesario.</li><li>Cree una nueva clave de API haciendo clic en el botón "Obtener una clave".</li><li>Seleccione un proyecto existente o cree uno nuevo y haga clic en el botón "Siguiente".</li><li>Una vez creada la clave de API, se mostrará en la pantalla. Copie esta clave y utilícela para integrar Google PageSpeed Insights.</li></ol>.',
     ],
-    'App\\Lib\\Integrations\\SslProviders\\LetsEncrypt' => [
+    LetsEncrypt::class => [
         'title' => 'Encriptemos',
         'subtitle' => 'Se utiliza para emitir certificados SSL para instancias',
         'description' => 'Let\'s Encrypt es una Autoridad de Certificación gratuita, automatizada y abierta que proporciona cifrado HTTPS para sitios web. Es fácil de instalar y utilizar, y garantiza que tu sitio web sea seguro y accesible para todo el mundo.',
@@ -43,10 +75,10 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\SslProviders\\SelfSigned' => [
+    SelfSigned::class => [
         'title' => 'Self Signed',
     ],
-    'App\\Lib\\Integrations\\ReportProviders\\Matomo' => [
+    Matomo::class => [
         'title' => 'Matomo',
         'subtitle' => 'Empleado para la recopilación y el análisis de datos de tráfico del sitio web',
         'description' => 'Matomo Analytics es una plataforma de análisis web centrada en la privacidad que ayuda a rastrear el tráfico del sitio web y el comportamiento del usuario. Es personalizable y proporciona información detallada, al tiempo que mantiene los datos del usuario seguros.',
@@ -62,7 +94,7 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\Onboarding\\Extendify' => [
+    Extendify::class => [
         'title' => 'Extendify',
         'subtitle' => 'Utilizado para el Onboarding Super Rápido de instancias',
         'description' => 'Extendify ofrece a sus clientes finales una experiencia similar a la de un constructor de sitios web. Permita a sus clientes de hosting crear sitios web atractivos y de aspecto profesional en cuestión de minutos utilizando las últimas tecnologías de IA de forma nativa en WordPress.',
@@ -74,7 +106,7 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\ReportProviders\\GoogleAnalytics' => [
+    GoogleAnalytics::class => [
         'title' => 'Google Analytics',
         'description' => 'Google Analytics ofrece herramientas gratuitas para consolidar y analizar los datos de su empresa, lo que permite que el proceso de toma de decisiones esté orientado a los datos',
         'instruction' => 'Para utilizar Google Analytics, siga estos pasos:<ol><li>Vaya al sitio de Google Analytics: <a href="https://analytics.google.com" target="_blank">https://analytics.google.com/</a></li><li>Ingrese en su cuenta de Google si aún no lo ha hecho.</li><li>Cree una cuenta de Google Analytics.</li><li>Vaya a Administración > Configuración de la cuenta > Detalles de la cuenta y busque su ID de cuenta.</li><li>Copie y pegue el ID de propiedad en el siguiente formulario.</li><li>Cree un archivo JSON de credenciales como <a href="https://www.panelalpha.com/documentation/integrations/google-analytics/#google-anlytics-json-file" target="_blank">se describe en la documentación</a>.</li><li>Adjunte el archivo JSON en el campo Credenciales de cuenta de servicio que aparece a continuación.</li></ol><br>¡Atención! Esta integración funciona en base a código javascript instalado automáticamente en las instancias del cliente. El usuario puede eliminar este código y la integración dejará de funcionar.',
@@ -90,7 +122,7 @@ return [
         ],
         'subtitle' => 'Empleado para recopilar y analizar datos sobre el tráfico del sitio web',
     ],
-    'App\\Lib\\Integrations\\PreviewSiteProvider\\WithoutDns' => [
+    WithoutDns::class => [
         'title' => 'WithoutDNS',
         'instruction' => 'Para utilizar WithoutDNS, siga estos pasos:<ol><li>Vaya a <a href="https://withoutdns.com/api-configuration" target="_blank">https://withoutdns.com/</a></li><li>Ingrese en su cuenta si es necesario.</li><li>Cree un nuevo token de API haciendo clic en el botón "Generar token".</li><li>Copie y pegue el token de API en el siguiente formulario.</li><li>Realice una conexión de prueba.</li><li>Después de realizar la conexión de prueba, aparecerán las opciones de Dominio temporal y Duración de URL temporal. Una vez que las seleccione, la integración estará lista para su uso.</li></ol><br>Sin completar totalmente la configuración, la integración permite la generación de hasta tres enlaces temporales.',
         'fields' => [
@@ -118,7 +150,7 @@ return [
         'subtitle' => 'Permite previsualizar rápidamente WordPress',
         'description' => 'WithoutDNS proporciona un completo conjunto de herramientas que simplifica los procesos de prueba y migración. Proporciona una URL temporal que dirige su dominio a una dirección IP de servidor especificada a través de uno de nuestros servidores proxy.',
     ],
-    'App\\Lib\\Integrations\\EmailProvider\\Smtp' => [
+    Smtp::class => [
         'title' => 'SMTP',
         'fields' => [
             'port' => [
@@ -148,7 +180,7 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\EmailProvider\\Postmark' => [
+    Postmark::class => [
         'title' => 'Postmark',
         'fields' => [
             'token' => [
@@ -157,7 +189,7 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\EmailProvider\\MailerSend' => [
+    MailerSend::class => [
         'title' => 'MailerSend',
         'fields' => [
             'api_token' => [
@@ -166,7 +198,7 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\EmailProvider\\Mailgun' => [
+    Mailgun::class => [
         'title' => 'Mailgun',
         'fields' => [
             'domain' => [
@@ -187,7 +219,7 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\EmailProvider\\SendGrid' => [
+    SendGrid::class => [
         'title' => 'SendGrid',
         'fields' => [
             'api_key' => [
@@ -196,7 +228,7 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\EmailServers\\Mailcow' => [
+    Mailcow::class => [
         'title' => 'Mailcow',
         'description' => 'mailcow - dockerized es una suite de groupware/email de código abierto basada en docker',
         'fields' => [
@@ -213,7 +245,7 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\EmailServers\\Cpanel' => [
+    CpanelEmailServer::class => [
         'title' => 'cPanel',
         'description' => 'cPanel: una plataforma de correo electrónico y software de colaboración alojada en la nube',
         'fields' => [
@@ -236,7 +268,7 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\Auth\\Google' => [
+    Google::class => [
         'title' => 'Google',
         'subtitle' => '',
         'description' => '',
@@ -258,7 +290,7 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\Auth\\Apple' => [
+    Apple::class => [
         'title' => 'Apple',
         'subtitle' => '',
         'description' => '',
@@ -273,7 +305,7 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\Auth\\Microsoft' => [
+    Microsoft::class => [
         'title' => 'Microsoft',
         'subtitle' => '',
         'description' => '',
@@ -294,7 +326,7 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\Auth\\Linkedin' => [
+    Linkedin::class => [
         'title' => 'LinkedIn',
         'subtitle' => '',
         'description' => '',
@@ -317,7 +349,7 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\Auth\\Facebook' => [
+    Facebook::class => [
         'title' => 'Facebook',
         'subtitle' => '',
         'description' => '',
@@ -339,7 +371,7 @@ return [
             ],
         ],
     ],
-    'App\\Lib\\Integrations\\Auth\\Github' => [
+    Github::class => [
         'title' => 'GitHub',
         'subtitle' => '',
         'description' => '',
@@ -358,6 +390,295 @@ return [
             ],
             'client_secret' => [
                 'label' => 'Secreto de cliente',
+            ],
+        ],
+    ],
+    Cpanel::class => [
+        'title' => 'cPanel',
+        'description' => 'cPanel - una plataforma de correo electrónico y software de colaboración alojada en la nube',
+        'fields' => [
+            'url' => [
+                'label' => 'URL',
+            ],
+            'username' => [
+                'label' => 'Nombre de usuario',
+            ],
+            'api_token' => [
+                'label' => 'Token API',
+                'link_label' => 'Cómo crear un token API',
+            ],
+            'ssl_verification' => [
+                'label' => 'Verificación SSL',
+            ],
+        ],
+        'config' => [
+            'whm_package' => [
+                'label' => 'Paquete WHM',
+            ],
+        ],
+    ],
+    DirectAdmin::class => [
+        'title' => 'Direct Admin',
+        'description' => 'DirectAdmin - un software de colaboración y plataforma de correo electrónico alojada en la nube',
+        'fields' => [
+            'url' => [
+                'label' => 'URL',
+            ],
+            'username' => [
+                'label' => 'Nombre de usuario',
+            ],
+            'password' => [
+                'label' => 'Contraseña',
+            ],
+            'ssl_verification' => [
+                'label' => 'Verificación SSL',
+            ],
+        ],
+        'config' => [
+            'package' => [
+                'label' => 'Paquete',
+            ],
+            'ip_address' => [
+                'label' => 'Dirección IP',
+            ],
+        ],
+    ],
+    Plesk::class => [
+        'title' => 'Plesk',
+        'description' => 'Plesk - un software de colaboración y plataforma de correo electrónico alojada en la nube',
+        'fields' => [
+            'url' => [
+                'label' => 'IP/Nombre de host',
+            ],
+            'username' => [
+                'label' => 'Nombre de usuario',
+            ],
+            'password' => [
+                'label' => 'Contraseña',
+            ],
+            'ssl_verification' => [
+                'label' => 'Verificación SSL',
+            ],
+        ],
+        'config' => [
+            'ip_address' => [
+                'label' => 'Dirección IP',
+                'tooltip' => 'Seleccione una dirección IP disponible',
+            ],
+            'hosting_plan' => [
+                'label' => 'Plan de hosting',
+                'tooltip' => "Seleccione un plan de hosting para la suscripción. Importante: Esta opción solo está disponible cuando la 'Cuenta de revendedor' está desactivada.",
+            ],
+            'reseller_account' => [
+                'label' => 'Cuenta de revendedor',
+                'tooltip' => "Habilite esta opción para permitir crear cuentas de clientes bajo revendedor. Requiere seleccionar un 'plan de revendedor'. Nota: esta opción puede no estar disponible si el servidor no admite cuentas de revendedor.",
+            ],
+            'reseller_plan' => [
+                'label' => 'Plan de revendedor',
+                'tooltip' => "Seleccione un plan de revendedor. Importante: Esta opción solo está disponible cuando la 'Cuenta de revendedor' está habilitada. Nota: esta opción puede no estar disponible si el servidor no admite cuentas de revendedor.",
+            ],
+        ],
+    ],
+    PanelAlpha::class => [
+        'title' => 'PanelAlpha Engine',
+        'description' => 'PanelAlpha - una solución de alojamiento web basada en Docker',
+        'fields' => [
+            'api_url' => [
+                'label' => 'URL API',
+            ],
+            'api_token' => [
+                'label' => 'Token API',
+            ],
+        ],
+        'config' => [
+            'disk_space_limit' => [
+                'label' => 'Límite de espacio en disco (MB)',
+            ],
+            'memory_limit' => [
+                'label' => 'Límite de memoria (MB)',
+            ],
+            'cpu_limit' => [
+                'label' => 'Límite de CPU',
+            ],
+            'device_read_bps' => [
+                'label' => 'Límite de lectura (Bytes por segundo)',
+            ],
+            'device_write_bps' => [
+                'label' => 'Límite de escritura (Bytes por segundo)',
+            ],
+            'bandwidth_limit' => [
+                'label' => 'Límite de ancho de banda (MB por mes)',
+            ],
+            'mysql_databases_limit' => [
+                'label' => 'Límite de bases de datos MySQL',
+            ],
+            'ftp_accounts_limit' => [
+                'label' => 'Límite de cuentas FTP',
+            ],
+            'sftp_accounts_limit' => [
+                'label' => 'Límite de cuentas SFTP',
+            ],
+            'addon_domains_limit' => [
+                'label' => 'Límite de dominios addon',
+            ],
+            'subdomains_limit' => [
+                'label' => 'Límite de subdominios',
+            ],
+            'inodes_limit' => [
+                'label' => 'Límite de inodos',
+            ],
+            'enable_redis_cache' => [
+                'label' => 'Habilitar caché Redis',
+            ],
+            'enable_litespeed_cache' => [
+                'label' => 'Habilitar caché LiteSpeed',
+            ],
+            'php_fpm_pool_settings' => [
+                'label' => 'Ajustes del pool PHP-FPM',
+            ],
+            'lsphp_settings' => [
+                'label' => 'Ajustes de LSPHP',
+            ],
+            'dedicated_ipv4' => [
+                'label' => 'IPv4 dedicado',
+            ],
+            'dedicated_ipv6' => [
+                'label' => 'IPv6 dedicado',
+            ],
+        ],
+    ],
+    WpCloud::class => [
+        'title' => 'WP Cloud',
+        'description' => 'WP Cloud - hosting en la nube centrado en WordPress',
+        'fields' => [
+            'client_identifier' => [
+                'label' => 'Identificador de cliente',
+            ],
+            'api_key' => [
+                'label' => 'Clave API',
+            ],
+        ],
+        'config' => [
+            'space_quota' => [
+                'label' => 'Cuota de disco',
+                'tooltip' => "Espacio en disco para sitios. El valor predeterminado se mide en megabytes, pero para especificarlo en gigabytes debe añadirse el sufijo 'GB'. El valor máximo es 200 GB.",
+            ],
+            'php_workers' => [
+                'label' => 'PHP Workers',
+                'tooltip' => 'Establezca el número de CPU y PHP Workers. Por defecto, puede establecer un valor entre 2 y 10. Para otras opciones, póngase en contacto con WP Cloud.',
+            ],
+            'php_memory_limit' => [
+                'label' => 'Límite de memoria de PHP',
+                'tooltip' => 'Establezca el límite de memoria de PHP por solicitud.',
+            ],
+            'burst_up_php_workers' => [
+                'label' => 'Aumento temporal de PHP Workers',
+                'tooltip' => 'Permite un aumento dinámico de hasta 110 PHP Workers.',
+            ],
+            'allow_user_choose_location' => [
+                'label' => 'Permitir que el usuario elija la ubicación',
+                'tooltip' => 'Permitir a los usuarios elegir la ubicación para nuevas instancias.',
+            ],
+            'geo_affinity' => [
+                'label' => 'Centro de datos predeterminado',
+                'tooltip' => 'Seleccione el centro de datos al que se asignarán las páginas.',
+            ],
+            'default_ssh_access_enabled' => [
+                'label' => 'Acceso SSH predeterminado habilitado',
+                'tooltip' => 'Establecer el acceso SSH habilitado por defecto en todas las nuevas instancias de WP Cloud.',
+            ],
+            'allow_user_enable_ssh_access' => [
+                'label' => 'Permitir al usuario habilitar acceso SSH',
+                'tooltip' => 'Permitir a los usuarios administrar el acceso SSH/SFTP a su instancia de WP Cloud.',
+            ],
+        ],
+    ],
+    Cloudflare::class => [
+        'title' => 'Cloudflare',
+        'description' => 'Cloudflare - la empresa de rendimiento y seguridad web',
+        'fields' => [
+            'api_token' => [
+                'label' => 'Token API',
+            ],
+            'account_id' => [
+                'label' => 'ID de cuenta',
+            ],
+        ],
+    ],
+    CpanelDnsOnly::class => [
+        'title' => 'cPanel DNSOnly',
+        'description' => 'cPanel DNSOnly - permite ejecutar un servidor de nombres físico dedicado',
+        'fields' => [
+            'url' => [
+                'label' => 'IP/Nombre de host',
+            ],
+            'username' => [
+                'label' => 'Nombre de usuario',
+            ],
+            'api_token' => [
+                'label' => 'Token API',
+                'link_label' => 'Cómo crear un token API',
+            ],
+            'nameserver_1' => [
+                'label' => 'Servidor de nombres 1',
+            ],
+            'nameserver_2' => [
+                'label' => 'Servidor de nombres 2',
+            ],
+            'nameserver_3' => [
+                'label' => 'Servidor de nombres 3',
+            ],
+            'nameserver_4' => [
+                'label' => 'Servidor de nombres 4',
+            ],
+        ],
+    ],
+    DnsManagerForWhmcs::class => [
+        'title' => 'DNS Manager For WHMCS',
+        'description' => 'DNS Manager For WHMCS - módulo de gestión de zonas DNS',
+        'fields' => [
+            'whmcs_url' => [
+                'label' => 'URL de WHMCS',
+            ],
+            'whmcs_api_token' => [
+                'label' => 'Token API de WHMCS',
+            ],
+        ],
+    ],
+    PowerDns::class => [
+        'title' => 'PowerDNS',
+        'description' => 'PowerDNS - proveedor líder de software DNS seguro de código abierto y comercial',
+        'fields' => [
+            'api_url' => [
+                'label' => 'URL API',
+            ],
+            'api_token' => [
+                'label' => 'Token API',
+            ],
+            'server' => [
+                'label' => 'Servidor',
+            ],
+            'zones_kind' => [
+                'label' => 'Tipo de zona',
+            ],
+            'nameservers' => [
+                'label' => 'Servidores de nombres (separados por comas)',
+            ],
+        ],
+    ],
+    Atarim::class => [
+        'title' => 'Atarim',
+        'subtitle' => 'Utilizado para colaboración visual y comentarios en sitios web',
+        'description' => 'Atarim agiliza la colaboración en sitios web al permitir que equipos y clientes dejen comentarios visuales directamente en sitios en vivo, convirtiendo los comentarios en tareas accionables para acelerar la entrega de proyectos.',
+        'instruction' => 'Para usar Atarim, siga estos pasos:
+            <ol>
+                <li>Vaya a la <a href="https://atarim.firstpromoter.com/signup/32353" target="_blank">página de registro de Atarim</a></li>
+                <li>Cree una cuenta o inicie sesión en una cuenta existente.</li>
+                <li>Copie el <strong>enlace de referencia</strong> y péguelo en el campo del formulario de abajo.</li>
+            </ol>',
+        'fields' => [
+            'link' => [
+                'label' => 'Enlace',
             ],
         ],
     ],

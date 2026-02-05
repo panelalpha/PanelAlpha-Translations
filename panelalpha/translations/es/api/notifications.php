@@ -333,4 +333,20 @@ return [
         'name' => 'Bienvenido Usuario',
         'description' => 'Esta notificación informa al usuario de que su cuenta se ha creado correctamente. Incluye los datos de acceso necesarios, como el nombre de usuario y la contraseña, que permiten al usuario acceder a su cuenta.',
     ],
+    'App\\Notifications\\Admin\\Server\\ServerAlert' => [
+        'name' => 'Alerta del servidor',
+        'description' => 'La notificación informa al destinatario sobre alertas detectadas en el servidor de alojamiento.',
+    ],
+    'App\\Notifications\\User\\Service\\SyncHostingAccountFailed' => [
+        'name' => 'Fallo en la sincronización de la cuenta de hosting del servicio',
+        'description' => 'Esta notificación informa al usuario de que su cuenta de hosting en este servicio no se ha sincronizado.',
+    ],
+    'App\\Notifications\\User\\Service\\SyncHostingAccountFinished' => [
+        'name' => 'Sincronización de la cuenta de hosting del servicio finalizada',
+        'description' => 'Esta notificación informa al usuario de que su cuenta de hosting en este servicio se ha sincronizado correctamente.',
+    ],
+    'App\\Notifications\\User\\System\\ControlPanelUpgrade' => [
+        'name' => 'Correo de bienvenida de actualización del panel de control',
+        'description' => 'Esta notificación informa que la cuenta de hosting se ha actualizado correctamente desde el panel de control. Incluye los datos de inicio de sesión necesarios para acceder a la cuenta.',
+    ],
 ];
