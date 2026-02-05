@@ -65,6 +65,12 @@ $has_missing = false;
 foreach ($iterator as $file) {
     if ($file->isFile() && in_array($file->getExtension(), ['php', 'json'])) {
         $relative_path = str_replace($default_dir . '/', '', $file->getPathname());
+        
+        // Skip email templates
+        if (strpos($relative_path, 'email-templates') !== false) {
+            continue;
+        }
+        
         $lang_file = $lang_dir . '/' . $relative_path;
 
         if (!file_exists($lang_file)) {
