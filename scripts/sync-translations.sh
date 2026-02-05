@@ -25,14 +25,18 @@ prompt_confirmation() {
 self_update() {
   echo -e "${YELLOW}>>> Checking for script updates...${NC}"
   git -C "$TEMP_DIR" fetch origin
-  LOCAL_VERSION=$(git -C "$TEMP_DIR" rev-parse HEAD)
-  REMOTE_VERSION=$(git -C "$TEMP_DIR" rev-parse origin/$BRANCH)
-  
-  if [ "$LOCAL_VERSION" != "$REMOTE_VERSION" ]; then
-    echo -e "${YELLOW}>>> Update available. Pulling the latest changes...${NC}"
-    git -C "$TEMP_DIR" pull origin $BRANCH
+  if git -C "$TEMP_DIR" show-ref --verify --quiet refs/remotes/origin/$BRANCH; then
+    LOCAL_VERSION=$(git -C "$TEMP_DIR" rev-parse HEAD)
+    REMOTE_VERSION=$(git -C "$TEMP_DIR" rev-parse origin/$BRANCH)
+    
+    if [ "$LOCAL_VERSION" != "$REMOTE_VERSION" ]; then
+      echo -e "${YELLOW}>>> Update available. Pulling the latest changes...${NC}"
+      git -C "$TEMP_DIR" pull origin $BRANCH
+    else
+      echo -e "${GREEN}>>> The script is up-to-date.${NC}"
+    fi
   else
-    echo -e "${GREEN}>>> The script is up-to-date.${NC}"
+    echo -e "${YELLOW}>>> Branch $BRANCH not found on remote. Skipping update check.${NC}"
   fi
 }
 
