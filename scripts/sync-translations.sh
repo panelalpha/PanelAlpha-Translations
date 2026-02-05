@@ -6,9 +6,10 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 display_help() {
-  echo -e "${YELLOW}Usage: $0 --lang \"<language>\"${NC}"
+  echo -e "${YELLOW}Usage: $0 --lang \"<language>\" [--branch \"<branch>\"]${NC}"
   echo -e "${YELLOW}Options:${NC}"
   echo -e "${YELLOW}  --lang    Specify the language code for translations.${NC}"
+  echo -e "${YELLOW}  --branch  Specify the Git branch (default: main).${NC}"
   echo -e "${YELLOW}  --help    Display this help message.${NC}"
 }
 
@@ -25,11 +26,11 @@ self_update() {
   echo -e "${YELLOW}>>> Checking for script updates...${NC}"
   git -C "$TEMP_DIR" fetch origin
   LOCAL_VERSION=$(git -C "$TEMP_DIR" rev-parse HEAD)
-  REMOTE_VERSION=$(git -C "$TEMP_DIR" rev-parse origin/main)  # Use the appropriate branch if not 'main'
+  REMOTE_VERSION=$(git -C "$TEMP_DIR" rev-parse origin/$BRANCH)
   
   if [ "$LOCAL_VERSION" != "$REMOTE_VERSION" ]; then
     echo -e "${YELLOW}>>> Update available. Pulling the latest changes...${NC}"
-    git -C "$TEMP_DIR" pull origin main
+    git -C "$TEMP_DIR" pull origin $BRANCH
   else
     echo -e "${GREEN}>>> The script is up-to-date.${NC}"
   fi
@@ -46,9 +47,11 @@ if [ -z "$1" ]; then
 fi
 
 LANG=""
+BRANCH="main"
 while [[ "$#" -gt 0 ]]; do
   case $1 in
     --lang) LANG="$2"; shift ;;
+    --branch) BRANCH="$2"; shift ;;
     *) echo -e "${RED}>>> Unknown parameter passed: $1${NC}"; exit 1 ;;
   esac
   shift
@@ -64,8 +67,8 @@ TEMP_DIR="/tmp/panelalpha-translations"
 TARGET_DIR="/opt/panelalpha/app/packages/api/resources/lang/$LANG"
 
 if [ ! -d "$TEMP_DIR" ]; then
-  echo -e "${YELLOW}>>> Cloning repository...${NC}"
-  git clone --depth 1 "$REPO_URL" "$TEMP_DIR" > /dev/null 2>&1
+  echo -e "${YELLOW}>>> Cloning repository from branch $BRANCH...${NC}"
+  git clone --depth 1 --branch "$BRANCH" "$REPO_URL" "$TEMP_DIR" > /dev/null 2>&1
 fi
 
 self_update
@@ -79,7 +82,7 @@ echo -e "${YELLOW}>>> Cleaning up temporary files...${NC}"
 rm -rf "$TEMP_DIR" > /dev/null 2>&1
 
 echo -e "${YELLOW}>>> Cloning repository...${NC}"
-git clone --depth 1 "$REPO_URL" "$TEMP_DIR" > /dev/null 2>&1
+git clone --depth 1 --branch "$BRANCH" "$REPO_URL" "$TEMP_DIR" > /dev/null 2>&1
 
 if [ ! -d "$TEMP_DIR/panelalpha/translations/$LANG" ]; then
   echo -e "${RED}>>> Language directory not found for: $LANG${NC}"
