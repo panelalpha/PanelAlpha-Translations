@@ -28,43 +28,43 @@ use App\Lib\Integrations\SslProviders\SelfSigned;
 return [
     DbIp::class => [
         "title" => "DB IP",
-        "subtitle" => "Utilizzato per determinare la posizione durante l'accesso da un nuovo dispositivo",
-        "description" => "DB-IP è un potente database di geolocalizzazione che mappa gli indirizzi IP su posizioni fisiche. Consente alle aziende di personalizzare contenuti e servizi in base a regioni specifiche, migliorare la pubblicità mirata e migliorare l'esperienza utente.",
-        "instruction" => "PanelAlpha utilizza un database di geolocalizzazione gratuito preparato da DB-IP. La condizione per l'utilizzo di questo database è includere un backlink a DB-IP.com su qualsiasi pagina che visualizza o utilizza risultati dal database.<br>Pertanto, questo link sarà incluso nell'email per il rilevamento di nuovi dispositivi.",
+        "subtitle" => "Used to determine the location when logging in from a new device",
+        "description" => "DB-IP is a powerful geolocation database that maps IP addresses to physical locations. It enables businesses to customize content and services based on specific regions, improve targeted advertising, and enhance user experience.",
+        "instruction" => "PanelAlpha utilizes a free geolocation database prepared by DB-IP. The condition for using this database is to include a backlink to DB-IP.com on any pages that display or use results from the database.<br>Therefore, this link will be included in the email for new device detection.",
         "fields" => [
             "db-ip-accepted" => [
-                "label" => "Accetto i termini di licenza"
+                "label" => "I agree with the licensing terms"
             ]
         ]
     ],
     GooglePageSpeedInsights::class => [
         "title" => "Google PageSpeed Insights ",
-        "subtitle" => "Utilizzato per scattare screenshot delle istanze e calcolare la velocità di caricamento delle pagine",
-        "description" => "Google PageSpeed Insights è uno strumento che analizza la velocità e le prestazioni del tuo sito web su dispositivi desktop e mobili. Fornisce suggerimenti attuabili per migliorare i tempi di caricamento e l'esperienza utente.",
-        "instruction" => "Per utilizzare Google PageSpeed Insights, segui questi passaggi:<ol><li>Vai a <a href='https://developers.google.com/speed/docs/insights/v5/get-started#key' target='_blank'>developers.google.com/speed/docs/insights/v5/get-started</a>.</li><li>Accedi al tuo account Google se necessario.</li><li>Crea una nuova chiave API facendo clic sul pulsante \"Get a Key\".</li><li>Seleziona un progetto esistente o creane uno nuovo e fai clic sul pulsante \"Next\".</li><li>Una volta creata la chiave API, verrà visualizzata sullo schermo. Copia questa chiave e utilizzala per integrare Google PageSpeed Insights.</li></ol>",
+        "subtitle" => "Used to take screenshots of instances and to calculate pages loading speed",
+        "description" => "Google PageSpeed Insights is a tool that analyzes your website's speed and performance on desktop and mobile devices. It provides actionable suggestions to improve loading times and user experience.",
+        "instruction" => "To use Google PageSpeed Insights, follow these steps:<ol><li>Go to <a href='https://developers.google.com/speed/docs/insights/v5/get-started#key' target='_blank'>developers.google.com/speed/docs/insights/v5/get-started</a>.</li><li>Log in to your Google account if needed.</li><li>Create a new API key by clicking the \"Get a Key\" button.</li><li>Select an existing project or create a new one and click the \"Next\" button.</li><li>Once the API key is created, it will be displayed on the screen. Copy this key and use it to integrate Google PageSpeed Insights.</li></ol>",
         "fields" => [
             "api-key" => [
-                "label" => "Chiave API",
-                "placeholder" => "Inserisci la tua chiave API..."
+                "label" => "API Key",
+                "placeholder" => "Enter your API key..."
             ]
         ]
     ],
     LetsEncrypt::class => [
         "title" => "Let's Encrypt",
-        "subtitle" => "Utilizzato per emettere certificati SSL per le istanze",
-        "description" => "Let's Encrypt è un'autorità di certificazione gratuita, automatizzata e aperta che fornisce crittografia HTTPS per i siti web. È facile da installare e utilizzare, e garantisce che il tuo sito web sia sicuro e accessibile a tutti.",
-        "instruction" => "Per utilizzare Let's Encrypt, dovresti seguire questi passaggi:<ol><li>Inserisci il tuo indirizzo email nel campo Contact Email.</li><li>Leggi attentamente la \"Let's Encrypt Subscriber Agreement\" e accetta i termini di servizio.</li><li>Il tuo account verrà quindi creato e l'integrazione del certificato SSL verrà abilitata automaticamente.</li><li>Vai a Configuration > Automatic SSL e imposta il Automatic SSL Provider su \"Let's Encrypt\".</li><li>D'ora in poi, Let's Encrypt emetterà automaticamente certificati SSL per le istanze.</li></ol>",
+        "subtitle" => "Used to issue SSL certificates for instances",
+        "description" => "Let's Encrypt is a free, automated, and open Certificate Authority that provides HTTPS encryption for websites. It's easy to install and use, and it ensures that your website is safe and accessible to everyone.",
+        "instruction" => "To use Let's Encrypt, you should follow these steps:<ol><li>Enter your email address in the Contact Email field.</li><li>Read the \"Let's Encrypt Subscriber Agreement\" carefully and accept the terms of service.</li><li>Your account will then be created, and the SSL certificate integration will be automatically enabled.</li><li>Go to Configuration > Automatic SSL and set the Automatic SSL Provider to \"Let's Encrypt\".</li><li>From now on, Let's Encrypt will automatically issue SSL certificates for instances.</li></ol>",
         "fields" => [
             "account-id" => [
-                "label" => "Account Let's Encrypt",
-                "placeholder" => "L'account verrà generato dopo aver salvato le modifiche"
+                "label" => "Let's Encrypt Account",
+                "placeholder" => "Account will be generated after saving changes"
             ],
             "contact-email" => [
-                "label" => "Email di contatto",
-                "placeholder" => "Inserisci la tua email..."
+                "label" => "Contact Email",
+                "placeholder" => "Enter your email..."
             ],
             "tos-accepted" => [
-                "label" => "Accetta i termini di servizio"
+                "label" => "Accept Terms Of Service"
             ]
         ]
     ],
@@ -72,74 +72,74 @@ return [
         "title" => "Self Signed",
     ],
     Matomo::class => [
-        "title" => "Matomo (deprecato)",
-        "subtitle" => "Utilizzato per la raccolta e l'analisi dei dati sul traffico del sito web",
-        "description" => "Dalla versione 1.4.1, PanelAlpha non ha più bisogno di Matomo per ottenere statistiche del sito e ora si basa su uno strumento interno. L'integrazione con Matomo verrà completamente rimossa da PanelAlpha nella versione 1.5 (prevista per luglio/agosto). La disabilitazione di questo plugin non causerà problemi con le statistiche del sito.",
-        "instruction" => "Per utilizzare Matomo, segui questi passaggi:<ol><li>Vai all'URL di Matomo: <a href=\"{{\$url}}\" target=\"_blank\">{{\$url}}</a></li><li>Attraversa il processo di installazione di Matomo.</li><li>Accedi a Matomo.</li><li>Naviga su Configuration &gt; Personal &gt; Security.</li><li>In fondo alla pagina, fai clic su \"Create new token\" per generare un nuovo token.</li><li>Torna a PanelAlpha e inserisci il Token API.</li></ol>",
+        "title" => "Matomo (deprecated)",
+        "subtitle" => "Employed for Website Traffic Data Collection and Analysis",
+        "description" => "Since version 1.4.1, PanelAlpha no longer needs Matomo to get site statistics and is now based on an internal tool. The integration with Matomo will be entirely removed from PanelAlpha in version 1.5 (planned for July/August). Disabling this plugin will not cause any issues with site statistics.",
+        "instruction" => "To use Matomo, follow these steps:<ol><li>Go to the Matomo URL: <a href=\"{{\$url}}\" target=\"_blank\">{{\$url}}</a></li><li>Go through the Matomo installation process.</li><li>Log in to Matomo.</li><li>Navigate to Configuration &gt; Personal &gt; Security.</li><li>At the bottom of the page, click on \"Create new token\" to generate a new token.</li><li>Return to PanelAlpha and enter the API Token.</li></ol>",
         "fields" => [
             "url" => [
                 "label" => "URL",
-                "placeholder" => "Inserisci URL Matomo"
+                "placeholder" => "Enter Matomo URL"
             ],
             "api-token" => [
-                "label" => "Token API",
-                "placeholder" => "Inserisci Token API"
+                "label" => "API Token",
+                "placeholder" => "Enter API Token"
             ]
         ]
     ],
     Extendify::class => [
         "title" => "Extendify",
-        "subtitle" => "Utilizzato per l'onboarding super veloce delle istanze",
-        "description" => "Extendify fornisce un'esperienza di onboarding simile a un costruttore di siti web per i tuoi clienti finali. Potenzia i tuoi clienti di hosting per creare siti web belli e dall'aspetto professionale in pochi minuti utilizzando le ultime tecnologie AI in modo nativo in WordPress.",
-        "instruction" => "Per utilizzare <b>Extendify</b>, utilizza il metodo \"Super Quick Onboarding\" nei tuoi piani.<br>Non hai ancora un account? <a href=\"https://extendify.com/pricing/\" target=\"_blank\">Configura il tuo account</a>.",
+        "subtitle" => "Used for Super Quick Onboarding of instances",
+        "description" => "Extendify provides a website-builder-like onboarding experience for your end customers. Empower your hosting customers to create beautiful, professional-looking websites in minutes using the latest AI technologies natively in WordPress.",
+        "instruction" => "To use <b>Extendify</b>, please use \"Super Quick Onboarding\" method in your plans.<br>Don't have an account yet? <a href=\"https://extendify.com/pricing/\" target=\"_blank\">Set up your account</a>.",
         "fields" => [
             "partner_id" => [
-                "label" => "ID Partner",
-                "placeholder" => "Inserisci ID Partner"
+                "label" => "Partner ID",
+                "placeholder" => "Enter Partner ID"
             ]
         ]
     ],
     GoogleAnalytics::class => [
         "title" => "Google Analytics",
-        "subtitle" => "Utilizzato per raccogliere e analizzare i dati sul traffico del sito web",
-        "description" => "Google Analytics offre strumenti gratuiti per consolidare e analizzare i dati della tua azienda, consentendo al processo decisionale di essere orientato ai dati",
-        "instruction" => "Per utilizzare Google Analytics, segui questi passaggi:<ol><li>Vai al sito Google Analytics: <a href=\"https://analytics.google.com\" target=\"_blank\">https://analytics.google.com/</a></li><li>Accedi al tuo account Google se non sei già connesso.</li><li>Crea un account Google Analytics.</li><li>Naviga su Administration > Account Settings > Account Details e trova il tuo Account ID.</li><li>Copia e incolla il Property ID nel modulo sottostante.</li><li>Crea un file JSON delle credenziali come <a href=\"https://www.panelalpha.com/documentation/integrations/google-analytics/#google-anlytics-json-file\" target=\"_blank\">descritto nella documentazione</a>.</li><li>Allega il file JSON nel campo Service Account Credentials sottostante.</li></ol><br>Avvertimento! Questa integrazione funziona basata su codice javascript installato automaticamente sulle istanze del cliente. L'utente può rimuovere questo codice e l'integrazione smetterà di funzionare.",
+        "subtitle" => "Employed for Gathering and Analyzing Website Traffic Data",
+        "description" => "Google Analytics offers free tools for consolidating and analyzing your company's data, enabling the decision process to be data-oriented",
+        "instruction" => "To use Google Analytics, follow these steps:<ol><li>Go to the Google Analytics site: <a href=\"https://analytics.google.com\" target=\"_blank\">https://analytics.google.com/</a></li><li>Log into your Google account if not already logged in.</li><li>Create a Google Analytics account.</li><li>Navigate to Administration > Account Settings > Account Details and find your Account ID.</li><li>Copy and paste the Property ID in the form below.</li><li>Create a credentials JSON file as <a href=\"https://www.panelalpha.com/documentation/integrations/google-analytics/#google-anlytics-json-file\" target=\"_blank\">described in the documentation</a>.</li><li>Attach the JSON file in the Service Account Credentials field below.</li></ol><br>Warning! This integration works based on javascript code automatically installed on customer instances. The user can remove this code and the integration will stop working.",
         "fields" => [
             "account-id" => [
-                "label" => "ID Account",
-                "placeholder" => "Inserisci ID Account"
+                "label" => "Account ID",
+                "placeholder" => "Enter Account ID"
             ],
             "service-account-credentials-json" => [
-                "label" => "Credenziali Account di Servizio",
-                "placeholder" => "Allega file JSON delle credenziali di servizio"
+                "label" => "Service Account Credentials",
+                "placeholder" => "Attach Service Credentials JSON File"
             ]
         ]
     ],
     WithoutDns::class => [
         "title" => "WithoutDNS",
-        "subtitle" => "Abilita l'anteprima rapida di WordPress",
-        "description" => "WithoutDNS fornisce un toolkit completo che semplifica i processi di test e migrazione. Fornisce un URL temporaneo che dirige il tuo dominio a un indirizzo IP del server specificato attraverso uno dei nostri server proxy.",
-        "instruction" => "Per utilizzare WithoutDNS, segui questi passaggi:<ol><li>Vai a <a href=\"https://withoutdns.com/api-configuration\" target=\"_blank\">https://withoutdns.com/</a></li><li>Accedi al tuo account se necessario.</li><li>Crea un nuovo Token API facendo clic sul pulsante \"Generate Token\".</li><li>Copia e incolla il Token API nel modulo sottostante.</li><li>Esegui una connessione di test.</li><li>Dopo aver eseguito la connessione di test, appariranno le opzioni per Temporary Domain e Temporary URL Duration. Una volta selezionate, l'integrazione sarà pronta per l'uso.</li></ol><br>Senza completare completamente la configurazione, l'integrazione consente la generazione di fino a tre link temporanei.",
+        "subtitle" => "Enables quick preview of WordPress",
+        "description" => "WithoutDNS provides a comprehensive toolkit that simplifies testing and migration processes. It provides a temporary URL that directs your domain to a specified server IP address through one of our proxy servers.",
+        "instruction" => "To use WithoutDNS, follow these steps:<ol><li>Go to <a href=\"https://withoutdns.com/api-configuration\" target=\"_blank\">https://withoutdns.com/</a></li><li>Log in to your account if needed.</li><li>Create a new API Token by clicking the \"Generate Token\" button.</li><li>Copy and paste the API Token into the form below.</li><li>Perform a test connection.</li><li>After performing the test connection, the options for Temporary Domain and Temporary URL Duration will appear. Once you select them, the integration will be ready for use.</li></ol><br>Without fully completing the configuration, the integration allows the generation of up to three temporary links.",
         "fields" => [
             "api-token" => [
-                "label" => "Token API",
-                "placeholder" => "Inserisci il tuo Token API"
+                "label" => "API Token",
+                "placeholder" => "Enter your API Token"
             ],
             'temporary-url-duration' => [
-                "label" => 'Durata URL Temporaneo',
-                "tooltip" => "Definisci per quanto tempo l'URL di anteprima generato per il sito rimarrà accessibile prima di scadere.",
+                "label" => 'Temporary URL Duration',
+                "tooltip" => "Define how long the generated preview URL for the site will remain accessible before it expires.",
                 "options" => [
-                    "15m" => "15 Minuti",
-                    "1h" => "1 Ora",
-                    "24h" => '24 ore',
-                    "7d" => '7 giorni',
-                    "30d" => '30 giorni',
-                    "never" => 'Mai'
+                    "15m" => "15 Minutes",
+                    "1h" => "1 Hour",
+                    "24h" => '24 hours',
+                    "7d" => '7 days',
+                    "30d" => '30 days',
+                    "never" => 'Never'
                 ]
             ],
             'temporary_domain' => [
-                'label' => "Dominio Temporaneo",
-                "tooltip" => "Seleziona il dominio da utilizzare per generare l'URL temporaneo per i clienti per visualizzare in anteprima il sito.",
+                'label' => "Temporary Domain",
+                "tooltip" => "Select the domain to be used for generating the temporary URL for clients to preview the site.",
             ]
         ]
     ],
@@ -150,28 +150,28 @@ return [
         "fields" => [
             "host" => [
                 "label" => "Host",
-                "tooltip" => "L'host email si riferisce al server o al provider di hosting."
+                "tooltip" => "Email host refers to the server or hosting provider."
             ],
             "port" => [
-                "label" => "Porta",
-                "tooltip" => "La porta email si riferisce a una porta specifica dedicata alla gestione del traffico email."
+                "label" => "Port",
+                "tooltip" => "Email port refers to a specific port dedicated to handling email traffic."
             ],
             "encryption" => [
-                "label" => "Tipo SSL",
-                "tooltip" => "Il Tipo SSL si riferisce al metodo di crittografia (SSL o TLS) utilizzato per proteggere la connessione tra il client email e il server.",
+                "label" => "SSL Type",
+                "tooltip" => "SSL Type refers to the encryption method (SSL or TLS) used to secure the connection between the email client and server.",
                 "options" => [
-                    "none" => "Nessuno",
+                    "none" => "None",
                     "ssl" => "SSL",
                     "tls" => "TLS",
                 ]
             ],
             "username" => [
-                "label" => "Nome utente",
-                "tooltip" => "Il nome utente è un nome associato a un account email."
+                "label" => "Username",
+                "tooltip" => "Username is a name associated with an email account."
             ],
             "password" => [
                 "label" => "Password",
-                "tooltip" => "La password email è una password per l'autenticazione e l'accesso a un account email."
+                "tooltip" => "Email password is a password for authentication and accessing an email account."
             ]
         ]
     ],
@@ -180,7 +180,7 @@ return [
         "fields" => [
             "token" => [
                 "label" => "Token",
-                "tooltip" => "Il token Postmark si riferisce al token API utilizzato per accedere al servizio di consegna email Postmark."
+                "tooltip" => "Postmark token refers to API token used for accessing with the Postmark email delivery service."
             ],
         ]
     ],
@@ -188,8 +188,8 @@ return [
         "title" => "MailerSend",
         "fields" => [
             "api_token" => [
-                "label" => "Token API",
-                "tooltip" => "Il token API viene utilizzato per autenticare le richieste effettuate durante l'invio di email."
+                "label" => "API Token",
+                "tooltip" => "API token is used to authenticate requests made when sending emails."
             ],
         ]
     ],
@@ -197,19 +197,19 @@ return [
         "title" => "Mailgun",
         "fields" => [
             "domain" => [
-                "label" => "Dominio",
-                "tooltip" => "Inserisci il nome del dominio Mailgun."
+                "label" => "Domain",
+                "tooltip" => "Enter your Mailgun domain name."
             ],
             "secret" => [
-                "label" => "Chiave API",
-                "tooltip" => "Fornisci la tua chiave API Mailgun per l'autenticazione."
+                "label" => "API Key",
+                "tooltip" => "Provide your Mailgun API key for authentication."
             ],
             "endpoint" => [
-                "label" => "Regione",
-                "tooltip" => "Seleziona la tua regione Mailgun.",
+                "label" => "Region",
+                "tooltip" => "Select your Mailgun region.",
                 "options" => [
-                    "us" => "Stati Uniti",
-                    "eu" => "Unione Europea",
+                    "us" => "United States",
+                    "eu" => "European Union",
                 ]
             ],
         ]
@@ -218,8 +218,8 @@ return [
         "title" => "SendGrid",
         "fields" => [
             "api_key" => [
-                "label" => "Chiave API",
-                "tooltip" => "La chiave API viene utilizzata per autenticare le richieste effettuate durante l'invio di email."
+                "label" => "API Key",
+                "tooltip" => "API Key is used to authenticate requests made when sending emails."
             ],
         ]
     ],
@@ -546,14 +546,14 @@ return [
         "title" => "Google",
         "subtitle" => "",
         "description" => "",
-        "instruction" => 'Segui questi passaggi per abilitare l\'autenticazione con questo provider e registrare una nuova applicazione:
+        "instruction" => 'Follow these steps to enable the authentication with this provider and to register a new application:
                 <ol>
-                <li>Vai a: <a href="https://console.developers.google.com/iam-admin/projects">https://console.developers.google.com/iam-admin/projects</a> e accedi se necessario.</li>
-                <li>Fai clic su <b>Select Project</b>, quindi premi <b>Create Project</b> e selezionalo quando creato. </li>
-                <li>Vai a <b>API Manager → Credentials → OAuth</b> consent screen e compila il modulo lì. </li>
-                <li>Successivamente, vai a <b>Credentials → Create credentials (OAuth client ID type)</b> e seleziona <b>Web application</b>.</li>
-                <li>Imposta <b>Authorize redirect URIs</b> a  <br /><b>{{$callback_url}}</b></li>
-                <li>Una volta registrato, incolla le credenziali dell\'applicazione creata (Client ID per application ID e Client Secret per Application secret) nel modulo sottostante.</li>
+                <li>Proceed to:: <a href="https://console.developers.google.com/iam-admin/projects">https://console.developers.google.com/iam-admin/projects</a> and log in if necessary.</li>
+                <li>Click on <b>Select Project</b>, then press <b>Create Project</b> and select it when created. </li>
+                <li>Move to <b>API Manager → Credentials → OAuth</b> consent screen and fill out the form there. </li>
+                <li>Next, go to <b>Credentials → Create credentials (OAuth client ID type)</b> and select <b>Web application</b>.</li>
+                <li>Set <b>Authorize redirect URIs</b> to  <br /><b>{{$callback_url}}</b></li>
+                <li>Once you have registered paste the created application credentials (Client ID for application ID and Client Secret for Application secret) into the form below.</li>
             </ol>',
         "fields" => [
             'client_id' => [
@@ -568,7 +568,7 @@ return [
         "title" => "Apple",
         "subtitle" => "",
         "description" => "",
-        "instruction" => 'Segui questi passaggi per abilitare l\'autenticazione con questo provider e registrare una nuova applicazione:
+        "instruction" => 'Follow these steps to enable the authentication with this provider and to register a new application:
             ',
         "fields" => [
             'client_id' => [
@@ -583,13 +583,13 @@ return [
         "title" => "Microsoft",
         "subtitle" => "",
         "description" => "",
-        "instruction" => 'Segui questi passaggi per abilitare l\'autenticazione con questo provider e registrare una nuova applicazione:
+        "instruction" => 'Follow these steps to enable the authentication with this provider and to register a new application:
                 <ol>
-                <li>Vai a: <a href="https://account.live.com/developers/applications/create" target="_blank">https://account.live.com/developers/applications/create</a> e accedi se necessario</li>
-                <li>Crea una nuova applicazione.</li>
-                <li>Compila tutti i campi richiesti come il nome dell\'applicazione e la sua descrizione.</li>
-                <li>Imposta <b>Redirect URL</b> a <br /><b>{{$callback_url}}</b></li>
-                <li>Una volta registrato, incolla le credenziali dell\'applicazione creata nel modulo sottostante. </li>
+                <li>Proceed to: <a href="https://account.live.com/developers/applications/create" target="_blank">https://account.live.com/developers/applications/create</a> and log in if necessary</li>
+                <li>Create a new application.</li>
+                <li>Fill out any required fields such as the application name and its description.</li>
+                <li>Set <b>Redirect URL</b> to <br /><b>{{$callback_url}}</b></li>
+                <li>Once you have registered, paste the created application credentials into the form below. </li>
             </ol>',
         "fields" => [
             'client_id' => [
@@ -604,15 +604,15 @@ return [
         "title" => "LinkedIn",
         "subtitle" => "",
         "description" => "",
-        "instruction" => 'Segui questi passaggi per abilitare l\'autenticazione con questo provider e registrare una nuova applicazione:
+        "instruction" => 'Follow these steps to enable the authentication with this provider and to register a new application:
             <ol>
-                <li>Vai a: <a href="https://www.linkedin.com/secure/developer" target="_blank">https://www.linkedin.com/secure/developer</a> e accedi se necessario.</li>
-                <li>Crea una nuova applicazione.</li>
-                <li>Compila tutti i campi richiesti, come il nome dell\'applicazione e la sua descrizione</li>
-                <li>Scegli <b>Live</b> sotto <b>Live Status</b>.</li>
-                <li>Seleziona i permessi <b>r_liteprofile</b> e <b>r_emailaddress</b>.</li>
-                <li>Imposta <b>Redirect URL</b> a <br /><b>{{$callback_url}}</b></li>
-                <li>Una volta registrato, incolla le credenziali dell\'applicazione creata nel modulo sottostante.</li>
+                <li>Proceed to: <a href="https://www.linkedin.com/secure/developer" target="_blank">https://www.linkedin.com/secure/developer</a> and log in if necessary.</li>
+                <li>Create a new application.</li>
+                <li>Fill out any required fields, such as the application name and its description</li>
+                <li>Choose <b>Live</b> under <b>Live Status</b>.</li>
+                <li>Select <b>r_liteprofile</b> and <b>r_emailaddress</b> permissions.</li>
+                <li>Set <b>Redirect URL</b> to <br /><b>{{$callback_url}}</b></li>
+                <li>Once you have registered, paste the created application credentials into the form below.</li>
             </ol>',
         "fields" => [
             'client_id' => [
@@ -627,14 +627,14 @@ return [
         "title" => "Facebook",
         "subtitle" => "",
         "description" => "",
-        "instruction" => 'Segui questi passaggi per abilitare l\'autenticazione con questo provider e registrare una nuova applicazione:
+        "instruction" => 'Follow these steps to enable the authentication with this provider and to register a new application:
             <ol>
-                <li>Vai a: <a href="https://developers.facebook.com/apps" target="_blank">https://developers.facebook.com/apps</a> e accedi se necessario.</li>
-                <li>Crea una nuova applicazione.</li>
-                <li>Compila <b>Display Name</b>, <b>Contact Email</b>, scegli una categoria e fai clic su <b>Create App ID</b>. </li>
-                <li>Vai alla pagina <b>Settings</b> e copia <b>App ID</b> e <b>App Secret</b> in questo modulo.</li>
-                <li>Torna a <b>+Add Product</b> e seleziona <b>Facebook Login</b></li>
-                <li>Imposta <b>Valid OAuth redirect URIs</b> a <br /><b>{{$callback_url}}</b></li>
+                <li>Proceed to: <a href="https://developers.facebook.com/apps" target="_blank">https://developers.facebook.com/apps</a> and log in if necessary.</li>
+                <li>Create a new application.</li>
+                <li>Fill out <b>Display Name</b>, <b>Contact Email</b>, choose a category and click <b>Create App ID</b>. </li>
+                <li>Go to <b>Settings</b> page and copy <b>App ID</b> and <b>App Secret</b> to this form.</li>
+                <li>Come back to <b>+Add Product</b> and select <b>Facebook Login</b></li>
+                <li>Set <b>Valid OAuth redirect URIs</b> to <br /><b>{{$callback_url}}</b></li>
             </ol>',
         "fields" => [
             'client_id' => [
@@ -649,14 +649,14 @@ return [
         "title" => "GitHub",
         "subtitle" => "",
         "description" => "",
-        "instruction" => 'Segui questi passaggi per abilitare l\'autenticazione con questo provider e registrare una nuova applicazione:
+        "instruction" => 'Follow these steps to enable the authentication with this provider and to register a new application:
             <ol>
-                <li>Vai a: <a href="https://github.com/settings/developers" target="_blank">https://github.com/settings/developers</a> e accedi se necessario.</li>
-                <li>Crea una nuova applicazione.</li>
-                <li>Compila <b>Name, Description, Website URL</b>.</li>
-                <li>Imposta <b>Redirect URL</b> a <br /><b>{{$callback_url}}</b></li>
-                <li>Invia il modulo e aggiorna le impostazioni dell\'applicazione. </li>
-                <li>Trova nella pagina successiva e copia Client ID e Client Secret da <b>OAuth Information</b> nei campi sottostanti.</li>
+                <li>Proceed to: <a href="https://github.com/settings/developers" target="_blank">https://github.com/settings/developers</a> and log in if necessary.</li>
+                <li>Create a new application.</li>
+                <li>Fill out <b>Name, Description, Website URL</b>.</li>
+                <li>Set <b>Redirect URL</b> to <br /><b>{{$callback_url}}</b></li>
+                <li>Submit the form and update the application settings. </li>
+                <li>Find on the next page and copy Client ID and Client Secret from <b>OAuth Information</b> to the fields below.</li>
             </ol>',
         "fields" => [
             'client_id' => [
@@ -673,7 +673,7 @@ return [
         "description" => "Atarim semplifica la collaborazione sui siti web consentendo a team e clienti di lasciare feedback visivo direttamente sui siti live, trasformando i commenti in attività operative per accelerare la consegna del progetto.",
         "instruction" => "Per usare Atarim, segui questi passaggi:
             <ol>
-                <li>Vai alla <a href=\"https://atarim.firstpromoter.com/signup/32353\" target=\"_blank\">pagina di registrazione di Atarim</a></li>
+                <li>Vai alla <a href="https://atarim.firstpromoter.com/signup/32353" target="_blank">pagina di registrazione di Atarim</a></li>
                 <li>Crea un account oppure accedi a un account esistente.</li>
                 <li>Copia il <strong>link di referral</strong> e incollalo nel campo sottostante.</li>
             </ol>",

@@ -5,6 +5,8 @@ return [
     'hosting_account' => 'account di hosting',
     'service' => 'servizio',
     'self_signed' => 'Autografato',
+    'files' => 'file',
+    'database' => 'database',
     'import_steps' => [
         'downloading-files' => 'Scaricare i file',
         'downloading-database' => 'Scaricare il database',
@@ -23,7 +25,25 @@ return [
         'creating-temporary-directory' => 'Creare una directory temporanea',
         'creating-site' => 'Creazione del sito',
         'checking-domain' => 'Controllo del dominio',
-    ],
+
+            'installNewInstance' => 'Installazione nuova istanza',
+        'installPluginOnNewInstance' => "Installazione del plugin WordPress Migrator sulla nuova istanza",
+        'prepareNewInstanceToMigration' => 'Preparazione della nuova istanza alla migrazione',
+        'installPluginOnImportedInstance' => "Installazione del plugin WordPress Migrator sull'istanza importata",
+        'prepareMigrationUsingPlugin' => 'Preparazione della migrazione',
+        'runMigrationUsingPlugin' => 'Esecuzione della migrazione',
+        'prepareInstance' => 'Preparazione dell’istanza per la migrazione',
+        'downloadDatabase' => 'Download del database',
+        'downloadFiles' => 'Download dei file',
+        'uploadFiles' => 'Caricamento dei file',
+        'prepareFiles' => 'Preparazione dei file',
+        'uploadDatabase' => 'Caricamento del database',
+        'importDatabase' => 'Importazione del database',
+        'configureWordPress' => 'Configurazione di WordPress',
+        'cleanUp' => 'Pulizia dei file',
+        'createFtpAccount' => 'Creazione account FTP/SFTP',
+        'cleanUpPlugins' => 'Pulizia dei plugin',
+],
     'health-checks' => [
         'server' => [
             'ping' => 'Connessione di prova al server',
@@ -49,4 +69,38 @@ return [
             'local_data' => 'WordPress verifica la correttezza dei dati locali',
         ],
     ],
+
+    'server_alerts' => [
+        "high_disk_usage" => "High Disk Usage",
+        "high_cpu_usage" => "High CPU Usage",
+        "high_ram_usage" => "High RAM Usage",
+    ],
+    'report_providers' => [
+        'referer' => [
+            'website' => 'Websites',
+            'direct' => 'Direct Entry',
+            'search_engine' => 'Search Engines',
+            'unknown' => 'Unknown',
+            'internal' => 'Internal',
+        ]
+    ],
+    'continent' => [
+        'as' => 'Asia',
+        'eu' => 'Europe',
+        'na' => 'North America',
+        'sa' => 'South America',
+        'af' => 'Africa',
+        'oc' => 'Oceania',
+        'an' => 'Antarctica'
+    ],
+    'field' => [
+        'onboarding_domain' => [
+            'label' => 'Onboarding Domain (Optional)',
+            'description' => 'Optional, if set, it will override onboarding domain configured in plan settings.'
+        ]
+    ],
+
+    'file',
+
+    'database',
 ];
