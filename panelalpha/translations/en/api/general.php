@@ -5,6 +5,8 @@ return [
     "hosting_account" => "hosting account",
     "service" => "service",
     "self_signed" => "Self Signed",
+    "files" => "files",
+    "database" => "database",
     "import_steps" => [
         "downloading-files" => "Downloading files",
         "downloading-database" => "Downloading database",
@@ -23,6 +25,24 @@ return [
         "creating-temporary-directory" => "Creating temporary directory",
         "creating-site" => "Creating site",
         "checking-domain" => "Checking domain",
+
+        'installNewInstance' => 'Installing new instance',
+        'installPluginOnNewInstance' => "Installing 'WordPress Migrator' plugin on new instance",
+        'prepareNewInstanceToMigration' => "Preparing new instance for migration",
+        'installPluginOnImportedInstance' => "Installing 'WordPress Migrator' plugin on imported instance",
+        'prepareMigrationUsingPlugin' => "Preparing migration ",
+        'runMigrationUsingPlugin' => "Running migration",
+        'prepareInstance' => "Preparing instance for migration",
+        'downloadDatabase' => 'Downloading database',
+        'downloadFiles' => "Downloading files",
+        'uploadFiles' => 'Uploading files',
+        'prepareFiles' => 'Preparing files',
+        'uploadDatabase' => 'Uploading database',
+        'importDatabase' => 'Importing database',
+        'configureWordPress' => 'Configuring WordPress',
+        'cleanUp' => 'Cleaning up files',
+        'createFtpAccount' => 'Creating FTP/SFTP account',
+        'cleanUpPlugins' => 'Clean Up Plugins',
     ],
     "health-checks" => [
         "server" => [
@@ -49,6 +69,11 @@ return [
             "local_data" => "WordPress Checking Correct Local Data",
         ]
     ],
+    "server_alerts" => [
+        "high_disk_usage" => "High Disk Usage",
+        "high_cpu_usage" => "High CPU Usage",
+        "high_ram_usage" => "High RAM Usage",
+    ],
     'report_providers' => [
         'referer' => [
             'website' => 'Websites',
@@ -66,5 +91,11 @@ return [
         'af' => 'Africa',
         'oc' => 'Oceania',
         'an' => 'Antarctica'
+    ],
+    'field' => [
+        'onboarding_domain' => [
+            'label' => 'Onboarding Domain (Optional)',
+            'description' => 'Optional, if set, it will override onboarding domain configured in plan settings.'
+        ]
     ]
 ];

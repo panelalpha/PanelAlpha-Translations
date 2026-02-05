@@ -8,6 +8,8 @@ use App\Lib\Integrations\Auth\Google;
 use App\Lib\Integrations\Auth\Linkedin;
 use App\Lib\Integrations\Auth\Microsoft;
 use App\Lib\Integrations\DbIp;
+use App\Lib\Integrations\DnsServers\Cloudflare;
+use App\Lib\Integrations\DnsServers\PowerDns;
 use App\Lib\Integrations\EmailProvider\MailerSend;
 use App\Lib\Integrations\EmailProvider\Mailgun;
 use App\Lib\Integrations\EmailProvider\Postmark;
@@ -221,6 +223,207 @@ return [
             ],
         ]
     ],
+    // Hosting Servers
+    App\Lib\Integrations\HostingServers\Cpanel::class => [
+        "title" => "cPanel",
+        "description" => "cPanel - A Cloud-Hosted Collaboration Software and Email Platform",
+        "fields" => [
+            'url' => [
+                'label' => 'URL',
+            ],
+            'username' => [
+                'label' => 'Username',
+            ],
+            'api_token' => [
+                'label' => 'API Token',
+                'link_label' => 'How To Create API Token',
+            ],
+            'ssl_verification' => [
+                'label' => 'SSL Verification',
+            ],
+        ],
+        "config" => [
+            'whm_package' => [
+                'label' => 'WHM Package',
+            ]
+        ]
+    ],
+    App\Lib\Integrations\HostingServers\DirectAdmin::class => [
+        "title" => "Direct Admin",
+        "description" => "DirectAdmin - A Cloud-Hosted Collaboration Software and Email Platform",
+        "fields" => [
+            'url' => [
+                'label' => 'URL',
+            ],
+            'username' => [
+                'label' => 'username',
+            ],
+            'password' => [
+                'label' => 'Password',
+            ],
+            'ssl_verification' => [
+                'label' => 'SSL Verification',
+            ],
+        ],
+        "config" => [
+            'package' => [
+                'label' => 'Package',
+            ],
+            'ip_address' => [
+                'label' => 'IP Address',
+            ]
+        ]
+    ],
+    App\Lib\Integrations\HostingServers\Plesk::class => [
+        "title" => "Plesk",
+        "description" => "Plesk - A Cloud-Hosted Collaboration Software and Email Platform",
+        "fields" => [
+            'url' => [
+                'label' => 'IP/Hostname',
+            ],
+            'username' => [
+                'label' => 'Username',
+            ],
+            'password' => [
+                'label' => 'Password',
+            ],
+            'ssl_verification' => [
+                'label' => 'SSL Verification',
+            ],
+        ],
+        "config" => [
+            'ip_address' => [
+                'label' => 'IP Address',
+                'tooltip' => "Select an available IP address",
+            ],
+            'hosting_plan' => [
+                'label' => 'Hosting Plan',
+                'tooltip' => "Select a hosting plan for the subscription. Important: This option is only available when 'Reseller Account' is disabled.",
+            ],
+            'reseller_account' => [
+                'label' => 'Reseller Account',
+                'tooltip' => "Enable this option to allow creating customer accounts under reseller. Requires a 'reseller plan' to be selected. Note: This option may be unavailable if the server doesn't support reseller accounts",
+            ],
+            'reseller_plan' => [
+                'label' => 'Reseller Plan',
+                'tooltip' => "Select a reseller plan. Important: This option is only available when 'Reseller Account' is enabled. Note: This option may be unavailable if the server doesn't support reseller accounts",
+            ],
+        ]
+    ],
+    App\Lib\Integrations\HostingServers\PanelAlpha::class => [
+        "title" => "PanelAlpha Engine",
+        "description" => "PanelAlpha - A Docker-based webhosting solution",
+        "fields" => [
+            'api_url' => [
+                'label' => 'API URL',
+            ],
+            'api_token' => [
+                'label' => 'API Token',
+            ],
+        ],
+        "config" => [
+            'disk_space_limit' => [
+                'label' => 'Disk Space Limit (MB)',
+            ],
+            'memory_limit' => [
+                'label' => 'Memory Limit (MB)',
+            ],
+            'cpu_limit' => [
+                'label' => 'CPU Limit',
+            ],
+            'device_read_bps' => [
+                'label' => 'Read Rate Limit (Bytes Per Second)',
+            ],
+            'device_write_bps' => [
+                'label' => 'Write Rate Limit (Bytes Per Second)',
+            ],
+            'bandwidth_limit' => [
+                'label' => 'Bandwidth Limit (MB Per Month)',
+            ],
+            'mysql_databases_limit' => [
+                'label' => 'MySQL Databases Limit'
+            ],
+            'ftp_accounts_limit' => [
+                'label' => 'FTP Accounts Limit',
+            ],
+            'sftp_accounts_limit' => [
+                'label' => 'SFTP Accounts Limit',
+            ],
+            'addon_domains_limit' => [
+                'label' => 'Addon Domains Limit',
+            ],
+            'subdomains_limit' => [
+                'label' => 'Subdomains Limit',
+            ],
+            'inodes_limit' => [
+                'label' => 'Inodes Limit',
+            ],
+            'enable_redis_cache' => [
+                'label' => 'Enable Redis Cache',
+            ],
+            'enable_litespeed_cache' => [
+                'label' => 'Enable LiteSpeed Cache',
+            ],
+            'php_fpm_pool_settings' => [
+                'label' => 'PHP-FPM Pool Settings',
+            ],
+            'lsphp_settings' => [
+                'label' => 'LSPHP Settings',
+            ],
+            'dedicated_ipv4' => [
+                'label' => 'Dedicated IPv4',
+            ],
+            'dedicated_ipv6' => [
+                'label' => 'Dedicated IPv6',
+            ],
+        ]
+    ],
+    App\Lib\Integrations\HostingServers\WpCloud::class => [
+        "title" => "WP Cloud",
+        "description" => "WP Cloud - WordPress-first cloud hosting",
+        "fields" => [
+            'client_identifier' => [
+                'label' => 'Client Identifier',
+            ],
+            'api_key' => [
+                'label' => 'API Key',
+            ]
+        ],
+        "config" => [
+            'space_quota' => [
+                'label' => 'Disk Quota',
+                'tooltip' => 'Disk space for sites. The default value is measured in megabytes, but to specify it in gigabytes, the suffix \'GB\' must be added. The maximum value is 200 GB.',
+            ],
+            'php_workers' => [
+                'label' => 'PHP Workers',
+                'tooltip' => "Set the number of CPU and PHP Workers. By default, you can set a value between 2 and 10. For other options, please contact WP Cloud.",
+            ],
+            'php_memory_limit' => [
+                'label' => 'PHP Memory Limit',
+                'tooltip' => 'Set the per-request PHP memory limit.',
+            ],
+            'burst_up_php_workers' => [
+                'label' => 'Burst Up PHP Workers',
+                'tooltip' => "Allow to dynamic burst up to 110 PHP Workers.",
+            ],
+            'allow_user_choose_location' => [
+                'label' => 'Allow User To Choose Location',
+                'tooltip' => "Allow users to choose location for new instances.",
+            ],
+            'geo_affinity' => [
+                'label' => 'Default Datacenter',
+                'tooltip' => "Select datacenter to which the pages will be assigned.",
+            ],
+            'default_ssh_access_enabled' => [
+                'label' => 'Default SSH Access Enabled',
+                'tooltip' => "Set SSH access to be enabled by default on all new WP Cloud instances.",
+            ],
+            'allow_user_enable_ssh_access' => [
+                'label' => 'Allow User To Enable SSH Access',
+                'tooltip' => "Allow users to manage SSH/SFTP access to their WP Cloud instance.",
+            ],
+        ]
+    ],
 
     // Email Servers
     Mailcow::class => [
@@ -263,6 +466,83 @@ return [
             ]
         ]
     ],
+
+    // DNS Servers
+    Cloudflare::class => [
+        "title" => "Cloudflare",
+        "description" => 'Cloudflare - The Web Performance & Security Company',
+        "fields" => [
+            'api_token' => [
+                'label' => 'API Token',
+            ],
+            'account_id' => [
+                'label' => 'Account ID',
+            ],
+        ],
+    ],
+    App\Lib\Integrations\DnsServers\CpanelDnsOnly::class => [
+        "title" => "cPanel DNSOnly",
+        "description" => 'cPanel DNSOnly - allows you to run a dedicated physical nameserver',
+        "fields" => [
+            'url' => [
+                'label' => 'IP/Hostname',
+            ],
+            'username' => [
+                'label' => 'Username',
+            ],
+            'api_token' => [
+                'label' => 'API Token',
+                'link_label' => 'How To Create API Token',
+            ],
+            'nameserver_1' => [
+                'label' => 'Nameserver 1',
+            ],
+            'nameserver_2' => [
+                'label' => 'Nameserver 2',
+            ],
+            'nameserver_3' => [
+                'label' => 'Nameserver 3',
+            ],
+            'nameserver_4' => [
+                'label' => 'Nameserver 4',
+            ]
+        ],
+    ],
+    App\Lib\Integrations\DnsServers\DnsManagerForWhmcs::class => [
+        "title" => "DNS Manager For WHMCS",
+        "description" => 'DNS Manager For WHMCS - DNS zone management module',
+        "fields" => [
+            'whmcs_url' => [
+                'label' => 'WHMCS URL',
+            ],
+            'whmcs_api_token' => [
+                'label' => 'WHMCS API Token',
+            ],
+        ]
+    ],
+    PowerDns::class => [
+        "title" => "PowerDNS",
+        "description" => 'PowerDNS - leading provider of secure open-source and commercial DNS software',
+        "fields" => [
+            'api_url' => [
+                'label' => 'API URL',
+            ],
+            'api_token' => [
+                'label' => 'API Token',
+            ],
+            'server' => [
+                'label' => 'Server',
+            ],
+            'zones_kind' => [
+                'label' => 'Zones Kind',
+            ],
+            'nameservers' => [
+                'label' => 'Nameservers (comma separated)',
+            ],
+        ]
+    ],
+
+    // Auth
     Google::class => [
         "title" => "Google",
         "subtitle" => "",
