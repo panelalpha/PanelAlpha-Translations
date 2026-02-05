@@ -5,6 +5,8 @@ return [
     'hosting_account' => 'Hosting-Account',
     'service' => 'Dienstleistung',
     'self_signed' => 'Selbst unterschrieben',
+    "files" => "Dateien",
+    "database" => "Datenbank",
     'import_steps' => [
         'creating-site' => 'Website erstellen',
         'checking-domain' => 'Prüfen des Bereichs',
@@ -23,6 +25,23 @@ return [
         'removing-ftp-account' => 'FTP-Konto entfernen',
         'creating-ftp-account' => 'FTP-Konto erstellen',
         'creating-temporary-directory' => 'Temporäres Verzeichnis erstellen',
+        'installNewInstance' => 'Neue Instanz installieren',
+        'installPluginOnNewInstance' => "'WordPress Migrator' Plugin auf neuer Instanz installieren",
+        'prepareNewInstanceToMigration' => "Neue Instanz für Migration vorbereiten",
+        'installPluginOnImportedInstance' => "'WordPress Migrator' Plugin auf importierter Instanz installieren",
+        'prepareMigrationUsingPlugin' => "Migration vorbereiten",
+        'runMigrationUsingPlugin' => "Migration ausführen",
+        'prepareInstance' => "Instanz für Migration vorbereiten",
+        'downloadDatabase' => 'Datenbank herunterladen',
+        'downloadFiles' => "Dateien herunterladen",
+        'uploadFiles' => 'Dateien hochladen',
+        'prepareFiles' => 'Dateien vorbereiten',
+        'uploadDatabase' => 'Datenbank hochladen',
+        'importDatabase' => 'Datenbank importieren',
+        'configureWordPress' => 'WordPress konfigurieren',
+        'cleanUp' => 'Dateien bereinigen',
+        'createFtpAccount' => 'FTP/SFTP-Konto erstellen',
+        'cleanUpPlugins' => 'Plugins bereinigen',
     ],
     'health-checks' => [
         'server' => [
@@ -49,4 +68,33 @@ return [
             'local_data' => 'WordPress prüft korrekte lokale Daten',
         ],
     ],
+    "server_alerts" => [
+        "high_disk_usage" => "Hohe Festplattennutzung",
+        "high_cpu_usage" => "Hohe CPU-Nutzung",
+        "high_ram_usage" => "Hohe RAM-Nutzung",
+    ],
+    'report_providers' => [
+        'referer' => [
+            'website' => 'Websites',
+            'direct' => 'Direkter Eintrag',
+            'search_engine' => 'Suchmaschinen',
+            'unknown' => 'Unbekannt',
+            'internal' => 'Intern',
+        ]
+    ],
+    'continent' => [
+        'as' => 'Asien',
+        'eu' => 'Europa',
+        'na' => 'Nordamerika',
+        'sa' => 'Südamerika',
+        'af' => 'Afrika',
+        'oc' => 'Ozeanien',
+        'an' => 'Antarktis'
+    ],
+    'field' => [
+        'onboarding_domain' => [
+            'label' => 'Onboarding-Domäne (Optional)',
+            'description' => 'Optional, falls gesetzt, überschreibt es die in den Plan-Einstellungen konfigurierte Onboarding-Domäne.'
+        ],
+    ]
 ];

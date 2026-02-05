@@ -333,4 +333,20 @@ return [
         'name' => 'Willkommen Benutzer',
         'description' => 'Diese Benachrichtigung informiert den Nutzer, dass sein Konto erfolgreich erstellt wurde. Sie enthält die erforderlichen Anmeldedaten wie Benutzername und Passwort, damit der Nutzer auf sein Konto zugreifen kann.',
     ],
+    'App\\Notifications\\Admin\\Server\\ServerAlert' => [
+        'name' => 'Server-Alarm',
+        'description' => 'Die Benachrichtigung informiert den Empfänger über Alarme, die auf dem Hosting-Server erkannt wurden.',
+    ],
+    'App\\Notifications\\User\\Service\\SyncHostingAccountFailed' => [
+        'name' => 'Synchronisierung des Hosting-Kontos des Dienstes fehlgeschlagen',
+        'description' => 'Diese Benachrichtigung informiert den Benutzer, dass die Synchronisierung seines Hosting-Kontos für diesen Dienst fehlgeschlagen ist.',
+    ],
+    'App\\Notifications\\User\\Service\\SyncHostingAccountFinished' => [
+        'name' => 'Synchronisierung des Hosting-Kontos des Dienstes abgeschlossen',
+        'description' => 'Diese Benachrichtigung informiert den Benutzer, dass sein Hosting-Konto für diesen Dienst erfolgreich synchronisiert wurde.',
+    ],
+    'App\\Notifications\\User\\System\\ControlPanelUpgrade' => [
+        'name' => 'Willkommens-E-Mail für Control Panel Upgrade',
+        'description' => 'Diese Benachrichtigung informiert, dass das Hosting-Konto erfolgreich vom Control Panel aktualisiert wurde. Sie enthält die erforderlichen Anmeldedaten, damit der Benutzer auf sein Konto zugreifen kann.',
+    ],
 ];
