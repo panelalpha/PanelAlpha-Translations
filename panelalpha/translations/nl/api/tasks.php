@@ -1,41 +1,83 @@
 <?php
 
+use App\Jobs\Admin\ManualImportInstance;
+use App\Jobs\Admin\RestoreBackup as AdminRestoreBackup;
+use App\Jobs\Admin\SyncReportProviders;
+use App\Jobs\System\AdminSendAvailableUpdateNotification;
+use App\Jobs\System\DeleteRedundantBackups;
+use App\Jobs\System\InstanceHealthCheck;
+use App\Jobs\Admin\ConvertInstanceToTemplate;
+use App\Jobs\System\PostInstallInstanceSteps;
+use App\Jobs\System\CreateAutomaticBackup;
+use App\Jobs\System\CacheInstancePageSpeed;
+use App\Jobs\System\CacheInstanceDetails;
+use App\Jobs\System\PostStagingSteps;
+use App\Jobs\System\SyncBackupsWithRemoteContainer;
+use App\Jobs\System\SyncInstanceSiteName;
+use App\Jobs\System\SyncWordPressData;
+use App\Jobs\System\UserSendAvailableUpdateNotification;
+use App\Jobs\User\ImportInstance;
+use App\Jobs\System\ImportVisitors;
+use App\Jobs\System\InstallTheme;
+use App\Jobs\System\InstallAndActivatePlugin;
+use App\Jobs\System\RefreshReportData;
+use App\Jobs\System\ProcessSslOrder;
+use App\Jobs\System\ScanPluginsAndThemes;
+use App\Jobs\Admin\ForceUpdateTheme;
+use App\Jobs\Admin\ForceUpdatePlugin;
+use App\Jobs\Admin\InstallPackage;
+use App\Jobs\User\CreateBackup;
+use App\Jobs\User\DeleteBackup;
+use App\Jobs\User\PushToStaging;
+use App\Jobs\User\RestoreBackup;
+use App\Jobs\User\CreateStaging;
+use App\Jobs\User\PushToLive;
+use App\Jobs\User\InstallInstance;
+use App\Jobs\User\InstallPlugin;
+use App\Jobs\User\SyncHostingAccount;
+use App\Jobs\User\UpdatePlugin;
+use App\Jobs\User\InstallTheme as UserInstallTheme;
+use App\Jobs\User\UpdateTheme;
+use App\Jobs\User\UpdateWordpress;
+
 return [
-    'App\\Jobs\\Admin\\ForceUpdatePlugin' => 'Forceer update-plugin: :naam',
-    'App\\Jobs\\Admin\\ForceUpdateTheme' => 'Forceer update thema: :naam',
-    'App\\Jobs\\System\\ScanPluginsAndThemes' => 'Plugins en thema\'s scannen',
-    'App\\Jobs\\System\\ProcessSslOrder' => 'SSL-bevel verwerken: :naam',
-    'App\\Jobs\\System\\RefreshReportData' => 'Rapportgegevens vernieuwen',
-    'App\\Jobs\\System\\InstallAndActivatePlugin' => 'Plugin installeren: :naam',
-    'App\\Jobs\\System\\InstallTheme' => 'Thema installeren: :naam',
-    'App\\Jobs\\System\\ImportVisitors' => 'Bezoekers importeren',
-    'App\\Jobs\\User\\DeleteBackup' => 'Back-up verwijderen',
-    'App\\Jobs\\User\\ImportInstance' => 'Instantie importeren',
-    'App\\Jobs\\User\\UpdatePlugin' => 'Plugin bijwerken: :naam',
-    'App\\Jobs\\User\\InstallTheme' => 'Thema installeren: :naam',
-    'App\\Jobs\\User\\UpdateTheme' => 'Thema bijwerken: :naam',
-    'App\\Jobs\\User\\UpdateWordpress' => 'WordPress bijwerken',
-    'App\\Jobs\\System\\CacheInstanceDetails' => 'Details cache-instantie',
-    'App\\Jobs\\System\\CreateAutomaticBackup' => 'Automatische back-up maken',
-    'App\\Jobs\\System\\PostStagingSteps' => 'Geïnstalleerde staging configureren',
-    'App\\Jobs\\Admin\\SyncReportProviders' => 'Rapportaanbieders synchroniseren',
-    'App\\Jobs\\System\\InstanceHealthCheck' => 'Instance gezondheidscontrole',
-    'App\\Jobs\\Admin\\ConvertInstanceToTemplate' => 'Instance-sjabloon aanmaken: :name',
-    'App\\Jobs\\System\\AdminSendAvailableUpdateNotification' => 'Administratieve melding van beschikbare updates',
-    'App\\Jobs\\System\\DeleteRedundantBackups' => 'Overtollige back-ups verwijderen',
-    'App\\Jobs\\System\\SyncBackupsWithRemoteContainer' => 'Back-ups synchroniseren met Backup Container',
-    'App\\Jobs\\User\\PushToStaging' => 'Push naar enscenering',
-    'App\\Jobs\\User\\CreateBackup' => 'Back-up maken',
-    'App\\Jobs\\User\\RestoreBackup' => 'Back-up herstellen',
-    'App\\Jobs\\User\\CreateStaging' => 'Creëer enscenering',
-    'App\\Jobs\\User\\PushToLive' => 'Push om te leven',
-    'App\\Jobs\\User\\InstallInstance' => 'Instantie maken',
-    'App\\Jobs\\User\\InstallPlugin' => 'Plugin installeren: :naam',
-    'App\\Jobs\\System\\CacheInstancePageSpeed' => 'Cache-instantie PageSpeed',
-    'App\\Jobs\\System\\PostInstallInstanceSteps' => 'Geïnstalleerde instantie configureren',
-    'App\\Jobs\\System\\SyncInstanceSiteName' => 'Naam synchronisatie-instantie',
-    'App\\Jobs\\Admin\\ManualImportInstance' => 'Handmatig importeren Instantie',
-    'App\\Jobs\\Admin\\RestoreBackup' => 'Instance herstellen vanuit back-up',
-    'App\\Jobs\\Admin\\InstallPackage' => 'Pakket installeren: :naam',
-    'App\\Jobs\\System\\UserSendAvailableUpdateNotification' => 'Gebruikersmelding van beschikbare updates',
+    InstallPackage::class => 'Pakket installeren: :naam',
+    ForceUpdatePlugin::class => 'Forceer update-plugin: :naam',
+    ForceUpdateTheme::class => 'Forceer update thema: :naam',
+    ScanPluginsAndThemes::class => 'Plugins en thema\\',
+    ProcessSslOrder::class => 'SSL-bevel verwerken: :naam',
+    RefreshReportData::class => 'Rapportgegevens vernieuwen',
+    InstallAndActivatePlugin::class => 'Plugin installeren: :naam',
+    InstallTheme::class => 'Thema installeren: :naam',
+    ImportVisitors::class => 'Bezoekers importeren',
+    CreateBackup::class => 'Back-up maken',
+    DeleteBackup::class => 'Back-up verwijderen',
+    RestoreBackup::class => 'Back-up herstellen',
+    CreateStaging::class => 'Creëer enscenering',
+    PushToLive::class => 'Push om te leven',
+    ImportInstance::class => 'Instantie importeren',
+    InstallInstance::class => 'Instantie maken',
+    InstallPlugin::class => 'Plugin installeren: :naam',
+    UpdatePlugin::class => 'Plugin bijwerken: :naam',
+    UserInstallTheme::class => 'Thema installeren: :naam',
+    UpdateTheme::class => 'Thema bijwerken: :naam',
+    UpdateWordpress::class => 'WordPress bijwerken',
+    CacheInstanceDetails::class => 'Details cache-instantie',
+    CacheInstancePageSpeed::class => 'Cache-instantie PageSpeed',
+    CreateAutomaticBackup::class => 'Automatische back-up maken',
+    PostInstallInstanceSteps::class => 'Geïnstalleerde instantie configureren',
+    PostStagingSteps::class => 'Geïnstalleerde staging configureren',
+    SyncInstanceSiteName::class => 'Naam synchronisatie-instantie',
+    SyncReportProviders::class => 'Rapportaanbieders synchroniseren',
+    InstanceHealthCheck::class => 'Instance gezondheidscontrole',
+    ConvertInstanceToTemplate::class => 'Instance-sjabloon aanmaken: :name',
+    UserSendAvailableUpdateNotification::class => 'Gebruikersmelding van beschikbare updates',
+    AdminSendAvailableUpdateNotification::class => 'Administratieve melding van beschikbare updates',
+    ManualImportInstance::class => 'Handmatig importeren Instantie',
+    DeleteRedundantBackups::class => 'Overtollige back-ups verwijderen',
+    AdminRestoreBackup::class => 'Instance herstellen vanuit back-up',
+    SyncBackupsWithRemoteContainer::class => 'Back-ups synchroniseren met Backup Container',
+    PushToStaging::class => 'Push naar enscenering',
+    SyncHostingAccount::class => 'Hostingaccount synchroniseren',
+    SyncWordPressData::class => 'WordPress-gegevens synchroniseren',
 ];

@@ -33,7 +33,9 @@
         "sftp": "{{- app_name}} - SSH/SFTP-accounts",
         "register": "{{- app_name}} - Registreren",
         "services": "{{- app_name}} - Mijn plannen",
-        "billing": "{{- app_name}} - Mijn facturering"
+        "billing": "{{- app_name}} - Mijn facturering",
+        "ssh": "SSH",
+        "copy-instance": "Instantie kopiëren"
     },
     "general": {
         "adventurer": "Avonturier",
@@ -123,7 +125,11 @@
         "contactSupportLink": "contact ondersteuning",
         "language": "Taal",
         "cancelled": "Geannuleerd",
-        "sites": "Sites"
+        "sites": "Sites",
+        "value": "Waarde",
+        "never": "Nooit",
+        "none": "Geen",
+        "notSet": "Niet ingesteld"
     },
     "heading": {
         "notFoundPage.title": "Pagina Niet Gevonden",
@@ -445,7 +451,27 @@
             "advanced.logs.phpLogs.title": "PHP logboeken",
             "advanced.logs.phpLogs.tooltip": "U kunt ook meer gedetailleerde PHP logs vinden in het foutlogboek van de webserver.",
             "advanced.logs.webserverLogs.title": "Webserverlogboeken",
-            "advanced.logs.noLogs": "Geen logboeken"
+            "advanced.logs.noLogs": "Geen logboeken",
+            "modal.sharedAccess.selectRole": "Select Role",
+            "modal.sharedAccess.stagingQuestion": "Do you want the changes to apply to the staging instance as well?",
+            "modal.setDomain.config.tab.nameservers.list.third": "You have to wait from 2 minutes up to a few hours for nameservers to propagate.",
+            "modal": {
+                "sharedAccess": {
+                    "selectRole": "Rol selecteren",
+                    "stagingQuestion": "Is deze instantie staging?"
+                },
+                "setDomain": {
+                    "config": {
+                        "tab": {
+                            "nameservers": {
+                                "list": {
+                                    "third": "Nameserver 3"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "hosting": {
             "sidebar.manage.title": "Beheren",
@@ -552,7 +578,96 @@
             "fileManager.title": "Bestandsbeheer",
             "sftp.modal.manageSSH.title": "SSH/SFTP-toegang beheren",
             "sftp.modal.manageSSH.message": "Kies het type externe toegang tot je instantie.",
-            "sftp.modal.manageSSH.field": "Type toegang"
+            "sftp.modal.manageSSH.field": "Type toegang",
+            "summary.planCard.usage.ssh": "SSH Accounts",
+            "summary.hostingAccount": "Hosting Account",
+            "ssh.title": "SSH Accounts",
+            "ssh.modal.add.title": "Add New SSH Account",
+            "ssh.modal.show.title": "SSH Account Login Details: {{- user}}",
+            "ssh.modal.show.info.username": "SSH Username",
+            "ssh.modal.show.info.password": "SSH Password",
+            "ssh.modal.show.info.host": "SSH Host",
+            "ssh.modal.show.info.port": "SSH Port",
+            "ssh.modal.update.title": "Edit SSH Account",
+            "ssh.modal.update.info": "User",
+            "ssh.modal.delete.title": "Delete SSH Account",
+            "ssh.modal.disconnect.title": "Disconnect All",
+            "ssh.modal.disconnect.message": "Are you sure to disconnect all SSH users?",
+            "ssh.modal.manageSSH.title": "Manage SFTP/SSH Access",
+            "ssh.modal.manageSSH.message": "Choose remote access type to your instance.",
+            "ssh.modal.manageSSH.field": "Access Type",
+            "emailAddress.emailDomain": "Email Domain",
+            "emailAddress.emailDomain.record.spf": "SPF Record",
+            "emailAddress.emailDomain.record.dkim": "DKIM Record",
+            "emailAddress.emailDomain.record.configured": "configured",
+            "emailAddress.emailDomain.record.failed": "failed",
+            "emailAddress.modal.show.spfdkimConfig": "SPF & DKIM Record Configuration",
+            "emailAddress.modal.show.allowEmail": "This allows your mail server to send emails on behalf of your domain.",
+            "emailAddress.modal.show.digitalSignature": "This adds a digital signature to your emails to verify they are really from you.",
+            "fileManager.alert": {
+                "wpCloud": "Due to server restrictions, not all files will be visible in this File Manager. You only have access to /wp-content and wp-config.php."
+            },
+            "summary": {
+                "planCard": {
+                    "usage": {
+                        "ssh": "SSH-toegang"
+                    }
+                },
+                "hostingAccount": "Hostingaccount"
+            },
+            "ssh": {
+                "title": "SSH-accounts",
+                "modal": {
+                    "add": {
+                        "title": "SSH-account toevoegen"
+                    },
+                    "show": {
+                        "title": "SSH-accountdetails",
+                        "info": {
+                            "username": "Gebruikersnaam",
+                            "password": "Wachtwoord",
+                            "host": "Host",
+                            "port": "Poort"
+                        }
+                    },
+                    "update": {
+                        "title": "SSH-account bewerken",
+                        "info": "Werk de SSH-accountgegevens bij."
+                    },
+                    "delete": {
+                        "title": "SSH-account verwijderen"
+                    },
+                    "disconnect": {
+                        "title": "SSH-account loskoppelen",
+                        "message": "Weet je zeker dat je dit SSH-account wilt loskoppelen?"
+                    },
+                    "manageSSH": {
+                        "title": "SSH-toegang beheren",
+                        "message": "Stel de methode voor SSH-toegang in.",
+                        "field": "SSH-toegangsmethode"
+                    }
+                }
+            },
+            "emailAddress": {
+                "emailDomain": {
+                    "record": {
+                        "spf": "SPF-record",
+                        "dkim": "DKIM-record",
+                        "configured": "Geconfigureerd",
+                        "failed": "Mislukt"
+                    }
+                },
+                "modal": {
+                    "show": {
+                        "spfdkimConfig": "SPF/DKIM-configuratie",
+                        "allowEmail": "E-mail toestaan",
+                        "digitalSignature": "Digitale handtekening"
+                    }
+                }
+            },
+            "fileManager": {
+                "alert": "De bestandsbeheerder is mogelijk niet beschikbaar voor dit plan."
+            }
         },
         "onboarding": {
             "selectType.title": "Nieuwe instantie toevoegen",
@@ -622,11 +737,62 @@
             "newInstance.geo_affinity.subtitle": "Kies locatie",
             "newInstance.geo_affinity.info": "Je kunt de locatie van je site kiezen uit de volgende opties:",
             "newInstance.hosting_plan.subtitle": "Kies hostingplan",
-            "newInstance.hosting_plan.info": "Je kunt het hostingplan voor je abonnement kiezen uit de volgende opties:"
+            "newInstance.hosting_plan.info": "Je kunt het hostingplan voor je abonnement kiezen uit de volgende opties:",
+            "syncInstances.title.completed": "Congratulations!",
+            "syncInstances.title.failed": "Failed!",
+            "syncInstances.subtitle.inProgress": "Loading new experience for you!",
+            "syncInstances.subtitle.completed": "Your sites have been prepared!",
+            "syncInstances.subtitle.failed": "Synchronization instances were unsuccessful. Please try again.",
+            "syncInstances.info.inProgress": "Preparing the dashboard with your WordPress sites... This won't take long!",
+            "syncInstances.info.failed": "Something went wrong, please try again.",
+            "syncInstances.info.completed": "Your sites has been successfully prepared, you can now start managing it by clicking on the below button.",
+            "import.failed.title": "Error!",
+            "import.failed.subtitle": "Import preparation failed. Please try again.",
+            "import.inProgress.subtitle": "Your site is now being prepared for you!",
+            "import.inProgress.info.general": "This process may take a while.",
+            "import.failed.info.general": "Something went wrong, please try again.",
+            "domainDnsVerificationModal": "DNS-verificatie van domein",
+            "chooseImportMethod": "Kies importmethode",
+            "simpleImportMethod": "Eenvoudige import",
+            "syncInstances": {
+                "title": {
+                    "completed": "Synchronisatie voltooid",
+                    "failed": "Synchronisatie mislukt"
+                },
+                "subtitle": {
+                    "inProgress": "Instanties worden gesynchroniseerd...",
+                    "completed": "Instanties gesynchroniseerd",
+                    "failed": "Instanties konden niet worden gesynchroniseerd"
+                },
+                "info": {
+                    "inProgress": "We synchroniseren je instanties.",
+                    "failed": "Er ging iets mis bij het synchroniseren van je instanties.",
+                    "completed": "Je instanties zijn succesvol gesynchroniseerd."
+                }
+            },
+            "import": {
+                "failed": {
+                    "title": "Import mislukt",
+                    "subtitle": "Kon de instantie niet importeren",
+                    "info": {
+                        "general": "We konden je instantie niet importeren."
+                    }
+                },
+                "inProgress": {
+                    "subtitle": "Import wordt uitgevoerd",
+                    "info": {
+                        "general": "We importeren je instantie."
+                    }
+                }
+            }
         },
         "navbar": {
             "tab.myInstances": "Sites",
-            "tab.myHosting": "Mijn hosting"
+            "tab.myHosting": "Mijn hosting",
+            "tab.resellerArea": "Reseller Area",
+            "tab": {
+                "resellerArea": "Resellergebied"
+            }
         },
         "styleManager": {
             "title": "Stijlbeheer",
@@ -637,7 +803,15 @@
             "additionalSettings.title": "Aanvullende instellingen",
             "additionalSettings.disableShadows.title": "Schaduwen uitschakelen",
             "darkMode.title": "Modus wijzigen",
-            "darkMode.description": "Modus donker/licht"
+            "darkMode.description": "Modus donker/licht",
+            "darkMode.allow": "Let Users Switch",
+            "darkMode.darkMode": "Dark Mode",
+            "darkMode.lightMode": "Light Mode",
+            "darkMode": {
+                "allow": "Donkere modus toestaan",
+                "darkMode": "Donkere modus",
+                "lightMode": "Lichte modus"
+            }
         },
         "loginPage.emailVerification.title": "Controleer uw e-mailadres",
         "loginPage.emailVerification.info1": "We hebben je een viercijferige code gemaild om",
@@ -707,6 +881,13 @@
             "invoice": {
                 "title": "Mijn facturen",
                 "noData.title": "Geen facturen gevonden"
+            }
+        },
+        "loginPage.message.accountAlreadyExists": "An account with this email already exists. Please log in using your email and password.",
+        "reseller": "Reseller",
+        "loginPage": {
+            "message": {
+                "accountAlreadyExists": "Er bestaat al een account met dit e-mailadres. Log in."
             }
         }
     },
@@ -800,7 +981,13 @@
             "webserverLogs.downloadDescription": "Download de logbestanden van de webserver.",
             "noRecords": "Geen records gevonden",
             "templates.title": "Geen sjablonen beschikbaar!",
-            "services.title": "Geen services gevonden"
+            "services.title": "Geen services gevonden",
+            "ssh.title": "No Account Created",
+            "ssh.description": "No SSH accounts available.",
+            "ssh": {
+                "title": "Geen SSH-accounts",
+                "description": "Voeg je eerste SSH-account toe om te beginnen."
+            }
         },
         "status": {
             "active": "Activeren",
@@ -842,7 +1029,8 @@
             "instanceInstall.failed": "Instance-installatie mislukt."
         },
         "instanceInDiagnosticMode": "Het beheren van de site is momenteel niet mogelijk (Diagnosemodus). Neem contact op met support voor meer informatie.",
-        "hostingAccountInDiagnosticMode": "Het beheren van de hosting is momenteel niet mogelijk (Diagnosemodus). Neem contact op met support voor meer informatie"
+        "hostingAccountInDiagnosticMode": "Het beheren van de hosting is momenteel niet mogelijk (Diagnosemodus). Neem contact op met support voor meer informatie",
+        "confirmBeforeProceedingAction": "Bevestig voordat je verdergaat met deze actie."
     },
     "notification": {
         "account": {
@@ -961,7 +1149,29 @@
             "sftp.update.success": "SSH/SFTP-account is bijgewerkt.",
             "sftp.delete.success": "SSH/SFTP-account is verwijderd.",
             "sftp.disconnect.success": "SSH/SFTP-verbindingen zijn verbroken.",
-            "sftp.setAccessType.success": "Nieuw toegangstype tot instantie is ingesteld."
+            "sftp.setAccessType.success": "Nieuw toegangstype tot instantie is ingesteld.",
+            "ssh.add.success": "SSH Account has been added.",
+            "ssh.update.success": "SSH Account has been updated.",
+            "ssh.delete.success": "SSH Account has been deleted.",
+            "ssh.disconnect.success": "SSH connections have been disconnected.",
+            "ssh.setAccessType.success": "New access type to instance has been set.",
+            "ssh": {
+                "add": {
+                    "success": "SSH-account toegevoegd."
+                },
+                "update": {
+                    "success": "SSH-account bijgewerkt."
+                },
+                "delete": {
+                    "success": "SSH-account verwijderd."
+                },
+                "disconnect": {
+                    "success": "SSH-account losgekoppeld."
+                },
+                "setAccessType": {
+                    "success": "SSH-toegangsmethode bijgewerkt."
+                }
+            }
         },
         "emptyFields": "Vul alstublieft alle velden in.",
         "connectionFailed": "Verbinding mislukt.",
@@ -1179,6 +1389,51 @@
         "set": {
             "geo_affinity": "Locatie instellen",
             "hosting_plan": "Stel hostingplan in"
+        },
+        "branding.manage": "Manage Styles",
+        "checkNameservers": "Nameservers controleren",
+        "collaborate": "Samenwerken",
+        "customizeResellerTheme": "Reseller-thema aanpassen",
+        "deleteUser": "Gebruiker verwijderen",
+        "domain.create": "Create Domain",
+        "domain.creating": "Creating domain...",
+        "domain.verify": "Verify Domain",
+        "getStarted": "Aan de slag",
+        "plugin.activate_disabled": "",
+        "sendInvite": "Uitnodiging versturen",
+        "ssh.add": "Add Account",
+        "ssh.edit": "Edit SSH Account",
+        "ssh.delete": "Delete SSH Account",
+        "ssh.show": "Show Access Details",
+        "skip": "Overslaan",
+        "tag.addTags": "Add tags",
+        "verifyDomain": "Domein verifiëren",
+        "testConnection": "Verbinding testen",
+        "sendTestEmail": "Testmail verzenden",
+        "send": "Verzenden",
+        "apiToken.create": "Create API Token",
+        "branding": {
+            "manage": "Branding beheren"
+        },
+        "domain": {
+            "create": "Domein maken",
+            "creating": "Domein wordt aangemaakt...",
+            "verify": "Domein verifiëren"
+        },
+        "plugin": {
+            "activate_disabled": "Activering uitgeschakeld"
+        },
+        "ssh": {
+            "add": "SSH toevoegen",
+            "edit": "SSH bewerken",
+            "delete": "SSH verwijderen",
+            "show": "SSH tonen"
+        },
+        "tag": {
+            "addTags": "Tags toevoegen"
+        },
+        "apiToken": {
+            "create": "API-token maken"
         }
     },
     "tooltip": {
@@ -1344,6 +1599,20 @@
                 "max_file_uploads": "Dit stelt het maximum aantal bestanden in dat via één verzoek kan worden geüpload. Dit helpt misbruik te voorkomen door het aantal bestanden dat in één keer kan worden geüpload te beperken.",
                 "register_globals": "Deze richtlijn importeert, indien ingeschakeld, automatisch variabelen van het verzoek in het globale bereik. Het is deprecated en moet worden uitgeschakeld om veiligheidsredenen, omdat het kan leiden tot het overschrijven van variabelen en andere veiligheidsproblemen.",
                 "short_open_tag": "Deze instelling staat het gebruik van korte openingstags (<?) voor PHP-code toe. Als deze optie is uitgeschakeld, kan alleen de volledige openingstag (<?php) worden gebruikt. Het wordt aanbevolen om de volledige openingstag te gebruiken voor een betere compatibiliteit."
+            },
+            "plugin.activationIsNotAllowed": "Activation of the plugin is not allowed.",
+            "user.field.passwordLeaveEmpty": "Leave empty if you don't want to change password.",
+            "collaborate.start": "<strong>Invite your team</strong> to collaborate visually on every part of your website. Leave comments, track tasks, and stay in sync, without endless emails, pointless video calls or messy bugtrackers. <strong>Try for free!</strong>",
+            "plugin": {
+                "activationIsNotAllowed": "Pluginactivering is niet toegestaan."
+            },
+            "user": {
+                "field": {
+                    "passwordLeaveEmpty": "Laat leeg om het huidige wachtwoord te behouden."
+                }
+            },
+            "collaborate": {
+                "start": "Nodig mensen uit om samen te werken aan deze instantie."
             }
         },
         "hosting": {
@@ -1364,7 +1633,27 @@
             "ftp.usageNotSupported": "Gebruik en quota worden niet ondersteund door de server.",
             "summary.cname.notResolve": "CNAME-record van sommige domeinen kan niet worden omgezet",
             "sftp.accessMethod": "Type externe toegang: SSH of SFTP.",
-            "summary.cname.notPointed": "Verificatie van CNAME-instelling voor sommige van uw domeinen mislukt"
+            "summary.cname.notPointed": "Verificatie van CNAME-instelling voor sommige van uw domeinen mislukt",
+            "summary.hostingAccount.tooltip": "Each hosting account has its own space and settings. Select the one that holds the domain you want to manage.",
+            "ssh.accessMethod": "Remote Access Type: SSH or SFTP.",
+            "emailAddress.emailDomain.tooltip": "Email accounts and forwarders are organized by domain. Select a domain to manage its email.",
+            "emailAddress.emailDomain.record.tooltip": "SPF & DKIM Record Configuration",
+            "summary": {
+                "hostingAccount": {
+                    "tooltip": "Details van het hostingaccount"
+                }
+            },
+            "ssh": {
+                "accessMethod": "Selecteer de SSH-toegangsmethode."
+            },
+            "emailAddress": {
+                "emailDomain": {
+                    "tooltip": "Domein dat wordt gebruikt voor het verzenden van e-mail.",
+                    "record": {
+                        "tooltip": "Status van het DNS-record."
+                    }
+                }
+            }
         },
         "backup_data.number_of_backups": "Aantal gemaakte back-ups van het maximaal toegestane aantal.",
         "backup_data.amount_of_storage": "Hoeveelheid gebruikte opslagruimte van het totaal dat beschikbaar is voor back-ups.",
@@ -1379,6 +1668,24 @@
         "create_backup.backup_type": "Selecteer het type back-up dat moet worden uitgevoerd: kies 'Database' voor een back-up van de database, of 'Directory' voor een back-up van bestanden.",
         "billing": {
             "invoice.duedate.exceeded": "De betalingstermijn is overschreden. Betaal de factuur onmiddellijk om opschorting van de service te voorkomen."
+        },
+        "copy": "Kopiëren",
+        "copied": "Gekopieerd",
+        "add_domain.domain.addon": "Enter new domain. Do not use www. in domain name. The system will automatically add it for you.",
+        "add_domain.domain.sub": "Enter new subdomain.",
+        "add_domain.domain.alias": "Enter new domain alias.",
+        "add_domain.target_domain": "Select target domain",
+        "add_ssh_account.username": "Enter the SSH account username.",
+        "add_domain": {
+            "domain": {
+                "addon": "Addon-domein",
+                "sub": "Subdomein",
+                "alias": "Domeinalias"
+            },
+            "target_domain": "Doeldomein"
+        },
+        "add_ssh_account": {
+            "username": "Gebruikersnaam van SSH-account"
         }
     },
     "form": {
@@ -1490,7 +1797,15 @@
             "location": "Locatie",
             "set_location": "Locatie instellen",
             "backupType": "Type back-up",
-            "hosting_plan": "Hosting Plan"
+            "hosting_plan": "Hosting Plan",
+            "alias": "Alias",
+            "ssh.user": "SSH User",
+            "ssh.password": "SSH Password",
+            "url": "URL",
+            "ssh": {
+                "user": "SSH-gebruiker",
+                "password": "SSH-wachtwoord"
+            }
         },
         "placeholder": {
             "cabundle": "Voer CA-bundle in",
@@ -1521,7 +1836,14 @@
             "username": "Voer gebruikersnaam in",
             "website": "Voer websitenaam in",
             "value": "Voer waarde in",
-            "emailDelegatedUser": "Voer het e-mailadres van de gedelegeerde gebruiker in"
+            "emailDelegatedUser": "Voer het e-mailadres van de gedelegeerde gebruiker in",
+            "alias": "Voer alias in",
+            "ssh.user": "Username",
+            "ssh.password": "Password",
+            "ssh": {
+                "user": "Voer SSH-gebruiker in",
+                "password": "Voer SSH-wachtwoord in"
+            }
         },
         "option": {
             "constant": "Constante",
@@ -1680,7 +2002,8 @@
             "version": "Versie",
             "visitors": "Bezoekers",
             "only_me": "Alleen ik",
-            "me_and_delegated_user": "Ik en gedelegeerde gebruiker"
+            "me_and_delegated_user": "Ik en gedelegeerde gebruiker",
+            "collaborate": "Samenwerken"
         },
         "value": {
             "unlimited": "Onbeperkt",
@@ -1702,7 +2025,9 @@
             "required": "{{field}} is vereist",
             "space": "{{field}} mag geen spaties bevatten",
             "tooLong": "{{field}} is te lang",
-            "valid": "{{field}} moet geldig zijn"
+            "valid": "{{field}} moet geldig zijn",
+            "invalid_www": "Het domein mag niet beginnen met www.",
+            "domain": "Voer een geldig domein in."
         },
         "confirmDelete": {
             "domain": "Ja, ik begrijp het en wil dit domein verwijderen.",
@@ -1726,7 +2051,8 @@
             "user": "Ja, ik begrijp het en wil deze gebruiker verwijderen.",
             "theme_one": "Ja, ik begrijp het en wil dit thema verwijderen.",
             "theme_other": "Ja, ik begrijp het en wil deze thema's verwijderen.",
-            "sftp": "Ja, ik begrijp het en wil deze SSH/SFTP-account verwijderen."
+            "sftp": "Ja, ik begrijp het en wil deze SSH/SFTP-account verwijderen.",
+            "ssh": "Weet je zeker dat je dit SSH-account wilt verwijderen?"
         }
     },
     "table": {
@@ -1787,7 +2113,12 @@
             "plan_name": "Plan Naam",
             "sites": "Sites",
             "total": "Totaal",
-            " ": ""
+            " ": "",
+            "collaborate": "Samenwerken",
+            "instance": "Instantie",
+            "instances": "Instanties",
+            "last_used_at": "Laatst gebruikt op",
+            "created_at": "Aangemaakt op"
         },
         "field": {
             "userOwner": "{{name}} (jij)",
@@ -1812,7 +2143,8 @@
             "device": "Apparaten per pagina:",
             "instance": "Instanties per pagina:",
             "plan": "Plannen per pagina",
-            "invoice": "Facturen per pagina:"
+            "invoice": "Facturen per pagina:",
+            "items": "items"
         },
         "snackbar": {
             "selectAll": "Selecteer alles",
@@ -1937,7 +2269,35 @@
             "user.hosting.sftp_account.create": "SSH/SFTP-account aangemaakt",
             "user.hosting.sftp_account.delete": "Verwijderde SSH/SFTP-account",
             "user.hosting.sftp_account.update": "Bijgewerkt SSH/SFTP-account",
-            "user.instance.search_engine_indexing.update": "Bijgewerkte zoekmachine-indexering"
+            "user.instance.search_engine_indexing.update": "Bijgewerkte zoekmachine-indexering",
+            "user.hosting.ssh_account.create": "Created SSH Account",
+            "user.hosting.ssh_account.delete": "Deleted SSH Account",
+            "user.hosting.ssh_account.update": "Updated SSH Account",
+            "user.reseller_area.delete_user": "Revoked Instances Access",
+            "user.reseller_area.update_branding_settings": "Updated Branding Settings",
+            "user.reseller_area.update_email_settings": "Updated Email Settings",
+            "user.reseller_area.email_settings_test_connection": "Tested Email Settings",
+            "user.reseller_area.send_test_email": "Sent Test Email",
+            "user.reseller_area.create_api_token": "Created API Token",
+            "user.reseller_area.delete_api_token": "Deleted API Token",
+            "user": {
+                "hosting": {
+                    "ssh_account": {
+                        "create": "SSH-account aangemaakt",
+                        "delete": "SSH-account verwijderd",
+                        "update": "SSH-account bijgewerkt"
+                    }
+                },
+                "reseller_area": {
+                    "delete_user": "Gebruiker uit reseller-gebied verwijderd",
+                    "update_branding_settings": "Brandinginstellingen bijgewerkt",
+                    "update_email_settings": "E-mailinstellingen bijgewerkt",
+                    "email_settings_test_connection": "E-mailinstellingen getest",
+                    "send_test_email": "Testmail verzonden",
+                    "create_api_token": "API-token aangemaakt",
+                    "delete_api_token": "API-token verwijderd"
+                }
+            }
         },
         "suffix": {
             "toStatus": "naar {{status}}",
@@ -1996,7 +2356,15 @@
             "general.preview_instance": "Voorbeeld",
             "wordpress.manage_search_engine_indexing": "Indexering van zoekmachines beheren",
             "wordpress.view_logs": "WordPress foutenlogboeken bekijken",
-            "wordpress.manage_cloudflare": "Cloudflare beheren"
+            "wordpress.manage_cloudflare": "Cloudflare beheren",
+            "general.collaboration": "Manage Collaboration",
+            "hosting.manage_ssh": "Manage SSH Accounts",
+            "general": {
+                "collaboration": "Samenwerking"
+            },
+            "hosting": {
+                "manage_ssh": "SSH beheren"
+            }
         }
     },
     "languages": {
@@ -2039,6 +2407,31 @@
         "uk": "Oekraïens",
         "vi": "Vietnamees",
         "zh": "Chinees",
-        "zh_TW": "Chinees (Traditioneel)"
-    }
+        "zh_TW": "Chinees (Traditioneel)",
+        "bg_BG": "Bulgaars",
+        "cs_CZ": "Tsjechisch",
+        "da_DK": "Deens",
+        "de_DE": "Duits",
+        "es_ES": "Spaans",
+        "fa_IR": "Perzisch",
+        "fr_FR": "Frans",
+        "he_IL": "Hebreeuws",
+        "hu_HU": "Hongaars",
+        "id_ID": "Indonesisch",
+        "it_IT": "Italiaans",
+        "ko_KR": "Koreaans",
+        "nb_NO": "Noors (Bokmål)",
+        "nl_NL": "Nederlands",
+        "pl_PL": "Pools",
+        "pt_PT": "Portugees",
+        "ro_RO": "Roemeens",
+        "ru_RU": "Russisch",
+        "sk_SK": "Slowaaks",
+        "sl_SI": "Sloveens",
+        "sv_SE": "Zweeds",
+        "tr_TR": "Turks",
+        "zh_CN": "Chinees (vereenvoudigd)",
+        "zh_HK": "Chinees (Hongkong)"
+    },
+    "reseller": "Reseller"
 }
