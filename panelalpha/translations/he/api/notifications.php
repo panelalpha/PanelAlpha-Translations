@@ -4,194 +4,429 @@ use App\Notifications\Admin\Connection\ServerAccountConnectionError;
 use App\Notifications\Admin\DiagnosticMode\DiagnosticModeEnabled;
 use App\Notifications\Admin\DnsZone\CreateADnsRecordFailed;
 use App\Notifications\Admin\DnsZone\DnsRecordsCreateFailed;
-use App\Notifications\Admin\DnsZone\DnsZoneCreateFailed;
-use App\Notifications\Admin\DnsZone\DnsZoneExists;
-use App\Notifications\Admin\EmailDomain\EmailDomainCreateFailed;
-use App\Notifications\Admin\EmailDomain\EmailDomainExists;
 use App\Notifications\Admin\Instance\ImportByUserFailed;
 use App\Notifications\Admin\Instance\ImportByUserFinished;
-use App\Notifications\Admin\Instance\InstanceDeletedByUser;
-use App\Notifications\Admin\Instance\InstanceInstallationByUserFailed;
-use App\Notifications\Admin\Instance\InstanceInstallationByUserFinished;
 use App\Notifications\Admin\Instance\ManualImportInstanceFailed;
 use App\Notifications\Admin\Instance\ManualImportInstanceFinished;
 use App\Notifications\Admin\Instance\RestoreInstanceFailed;
 use App\Notifications\Admin\Instance\RestoreInstanceFinished;
 use App\Notifications\Admin\InstanceTemplate\InstanceTemplateCreateFailed;
 use App\Notifications\Admin\InstanceTemplate\InstanceTemplateCreateFinished;
-use App\Notifications\Admin\Introduce\IntroduceAutoImportWebsite;
-use App\Notifications\Admin\Introduce\IntroduceCreateBackup;
-use App\Notifications\Admin\Introduce\IntroduceCreateFtpAccount;
-use App\Notifications\Admin\Introduce\IntroduceCreateInstance;
-use App\Notifications\Admin\Introduce\IntroduceCreateTemplate;
-use App\Notifications\Admin\Introduce\IntroduceMailConnections;
-use App\Notifications\Admin\Introduce\IntroduceSecuritySettings;
-use App\Notifications\Admin\Introduce\IntroduceSettingsGeneral;
-use App\Notifications\Admin\Introduce\IntroduceSettingsSmtp;
-use App\Notifications\Admin\Introduce\IntroduceSettingsSso;
-use App\Notifications\Admin\Service\ServiceCanceled;
-use App\Notifications\Admin\Service\ServiceSuspended;
-use App\Notifications\Admin\Service\ServiceUnsuspended;
-use App\Notifications\Admin\Service\ServiceUpgraded;
+use App\Notifications\Admin\EmailDomain\EmailDomainCreateFailed;
+use App\Notifications\Admin\EmailDomain\EmailDomainExists;
+use App\Notifications\Admin\Plan\PlanConfigurationError;
+use App\Notifications\Admin\ReportProvider\SyncReportProvidersFailed;
+use App\Notifications\Admin\ReportProvider\SyncReportProvidersFinished;
 use App\Notifications\Admin\SslOrder\DnsPropagationExceeded;
 use App\Notifications\Admin\SslOrder\SslOrderFailed;
-use App\Notifications\Admin\System\ResetPassword;
-use App\Notifications\Admin\Theme\ForceUpdateThemeFailed;
-use App\Notifications\Admin\Theme\ForceUpdateThemeFinished;
-use App\Notifications\Admin\Updates\PluginUpdateAvailable;
-use App\Notifications\Admin\Updates\ThemeUpdateAvailable;
-use App\Notifications\Admin\Updates\WordpressUpdateAvailable;
-use App\Notifications\User\Backup\AutomaticCreateFailed;
-use App\Notifications\User\Backup\AutomaticCreateFinished;
-use App\Notifications\User\Backup\CreateFailed;
-use App\Notifications\User\Backup\CreateFinished;
-use App\Notifications\User\Backup\DeleteFailed;
-use App\Notifications\User\Backup\DeleteFinished;
-use App\Notifications\User\Backup\RestoreFailed;
-use App\Notifications\User\Backup\RestoreFinished;
 use App\Notifications\User\Instance\CreateFtpAccountForInstance;
-use App\Notifications\User\Instance\CreateStagingFailed;
+use App\Notifications\User\Instance\PushToStagingFailed;
+use App\Notifications\User\Instance\PushToStagingFinished;
+use App\Notifications\User\Instance\UpdateWordpressFinished;
+use App\Notifications\User\Instance\UpdateWordpressFailed;
+use App\Notifications\User\Instance\PushToLiveFinished;
+use App\Notifications\User\Instance\PushToLiveFailed;
+use App\Notifications\User\Instance\InstanceInvitationReceived;
+use App\Notifications\User\Instance\InstanceInstallationFinished;
+use App\Notifications\User\Instance\InstanceInstallationFailed;
 use App\Notifications\User\Instance\CreateStagingFinished;
+use App\Notifications\User\Instance\CreateStagingFailed;
+use App\Notifications\User\Plugin\UpdateFinished;
+use App\Notifications\User\Plugin\UpdateFailed;
+use App\Notifications\User\Plugin\InstallFinished;
+use App\Notifications\User\Plugin\InstallFailed;
+use App\Notifications\User\Backup\AutomaticCreateFinished;
+use App\Notifications\User\Backup\AutomaticCreateFailed;
+use App\Notifications\User\Backup\RestoreFinished;
+use App\Notifications\User\Backup\RestoreFailed;
+use App\Notifications\User\Backup\DeleteFinished;
+use App\Notifications\User\Backup\DeleteFailed;
+use App\Notifications\User\Backup\CreateFinished;
+use App\Notifications\User\Backup\CreateFailed;
+use App\Notifications\Admin\Service\ServiceUpgraded;
+use App\Notifications\Admin\DnsZone\DnsZoneCreateFailed;
+use App\Notifications\Admin\DnsZone\DnsZoneExists;
+use App\Notifications\Admin\Service\ServiceUnsuspended;
+use App\Notifications\Admin\Service\ServiceSuspended;
+use App\Notifications\Admin\Queue\QueueTaskSucceeded;
+use App\Notifications\Admin\Queue\QueueTaskFailed;
+use App\Notifications\Admin\Updates\WordpressUpdateAvailable;
+use App\Notifications\Admin\Updates\ThemeUpdateAvailable;
+use App\Notifications\Admin\Updates\PluginUpdateAvailable;
+use App\Notifications\Admin\System\ResetPassword;
+use App\Notifications\Admin\Instance\InstanceDeletedByUser;
+use App\Notifications\Admin\Instance\InstanceInstallationByUserFailed;
+use App\Notifications\Admin\Instance\InstanceInstallationByUserFinished;
+use App\Notifications\Admin\Package\InstallPackageFinished;
+use App\Notifications\Admin\Package\InstallPackageFailed;
+use App\Notifications\Admin\Theme\ForceUpdateThemeFinished;
+use App\Notifications\Admin\Theme\ForceUpdateThemeFailed;
+use App\Notifications\Admin\Plugin\ForceUpdatePluginFinished;
+use App\Notifications\Admin\Plugin\ForceUpdatePluginFailed;
+use App\Notifications\Admin\Server\ServerAlert;
 use App\Notifications\User\Instance\ImportFailed;
 use App\Notifications\User\Instance\ImportFinished;
-use App\Notifications\User\Instance\InstanceDeletedFinished;
-use App\Notifications\User\Instance\InstallationFailed;
-use App\Notifications\User\Instance\InstallationFinished;
-use App\Notifications\User\Plugin\AutomaticActivationFailed;
-use App\Notifications\User\Plugin\AutomaticActivationFinished;
-use App\Notifications\User\Plugin\AutomaticDeactivationFailed;
-use App\Notifications\User\Plugin\AutomaticDeactivationFinished;
-use App\Notifications\User\Plugin\AutomaticInstallationFailed;
-use App\Notifications\User\Plugin\AutomaticInstallationFinished;
-use App\Notifications\User\Plugin\AutomaticUninstallationFailed;
-use App\Notifications\User\Plugin\AutomaticUninstallationFinished;
-use App\Notifications\User\Plugin\ForceUpdateFailed;
-use App\Notifications\User\Plugin\ForceUpdateFinished;
-use App\Notifications\User\Plugin\ManualActivationFailed;
-use App\Notifications\User\Plugin\ManualActivationFinished;
-use App\Notifications\User\Plugin\ManualDeactivationFailed;
-use App\Notifications\User\Plugin\ManualDeactivationFinished;
-use App\Notifications\User\Plugin\ManualInstallationFailed;
-use App\Notifications\User\Plugin\ManualInstallationFinished;
-use App\Notifications\User\Plugin\ManualUninstallationFailed;
-use App\Notifications\User\Plugin\ManualUninstallationFinished;
-use App\Notifications\User\SslOrder\SslInstallationError;
-use App\Notifications\User\SslOrder\SslOrderCreating;
-use App\Notifications\User\SslOrder\SslVerificationChallengeCreated;
-use App\Notifications\User\Theme\AutomaticActivationFailed;
-use App\Notifications\User\Theme\AutomaticActivationFinished;
-use App\Notifications\User\Theme\AutomaticInstallationFailed;
-use App\Notifications\User\Theme\AutomaticInstallationFinished;
-use App\Notifications\User\Theme\AutomaticUninstallationFailed;
-use App\Notifications\User\Theme\AutomaticUninstallationFinished;
-use App\Notifications\User\Theme\ForceUpdateFailed;
-use App\Notifications\User\Theme\ForceUpdateFinished;
-use App\Notifications\User\Theme\ManualActivationFailed;
-use App\Notifications\User\Theme\ManualActivationFinished;
-use App\Notifications\User\Theme\ManualInstallationFailed;
-use App\Notifications\User\Theme\ManualInstallationFinished;
-use App\Notifications\User\Theme\ManualUninstallationFailed;
-use App\Notifications\User\Theme\ManualUninstallationFinished;
-use App\Notifications\User\Updates\UpdatesFailed;
-use App\Notifications\User\Updates\UpdatesFinished;
-use App\Notifications\User\WordPressClone\CloneCancelFailed;
-use App\Notifications\User\WordPressClone\CloneCancelFinished;
-use App\Notifications\User\WordPressClone\CloneCreateFailed;
-use App\Notifications\User\WordPressClone\CloneCreateFinished;
-use App\Notifications\User\WordPressClone\ClonePushFailed;
-use App\Notifications\User\WordPressClone\ClonePushFinished;
-use App\Notifications\User\WordPressRepair\AdminEmailVerificationError;
-use App\Notifications\User\WordPressRepair\WordPressRepairError;
-use App\Notifications\User\WordPressRepair\WordPressRepairSuccessful;
-use App\Notifications\UserSettings\PasswordChanged;
+use App\Notifications\User\Service\SyncHostingAccountFailed;
+use App\Notifications\User\Service\SyncHostingAccountFinished;
+use App\Notifications\User\System\ControlPanelUpgrade;
+use App\Notifications\User\System\CreateUser;
+use App\Notifications\User\Service\AfterTrialExpirationFirstReminder;
+use App\Notifications\User\Service\AfterTrialExpirationSecondReminder;
+use App\Notifications\User\Service\AfterTrialExpirationThirdReminder;
+use App\Notifications\User\Service\BeforeTrialExpirationFirstReminder;
+use App\Notifications\User\Service\BeforeTrialExpirationSecondReminder;
+use App\Notifications\User\Service\BeforeTrialExpirationThirdReminder;
+use App\Notifications\User\Service\TrialExpired;
+use App\Notifications\User\System\NewDeviceLogin;
+use App\Notifications\User\System\VerifyEmailAddress;
 
 return [
-    ServerAccountConnectionError::class => [
-        'name' => 'שגיאת חיבור לחשבון שרת',
-        'description' => 'ההתראה מודיעה למקבל שישנה שגיאת חיבור בחשבון השרת.',
+    ForceUpdatePluginFailed::class => [
+        'name' => '',
+        'description' => '',
     ],
-    DiagnosticModeEnabled::class => [
-        'name' => 'מצב אבחון הופעל',
-        'description' => 'ההתראה מודיעה למקבל שמצב האבחון הופעל.',
+    ForceUpdatePluginFinished::class => [
+        'name' => '',
+        'description' => '',
     ],
-    CreateADnsRecordFailed::class => [
-        'name' => 'יצירת רשומת DNS נכשלה',
-        'description' => 'ההתראה מודיעה למקבל שלא היה ניתן ליצור את רשומת ה-DNS המצוינת עבור האזור.',
+    ForceUpdateThemeFailed::class => [
+        'name' => '',
+        'description' => '',
     ],
-    DnsRecordsCreateFailed::class => [
-        'name' => 'יצירת רשומות DNS נכשלה',
-        'description' => 'ההתראה מודיעה למקבל שרשומות ה-DNS המפורטות לא נוצרו עבור האזור. ההתראה עשויה להכיל מידע על רשומות DNS או אזור DNS.',
+    ForceUpdateThemeFinished::class => [
+        'name' => '',
+        'description' => '',
     ],
-    ImportByUserFailed::class => [
-        'name' => 'ייבוא אינסטנס על ידי משתמש נכשל',
-        'description' => 'ההתראה מודיעה למקבל שייבוא האינסטנס על ידי המשתמש נכשל.',
+    InstallPackageFailed::class => [
+        'name' => '',
+        'description' => '',
     ],
-    ImportByUserFinished::class => [
-        'name' => 'ייבוא אינסטנס על ידי משתמש הושלם',
-        'description' => 'ההתראה מודיעה למקבל שייבוא האינסטנס על ידי המשתמש הצליח.',
+    InstallPackageFinished::class => [
+        'name' => '',
+        'description' => '',
     ],
-    ManualImportInstanceFailed::class => [
-        'name' => 'ייבוא ידני של אינסטנס נכשל',
-        'description' => 'ההתראה מודיעה למקבל שהייבוא הידני של האינסטנס על ידי מנהל המערכת נכשל.',
+    InstanceInstallationByUserFinished::class => [
+        'name' => '',
+        'description' => '',
     ],
-    ManualImportInstanceFinished::class => [
-        'name' => 'ייבוא ידני של אינסטנס הושלם',
-        'description' => 'ההתראה מודיעה למקבל שהייבוא הידני של האינסטנס על ידי מנהל המערכת הצליח.',
+    InstanceInstallationByUserFailed::class => [
+        'name' => '',
+        'description' => '',
     ],
-    AutomaticCreateFailed::class => [
-        'name' => 'יצירת גיבוי אוטומטי נכשלה',
-        'description' => 'ההתראה מודיעה למקבל שיצירת הגיבוי האוטומטי נכשלה.',
+    InstanceDeletedByUser::class => [
+        'name' => '',
+        'description' => '',
     ],
-    AutomaticCreateFinished::class => [
-        'name' => 'יצירת גיבוי אוטומטי הושלמה',
-        'description' => 'ההתראה מודיעה למקבל שיצירת הגיבוי האוטומטי הושלמה בהצלחה.',
+    ResetPassword::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    VerifyEmailAddress::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    BeforeTrialExpirationFirstReminder::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    BeforeTrialExpirationSecondReminder::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    BeforeTrialExpirationThirdReminder::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    TrialExpired::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    AfterTrialExpirationFirstReminder::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    AfterTrialExpirationSecondReminder::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    AfterTrialExpirationThirdReminder::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    PluginUpdateAvailable::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    ThemeUpdateAvailable::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    WordpressUpdateAvailable::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    QueueTaskFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    QueueTaskSucceeded::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    ServiceSuspended::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    ServiceUnsuspended::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    ServerAlert::class => [
+        'name' => 'התראת שרת',
+        'description' => 'ההודעה מיידעת את הנמען על התראות שזוהו בשרת האחסון.',
+    ],
+    DnsZoneExists::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    DnsZoneCreateFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    ServiceUpgraded::class => [
+        'name' => '',
+        'description' => '',
     ],
     CreateFailed::class => [
-        'name' => 'יצירת גיבוי נכשלה',
-        'description' => 'ההתראה מודיעה למקבל שיצירת הגיבוי נכשלה.',
+        'name' => '',
+        'description' => '',
     ],
     CreateFinished::class => [
-        'name' => 'יצירת גיבוי הושלמה',
-        'description' => 'ההתראה מודיעה למקבל שיצירת הגיבוי הושלמה בהצלחה.',
+        'name' => '',
+        'description' => '',
     ],
     DeleteFailed::class => [
-        'name' => 'מחיקת גיבוי נכשלה',
-        'description' => 'ההתראה מודיעה למקבל שמחיקת הגיבוי נכשלה.',
+        'name' => '',
+        'description' => '',
     ],
     DeleteFinished::class => [
-        'name' => 'מחיקת גיבוי הושלמה',
-        'description' => 'ההתראה מודיעה למקבל שמחיקת הגיבוי הושלמה בהצלחה.',
+        'name' => '',
+        'description' => '',
     ],
     RestoreFailed::class => [
-        'name' => 'שחזור גיבוי נכשל',
-        'description' => 'ההתראה מודיעה למקבל ששחזור הגיבוי נכשל.',
+        'name' => '',
+        'description' => '',
     ],
     RestoreFinished::class => [
-        'name' => 'שחזור גיבוי הושלם',
-        'description' => 'ההתראה מודיעה למקבל ששחזור הגיבוי הושלם בהצלחה.',
+        'name' => '',
+        'description' => '',
     ],
-    SslInstallationError::class => [
-        'name' => 'שגיאת התקנת SSL',
-        'description' => 'ההתראה מודיעה למקבל שהתקנת אישור SSL נכשלה.',
+    AutomaticCreateFailed::class => [
+        'name' => '',
+        'description' => '',
     ],
-    SslOrderCreating::class => [
-        'name' => 'יצירת הזמנת SSL',
-        'description' => 'ההתראה מודיעה למקבל שהזמנת SSL נוצרה.',
+    AutomaticCreateFinished::class => [
+        'name' => '',
+        'description' => '',
     ],
-    SslVerificationChallengeCreated::class => [
-        'name' => 'אימות אתגר SSL נוצר',
-        'description' => 'ההתראה מודיעה למקבל שאתגר האימות של SSL נוצר.',
+    InstallFailed::class => [
+        'name' => '',
+        'description' => '',
     ],
-    WordPressRepairError::class => [
-        'name' => 'שגיאת תיקון וורדפרס',
-        'description' => 'ההתראה מודיעה למקבל שתיקון וורדפרס נכשל.',
+    InstallFinished::class => [
+        'name' => '',
+        'description' => '',
     ],
-    WordPressRepairSuccessful::class => [
-        'name' => 'תיקון וורדפרס הצליח',
-        'description' => 'ההתראה מודיעה למקבל שתיקון וורדפרס הצליח.',
+    UpdateFailed::class => [
+        'name' => '',
+        'description' => '',
     ],
-    PasswordChanged::class => [
-        'name' => 'הסיסמה שונתה',
-        'description' => 'ההתראה מודיעה למקבל שהסיסמה שלו שונתה.',
+    UpdateFinished::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    \App\Notifications\User\Theme\InstallFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    \App\Notifications\User\Theme\InstallFinished::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    \App\Notifications\User\Theme\UpdateFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    \App\Notifications\User\Theme\UpdateFinished::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    CreateStagingFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    CreateStagingFinished::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    InstanceInstallationFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    InstanceInstallationFinished::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    ImportFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    ImportFinished::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    InstanceInvitationReceived::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    NewDeviceLogin::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    PushToLiveFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    PushToLiveFinished::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    UpdateWordpressFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    UpdateWordpressFinished::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    \App\Notifications\User\System\ResetPassword::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    \App\Notifications\User\Updates\PluginUpdateAvailable::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    \App\Notifications\User\Updates\ThemeUpdateAvailable::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    \App\Notifications\User\Updates\WordpressUpdateAvailable::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    DnsPropagationExceeded::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    CreateADnsRecordFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    InstanceTemplateCreateFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    InstanceTemplateCreateFinished::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    EmailDomainCreateFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    EmailDomainExists::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    SyncReportProvidersFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    SyncReportProvidersFinished::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    DnsRecordsCreateFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    ImportByUserFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    ImportByUserFinished::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    ManualImportInstanceFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    ManualImportInstanceFinished::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    ServerAccountConnectionError::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    RestoreInstanceFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    RestoreInstanceFinished::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    PlanConfigurationError::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    DiagnosticModeEnabled::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    PushToStagingFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    PushToStagingFinished::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    SslOrderFailed::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    CreateFtpAccountForInstance::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    CreateUser::class => [
+        'name' => '',
+        'description' => '',
+    ],
+    SyncHostingAccountFailed::class => [
+        'name' => 'סנכרון חשבון האחסון של השירות נכשל',
+        'description' => 'הודעה זו מיידעת את המשתמש כי חשבון האחסון בשירות זה לא הסתנכרן.',
+    ],
+    SyncHostingAccountFinished::class => [
+        'name' => 'סנכרון חשבון האחסון של השירות הושלם',
+        'description' => 'הודעה זו מיידעת את המשתמש כי חשבון האחסון בשירות זה סונכרן בהצלחה.',
+    ],
+    ControlPanelUpgrade::class => [
+        'name' => 'דוא״ל ברוך הבא לשדרוג לוח הבקרה',
+        'description' => 'הודעה זו מיידעת שחשבון האחסון שודרג בהצלחה בלוח הבקרה. היא כוללת את פרטי ההתחברות הדרושים כדי שהמשתמש יוכל לגשת לחשבון.',
     ],
 ];

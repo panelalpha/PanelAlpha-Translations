@@ -5,6 +5,8 @@ return [
     'hosting_account' => 'חשבון אירוח',
     'service' => 'שירות',
     'self_signed' => 'חתימה עצמית',
+    'files' => 'קבצים',
+    'database' => 'מסד נתונים',
     'import_steps' => [
         'downloading-files' => 'מוריד קבצים',
         'downloading-database' => 'מוריד מסד נתונים',
@@ -23,7 +25,25 @@ return [
         'creating-temporary-directory' => 'יוצר תיקייה זמנית',
         'creating-site' => 'יוצר אתר',
         'checking-domain' => 'בודק דומיין',
-    ],
+
+            'installNewInstance' => 'התקנת מופע חדש',
+        'installPluginOnNewInstance' => "התקנת התוסף WordPress Migrator במופע החדש",
+        'prepareNewInstanceToMigration' => 'הכנת המופע החדש למיגרציה',
+        'installPluginOnImportedInstance' => "התקנת התוסף WordPress Migrator במופע שיובא",
+        'prepareMigrationUsingPlugin' => 'הכנת המיגרציה',
+        'runMigrationUsingPlugin' => 'הרצת המיגרציה',
+        'prepareInstance' => 'הכנת המופע למיגרציה',
+        'downloadDatabase' => 'הורדת מסד הנתונים',
+        'downloadFiles' => 'הורדת הקבצים',
+        'uploadFiles' => 'העלאת הקבצים',
+        'prepareFiles' => 'הכנת הקבצים',
+        'uploadDatabase' => 'העלאת מסד הנתונים',
+        'importDatabase' => 'ייבוא מסד הנתונים',
+        'configureWordPress' => 'הגדרת וורדפרס',
+        'cleanUp' => 'ניקוי קבצים',
+        'createFtpAccount' => 'יצירת חשבון FTP/SFTP',
+        'cleanUpPlugins' => 'ניקוי תוספים',
+],
     'health-checks' => [
         'server' => [
             'ping' => 'בדיקת חיבור לשרת',
@@ -49,4 +69,38 @@ return [
             'local_data' => 'וורדפרס בודק נתונים מקומיים תקינים',
         ],
     ],
+
+    'server_alerts' => [
+        "high_disk_usage" => "High Disk Usage",
+        "high_cpu_usage" => "High CPU Usage",
+        "high_ram_usage" => "High RAM Usage",
+    ],
+    'report_providers' => [
+        'referer' => [
+            'website' => 'Websites',
+            'direct' => 'Direct Entry',
+            'search_engine' => 'Search Engines',
+            'unknown' => 'Unknown',
+            'internal' => 'Internal',
+        ]
+    ],
+    'continent' => [
+        'as' => 'Asia',
+        'eu' => 'Europe',
+        'na' => 'North America',
+        'sa' => 'South America',
+        'af' => 'Africa',
+        'oc' => 'Oceania',
+        'an' => 'Antarctica'
+    ],
+    'field' => [
+        'onboarding_domain' => [
+            'label' => 'Onboarding Domain (Optional)',
+            'description' => 'Optional, if set, it will override onboarding domain configured in plan settings.'
+        ]
+    ],
+
+    'קבצים',
+
+    'מסד נתונים',
 ];
