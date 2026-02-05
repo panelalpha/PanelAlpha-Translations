@@ -33,7 +33,9 @@
         "my-account": "{{- app_name}} - החשבון שלי",
         "services": "{{- app_name}} - התוכניות שלי",
         "billing": "{{- app_name}} - החיובים שלי",
-        "page-not-found": "{{- app_name}} - דף לא נמצא"
+        "page-not-found": "{{- app_name}} - דף לא נמצא",
+        "ssh": "SSH",
+        "copy-instance": "העתקת מופע"
     },
     "general": {
         "adventurer": "הרפתקן",
@@ -123,7 +125,11 @@
         "contactSupportLink": "צור קשר עם התמיכה",
         "language": "שפה",
         "cancelled": "בוטל",
-        "sites": "אתרים"
+        "sites": "אתרים",
+        "value": "ערך",
+        "never": "לעולם לא",
+        "none": "ללא",
+        "notSet": "לא הוגדר"
     },
     "heading": {
         "notFoundPage.title": "הדף לא נמצא",
@@ -498,7 +504,6 @@
             "advanced.theme.modal.delete.info_one": "האם אתה בטוח שברצונך למחוק ערכת נושא זו?",
             "advanced.theme.modal.delete.info_other": "האם אתה בטוח שברצונך למחוק את ערכות הנושא שנבחרו ({{count}})?",
             "advanced.log.title": "יומני מופע",
-
             "advanced.logs.title": "יומנים",
             "advanced.logs.loader": "יומנים טוענים, אנא המתן...",
             "advanced.logs.instanceLogs.title": "יומני מופע",
@@ -507,7 +512,6 @@
             "advanced.logs.phpLogs.tooltip": "אתה יכול גם למצוא יומני PHP מפורטים יותר ביומן השגיאות של השרת.",
             "advanced.logs.webserverLogs.title": "יומני שרת אינטרנט",
             "advanced.logs.noLogs": "אין יומנים",
-
             "advanced.copyInstance.title": "העתק מופע",
             "advanced.copyInstance.copy.title": "העתק מופע",
             "advanced.copyInstance.copy.subtitle": "תכונה זו מאפשרת לך לשכפל מופע זה לאחד השירותים שלך.",
@@ -517,7 +521,27 @@
             "changeSslModal.serverCertificate": "תעודת SSL מותקנת על השרת",
             "changeSslModal.detectedCertificate": "תעודת SSL זוהתה",
             "disableSsl.modal.title": "השבת SSL?",
-            "disableSsl.modal.message": "האם אתה בטוח שברצונך להשבית SSL עבור מופע {title}?"
+            "disableSsl.modal.message": "האם אתה בטוח שברצונך להשבית SSL עבור מופע {title}?",
+            "modal.sharedAccess.selectRole": "Select Role",
+            "modal.sharedAccess.stagingQuestion": "Do you want the changes to apply to the staging instance as well?",
+            "modal.setDomain.config.tab.nameservers.list.third": "You have to wait from 2 minutes up to a few hours for nameservers to propagate.",
+            "modal": {
+                "sharedAccess": {
+                    "selectRole": "בחר תפקיד",
+                    "stagingQuestion": "האם זה מופע סטייג׳ינג?"
+                },
+                "setDomain": {
+                    "config": {
+                        "tab": {
+                            "nameservers": {
+                                "list": {
+                                    "third": "שרת שמות 3"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "hosting": {
             "sidebar.manage.title": "נהל",
@@ -624,7 +648,96 @@
             "emailForwarders.modal.add.title": "הוסף מעביר אימייל",
             "emailForwarders.modal.delete.title": "מחק מעביר אימייל",
             "emailDomain.title": "דומיין אימייל",
-            "fileManager.title": "מנהל קבצים"
+            "fileManager.title": "מנהל קבצים",
+            "summary.planCard.usage.ssh": "SSH Accounts",
+            "summary.hostingAccount": "Hosting Account",
+            "ssh.title": "SSH Accounts",
+            "ssh.modal.add.title": "Add New SSH Account",
+            "ssh.modal.show.title": "SSH Account Login Details: {{- user}}",
+            "ssh.modal.show.info.username": "SSH Username",
+            "ssh.modal.show.info.password": "SSH Password",
+            "ssh.modal.show.info.host": "SSH Host",
+            "ssh.modal.show.info.port": "SSH Port",
+            "ssh.modal.update.title": "Edit SSH Account",
+            "ssh.modal.update.info": "User",
+            "ssh.modal.delete.title": "Delete SSH Account",
+            "ssh.modal.disconnect.title": "Disconnect All",
+            "ssh.modal.disconnect.message": "Are you sure to disconnect all SSH users?",
+            "ssh.modal.manageSSH.title": "Manage SFTP/SSH Access",
+            "ssh.modal.manageSSH.message": "Choose remote access type to your instance.",
+            "ssh.modal.manageSSH.field": "Access Type",
+            "emailAddress.emailDomain": "Email Domain",
+            "emailAddress.emailDomain.record.spf": "SPF Record",
+            "emailAddress.emailDomain.record.dkim": "DKIM Record",
+            "emailAddress.emailDomain.record.configured": "configured",
+            "emailAddress.emailDomain.record.failed": "failed",
+            "emailAddress.modal.show.spfdkimConfig": "SPF & DKIM Record Configuration",
+            "emailAddress.modal.show.allowEmail": "This allows your mail server to send emails on behalf of your domain.",
+            "emailAddress.modal.show.digitalSignature": "This adds a digital signature to your emails to verify they are really from you.",
+            "fileManager.alert": {
+                "wpCloud": "Due to server restrictions, not all files will be visible in this File Manager. You only have access to /wp-content and wp-config.php."
+            },
+            "summary": {
+                "planCard": {
+                    "usage": {
+                        "ssh": "גישת SSH"
+                    }
+                },
+                "hostingAccount": "חשבון אירוח"
+            },
+            "ssh": {
+                "title": "חשבונות SSH",
+                "modal": {
+                    "add": {
+                        "title": "הוספת חשבון SSH"
+                    },
+                    "show": {
+                        "title": "פרטי חשבון SSH",
+                        "info": {
+                            "username": "שם משתמש",
+                            "password": "סיסמה",
+                            "host": "מארח",
+                            "port": "פורט"
+                        }
+                    },
+                    "update": {
+                        "title": "עריכת חשבון SSH",
+                        "info": "עדכן את פרטי חשבון ה-SSH."
+                    },
+                    "delete": {
+                        "title": "מחיקת חשבון SSH"
+                    },
+                    "disconnect": {
+                        "title": "ניתוק חשבון SSH",
+                        "message": "האם אתה בטוח שברצונך לנתק חשבון SSH זה?"
+                    },
+                    "manageSSH": {
+                        "title": "ניהול גישת SSH",
+                        "message": "הגדר את שיטת גישת ה-SSH.",
+                        "field": "שיטת גישת SSH"
+                    }
+                }
+            },
+            "emailAddress": {
+                "emailDomain": {
+                    "record": {
+                        "spf": "רשומת SPF",
+                        "dkim": "רשומת DKIM",
+                        "configured": "מוגדר",
+                        "failed": "נכשל"
+                    }
+                },
+                "modal": {
+                    "show": {
+                        "spfdkimConfig": "תצורת SPF/DKIM",
+                        "allowEmail": "אפשר שליחת דוא\"ל",
+                        "digitalSignature": "חתימה דיגיטלית"
+                    }
+                }
+            },
+            "fileManager": {
+                "alert": "מנהל הקבצים עשוי שלא להיות זמין עבור תוכנית זו."
+            }
         },
         "onboarding": {
             "selectType.title": "הוסף מופע חדש",
@@ -693,11 +806,62 @@
             "transferDomain.title": "העברת דומיין",
             "transferDomain.subtitle": "הדומיין {domain} כבר בשימוש במערכת שלנו.",
             "transferDomain.message.possible": "אם ברצונך להעביר אותו למערכת שלנו, אנא הגדר את רשומת {recordType} בדומיין {domain} והתחל את התהליך על ידי לחיצה על כפתור העבר עכשיו למטה.",
-            "transferDomain.message.impossible": "אינך יכול להשתמש בדומיין זה."
+            "transferDomain.message.impossible": "אינך יכול להשתמש בדומיין זה.",
+            "syncInstances.title.completed": "Congratulations!",
+            "syncInstances.title.failed": "Failed!",
+            "syncInstances.subtitle.inProgress": "Loading new experience for you!",
+            "syncInstances.subtitle.completed": "Your sites have been prepared!",
+            "syncInstances.subtitle.failed": "Synchronization instances were unsuccessful. Please try again.",
+            "syncInstances.info.inProgress": "Preparing the dashboard with your WordPress sites... This won't take long!",
+            "syncInstances.info.failed": "Something went wrong, please try again.",
+            "syncInstances.info.completed": "Your sites has been successfully prepared, you can now start managing it by clicking on the below button.",
+            "import.failed.title": "Error!",
+            "import.failed.subtitle": "Import preparation failed. Please try again.",
+            "import.inProgress.subtitle": "Your site is now being prepared for you!",
+            "import.inProgress.info.general": "This process may take a while.",
+            "import.failed.info.general": "Something went wrong, please try again.",
+            "domainDnsVerificationModal": "אימות DNS של הדומיין",
+            "chooseImportMethod": "בחר שיטת ייבוא",
+            "simpleImportMethod": "ייבוא פשוט",
+            "syncInstances": {
+                "title": {
+                    "completed": "סנכרון הושלם",
+                    "failed": "סנכרון נכשל"
+                },
+                "subtitle": {
+                    "inProgress": "מסנכרן מופעים...",
+                    "completed": "המופעים סונכרנו",
+                    "failed": "לא ניתן היה לסנכרן את המופעים"
+                },
+                "info": {
+                    "inProgress": "אנו מסנכרנים את המופעים שלך.",
+                    "failed": "אירעה בעיה בסנכרון המופעים שלך.",
+                    "completed": "המופעים סונכרנו בהצלחה."
+                }
+            },
+            "import": {
+                "failed": {
+                    "title": "הייבוא נכשל",
+                    "subtitle": "לא ניתן לייבא את המופע",
+                    "info": {
+                        "general": "לא ניתן לייבא את המופע שלך."
+                    }
+                },
+                "inProgress": {
+                    "subtitle": "הייבוא מתבצע",
+                    "info": {
+                        "general": "אנו מייבאים את המופע שלך."
+                    }
+                }
+            }
         },
         "navbar": {
             "tab.myInstances": "האתרים שלי",
-            "tab.myHosting": "האחסון שלי"
+            "tab.myHosting": "האחסון שלי",
+            "tab.resellerArea": "Reseller Area",
+            "tab": {
+                "resellerArea": "אזור משווק"
+            }
         },
         "styleManager": {
             "title": "מנהל סגנונות",
@@ -708,7 +872,22 @@
             "additionalSettings.title": "הגדרות נוספות",
             "additionalSettings.disableShadows.title": "השבת צללים",
             "darkMode.title": "שנה מצב",
-            "darkMode.description": "מצב כהה/בהיר"
+            "darkMode.description": "מצב כהה/בהיר",
+            "darkMode.allow": "Let Users Switch",
+            "darkMode.darkMode": "Dark Mode",
+            "darkMode.lightMode": "Light Mode",
+            "darkMode": {
+                "allow": "אפשר מצב כהה",
+                "darkMode": "מצב כהה",
+                "lightMode": "מצב בהיר"
+            }
+        },
+        "loginPage.message.accountAlreadyExists": "An account with this email already exists. Please log in using your email and password.",
+        "reseller": "משווק",
+        "loginPage": {
+            "message": {
+                "accountAlreadyExists": "כבר קיים חשבון עם כתובת אימייל זו. התחבר."
+            }
         }
     },
     "message": {
@@ -803,7 +982,13 @@
             "webserverLogs.downloadDescription": "אנא הורד את יומני שרת האינטרנט.",
             "noRecords": "לא נמצאו רשומות",
             "templates.title": "לא זמינות תבניות!",
-            "services.title": "לא נמצאו שירותים"
+            "services.title": "לא נמצאו שירותים",
+            "ssh.title": "No Account Created",
+            "ssh.description": "No SSH accounts available.",
+            "ssh": {
+                "title": "אין חשבונות SSH",
+                "description": "הוסף חשבון SSH ראשון כדי להתחיל."
+            }
         },
         "status": {
             "active": "הפעל",
@@ -843,7 +1028,8 @@
             "importing.failed": "ייבוא המופע נכשל.",
             "importing.site": "מייבא את האתר שלך.",
             "importing.wait": "זה עשוי לקחת זמן מה."
-        }
+        },
+        "confirmBeforeProceedingAction": "אשר לפני שתמשיך בפעולה זו."
     },
     "notification": {
         "account": {
@@ -962,7 +1148,29 @@
             "emailAddress.update.success": "חשבון אימייל עודכן.",
             "emailAddress.delete.success": "חשבון אימייל נמחק.",
             "emailForwarders.add.success": "מעביר אימייל נוסף.",
-            "emailForwarders.delete.success": "מעביר אימייל נמחק."
+            "emailForwarders.delete.success": "מעביר אימייל נמחק.",
+            "ssh.add.success": "SSH Account has been added.",
+            "ssh.update.success": "SSH Account has been updated.",
+            "ssh.delete.success": "SSH Account has been deleted.",
+            "ssh.disconnect.success": "SSH connections have been disconnected.",
+            "ssh.setAccessType.success": "New access type to instance has been set.",
+            "ssh": {
+                "add": {
+                    "success": "חשבון SSH נוסף."
+                },
+                "update": {
+                    "success": "חשבון SSH עודכן."
+                },
+                "delete": {
+                    "success": "חשבון SSH נמחק."
+                },
+                "disconnect": {
+                    "success": "חשבון SSH נותק."
+                },
+                "setAccessType": {
+                    "success": "שיטת גישת SSH עודכנה."
+                }
+            }
         },
         "emptyFields": "אנא מלא את כל השדות.",
         "connectionFailed": "חיבור נכשל.",
@@ -1180,6 +1388,51 @@
         "set": {
             "geo_affinity": "קבע מיקום",
             "hosting_plan": "קבע תוכנית אחסון"
+        },
+        "branding.manage": "Manage Styles",
+        "checkNameservers": "בדוק שרתי שמות",
+        "collaborate": "שיתוף פעולה",
+        "customizeResellerTheme": "התאמת ערכת משווק",
+        "deleteUser": "מחיקת משתמש",
+        "domain.create": "Create Domain",
+        "domain.creating": "Creating domain...",
+        "domain.verify": "Verify Domain",
+        "getStarted": "התחל",
+        "plugin.activate_disabled": "",
+        "sendInvite": "שלח הזמנה",
+        "ssh.add": "Add Account",
+        "ssh.edit": "Edit SSH Account",
+        "ssh.delete": "Delete SSH Account",
+        "ssh.show": "Show Access Details",
+        "skip": "דלג",
+        "tag.addTags": "Add tags",
+        "verifyDomain": "אמת דומיין",
+        "testConnection": "בדוק חיבור",
+        "sendTestEmail": "שלח דוא\"ל בדיקה",
+        "send": "שלח",
+        "apiToken.create": "Create API Token",
+        "branding": {
+            "manage": "ניהול מיתוג"
+        },
+        "domain": {
+            "create": "יצירת דומיין",
+            "creating": "יוצר דומיין...",
+            "verify": "אימות דומיין"
+        },
+        "plugin": {
+            "activate_disabled": "הפעלה מושבתת"
+        },
+        "ssh": {
+            "add": "הוסף SSH",
+            "edit": "ערוך SSH",
+            "delete": "מחק SSH",
+            "show": "הצג SSH"
+        },
+        "tag": {
+            "addTags": "הוסף תגיות"
+        },
+        "apiToken": {
+            "create": "צור אסימון API"
         }
     },
     "tooltip": {
@@ -1356,6 +1609,20 @@
                 "max_file_uploads": "זה קובע את המספר המקסימלי של קבצים שניתן להעלות באמצעות בקשה אחת. זה עוזר למנוע ניצול לרעה על ידי הגבלת מספר הקבצים שניתן להעלות בבת אחת.",
                 "register_globals": "ההוראה הזו, כאשר היא מופעלת, מייבאת אוטומטית משתנים מהבקשה לתחום הגלובלי. היא מיושנת ויש להשבית אותה מסיבות אבטחה, מכיוון שהיא עלולה להוביל להחלפת משתנים ולבעיות אבטחה אחרות.",
                 "short_open_tag": "הגדרה זו מאפשרת את השימוש בתגי פתיחה קצרים (<?) לקוד PHP. אם היא מושבתת, ניתן להשתמש רק בתג הפתיחה המלא (<?php). מומלץ להשתמש בתג הפתיחה המלאה עבור תאימות טובה יותר."
+            },
+            "plugin.activationIsNotAllowed": "Activation of the plugin is not allowed.",
+            "user.field.passwordLeaveEmpty": "Leave empty if you don't want to change password.",
+            "collaborate.start": "<strong>Invite your team</strong> to collaborate visually on every part of your website. Leave comments, track tasks, and stay in sync, without endless emails, pointless video calls or messy bugtrackers. <strong>Try for free!</strong>",
+            "plugin": {
+                "activationIsNotAllowed": "הפעלת התוסף אינה מותרת."
+            },
+            "user": {
+                "field": {
+                    "passwordLeaveEmpty": "השאר ריק כדי לשמור את הסיסמה הנוכחית."
+                }
+            },
+            "collaborate": {
+                "start": "הזמן אנשים לשתף פעולה במופע זה."
             }
         },
         "hosting": {
@@ -1376,10 +1643,48 @@
             "dns.status.pending.list.second": "אנא ודא שבמהלך התהליך ה-DNS של הדומיין מצביע כראוי לשרתים שלנו.",
             "dns.status.pending.list.third": "אם התעודה לא הותקנה אוטומטית תוך 24 שעות, אנא צור קשר עם התמיכה.",
             "ftp.usageNotSupported": "שימוש ומכסה אינם נתמכים על ידי השרת.",
-            "sftp.accessMethod": "סוג גישה מרחוק: SSH או SFTP."
+            "sftp.accessMethod": "סוג גישה מרחוק: SSH או SFTP.",
+            "summary.hostingAccount.tooltip": "Each hosting account has its own space and settings. Select the one that holds the domain you want to manage.",
+            "ssh.accessMethod": "Remote Access Type: SSH or SFTP.",
+            "emailAddress.emailDomain.tooltip": "Email accounts and forwarders are organized by domain. Select a domain to manage its email.",
+            "emailAddress.emailDomain.record.tooltip": "SPF & DKIM Record Configuration",
+            "summary": {
+                "hostingAccount": {
+                    "tooltip": "פרטי חשבון האירוח"
+                }
+            },
+            "ssh": {
+                "accessMethod": "בחר את שיטת גישת ה-SSH."
+            },
+            "emailAddress": {
+                "emailDomain": {
+                    "tooltip": "הדומיין המשמש לשליחת דוא\"ל.",
+                    "record": {
+                        "tooltip": "סטטוס רשומת ה-DNS."
+                    }
+                }
+            }
         },
         "billing": {
             "invoice.duedate.exceeded": "המועד האחרון לתשלום עבר. אנא שלם את החשבונית מיד כדי למנוע השעיית השירות."
+        },
+        "copy": "העתק",
+        "copied": "הועתק",
+        "add_domain.domain.addon": "Enter new domain. Do not use www. in domain name. The system will automatically add it for you.",
+        "add_domain.domain.sub": "Enter new subdomain.",
+        "add_domain.domain.alias": "Enter new domain alias.",
+        "add_domain.target_domain": "Select target domain",
+        "add_ssh_account.username": "Enter the SSH account username.",
+        "add_domain": {
+            "domain": {
+                "addon": "דומיין addon",
+                "sub": "תת־דומיין",
+                "alias": "כינוי דומיין"
+            },
+            "target_domain": "דומיין יעד"
+        },
+        "add_ssh_account": {
+            "username": "שם משתמש לחשבון SSH"
         }
     },
     "form": {
@@ -1491,7 +1796,15 @@
             "unlimitedQuota": "מכסה בלתי מוגבלת",
             "value": "ערך",
             "weight": "משקל",
-            "version": "גרסה"
+            "version": "גרסה",
+            "alias": "כינוי",
+            "ssh.user": "SSH User",
+            "ssh.password": "SSH Password",
+            "url": "URL",
+            "ssh": {
+                "user": "משתמש SSH",
+                "password": "סיסמת SSH"
+            }
         },
         "placeholder": {
             "cabundle": "הזן CA bundle",
@@ -1522,7 +1835,14 @@
             "type": "הזן סוג",
             "username": "הזן שם משתמש",
             "website": "הזן שם האתר",
-            "value": "הזן ערך"
+            "value": "הזן ערך",
+            "alias": "הזן כינוי",
+            "ssh.user": "Username",
+            "ssh.password": "Password",
+            "ssh": {
+                "user": "הזן משתמש SSH",
+                "password": "הזן סיסמת SSH"
+            }
         },
         "option": {
             "constant": "קבוע",
@@ -1681,7 +2001,8 @@
             "version": "גרסה",
             "visitors": "מבקרים",
             "only_me": "רק אני",
-            "me_and_delegated_user": "אני ומשתמש מוסמך"
+            "me_and_delegated_user": "אני ומשתמש מוסמך",
+            "collaborate": "שיתוף פעולה"
         },
         "value": {
             "unlimited": "בלתי מוגבל",
@@ -1703,7 +2024,9 @@
             "required": "{{field}} הוא שדה חובה",
             "space": "{{field}} חייב לא להכיל רווחים",
             "tooLong": "{{field}} ארוך מדי",
-            "valid": "{{field}} חייב להיות חוקי"
+            "valid": "{{field}} חייב להיות חוקי",
+            "invalid_www": "הדומיין לא יכול להתחיל ב-www.",
+            "domain": "הזן דומיין חוקי."
         },
         "confirmDelete": {
             "domain": "כן, אני מבין ורוצה להסיר דומיין זה.",
@@ -1727,7 +2050,8 @@
             "wordpressConfig": "כן, אני מבין ורוצה להסיר תצורה זו.",
             "user": "כן, אני מבין ורוצה להסיר משתמש זה.",
             "theme_one": "כן, אני מבין ורוצה להסיר ערכת נושא זו.",
-            "theme_other": "כן, אני מבין ורוצה להסיר את ערכות הנושא שנבחרו."
+            "theme_other": "כן, אני מבין ורוצה להסיר את ערכות הנושא שנבחרו.",
+            "ssh": "האם אתה בטוח שברצונך למחוק חשבון SSH זה?"
         }
     },
     "table": {
@@ -1788,7 +2112,12 @@
             "value": "ערך",
             "version": "גרסה",
             "visitors": "מבקרים",
-            " ": ""
+            " ": "",
+            "collaborate": "שיתוף פעולה",
+            "instance": "מופע",
+            "instances": "מופעים",
+            "last_used_at": "בשימוש אחרון",
+            "created_at": "נוצר ב־"
         },
         "field": {
             "userOwner": "{{name}} (אתה)",
@@ -1803,7 +2132,8 @@
             "device": "מכשירים לעמוד:",
             "instance": "מופעים לעמוד:",
             "plan": "תוכניות לעמוד",
-            "invoice": "חשבוניות לעמוד:"
+            "invoice": "חשבוניות לעמוד:",
+            "items": "פריטים"
         },
         "snackbar": {
             "selectAll": "בחר הכל",
@@ -1929,7 +2259,35 @@
             "user.account.password_update": "עדכן סיסמה",
             "user.two_factor.confirm": "הפעל אימות דו-שלבי",
             "user.two_factor.disable": "השבת אימות דו-שלבי",
-            "user.two_factor.create_recovery_codes": "צור קוד גיבוי לאימות דו-שלבי"
+            "user.two_factor.create_recovery_codes": "צור קוד גיבוי לאימות דו-שלבי",
+            "user.hosting.ssh_account.create": "Created SSH Account",
+            "user.hosting.ssh_account.delete": "Deleted SSH Account",
+            "user.hosting.ssh_account.update": "Updated SSH Account",
+            "user.reseller_area.delete_user": "Revoked Instances Access",
+            "user.reseller_area.update_branding_settings": "Updated Branding Settings",
+            "user.reseller_area.update_email_settings": "Updated Email Settings",
+            "user.reseller_area.email_settings_test_connection": "Tested Email Settings",
+            "user.reseller_area.send_test_email": "Sent Test Email",
+            "user.reseller_area.create_api_token": "Created API Token",
+            "user.reseller_area.delete_api_token": "Deleted API Token",
+            "user": {
+                "hosting": {
+                    "ssh_account": {
+                        "create": "יצר חשבון SSH",
+                        "delete": "מחק חשבון SSH",
+                        "update": "עדכן חשבון SSH"
+                    }
+                },
+                "reseller_area": {
+                    "delete_user": "הסיר משתמש מאזור המשווק",
+                    "update_branding_settings": "עדכן הגדרות מיתוג",
+                    "update_email_settings": "עדכן הגדרות דוא\"ל",
+                    "email_settings_test_connection": "בדק הגדרות דוא\"ל",
+                    "send_test_email": "שלח דוא\"ל בדיקה",
+                    "create_api_token": "יצר אסימון API",
+                    "delete_api_token": "מחק אסימון API"
+                }
+            }
         },
         "suffix": {
             "toStatus": "ל{{status}}",
@@ -1988,7 +2346,15 @@
             "hosting.manage_file_manager": "נהל מנהל קבצים",
             "hosting.control_panel_sso": "Control Panel SSO",
             "hosting.phpmyadmin_sso": "PHPMyAdmin SSO",
-            "general.manage_shared_access": "נהל גישה משותפת"
+            "general.manage_shared_access": "נהל גישה משותפת",
+            "general.collaboration": "Manage Collaboration",
+            "hosting.manage_ssh": "Manage SSH Accounts",
+            "general": {
+                "collaboration": "שיתוף פעולה"
+            },
+            "hosting": {
+                "manage_ssh": "ניהול SSH"
+            }
         }
     },
     "languages": {
@@ -2031,6 +2397,31 @@
         "uk": "אוקראינית",
         "vi": "וייטנאמית",
         "zh": "סינית",
-        "zh_TW": "סינית (מסורתית)"
-    }
+        "zh_TW": "סינית (מסורתית)",
+        "bg_BG": "בולגרית",
+        "cs_CZ": "צ׳כית",
+        "da_DK": "דנית",
+        "de_DE": "גרמנית",
+        "es_ES": "ספרדית",
+        "fa_IR": "פרסית",
+        "fr_FR": "צרפתית",
+        "he_IL": "עברית",
+        "hu_HU": "הונגרית",
+        "id_ID": "אינדונזית",
+        "it_IT": "איטלקית",
+        "ko_KR": "קוריאנית",
+        "nb_NO": "נורווגית (בוקמול)",
+        "nl_NL": "הולנדית",
+        "pl_PL": "פולנית",
+        "pt_PT": "פורטוגזית",
+        "ro_RO": "רומנית",
+        "ru_RU": "רוסית",
+        "sk_SK": "סלובקית",
+        "sl_SI": "סלובנית",
+        "sv_SE": "שוודית",
+        "tr_TR": "טורקית",
+        "zh_CN": "סינית (מפושטת)",
+        "zh_HK": "סינית (הונג קונג)"
+    },
+    "reseller": "משווק"
 }

@@ -226,205 +226,204 @@ return [
     // Hosting Servers
     App\Lib\Integrations\HostingServers\Cpanel::class => [
         "title" => "cPanel",
-        "description" => "cPanel - A Cloud-Hosted Collaboration Software and Email Platform",
+        "description" => "cPanel - un software di collaborazione ospitato nel cloud e una piattaforma email",
         "fields" => [
             'url' => [
                 'label' => 'URL',
             ],
             'username' => [
-                'label' => 'Username',
+                'label' => 'Nome utente',
             ],
             'api_token' => [
-                'label' => 'API Token',
-                'link_label' => 'How To Create API Token',
+                'label' => 'Token API',
+                'link_label' => 'Come creare un token API',
             ],
             'ssl_verification' => [
-                'label' => 'SSL Verification',
+                'label' => 'Verifica SSL',
             ],
         ],
         "config" => [
             'whm_package' => [
-                'label' => 'WHM Package',
+                'label' => 'Pacchetto WHM',
             ]
         ]
     ],
     App\Lib\Integrations\HostingServers\DirectAdmin::class => [
         "title" => "Direct Admin",
-        "description" => "DirectAdmin - A Cloud-Hosted Collaboration Software and Email Platform",
+        "description" => "DirectAdmin - un software di collaborazione ospitato nel cloud e una piattaforma email",
         "fields" => [
             'url' => [
                 'label' => 'URL',
             ],
             'username' => [
-                'label' => 'username',
+                'label' => 'Nome utente',
             ],
             'password' => [
                 'label' => 'Password',
             ],
             'ssl_verification' => [
-                'label' => 'SSL Verification',
+                'label' => 'Verifica SSL',
             ],
         ],
         "config" => [
             'package' => [
-                'label' => 'Package',
+                'label' => 'Pacchetto',
             ],
             'ip_address' => [
-                'label' => 'IP Address',
+                'label' => 'Indirizzo IP',
             ]
         ]
     ],
     App\Lib\Integrations\HostingServers\Plesk::class => [
         "title" => "Plesk",
-        "description" => "Plesk - A Cloud-Hosted Collaboration Software and Email Platform",
+        "description" => "Plesk - un software di collaborazione ospitato nel cloud e una piattaforma email",
         "fields" => [
             'url' => [
-                'label' => 'IP/Hostname',
+                'label' => 'IP/Nome host',
             ],
             'username' => [
-                'label' => 'Username',
+                'label' => 'Nome utente',
             ],
             'password' => [
                 'label' => 'Password',
             ],
             'ssl_verification' => [
-                'label' => 'SSL Verification',
+                'label' => 'Verifica SSL',
             ],
         ],
         "config" => [
             'ip_address' => [
-                'label' => 'IP Address',
-                'tooltip' => "Select an available IP address",
+                'label' => 'Indirizzo IP',
+                'tooltip' => "Seleziona un indirizzo IP disponibile",
             ],
             'hosting_plan' => [
-                'label' => 'Hosting Plan',
-                'tooltip' => "Select a hosting plan for the subscription. Important: This option is only available when 'Reseller Account' is disabled.",
+                'label' => 'Piano di hosting',
+                'tooltip' => "Seleziona un piano di hosting per l’abbonamento. Importante: questa opzione è disponibile solo quando 'Account rivenditore' è disabilitato.",
             ],
             'reseller_account' => [
-                'label' => 'Reseller Account',
-                'tooltip' => "Enable this option to allow creating customer accounts under reseller. Requires a 'reseller plan' to be selected. Note: This option may be unavailable if the server doesn't support reseller accounts",
+                'label' => 'Account rivenditore',
+                'tooltip' => "Abilita questa opzione per consentire la creazione di account cliente sotto il rivenditore. Richiede la selezione di un 'piano rivenditore'. Nota: questa opzione potrebbe non essere disponibile se il server non supporta account rivenditore.",
             ],
             'reseller_plan' => [
-                'label' => 'Reseller Plan',
-                'tooltip' => "Select a reseller plan. Important: This option is only available when 'Reseller Account' is enabled. Note: This option may be unavailable if the server doesn't support reseller accounts",
+                'label' => 'Piano rivenditore',
+                'tooltip' => "Seleziona un piano rivenditore. Importante: questa opzione è disponibile solo quando 'Account rivenditore' è abilitato. Nota: questa opzione potrebbe non essere disponibile se il server non supporta account rivenditore.",
             ],
         ]
     ],
     App\Lib\Integrations\HostingServers\PanelAlpha::class => [
         "title" => "PanelAlpha Engine",
-        "description" => "PanelAlpha - A Docker-based webhosting solution",
+        "description" => "PanelAlpha - una soluzione di webhosting basata su Docker",
         "fields" => [
             'api_url' => [
-                'label' => 'API URL',
+                'label' => 'URL API',
             ],
             'api_token' => [
-                'label' => 'API Token',
+                'label' => 'Token API',
             ],
         ],
         "config" => [
             'disk_space_limit' => [
-                'label' => 'Disk Space Limit (MB)',
+                'label' => 'Limite spazio su disco (MB)',
             ],
             'memory_limit' => [
-                'label' => 'Memory Limit (MB)',
+                'label' => 'Limite memoria (MB)',
             ],
             'cpu_limit' => [
-                'label' => 'CPU Limit',
+                'label' => 'Limite CPU',
             ],
             'device_read_bps' => [
-                'label' => 'Read Rate Limit (Bytes Per Second)',
+                'label' => 'Limite velocità lettura (byte al secondo)',
             ],
             'device_write_bps' => [
-                'label' => 'Write Rate Limit (Bytes Per Second)',
+                'label' => 'Limite velocità scrittura (byte al secondo)',
             ],
             'bandwidth_limit' => [
-                'label' => 'Bandwidth Limit (MB Per Month)',
+                'label' => 'Limite banda (MB al mese)',
             ],
             'mysql_databases_limit' => [
-                'label' => 'MySQL Databases Limit'
+                'label' => 'Limite database MySQL'
             ],
             'ftp_accounts_limit' => [
-                'label' => 'FTP Accounts Limit',
+                'label' => 'Limite account FTP',
             ],
             'sftp_accounts_limit' => [
-                'label' => 'SFTP Accounts Limit',
+                'label' => 'Limite account SFTP',
             ],
             'addon_domains_limit' => [
-                'label' => 'Addon Domains Limit',
+                'label' => 'Limite domini addon',
             ],
             'subdomains_limit' => [
-                'label' => 'Subdomains Limit',
+                'label' => 'Limite sottodomini',
             ],
             'inodes_limit' => [
-                'label' => 'Inodes Limit',
+                'label' => 'Limite inodes',
             ],
             'enable_redis_cache' => [
-                'label' => 'Enable Redis Cache',
+                'label' => 'Abilita cache Redis',
             ],
             'enable_litespeed_cache' => [
-                'label' => 'Enable LiteSpeed Cache',
+                'label' => 'Abilita cache LiteSpeed',
             ],
             'php_fpm_pool_settings' => [
-                'label' => 'PHP-FPM Pool Settings',
+                'label' => 'Impostazioni pool PHP-FPM',
             ],
             'lsphp_settings' => [
-                'label' => 'LSPHP Settings',
+                'label' => 'Impostazioni LSPHP',
             ],
             'dedicated_ipv4' => [
-                'label' => 'Dedicated IPv4',
+                'label' => 'IPv4 dedicato',
             ],
             'dedicated_ipv6' => [
-                'label' => 'Dedicated IPv6',
+                'label' => 'IPv6 dedicato',
             ],
         ]
     ],
     App\Lib\Integrations\HostingServers\WpCloud::class => [
         "title" => "WP Cloud",
-        "description" => "WP Cloud - WordPress-first cloud hosting",
+        "description" => "WP Cloud - hosting cloud orientato a WordPress",
         "fields" => [
             'client_identifier' => [
-                'label' => 'Client Identifier',
+                'label' => 'Identificatore client',
             ],
             'api_key' => [
-                'label' => 'API Key',
+                'label' => 'Chiave API',
             ]
         ],
         "config" => [
             'space_quota' => [
-                'label' => 'Disk Quota',
-                'tooltip' => 'Disk space for sites. The default value is measured in megabytes, but to specify it in gigabytes, the suffix \'GB\' must be added. The maximum value is 200 GB.',
+                'label' => 'Quota disco',
+                'tooltip' => 'Spazio disco per i siti. Il valore predefinito è in megabyte, ma per specificarlo in gigabyte è necessario aggiungere il suffisso \'GB\'. Il valore massimo è 200 GB.',
             ],
             'php_workers' => [
                 'label' => 'PHP Workers',
-                'tooltip' => "Set the number of CPU and PHP Workers. By default, you can set a value between 2 and 10. For other options, please contact WP Cloud.",
+                'tooltip' => 'Imposta il numero di CPU e PHP Workers. Per impostazione predefinita, puoi scegliere un valore tra 2 e 10. Per altre opzioni, contatta WP Cloud.',
             ],
             'php_memory_limit' => [
-                'label' => 'PHP Memory Limit',
-                'tooltip' => 'Set the per-request PHP memory limit.',
+                'label' => 'Limite memoria PHP',
+                'tooltip' => 'Imposta il limite di memoria PHP per richiesta.',
             ],
             'burst_up_php_workers' => [
-                'label' => 'Burst Up PHP Workers',
-                'tooltip' => "Allow to dynamic burst up to 110 PHP Workers.",
+                'label' => 'Burst di PHP Workers',
+                'tooltip' => 'Consente di aumentare dinamicamente fino a 110 PHP Workers.',
             ],
             'allow_user_choose_location' => [
-                'label' => 'Allow User To Choose Location',
-                'tooltip' => "Allow users to choose location for new instances.",
+                'label' => 'Consenti all’utente di scegliere la posizione',
+                'tooltip' => 'Consente agli utenti di scegliere la posizione per le nuove istanze.',
             ],
             'geo_affinity' => [
-                'label' => 'Default Datacenter',
-                'tooltip' => "Select datacenter to which the pages will be assigned.",
+                'label' => 'Datacenter predefinito',
+                'tooltip' => 'Seleziona il datacenter a cui verranno assegnate le pagine.',
             ],
             'default_ssh_access_enabled' => [
-                'label' => 'Default SSH Access Enabled',
-                'tooltip' => "Set SSH access to be enabled by default on all new WP Cloud instances.",
+                'label' => 'Accesso SSH predefinito abilitato',
+                'tooltip' => 'Imposta l’accesso SSH abilitato per impostazione predefinita su tutte le nuove istanze WP Cloud.',
             ],
             'allow_user_enable_ssh_access' => [
-                'label' => 'Allow User To Enable SSH Access',
-                'tooltip' => "Allow users to manage SSH/SFTP access to their WP Cloud instance.",
+                'label' => 'Consenti all’utente di abilitare l’accesso SSH',
+                'tooltip' => 'Consente agli utenti di gestire l’accesso SSH/SFTP alla propria istanza WP Cloud.',
             ],
         ]
     ],
-
     // Email Servers
     Mailcow::class => [
         "title" => "Mailcow",
@@ -482,17 +481,17 @@ return [
     ],
     App\Lib\Integrations\DnsServers\CpanelDnsOnly::class => [
         "title" => "cPanel DNSOnly",
-        "description" => 'cPanel DNSOnly - allows you to run a dedicated physical nameserver',
+        "description" => 'cPanel DNSOnly - consente di eseguire un nameserver dedicato',
         "fields" => [
             'url' => [
-                'label' => 'IP/Hostname',
+                'label' => 'IP/Nome host',
             ],
             'username' => [
-                'label' => 'Username',
+                'label' => 'Nome utente',
             ],
             'api_token' => [
-                'label' => 'API Token',
-                'link_label' => 'How To Create API Token',
+                'label' => 'Token API',
+                'link_label' => 'Come creare un token API',
             ],
             'nameserver_1' => [
                 'label' => 'Nameserver 1',
@@ -510,13 +509,13 @@ return [
     ],
     App\Lib\Integrations\DnsServers\DnsManagerForWhmcs::class => [
         "title" => "DNS Manager For WHMCS",
-        "description" => 'DNS Manager For WHMCS - DNS zone management module',
+        "description" => 'DNS Manager For WHMCS - modulo di gestione delle zone DNS',
         "fields" => [
             'whmcs_url' => [
-                'label' => 'WHMCS URL',
+                'label' => 'URL WHMCS',
             ],
             'whmcs_api_token' => [
-                'label' => 'WHMCS API Token',
+                'label' => 'Token API WHMCS',
             ],
         ]
     ],
@@ -670,13 +669,13 @@ return [
     ],
     Atarim::class => [
         "title" => "Atarim",
-        "subtitle" => "Utilized for Visual Collaboration and Feedback on Websites",
-        "description" => "Atarim streamlines website collaboration by allowing teams and clients to leave visual feedback directly on live sites, turning comments into actionable tasks to speed up project delivery.",
-        "instruction" => "To use Atarim, follow these steps:
+        "subtitle" => "Utilizzato per collaborazione visiva e feedback sui siti web",
+        "description" => "Atarim semplifica la collaborazione sui siti web consentendo a team e clienti di lasciare feedback visivo direttamente sui siti live, trasformando i commenti in attività operative per accelerare la consegna del progetto.",
+        "instruction" => "Per usare Atarim, segui questi passaggi:
             <ol>
-                <li>Go to <a href=\"https://atarim.firstpromoter.com/signup/32353\" target=\"_blank\">Atarim Sign Up Page</a></li>
-                <li>Create account or log in to an already existing account.</li>
-                <li>Copy the <strong>referral link</strong> and paste it into the form field below.</li>
+                <li>Vai alla <a href="https://atarim.firstpromoter.com/signup/32353" target="_blank">pagina di registrazione di Atarim</a></li>
+                <li>Crea un account oppure accedi a un account esistente.</li>
+                <li>Copia il <strong>link di referral</strong> e incollalo nel campo sottostante.</li>
             </ol>",
         "fields" => [
             'link' => [

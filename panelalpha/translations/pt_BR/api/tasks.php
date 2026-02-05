@@ -1,41 +1,83 @@
 <?php
 
+use App\Jobs\Admin\ManualImportInstance;
+use App\Jobs\Admin\RestoreBackup as AdminRestoreBackup;
+use App\Jobs\Admin\SyncReportProviders;
+use App\Jobs\System\AdminSendAvailableUpdateNotification;
+use App\Jobs\System\DeleteRedundantBackups;
+use App\Jobs\System\InstanceHealthCheck;
+use App\Jobs\Admin\ConvertInstanceToTemplate;
+use App\Jobs\System\PostInstallInstanceSteps;
+use App\Jobs\System\CreateAutomaticBackup;
+use App\Jobs\System\CacheInstancePageSpeed;
+use App\Jobs\System\CacheInstanceDetails;
+use App\Jobs\System\PostStagingSteps;
+use App\Jobs\System\SyncBackupsWithRemoteContainer;
+use App\Jobs\System\SyncInstanceSiteName;
+use App\Jobs\System\SyncWordPressData;
+use App\Jobs\System\UserSendAvailableUpdateNotification;
+use App\Jobs\User\ImportInstance;
+use App\Jobs\System\ImportVisitors;
+use App\Jobs\System\InstallTheme;
+use App\Jobs\System\InstallAndActivatePlugin;
+use App\Jobs\System\RefreshReportData;
+use App\Jobs\System\ProcessSslOrder;
+use App\Jobs\System\ScanPluginsAndThemes;
+use App\Jobs\Admin\ForceUpdateTheme;
+use App\Jobs\Admin\ForceUpdatePlugin;
+use App\Jobs\Admin\InstallPackage;
+use App\Jobs\User\CreateBackup;
+use App\Jobs\User\DeleteBackup;
+use App\Jobs\User\PushToStaging;
+use App\Jobs\User\RestoreBackup;
+use App\Jobs\User\CreateStaging;
+use App\Jobs\User\PushToLive;
+use App\Jobs\User\InstallInstance;
+use App\Jobs\User\InstallPlugin;
+use App\Jobs\User\SyncHostingAccount;
+use App\Jobs\User\UpdatePlugin;
+use App\Jobs\User\InstallTheme as UserInstallTheme;
+use App\Jobs\User\UpdateTheme;
+use App\Jobs\User\UpdateWordpress;
+
 return [
-    'App\\Jobs\\Admin\\InstallPackage' => 'Instalar pacote: :name',
-    'App\\Jobs\\Admin\\ForceUpdatePlugin' => 'Forçar atualização do plug-in: :name',
-    'App\\Jobs\\Admin\\ForceUpdateTheme' => 'Forçar atualização do tema: :name',
-    'App\\Jobs\\System\\InstallAndActivatePlugin' => 'Instalar o plug-in: :name',
-    'App\\Jobs\\System\\ImportVisitors' => 'Importar visitantes',
-    'App\\Jobs\\User\\CreateBackup' => 'Criar backup',
-    'App\\Jobs\\User\\RestoreBackup' => 'Restaurar backup',
-    'App\\Jobs\\User\\CreateStaging' => 'Criar preparação',
-    'App\\Jobs\\User\\InstallInstance' => 'Criar instância',
-    'App\\Jobs\\User\\InstallTheme' => 'Instalar tema: :name',
-    'App\\Jobs\\System\\CreateAutomaticBackup' => 'Criar backup automático',
-    'App\\Jobs\\System\\PostInstallInstanceSteps' => 'Configurar a instância instalada',
-    'App\\Jobs\\System\\SyncInstanceSiteName' => 'Nome do site da instância de sincronização',
-    'App\\Jobs\\System\\InstanceHealthCheck' => 'Verificação da integridade da instância',
-    'App\\Jobs\\Admin\\ConvertInstanceToTemplate' => 'Criar modelo de instância: :name',
-    'App\\Jobs\\System\\AdminSendAvailableUpdateNotification' => 'Notificação do administrador sobre as atualizações disponíveis',
-    'App\\Jobs\\System\\DeleteRedundantBackups' => 'Excluir backups redundantes',
-    'App\\Jobs\\System\\SyncBackupsWithRemoteContainer' => 'Sincronização de backups com o contêiner de backup',
-    'App\\Jobs\\User\\PushToStaging' => 'Empurrar para a preparação',
-    'App\\Jobs\\System\\ScanPluginsAndThemes' => 'Verificar plug-ins e temas',
-    'App\\Jobs\\System\\ProcessSslOrder' => 'Processar pedido SSL: :name',
-    'App\\Jobs\\System\\RefreshReportData' => 'Atualizar dados do relatório',
-    'App\\Jobs\\System\\InstallTheme' => 'Instalar tema: :name',
-    'App\\Jobs\\User\\DeleteBackup' => 'Excluir backup',
-    'App\\Jobs\\User\\PushToLive' => 'Impulso para viver',
-    'App\\Jobs\\User\\ImportInstance' => 'Importar instância',
-    'App\\Jobs\\User\\InstallPlugin' => 'Instalar o plug-in: :name',
-    'App\\Jobs\\User\\UpdatePlugin' => 'Atualizar plug-in: :name',
-    'App\\Jobs\\User\\UpdateTheme' => 'Atualizar tema: :name',
-    'App\\Jobs\\User\\UpdateWordpress' => 'Atualizar o WordPress',
-    'App\\Jobs\\System\\CacheInstanceDetails' => 'Detalhes da instância de cache',
-    'App\\Jobs\\System\\CacheInstancePageSpeed' => 'Instância de cache PageSpeed',
-    'App\\Jobs\\System\\PostStagingSteps' => 'Configurar a preparação instalada',
-    'App\\Jobs\\Admin\\SyncReportProviders' => 'Provedores de relatórios de sincronização',
-    'App\\Jobs\\System\\UserSendAvailableUpdateNotification' => 'Notificação do usuário sobre as atualizações disponíveis',
-    'App\\Jobs\\Admin\\ManualImportInstance' => 'Instância de importação manual',
-    'App\\Jobs\\Admin\\RestoreBackup' => 'Restaurar a instância a partir do backup',
+    InstallPackage::class => 'Instalar pacote: :name',
+    ForceUpdatePlugin::class => 'Forçar atualização do plug-in: :name',
+    ForceUpdateTheme::class => 'Forçar atualização do tema: :name',
+    ScanPluginsAndThemes::class => 'Verificar plug-ins e temas',
+    ProcessSslOrder::class => 'Processar pedido SSL: :name',
+    RefreshReportData::class => 'Atualizar dados do relatório',
+    InstallAndActivatePlugin::class => 'Instalar o plug-in: :name',
+    InstallTheme::class => 'Instalar tema: :name',
+    ImportVisitors::class => 'Importar visitantes',
+    CreateBackup::class => 'Criar backup',
+    DeleteBackup::class => 'Excluir backup',
+    RestoreBackup::class => 'Restaurar backup',
+    CreateStaging::class => 'Criar preparação',
+    PushToLive::class => 'Impulso para viver',
+    ImportInstance::class => 'Importar instância',
+    InstallInstance::class => 'Criar instância',
+    InstallPlugin::class => 'Instalar o plug-in: :name',
+    UpdatePlugin::class => 'Atualizar plug-in: :name',
+    UserInstallTheme::class => 'Instalar tema: :name',
+    UpdateTheme::class => 'Atualizar tema: :name',
+    UpdateWordpress::class => 'Atualizar o WordPress',
+    CacheInstanceDetails::class => 'Detalhes da instância de cache',
+    CacheInstancePageSpeed::class => 'Instância de cache PageSpeed',
+    CreateAutomaticBackup::class => 'Criar backup automático',
+    PostInstallInstanceSteps::class => 'Configurar a instância instalada',
+    PostStagingSteps::class => 'Configurar a preparação instalada',
+    SyncInstanceSiteName::class => 'Nome do site da instância de sincronização',
+    SyncReportProviders::class => 'Provedores de relatórios de sincronização',
+    InstanceHealthCheck::class => 'Verificação da integridade da instância',
+    ConvertInstanceToTemplate::class => 'Criar modelo de instância: :name',
+    UserSendAvailableUpdateNotification::class => 'Notificação do usuário sobre as atualizações disponíveis',
+    AdminSendAvailableUpdateNotification::class => 'Notificação do administrador sobre as atualizações disponíveis',
+    ManualImportInstance::class => 'Instância de importação manual',
+    DeleteRedundantBackups::class => 'Excluir backups redundantes',
+    AdminRestoreBackup::class => 'Restaurar a instância a partir do backup',
+    SyncBackupsWithRemoteContainer::class => 'Sincronização de backups com o contêiner de backup',
+    PushToStaging::class => 'Empurrar para a preparação',
+    SyncHostingAccount::class => 'Sincronizar conta de hospedagem',
+    SyncWordPressData::class => 'Sincronizar dados do WordPress',
 ];

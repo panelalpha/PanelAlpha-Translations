@@ -14,6 +14,7 @@ use App\Jobs\System\CacheInstanceDetails;
 use App\Jobs\System\PostStagingSteps;
 use App\Jobs\System\SyncBackupsWithRemoteContainer;
 use App\Jobs\System\SyncInstanceSiteName;
+use App\Jobs\System\SyncWordPressData;
 use App\Jobs\System\UserSendAvailableUpdateNotification;
 use App\Jobs\User\ImportInstance;
 use App\Jobs\System\ImportVisitors;
@@ -78,5 +79,6 @@ return [
     SyncBackupsWithRemoteContainer::class => "Sync Backups With Backup Container",
     PushToStaging::class => "Push To Staging",
     SyncHostingAccount::class => "Sync Hosting Account",
+    SyncWordPressData::class => "Sync WordPress Data",
 ];
 

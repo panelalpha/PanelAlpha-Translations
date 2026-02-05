@@ -63,6 +63,7 @@ use App\Notifications\Admin\Theme\ForceUpdateThemeFinished;
 use App\Notifications\Admin\Theme\ForceUpdateThemeFailed;
 use App\Notifications\Admin\Plugin\ForceUpdatePluginFinished;
 use App\Notifications\Admin\Plugin\ForceUpdatePluginFailed;
+use App\Notifications\Admin\Server\ServerAlert;
 use App\Notifications\User\Instance\ImportFailed;
 use App\Notifications\User\Instance\ImportFinished;
 use App\Notifications\User\Service\SyncHostingAccountFailed;
@@ -179,6 +180,10 @@ return [
     ServiceUnsuspended::class => [
         "name" => "Service Unsuspended",
         "description" => "The notification is informing the recipient that their service has been unsuspended. The notification may include information about the unsuspended domain and any further steps that should be taken."
+    ],
+    ServerAlert::class => [
+        "name" => "Server Alert",
+        "description" => "The notification is informing the recipient about alerts detected on hosting server.",
     ],
     DnsZoneExists::class => [
         "name" => "DNS Zone Exists",

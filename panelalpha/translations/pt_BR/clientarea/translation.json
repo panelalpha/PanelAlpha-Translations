@@ -33,7 +33,9 @@
         "page-not-found": "{{- app_name}} - Página não encontrada",
         "register": "{{- app_name}} - Registrar",
         "services": "{{- app_name}} - Meus planos",
-        "billing": "{{- app_name}} - Meu faturamento"
+        "billing": "{{- app_name}} - Meu faturamento",
+        "ssh": "SSH",
+        "copy-instance": "Copiar instância"
     },
     "general": {
         "adventurer": "Aventureiro",
@@ -123,7 +125,11 @@
         "contactSupportLink": "suporte ao contato",
         "language": "Idioma",
         "cancelled": "Cancelado",
-        "sites": "Locais"
+        "sites": "Locais",
+        "value": "Valor",
+        "never": "Nunca",
+        "none": "Nenhum",
+        "notSet": "Não definido"
     },
     "heading": {
         "notFoundPage.title": "Página não encontrada",
@@ -445,7 +451,27 @@
             "advanced.logs.phpLogs.title": "Registros PHP",
             "advanced.logs.phpLogs.tooltip": "Também é possível encontrar registros mais detalhados do PHP no registro de erros do servidor da Web.",
             "advanced.logs.webserverLogs.title": "Registros do servidor da Web",
-            "advanced.logs.noLogs": "Sem registros"
+            "advanced.logs.noLogs": "Sem registros",
+            "modal.sharedAccess.selectRole": "Select Role",
+            "modal.sharedAccess.stagingQuestion": "Do you want the changes to apply to the staging instance as well?",
+            "modal.setDomain.config.tab.nameservers.list.third": "You have to wait from 2 minutes up to a few hours for nameservers to propagate.",
+            "modal": {
+                "sharedAccess": {
+                    "selectRole": "Selecionar função",
+                    "stagingQuestion": "Essa instância é de staging?"
+                },
+                "setDomain": {
+                    "config": {
+                        "tab": {
+                            "nameservers": {
+                                "list": {
+                                    "third": "Servidor de nomes 3"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "hosting": {
             "sidebar.manage.title": "Gerenciar",
@@ -552,7 +578,96 @@
             "sftp.modal.manageSSH.field": "Tipo de acesso",
             "dns.zone.title": "Zona DNS",
             "emailDomain.title": "Domínio de e-mail",
-            "fileManager.title": "Gerenciador de arquivos"
+            "fileManager.title": "Gerenciador de arquivos",
+            "summary.planCard.usage.ssh": "SSH Accounts",
+            "summary.hostingAccount": "Hosting Account",
+            "ssh.title": "SSH Accounts",
+            "ssh.modal.add.title": "Add New SSH Account",
+            "ssh.modal.show.title": "SSH Account Login Details: {{- user}}",
+            "ssh.modal.show.info.username": "SSH Username",
+            "ssh.modal.show.info.password": "SSH Password",
+            "ssh.modal.show.info.host": "SSH Host",
+            "ssh.modal.show.info.port": "SSH Port",
+            "ssh.modal.update.title": "Edit SSH Account",
+            "ssh.modal.update.info": "User",
+            "ssh.modal.delete.title": "Delete SSH Account",
+            "ssh.modal.disconnect.title": "Disconnect All",
+            "ssh.modal.disconnect.message": "Are you sure to disconnect all SSH users?",
+            "ssh.modal.manageSSH.title": "Manage SFTP/SSH Access",
+            "ssh.modal.manageSSH.message": "Choose remote access type to your instance.",
+            "ssh.modal.manageSSH.field": "Access Type",
+            "emailAddress.emailDomain": "Email Domain",
+            "emailAddress.emailDomain.record.spf": "SPF Record",
+            "emailAddress.emailDomain.record.dkim": "DKIM Record",
+            "emailAddress.emailDomain.record.configured": "configured",
+            "emailAddress.emailDomain.record.failed": "failed",
+            "emailAddress.modal.show.spfdkimConfig": "SPF & DKIM Record Configuration",
+            "emailAddress.modal.show.allowEmail": "This allows your mail server to send emails on behalf of your domain.",
+            "emailAddress.modal.show.digitalSignature": "This adds a digital signature to your emails to verify they are really from you.",
+            "fileManager.alert": {
+                "wpCloud": "Due to server restrictions, not all files will be visible in this File Manager. You only have access to /wp-content and wp-config.php."
+            },
+            "summary": {
+                "planCard": {
+                    "usage": {
+                        "ssh": "Acesso SSH"
+                    }
+                },
+                "hostingAccount": "Conta de hospedagem"
+            },
+            "ssh": {
+                "title": "Contas SSH",
+                "modal": {
+                    "add": {
+                        "title": "Adicionar conta SSH"
+                    },
+                    "show": {
+                        "title": "Detalhes da conta SSH",
+                        "info": {
+                            "username": "Nome de usuário",
+                            "password": "Senha",
+                            "host": "Host",
+                            "port": "Porta"
+                        }
+                    },
+                    "update": {
+                        "title": "Editar conta SSH",
+                        "info": "Atualize os dados da conta SSH."
+                    },
+                    "delete": {
+                        "title": "Excluir conta SSH"
+                    },
+                    "disconnect": {
+                        "title": "Desconectar conta SSH",
+                        "message": "Tem certeza de que deseja desconectar esta conta SSH?"
+                    },
+                    "manageSSH": {
+                        "title": "Gerenciar acesso SSH",
+                        "message": "Defina o método de acesso SSH.",
+                        "field": "Método de acesso SSH"
+                    }
+                }
+            },
+            "emailAddress": {
+                "emailDomain": {
+                    "record": {
+                        "spf": "Registro SPF",
+                        "dkim": "Registro DKIM",
+                        "configured": "Configurado",
+                        "failed": "Falha"
+                    }
+                },
+                "modal": {
+                    "show": {
+                        "spfdkimConfig": "Configuração SPF/DKIM",
+                        "allowEmail": "Permitir e-mails",
+                        "digitalSignature": "Assinatura digital"
+                    }
+                }
+            },
+            "fileManager": {
+                "alert": "O gerenciador de arquivos pode não estar disponível para este plano."
+            }
         },
         "onboarding": {
             "selectType.title": "Adicionar nova instância",
@@ -622,11 +737,62 @@
             "newInstance.geo_affinity.subtitle": "Escolha o local",
             "newInstance.geo_affinity.info": "Você pode escolher o local do seu site entre as seguintes opções:",
             "newInstance.hosting_plan.subtitle": "Escolha o plano de hospedagem",
-            "newInstance.hosting_plan.info": "Você pode escolher o plano de hospedagem para sua assinatura entre as seguintes opções:"
+            "newInstance.hosting_plan.info": "Você pode escolher o plano de hospedagem para sua assinatura entre as seguintes opções:",
+            "syncInstances.title.completed": "Congratulations!",
+            "syncInstances.title.failed": "Failed!",
+            "syncInstances.subtitle.inProgress": "Loading new experience for you!",
+            "syncInstances.subtitle.completed": "Your sites have been prepared!",
+            "syncInstances.subtitle.failed": "Synchronization instances were unsuccessful. Please try again.",
+            "syncInstances.info.inProgress": "Preparing the dashboard with your WordPress sites... This won't take long!",
+            "syncInstances.info.failed": "Something went wrong, please try again.",
+            "syncInstances.info.completed": "Your sites has been successfully prepared, you can now start managing it by clicking on the below button.",
+            "import.failed.title": "Error!",
+            "import.failed.subtitle": "Import preparation failed. Please try again.",
+            "import.inProgress.subtitle": "Your site is now being prepared for you!",
+            "import.inProgress.info.general": "This process may take a while.",
+            "import.failed.info.general": "Something went wrong, please try again.",
+            "domainDnsVerificationModal": "Verificação de DNS do domínio",
+            "chooseImportMethod": "Escolha o método de importação",
+            "simpleImportMethod": "Importação simples",
+            "syncInstances": {
+                "title": {
+                    "completed": "Sincronização concluída",
+                    "failed": "Falha na sincronização"
+                },
+                "subtitle": {
+                    "inProgress": "Sincronizando instâncias...",
+                    "completed": "Instâncias sincronizadas",
+                    "failed": "Não foi possível sincronizar instâncias"
+                },
+                "info": {
+                    "inProgress": "Estamos sincronizando suas instâncias.",
+                    "failed": "Houve um problema ao sincronizar suas instâncias.",
+                    "completed": "Suas instâncias foram sincronizadas com sucesso."
+                }
+            },
+            "import": {
+                "failed": {
+                    "title": "Falha na importação",
+                    "subtitle": "Não foi possível importar a instância",
+                    "info": {
+                        "general": "Não foi possível importar sua instância."
+                    }
+                },
+                "inProgress": {
+                    "subtitle": "Importação em andamento",
+                    "info": {
+                        "general": "Estamos importando sua instância."
+                    }
+                }
+            }
         },
         "navbar": {
             "tab.myInstances": "Minhas instâncias",
-            "tab.myHosting": "Minha hospedagem"
+            "tab.myHosting": "Minha hospedagem",
+            "tab.resellerArea": "Reseller Area",
+            "tab": {
+                "resellerArea": "Área do revendedor"
+            }
         },
         "styleManager": {
             "title": "Gerente de estilo",
@@ -637,7 +803,15 @@
             "additionalSettings.title": "Configurações adicionais",
             "additionalSettings.disableShadows.title": "Desativar sombras",
             "darkMode.title": "Modo de alteração",
-            "darkMode.description": "Modo escuro/claro"
+            "darkMode.description": "Modo escuro/claro",
+            "darkMode.allow": "Let Users Switch",
+            "darkMode.darkMode": "Dark Mode",
+            "darkMode.lightMode": "Light Mode",
+            "darkMode": {
+                "allow": "Permitir modo escuro",
+                "darkMode": "Modo escuro",
+                "lightMode": "Modo claro"
+            }
         },
         "loginPage.emailVerification.title": "Verifique seu endereço de e-mail",
         "loginPage.emailVerification.info1": "Enviamos a você um código de quatro dígitos para",
@@ -707,6 +881,13 @@
             "invoice": {
                 "title": "Minhas faturas",
                 "noData.title": "Não foram encontradas faturas"
+            }
+        },
+        "loginPage.message.accountAlreadyExists": "An account with this email already exists. Please log in using your email and password.",
+        "reseller": "Revendedor",
+        "loginPage": {
+            "message": {
+                "accountAlreadyExists": "Já existe uma conta com este e-mail. Faça login."
             }
         }
     },
@@ -800,7 +981,13 @@
             "webserverLogs.downloadDescription": "Faça o download dos registros do Webserver Logs.",
             "noRecords": "Nenhum registro encontrado",
             "templates.title": "Não há modelos disponíveis!",
-            "services.title": "Nenhum serviço foi encontrado"
+            "services.title": "Nenhum serviço foi encontrado",
+            "ssh.title": "No Account Created",
+            "ssh.description": "No SSH accounts available.",
+            "ssh": {
+                "title": "Nenhuma conta SSH",
+                "description": "Adicione sua primeira conta SSH para começar."
+            }
         },
         "status": {
             "active": "Ativar",
@@ -842,7 +1029,8 @@
             "instanceInstall.failed": "Falha na instalação da instância."
         },
         "instanceInDiagnosticMode": "No momento, não é possível gerenciar o site (Modo de diagnóstico). Entre em contato com o suporte para obter mais detalhes.",
-        "hostingAccountInDiagnosticMode": "No momento, não é possível gerenciar a hospedagem (Modo de diagnóstico). Entre em contato com o suporte para obter mais detalhes"
+        "hostingAccountInDiagnosticMode": "No momento, não é possível gerenciar a hospedagem (Modo de diagnóstico). Entre em contato com o suporte para obter mais detalhes",
+        "confirmBeforeProceedingAction": "Confirme antes de prosseguir com esta ação."
     },
     "notification": {
         "account": {
@@ -961,7 +1149,29 @@
             "sftp.update.success": "A conta SSH/SFTP foi atualizada.",
             "sftp.delete.success": "A conta SSH/SFTP foi excluída.",
             "sftp.disconnect.success": "As conexões SSH/SFTP foram desconectadas.",
-            "sftp.setAccessType.success": "Foi definido um novo tipo de acesso à instância."
+            "sftp.setAccessType.success": "Foi definido um novo tipo de acesso à instância.",
+            "ssh.add.success": "SSH Account has been added.",
+            "ssh.update.success": "SSH Account has been updated.",
+            "ssh.delete.success": "SSH Account has been deleted.",
+            "ssh.disconnect.success": "SSH connections have been disconnected.",
+            "ssh.setAccessType.success": "New access type to instance has been set.",
+            "ssh": {
+                "add": {
+                    "success": "Conta SSH adicionada."
+                },
+                "update": {
+                    "success": "Conta SSH atualizada."
+                },
+                "delete": {
+                    "success": "Conta SSH excluída."
+                },
+                "disconnect": {
+                    "success": "Conta SSH desconectada."
+                },
+                "setAccessType": {
+                    "success": "Método de acesso SSH atualizado."
+                }
+            }
         },
         "emptyFields": "Por favor, preencha todos os campos.",
         "connectionFailed": "Falha na conexão.",
@@ -1179,6 +1389,51 @@
         "set": {
             "geo_affinity": "Definir local",
             "hosting_plan": "Definir plano de hospedagem"
+        },
+        "branding.manage": "Manage Styles",
+        "checkNameservers": "Verificar nameservers",
+        "collaborate": "Colaborar",
+        "customizeResellerTheme": "Personalizar tema do revendedor",
+        "deleteUser": "Excluir usuário",
+        "domain.create": "Create Domain",
+        "domain.creating": "Creating domain...",
+        "domain.verify": "Verify Domain",
+        "getStarted": "Começar",
+        "plugin.activate_disabled": "",
+        "sendInvite": "Enviar convite",
+        "ssh.add": "Add Account",
+        "ssh.edit": "Edit SSH Account",
+        "ssh.delete": "Delete SSH Account",
+        "ssh.show": "Show Access Details",
+        "skip": "Pular",
+        "tag.addTags": "Add tags",
+        "verifyDomain": "Verificar domínio",
+        "testConnection": "Testar conexão",
+        "sendTestEmail": "Enviar e-mail de teste",
+        "send": "Enviar",
+        "apiToken.create": "Create API Token",
+        "branding": {
+            "manage": "Gerenciar branding"
+        },
+        "domain": {
+            "create": "Criar domínio",
+            "creating": "Criando domínio...",
+            "verify": "Verificar domínio"
+        },
+        "plugin": {
+            "activate_disabled": "Ativação desativada"
+        },
+        "ssh": {
+            "add": "Adicionar SSH",
+            "edit": "Editar SSH",
+            "delete": "Excluir SSH",
+            "show": "Mostrar SSH"
+        },
+        "tag": {
+            "addTags": "Adicionar tags"
+        },
+        "apiToken": {
+            "create": "Criar token de API"
         }
     },
     "tooltip": {
@@ -1341,6 +1596,20 @@
                 "max_file_uploads": "Define o número máximo de arquivos que podem ser carregados por meio de uma única solicitação. Isso ajuda a evitar abusos, limitando o número de arquivos que podem ser carregados de uma só vez.",
                 "register_globals": "Essa diretiva, quando ativada, importa automaticamente as variáveis da solicitação para o escopo global. Ela está obsoleta e deve ser desativada por motivos de segurança, pois pode levar à substituição de variáveis e a outros problemas de segurança.",
                 "short_open_tag": "Essa configuração permite o uso de tags de abertura curtas (<?) para o código PHP. Se estiver desativada, somente a tag de abertura completa (<?php) poderá ser usada. Recomenda-se o uso da tag de abertura completa para melhor compatibilidade."
+            },
+            "plugin.activationIsNotAllowed": "Activation of the plugin is not allowed.",
+            "user.field.passwordLeaveEmpty": "Leave empty if you don't want to change password.",
+            "collaborate.start": "<strong>Invite your team</strong> to collaborate visually on every part of your website. Leave comments, track tasks, and stay in sync, without endless emails, pointless video calls or messy bugtrackers. <strong>Try for free!</strong>",
+            "plugin": {
+                "activationIsNotAllowed": "A ativação do plugin não é permitida."
+            },
+            "user": {
+                "field": {
+                    "passwordLeaveEmpty": "Deixe em branco para manter a senha atual."
+                }
+            },
+            "collaborate": {
+                "start": "Convide pessoas para colaborar nesta instância."
             }
         },
         "hosting": {
@@ -1361,7 +1630,27 @@
             "ftp.usageNotSupported": "O uso e a cota não são compatíveis com o servidor.",
             "summary.cname.notPointed": "Falha na verificação da configuração do CNAME para alguns de seus domínios",
             "summary.cname.notResolve": "Não é possível resolver o registro CNAME de alguns dos seus domínios",
-            "sftp.accessMethod": "Remote Access Type: SSH or SFTP."
+            "sftp.accessMethod": "Remote Access Type: SSH or SFTP.",
+            "summary.hostingAccount.tooltip": "Each hosting account has its own space and settings. Select the one that holds the domain you want to manage.",
+            "ssh.accessMethod": "Remote Access Type: SSH or SFTP.",
+            "emailAddress.emailDomain.tooltip": "Email accounts and forwarders are organized by domain. Select a domain to manage its email.",
+            "emailAddress.emailDomain.record.tooltip": "SPF & DKIM Record Configuration",
+            "summary": {
+                "hostingAccount": {
+                    "tooltip": "Detalhes da conta de hospedagem"
+                }
+            },
+            "ssh": {
+                "accessMethod": "Selecione o método de acesso SSH."
+            },
+            "emailAddress": {
+                "emailDomain": {
+                    "tooltip": "Domínio usado para enviar e-mails.",
+                    "record": {
+                        "tooltip": "Status do registro DNS."
+                    }
+                }
+            }
         },
         "backup_data.number_of_backups": "Number of backups created out of the maximum allowed.",
         "backup_data.amount_of_storage": "Amount of storage used out of the total available for backups.",
@@ -1379,6 +1668,24 @@
         "create_backup.backup_type": "Selecione o tipo de backup a ser realizado: escolha \"Database\" (Banco de dados) para um backup do banco de dados ou \"Directory\" (Diretório) para um backup de arquivos.",
         "billing": {
             "invoice.duedate.exceeded": "O prazo de pagamento foi ultrapassado. Pague a fatura imediatamente para evitar a suspensão do serviço."
+        },
+        "copy": "Copiar",
+        "copied": "Copiado",
+        "add_domain.domain.addon": "Enter new domain. Do not use www. in domain name. The system will automatically add it for you.",
+        "add_domain.domain.sub": "Enter new subdomain.",
+        "add_domain.domain.alias": "Enter new domain alias.",
+        "add_domain.target_domain": "Select target domain",
+        "add_ssh_account.username": "Enter the SSH account username.",
+        "add_domain": {
+            "domain": {
+                "addon": "Domínio addon",
+                "sub": "Subdomínio",
+                "alias": "Alias de domínio"
+            },
+            "target_domain": "Domínio de destino"
+        },
+        "add_ssh_account": {
+            "username": "Nome de usuário da conta SSH"
         }
     },
     "form": {
@@ -1490,7 +1797,15 @@
             "set_location": "Definir local",
             "public_key": "Chave pública",
             "backupType": "Tipo de backup",
-            "hosting_plan": "Plano de hospedagem"
+            "hosting_plan": "Plano de hospedagem",
+            "alias": "Alias",
+            "ssh.user": "SSH User",
+            "ssh.password": "SSH Password",
+            "url": "URL",
+            "ssh": {
+                "user": "Usuário SSH",
+                "password": "Senha SSH"
+            }
         },
         "placeholder": {
             "cabundle": "Digite o pacote CA",
@@ -1521,7 +1836,14 @@
             "username": "Digite o nome de usuário",
             "website": "Digite o nome do site",
             "value": "Inserir valor",
-            "emailDelegatedUser": "Insira o endereço de e-mail do usuário delegado"
+            "emailDelegatedUser": "Insira o endereço de e-mail do usuário delegado",
+            "alias": "Digite o alias",
+            "ssh.user": "Username",
+            "ssh.password": "Password",
+            "ssh": {
+                "user": "Digite o usuário SSH",
+                "password": "Digite a senha SSH"
+            }
         },
         "option": {
             "constant": "Constante",
@@ -1680,7 +2002,8 @@
             "version": "Versão",
             "visitors": "Visitantes",
             "only_me": "Somente eu",
-            "me_and_delegated_user": "Eu e o usuário delegado"
+            "me_and_delegated_user": "Eu e o usuário delegado",
+            "collaborate": "Colaborar"
         },
         "value": {
             "unlimited": "Ilimitado",
@@ -1702,7 +2025,9 @@
             "required": "{{field}} é obrigatório",
             "space": "{{field}} não deve conter espaços",
             "tooLong": "{{field}} é muito longo",
-            "valid": "{{field}} deve ser válido"
+            "valid": "{{field}} deve ser válido",
+            "invalid_www": "O domínio não pode começar com www.",
+            "domain": "Digite um domínio válido."
         },
         "confirmDelete": {
             "domain": "Sim, eu entendo e quero remover esse domínio.",
@@ -1726,7 +2051,8 @@
             "user": "Sim, eu entendo e quero remover esse usuário.",
             "theme_one": "Sim, eu entendo e quero remover esse tema.",
             "theme_other": "Sim, eu entendo e quero remover esses temas.",
-            "sftp": "Sim, eu entendo e quero remover essa conta SSH/SFTP."
+            "sftp": "Sim, eu entendo e quero remover essa conta SSH/SFTP.",
+            "ssh": "Tem certeza de que deseja excluir esta conta SSH?"
         }
     },
     "table": {
@@ -1787,7 +2113,12 @@
             "plan_name": "Nome do plano",
             "sites": "Locais",
             "total": "Total",
-            " ": ""
+            " ": "",
+            "collaborate": "Colaborar",
+            "instance": "Instância",
+            "instances": "Instâncias",
+            "last_used_at": "Último uso em",
+            "created_at": "Criado em"
         },
         "field": {
             "userOwner": "{{name}} (você)",
@@ -1812,7 +2143,8 @@
             "device": "Dispositivos por página:",
             "instance": "Instâncias por página:",
             "plan": "Planos por página",
-            "invoice": "Faturas por página:"
+            "invoice": "Faturas por página:",
+            "items": "itens"
         },
         "snackbar": {
             "selectAll": "Selecionar tudo",
@@ -1937,7 +2269,35 @@
             "user.hosting.sftp_account.create": "Conta SSH/SFTP criada",
             "user.hosting.sftp_account.delete": "Conta SSH/SFTP excluída",
             "user.hosting.sftp_account.update": "Conta SSH/SFTP atualizada",
-            "user.instance.search_engine_indexing.update": "Indexação de mecanismos de pesquisa atualizada"
+            "user.instance.search_engine_indexing.update": "Indexação de mecanismos de pesquisa atualizada",
+            "user.hosting.ssh_account.create": "Created SSH Account",
+            "user.hosting.ssh_account.delete": "Deleted SSH Account",
+            "user.hosting.ssh_account.update": "Updated SSH Account",
+            "user.reseller_area.delete_user": "Revoked Instances Access",
+            "user.reseller_area.update_branding_settings": "Updated Branding Settings",
+            "user.reseller_area.update_email_settings": "Updated Email Settings",
+            "user.reseller_area.email_settings_test_connection": "Tested Email Settings",
+            "user.reseller_area.send_test_email": "Sent Test Email",
+            "user.reseller_area.create_api_token": "Created API Token",
+            "user.reseller_area.delete_api_token": "Deleted API Token",
+            "user": {
+                "hosting": {
+                    "ssh_account": {
+                        "create": "Criou conta SSH",
+                        "delete": "Excluiu conta SSH",
+                        "update": "Atualizou conta SSH"
+                    }
+                },
+                "reseller_area": {
+                    "delete_user": "Removeu usuário da área de revendedor",
+                    "update_branding_settings": "Atualizou as configurações de branding",
+                    "update_email_settings": "Atualizou as configurações de e-mail",
+                    "email_settings_test_connection": "Testou as configurações de e-mail",
+                    "send_test_email": "Enviou e-mail de teste",
+                    "create_api_token": "Criou token de API",
+                    "delete_api_token": "Excluiu token de API"
+                }
+            }
         },
         "suffix": {
             "toStatus": "para {{status}}",
@@ -1996,7 +2356,15 @@
             "general.preview_instance": "Instância de visualização",
             "wordpress.manage_search_engine_indexing": "Gerenciar a indexação do mecanismo de pesquisa",
             "wordpress.view_logs": "Exibir registros de erros do WordPress",
-            "wordpress.manage_cloudflare": "Gerenciar a Cloudflare"
+            "wordpress.manage_cloudflare": "Gerenciar a Cloudflare",
+            "general.collaboration": "Manage Collaboration",
+            "hosting.manage_ssh": "Manage SSH Accounts",
+            "general": {
+                "collaboration": "Colaboração"
+            },
+            "hosting": {
+                "manage_ssh": "Gerenciar SSH"
+            }
         }
     },
     "languages": {
@@ -2039,6 +2407,31 @@
         "uk": "Ucraniano",
         "vi": "Vietnamita",
         "zh": "Chinês",
-        "zh_TW": "Chinês (tradicional)"
-    }
+        "zh_TW": "Chinês (tradicional)",
+        "bg_BG": "Búlgaro",
+        "cs_CZ": "Tcheco",
+        "da_DK": "Dinamarquês",
+        "de_DE": "Alemão",
+        "es_ES": "Espanhol",
+        "fa_IR": "Persa",
+        "fr_FR": "Francês",
+        "he_IL": "Hebraico",
+        "hu_HU": "Húngaro",
+        "id_ID": "Indonésio",
+        "it_IT": "Italiano",
+        "ko_KR": "Coreano",
+        "nb_NO": "Norueguês (Bokmål)",
+        "nl_NL": "Holandês",
+        "pl_PL": "Polonês",
+        "pt_PT": "Português",
+        "ro_RO": "Romeno",
+        "ru_RU": "Russo",
+        "sk_SK": "Eslovaco",
+        "sl_SI": "Esloveno",
+        "sv_SE": "Sueco",
+        "tr_TR": "Turco",
+        "zh_CN": "Chinês (Simplificado)",
+        "zh_HK": "Chinês (Hong Kong)"
+    },
+    "reseller": "Revendedor"
 }
