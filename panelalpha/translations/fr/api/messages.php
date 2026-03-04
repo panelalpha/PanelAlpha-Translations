@@ -368,12 +368,11 @@ return [
     
     'ssl_order_process' => [
         'valid_ssl_cert_exists' => 'Un certificat SSL valide existe deja pour ce domaine.',
-        'ssl_cert_not_available_for_alias' => 'Le certificat SSL n'est pas disponible pour un alias.',
-        'ssl_cert_not_available_for_subdomains' => 'Ce serveur ne prend pas en charge l'installation de certificats SSL sur les sous-domaines.',
-        'ssl_cert_provider_by_cloudflare' => 'Cloudflare fournit le certificat SSL pour ce domaine, vous n'avez donc pas besoin de creer une commande SSL.',
-        'server_cannot_install_ssl_certs' => 'Ce serveur ne prend pas en charge l'installation de certificats SSL.',
+        'ssl_cert_not_available_for_alias' => 'Le certificat SSL n\'est pas disponible pour un alias.',
+        'ssl_cert_not_available_for_subdomains' => 'Ce serveur ne prend pas en charge l\'installation de certificats SSL sur les sous-domaines.',
+        'ssl_cert_provider_by_cloudflare' => 'Cloudflare fournit le certificat SSL pour ce domaine, vous n\'avez donc pas besoin de creer une commande SSL.',
+        'server_cannot_install_ssl_certs' => 'Ce serveur ne prend pas en charge l\'installation de certificats SSL.',
     ],
     'failed_to_create_log_stream' => 'Echec de la creation du flux de logs.',
 ];
-
 
