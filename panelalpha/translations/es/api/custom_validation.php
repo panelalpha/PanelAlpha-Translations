@@ -88,4 +88,7 @@ return [
     'stp_no_auth_credentials' => 'Debes proporcionar una contraseña o una clave pública.',
     'domain_type_not_supported' => 'El tipo de dominio no es compatible.',
     'invalid_import_method' => 'Método de importación no válido.',
+    'backup_not_found' => 'Copia de seguridad no encontrada.',
+    'cannot_delete_hosting_account_with_existing_instances' => 'No se puede eliminar la cuenta de hosting con instancias existentes.',
+    'username_cannot_contain_at_character' => 'El nombre de usuario no puede contener el caracter @.',
 ];

@@ -343,7 +343,9 @@ return [
         'delete_plugin_new_instance_failed' => 'La eliminación del plugin en la nueva instancia ha fallado.',
         'delete_plugin_imported_instance_started' => 'La eliminación del plugin en la instancia importada ha comenzado.',
         'delete_plugin_imported_instance_completed' => 'La eliminación del plugin en la instancia importada se ha completado.',
-        'delete_plugin_imported_instance_failed' => 'La eliminación del plugin en la instancia importada ha fallado.',
+        'set_billing_started' => 'La configuracion de facturacion ha comenzado.',
+        'set_billing_completed' => 'La configuracion de facturacion se ha completado.',
+        'set_billing_failed' => 'La configuracion de facturacion ha fallado.',
     ],
     'migrator_plugin_not_exists' => 'El plugin \'WordPress Migrator\' no se ha detectado. Póngase en contacto con el administrador.',
     'migrator_plugin_not_installed' => 'El plugin \'WordPress Migrator\' no está instalado.',
@@ -354,6 +356,15 @@ return [
     'prepare_manual_import_failed' => 'La preparación de la importación manual ha fallado.',
     'detected_wp_salt' => 'Se detectó wp-salt.php requerido en wp-config.php, reemplazándolo con el contenido de wp-salt.php.',
     'cannot_connect_to_wordpress' => 'No se puede conectar a WordPress. Verifica la URL y las credenciales de administrador. Alternativamente, instala el plugin manualmente.',
-    'cannot_connect_to_migrator_plugin' => 'No se puede conectar al plugin migrador. Esto puede deberse a que el plugin no está instalado, a configuraciones de seguridad (por ejemplo, reglas .htaccess) o a restricciones impuestas por tu proveedor de hosting.',
-    'migration_in_progress' => 'Fase: :phase. Progreso: :percent%',
+    
+    'cannot_connect_to_wordpress_using_admin_credentials' => 'Usar tus credenciales de administrador de WordPress no funcionara (probablemente por restricciones de Cloudflare/firewall/WAF). Instala el plugin manualmente.',
+    
+    'ssl_order_process' => [
+        'valid_ssl_cert_exists' => 'Ya existe un certificado SSL valido para este dominio.',
+        'ssl_cert_not_available_for_alias' => 'El certificado SSL no esta disponible para alias.',
+        'ssl_cert_not_available_for_subdomains' => 'Este servidor no admite la instalacion de certificados SSL en subdominios.',
+        'ssl_cert_provider_by_cloudflare' => 'Cloudflare proporciona el certificado SSL para este dominio, por lo que no necesitas crear una orden SSL.',
+        'server_cannot_install_ssl_certs' => 'Este servidor no admite la instalacion de certificados SSL.',
+    ],
+    'failed_to_create_log_stream' => 'No se pudo crear el stream de logs.',
 ];
