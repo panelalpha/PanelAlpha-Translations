@@ -229,9 +229,9 @@ return [
     'ssl_order_process' => [
         'valid_ssl_cert_exists' => 'Esiste gia un certificato SSL valido per questo dominio.',
         'ssl_cert_not_available_for_alias' => 'Il certificato SSL non e disponibile per alias.',
-        'ssl_cert_not_available_for_subdomains' => 'Questo server non supporta l'installazione di certificati SSL sui sottodomini.',
+        'ssl_cert_not_available_for_subdomains' => 'Questo server non supporta l\'installazione di certificati SSL sui sottodomini.',
         'ssl_cert_provider_by_cloudflare' => 'Cloudflare fornisce il certificato SSL per questo dominio, quindi non e necessario creare un ordine SSL.',
-        'server_cannot_install_ssl_certs' => 'Questo server non supporta l'installazione di certificati SSL.',
+        'server_cannot_install_ssl_certs' => 'Questo server non supporta l\'installazione di certificati SSL.',
     ],
     'import' => [
         'removed_by_admin' => 'Le migrazioni sono state rimosse dall’amministratore.',
@@ -370,4 +370,3 @@ return [
     ],
     'failed_to_create_log_stream' => 'Impossibile creare il flusso di log.',
 ];
-

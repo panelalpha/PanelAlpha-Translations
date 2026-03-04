@@ -89,6 +89,6 @@ return [
     'domain_type_not_supported' => 'Le type de domaine n\'est pas pris en charge.',
     'invalid_import_method' => 'Méthode d\'importation invalide.',
     'backup_not_found' => 'Sauvegarde introuvable.',
-    'cannot_delete_hosting_account_with_existing_instances' => 'Impossible de supprimer le compte d'hebergement avec des instances existantes.',
-    'username_cannot_contain_at_character' => 'Le nom d'utilisateur ne peut pas contenir le caractere @.',
+    'cannot_delete_hosting_account_with_existing_instances' => 'Impossible de supprimer le compte d\'hebergement avec des instances existantes.',
+    'username_cannot_contain_at_character' => 'Le nom d\'utilisateur ne peut pas contenir le caractere @.',
 ];
