@@ -32,6 +32,8 @@ return [
         'installPluginOnImportedInstance' => "Installing 'WordPress Migrator' plugin on imported instance",
         'prepareMigrationUsingPlugin' => "Preparing migration ",
         'runMigrationUsingPlugin' => "Running migration",
+        'migrateDatabaseUsingPlugin' => 'Migrating database',
+        'migrateFilesUsingPlugin' => 'Migrating files',
         'prepareInstance' => "Preparing instance for migration",
         'downloadDatabase' => 'Downloading database',
         'downloadFiles' => "Downloading files",

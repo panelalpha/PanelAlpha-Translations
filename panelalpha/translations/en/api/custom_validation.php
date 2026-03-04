@@ -53,6 +53,7 @@ return [
     'invalid_dns_server' => 'Invalid DNS Server',
     'invalid_hosting_server' => 'Invalid DNS Server',
     'cannot_delete_service_with_existing_instances' => 'Cannot delete service with existing instances.',
+    'cannot_delete_hosting_account_with_existing_instances' => 'Cannot delete hosting account with existing instances.',
     'import_files_required' => 'Import files required.',
     'invalid_action' => 'Invalid action',
     'wp_versions_warning' => 'Your WordPress version is :version. The migration will automatically upgrade it to the latest version :latest_version. To continue, press the \'Continue\' button.',
@@ -88,4 +89,6 @@ return [
     'stp_no_auth_credentials' => 'You must provide either a password or a public key.',
     'domain_type_not_supported' => 'Domain type is not supported.',
     'invalid_import_method' => 'Invalid import method.',
+    'backup_not_found' => 'Backup not found.',
+    'username_cannot_contain_at_character' => 'The username must not contain the @ character.',
 ];
