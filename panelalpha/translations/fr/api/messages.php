@@ -341,9 +341,11 @@ return [
         'delete_plugin_new_instance_started' => 'La suppression du plugin sur la nouvelle instance a commencé.',
         'delete_plugin_new_instance_completed' => 'La suppression du plugin sur la nouvelle instance s\'est terminée.',
         'delete_plugin_new_instance_failed' => 'La suppression du plugin sur la nouvelle instance a échoué.',
-        'delete_plugin_imported_instance_started' => 'La suppression du plugin sur l\'instance importée a commencé.',
-        'delete_plugin_imported_instance_completed' => 'La suppression du plugin sur l\'instance importée s\'est terminée.',
-        'delete_plugin_imported_instance_failed' => 'La suppression du plugin sur l\'instance importée a échoué.',
+        'delete_plugin_imported_instance_completed' => 'La suppression du plugin sur l\'instance importee s\'est terminee.',
+        'delete_plugin_imported_instance_failed' => 'La suppression du plugin sur l\'instance importee a echoue.',
+        'set_billing_started' => 'Le parametrage de la facturation a commence.',
+        'set_billing_completed' => 'Le parametrage de la facturation est termine.',
+        'set_billing_failed' => 'Le parametrage de la facturation a echoue.',
     ],
     'migrator_plugin_not_exists' => 'Le plugin \'WordPress Migrator\' n\'a pas été détecté. Veuillez contacter l\'administrateur.',
     'migrator_plugin_not_installed' => 'Le plugin \'WordPress Migrator\' n\'est pas installé.',
@@ -352,8 +354,23 @@ return [
     'missing_tmp_dir_for_manual_import' => 'Répertoire temporaire manquant pour l\'importation manuelle.',
     'no_files_for_manual_import' => 'Fichiers requis manquants pour l\'importation manuelle dans \':path\' avec les messages : :messages',
     'prepare_manual_import_failed' => 'La préparation de l\'importation manuelle a échoué.',
-    'detected_wp_salt' => 'Fichier wp-salt.php requis détecté dans wp-config.php, remplacement par le contenu de wp-salt.php.',
-    'cannot_connect_to_wordpress' => 'Impossible de se connecter à WordPress. Veuillez vérifier l\'URL et les identifiants administrateur. Sinon, installez le plugin manuellement.',
-    'cannot_connect_to_migrator_plugin' => 'Impossible de se connecter au plugin de migration. Cela peut être dû au fait que le plugin n\'est pas installé, à des réglages de sécurité (par ex. règles .htaccess) ou à des restrictions imposées par votre hébergeur.',
+    
+    'cannot_connect_to_wordpress' => 'Impossible de se connecter a WordPress. Verifiez l\'URL et les identifiants administrateur. Sinon, installez le plugin manuellement.',
+    
+    
+    'cannot_connect_to_wordpress_using_admin_credentials' => 'L\'utilisation des identifiants administrateur WordPress ne fonctionnera pas (probablement a cause de restrictions Cloudflare/pare-feu/WAF). Installez le plugin manuellement.',
+    
+    
     'migration_in_progress' => 'Phase : :phase. Progression : :percent%',
+    
+    'ssl_order_process' => [
+        'valid_ssl_cert_exists' => 'Un certificat SSL valide existe deja pour ce domaine.',
+        'ssl_cert_not_available_for_alias' => 'Le certificat SSL n'est pas disponible pour un alias.',
+        'ssl_cert_not_available_for_subdomains' => 'Ce serveur ne prend pas en charge l'installation de certificats SSL sur les sous-domaines.',
+        'ssl_cert_provider_by_cloudflare' => 'Cloudflare fournit le certificat SSL pour ce domaine, vous n'avez donc pas besoin de creer une commande SSL.',
+        'server_cannot_install_ssl_certs' => 'Ce serveur ne prend pas en charge l'installation de certificats SSL.',
+    ],
+    'failed_to_create_log_stream' => 'Echec de la creation du flux de logs.',
 ];
+
+
