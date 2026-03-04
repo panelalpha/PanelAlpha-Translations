@@ -223,9 +223,21 @@ return [
     'no_files_for_manual_import' => 'Vereiste bestanden ontbreken voor handmatige import in \':path\' met berichten: :messages',
     'prepare_manual_import_failed' => 'Voorbereiden van handmatige import is mislukt.',
     'detected_wp_salt' => 'Vereiste wp-salt.php gedetecteerd in wp-config.php, vervangen door de inhoud van wp-salt.php.',
-    'cannot_connect_to_wordpress' => 'Kan geen verbinding maken met WordPress. Controleer de URL en beheerdersgegevens. Installeer anders de plugin handmatig.',
-    'cannot_connect_to_migrator_plugin' => 'Kan geen verbinding maken met de migrator-plugin. Dit kan worden veroorzaakt door het ontbreken van de plugin, beveiligingsinstellingen (bijv. .htaccess-regels) of beperkingen van je hostingprovider.',
-    'migration_in_progress' => 'Fase: :phase. Voortgang: :percent%',
+    
+    'cannot_connect_to_wordpress' => 'Cannot connect to WordPress. Please verify URL and admin credentials.',
+    'cannot_connect_to_wordpress_using_admin_credentials' => 'Using WordPress admin credentials will not work (likely Cloudflare/firewall/WAF). Please install the plugin manually.',
+    'cannot_connect_to_migrator_plugin' => 'Cannot connect to migrator plugin.',
+    
+    
+    'migration_in_progress' => 'Phase: :phase. Progress: :percent%',
+    
+    'ssl_order_process' => [
+        'valid_ssl_cert_exists' => 'Er bestaat al een geldig SSL-certificaat voor dit domein.',
+        'ssl_cert_not_available_for_alias' => 'SSL-certificaat is niet beschikbaar voor alias.',
+        'ssl_cert_not_available_for_subdomains' => 'Deze server ondersteunt geen installatie van SSL-certificaten op subdomeinen.',
+        'ssl_cert_provider_by_cloudflare' => 'Cloudflare levert het SSL-certificaat voor dit domein, dus je hoeft geen SSL-bestelling te plaatsen.',
+        'server_cannot_install_ssl_certs' => 'Deze server ondersteunt geen installatie van SSL-certificaten.',
+    ],
     'import' => [
         'removed_by_admin' => 'De migraties zijn verwijderd door de beheerder.',
         'import_is_started' => 'De import is gestart.',
@@ -355,7 +367,12 @@ return [
         'delete_plugin_new_instance_completed' => 'Voltooid: delete plugin new instance.',
         'delete_plugin_new_instance_failed' => 'Mislukt: delete plugin new instance.',
         'delete_plugin_imported_instance_started' => 'Start: delete plugin imported instance.',
-        'delete_plugin_imported_instance_completed' => 'Voltooid: delete plugin imported instance.',
-        'delete_plugin_imported_instance_failed' => 'Mislukt: delete plugin imported instance.',
+        'delete_plugin_imported_instance_completed' => 'Delete plugin on imported instance completed.',
+        'delete_plugin_imported_instance_failed' => 'Delete plugin on imported instance failed.',
+        'set_billing_started' => 'Facturatie instellen gestart.',
+        'set_billing_completed' => 'Facturatie instellen voltooid.',
+        'set_billing_failed' => 'Facturatie instellen mislukt.',
     ],
+    'failed_to_create_log_stream' => 'Kan logstream niet maken.',
 ];
+

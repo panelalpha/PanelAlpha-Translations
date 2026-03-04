@@ -30,8 +30,12 @@ return [
         'installPluginOnNewInstance' => "Plugin WordPress Migrator installeren op de nieuwe instantie",
         'prepareNewInstanceToMigration' => 'Nieuwe instantie voorbereiden op migratie',
         'installPluginOnImportedInstance' => "Plugin WordPress Migrator installeren op de geïmporteerde instantie",
-        'prepareMigrationUsingPlugin' => 'Migratie voorbereiden',
-        'runMigrationUsingPlugin' => 'Migratie uitvoeren',
+        'prepareMigrationUsingPlugin' => 'Preparing migration',
+        
+        'runMigrationUsingPlugin' => 'Running migration',
+        
+        'migrateDatabaseUsingPlugin' => 'Database migreren',
+        'migrateFilesUsingPlugin' => 'Bestanden migreren',
         'prepareInstance' => 'Instantie voorbereiden op migratie',
         'downloadDatabase' => 'Database downloaden',
         'downloadFiles' => 'Bestanden downloaden',
@@ -104,3 +108,4 @@ return [
 
     'database',
 ];
+

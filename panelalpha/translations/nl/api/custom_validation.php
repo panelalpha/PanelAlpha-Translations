@@ -89,4 +89,7 @@ return [
     'stp_no_auth_credentials' => 'Je moet een wachtwoord of een openbare sleutel opgeven.',
     'domain_type_not_supported' => 'Dit type domein wordt niet ondersteund.',
     'invalid_import_method' => 'Ongeldige importmethode.',
+    'backup_not_found' => 'Back-up niet gevonden.',
+    'cannot_delete_hosting_account_with_existing_instances' => 'Kan hostingaccount met bestaande instanties niet verwijderen.',
+    'username_cannot_contain_at_character' => 'Gebruikersnaam mag geen @ teken bevatten.',
 ];
