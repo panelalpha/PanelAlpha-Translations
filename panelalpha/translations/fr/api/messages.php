@@ -341,6 +341,7 @@ return [
         'delete_plugin_new_instance_started' => 'La suppression du plugin sur la nouvelle instance a commencé.',
         'delete_plugin_new_instance_completed' => 'La suppression du plugin sur la nouvelle instance s\'est terminée.',
         'delete_plugin_new_instance_failed' => 'La suppression du plugin sur la nouvelle instance a échoué.',
+        'delete_plugin_imported_instance_started' => 'La suppression du plugin sur l\'instance importee a commence.',
         'delete_plugin_imported_instance_completed' => 'La suppression du plugin sur l\'instance importee s\'est terminee.',
         'delete_plugin_imported_instance_failed' => 'La suppression du plugin sur l\'instance importee a echoue.',
         'set_billing_started' => 'Le parametrage de la facturation a commence.',
@@ -355,7 +356,9 @@ return [
     'no_files_for_manual_import' => 'Fichiers requis manquants pour l\'importation manuelle dans \':path\' avec les messages : :messages',
     'prepare_manual_import_failed' => 'La préparation de l\'importation manuelle a échoué.',
     
+    'detected_wp_salt' => 'Fichier wp-salt.php requis detecte dans wp-config.php, remplacement par le contenu de wp-salt.php.',
     'cannot_connect_to_wordpress' => 'Impossible de se connecter a WordPress. Verifiez l\'URL et les identifiants administrateur. Sinon, installez le plugin manuellement.',
+    'cannot_connect_to_migrator_plugin' => 'Impossible de se connecter au plugin de migration. Verifiez l\'installation et les restrictions du serveur.',
     
     
     'cannot_connect_to_wordpress_using_admin_credentials' => 'L\'utilisation des identifiants administrateur WordPress ne fonctionnera pas (probablement a cause de restrictions Cloudflare/pare-feu/WAF). Installez le plugin manuellement.',
