@@ -88,4 +88,7 @@ return [
     'stp_no_auth_credentials' => 'Sie müssen entweder ein Passwort oder einen öffentlichen Schlüssel angeben.',
     'domain_type_not_supported' => 'Domänentyp wird nicht unterstützt.',
     'invalid_import_method' => 'Ungültige Importmethode.',
+    'backup_not_found' => 'Sicherung nicht gefunden.',
+    'cannot_delete_hosting_account_with_existing_instances' => 'Das Hosting-Konto kann nicht geloscht werden, solange noch Instanzen existieren.',
+    'username_cannot_contain_at_character' => 'Der Benutzername darf kein @-Zeichen enthalten.',
 ];

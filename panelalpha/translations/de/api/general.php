@@ -30,7 +30,9 @@ return [
         'prepareNewInstanceToMigration' => "Neue Instanz für Migration vorbereiten",
         'installPluginOnImportedInstance' => "'WordPress Migrator' Plugin auf importierter Instanz installieren",
         'prepareMigrationUsingPlugin' => "Migration vorbereiten",
-        'runMigrationUsingPlugin' => "Migration ausführen",
+        
+        'migrateDatabaseUsingPlugin' => 'Migrating database',
+        'migrateFilesUsingPlugin' => 'Migrating files',
         'prepareInstance' => "Instanz für Migration vorbereiten",
         'downloadDatabase' => 'Datenbank herunterladen',
         'downloadFiles' => "Dateien herunterladen",
