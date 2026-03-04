@@ -282,9 +282,21 @@ return [
     'no_files_for_manual_import' => 'חסרים קבצים נדרשים לייבוא ידני ב-\':path\' עם הודעות: :messages',
     'prepare_manual_import_failed' => 'הכנת הייבוא הידני נכשלה.',
     'detected_wp_salt' => 'זוהה wp-salt.php הנדרש ב-wp-config.php, מחליף אותו בתוכן של wp-salt.php.',
-    'cannot_connect_to_wordpress' => 'לא ניתן להתחבר ל-WordPress. בדוק את הכתובת ואת פרטי הניהול. לחלופין, התקן את התוסף ידנית.',
-    'cannot_connect_to_migrator_plugin' => 'לא ניתן להתחבר לתוסף המיגרציה. ייתכן שזה נגרם מכך שהתוסף לא מותקן, מהגדרות אבטחה (למשל כללי .htaccess) או מהגבלות של ספק האירוח.',
-    'migration_in_progress' => 'שלב: :phase. התקדמות: :percent%',
+    
+    'cannot_connect_to_wordpress' => 'Cannot connect to WordPress. Please verify URL and admin credentials.',
+    'cannot_connect_to_wordpress_using_admin_credentials' => 'Using WordPress admin credentials will not work (likely Cloudflare/firewall/WAF). Please install the plugin manually.',
+    'cannot_connect_to_migrator_plugin' => 'Cannot connect to migrator plugin.',
+    
+    
+    'migration_in_progress' => 'Phase: :phase. Progress: :percent%',
+    
+    'ssl_order_process' => [
+        'valid_ssl_cert_exists' => 'Valid SSL certificate already exists for this domain.',
+        'ssl_cert_not_available_for_alias' => 'SSL certificate is not available for alias.',
+        'ssl_cert_not_available_for_subdomains' => 'This server does not support installing SSL certificates on subdomains.',
+        'ssl_cert_provider_by_cloudflare' => 'Cloudflare provides the SSL certificate for this domain, so you do not need to create an SSL order.',
+        'server_cannot_install_ssl_certs' => 'This server does not support installing SSL certificates.',
+    ],
     'import' => [
         'removed_by_admin' => 'ההעברות הוסרו על ידי מנהל המערכת.',
         'import_is_started' => 'הייבוא החל.',
@@ -414,9 +426,14 @@ return [
         'delete_plugin_new_instance_completed' => 'הושלם: delete plugin new instance.',
         'delete_plugin_new_instance_failed' => 'נכשל: delete plugin new instance.',
         'delete_plugin_imported_instance_started' => 'התחלה: delete plugin imported instance.',
-        'delete_plugin_imported_instance_completed' => 'הושלם: delete plugin imported instance.',
-        'delete_plugin_imported_instance_failed' => 'נכשל: delete plugin imported instance.',
+        'delete_plugin_imported_instance_completed' => 'Delete plugin on imported instance completed.',
+        'delete_plugin_imported_instance_failed' => 'Delete plugin on imported instance failed.',
+        'set_billing_started' => 'Billing setup started.',
+        'set_billing_completed' => 'Billing setup completed.',
+        'set_billing_failed' => 'Billing setup failed.',
     ],
 
     'invalid_user' => 'Invalid user',
+    'failed_to_create_log_stream' => 'Failed to create log stream.',
 ];
+

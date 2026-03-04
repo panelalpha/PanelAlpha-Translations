@@ -89,4 +89,7 @@ return [
     'stp_no_auth_credentials' => 'יש לספק סיסמה או מפתח ציבורי.',
     'domain_type_not_supported' => 'סוג הדומיין אינו נתמך.',
     'invalid_import_method' => 'שיטת הייבוא אינה תקפה.',
+    'backup_not_found' => 'Backup not found.',
+    'cannot_delete_hosting_account_with_existing_instances' => 'Cannot delete hosting account with existing instances.',
+    'username_cannot_contain_at_character' => 'Username cannot contain @ character.',
 ];
