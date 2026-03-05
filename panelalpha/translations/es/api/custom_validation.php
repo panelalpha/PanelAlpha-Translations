@@ -91,4 +91,5 @@ return [
     'backup_not_found' => 'Copia de seguridad no encontrada.',
     'cannot_delete_hosting_account_with_existing_instances' => 'No se puede eliminar la cuenta de hosting con instancias existentes.',
     'username_cannot_contain_at_character' => 'El nombre de usuario no puede contener el caracter @.',
+    'dns_server_does_not_support_ns_recors_on_root_domain' => 'El servidor DNS no admite la creación de registros NS en la raíz del dominio.',
 ];

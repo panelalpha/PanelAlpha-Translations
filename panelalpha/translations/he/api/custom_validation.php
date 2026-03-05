@@ -92,4 +92,5 @@ return [
     'backup_not_found' => 'Backup not found.',
     'cannot_delete_hosting_account_with_existing_instances' => 'Cannot delete hosting account with existing instances.',
     'username_cannot_contain_at_character' => 'Username cannot contain @ character.',
+    'dns_server_does_not_support_ns_recors_on_root_domain' => 'DNS server does not support creating NS records on the root of the domain.',
 ];

@@ -91,4 +91,5 @@ return [
     'invalid_import_method' => 'Invalid import method.',
     'backup_not_found' => 'Backup not found.',
     'username_cannot_contain_at_character' => 'The username must not contain the @ character.',
+    'dns_server_does_not_support_ns_recors_on_root_domain' => 'DNS server does not support creating NS records on the root of the domain.',
 ];
