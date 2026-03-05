@@ -32,6 +32,8 @@ return [
         'installPluginOnImportedInstance' => "Installazione del plugin WordPress Migrator sull'istanza importata",
         'prepareMigrationUsingPlugin' => 'Preparazione della migrazione',
         'runMigrationUsingPlugin' => 'Esecuzione della migrazione',
+        'migrateDatabaseUsingPlugin' => 'Migrazione del database',
+        'migrateFilesUsingPlugin' => 'Migrazione dei file',
         'prepareInstance' => 'Preparazione dell’istanza per la migrazione',
         'downloadDatabase' => 'Download del database',
         'downloadFiles' => 'Download dei file',

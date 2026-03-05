@@ -89,4 +89,8 @@ return [
     'stp_no_auth_credentials' => 'Devi fornire una password o una chiave pubblica.',
     'domain_type_not_supported' => 'Il tipo di dominio non è supportato.',
     'invalid_import_method' => 'Metodo di importazione non valido.',
+    'backup_not_found' => 'Backup non trovato.',
+    'cannot_delete_hosting_account_with_existing_instances' => 'Impossibile eliminare l\'account hosting con istanze esistenti.',
+    'username_cannot_contain_at_character' => 'Il nome utente non puo contenere il carattere @.',
+    'dns_server_does_not_support_ns_recors_on_root_domain' => 'Il server DNS non supporta la creazione di record NS nella root del dominio.',
 ];

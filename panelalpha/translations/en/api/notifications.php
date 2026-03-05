@@ -14,6 +14,7 @@ use App\Notifications\Admin\InstanceTemplate\InstanceTemplateCreateFailed;
 use App\Notifications\Admin\InstanceTemplate\InstanceTemplateCreateFinished;
 use App\Notifications\Admin\EmailDomain\EmailDomainCreateFailed;
 use App\Notifications\Admin\EmailDomain\EmailDomainExists;
+use App\Notifications\Admin\Jobs\RefreshReportDataFailed;
 use App\Notifications\Admin\Plan\PlanConfigurationError;
 use App\Notifications\Admin\ReportProvider\SyncReportProvidersFailed;
 use App\Notifications\Admin\ReportProvider\SyncReportProvidersFinished;
@@ -428,5 +429,9 @@ return [
     ControlPanelUpgrade::class => [
         "name" => "Control Panel Upgrade Welcome Email",
         "description" => "This notification informs the hosting account hase been successfully upgraded from control panel. It includes the necessary login details, allowing the user to access their account."
+    ],
+    RefreshReportDataFailed::class => [
+        "name" => "Refresh Report Data Failed",
+        "description" => "The notification is informing the recipient that the refresh report data job for a WordPress instance has failed. The notification may include details about the instance and the error message."
     ]
 ];

@@ -223,9 +223,21 @@ return [
     'no_files_for_manual_import' => 'Arquivos obrigatórios ausentes para importação manual em \':path\' com mensagens: :messages',
     'prepare_manual_import_failed' => 'Falha ao preparar a importação manual.',
     'detected_wp_salt' => 'wp-salt.php necessário detectado no wp-config.php, substituindo-o pelo conteúdo de wp-salt.php.',
-    'cannot_connect_to_wordpress' => 'Não foi possível conectar ao WordPress. Verifique a URL e as credenciais de administrador. Alternativamente, instale o plugin manualmente.',
-    'cannot_connect_to_migrator_plugin' => 'Não foi possível conectar ao plugin de migração. Isso pode ser causado pelo plugin não estar instalado, configurações de segurança (por exemplo, regras .htaccess) ou restrições impostas pelo provedor de hospedagem.',
-    'migration_in_progress' => 'Fase: :phase. Progresso: :percent%',
+    
+    'cannot_connect_to_wordpress' => 'Cannot connect to WordPress. Please verify URL and admin credentials.',
+    'cannot_connect_to_wordpress_using_admin_credentials' => 'Using WordPress admin credentials will not work (likely Cloudflare/firewall/WAF). Please install the plugin manually.',
+    'cannot_connect_to_migrator_plugin' => 'Cannot connect to migrator plugin.',
+    
+    
+    'migration_in_progress' => 'Phase: :phase. Progress: :percent%',
+    
+    'ssl_order_process' => [
+        'valid_ssl_cert_exists' => 'Ja existe um certificado SSL valido para este dominio.',
+        'ssl_cert_not_available_for_alias' => 'Certificado SSL nao esta disponivel para alias.',
+        'ssl_cert_not_available_for_subdomains' => 'Este servidor nao suporta instalacao de certificados SSL em subdominios.',
+        'ssl_cert_provider_by_cloudflare' => 'A Cloudflare fornece o certificado SSL para este dominio, entao nao e necessario criar um pedido SSL.',
+        'server_cannot_install_ssl_certs' => 'Este servidor nao suporta instalacao de certificados SSL.',
+    ],
     'import' => [
         'removed_by_admin' => 'As migrações foram removidas pelo administrador.',
         'import_is_started' => 'A importação foi iniciada.',
@@ -355,7 +367,12 @@ return [
         'delete_plugin_new_instance_completed' => 'Concluído: delete plugin new instance.',
         'delete_plugin_new_instance_failed' => 'Falha: delete plugin new instance.',
         'delete_plugin_imported_instance_started' => 'Iniciando: delete plugin imported instance.',
-        'delete_plugin_imported_instance_completed' => 'Concluído: delete plugin imported instance.',
-        'delete_plugin_imported_instance_failed' => 'Falha: delete plugin imported instance.',
+        'delete_plugin_imported_instance_completed' => 'Delete plugin on imported instance completed.',
+        'delete_plugin_imported_instance_failed' => 'Delete plugin on imported instance failed.',
+        'set_billing_started' => 'Configuracao de cobranca iniciada.',
+        'set_billing_completed' => 'Configuracao de cobranca concluida.',
+        'set_billing_failed' => 'Configuracao de cobranca falhou.',
     ],
+    'failed_to_create_log_stream' => 'Falha ao criar stream de logs.',
 ];
+

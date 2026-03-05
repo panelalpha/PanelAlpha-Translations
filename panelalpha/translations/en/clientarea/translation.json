@@ -317,6 +317,7 @@
             "ssoSingleLogin.title": "Logging in to WordPress",
             "ssoSingleLogin.message": "Generating an SSO link in progress...",
             "staging.title": "Create Staging",
+            "staging.alert.additionalCharge": "Staging sites will incur costs because they are treated as additional sites.",
             "update.title": "Update",
             "clearCache.title": "Clear Cache",
             "clearCache.message_one": "Are you sure that you want to clear cache?",
@@ -370,6 +371,131 @@
             "modal.previewSite.title": "Preview Site",
             "modal.previewSite.message": "Your site can be previewed on a temporary URL before you move to the real domain.",
             "modal.previewSite.field": "Your Site Temporary URL:",
+            "modal.cancelInstanceImport.title": "Cancel Import",
+            "modal.cancelInstanceImport.desc": "Are you sure you want to cancel instance importing? Any data you entered will be permanently deleted.",
+            "modal.cancelInstanceImport.checkbox": "Yes, I understand and want to cancel instance importing.",
+            "modal.cancelInstanceInstallation.title": "Cancel Installation",
+            "modal.cancelInstanceInstallation.desc": "Are you sure you want to cancel instance importing? Any data you entered will be permanently deleted.",
+            "modal.cancelInstanceInstallation.checkbox": "Yes, I understand and want to cancel instance importing.",
+            "modal.importDetails.title": "Migration Logs",
+            "modal.importDetails.step": {
+                "installNewInstance": {
+                    "title": "Installing New Instance",
+                    "tooltip": "Installing a fresh WordPress instance on the destination server"
+                },
+                "installPluginOnNewInstance": {
+                    "title": "Installing Plugin on New Instance",
+                    "tooltip": "Installing the migration plugin on the newly created WordPress instance"
+                },
+                "installPluginOnImportedInstance": {
+                    "title": "Installing Plugin on Migrated Instance",
+                    "tooltip": "Installing the migration plugin on the migrated WordPress instance"
+                },
+                "prepareNewInstanceToMigration": {
+                    "title": "Preparing New Instance for Migration",
+                    "tooltip": "Configuring the new WordPress instance to receive migrated data"
+                },
+                "prepareMigrationUsingPlugin": {
+                    "title": "Preparing Migration",
+                    "tooltip": "Setting up the migration process"
+                },
+                "runMigrationUsingPlugin": {
+                    "title": "Running Migration",
+                    "tooltip": "Executing the automated migration process"
+                },
+                "migrateDatabaseUsingPlugin": {
+                    "title": "Migrating Database",
+                    "tooltip": "Importing the database into the migrated WordPress instance"
+                },
+                "migrateFilesUsingPlugin": {
+                    "title": "Migrating Files",
+                    "tooltip": "Uploading the migrated WordPress files to the destination server"
+                },
+                "prepareInstance": {
+                    "title": "Preparing New Instance",
+                    "tooltip": "Setting up the new WordPress instance for migration"
+                },
+                "downloadDatabase": {
+                    "title": "Downloading Database",
+                    "tooltip": "Downloading the WordPress database from the source server"
+                },
+                "downloadFiles": {
+                    "title": "Downloading Files",
+                    "tooltip": "Downloading WordPress files from the source server"
+                },
+                "uploadFiles": {
+                    "title": "Uploading Files",
+                    "tooltip": "Uploading WordPress files to the destination server"
+                },
+                "uploadDatabase": {
+                    "title": "Uploading Database",
+                    "tooltip": "Uploading the WordPress database to the destination server"
+                },
+                "importDatabase": {
+                    "title": "Importing Database",
+                    "tooltip": "Importing the database into the destination server"
+                },
+                "configureWordPress": {
+                    "title": "Configuring WordPress",
+                    "tooltip": "Updating WordPress configuration for the new environment"
+                },
+                "cleanUp": {
+                    "title": "Cleaning Up Files",
+                    "tooltip": "Removing temporary files created during the migration process"
+                },
+                "cleanUpPlugins": {
+                    "title": "Cleaning Up Plugins",
+                    "tooltip": "Removing plugins installed during the migration process"
+                },
+                "createFtpAccount": {
+                    "title": "Creating FTP Account",
+                    "tooltip": "Creating an FTP account on the destination server for file uploads"
+                },
+                "prepareFiles": {
+                    "title": "Preparing Files",
+                    "tooltip": "Compressing and preparing WordPress files for migration"
+                },
+                "cleaning-files": {
+                    "title": "Cleaning Up Files",
+                    "tooltip": "Removing temporary files created during the migration process"
+                },
+                "removing-ftp-account": {
+                    "title": "Removing FTP Account",
+                    "tooltip": "Removing the temporary FTP account from the destination server"
+                },
+                "configuring-wordpress": {
+                    "title": "Configuring WordPress",
+                    "tooltip": "Updating WordPress configuration for the new environment"
+                },
+                "importing-database": {
+                    "title": "Importing Database",
+                    "tooltip": "Importing the database into the destination server"
+                },
+                "creating-database": {
+                    "title": "Creating Database",
+                    "tooltip": "Creating a new database on the destination server"
+                },
+                "extracting-files": {
+                    "title": "Extracting Files",
+                    "tooltip": "Extracting WordPress files from the archive to the domain directory"
+                },
+                "creating-ftp-account": {
+                    "title": "Creating FTP Account",
+                    "tooltip": "Creating an FTP account on the destination server for file uploads"
+                },
+                "creating-temporary-directory": {
+                    "title": "Creating Temporary Directory",
+                    "tooltip": "Creating a temporary directory on the destination server for file processing"
+                },
+                "creating-domain": {
+                    "title": "Creating Domain",
+                    "tooltip": "Configuring the domain on the destination server"
+                },
+                "creating-hosting-account": {
+                    "title": "Creating Hosting Account",
+                    "tooltip": "Creating a new hosting account on the destination server"
+                }
+            },
             "siteDetails.installation.title": "Installation",
             "siteDetails.installation.current.wordpress": "WordPress is up to date",
             "siteDetails.installation.current.system": "Systems are up to date",
@@ -685,6 +811,8 @@
             "dns.modal.update.message": "DNS Zone: {{zone}}",
             "dns.modal.delete.title": "Delete DNS Record",
             "dns.zone.title": "DNS Zone",
+            "dns.zones.title": "DNS Zone",
+            "dns.zones.tooltip": "Select a DNS Zone to manage its records.",
             "cron.title": "Cron Jobs",
             "cron.modal.add.title": "Add Cron Job",
             "cron.modal.update.title": "Edit Cron Job",
@@ -887,6 +1015,13 @@
         "hostingAccountInDiagnosticMode": "Managing the hosting is currently not possible (Diagnostic Mode). Please contact support for more details",
         "tag.noAssigned": "No tags assigned",
         "tag.noTags": "No tags available to assign. {link}, to assign more tags.",
+        "importing": {
+            "modal": {
+                "title": "Migration Logs",
+                "desc": "On this screen, you can view a preview of your instance import process and the status of individual operations.",
+                "progress": "Importing Progress:"
+            }
+        },
         "alert": {
             "failed": "Failed: {message}",
             "warning": "Warning: {message}"
@@ -1001,9 +1136,15 @@
             "plugin.special": "Special Plugin",
             "staging.failed": "Creating staging instance failed.",
             "update.inProgress": "Update is in progress.",
-            "importing.failed": "Importing the instance has failed.",
+            "importing.inProgress": "Migration is in progress",
+            "importing.failed": "Importing failed.",
             "importing.site": "Importing your site.",
-            "importing.wait": "It may take a while."
+            "importing.wait": "It may take a while.",
+            "importing.wait": "Migrating Files",
+            "not-started": "Not Started",
+            "completed": "Completed",
+            "in-progress": "In Progress",
+            "stopped": "Stopped"
         }
     },
     "notification": {
@@ -1243,10 +1384,16 @@
         "generateSsoLink": "Generate Login Link",
         "getStarted": "Get Started",
         "home.back": "Back To Home",
+        "import": {
+            "cancel": "Cancel Migration",
+            "resume": "Resume Import",
+            "details": "Show Logs"
+        },
         "install": "Install",
         "installing": "Installing",
         "installNow": "Install Now",
         "installation.cancel": "Cancel Installation",
+        "installation.resume": "Resume Installation",
         "installation.retry": "Retry Installation",
         "instance.add": "Add Instance",
         "instance.addNew": "Add New Instance",
@@ -1991,6 +2138,7 @@
             "sites": "Sites",
             "ssl": "SSL Status",
             "status": "Status",
+            "step": "Step",
             "storage": "Storage",
             "tags": "Tags",
             "title": "Title",

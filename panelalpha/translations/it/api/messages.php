@@ -223,8 +223,16 @@ return [
     'prepare_manual_import_failed' => 'Preparazione dell’importazione manuale non riuscita.',
     'detected_wp_salt' => 'Rilevato wp-salt.php richiesto in wp-config.php, sostituendolo con il contenuto di wp-salt.php.',
     'cannot_connect_to_wordpress' => 'Impossibile connettersi a WordPress. Verifica l’URL e le credenziali admin. In alternativa, installa il plugin manualmente.',
-    'cannot_connect_to_migrator_plugin' => 'Impossibile connettersi al plugin migrator. Può essere causato dal plugin non installato, da impostazioni di sicurezza (es. regole .htaccess) o da restrizioni del provider di hosting.',
-    'migration_in_progress' => 'Fase: :phase. Avanzamento: :percent%',
+    'cannot_connect_to_migrator_plugin' => 'Impossibile connettersi al plugin migrator. Verifica installazione e restrizioni del server.',
+    'cannot_connect_to_wordpress_using_admin_credentials' => 'L\'uso delle credenziali admin di WordPress non funzionera (probabilmente a causa di restrizioni Cloudflare/firewall/WAF). Installa il plugin manualmente.',
+    'migration_in_progress' => 'Fase: :phase. Progresso: :percent%',
+    'ssl_order_process' => [
+        'valid_ssl_cert_exists' => 'Esiste gia un certificato SSL valido per questo dominio.',
+        'ssl_cert_not_available_for_alias' => 'Il certificato SSL non e disponibile per alias.',
+        'ssl_cert_not_available_for_subdomains' => 'Questo server non supporta l\'installazione di certificati SSL sui sottodomini.',
+        'ssl_cert_provider_by_cloudflare' => 'Cloudflare fornisce il certificato SSL per questo dominio, quindi non e necessario creare un ordine SSL.',
+        'server_cannot_install_ssl_certs' => 'Questo server non supporta l\'installazione di certificati SSL.',
+    ],
     'import' => [
         'removed_by_admin' => 'Le migrazioni sono state rimosse dall’amministratore.',
         'import_is_started' => 'L’importazione è iniziata.',
@@ -356,5 +364,9 @@ return [
         'delete_plugin_imported_instance_started' => 'Avvio: delete plugin imported instance.',
         'delete_plugin_imported_instance_completed' => 'Completato: delete plugin imported instance.',
         'delete_plugin_imported_instance_failed' => 'Errore: delete plugin imported instance.',
+        'set_billing_started' => 'Avvio configurazione fatturazione.',
+        'set_billing_completed' => 'Configurazione fatturazione completata.',
+        'set_billing_failed' => 'Configurazione fatturazione non riuscita.',
     ],
+    'failed_to_create_log_stream' => 'Impossibile creare il flusso di log.',
 ];

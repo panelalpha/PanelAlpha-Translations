@@ -8,6 +8,7 @@ use App\Lib\Integrations\Auth\Google;
 use App\Lib\Integrations\Auth\Linkedin;
 use App\Lib\Integrations\Auth\Microsoft;
 use App\Lib\Integrations\DbIp;
+use App\Lib\Integrations\DnsServers\Bunny;
 use App\Lib\Integrations\DnsServers\Cloudflare;
 use App\Lib\Integrations\DnsServers\PowerDns;
 use App\Lib\Integrations\EmailProvider\MailerSend;
@@ -455,6 +456,7 @@ return [
             ],
             'api_token' => [
                 'label' => 'API Token',
+                'link_label' => 'How To Create API Token',
             ],
             'ssl_verification' => [
                 'label' => 'SSL Verification',
@@ -538,6 +540,15 @@ return [
             ],
             'nameservers' => [
                 'label' => 'Nameservers (comma separated)',
+            ],
+        ]
+    ],
+    Bunny::class => [
+        "title" => "Bunny.net",
+        "description" => 'Bunny.net - The global edge platform that truly hops',
+        "fields" => [
+            'api_key' => [
+                'label' => 'API Key',
             ],
         ]
     ],

@@ -27,10 +27,14 @@ return [
         'creating-temporary-directory' => 'Criação de diretório temporário',
         'installPluginOnNewInstance' => "Instalando o plugin 'WordPress Migrator' na nova instância",
         'installPluginOnImportedInstance' => "Instalando o plugin 'WordPress Migrator' na instância importada",
+        'prepareMigrationUsingPlugin' => 'Preparing migration',
         'installNewInstance' => 'Instalando nova instância',
         'prepareNewInstanceToMigration' => 'Preparando nova instância para migração',
-        'prepareMigrationUsingPlugin' => 'Preparando migração',
-        'runMigrationUsingPlugin' => 'Executando migração',
+        
+        'runMigrationUsingPlugin' => 'Running migration',
+        
+        'migrateDatabaseUsingPlugin' => 'Migrando banco de dados',
+        'migrateFilesUsingPlugin' => 'Migrando arquivos',
         'prepareInstance' => 'Preparando instância para migração',
         'downloadDatabase' => 'Baixando banco de dados',
         'downloadFiles' => 'Baixando arquivos',
@@ -101,3 +105,4 @@ return [
     'files' => 'Arquivos',
     'database' => 'Banco de dados',
 ];
+

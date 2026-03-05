@@ -225,5 +225,17 @@ return [
     'detected_wp_salt' => 'WP-Salt erkannt',
     'cannot_connect_to_wordpress' => 'Kann keine Verbindung zu WordPress herstellen',
     'cannot_connect_to_migrator_plugin' => 'Kann keine Verbindung zum Migrator-Plugin herstellen',
+    'cannot_connect_to_wordpress_using_admin_credentials' => 'Die WordPress-Admin-Zugangsdaten funktionieren nicht (wahrscheinlich aufgrund von Cloudflare/Firewall/WAF). Bitte installieren Sie das Plugin manuell.',
     'migration_in_progress' => 'Migration läuft',
+    'set_billing_started' => 'Abrechnungseinrichtung gestartet.',
+    'set_billing_completed' => 'Abrechnungseinrichtung abgeschlossen.',
+    'set_billing_failed' => 'Abrechnungseinrichtung fehlgeschlagen.',
+    'ssl_order_process' => [
+        'valid_ssl_cert_exists' => 'Ein gultiges SSL-Zertifikat existiert bereits fur diese Domain.',
+        'ssl_cert_not_available_for_alias' => 'SSL-Zertifikat ist fur Alias nicht verfugbar.',
+        'ssl_cert_not_available_for_subdomains' => 'Dieser Server unterstutzt die Installation von SSL-Zertifikaten fur Subdomains nicht.',
+        'ssl_cert_provider_by_cloudflare' => 'Cloudflare stellt das SSL-Zertifikat fur diese Domain bereit, daher ist keine SSL-Bestellung erforderlich.',
+        'server_cannot_install_ssl_certs' => 'Dieser Server unterstutzt die Installation von SSL-Zertifikaten nicht.',
+    ],
+    'failed_to_create_log_stream' => 'Log-Stream konnte nicht erstellt werden.',
 ];

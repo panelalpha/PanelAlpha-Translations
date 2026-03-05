@@ -30,8 +30,12 @@ return [
         'installPluginOnNewInstance' => "התקנת התוסף WordPress Migrator במופע החדש",
         'prepareNewInstanceToMigration' => 'הכנת המופע החדש למיגרציה',
         'installPluginOnImportedInstance' => "התקנת התוסף WordPress Migrator במופע שיובא",
-        'prepareMigrationUsingPlugin' => 'הכנת המיגרציה',
-        'runMigrationUsingPlugin' => 'הרצת המיגרציה',
+        'prepareMigrationUsingPlugin' => 'Preparing migration',
+        
+        'runMigrationUsingPlugin' => 'Running migration',
+        
+        'migrateDatabaseUsingPlugin' => 'Migrating database',
+        'migrateFilesUsingPlugin' => 'Migrating files',
         'prepareInstance' => 'הכנת המופע למיגרציה',
         'downloadDatabase' => 'הורדת מסד הנתונים',
         'downloadFiles' => 'הורדת הקבצים',
@@ -104,3 +108,4 @@ return [
 
     'מסד נתונים',
 ];
+
