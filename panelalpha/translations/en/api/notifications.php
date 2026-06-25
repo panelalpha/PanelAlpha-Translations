@@ -25,7 +25,13 @@ use App\Notifications\User\Instance\PushToStagingFailed;
 use App\Notifications\User\Instance\PushToStagingFinished;
 use App\Notifications\User\Instance\UpdateWordpressFinished;
 use App\Notifications\User\Instance\UpdateWordpressFailed;
+use App\Notifications\User\Instance\WordpressMcpDisableFailed;
+use App\Notifications\User\Instance\WordpressMcpDisableFinished;
+use App\Notifications\User\Instance\WordpressMcpEnableFailed;
+use App\Notifications\User\Instance\WordpressMcpEnableFinished;
 use App\Notifications\User\Instance\PushToLiveFinished;
+use App\Notifications\User\Instance\Git\GitAutoDeployFailed;
+use App\Notifications\User\Instance\Git\GitAutoDeployFinished;
 use App\Notifications\User\Instance\PushToLiveFailed;
 use App\Notifications\User\Instance\InstanceInvitationReceived;
 use App\Notifications\User\Instance\InstanceInstallationFinished;
@@ -64,6 +70,7 @@ use App\Notifications\Admin\Theme\ForceUpdateThemeFinished;
 use App\Notifications\Admin\Theme\ForceUpdateThemeFailed;
 use App\Notifications\Admin\Plugin\ForceUpdatePluginFinished;
 use App\Notifications\Admin\Plugin\ForceUpdatePluginFailed;
+use App\Notifications\Admin\Health\IncidentSummary;
 use App\Notifications\Admin\Server\ServerAlert;
 use App\Notifications\User\Instance\ImportFailed;
 use App\Notifications\User\Instance\ImportFinished;
@@ -186,6 +193,10 @@ return [
         "name" => "Server Alert",
         "description" => "The notification is informing the recipient about alerts detected on hosting server.",
     ],
+    IncidentSummary::class => [
+        "name" => "Incidents Summary",
+        "description" => "The notification informs the recipient of a summary of health incidents recorded within a recent period (typically the past hour). Incidents are grouped by server and hosting account, with counts per incident type and optional remediation suggestions.",
+    ],
     DnsZoneExists::class => [
         "name" => "DNS Zone Exists",
         "description" => "The notification is informing the recipient that the DNS zone creation attempt has failed because the DNS zone already exists. The notification may include details about the existing DNS zone, the affected service, and the DNS server involved."
@@ -302,6 +313,14 @@ return [
         "name" => "Push To Live Completed",
         "description" => "The notification is informing the recipient that the changes made on the staging instance have been successfully pushed to the live version of the website or system. The notification may include details on what changes were made and any further steps that should be taken."
     ],
+    GitAutoDeployFailed::class => [
+        "name" => "Git Auto-Deploy Failed",
+        "description" => "The notification informs the recipient that an automatic deploy triggered by a Git push could not be completed."
+    ],
+    GitAutoDeployFinished::class => [
+        "name" => "Git Auto-Deploy Completed",
+        "description" => "The notification informs the recipient that an automatic deploy triggered by a Git push completed successfully."
+    ],
     UpdateWordpressFailed::class => [
         "name" => "WordPress Update Failed",
         "description" => "The notification is informing the recipient that an attempt to update the WordPress instance has failed. The notification may include details on why the update failed and what steps should be taken to resolve the issue."
@@ -309,6 +328,22 @@ return [
     UpdateWordpressFinished::class => [
         "name" => "WordPress Update Completed",
         "description" => "The notification is informing the recipient that the WordPress instance has been successfully updated. The notification may include details on what changes were made to the instance and any further steps that should be taken."
+    ],
+    WordpressMcpEnableFailed::class => [
+        'name' => 'WordPress MCP Enable Failed',
+        'description' => 'Informs the recipient that enabling WordPress MCP on their instance failed.',
+    ],
+    WordpressMcpEnableFinished::class => [
+        'name' => 'WordPress MCP Enabled',
+        'description' => 'Informs the recipient that WordPress MCP was successfully enabled on their instance.',
+    ],
+    WordpressMcpDisableFailed::class => [
+        'name' => 'WordPress MCP Disable Failed',
+        'description' => 'Informs the recipient that disabling WordPress MCP on their instance failed.',
+    ],
+    WordpressMcpDisableFinished::class => [
+        'name' => 'WordPress MCP Disabled',
+        'description' => 'Informs the recipient that WordPress MCP was successfully disabled on their instance.',
     ],
     \App\Notifications\User\System\ResetPassword::class => [
         "name" => "Reset Password",

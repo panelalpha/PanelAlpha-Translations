@@ -5,6 +5,7 @@ use App\Jobs\Admin\RestoreBackup as AdminRestoreBackup;
 use App\Jobs\Admin\SyncReportProviders;
 use App\Jobs\System\AdminSendAvailableUpdateNotification;
 use App\Jobs\System\DeleteRedundantBackups;
+use App\Jobs\System\GitAutoDeploy;
 use App\Jobs\System\InstanceHealthCheck;
 use App\Jobs\Admin\ConvertInstanceToTemplate;
 use App\Jobs\System\PostInstallInstanceSteps;
@@ -16,6 +17,7 @@ use App\Jobs\System\SyncBackupsWithRemoteContainer;
 use App\Jobs\System\SyncInstanceSiteName;
 use App\Jobs\System\SyncWordPressData;
 use App\Jobs\System\UserSendAvailableUpdateNotification;
+use App\Jobs\User\DeployInstance;
 use App\Jobs\User\ImportInstance;
 use App\Jobs\System\ImportVisitors;
 use App\Jobs\System\InstallTheme;
@@ -39,8 +41,12 @@ use App\Jobs\User\UpdatePlugin;
 use App\Jobs\User\InstallTheme as UserInstallTheme;
 use App\Jobs\User\UpdateTheme;
 use App\Jobs\User\UpdateWordpress;
+use App\Jobs\User\EnableWordpressMcp;
+use App\Jobs\User\DisableWordpressMcp;
 
 return [
+    EnableWordpressMcp::class => "Enable WordPress MCP",
+    DisableWordpressMcp::class => "Disable WordPress MCP",
     InstallPackage::class => "Install Package: :name",
     ForceUpdatePlugin::class => "Force Update Plugin: :name",
     ForceUpdateTheme::class => "Force Update Theme: :name",
@@ -80,5 +86,7 @@ return [
     PushToStaging::class => "Push To Staging",
     SyncHostingAccount::class => "Sync Hosting Account",
     SyncWordPressData::class => "Sync WordPress Data",
+    DeployInstance::class => "Deploy Instance",
+    GitAutoDeploy::class => "Git Auto-Deploy",
 ];
 

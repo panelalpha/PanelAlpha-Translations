@@ -20,6 +20,7 @@ use App\Lib\Integrations\EmailServers\Cpanel as CpanelEmailServer;
 use App\Lib\Integrations\EmailServers\Mailcow;
 use App\Lib\Integrations\GooglePageSpeedInsights;
 use App\Lib\Integrations\Onboarding\Extendify;
+use App\Lib\Integrations\Onboarding\TenWeb;
 use App\Lib\Integrations\PreviewSiteProvider\WithoutDns;
 use App\Lib\Integrations\ReportProviders\GoogleAnalytics;
 use App\Lib\Integrations\ReportProviders\Matomo;
@@ -88,6 +89,8 @@ return [
             ]
         ]
     ],
+
+    // Onboarding
     Extendify::class => [
         "title" => "Extendify",
         "subtitle" => "Used for Super Quick Onboarding of instances",
@@ -98,13 +101,42 @@ return [
                 "label" => "Partner ID",
                 "placeholder" => "Enter Partner ID"
             ]
-        ]
+        ],
+        'application_config' => [
+            'skip_extendify_questions' => [
+                'label' => 'Skip Extendify questions',
+            ],
+        ],
     ],
+    TenWeb::class => [
+        "title" => "10Web",
+        "subtitle" => "Used for Super Quick Onboarding of instances",
+        "description" => "10Web is a WordPress platform that helps automate website creation and setup. Connect it to enable fast onboarding and provisioning of WordPress instances.",
+        "instruction" => "To use <b>10Web</b>, follow these steps:<ol><li>Log in to your 10Web account.</li><li>Open the <b>API Key</b> section.</li><li>Generate a new API token.</li><li>Copy the token and paste it into the field below.</li></ol><br>Don't have an account yet? <a href=\"https://10web.io/website-builder-api/hosting-providers/?panelalpha_refering_url=1\" target=\"_blank\">Sign up here</a>.",
+        "fields" => [
+            "api_key" => [
+                "label" => "API Token",
+                "placeholder" => "Enter API Token"
+            ]
+        ],
+        'application_config' => [
+            'wvc_website_create_count' => [
+                'label' => 'Website creation limit',
+                'tooltip' => 'Maximum AI website generations allowed per instance.',
+            ],
+            'wvc_edit_count' => [
+                'label' => 'Edit limit',
+                'tooltip' => 'Maximum AI edits allowed per instance.',
+            ],
+        ],
+    ],
+
+
     GoogleAnalytics::class => [
         "title" => "Google Analytics",
         "subtitle" => "Employed for Gathering and Analyzing Website Traffic Data",
         "description" => "Google Analytics offers free tools for consolidating and analyzing your company's data, enabling the decision process to be data-oriented",
-        "instruction" => "To use Google Analytics, follow these steps:<ol><li>Go to the Google Analytics site: <a href=\"https://analytics.google.com\" target=\"_blank\">https://analytics.google.com/</a></li><li>Log into your Google account if not already logged in.</li><li>Create a Google Analytics account.</li><li>Navigate to Administration > Account Settings > Account Details and find your Account ID.</li><li>Copy and paste the Property ID in the form below.</li><li>Create a credentials JSON file as <a href=\"https://www.panelalpha.com/documentation/integrations/google-analytics/#google-anlytics-json-file\" target=\"_blank\">described in the documentation</a>.</li><li>Attach the JSON file in the Service Account Credentials field below.</li></ol><br>Warning! This integration works based on javascript code automatically installed on customer instances. The user can remove this code and the integration will stop working.",
+        "instruction" => "To use Google Analytics, follow these steps:<ol><li>Go to the Google Analytics site: <a href=\"https://analytics.google.com\" target=\"_blank\">https://analytics.google.com/</a></li><li>Log into your Google account if not already logged in.</li><li>Create a Google Analytics account.</li><li>Navigate to Administration > Account Settings > Account Details and find your Account ID.</li><li>Copy and paste the Property ID in the form below.</li><li>Create a credentials JSON file as <a href=\"https://www.panelalpha.com/documentation/multi-server/integrations/google-analytics/#google-anlytics-json-file\" target=\"_blank\">described in the documentation</a>.</li><li>Attach the JSON file in the Service Account Credentials field below.</li></ol><br>Warning! This integration works based on javascript code automatically installed on customer instances. The user can remove this code and the integration will stop working.",
         "fields" => [
             "account-id" => [
                 "label" => "Account ID",
@@ -325,9 +357,11 @@ return [
         "config" => [
             'disk_space_limit' => [
                 'label' => 'Disk Space Limit (MB)',
+                'tooltip' => 'Disk space limit for sites. The value must be provided as an integer in megabytes (MB) only, without any suffixes.',
             ],
             'memory_limit' => [
                 'label' => 'Memory Limit (MB)',
+                'tooltip' => 'Memory limit for sites. The value must be provided as an integer in megabytes (MB) only, without any suffixes.',
             ],
             'cpu_limit' => [
                 'label' => 'CPU Limit',
@@ -370,6 +404,9 @@ return [
             ],
             'lsphp_settings' => [
                 'label' => 'LSPHP Settings',
+            ],
+            'redis_config' => [
+                'label' => 'Redis Config',
             ],
             'dedicated_ipv4' => [
                 'label' => 'Dedicated IPv4',
@@ -479,7 +516,12 @@ return [
             ],
             'account_id' => [
                 'label' => 'Account ID',
+                'tooltip' => 'This field is optional as by default the account ID is taken from API Token'
             ],
+            'nameservers' => [
+                'label' => 'Nameservers',
+                'tooltip' => 'Enter custom nameservers (comma separated) assigned to your Cloudflare account (e.g. adam.ns.cloudflare.com, bella.ns.cloudflare.com). These will be displayed in Client Area. You need to configure them manually in Cloudflare dashboard.'
+            ]
         ],
     ],
     App\Lib\Integrations\DnsServers\CpanelDnsOnly::class => [
@@ -549,6 +591,18 @@ return [
         "fields" => [
             'api_key' => [
                 'label' => 'API Key',
+            ],
+            'nameservers' => [
+                'label' => 'Custom Nameservers (comma separated)',
+                'tooltip' => 'Enter custom nameserver hostnames assigned to your Bunny.net account (e.g. ns1.yourdomain.com, ns2.yourdomain.com). These will be displayed in Client Area and applied when creating DNS zones.',
+            ],
+            'nameserver_1' => [
+                'label' => 'Nameserver 1',
+                'tooltip' => 'Enter custom nameserver hostname assigned to your Bunny.net account (e.g. ns1.yourdomain.com). It will be displayed in Client Area and applied when creating DNS zones.',
+            ],
+            'nameserver_2' => [
+                'label' => 'Nameserver 2',
+                'tooltip' => 'Enter custom nameserver hostname assigned to your Bunny.net account (e.g. ns1.yourdomain.com). It will be displayed in Client Area and applied when creating DNS zones.',
             ],
         ]
     ],
