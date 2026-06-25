@@ -39,3 +39,24 @@
     </tr>
     </tbody>
 </table>
+
+@if (!empty($skipped_files))
+    @php
+        $skippedCount = count($skipped_files);
+        $skippedPreview = array_slice($skipped_files, 0, 10);
+    @endphp
+
+    <p><strong>Warning:</strong> {{ $skippedCount }} {{ $skippedCount === 1 ? 'file was' : 'files were' }} skipped during the migration.</p>
+
+    @if ($skippedCount > 0)
+        <ul>
+            @foreach ($skippedPreview as $file)
+                <li>{{ $file }}</li>
+            @endforeach
+        </ul>
+
+        @if ($skippedCount > 10)
+            <p>Showing the first 10 files.</p>
+        @endif
+    @endif
+@endif
