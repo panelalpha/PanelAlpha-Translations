@@ -14,16 +14,24 @@ use App\Notifications\Admin\InstanceTemplate\InstanceTemplateCreateFailed;
 use App\Notifications\Admin\InstanceTemplate\InstanceTemplateCreateFinished;
 use App\Notifications\Admin\EmailDomain\EmailDomainCreateFailed;
 use App\Notifications\Admin\EmailDomain\EmailDomainExists;
+use App\Notifications\Admin\Health\IncidentSummary;
+use App\Notifications\Admin\Jobs\RefreshReportDataFailed;
 use App\Notifications\Admin\Plan\PlanConfigurationError;
 use App\Notifications\Admin\ReportProvider\SyncReportProvidersFailed;
 use App\Notifications\Admin\ReportProvider\SyncReportProvidersFinished;
 use App\Notifications\Admin\SslOrder\DnsPropagationExceeded;
 use App\Notifications\Admin\SslOrder\SslOrderFailed;
 use App\Notifications\User\Instance\CreateFtpAccountForInstance;
+use App\Notifications\User\Instance\Git\GitAutoDeployFailed;
+use App\Notifications\User\Instance\Git\GitAutoDeployFinished;
 use App\Notifications\User\Instance\PushToStagingFailed;
 use App\Notifications\User\Instance\PushToStagingFinished;
 use App\Notifications\User\Instance\UpdateWordpressFinished;
 use App\Notifications\User\Instance\UpdateWordpressFailed;
+use App\Notifications\User\Instance\WordpressMcpDisableFailed;
+use App\Notifications\User\Instance\WordpressMcpDisableFinished;
+use App\Notifications\User\Instance\WordpressMcpEnableFailed;
+use App\Notifications\User\Instance\WordpressMcpEnableFinished;
 use App\Notifications\User\Instance\PushToLiveFinished;
 use App\Notifications\User\Instance\PushToLiveFailed;
 use App\Notifications\User\Instance\InstanceInvitationReceived;
@@ -185,6 +193,10 @@ return [
         'name' => 'התראת שרת',
         'description' => 'ההודעה מיידעת את הנמען על התראות שזוהו בשרת האחסון.',
     ],
+    IncidentSummary::class => [
+        'name' => 'סיכום תקלות',
+        'description' => 'ההודעה מיידעת את הנמען על סיכום של תקלות בריאות שנרשמו בתקופה האחרונה (בדרך כלל השעה האחרונה). התקלות מקובצות לפי שרת וחשבון אחסון, עם ספירה לכל סוג תקלה והצעות לתיקון אופציונליות.',
+    ],
     DnsZoneExists::class => [
         'name' => '',
         'description' => '',
@@ -309,6 +321,30 @@ return [
         'name' => '',
         'description' => '',
     ],
+    GitAutoDeployFailed::class => [
+        'name' => 'פריסה אוטומטית מ-Git נכשלה',
+        'description' => 'ההודעה מיידעת את הנמען שפריסה אוטומטית שהופעלה על ידי דחיפה ל-Git לא הושלמה.',
+    ],
+    GitAutoDeployFinished::class => [
+        'name' => 'פריסה אוטומטית מ-Git הושלמה',
+        'description' => 'ההודעה מיידעת את הנמען שפריסה אוטומטית שהופעלה על ידי דחיפה ל-Git הושלמה בהצלחה.',
+    ],
+    WordpressMcpEnableFailed::class => [
+        'name' => 'הפעלת WordPress MCP נכשלה',
+        'description' => 'מיידע את הנמען שהפעלת WordPress MCP באינסטנס שלו נכשלה.',
+    ],
+    WordpressMcpEnableFinished::class => [
+        'name' => 'WordPress MCP הופעל',
+        'description' => 'מיידע את הנמען ש-WordPress MCP הופעל בהצלחה באינסטנס שלו.',
+    ],
+    WordpressMcpDisableFailed::class => [
+        'name' => 'השבתת WordPress MCP נכשלה',
+        'description' => 'מיידע את הנמען שהשבתת WordPress MCP באינסטנס שלו נכשלה.',
+    ],
+    WordpressMcpDisableFinished::class => [
+        'name' => 'WordPress MCP הושבת',
+        'description' => 'מיידע את הנמען ש-WordPress MCP הושבת בהצלחה באינסטנס שלו.',
+    ],
     \App\Notifications\User\System\ResetPassword::class => [
         'name' => '',
         'description' => '',
@@ -428,5 +464,9 @@ return [
     ControlPanelUpgrade::class => [
         'name' => 'דוא״ל ברוך הבא לשדרוג לוח הבקרה',
         'description' => 'הודעה זו מיידעת שחשבון האחסון שודרג בהצלחה בלוח הבקרה. היא כוללת את פרטי ההתחברות הדרושים כדי שהמשתמש יוכל לגשת לחשבון.',
+    ],
+    RefreshReportDataFailed::class => [
+        'name' => 'רענון נתוני דוח נכשל',
+        'description' => 'ההודעה מיידעת את הנמען שמשימת רענון נתוני הדוח עבור אינסטנס וורדפרס נכשלה. ההודעה עשויה לכלול פרטים על האינסטנס והודעת השגיאה.',
     ],
 ];

@@ -1,0 +1,1 @@
+חשבון FTP/SFTP למופע WordPress נוצר

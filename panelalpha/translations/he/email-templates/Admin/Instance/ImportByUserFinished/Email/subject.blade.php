@@ -1,0 +1,1 @@
+מופע {{ $instance_name }} על ידי {{ $client_name }} יובא בהצלחה

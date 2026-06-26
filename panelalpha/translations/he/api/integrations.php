@@ -8,6 +8,7 @@ use App\Lib\Integrations\Auth\Google;
 use App\Lib\Integrations\Auth\Linkedin;
 use App\Lib\Integrations\Auth\Microsoft;
 use App\Lib\Integrations\DbIp;
+use App\Lib\Integrations\DnsServers\Bunny;
 use App\Lib\Integrations\DnsServers\Cloudflare;
 use App\Lib\Integrations\DnsServers\PowerDns;
 use App\Lib\Integrations\EmailProvider\MailerSend;
@@ -19,6 +20,7 @@ use App\Lib\Integrations\EmailServers\Cpanel as CpanelEmailServer;
 use App\Lib\Integrations\EmailServers\Mailcow;
 use App\Lib\Integrations\GooglePageSpeedInsights;
 use App\Lib\Integrations\Onboarding\Extendify;
+use App\Lib\Integrations\Onboarding\TenWeb;
 use App\Lib\Integrations\PreviewSiteProvider\WithoutDns;
 use App\Lib\Integrations\ReportProviders\GoogleAnalytics;
 use App\Lib\Integrations\ReportProviders\Matomo;
@@ -97,7 +99,34 @@ return [
                 "label" => "מזהה שותף",
                 "placeholder" => "הזן מזהה שותף"
             ]
-        ]
+        ],
+        'application_config' => [
+            'skip_extendify_questions' => [
+                'label' => 'דלג על שאלות Extendify',
+            ],
+        ],
+    ],
+    TenWeb::class => [
+        "title" => "10Web",
+        "subtitle" => "משמש להכשרה מהירה מאוד של מופעים",
+        "description" => "10Web היא פלטפורמת WordPress המסייעת להפוך את יצירת והגדרת האתר לאוטומטית. חבר אותה כדי לאפשר הכשרה והקצאה מהירה של מופעי WordPress.",
+        "instruction" => "כדי להשתמש ב-<b>10Web</b>, בצע את השלבים הבאים:<ol><li>התחבר לחשבון 10Web שלך.</li><li>פתח את סעיף <b>API Key</b>.</li><li>צור אסימון API חדש.</li><li>העתק את האסימון והדבק אותו בשדה למטה.</li></ol><br>אין לך עדיין חשבון? <a href=\"https://10web.io/website-builder-api/hosting-providers/?panelalpha_refering_url=1\" target=\"_blank\">הירשם כאן</a>.",
+        "fields" => [
+            "api_key" => [
+                "label" => "אסימון API",
+                "placeholder" => "הזן אסימון API"
+            ]
+        ],
+        'application_config' => [
+            'wvc_website_create_count' => [
+                'label' => 'מגבלת יצירת אתרים',
+                'tooltip' => 'מספר מרבי של יצירות אתרי AI המותרות לכל מופע.',
+            ],
+            'wvc_edit_count' => [
+                'label' => 'מגבלת עריכה',
+                'tooltip' => 'מספר מרבי של עריכות AI המותרות לכל מופע.',
+            ],
+        ],
     ],
     GoogleAnalytics::class => [
         "title" => "Google Analytics",
@@ -324,9 +353,11 @@ return [
         "config" => [
             'disk_space_limit' => [
                 'label' => 'מגבלת שטח דיסק (MB)',
+                'tooltip' => 'מגבלת שטח דיסק לאתרים. הערך חייב להיות מספר שלם במגה-בייטים (MB) בלבד, ללא סיומות.',
             ],
             'memory_limit' => [
                 'label' => 'מגבלת זיכרון (MB)',
+                'tooltip' => 'מגבלת זיכרון לאתרים. הערך חייב להיות מספר שלם במגה-בייטים (MB) בלבד, ללא סיומות.',
             ],
             'cpu_limit' => [
                 'label' => 'מגבלת CPU',
@@ -369,6 +400,9 @@ return [
             ],
             'lsphp_settings' => [
                 'label' => 'הגדרות LSPHP',
+            ],
+            'redis_config' => [
+                'label' => 'הגדרות Redis',
             ],
             'dedicated_ipv4' => [
                 'label' => 'IPv4 ייעודי',
@@ -454,6 +488,7 @@ return [
             ],
             'api_token' => [
                 'label' => 'אסימון API',
+                'link_label' => 'איך ליצור אסימון API',
             ],
             'ssl_verification' => [
                 'label' => 'אימות SSL',
@@ -476,7 +511,12 @@ return [
             ],
             'account_id' => [
                 'label' => 'מזהה חשבון',
+                'tooltip' => 'שדה זה אופציונלי מכיוון שכברירת מחדל מזהה החשבון נלקח מאסימון ה-API'
             ],
+            'nameservers' => [
+                'label' => 'שרתי שמות',
+                'tooltip' => 'הזן שרתי שמות מותאמים אישית (מופרדים בפסיק) שהוקצו לחשבון Cloudflare שלך (לדוגמה adam.ns.cloudflare.com, bella.ns.cloudflare.com). אלו יוצגו באזור הלקוח. עליך להגדיר אותם ידנית בלוח הבקרה של Cloudflare.'
+            ]
         ],
     ],
     App\Lib\Integrations\DnsServers\CpanelDnsOnly::class => [
@@ -537,6 +577,27 @@ return [
             ],
             'nameservers' => [
                 'label' => 'שרתי שמות (מופרדים בפסיק)',
+            ],
+        ]
+    ],
+    Bunny::class => [
+        "title" => "Bunny.net",
+        "description" => 'Bunny.net - פלטפורמת edge גלובלית שבאמת קופצת',
+        "fields" => [
+            'api_key' => [
+                'label' => 'מפתח API',
+            ],
+            'nameservers' => [
+                'label' => 'שרתי שמות מותאמים אישית (מופרדים בפסיק)',
+                'tooltip' => 'הזן שמות מארח של שרתי שמות מותאמים אישית שהוקצו לחשבון Bunny.net שלך (לדוגמה ns1.yourdomain.com, ns2.yourdomain.com). אלו יוצגו באזור הלקוח ויוחלו בעת יצירת אזורי DNS.',
+            ],
+            'nameserver_1' => [
+                'label' => 'שרת שמות 1',
+                'tooltip' => 'הזן שם מארח של שרת שמות מותאם אישית שהוקצה לחשבון Bunny.net שלך (לדוגמה ns1.yourdomain.com). הוא יוצג באזור הלקוח ויוחל בעת יצירת אזורי DNS.',
+            ],
+            'nameserver_2' => [
+                'label' => 'שרת שמות 2',
+                'tooltip' => 'הזן שם מארח של שרת שמות מותאם אישית שהוקצה לחשבון Bunny.net שלך (לדוגמה ns1.yourdomain.com). הוא יוצג באזור הלקוח ויוחל בעת יצירת אזורי DNS.',
             ],
         ]
     ],

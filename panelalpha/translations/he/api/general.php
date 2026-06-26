@@ -3,7 +3,12 @@
 return [
     'instance' => 'מופע',
     'hosting_account' => 'חשבון אירוח',
+    'server' => 'שרת',
     'service' => 'שירות',
+    'Application' => 'אפליקציה',
+    'ServerAccount' => 'חשבון אירוח',
+    'Server' => 'שרת',
+    'Service' => 'שירות',
     'self_signed' => 'חתימה עצמית',
     'files' => 'קבצים',
     'database' => 'מסד נתונים',
@@ -34,8 +39,9 @@ return [
         
         'runMigrationUsingPlugin' => 'Running migration',
         
-        'migrateDatabaseUsingPlugin' => 'Migrating database',
-        'migrateFilesUsingPlugin' => 'Migrating files',
+        'migrateDatabaseUsingPlugin' => 'העברת מסד נתונים',
+        'migrateFilesUsingPlugin' => 'העברת קבצים',
+        'finalizeMigrationUsingPlugin' => 'סיום העברה',
         'prepareInstance' => 'הכנת המופע למיגרציה',
         'downloadDatabase' => 'הורדת מסד הנתונים',
         'downloadFiles' => 'הורדת הקבצים',
@@ -103,9 +109,5 @@ return [
             'description' => 'Optional, if set, it will override onboarding domain configured in plan settings.'
         ]
     ],
-
-    'קבצים',
-
-    'מסד נתונים',
 ];
 

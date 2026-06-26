@@ -39,6 +39,10 @@ use App\Jobs\User\UpdatePlugin;
 use App\Jobs\User\InstallTheme as UserInstallTheme;
 use App\Jobs\User\UpdateTheme;
 use App\Jobs\User\UpdateWordpress;
+use App\Jobs\User\EnableWordpressMcp;
+use App\Jobs\User\DisableWordpressMcp;
+use App\Jobs\User\DeployInstance;
+use App\Jobs\System\GitAutoDeploy;
 
 return [
     InstallPackage::class => 'התקנת חבילה: :name',
@@ -80,4 +84,8 @@ return [
     PushToStaging::class => 'העלאה לסביבת פיתוח',
     SyncHostingAccount::class => 'סנכרון חשבון אחסון',
     SyncWordPressData::class => 'סנכרון נתוני וורדפרס',
+    EnableWordpressMcp::class => 'הפעלת WordPress MCP',
+    DisableWordpressMcp::class => 'השבתת WordPress MCP',
+    DeployInstance::class => 'פריסת אינסטנס',
+    GitAutoDeploy::class => 'פריסה אוטומטית מ-Git',
 ];

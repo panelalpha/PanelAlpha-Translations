@@ -1,0 +1,1 @@
+עדכון יזום {{ $plugin_title }} תוסף ב {{ $instance_name }} הושלם בהצלחה
