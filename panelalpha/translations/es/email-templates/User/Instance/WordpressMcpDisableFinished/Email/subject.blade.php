@@ -1,0 +1,1 @@
+WordPress MCP desactivado en {{ $instance_name }}

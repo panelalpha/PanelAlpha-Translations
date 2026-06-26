@@ -1,13 +1,20 @@
 <?php
 
 return [
+    'instance' => 'instancia',
     'hosting_account' => 'cuenta de alojamiento',
+    'server' => 'servidor',
+    'service' => 'servicio',
+    'Application' => 'aplicación',
+    'ServerAccount' => 'cuenta de alojamiento',
+    'Server' => 'servidor',
+    'Service' => 'servicio',
     'self_signed' => 'Autofirmado',
     'files' => 'archivos',
     'database' => 'base de datos',
     'import_steps' => [
         'downloading-database' => 'Descarga de la base de datos',
-        'creating-domain' => 'Creating domain',
+        'creating-domain' => 'Creando dominio',
         'creating-database' => 'Creación de la base de datos',
         'uploading-files' => 'Cargar archivos',
         'extracting-database' => 'Extracción de la base de datos',
@@ -28,9 +35,11 @@ return [
         'prepareNewInstanceToMigration' => 'Preparando la nueva instancia para la migración',
         'installPluginOnImportedInstance' => "Instalando el plugin 'WordPress Migrator' en la instancia importada",
         'prepareMigrationUsingPlugin' => 'Preparando la migración',
+        'runMigrationUsingPlugin' => 'Ejecutando migración',
+        'finalizeMigrationUsingPlugin' => 'Finalizando migración',
         
-        'migrateDatabaseUsingPlugin' => 'Migrating database',
-        'migrateFilesUsingPlugin' => 'Migrating files',
+        'migrateDatabaseUsingPlugin' => 'Migrando base de datos',
+        'migrateFilesUsingPlugin' => 'Migrando archivos',
         'prepareInstance' => 'Preparando la instancia para la migración',
         'downloadDatabase' => 'Descargando base de datos',
         'downloadFiles' => 'Descargando archivos',
@@ -58,7 +67,7 @@ return [
         'domain' => [
             'exists' => 'El dominio existe',
             'ping' => 'Conexión de prueba de dominio',
-            'ip_addresses' => 'Domain IP Addresses',
+            'ip_addresses' => 'Direcciones IP del dominio',
             'installed_ssl_cert' => 'Certificado SSL instalado en el dominio',
             'local_data' => 'Comprobación del dominio Datos locales correctos',
         ],
@@ -68,8 +77,6 @@ return [
             'local_data' => 'Comprobación de datos locales correctos en WordPress',
         ],
     ],
-    'instance' => 'instancia',
-    'service' => 'servicio',
     'server_alerts' => [
         'high_disk_usage' => 'Uso de disco alto',
         'high_cpu_usage' => 'Uso de CPU alto',

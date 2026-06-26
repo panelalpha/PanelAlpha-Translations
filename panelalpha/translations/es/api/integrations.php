@@ -8,6 +8,7 @@ use App\Lib\Integrations\Auth\Google;
 use App\Lib\Integrations\Auth\Linkedin;
 use App\Lib\Integrations\Auth\Microsoft;
 use App\Lib\Integrations\DbIp;
+use App\Lib\Integrations\DnsServers\Bunny;
 use App\Lib\Integrations\DnsServers\Cloudflare;
 use App\Lib\Integrations\DnsServers\CpanelDnsOnly;
 use App\Lib\Integrations\DnsServers\DnsManagerForWhmcs;
@@ -26,6 +27,7 @@ use App\Lib\Integrations\HostingServers\PanelAlpha;
 use App\Lib\Integrations\HostingServers\Plesk;
 use App\Lib\Integrations\HostingServers\WpCloud;
 use App\Lib\Integrations\Onboarding\Extendify;
+use App\Lib\Integrations\Onboarding\TenWeb;
 use App\Lib\Integrations\PreviewSiteProvider\WithoutDns;
 use App\Lib\Integrations\ReportProviders\GoogleAnalytics;
 use App\Lib\Integrations\ReportProviders\Matomo;
@@ -105,6 +107,33 @@ return [
                 'placeholder' => 'Introduzca el ID de socio',
             ],
         ],
+        'application_config' => [
+            'skip_extendify_questions' => [
+                'label' => 'Omitir preguntas de Extendify',
+            ],
+        ],
+    ],
+    TenWeb::class => [
+        'title' => '10Web',
+        'subtitle' => 'Utilizado para el Onboarding Super Rápido de instancias',
+        'description' => '10Web es una plataforma de WordPress que ayuda a automatizar la creación y configuración de sitios web. Conéctala para habilitar el onboarding rápido y el aprovisionamiento de instancias de WordPress.',
+        'instruction' => 'Para utilizar <b>10Web</b>, sigue estos pasos:<ol><li>Inicia sesión en tu cuenta de 10Web.</li><li>Abre la sección <b>API Key</b>.</li><li>Genera un nuevo token de API.</li><li>Copia el token y pégalo en el campo de abajo.</li></ol><br>¿Aún no tienes una cuenta? <a href="https://10web.io/website-builder-api/hosting-providers/?panelalpha_refering_url=1" target="_blank">Regístrate aquí</a>.',
+        'fields' => [
+            'api_key' => [
+                'label' => 'Token API',
+                'placeholder' => 'Introducir Token API',
+            ],
+        ],
+        'application_config' => [
+            'wvc_website_create_count' => [
+                'label' => 'Límite de creación de sitios web',
+                'tooltip' => 'Máximo número de generaciones de sitios web con IA permitidas por instancia.',
+            ],
+            'wvc_edit_count' => [
+                'label' => 'Límite de ediciones',
+                'tooltip' => 'Máximo número de ediciones con IA permitidas por instancia.',
+            ],
+        ],
     ],
     GoogleAnalytics::class => [
         'title' => 'Google Analytics',
@@ -135,9 +164,9 @@ return [
                 'tooltip' => 'Defina cuánto tiempo permanecerá accesible la URL de vista previa generada para el sitio antes de que caduque.',
                 'options' => [
                     '15m' => '15 minutos',
-                    '1h' => '1 Hour',
+                    '1h' => '1 Hora',
                     '24h' => '24 horas',
-                    '7d' => '7 days',
+                    '7d' => '7 días',
                     '30d' => '30 días',
                     'never' => 'Nunca',
                 ],
@@ -154,7 +183,7 @@ return [
         'title' => 'SMTP',
         'fields' => [
             'port' => [
-                'label' => 'Port',
+                'label' => 'Puerto',
                 'tooltip' => 'El puerto de correo electrónico se refiere a un puerto específico dedicado a gestionar el tráfico de correo electrónico.',
             ],
             'encryption' => [
@@ -168,7 +197,7 @@ return [
             ],
             'password' => [
                 'label' => 'Contraseña',
-                'tooltip' => 'Email password is a password for authentication and accessing an email account.',
+                'tooltip' => 'La contraseña de correo electrónico es una contraseña para la autenticación y el acceso a una cuenta de correo electrónico.',
             ],
             'host' => [
                 'label' => 'Anfitrión',
@@ -257,6 +286,7 @@ return [
             ],
             'api_token' => [
                 'label' => 'Token API',
+                'link_label' => 'Cómo crear un token API',
             ],
             'ssl_verification' => [
                 'label' => 'Verificación SSL',
@@ -493,9 +523,11 @@ return [
         'config' => [
             'disk_space_limit' => [
                 'label' => 'Límite de espacio en disco (MB)',
+                'tooltip' => 'Límite de espacio en disco para sitios. El valor debe proporcionarse como un número entero en megabytes (MB) únicamente, sin sufijos.',
             ],
             'memory_limit' => [
                 'label' => 'Límite de memoria (MB)',
+                'tooltip' => 'Límite de memoria para sitios. El valor debe proporcionarse como un número entero en megabytes (MB) únicamente, sin sufijos.',
             ],
             'cpu_limit' => [
                 'label' => 'Límite de CPU',
@@ -537,7 +569,10 @@ return [
                 'label' => 'Ajustes del pool PHP-FPM',
             ],
             'lsphp_settings' => [
-                'label' => 'Ajustes de LSPHP',
+                'label' => 'Ajustes de LSPH',
+            ],
+            'redis_config' => [
+                'label' => 'Configuración de Redis',
             ],
             'dedicated_ipv4' => [
                 'label' => 'IPv4 dedicado',
@@ -602,6 +637,11 @@ return [
             ],
             'account_id' => [
                 'label' => 'ID de cuenta',
+                'tooltip' => 'Este campo es opcional, ya que por defecto el ID de cuenta se obtiene del Token de API',
+            ],
+            'nameservers' => [
+                'label' => 'Servidores de nombres',
+                'tooltip' => 'Introduce servidores de nombres personalizados (separados por comas) asignados a tu cuenta de Cloudflare (p. ej. adam.ns.cloudflare.com, bella.ns.cloudflare.com). Se mostrarán en el Área de Cliente. Debes configurarlos manualmente en el panel de Cloudflare.',
             ],
         ],
     ],
@@ -663,6 +703,27 @@ return [
             ],
             'nameservers' => [
                 'label' => 'Servidores de nombres (separados por comas)',
+            ],
+        ],
+    ],
+    Bunny::class => [
+        'title' => 'Bunny.net',
+        'description' => 'Bunny.net - La plataforma global de edge que realmente salta',
+        'fields' => [
+            'api_key' => [
+                'label' => 'Clave API',
+            ],
+            'nameservers' => [
+                'label' => 'Servidores de nombres personalizados (separados por comas)',
+                'tooltip' => 'Introduce los nombres de host de servidores de nombres personalizados asignados a tu cuenta de Bunny.net (p. ej. ns1.tudominio.com, ns2.tudominio.com). Se mostrarán en el Área de Cliente y se aplicarán al crear zonas DNS.',
+            ],
+            'nameserver_1' => [
+                'label' => 'Servidor de nombres 1',
+                'tooltip' => 'Introduce el nombre de host del servidor de nombres personalizado asignado a tu cuenta de Bunny.net (p. ej. ns1.tudominio.com). Se mostrará en el Área de Cliente y se aplicará al crear zonas DNS.',
+            ],
+            'nameserver_2' => [
+                'label' => 'Servidor de nombres 2',
+                'tooltip' => 'Introduce el nombre de host del servidor de nombres personalizado asignado a tu cuenta de Bunny.net (p. ej. ns1.tudominio.com). Se mostrará en el Área de Cliente y se aplicará al crear zonas DNS.',
             ],
         ],
     ],

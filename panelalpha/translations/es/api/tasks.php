@@ -40,4 +40,8 @@ return [
     'App\\Jobs\\User\\PushToStaging' => 'Empujar a la puesta en escena',
     'App\\Jobs\\User\\SyncHostingAccount' => 'Sincronizar cuenta de hosting',
     'App\\Jobs\\System\\SyncWordPressData' => 'Sincronizar datos de WordPress',
+    'App\\Jobs\\User\\EnableWordpressMcp' => 'Activar WordPress MCP',
+    'App\\Jobs\\User\\DisableWordpressMcp' => 'Desactivar WordPress MCP',
+    'App\\Jobs\\User\\DeployInstance' => 'Desplegar instancia',
+    'App\\Jobs\\System\\GitAutoDeploy' => 'Auto-deploy de Git',
 ];

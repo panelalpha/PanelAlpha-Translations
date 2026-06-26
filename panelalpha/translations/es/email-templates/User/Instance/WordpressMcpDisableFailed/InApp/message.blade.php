@@ -1,0 +1,1 @@
+<p>Falló la desactivación de WordPress MCP en <strong>{{ $instance_name }}</strong>. Mensaje: {{ $exception_message }}</p>

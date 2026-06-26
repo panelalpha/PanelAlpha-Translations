@@ -14,6 +14,8 @@ use App\Notifications\Admin\InstanceTemplate\InstanceTemplateCreateFailed;
 use App\Notifications\Admin\InstanceTemplate\InstanceTemplateCreateFinished;
 use App\Notifications\Admin\EmailDomain\EmailDomainCreateFailed;
 use App\Notifications\Admin\EmailDomain\EmailDomainExists;
+use App\Notifications\Admin\Jobs\RefreshReportDataFailed;
+use App\Notifications\Admin\Health\IncidentSummary;
 use App\Notifications\Admin\Plan\PlanConfigurationError;
 use App\Notifications\Admin\ReportProvider\SyncReportProvidersFailed;
 use App\Notifications\Admin\ReportProvider\SyncReportProvidersFinished;
@@ -24,8 +26,14 @@ use App\Notifications\User\Instance\PushToStagingFailed;
 use App\Notifications\User\Instance\PushToStagingFinished;
 use App\Notifications\User\Instance\UpdateWordpressFinished;
 use App\Notifications\User\Instance\UpdateWordpressFailed;
+use App\Notifications\User\Instance\WordpressMcpDisableFailed;
+use App\Notifications\User\Instance\WordpressMcpDisableFinished;
+use App\Notifications\User\Instance\WordpressMcpEnableFailed;
+use App\Notifications\User\Instance\WordpressMcpEnableFinished;
 use App\Notifications\User\Instance\PushToLiveFinished;
 use App\Notifications\User\Instance\PushToLiveFailed;
+use App\Notifications\User\Instance\Git\GitAutoDeployFailed;
+use App\Notifications\User\Instance\Git\GitAutoDeployFinished;
 use App\Notifications\User\Instance\InstanceInvitationReceived;
 use App\Notifications\User\Instance\InstanceInstallationFinished;
 use App\Notifications\User\Instance\InstanceInstallationFailed;
@@ -185,6 +193,10 @@ return [
         'name' => 'Alerta del servidor',
         'description' => 'La notificación informa al destinatario sobre alertas detectadas en el servidor de alojamiento.',
     ],
+    IncidentSummary::class => [
+        'name' => 'Resumen de incidentes',
+        'description' => 'La notificación informa al destinatario de un resumen de los incidentes de salud registrados en un periodo reciente (normalmente la última hora). Los incidentes se agrupan por servidor y cuenta de alojamiento, con recuentos por tipo de incidente y sugerencias de remediación opcionales.',
+    ],
     DnsZoneExists::class => [
         'name' => 'Zona DNS existente',
         'description' => 'La notificación informa al destinatario de que el intento de creación de la zona DNS ha fallado porque la zona DNS ya existe. La notificación puede incluir detalles sobre la zona DNS existente, el servicio afectado y el servidor DNS implicado.',
@@ -301,17 +313,41 @@ return [
         'name' => 'Push To Live Completado',
         'description' => 'La notificación informa al destinatario de que los cambios realizados en la instancia de ensayo se han transferido correctamente a la versión activa del sitio web o del sistema. La notificación puede incluir detalles sobre los cambios realizados y cualquier otro paso que deba darse.',
     ],
+    GitAutoDeployFailed::class => [
+        'name' => 'Auto-deploy de Git fallido',
+        'description' => 'La notificación informa al destinatario de que no se ha podido completar un despliegue automático disparado por un push de Git.',
+    ],
+    GitAutoDeployFinished::class => [
+        'name' => 'Auto-deploy de Git completado',
+        'description' => 'La notificación informa al destinatario de que un despliegue automático disparado por un push de Git se ha completado con éxito.',
+    ],
     UpdateWordpressFailed::class => [
         'name' => 'Error en la actualización de WordPress',
-        'description' => 'The notification is informing the recipient that an attempt to update the WordPress instance has failed. The notification may include details on why the update failed and what steps should be taken to resolve the issue.',
+        'description' => 'La notificación informa al destinatario de que ha fallado un intento de actualizar la instancia de WordPress. La notificación puede incluir detalles sobre por qué falló la actualización y qué pasos deben seguirse para resolver el problema.',
     ],
     UpdateWordpressFinished::class => [
         'name' => 'Actualización de WordPress finalizada',
         'description' => 'La notificación informa al destinatario de que la instancia de WordPress se ha actualizado correctamente. La notificación puede incluir detalles sobre qué cambios se han realizado en la instancia y cualquier otro paso que deba darse.',
     ],
+    WordpressMcpEnableFailed::class => [
+        'name' => 'Activación de WordPress MCP fallida',
+        'description' => 'Informa al destinatario de que falló la activación de WordPress MCP en su instancia.',
+    ],
+    WordpressMcpEnableFinished::class => [
+        'name' => 'WordPress MCP activado',
+        'description' => 'Informa al destinatario de que WordPress MCP se activó correctamente en su instancia.',
+    ],
+    WordpressMcpDisableFailed::class => [
+        'name' => 'Desactivación de WordPress MCP fallida',
+        'description' => 'Informa al destinatario de que falló la desactivación de WordPress MCP en su instancia.',
+    ],
+    WordpressMcpDisableFinished::class => [
+        'name' => 'WordPress MCP desactivado',
+        'description' => 'Informa al destinatario de que WordPress MCP se desactivó correctamente en su instancia.',
+    ],
     \App\Notifications\User\System\ResetPassword::class => [
         'name' => 'Restablecer contraseña',
-        'description' => 'A reset password email is an automated message sent to a user\'s email address when they request to reset their password for an account. The email typically contains a link or instructions for resetting the password, as well as a time limit for the link\'s validity.',
+        'description' => 'Un correo electrónico de restablecimiento de contraseña es un mensaje automático que se envía a la dirección de correo electrónico de un usuario cuando solicita restablecer la contraseña de una cuenta. El correo electrónico suele contener un enlace o instrucciones para restablecer la contraseña, así como un límite de tiempo para la validez del enlace.',
     ],
     \App\Notifications\User\Updates\PluginUpdateAvailable::class => [
         'name' => 'Actualización de plugins disponible',
@@ -323,7 +359,7 @@ return [
     ],
     \App\Notifications\User\Updates\WordpressUpdateAvailable::class => [
         'name' => 'Actualización de WordPress disponible',
-        'description' => 'Notification is informing the recipient that a new update for their WordPress website is now available. The update includes important security fixes and new features that will improve the overall performance and functionality of the website.',
+        'description' => 'La notificación informa al destinatario de que ya está disponible una nueva actualización para su sitio web de WordPress. La actualización incluye importantes correcciones de seguridad y nuevas funciones que mejorarán el rendimiento general y la funcionalidad del sitio web.',
     ],
     DnsPropagationExceeded::class => [
         'name' => 'Propagación DNS excedida para pedido SSL',
@@ -331,7 +367,7 @@ return [
     ],
     CreateADnsRecordFailed::class => [
         'name' => 'Error en la configuración DNS del subdominio',
-        'description' => 'Notification is informing the recipient that the creation of DNS record A has failed.',
+        'description' => 'La notificación informa al destinatario de que la creación del registro DNS A ha fallado.',
     ],
     InstanceTemplateCreateFailed::class => [
         'name' => 'Fallo en la creación de la plantilla de instancia',
@@ -428,5 +464,9 @@ return [
     ControlPanelUpgrade::class => [
         'name' => 'Correo de bienvenida de actualización del panel de control',
         'description' => 'Esta notificación informa que la cuenta de hosting se ha actualizado correctamente desde el panel de control. Incluye los datos de inicio de sesión necesarios para acceder a la cuenta.',
+    ],
+    RefreshReportDataFailed::class => [
+        'name' => 'Fallo al actualizar los datos del informe',
+        'description' => 'La notificación informa al destinatario de que el trabajo de actualización de datos del informe para una instancia de WordPress ha fallado. La notificación puede incluir detalles sobre la instancia y el mensaje de error.',
     ],
 ];
