@@ -19,7 +19,9 @@ use App\Lib\Integrations\EmailServers\Cpanel as CpanelEmailServer;
 use App\Lib\Integrations\EmailServers\Mailcow;
 use App\Lib\Integrations\GooglePageSpeedInsights;
 use App\Lib\Integrations\Onboarding\Extendify;
+use App\Lib\Integrations\Onboarding\TenWeb;
 use App\Lib\Integrations\PreviewSiteProvider\WithoutDns;
+use App\Lib\Integrations\DnsServers\Bunny;
 use App\Lib\Integrations\ReportProviders\GoogleAnalytics;
 use App\Lib\Integrations\ReportProviders\Matomo;
 use App\Lib\Integrations\SslProviders\LetsEncrypt;
@@ -97,7 +99,34 @@ return [
                 "label" => "ID Partner",
                 "placeholder" => "Inserisci ID Partner"
             ]
-        ]
+        ],
+        'application_config' => [
+            'skip_extendify_questions' => [
+                'label' => 'Salta le domande Extendify',
+            ],
+        ],
+    ],
+    TenWeb::class => [
+        "title" => "10Web",
+        "subtitle" => "Utilizzato per l'onboarding super veloce delle istanze",
+        "description" => "10Web è una piattaforma WordPress che aiuta ad automatizzare la creazione e la configurazione dei siti web. Connettetela per abilitare l'onboarding rapido e il provisioning delle istanze WordPress.",
+        "instruction" => "Per utilizzare <b>10Web</b>, seguite questi passaggi:<ol><li>Accedete al vostro account 10Web.</li><li>Aprire la sezione <b>API Key</b>.</li><li>Generare un nuovo token API.</li><li>Copiare il token e incollarlo nel campo sottostante.</li></ol><br>Non avete ancora un account? <a href=\"https://10web.io/website-builder-api/hosting-providers/?panelalpha_refering_url=1\" target=\"_blank\">Registratevi qui</a>.",
+        "fields" => [
+            "api_key" => [
+                "label" => "Token API",
+                "placeholder" => "Inserisci Token API"
+            ]
+        ],
+        'application_config' => [
+            'wvc_website_create_count' => [
+                'label' => 'Limite di creazione siti web',
+                'tooltip' => 'Numero massimo di generazioni AI di siti web consentite per istanza.',
+            ],
+            'wvc_edit_count' => [
+                'label' => 'Limite di modifiche',
+                'tooltip' => 'Numero massimo di modifiche AI consentite per istanza.',
+            ],
+        ],
     ],
     GoogleAnalytics::class => [
         "title" => "Google Analytics",
@@ -324,9 +353,11 @@ return [
         "config" => [
             'disk_space_limit' => [
                 'label' => 'Limite spazio su disco (MB)',
+                'tooltip' => 'Limite di spazio su disco per i siti. Il valore deve essere fornito come numero intero in megabyte (MB) senza alcun suffisso.',
             ],
             'memory_limit' => [
                 'label' => 'Limite memoria (MB)',
+                'tooltip' => 'Limite di memoria per i siti. Il valore deve essere fornito come numero intero in megabyte (MB) senza alcun suffisso.',
             ],
             'cpu_limit' => [
                 'label' => 'Limite CPU',
@@ -369,6 +400,9 @@ return [
             ],
             'lsphp_settings' => [
                 'label' => 'Impostazioni LSPHP',
+            ],
+            'redis_config' => [
+                'label' => 'Config Redis',
             ],
             'dedicated_ipv4' => [
                 'label' => 'IPv4 dedicato',
@@ -454,6 +488,7 @@ return [
             ],
             'api_token' => [
                 'label' => 'API Token',
+                'link_label' => 'Come creare un token API',
             ],
             'ssl_verification' => [
                 'label' => 'SSL Verification',
@@ -476,6 +511,11 @@ return [
             ],
             'account_id' => [
                 'label' => 'Account ID',
+                'tooltip' => 'Questo campo è facoltativo perché per impostazione predefinita l\'ID account è ricavato dal token API',
+            ],
+            'nameservers' => [
+                'label' => 'Nameserver',
+                'tooltip' => 'Inserire i nameserver personalizzati (separati da virgola) assegnati al proprio account Cloudflare (ad es. adam.ns.cloudflare.com, bella.ns.cloudflare.com). Questi verranno visualizzati nell\'Area Cliente. È necessario configurarli manualmente nella dashboard di Cloudflare.',
             ],
         ],
     ],
@@ -537,6 +577,27 @@ return [
             ],
             'nameservers' => [
                 'label' => 'Nameservers (comma separated)',
+            ],
+        ]
+    ],
+    Bunny::class => [
+        "title" => "Bunny.net",
+        "description" => 'Bunny.net - La piattaforma edge globale che salta davvero',
+        "fields" => [
+            'api_key' => [
+                'label' => 'API Key',
+            ],
+            'nameservers' => [
+                'label' => 'Nameserver personalizzati (separati da virgola)',
+                'tooltip' => 'Inserire i nomi host dei nameserver personalizzati assegnati al proprio account Bunny.net (ad es. ns1.yourdomain.com, ns2.yourdomain.com). Questi verranno visualizzati nell\'Area Cliente e applicati durante la creazione delle zone DNS.',
+            ],
+            'nameserver_1' => [
+                'label' => 'Nameserver 1',
+                'tooltip' => 'Inserire il nome host del nameserver personalizzato assegnato al proprio account Bunny.net (ad es. ns1.yourdomain.com). Verrà visualizzato nell\'Area Cliente e applicato durante la creazione delle zone DNS.',
+            ],
+            'nameserver_2' => [
+                'label' => 'Nameserver 2',
+                'tooltip' => 'Inserire il nome host del nameserver personalizzato assegnato al proprio account Bunny.net (ad es. ns1.yourdomain.com). Verrà visualizzato nell\'Area Cliente e applicato durante la creazione delle zone DNS.',
             ],
         ]
     ],

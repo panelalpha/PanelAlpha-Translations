@@ -1,0 +1,1 @@
+Disabilitazione di WordPress MCP non riuscita su {{ $instance_name }}

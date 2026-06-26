@@ -1,0 +1,1 @@
+<p>L'auto-deploy per <strong>{{ $instance_name }}</strong> è stato completato (branch {{ $git_branch }}, commit {{ $git_commit_hash }}).</p>

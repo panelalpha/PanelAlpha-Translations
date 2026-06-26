@@ -1,0 +1,1 @@
+Auto-deploy completato per {{ $instance_name }}

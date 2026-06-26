@@ -1,0 +1,1 @@
+Auto-deploy non riuscito per {{ $instance_name }}

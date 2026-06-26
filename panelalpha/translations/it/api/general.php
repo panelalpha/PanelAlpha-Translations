@@ -45,7 +45,8 @@ return [
         'cleanUp' => 'Pulizia dei file',
         'createFtpAccount' => 'Creazione account FTP/SFTP',
         'cleanUpPlugins' => 'Pulizia dei plugin',
-],
+        'finalizeMigrationUsingPlugin' => 'Finalizzazione della migrazione',
+    ],
     'health-checks' => [
         'server' => [
             'ping' => 'Connessione di prova al server',
@@ -95,14 +96,15 @@ return [
         'oc' => 'Oceania',
         'an' => 'Antarctica'
     ],
+    'server' => 'server',
+    'Application' => 'applicazione',
+    'ServerAccount' => 'account di hosting',
+    'Server' => 'server',
+    'Service' => 'servizio',
     'field' => [
         'onboarding_domain' => [
             'label' => 'Onboarding Domain (Optional)',
             'description' => 'Optional, if set, it will override onboarding domain configured in plan settings.'
         ]
     ],
-
-    'file',
-
-    'database',
 ];

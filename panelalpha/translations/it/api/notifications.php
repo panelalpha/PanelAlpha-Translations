@@ -79,6 +79,14 @@ use App\Notifications\User\Service\BeforeTrialExpirationThirdReminder;
 use App\Notifications\User\Service\TrialExpired;
 use App\Notifications\User\System\NewDeviceLogin;
 use App\Notifications\User\System\VerifyEmailAddress;
+use App\Notifications\Admin\Health\IncidentSummary;
+use App\Notifications\User\Instance\Git\GitAutoDeployFailed;
+use App\Notifications\User\Instance\Git\GitAutoDeployFinished;
+use App\Notifications\User\Instance\WordpressMcpEnableFailed;
+use App\Notifications\User\Instance\WordpressMcpEnableFinished;
+use App\Notifications\User\Instance\WordpressMcpDisableFailed;
+use App\Notifications\User\Instance\WordpressMcpDisableFinished;
+use App\Notifications\Admin\Jobs\RefreshReportDataFailed;
 
 return [
     ForceUpdatePluginFailed::class => [
@@ -428,5 +436,37 @@ return [
     ControlPanelUpgrade::class => [
         'name' => 'Email di benvenuto per l\'upgrade del pannello di controllo',
         'description' => 'Questa notifica informa che l\'account di hosting è stato aggiornato con successo dal pannello di controllo. Include i dati di accesso necessari per consentire all\'utente di accedere al proprio account.',
+    ],
+    IncidentSummary::class => [
+        'name' => 'Riepilogo incidenti',
+        'description' => 'La notifica informa il destinatario di un riepilogo degli incidenti di salute registrati nel periodo recente (tipicamente nell\'ultima ora). Gli incidenti sono raggruppati per server e account di hosting, con conteggi per tipo di incidente e suggerimenti di correzione opzionali.',
+    ],
+    GitAutoDeployFailed::class => [
+        'name' => 'Git Auto-Deploy non riuscito',
+        'description' => 'La notifica informa il destinatario che un deploy automatico attivato da una push Git non è stato completato.',
+    ],
+    GitAutoDeployFinished::class => [
+        'name' => 'Git Auto-Deploy completato',
+        'description' => 'La notifica informa il destinatario che un deploy automatico attivato da una push Git è stato completato con successo.',
+    ],
+    WordpressMcpEnableFailed::class => [
+        'name' => 'Abilitazione WordPress MCP non riuscita',
+        'description' => 'Informa il destinatario che l\'abilitazione di WordPress MCP sulla sua istanza non è riuscita.',
+    ],
+    WordpressMcpEnableFinished::class => [
+        'name' => 'WordPress MCP abilitato',
+        'description' => 'Informa il destinatario che WordPress MCP è stato abilitato con successo sulla sua istanza.',
+    ],
+    WordpressMcpDisableFailed::class => [
+        'name' => 'Disabilitazione WordPress MCP non riuscita',
+        'description' => 'Informa il destinatario che la disabilitazione di WordPress MCP sulla sua istanza non è riuscita.',
+    ],
+    WordpressMcpDisableFinished::class => [
+        'name' => 'WordPress MCP disabilitato',
+        'description' => 'Informa il destinatario che WordPress MCP è stato disabilitato con successo sulla sua istanza.',
+    ],
+    RefreshReportDataFailed::class => [
+        'name' => 'Aggiornamento dati report non riuscito',
+        'description' => 'La notifica informa il destinatario che il processo di aggiornamento dei dati di report per un\'istanza WordPress è fallito. La notifica può includere dettagli sull\'istanza e il messaggio di errore.',
     ],
 ];

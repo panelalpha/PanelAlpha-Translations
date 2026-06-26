@@ -1,0 +1,1 @@
+<p>Errore durante l'auto-deploy per <strong>{{ $instance_name }}</strong>. Messaggio: {{ $exception_message }}</p>

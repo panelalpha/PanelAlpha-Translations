@@ -1,0 +1,1 @@
+<p>L'abilitazione di WordPress MCP su <strong>{{ $instance_name }}</strong> non è riuscita. Messaggio: {{ $exception_message }}</p>
