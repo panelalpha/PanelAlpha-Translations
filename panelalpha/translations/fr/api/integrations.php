@@ -8,6 +8,7 @@ use App\Lib\Integrations\Auth\Google;
 use App\Lib\Integrations\Auth\Linkedin;
 use App\Lib\Integrations\Auth\Microsoft;
 use App\Lib\Integrations\DbIp;
+use App\Lib\Integrations\DnsServers\Bunny;
 use App\Lib\Integrations\DnsServers\Cloudflare;
 use App\Lib\Integrations\DnsServers\CpanelDnsOnly;
 use App\Lib\Integrations\DnsServers\DnsManagerForWhmcs;
@@ -26,6 +27,7 @@ use App\Lib\Integrations\HostingServers\PanelAlpha;
 use App\Lib\Integrations\HostingServers\Plesk;
 use App\Lib\Integrations\HostingServers\WpCloud;
 use App\Lib\Integrations\Onboarding\Extendify;
+use App\Lib\Integrations\Onboarding\TenWeb;
 use App\Lib\Integrations\PreviewSiteProvider\WithoutDns;
 use App\Lib\Integrations\ReportProviders\GoogleAnalytics;
 use App\Lib\Integrations\ReportProviders\Matomo;
@@ -105,6 +107,33 @@ return [
             ],
         ],
         'description' => 'Extendify offre à vos clients finaux une expérience d\'accueil semblable à celle d\'un constructeur de site web. Donnez à vos clients d\'hébergement les moyens de créer en quelques minutes de magnifiques sites web d\'aspect professionnel en utilisant les dernières technologies d\'intelligence artificielle intégrées à WordPress.',
+        'application_config' => [
+            'skip_extendify_questions' => [
+                'label' => 'Ignorer les questions Extendify',
+            ],
+        ],
+    ],
+    TenWeb::class => [
+        'title' => '10Web',
+        'subtitle' => 'Utilisé pour l\'onboarding très rapide des instances',
+        'description' => '10Web est une plateforme WordPress qui permet d\'automatiser la création et la configuration de sites web. Connectez-la pour activer l\'onboarding rapide et le provisionnement d\'instances WordPress.',
+        'instruction' => 'Pour utiliser <b>10Web</b>, suivez ces étapes :<ol><li>Connectez-vous à votre compte 10Web.</li><li>Ouvrez la section <b>API Key</b>.</li><li>Générez un nouveau jeton API.</li><li>Copiez le jeton et collez-le dans le champ ci-dessous.</li></ol><br>Vous n\'avez pas encore de compte ? <a href="https://10web.io/website-builder-api/hosting-providers/?panelalpha_refering_url=1" target="_blank">Inscrivez-vous ici</a>.',
+        'fields' => [
+            'api_key' => [
+                'label' => 'Jeton API',
+                'placeholder' => 'Saisir le jeton API',
+            ],
+        ],
+        'application_config' => [
+            'wvc_website_create_count' => [
+                'label' => 'Limite de création de sites',
+                'tooltip' => 'Nombre maximal de générations de sites par IA autorisées par instance.',
+            ],
+            'wvc_edit_count' => [
+                'label' => 'Limite d\'édition',
+                'tooltip' => 'Nombre maximal de modifications par IA autorisées par instance.',
+            ],
+        ],
     ],
     GoogleAnalytics::class => [
         'title' => 'Google Analytics',
@@ -257,6 +286,7 @@ return [
             ],
             'api_token' => [
                 'label' => 'Jeton API',
+                'link_label' => 'Comment créer un jeton API',
             ],
             'ssl_verification' => [
                 'label' => 'Vérification SSL',
@@ -493,9 +523,11 @@ return [
         'config' => [
             'disk_space_limit' => [
                 'label' => 'Limite d\'espace disque (Mo)',
+                'tooltip' => 'Limite d\'espace disque pour les sites. La valeur doit être fournie uniquement sous forme d\'entier en mégaoctets (Mo), sans aucun suffixe.',
             ],
             'memory_limit' => [
                 'label' => 'Limite de mémoire (Mo)',
+                'tooltip' => 'Limite de mémoire pour les sites. La valeur doit être fournie uniquement sous forme d\'entier en mégaoctets (Mo), sans aucun suffixe.',
             ],
             'cpu_limit' => [
                 'label' => 'Limite CPU',
@@ -538,6 +570,9 @@ return [
             ],
             'lsphp_settings' => [
                 'label' => 'Paramètres LSPHP',
+            ],
+            'redis_config' => [
+                'label' => 'Configuration Redis',
             ],
             'dedicated_ipv4' => [
                 'label' => 'IPv4 dédié',
@@ -602,6 +637,11 @@ return [
             ],
             'account_id' => [
                 'label' => 'ID de compte',
+                'tooltip' => 'Ce champ est optionnel car par défaut l\'ID de compte est récupéré depuis le jeton API',
+            ],
+            'nameservers' => [
+                'label' => 'Serveurs de noms',
+                'tooltip' => 'Saisissez des serveurs de noms personnalisés (séparés par des virgules) attribués à votre compte Cloudflare (ex. adam.ns.cloudflare.com, bella.ns.cloudflare.com). Ils seront affichés dans l\'espace client. Vous devez les configurer manuellement dans le tableau de bord Cloudflare.',
             ],
         ],
     ],
@@ -663,6 +703,27 @@ return [
             ],
             'nameservers' => [
                 'label' => 'Serveurs de noms (séparés par des virgules)',
+            ],
+        ],
+    ],
+    Bunny::class => [
+        'title' => 'Bunny.net',
+        'description' => 'Bunny.net - La plateforme edge globale qui bondit vraiment',
+        'fields' => [
+            'api_key' => [
+                'label' => 'Clé API',
+            ],
+            'nameservers' => [
+                'label' => 'Serveurs de noms personnalisés (séparés par des virgules)',
+                'tooltip' => 'Saisissez les noms d\'hôtes de serveurs de noms personnalisés attribués à votre compte Bunny.net (ex. ns1.votredomaine.com, ns2.votredomaine.com). Ils seront affichés dans l\'espace client et appliqués lors de la création des zones DNS.',
+            ],
+            'nameserver_1' => [
+                'label' => 'Serveur de noms 1',
+                'tooltip' => 'Saisissez le nom d\'hôte du serveur de noms personnalisé attribué à votre compte Bunny.net (ex. ns1.votredomaine.com). Il sera affiché dans l\'espace client et appliqué lors de la création des zones DNS.',
+            ],
+            'nameserver_2' => [
+                'label' => 'Serveur de noms 2',
+                'tooltip' => 'Saisissez le nom d\'hôte du serveur de noms personnalisé attribué à votre compte Bunny.net (ex. ns1.votredomaine.com). Il sera affiché dans l\'espace client et appliqué lors de la création des zones DNS.',
             ],
         ],
     ],

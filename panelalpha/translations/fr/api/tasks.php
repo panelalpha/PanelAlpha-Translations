@@ -40,4 +40,8 @@ return [
     'App\\Jobs\\User\\SyncHostingAccount' => 'Synchroniser le compte d\'hébergement',
     'App\\Jobs\\System\\SyncWordPressData' => 'Synchroniser les données WordPress',
     'App\\Jobs\\User\\InstallInstance' => 'Créer une instance',
+    'App\\Jobs\\User\\EnableWordpressMcp' => 'Activer WordPress MCP',
+    'App\\Jobs\\User\\DisableWordpressMcp' => 'Désactiver WordPress MCP',
+    'App\\Jobs\\User\\DeployInstance' => 'Déployer l\'instance',
+    'App\\Jobs\\System\\GitAutoDeploy' => 'Déploiement automatique Git',
 ];

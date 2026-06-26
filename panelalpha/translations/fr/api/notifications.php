@@ -14,6 +14,7 @@ use App\Notifications\Admin\InstanceTemplate\InstanceTemplateCreateFailed;
 use App\Notifications\Admin\InstanceTemplate\InstanceTemplateCreateFinished;
 use App\Notifications\Admin\EmailDomain\EmailDomainCreateFailed;
 use App\Notifications\Admin\EmailDomain\EmailDomainExists;
+use App\Notifications\Admin\Jobs\RefreshReportDataFailed;
 use App\Notifications\Admin\Plan\PlanConfigurationError;
 use App\Notifications\Admin\ReportProvider\SyncReportProvidersFailed;
 use App\Notifications\Admin\ReportProvider\SyncReportProvidersFinished;
@@ -24,8 +25,14 @@ use App\Notifications\User\Instance\PushToStagingFailed;
 use App\Notifications\User\Instance\PushToStagingFinished;
 use App\Notifications\User\Instance\UpdateWordpressFinished;
 use App\Notifications\User\Instance\UpdateWordpressFailed;
+use App\Notifications\User\Instance\WordpressMcpDisableFailed;
+use App\Notifications\User\Instance\WordpressMcpDisableFinished;
+use App\Notifications\User\Instance\WordpressMcpEnableFailed;
+use App\Notifications\User\Instance\WordpressMcpEnableFinished;
 use App\Notifications\User\Instance\PushToLiveFinished;
 use App\Notifications\User\Instance\PushToLiveFailed;
+use App\Notifications\User\Instance\Git\GitAutoDeployFailed;
+use App\Notifications\User\Instance\Git\GitAutoDeployFinished;
 use App\Notifications\User\Instance\InstanceInvitationReceived;
 use App\Notifications\User\Instance\InstanceInstallationFinished;
 use App\Notifications\User\Instance\InstanceInstallationFailed;
@@ -63,6 +70,7 @@ use App\Notifications\Admin\Theme\ForceUpdateThemeFinished;
 use App\Notifications\Admin\Theme\ForceUpdateThemeFailed;
 use App\Notifications\Admin\Plugin\ForceUpdatePluginFinished;
 use App\Notifications\Admin\Plugin\ForceUpdatePluginFailed;
+use App\Notifications\Admin\Health\IncidentSummary;
 use App\Notifications\Admin\Server\ServerAlert;
 use App\Notifications\User\Instance\ImportFailed;
 use App\Notifications\User\Instance\ImportFinished;
@@ -185,6 +193,10 @@ return [
         'name' => 'Alerte du serveur',
         'description' => 'La notification informe le destinataire des alertes détectées sur le serveur d\'hébergement.',
     ],
+    IncidentSummary::class => [
+        'name' => 'Résumé des incidents',
+        'description' => 'La notification informe le destinataire d\'un résumé des incidents de santé enregistrés au cours d\'une période récente (généralement la dernière heure). Les incidents sont regroupés par serveur et par compte d\'hébergement, avec des décomptes par type d\'incident et des suggestions de remédiation optionnelles.',
+    ],
     DnsZoneExists::class => [
         'name' => 'La zone DNS existe',
         'description' => 'La notification informe le destinataire que la tentative de création de la zone DNS a échoué parce que la zone DNS existe déjà. La notification peut inclure des détails sur la zone DNS existante, le service affecté et le serveur DNS concerné.',
@@ -301,6 +313,14 @@ return [
         'name' => 'Push To Live Terminé',
         'description' => 'La notification informe le destinataire que les modifications apportées à l\'instance de préparation ont été transférées avec succès à la version active du site web ou du système. La notification peut contenir des détails sur les modifications apportées et sur les mesures à prendre.',
     ],
+    GitAutoDeployFailed::class => [
+        'name' => 'Échec du déploiement automatique Git',
+        'description' => 'La notification informe le destinataire qu\'un déploiement automatique déclenché par un push Git n\'a pas pu être terminé.',
+    ],
+    GitAutoDeployFinished::class => [
+        'name' => 'Déploiement automatique Git terminé',
+        'description' => 'La notification informe le destinataire qu\'un déploiement automatique déclenché par un push Git s\'est terminé avec succès.',
+    ],
     UpdateWordpressFailed::class => [
         'name' => 'Échec de la mise à jour de WordPress',
         'description' => 'La notification informe le destinataire qu\'une tentative de mise à jour de l\'instance de WordPress a échoué. La notification peut inclure des détails sur la raison de l\'échec de la mise à jour et sur les mesures à prendre pour résoudre le problème.',
@@ -308,6 +328,22 @@ return [
     UpdateWordpressFinished::class => [
         'name' => 'Mise à jour de WordPress terminée',
         'description' => 'La notification informe le destinataire que l\'instance de WordPress a été mise à jour avec succès. La notification peut inclure des détails sur les changements apportés à l\'instance et sur les mesures à prendre.',
+    ],
+    WordpressMcpEnableFailed::class => [
+        'name' => 'Échec de l\'activation de WordPress MCP',
+        'description' => 'Informe le destinataire que l\'activation de WordPress MCP sur son instance a échoué.',
+    ],
+    WordpressMcpEnableFinished::class => [
+        'name' => 'WordPress MCP activé',
+        'description' => 'Informe le destinataire que WordPress MCP a été activé avec succès sur son instance.',
+    ],
+    WordpressMcpDisableFailed::class => [
+        'name' => 'Échec de la désactivation de WordPress MCP',
+        'description' => 'Informe le destinataire que la désactivation de WordPress MCP sur son instance a échoué.',
+    ],
+    WordpressMcpDisableFinished::class => [
+        'name' => 'WordPress MCP désactivé',
+        'description' => 'Informe le destinataire que WordPress MCP a été désactivé avec succès sur son instance.',
     ],
     \App\Notifications\User\System\ResetPassword::class => [
         'name' => 'Réinitialiser le mot de passe',
@@ -428,5 +464,9 @@ return [
     ControlPanelUpgrade::class => [
         'name' => 'E-mail de bienvenue après la mise à niveau du panneau de contrôle',
         'description' => 'Cette notification informe que le compte d\'hébergement a été mis à niveau avec succès depuis le panneau de contrôle. Elle contient les identifiants nécessaires permettant à l\'utilisateur d\'accéder à son compte.',
+    ],
+    RefreshReportDataFailed::class => [
+        'name' => 'Échec de l\'actualisation des données du rapport',
+        'description' => 'La notification informe le destinataire que la tâche d\'actualisation des données du rapport pour une instance WordPress a échoué. La notification peut inclure des détails sur l\'instance et le message d\'erreur.',
     ],
 ];
