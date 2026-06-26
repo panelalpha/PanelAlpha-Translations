@@ -8,6 +8,7 @@ use App\Lib\Integrations\Auth\Google;
 use App\Lib\Integrations\Auth\Linkedin;
 use App\Lib\Integrations\Auth\Microsoft;
 use App\Lib\Integrations\DbIp;
+use App\Lib\Integrations\DnsServers\Bunny;
 use App\Lib\Integrations\DnsServers\Cloudflare;
 use App\Lib\Integrations\DnsServers\CpanelDnsOnly;
 use App\Lib\Integrations\DnsServers\DnsManagerForWhmcs;
@@ -26,6 +27,7 @@ use App\Lib\Integrations\HostingServers\PanelAlpha;
 use App\Lib\Integrations\HostingServers\Plesk;
 use App\Lib\Integrations\HostingServers\WpCloud;
 use App\Lib\Integrations\Onboarding\Extendify;
+use App\Lib\Integrations\Onboarding\TenWeb;
 use App\Lib\Integrations\PreviewSiteProvider\WithoutDns;
 use App\Lib\Integrations\ReportProviders\GoogleAnalytics;
 use App\Lib\Integrations\ReportProviders\Matomo;
@@ -101,7 +103,34 @@ return [
                 'placeholder' => 'Geben Sie die Partner-ID ein',
             ],
         ],
+        'application_config' => [
+            'skip_extendify_questions' => [
+                'label' => 'Extendify-Fragen überspringen',
+            ],
+        ],
         'title' => 'Erweitern Sie',
+    ],
+    TenWeb::class => [
+        'title' => '10Web',
+        'subtitle' => 'Wird für das super schnelle Onboarding von Instanzen verwendet',
+        'description' => '10Web ist eine WordPress-Plattform, die die Erstellung und Einrichtung von Websites automatisiert. Verbinden Sie sie, um schnelles Onboarding und Bereitstellung von WordPress-Instanzen zu ermöglichen.',
+        'instruction' => 'Um <b>10Web</b> zu verwenden, folgen Sie diesen Schritten:<ol><li>Melden Sie sich bei Ihrem 10Web-Konto an.</li><li>Öffnen Sie den Abschnitt <b>API Key</b>.</li><li>Generieren Sie ein neues API-Token.</li><li>Kopieren Sie das Token und fügen Sie es in das untenstehende Feld ein.</li></ol><br>Haben Sie noch kein Konto? <a href="https://10web.io/website-builder-api/hosting-providers/?panelalpha_refering_url=1" target="_blank">Hier registrieren</a>.',
+        'fields' => [
+            'api_key' => [
+                'label' => 'API-Token',
+                'placeholder' => 'Geben Sie das API-Token ein',
+            ],
+        ],
+        'application_config' => [
+            'wvc_website_create_count' => [
+                'label' => 'Website-Erstellungslimit',
+                'tooltip' => 'Maximale Anzahl an KI-Website-Generierungen pro Instanz.',
+            ],
+            'wvc_edit_count' => [
+                'label' => 'Bearbeitungslimit',
+                'tooltip' => 'Maximale KI-Bearbeitungen pro Instanz.',
+            ],
+        ],
     ],
     GoogleAnalytics::class => [
         'subtitle' => 'Wird für die Sammlung und Analyse von Website-Traffic-Daten verwendet',
@@ -257,6 +286,7 @@ return [
             ],
             'api_token' => [
                 'label' => 'API-Token',
+                'link_label' => 'So erstellen Sie ein API-Token',
             ],
             'ssl_verification' => [
                 'label' => 'SSL-Überprüfung',
@@ -493,9 +523,11 @@ return [
         'config' => [
             'disk_space_limit' => [
                 'label' => 'Speicherplatzlimit (MB)',
+                'tooltip' => 'Speicherplatzlimit für Websites. Der Wert muss als Ganzzahl in Megabyte (MB) angegeben werden, ohne Suffixe.',
             ],
             'memory_limit' => [
                 'label' => 'Speicherlimit (MB)',
+                'tooltip' => 'Speicherlimit für Websites. Der Wert muss als Ganzzahl in Megabyte (MB) angegeben werden, ohne Suffixe.',
             ],
             'cpu_limit' => [
                 'label' => 'CPU-Limit',
@@ -538,6 +570,9 @@ return [
             ],
             'lsphp_settings' => [
                 'label' => 'LSPHP-Einstellungen',
+            ],
+            'redis_config' => [
+                'label' => 'Redis-Konfiguration',
             ],
             'dedicated_ipv4' => [
                 'label' => 'Dediziertes IPv4',
@@ -602,6 +637,11 @@ return [
             ],
             'account_id' => [
                 'label' => 'Konto-ID',
+                'tooltip' => 'Dieses Feld ist optional, da standardmäßig die Konto-ID aus dem API-Token übernommen wird.',
+            ],
+            'nameservers' => [
+                'label' => 'Nameserver',
+                'tooltip' => 'Geben Sie benutzerdefinierte Nameserver (durch Kommas getrennt) ein, die Ihrem Cloudflare-Konto zugewiesen sind (z. B. adam.ns.cloudflare.com, bella.ns.cloudflare.com). Diese werden im Kundenbereich angezeigt. Sie müssen sie manuell im Cloudflare-Dashboard konfigurieren.',
             ],
         ],
     ],
@@ -663,6 +703,27 @@ return [
             ],
             'nameservers' => [
                 'label' => 'Nameserver (durch Kommas getrennt)',
+            ],
+        ],
+    ],
+    Bunny::class => [
+        'title' => 'Bunny.net',
+        'description' => 'Bunny.net - Die globale Edge-Plattform, die wirklich hüpft',
+        'fields' => [
+            'api_key' => [
+                'label' => 'API-Schlüssel',
+            ],
+            'nameservers' => [
+                'label' => 'Benutzerdefinierte Nameserver (durch Kommas getrennt)',
+                'tooltip' => 'Geben Sie benutzerdefinierte Nameserver-Hostnamen ein, die Ihrem Bunny.net-Konto zugewiesen sind (z. B. ns1.ihredomain.com, ns2.ihredomain.com). Diese werden im Kundenbereich angezeigt und beim Erstellen von DNS-Zonen angewendet.',
+            ],
+            'nameserver_1' => [
+                'label' => 'Nameserver 1',
+                'tooltip' => 'Geben Sie den benutzerdefinierten Nameserver-Hostname ein, der Ihrem Bunny.net-Konto zugewiesen ist (z. B. ns1.ihredomain.com). Er wird im Kundenbereich angezeigt und beim Erstellen von DNS-Zonen angewendet.',
+            ],
+            'nameserver_2' => [
+                'label' => 'Nameserver 2',
+                'tooltip' => 'Geben Sie den benutzerdefinierten Nameserver-Hostname ein, der Ihrem Bunny.net-Konto zugewiesen ist (z. B. ns1.ihredomain.com). Er wird im Kundenbereich angezeigt und beim Erstellen von DNS-Zonen angewendet.',
             ],
         ],
     ],

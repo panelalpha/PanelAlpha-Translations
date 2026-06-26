@@ -35,7 +35,10 @@
         "page-not-found": "{{- app_name}} - Seite nicht gefunden",
         "register": "{{- app_name}} - Registrieren",
         "services": "{{- app_name}} - Meine Pläne",
-        "billing": "{{- app_name}} - Meine Abrechnung"
+        "billing": "{{- app_name}} - Meine Abrechnung",
+        "usage": "{{- app_name}} - Nutzung",
+        "git": "{{- app_name}}: {{instance_name}} - Git",
+        "wordpress-mcp": "{{- app_name}}: {{instance_name}} - WordPress MCP"
     },
     "general": {
         "adventurer": "Abenteurer",
@@ -129,7 +132,10 @@
         "sites": "Standorte",
         "never": "Nie",
         "none": "Keine",
-        "notSet": "Nicht festgelegt"
+        "notSet": "Nicht festgelegt",
+        "joinOurCommunity": "Treten Sie unserer Community bei",
+        "files": "Dateien",
+        "database": "Datenbank"
     },
     "reseller": {
         "brandName": "Markenname",
@@ -514,7 +520,318 @@
             "advanced.developer.phpSettings.subtitle": "Legen Sie die PHP-Einstellungen für die Domäne fest.",
             "advanced.developer.phpSettings.alert": "PHP-Einstellungen können in diesem Bereich nicht geändert werden.",
             "advanced.modal.phpSettings.title": "PHP-Einstellungen festlegen",
-            "advanced.modal.phpSettings.field": "Bereich:"
+            "advanced.modal.phpSettings.field": "Bereich:",
+            "staging.alert.additionalCharge": "Staging-Sites verursachen Kosten, da sie als zusätzliche Sites behandelt werden.",
+            "pushToLive.databaseDiffUnavailable": "Datenbankänderungen konnten nicht verglichen werden. Sie können weiterhin Dateien und Datenbank übertragen, aber selektive Tabellenänderungen sind nicht verfügbar.",
+            "pushToStaging.databaseDiffUnavailable": "Datenbankänderungen konnten nicht verglichen werden. Sie können weiterhin Dateien und Datenbank übertragen, aber selektive Tabellenänderungen sind nicht verfügbar.",
+            "dnsTooltip.alertsIgnored": "DNS-Warnungen werden für diese Instanz ignoriert.",
+            "modal.setDomain.previewSite": "Noch nicht live? Vorschau der Site auf dem Server",
+            "modal.setDomain.generateUrl": "URL generieren",
+            "modal.setDomain.config.tab.nameservers.list.first": "Entfernen Sie diese Nameserver:",
+            "modal.setDomain.config.tab.nameservers.list.learn_more_link": "Nameserver-Änderungen und DNS-Migration",
+            "modal.setDomain.config.tab.nameservers.list.learn_more_text": "Weitere Informationen zu diesem Prozess finden Sie in unserer Dokumentation:",
+            "modal.cancelInstanceImport.title": "Import abbrechen",
+            "modal.cancelInstanceImport.desc": "Möchten Sie den Instanzimport wirklich abbrechen? Alle eingegebenen Daten werden dauerhaft gelöscht.",
+            "modal.cancelInstanceImport.checkbox": "Ja, ich verstehe es und möchte den Instanzimport abbrechen.",
+            "modal.cancelInstanceInstallation.title": "Installation abbrechen",
+            "modal.cancelInstanceInstallation.desc": "Möchten Sie den Instanzimport wirklich abbrechen? Alle eingegebenen Daten werden dauerhaft gelöscht.",
+            "modal.cancelInstanceInstallation.checkbox": "Ja, ich verstehe es und möchte den Instanzimport abbrechen.",
+            "modal.importDetails.title": "Migrationsprotokolle",
+            "backups.restore.deleteExistingFiles.tooltip": "Hinweis: Wenn diese Option nicht ausgewählt ist, bleiben vorhandene Dateien auf Ihrem Konto und können zusätzlichen Hosting-Speicherplatz beanspruchen.",
+            "backups.usage.unlimited": "Unbegrenzt",
+            "backups.usage.manual_backups_number.max.suffix_one": "Manuell",
+            "backups.usage.manual_backups_number.max.suffix_other": "Manuell",
+            "backups.usage.manual_backups_number.tooltip": "Anzahl erstellter manueller Backups vom maximal erlaubten Limit. Manuelle Backups sind separat von automatischen Backups begrenzt.",
+            "backups.usage.automatic_backups_number.max.suffix_one": "Automatisch",
+            "backups.usage.automatic_backups_number.max.suffix_other": "Automatisch",
+            "backups.usage.automatic_backups_number.tooltip": "Anzahl erstellter automatischer Backups vom maximal erlaubten Limit.",
+            "backups.limit.manual_count": "Limit für manuelle Backups erreicht.",
+            "backups.limit.size": "Backup-Speicherlimit erreicht.",
+            "backups.download.title": "Backup herunterladen",
+            "backups.download.message": "Dieses Backup ist in mehrere Dateien aufgeteilt. Was möchten Sie herunterladen?",
+            "advanced.edge-cache.modal.cloudflare-warning.title": "Edge Cache aktivieren",
+            "advanced.edge-cache.modal.cloudflare-warning.info": "Edge Cache und Cloudflare Proxy verwenden separate Caching-Ebenen, die miteinander in Konflikt geraten können. Wenn beide gleichzeitig aktiviert sind, kann dies zu veralteten Inhalten, unerwartetem Caching-Verhalten oder Leistungsproblemen führen.",
+            "advanced.edge-cache.modal.cloudflare-warning.alert": "Wenn Cloudflare Proxy für diese Domain aktiv ist, erwägen Sie, ihn zu deaktivieren, bevor Sie Edge Cache aktivieren, um Caching-Konflikte zu vermeiden.",
+            "advanced.edge-cache.cloudflare-conflict.note": "Edge Cache und Cloudflare Proxy verwenden separate Caching-Ebenen, die miteinander in Konflikt geraten können. Wenn Cloudflare Proxy für diese Domain aktiv ist, erwägen Sie, ihn zu deaktivieren, um Caching-Konflikte zu vermeiden.",
+            "advanced.git.title": "Git",
+            "advanced.git.hostingUnsupported": "Git ist für diesen Server noch nicht verfügbar.",
+            "advanced.git.connect.title": "Repository verbinden",
+            "advanced.git.connect.subtitle": "Verknüpfen Sie diese WordPress-Site mit einem Git-Repository (GitHub, GitLab oder Bitbucket).",
+            "advanced.git.connect.repoUrl": "Repository-URL",
+            "advanced.git.connect.privateRepo": "Privates Repository",
+            "advanced.git.connect.token": "Zugriffstoken",
+            "advanced.git.connect.tokenHint": "Erstellen Sie einen Token in Ihrem Git-Anbieter mit Zugriff auf dieses Repository.",
+            "advanced.git.connect.button": "Repository verbinden",
+            "advanced.git.connect.failed": "Repository konnte nicht verbunden werden. Überprüfen Sie URL und Token.",
+            "advanced.git.connected.title": "Repository verbunden",
+            "advanced.git.connected.repo": "Repository",
+            "advanced.git.repoMode.reuseHint": "Verwenden Sie dasselbe Repository wie Ihre gekoppelte Site. Sie können nach dem Verbinden einen anderen Branch auswählen.",
+            "advanced.git.repoMode.stagingBranchHint": "Live verwendet Branch „{{branch}}“. Diese Site verwendet standardmäßig staging oder develop, falls diese Branches im Repository vorhanden sind.",
+            "advanced.git.repoMode.stagingBranchHintDefault": "Nach dem Verbinden verwendet diese Site standardmäßig den Staging- oder Develop-Branch, falls diese Branches im Repository vorhanden sind.",
+            "advanced.git.repoMode.useDifferent": "Ein anderes Repository verwenden",
+            "advanced.git.repoMode.manualTitle": "Repository-Details eingeben",
+            "advanced.git.repoMode.useRelated": "Repository der verknüpften Site verwenden",
+            "advanced.git.disconnect.title": "Repository trennen",
+            "advanced.git.disconnect.subtitle": "Dies entfernt die Git-Verbindung aus PanelAlpha. Dateien auf dem Server bleiben erhalten. Um Git-Tracking-Dateien vom Server zu entfernen, verwenden Sie den Dateimanager.",
+            "advanced.git.localRepoMissing.banner": "Diese Site ist in PanelAlpha mit einem Repository verbunden, aber Git ist auf dem Server nicht eingerichtet. Verwenden Sie „Verbindung reparieren\", um es erneut einzurichten. Ihre Site-Dateien werden nicht entfernt.",
+            "advanced.git.localRepoMissing.repair": "Verbindung reparieren",
+            "advanced.git.disconnect.button": "Trennen",
+            "advanced.git.disconnect.confirm": "Trennen",
+            "advanced.git.branch.title": "Branch",
+            "advanced.git.branch.subtitle": "Der für diese Site verwendete Repository-Branch.",
+            "advanced.git.branch.status": "Aktueller Branch: {{branch}}",
+            "advanced.git.modal.branch.title": "Branch ändern",
+            "advanced.git.modal.branch.message": "Geben Sie den Branchnamen für diese Site ein.",
+            "advanced.git.modal.branch.field": "Branchname",
+            "advanced.git.modal.branch.warning": "Speichern oder verwerfen Sie lokale Dateiänderungen auf dem Server, bevor Sie den Branch ändern.",
+            "advanced.git.modal.branch.confirm": "Branch ändern",
+            "advanced.git.branch_change.title": "Branch geändert",
+            "advanced.git.lastCommit.title": "Letzter bereitgestellter Commit",
+            "advanced.git.lastCommit.subtitle": "Die Version Ihrer Site-Dateien, die zuletzt aus dem Repository aktualisiert wurde.",
+            "advanced.git.lastCommit.empty": "Noch keine Bereitstellung erfasst. Verwenden Sie Pull oder Push unten, um diese Site mit dem Repository zu synchronisieren.",
+            "advanced.git.lastCommit.hash": "Commit",
+            "advanced.git.lastCommit.message": "Nachricht",
+            "advanced.git.lastCommit.date": "Bereitgestellt",
+            "advanced.git.lastCommit.sync.remote": "Repository",
+            "advanced.git.lastCommit.sync.local": "Diese Site",
+            "advanced.git.lastCommit.sections.syncStatus": "Synchronisierungsstatus",
+            "advanced.git.lastCommit.sections.deployedCommit": "Bereitgestellter Commit",
+            "advanced.git.lastCommit.labels.remote": "Repository",
+            "advanced.git.lastCommit.labels.local": "Diese Site",
+            "advanced.git.pull.title": "Pull",
+            "advanced.git.pull.card.title": "Pull aus Repository",
+            "advanced.git.pull.card.subtitle": "Aktualisieren Sie diese Site mit den neuesten Dateien aus dem Repository-Branch.",
+            "advanced.git.push.title": "Push",
+            "advanced.git.push.card.title": "Push zum Repository",
+            "advanced.git.push.card.subtitle": "Senden Sie Dateiänderungen von dieser Site an den Repository-Branch.",
+            "advanced.git.pullDirtyTree.title": "Lokale Änderungen erkannt",
+            "advanced.git.pullDirtyTree.message": "Diese Site hat lokale Dateiänderungen, die noch nicht im Repository sind. Wählen Sie, was Sie vor dem Pullen tun möchten.",
+            "advanced.git.pullDirtyTree.warning": "Force-Pull überschreibt lokale Änderungen mit dem Repository-Inhalt.",
+            "advanced.git.pullDirtyTree.force": "Force-Pull (Änderungen überschreiben)",
+            "advanced.git.pullDirtyTree.pushFirst": "Lokale Änderungen zuerst pushen, dann pullen",
+            "advanced.git.pullDirtyTree.pushFirstHint": "Lädt Ihre Site-Änderungen hoch, lädt Repository-Updates herunter und lädt dann das zusammengeführte Ergebnis hoch.",
+            "advanced.git.pushFirst.title": "Repository ist leer",
+            "advanced.git.pushFirst.message": "Dieser Branch existiert noch nicht im Repository. Verwenden Sie Push, um Ihre Site zu veröffentlichen und ihn zu erstellen.",
+            "advanced.git.pushFirst.confirm": "Push",
+            "advanced.git.drift.banner": "Lokale Änderungen auf dieser Site sind noch nicht im Repository.",
+            "advanced.git.drift.push": "Zum Repository pushen",
+            "advanced.git.drift.revert": "Lokale Änderungen verwerfen",
+            "advanced.git.drift.ignore": "Erinnerung verwerfen",
+            "advanced.git.lastCommit.checkUpdates": "Auf Updates prüfen",
+            "advanced.git.lastCommit.remoteBehind": "{{count}} Commit(s) im Repository nicht hier bereitgestellt",
+            "advanced.git.lastCommit.remoteAhead": "{{count}} Commit(s) auf dieser Site nicht im Repository",
+            "advanced.git.lastCommit.remoteInSync": "Auf dem neuesten Stand mit dem Repository-Branch",
+            "advanced.git.lastCommit.localChanges": "Lokale Dateiänderungen erkannt",
+            "advanced.git.lastCommit.localClean": "Keine lokalen Dateiänderungen",
+            "advanced.git.connection.ok": "Verbindung zum Repository funktioniert.",
+            "advanced.git.connection.error.token": "Auf das Repository kann nicht zugegriffen werden. Aktualisieren Sie Ihren Zugriffstoken.",
+            "advanced.git.connection.error.network": "Git-Anbieter kann nicht erreicht werden. Versuchen Sie es später erneut.",
+            "advanced.git.connection.error.not_found": "Repository nicht gefunden oder nicht mehr verfügbar.",
+            "advanced.git.connection.error.localRepoMissing": "Git ist auf dieser Site nicht eingerichtet. Verwenden Sie „Verbindung reparieren\" unten.",
+            "advanced.git.connection.error.unknown": "Repository-Verbindung kann nicht überprüft werden.",
+            "advanced.git.connection.updateToken": "Zugriffstoken aktualisieren",
+            "advanced.git.connection.tokenLabel": "Zugriffstoken",
+            "advanced.git.pull.pushToLiveHint": "Git Pull aktualisiert Site-Dateien aus Ihrem Repository. Es ist nicht dasselbe wie das Übertragen von Staging auf Live (Dateien und Datenbank).",
+            "advanced.git.logs.title": "Bereitstellungsprotokoll",
+            "advanced.git.logs.subtitle": "Aktuelle Verbindungs-, Pull-, Push- und Branch-Änderungen für diese Site.",
+            "advanced.git.logs.action.connect": "Repository verbunden",
+            "advanced.git.logs.action.disconnect": "Repository getrennt",
+            "advanced.git.logs.action.pull": "Aus Repository gepullt",
+            "advanced.git.logs.action.push": "Zum Repository gepusht",
+            "advanced.git.logs.action.branch_change": "Branch geändert",
+            "advanced.git.logs.action.revert": "Lokale Änderungen verworfen",
+            "advanced.git.logs.action.webhook_pull": "Auto-Deploy",
+            "advanced.git.logs.status.pending": "Ausstehend",
+            "advanced.git.logs.status.in_progress": "In Bearbeitung",
+            "advanced.git.logs.status.success": "Abgeschlossen",
+            "advanced.git.logs.status.failed": "Fehlgeschlagen",
+            "advanced.git.logs.status.skipped": "Übersprungen",
+            "advanced.git.autoDeploy.title": "Auto-Deploy",
+            "advanced.git.autoDeploy.subtitle": "Automatisch pullen und diese Site aktualisieren, wenn neue Commits in den Branch {{branch}} im Repository gepusht werden.",
+            "advanced.git.autoDeploy.toggle": "Auto-Deploy bei Push",
+            "advanced.git.autoDeploy.webhookRegistered": "Webhook beim Git-Anbieter registriert",
+            "advanced.git.autoDeploy.webhookNotRegistered": "Webhook nicht registriert",
+            "advanced.git.autoDeploy.webhookLabel": "Webhook",
+            "advanced.git.autoDeploy.lastTriggered": "Zuletzt ausgelöst",
+            "advanced.git.autoDeploy.inProgress": "Auto-Deploy läuft…",
+            "advanced.git.setupBanner.message": "Ihr Repository ist verbunden. Führen Sie Pull oder Push unten aus, um diese Site zum ersten Mal mit dem Repository zu synchronisieren.",
+            "advanced.git.setupBanner.checking": "Repository-Status wird geprüft…",
+            "advanced.git.setupBanner.sameBranchStaging": "Diese Site verwendet denselben Branch wie Ihre Live-Site ({{branch}}). Für eine Testumgebung wählen Sie einen anderen Branch (z. B. develop).",
+            "advanced.git.setupBanner.sameBranchLive": "Ihre Staging-Site verwendet denselben Branch ({{branch}}). Staging sollte normalerweise einen separaten Branch verfolgen.",
+            "advanced.git.setupBanner.changeBranch": "Branch ändern",
+            "advanced.git.setupBanner.pull": "Jetzt pullen",
+            "advanced.git.setupBanner.pullBehind": "Jetzt pullen ({{count}} hinter)",
+            "advanced.git.setupBanner.push": "Site zum Repository pushen",
+            "advanced.git.setupBanner.divergedHint": "Diese Site und das Repository haben beide neue Versionen. Pullen Sie zuerst, um Repository-Updates zu erhalten. Wenn Sie auf dieser Site vorgenommene Änderungen behalten müssen, verwenden Sie „Lokale Änderungen zuerst pushen, dann pullen\" im Pull-Dialog.",
+            "advanced.git.push.pullFirstHint": "Das Repository hat neuere Commits. Pullen Sie diese Änderungen, bevor Sie von dieser Site pushen.",
+            "advanced.git.drift.pullFirst": "Updates zuerst pullen",
+            "advanced.git.drift.divergedHint": "Das Repository hat ebenfalls neuere Commits. Pullen Sie zuerst, um diese Updates zu erhalten. Wenn Sie auf dieser Site vorgenommene Änderungen behalten müssen, verwenden Sie „Lokale Änderungen zuerst pushen, dann pullen\" im Pull-Dialog.",
+            "advanced.git.connect.partialSyncFailed": "Repository verbunden, aber die erste Synchronisierung wurde nicht abgeschlossen: {{message}} Verwenden Sie den Banner oben, um sie abzuschließen.",
+            "advanced.wordpressMcp.title": "WordPress MCP",
+            "advanced.wordpressMcp.description": "Verbinden Sie einen KI-Assistenten (Claude, Cursor, VS Code, …) direkt über das Model Context Protocol mit dieser Site. Der Assistent erhält echten Verwaltungszugriff auf Ihre Inhalte, Plugins und Einstellungen.",
+            "advanced.wordpressMcp.enable": "MCP aktivieren",
+            "advanced.wordpressMcp.disable": "MCP deaktivieren",
+            "advanced.wordpressMcp.installing": "Adapter wird installiert…",
+            "advanced.wordpressMcp.removing": "Adapter wird entfernt…",
+            "advanced.wordpressMcp.tryAgain": "Erneut versuchen",
+            "advanced.wordpressMcp.failed": "Beim Aktualisieren des MCP-Adapters ist ein Fehler aufgetreten.",
+            "advanced.wordpressMcp.howToConnect": "So verbinden Sie",
+            "advanced.wordpressMcp.statusDisabled": "Deaktiviert",
+            "advanced.wordpressMcp.statusActive": "Aktiv",
+            "advanced.wordpressMcp.disabledTitle": "WordPress MCP ist deaktiviert",
+            "advanced.wordpressMcp.disabledDescription": "Verbinden Sie einen KI-Assistenten (Claude Code, Codex, Cursor, …) direkt über das Model Context Protocol mit dieser Site. Der Assistent erhält echten Verwaltungszugriff auf Ihre Inhalte, Plugins und Einstellungen.",
+            "advanced.wordpressMcp.activeTitle": "WordPress MCP ist aktiv",
+            "advanced.wordpressMcp.activeDescription": "Ihr KI-Assistent kann sich nun mit dieser Site verbinden. Verwenden Sie die untenstehenden Details, um das Setup in Ihrem Tool abzuschließen.",
+            "advanced.wordpressMcp.step3Body": "Ersetzen Sie <code class=\"mcp-path\">your-wp-username</code> und <code class=\"mcp-path\">your-application-password</code> durch Ihren WordPress-Benutzernamen und das Anwendungspasswort aus Schritt 1.",
+            "advanced.wordpressMcp.step1Title": "Anwendungspasswort erstellen",
+            "advanced.wordpressMcp.step1Body": "Gehen Sie im WP-Admin zu <code class=\"mcp-path\">Benutzer → Profil → Anwendungspasswörter</code>, benennen Sie es (z. B. „Claude\") und kopieren Sie das generierte Passwort.",
+            "advanced.wordpressMcp.step1Link": "WP-Admin öffnen",
+            "advanced.wordpressMcp.step2Title": "MCP-Endpunkt",
+            "advanced.wordpressMcp.step3Title": "Konfiguration",
+            "advanced.wordpressMcp.copy": "Kopieren",
+            "advanced.wordpressMcp.copied": "Kopiert",
+            "advanced.wordpressMcp.abilities.title": "Fähigkeiten über ein benutzerdefiniertes MU-Plugin verfügbar machen",
+            "advanced.wordpressMcp.abilities.description": "Standardmäßig macht der MCP-Adapter nur sichere schreibgeschützte Fähigkeiten verfügbar. Um zusätzliche Fähigkeiten zu gewähren, erstellen Sie ein Must-Use-Plugin.",
+            "advanced.wordpressMcp.abilities.step1Title": "MU-Plugin erstellen",
+            "advanced.wordpressMcp.abilities.step1Body": "Kopieren Sie den untenstehenden Code in eine neue PHP-Datei. Laden Sie sie in das Verzeichnis <code class=\"mcp-path\">wp-content/mu-plugins/</code> auf Ihrer WordPress-Site hoch.",
+            "advanced.wordpressMcp.abilities.step2Title": "Fähigkeiten aktivieren",
+            "advanced.wordpressMcp.abilities.step2Body": "Der Beispielcode markiert <code class=\"mcp-path\">core/get-site-info</code>, <code class=\"mcp-path\">core/get-environment-info</code> und <code class=\"mcp-path\">core/get-user-info</code> als öffentlich. Fügen Sie Fähigkeiten zum <code class=\"mcp-path\">$expose</code>-Array hinzu oder entfernen Sie sie, um zu steuern, welche Endpunkte über MCP zugänglich sind.",
+            "advanced.wordpressMcp.abilities.noteTitle": "Entwicklerkontrolle",
+            "advanced.wordpressMcp.abilities.note": "Brauchen Sie mehr Kontrolle? Verwenden Sie den Filter <code class=\"mcp-path\">wp_register_ability_args</code>, um Fähigkeiten als öffentlich zu deklarieren. Der Filter erhält die Fähigkeitsargumente und die Fähigkeits-ID.",
+            "advanced.wordpressMcp.copyCode": "Code kopieren",
+            "advanced.wordpressMcp.disableConfirmTitle": "WordPress MCP deaktivieren?",
+            "advanced.wordpressMcp.disableConfirmBody": "Dies entfernt das MCP-Adapter-Plugin und der Endpunkt funktioniert nicht mehr. Denken Sie daran, auch das Anwendungspasswort im WP-Admin zu widerrufen.",
+            "advanced.wordpressMcp.confirm": "Deaktivieren",
+            "advanced.wordpressMcp.cancel": "Abbrechen",
+            "advanced.wordpressMcp.infoTooltip": "Das Model Context Protocol ermöglicht KI-Assistenten, Ihre WordPress-Inhalte, Plugins und Einstellungen direkt über einen sicheren REST-Endpunkt zu verwalten.",
+            "advanced.wordpressMcp.pluginRequiredHint": "Durch die Aktivierung wird automatisch das WordPress MCP Adapter-Plugin auf Ihrer Site installiert.",
+            "advanced.wordpressMcp.endpointUnavailable": "Der MCP-Endpunkt gibt derzeit einen Fehler zurück. Das MCP-Adapter-Plugin ist möglicherweise noch bei der Aktivierung – versuchen Sie, in einem Moment zu aktualisieren.",
+            "advanced.wordpressMcp.enableSuccess": "WordPress MCP wurde aktiviert.",
+            "advanced.wordpressMcp.disableSuccess": "WordPress MCP wurde deaktiviert.",
+            "phpmyadminSsoChoice.title": "Anmeldung bei PHPMyAdmin",
+            "phpmyadminSsoChoice.message": "SSO-Link wird generiert...",
+            "modal.importDetails.step": {
+                "installNewInstance": {
+                    "title": "Neue Instanz wird installiert",
+                    "tooltip": "Installieren einer frischen WordPress-Instanz auf dem Zielserver"
+                },
+                "installPluginOnNewInstance": {
+                    "title": "Plugin auf neuer Instanz wird installiert",
+                    "tooltip": "Installieren des Migrations-Plugins auf der neu erstellten WordPress-Instanz"
+                },
+                "installPluginOnImportedInstance": {
+                    "title": "Plugin auf migrierter Instanz wird installiert",
+                    "tooltip": "Installieren des Migrations-Plugins auf der migrierten WordPress-Instanz"
+                },
+                "prepareNewInstanceToMigration": {
+                    "title": "Neue Instanz wird für Migration vorbereitet",
+                    "tooltip": "Konfigurieren der neuen WordPress-Instanz zum Empfang migrierter Daten"
+                },
+                "prepareMigrationUsingPlugin": {
+                    "title": "Migration wird vorbereitet",
+                    "tooltip": "Einrichten des Migrationsprozesses"
+                },
+                "runMigrationUsingPlugin": {
+                    "title": "Migration wird ausgeführt",
+                    "tooltip": "Ausführen des automatisierten Migrationsprozesses"
+                },
+                "migrateDatabaseUsingPlugin": {
+                    "title": "Datenbank wird migriert",
+                    "tooltip": "Importieren der Datenbank in die migrierte WordPress-Instanz"
+                },
+                "migrateFilesUsingPlugin": {
+                    "title": "Dateien werden migriert",
+                    "tooltip": "Hochladen der migrierten WordPress-Dateien auf den Zielserver"
+                },
+                "finalizeMigrationUsingPlugin": {
+                    "title": "Migration wird abgeschlossen",
+                    "tooltip": "Abschließen des automatisierten Migrationsprozesses"
+                },
+                "prepareInstance": {
+                    "title": "Neue Instanz wird vorbereitet",
+                    "tooltip": "Einrichten der neuen WordPress-Instanz für die Migration"
+                },
+                "downloadDatabase": {
+                    "title": "Datenbank wird heruntergeladen",
+                    "tooltip": "Herunterladen der WordPress-Datenbank vom Quellserver"
+                },
+                "downloadFiles": {
+                    "title": "Dateien werden heruntergeladen",
+                    "tooltip": "Herunterladen der WordPress-Dateien vom Quellserver"
+                },
+                "uploadFiles": {
+                    "title": "Dateien werden hochgeladen",
+                    "tooltip": "Hochladen der WordPress-Dateien auf den Zielserver"
+                },
+                "uploadDatabase": {
+                    "title": "Datenbank wird hochgeladen",
+                    "tooltip": "Hochladen der WordPress-Datenbank auf den Zielserver"
+                },
+                "importDatabase": {
+                    "title": "Datenbank wird importiert",
+                    "tooltip": "Importieren der Datenbank auf den Zielserver"
+                },
+                "configureWordPress": {
+                    "title": "WordPress wird konfiguriert",
+                    "tooltip": "Aktualisieren der WordPress-Konfiguration für die neue Umgebung"
+                },
+                "cleanUp": {
+                    "title": "Dateien werden bereinigt",
+                    "tooltip": "Entfernen temporärer Dateien, die während des Migrationsprozesses erstellt wurden"
+                },
+                "cleanUpPlugins": {
+                    "title": "Plugins werden bereinigt",
+                    "tooltip": "Entfernen von Plugins, die während des Migrationsprozesses installiert wurden"
+                },
+                "createFtpAccount": {
+                    "title": "FTP-Konto wird erstellt",
+                    "tooltip": "Erstellen eines FTP-Kontos auf dem Zielserver für Datei-Uploads"
+                },
+                "prepareFiles": {
+                    "title": "Dateien werden vorbereitet",
+                    "tooltip": "Komprimieren und Vorbereiten der WordPress-Dateien für die Migration"
+                },
+                "cleaning-files": {
+                    "title": "Dateien werden bereinigt",
+                    "tooltip": "Entfernen temporärer Dateien, die während des Migrationsprozesses erstellt wurden"
+                },
+                "removing-ftp-account": {
+                    "title": "FTP-Konto wird entfernt",
+                    "tooltip": "Entfernen des temporären FTP-Kontos vom Zielserver"
+                },
+                "configuring-wordpress": {
+                    "title": "WordPress wird konfiguriert",
+                    "tooltip": "Aktualisieren der WordPress-Konfiguration für die neue Umgebung"
+                },
+                "importing-database": {
+                    "title": "Datenbank wird importiert",
+                    "tooltip": "Importieren der Datenbank auf den Zielserver"
+                },
+                "creating-database": {
+                    "title": "Datenbank wird erstellt",
+                    "tooltip": "Erstellen einer neuen Datenbank auf dem Zielserver"
+                },
+                "extracting-files": {
+                    "title": "Dateien werden extrahiert",
+                    "tooltip": "Extrahieren der WordPress-Dateien aus dem Archiv in das Domain-Verzeichnis"
+                },
+                "creating-ftp-account": {
+                    "title": "FTP-Konto wird erstellt",
+                    "tooltip": "Erstellen eines FTP-Kontos auf dem Zielserver für Datei-Uploads"
+                },
+                "creating-temporary-directory": {
+                    "title": "Temporäres Verzeichnis wird erstellt",
+                    "tooltip": "Erstellen eines temporären Verzeichnisses auf dem Zielserver für die Dateiverarbeitung"
+                },
+                "creating-domain": {
+                    "title": "Domain wird erstellt",
+                    "tooltip": "Konfigurieren der Domain auf dem Zielserver"
+                },
+                "creating-hosting-account": {
+                    "title": "Hosting-Konto wird erstellt",
+                    "tooltip": "Erstellen eines neuen Hosting-Kontos auf dem Zielserver"
+                }
+            }
         },
         "hosting": {
             "sidebar.manage.title": "Verwalten Sie",
@@ -649,7 +966,28 @@
             "fileManager.title": "Dateimanager",
             "fileManager.alert": {
                 "wpCloud": "Aufgrund von Servereinschränkungen sind nicht alle Dateien in diesem Dateimanager sichtbar. Sie haben nur Zugriff auf /wp-content und wp-config.php."
-            }
+            },
+            "usage.title": "Nutzung",
+            "usage.graphs.title": "Diagramme",
+            "usage.graphs.cpuUsage": "CPU-Nutzung",
+            "usage.graphs.diskThroughput": "Festplatten-Durchsatz",
+            "usage.graphs.diskIops": "Festplatten-IOPS",
+            "usage.graphs.networkTraffic": "Netzwerk-Traffic",
+            "usage.graphs.networkPps": "Netzwerk-PPS",
+            "usage.graphs.noData": "Keine Daten",
+            "usage.graphs.usage": "Nutzung",
+            "usage.graphs.read": "Lesen",
+            "usage.graphs.write": "Schreiben",
+            "usage.graphs.in": "Eingehend",
+            "usage.graphs.out": "Ausgehend",
+            "summary.instancesCard.usage.usedOfLimit": "Verwendet: {{used}} von {{limit}}",
+            "summary.instancesCard.usage.used": "Verwendet: {{used}}",
+            "summary.planCard.usage.email_storage": "E-Mail-Konten-Speicher",
+            "dns.modal.proxy-warning.title": "Cloudflare Proxy aktivieren",
+            "dns.modal.proxy-warning.info": "Das Aktivieren des Cloudflare-Proxys leitet Traffic über das Cloudflare-Netzwerk weiter, das eine eigene Caching-Ebene enthält. Dies kann mit WP Cloud Edge Cache in Konflikt geraten, falls es derzeit für die WordPress-Instanz auf dieser Domain aktiviert ist.",
+            "dns.modal.proxy-warning.alert": "Wenn Edge Cache für eine WordPress-Instanz auf dieser Domain aktiv ist, erwägen Sie, es zu deaktivieren, bevor Sie den Cloudflare-Proxy aktivieren, um Caching-Konflikte zu vermeiden.",
+            "dns.zones.title": "DNS-Zone",
+            "dns.zones.tooltip": "Wählen Sie eine DNS-Zone zur Verwaltung ihrer Einträge."
         },
         "reseller": {
             "page.users": "Benutzer",
@@ -778,12 +1116,96 @@
             "newInstance.geo_affinity.subtitle": "Standort wählen",
             "newInstance.geo_affinity.info": "Sie können den Standort Ihrer Website unter den folgenden Optionen auswählen:",
             "newInstance.hosting_plan.subtitle": "Hosting-Plan auswählen",
-            "newInstance.hosting_plan.info": "Sie können den Hosting-Plan für Ihr Abonnement aus den folgenden Optionen auswählen:"
+            "newInstance.hosting_plan.info": "Sie können den Hosting-Plan für Ihr Abonnement aus den folgenden Optionen auswählen:",
+            "import.url.ipAddress.info": "Optional: Geben Sie die Server-IP ein, wenn Ihre Domain noch nicht funktioniert.",
+            "noInstallationType.title": "Installation nicht verfügbar",
+            "noInstallationType.info": "Sie können derzeit keine Instanz installieren. Bitte kontaktieren Sie den Support für weitere Details.",
+            "transferDomain.message.verificationRequired": "Eine Domain-Verifizierung ist noch erforderlich.",
+            "instanceSource": {
+                "title": "Wählen Sie, wie Sie Ihre Instanz erstellen möchten",
+                "wordpress": {
+                    "title": "WordPress",
+                    "subtitle": "Erstellen Sie eine neue Site oder migrieren Sie eine bestehende."
+                },
+                "git": {
+                    "title": "Git",
+                    "subtitle": "Verbinden Sie GitHub, GitLab oder Bitbucket und stellen Sie auf Ihrem Server bereit."
+                },
+                "zip": {
+                    "title": "Dateien",
+                    "subtitle": "Laden Sie Dateien oder ein ZIP-Archiv hoch und stellen Sie es auf Ihrem Server bereit."
+                },
+                "go": {
+                    "title": "Panelalpha GO"
+                }
+            },
+            "gitDeploy": {
+                "title": "Aus Git bereitstellen",
+                "subtitle": "Repository verbinden, um eine Instanz zu erstellen",
+                "repoUrl": {
+                    "label": "Repository-URL"
+                },
+                "privateRepo": {
+                    "label": "Privates Repository"
+                },
+                "auth": {
+                    "title": "Zugriffsmethode",
+                    "pat": {
+                        "label": "Persönlicher Zugriffstoken (PAT)",
+                        "tokenLabel": "Zugriffstoken",
+                        "placeholder": "Token einfügen"
+                    },
+                    "deployKey": {
+                        "label": "Deploy-Key (SSH)",
+                        "publicKeyLabel": "Öffentlicher Schlüssel",
+                        "addedCheckbox": "Ich habe den Deploy-Key zum Repository hinzugefügt"
+                    }
+                }
+            },
+            "zipDeploy": {
+                "title": "Aus Dateien bereitstellen",
+                "subtitle": "Laden Sie Ihre Anwendungsdateien und eine optionale Datenbank hoch, um eine neue Instanz zu erstellen",
+                "file": {
+                    "label": "Quelldateien",
+                    "selectFolder": "Oder wählen Sie einen Ordner…",
+                    "maxSelections": "Insgesamt bis zu 5 Dateien oder Ordner.",
+                    "invalidType": "Erlaubte Dateitypen: .zip, .tar.gz, .sql, .sql.gz, .sqlite, .db",
+                    "empty": "Bitte fügen Sie mindestens eine Datei oder einen Ordner hinzu.",
+                    "emptyFolder": "Der ausgewählte Ordner ist leer."
+                },
+                "dropZone": {
+                    "title": "Ordner oder Archiv mit Ihrer Anwendung ablegen",
+                    "hint": "Klicken zum Durchsuchen, oder Datenbank-Dump als separate Datei hinzufügen"
+                },
+                "supportedFormats": {
+                    "title": "Was Sie hochladen können:",
+                    "webApp": "Ordner oder Archiv (.zip) mit Ihrer Web-Anwendung",
+                    "database": "Datenbank-Dump: .sql, .sql.gz oder SQLite (.sqlite, .db)",
+                    "backup": "Vollständiges Backup-Archiv von Ihrem vorherigen Hosting",
+                    "allInOne": "Ein Archiv mit Anwendungsdateien und Datenbank zusammen",
+                    "separateFiles": "Anwendungsarchiv und Datenbank separat (z. B. site.tar.gz + database.sql.gz)"
+                },
+                "selection": {
+                    "folderSummary": "{{name}} ({{count}} Dateien)"
+                }
+            },
+            "gitZipDeployProgress": {
+                "title": "Ihre Instanz wird eingerichtet",
+                "subtitle": {
+                    "inProgress": "Dies kann einige Minuten dauern",
+                    "failed": "Etwas ist schief gelaufen"
+                },
+                "info": "Ihre Instanz wird bereitgestellt. Sie können dieses Fenster schließen und später zurückkehren.",
+                "error": {
+                    "generic": "Bereitstellung fehlgeschlagen. Bitte überprüfen Sie Ihre Benachrichtigungen oder versuchen Sie es erneut."
+                }
+            }
         },
         "navbar": {
             "tab.myInstances": "Meine Instanzen",
             "tab.myHosting": "Mein Hosting",
-            "tab.resellerArea": "Reseller-Bereich"
+            "tab.resellerArea": "Reseller-Bereich",
+            "tab.myServer": "Mein Server"
         },
         "styleManager": {
             "title": "Style Manager",
@@ -1003,10 +1425,29 @@
             "importing.failed": "Das Importieren der Instanz ist fehlgeschlagen.",
             "importing.site": "Importieren Sie Ihre Website.",
             "importing.wait": "Das kann eine Weile dauern.",
-            "instanceInstall.failed": "Die Installation der Instanz ist fehlgeschlagen."
+            "instanceInstall.failed": "Die Installation der Instanz ist fehlgeschlagen.",
+            "importing.inProgress": "Migration läuft",
+            "not-started": "Nicht gestartet",
+            "completed": "Abgeschlossen",
+            "in-progress": "In Bearbeitung",
+            "stopped": "Gestoppt",
+            "connected": "Verbunden",
+            "disconnected": "Getrennt"
         },
         "instanceInDiagnosticMode": "Die Verwaltung der Website ist derzeit nicht möglich (Diagnosemodus). Bitte kontaktieren Sie den Support für weitere Details.",
-        "hostingAccountInDiagnosticMode": "Die Verwaltung des Hostings ist derzeit nicht möglich (Diagnosemodus). Bitte kontaktieren Sie den Support für weitere Details"
+        "hostingAccountInDiagnosticMode": "Die Verwaltung des Hostings ist derzeit nicht möglich (Diagnosemodus). Bitte kontaktieren Sie den Support für weitere Details",
+        "link.documentation.howToCreate": "Wie erstelle ich?",
+        "theme": {
+            "noDescription": "Keine Beschreibung verfügbar"
+        },
+        "importing": {
+            "modal": {
+                "title": "Migrationsprotokolle",
+                "desc": "Auf diesem Bildschirm können Sie eine Vorschau des Imports Ihrer Instanz und den Status einzelner Vorgänge anzeigen.",
+                "progress": "Importfortschritt:",
+                "failed": "Migration fehlgeschlagen"
+            }
+        }
     },
     "notification": {
         "account": {
@@ -1092,7 +1533,21 @@
             "installation.created": "Instanz erstellt. Die Installation ist im Gange.",
             "installation.inProgress": "Installation in Arbeit.",
             "copyInstance.completed": "Instanz kopieren ist in Arbeit",
-            "modal.pushToStaging.success": "In die Bereitstellung schieben in Arbeit"
+            "modal.pushToStaging.success": "In die Bereitstellung schieben in Arbeit",
+            "modal.ssoLogin.dnsMismatchDetected": "Warnung! Diese Domain verweist möglicherweise noch nicht auf diesen Server. Wenn DNS nicht korrekt konfiguriert ist, wird WordPress Admin möglicherweise nicht geöffnet. Sie können eine temporäre URL generieren, bis das DNS eingerichtet ist.",
+            "git.connect.success": "Repository verbunden. Ihre Site-Dateien bleiben unverändert — verwenden Sie Pull, um Code aus dem Repository herunterzuladen, oder Push, um diese Site hochzuladen. Ein Banner auf dieser Seite schlägt den besten nächsten Schritt vor.",
+            "git.disconnect.success": "Repository getrennt.",
+            "git.repair.success": "Git-Verbindung repariert. Sie können nun pullen oder pushen, um diese Site mit dem Repository zu synchronisieren.",
+            "git.pull.success": "Site aus dem Repository aktualisiert.",
+            "git.push.success": "Änderungen an das Repository gesendet.",
+            "git.push.nothing": "Es gibt keine Dateiänderungen auf dieser Site, die an das Repository gesendet werden können.",
+            "git.revert.success": "Lokale Dateiänderungen wurden verworfen.",
+            "git.check.success": "Repository-Status aktualisiert.",
+            "git.credentials.success": "Zugriffstoken aktualisiert.",
+            "git.drift.ignore.success": "Erinnerung verworfen, bis sich lokale Änderungen ändern.",
+            "git.branch.success": "Branch aktualisiert.",
+            "git.autoDeploy.success": "Auto-Deploy-Einstellungen aktualisiert.",
+            "modal.phpmyadminSsoChoice.dnsMismatch": "Warnung! Die verwendete Domain verweist möglicherweise noch nicht auf diesen Server. Wenn DNS nicht korrekt konfiguriert ist, wird phpMyAdmin möglicherweise nicht geöffnet. Sie können eine temporäre URL generieren, bis das DNS eingerichtet ist."
         },
         "hosting": {
             "domain.create.success": "{{type}} wurde hinzugefügt.",
@@ -1370,6 +1825,33 @@
         "set": {
             "geo_affinity": "Standort festlegen",
             "hosting_plan": "Hosting-Plan festlegen"
+        },
+        "edge-cache.enable": "Trotzdem aktivieren",
+        "dns.proxy.enable": "Proxy trotzdem aktivieren",
+        "connect.default": "Verbinden",
+        "ignore": "Ignorieren",
+        "restoreAlerts": "Warnungen wiederherstellen",
+        "loginWithTempUrl": "Mit temporärer URL anmelden",
+        "loginDirectly": "Direkt anmelden",
+        "installation.resume": "Installation fortsetzen",
+        "fullServerManagement": "Vollständige Serververwaltung",
+        "git": {
+            "pull": "Pull",
+            "push": "Push"
+        },
+        "import": {
+            "cancel": "Migration abbrechen",
+            "resume": "Import fortsetzen",
+            "details": "Protokolle anzeigen"
+        },
+        "onboarding": {
+            "prepare-installation": "Installation vorbereiten",
+            "preparing-installation": "Installation wird vorbereitet...",
+            "create-domain": "Domain wird erstellt...",
+            "check-domain-availability": "Domain wird geprüft...",
+            "gitDeploy": {
+                "generateDeployKey": "Deploy-Key generieren"
+            }
         }
     },
     "tooltip": {
@@ -1542,7 +2024,8 @@
                 "max_file_uploads": "Hier wird die maximale Anzahl von Dateien festgelegt, die mit einer einzigen Anfrage hochgeladen werden können. Dies hilft, Missbrauch zu verhindern, indem die Anzahl der Dateien, die auf einmal hochgeladen werden können, begrenzt wird.",
                 "register_globals": "Wenn diese Direktive aktiviert ist, werden Variablen aus der Anfrage automatisch in den globalen Bereich importiert. Sie ist veraltet und sollte aus Sicherheitsgründen deaktiviert werden, da sie zum Überschreiben von Variablen und anderen Sicherheitsproblemen führen kann.",
                 "short_open_tag": "Diese Einstellung erlaubt die Verwendung von kurzen Eröffnungs-Tags (<?) für PHP-Code. Wenn sie deaktiviert ist, kann nur der vollständige Eröffnungs-Tag (<?php) verwendet werden. Für eine bessere Kompatibilität wird die Verwendung des vollständigen Eröffnungs-Tags empfohlen."
-            }
+            },
+            "theme.cannotDelete": "Das Theme kann nicht gelöscht werden, da es bereits aktiviert wurde"
         },
         "hosting": {
             "service.suspended": "Ihr Dienst wurde eingestellt.",
@@ -1584,7 +2067,8 @@
         "changeSslModal.sslCertificate": "Wählen Sie das SSL-Zertifikat, das auf dem Server eingerichtet werden soll. Bitte beachten Sie: Das von Ihnen eingerichtete Zertifikat kann sich von dem erkannten Zertifikat unterscheiden.",
         "billing": {
             "invoice.duedate.exceeded": "Die Zahlungsfrist wurde überschritten. Bitte bezahlen Sie die Rechnung sofort, um eine Einstellung des Dienstes zu vermeiden."
-        }
+        },
+        "sharedAccess.loginAs.allUsers": "Erlauben Sie diesem Benutzer, sich bei WordPress als beliebiger Benutzer auf dieser Site anzumelden."
     },
     "form": {
         "label": {
@@ -1699,7 +2183,9 @@
             "geo_affinity": "Standort wählen",
             "public_key": "Öffentlicher Schlüssel",
             "sslCertificate": "SSL-Zertifikat",
-            "hosting_plan": "Hosting-Plan"
+            "hosting_plan": "Hosting-Plan",
+            "backupDownloadItem": "Backup-Typ",
+            "ipAddress": "IP-Adresse"
         },
         "placeholder": {
             "cabundle": "CA-Bündel eingeben",
@@ -1893,7 +2379,10 @@
             "version": "Version",
             "visitors": "Besucher",
             "only_me": "Nur ich",
-            "me_and_delegated_user": "Ich und beauftragter Benutzer"
+            "me_and_delegated_user": "Ich und beauftragter Benutzer",
+            "sharedAccess.loginAs": {
+                "allUsers": "Alle WordPress-Benutzer"
+            }
         },
         "value": {
             "unlimited": "Unbegrenzt",
@@ -2010,7 +2499,12 @@
             "plan_name": "Plan Name",
             "sites": "Standorte",
             "total": "Insgesamt",
-            " ": ""
+            " ": "",
+            "action": "Aktion",
+            "commit": "Commit",
+            "currentFile": "Aktuelle Datei",
+            "currentTable": "Aktuelle Tabelle",
+            "step": "Schritt"
         },
         "field": {
             "userOwner": "{{name}} (Sie)",
@@ -2300,5 +2794,14 @@
         "tr_TR": "Türkisch",
         "zh_CN": "Chinesisch (vereinfacht)",
         "zh_HK": "Chinesisch (Hongkong)"
+    },
+    "appSingleServer": {
+        "adminAreaDropdown": {
+            "goTo": "Zum Admin-Bereich gehen",
+            "shortcuts": "Verknüpfungen:",
+            "migrations": "Migrationen",
+            "logs": "Protokolle",
+            "configuration": "Konfiguration"
+        }
     }
 }

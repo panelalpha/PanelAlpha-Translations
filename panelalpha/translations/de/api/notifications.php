@@ -14,6 +14,7 @@ use App\Notifications\Admin\InstanceTemplate\InstanceTemplateCreateFailed;
 use App\Notifications\Admin\InstanceTemplate\InstanceTemplateCreateFinished;
 use App\Notifications\Admin\EmailDomain\EmailDomainCreateFailed;
 use App\Notifications\Admin\EmailDomain\EmailDomainExists;
+use App\Notifications\Admin\Jobs\RefreshReportDataFailed;
 use App\Notifications\Admin\Plan\PlanConfigurationError;
 use App\Notifications\Admin\ReportProvider\SyncReportProvidersFailed;
 use App\Notifications\Admin\ReportProvider\SyncReportProvidersFinished;
@@ -24,7 +25,13 @@ use App\Notifications\User\Instance\PushToStagingFailed;
 use App\Notifications\User\Instance\PushToStagingFinished;
 use App\Notifications\User\Instance\UpdateWordpressFinished;
 use App\Notifications\User\Instance\UpdateWordpressFailed;
+use App\Notifications\User\Instance\WordpressMcpDisableFailed;
+use App\Notifications\User\Instance\WordpressMcpDisableFinished;
+use App\Notifications\User\Instance\WordpressMcpEnableFailed;
+use App\Notifications\User\Instance\WordpressMcpEnableFinished;
 use App\Notifications\User\Instance\PushToLiveFinished;
+use App\Notifications\User\Instance\Git\GitAutoDeployFailed;
+use App\Notifications\User\Instance\Git\GitAutoDeployFinished;
 use App\Notifications\User\Instance\PushToLiveFailed;
 use App\Notifications\User\Instance\InstanceInvitationReceived;
 use App\Notifications\User\Instance\InstanceInstallationFinished;
@@ -63,6 +70,7 @@ use App\Notifications\Admin\Theme\ForceUpdateThemeFinished;
 use App\Notifications\Admin\Theme\ForceUpdateThemeFailed;
 use App\Notifications\Admin\Plugin\ForceUpdatePluginFinished;
 use App\Notifications\Admin\Plugin\ForceUpdatePluginFailed;
+use App\Notifications\Admin\Health\IncidentSummary;
 use App\Notifications\Admin\Server\ServerAlert;
 use App\Notifications\User\Instance\ImportFailed;
 use App\Notifications\User\Instance\ImportFinished;
@@ -185,6 +193,10 @@ return [
         'name' => 'Server-Alarm',
         'description' => 'Die Benachrichtigung informiert den Empfänger über Alarme, die auf dem Hosting-Server erkannt wurden.',
     ],
+    IncidentSummary::class => [
+        'name' => 'Vorfälle Zusammenfassung',
+        'description' => 'Die Benachrichtigung informiert den Empfänger über eine Zusammenfassung von Integritätsvorfällen, die innerhalb eines jüngeren Zeitraums (in der Regel der vergangenen Stunde) erfasst wurden. Vorfälle werden nach Server und Hosting-Konto gruppiert, mit Zählungen pro Vorfalltyp und optionalen Behebungsvorschlägen.',
+    ],
     DnsZoneExists::class => [
         'name' => 'DNS-Zone existiert',
         'description' => 'Die Benachrichtigung informiert den Empfänger, dass der Versuch, eine DNS-Zone zu erstellen, fehlgeschlagen ist, weil die DNS-Zone bereits existiert. Die Benachrichtigung kann Details zur bestehenden DNS-Zone, zum betroffenen Dienst und zum beteiligten DNS-Server enthalten.',
@@ -301,6 +313,14 @@ return [
         'name' => 'Push auf Live abgeschlossen',
         'description' => 'Die Benachrichtigung informiert den Empfänger, dass die auf der Staging-Instanz vorgenommenen Änderungen erfolgreich auf die Live-Version der Website oder des Systems übertragen wurden. Die Benachrichtigung kann Details darüber enthalten, welche Änderungen vorgenommen wurden und welche weiteren Schritte unternommen werden sollten.',
     ],
+    GitAutoDeployFailed::class => [
+        'name' => 'Git Auto-Deploy fehlgeschlagen',
+        'description' => 'Die Benachrichtigung informiert den Empfänger, dass ein durch einen Git-Push ausgelöster automatischer Deploy nicht abgeschlossen werden konnte.',
+    ],
+    GitAutoDeployFinished::class => [
+        'name' => 'Git Auto-Deploy abgeschlossen',
+        'description' => 'Die Benachrichtigung informiert den Empfänger, dass ein durch einen Git-Push ausgelöster automatischer Deploy erfolgreich abgeschlossen wurde.',
+    ],
     UpdateWordpressFailed::class => [
         'name' => 'WordPress-Update fehlgeschlagen',
         'description' => 'Die Benachrichtigung informiert den Empfänger, dass der Versuch, die WordPress-Instanz zu aktualisieren, fehlgeschlagen ist. Die Benachrichtigung kann Details darüber enthalten, warum das Update fehlgeschlagen ist und welche Schritte unternommen werden sollten, um das Problem zu beheben.',
@@ -308,6 +328,22 @@ return [
     UpdateWordpressFinished::class => [
         'name' => 'WordPress-Update abgeschlossen',
         'description' => 'Die Benachrichtigung informiert den Empfänger, dass die WordPress-Instanz erfolgreich aktualisiert wurde. Die Benachrichtigung kann Details darüber enthalten, welche Änderungen an der Instanz vorgenommen wurden und welche weiteren Schritte unternommen werden sollten.',
+    ],
+    WordpressMcpEnableFailed::class => [
+        'name' => 'WordPress MCP Aktivierung fehlgeschlagen',
+        'description' => 'Informiert den Empfänger, dass die Aktivierung von WordPress MCP auf seiner Instanz fehlgeschlagen ist.',
+    ],
+    WordpressMcpEnableFinished::class => [
+        'name' => 'WordPress MCP aktiviert',
+        'description' => 'Informiert den Empfänger, dass WordPress MCP erfolgreich auf seiner Instanz aktiviert wurde.',
+    ],
+    WordpressMcpDisableFailed::class => [
+        'name' => 'WordPress MCP Deaktivierung fehlgeschlagen',
+        'description' => 'Informiert den Empfänger, dass die Deaktivierung von WordPress MCP auf seiner Instanz fehlgeschlagen ist.',
+    ],
+    WordpressMcpDisableFinished::class => [
+        'name' => 'WordPress MCP deaktiviert',
+        'description' => 'Informiert den Empfänger, dass WordPress MCP erfolgreich auf seiner Instanz deaktiviert wurde.',
     ],
     \App\Notifications\User\System\ResetPassword::class => [
         'name' => 'Passwort zurücksetzen',
@@ -428,5 +464,9 @@ return [
     ControlPanelUpgrade::class => [
         'name' => 'Willkommens-E-Mail für Control Panel Upgrade',
         'description' => 'Diese Benachrichtigung informiert, dass das Hosting-Konto erfolgreich vom Control Panel aktualisiert wurde. Sie enthält die erforderlichen Anmeldedaten, damit der Benutzer auf sein Konto zugreifen kann.',
+    ],
+    RefreshReportDataFailed::class => [
+        'name' => 'Aktualisierung der Berichtsdaten fehlgeschlagen',
+        'description' => 'Die Benachrichtigung informiert den Empfänger, dass der Job zur Aktualisierung der Berichtsdaten für eine WordPress-Instanz fehlgeschlagen ist. Die Benachrichtigung kann Details zur Instanz und zur Fehlermeldung enthalten.',
     ],
 ];

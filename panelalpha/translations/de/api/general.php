@@ -3,7 +3,12 @@
 return [
     'instance' => 'Instanz',
     'hosting_account' => 'Hosting-Account',
+    'server' => 'Server',
     'service' => 'Dienstleistung',
+    'Application' => 'Anwendung',
+    'ServerAccount' => 'Hosting-Account',
+    'Server' => 'Server',
+    'Service' => 'Dienstleistung',
     'self_signed' => 'Selbst unterschrieben',
     "files" => "Dateien",
     "database" => "Datenbank",
@@ -30,6 +35,7 @@ return [
         'prepareNewInstanceToMigration' => "Neue Instanz für Migration vorbereiten",
         'installPluginOnImportedInstance' => "'WordPress Migrator' Plugin auf importierter Instanz installieren",
         'prepareMigrationUsingPlugin' => "Migration vorbereiten",
+        'runMigrationUsingPlugin' => "Migration ausführen",
         
         'migrateDatabaseUsingPlugin' => 'Migrating database',
         'migrateFilesUsingPlugin' => 'Migrating files',
@@ -44,6 +50,7 @@ return [
         'cleanUp' => 'Dateien bereinigen',
         'createFtpAccount' => 'FTP/SFTP-Konto erstellen',
         'cleanUpPlugins' => 'Plugins bereinigen',
+        'finalizeMigrationUsingPlugin' => 'Migration abschließen',
     ],
     'health-checks' => [
         'server' => [

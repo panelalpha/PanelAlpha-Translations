@@ -1,0 +1,1 @@
+WordPress MCP Aktivierung fehlgeschlagen auf {{ $instance_name }}
