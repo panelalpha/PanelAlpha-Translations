@@ -24,8 +24,14 @@ use App\Notifications\User\Instance\PushToStagingFailed;
 use App\Notifications\User\Instance\PushToStagingFinished;
 use App\Notifications\User\Instance\UpdateWordpressFinished;
 use App\Notifications\User\Instance\UpdateWordpressFailed;
+use App\Notifications\User\Instance\WordpressMcpDisableFailed;
+use App\Notifications\User\Instance\WordpressMcpDisableFinished;
+use App\Notifications\User\Instance\WordpressMcpEnableFailed;
+use App\Notifications\User\Instance\WordpressMcpEnableFinished;
 use App\Notifications\User\Instance\PushToLiveFinished;
 use App\Notifications\User\Instance\PushToLiveFailed;
+use App\Notifications\User\Instance\Git\GitAutoDeployFailed;
+use App\Notifications\User\Instance\Git\GitAutoDeployFinished;
 use App\Notifications\User\Instance\InstanceInvitationReceived;
 use App\Notifications\User\Instance\InstanceInstallationFinished;
 use App\Notifications\User\Instance\InstanceInstallationFailed;
@@ -63,6 +69,8 @@ use App\Notifications\Admin\Theme\ForceUpdateThemeFinished;
 use App\Notifications\Admin\Theme\ForceUpdateThemeFailed;
 use App\Notifications\Admin\Plugin\ForceUpdatePluginFinished;
 use App\Notifications\Admin\Plugin\ForceUpdatePluginFailed;
+use App\Notifications\Admin\Health\IncidentSummary;
+use App\Notifications\Admin\Jobs\RefreshReportDataFailed;
 use App\Notifications\Admin\Server\ServerAlert;
 use App\Notifications\User\Instance\ImportFailed;
 use App\Notifications\User\Instance\ImportFinished;
@@ -185,6 +193,10 @@ return [
         'name' => 'Alerta do servidor',
         'description' => 'A notificação informa o destinatário sobre alertas detectados no servidor de hospedagem.',
     ],
+    IncidentSummary::class => [
+        'name' => 'Resumo de incidentes',
+        'description' => 'A notificação informa ao destinatário um resumo dos incidentes de integridade registrados em um período recente (normalmente a última hora). Os incidentes são agrupados por servidor e conta de hospedagem, com contagens por tipo de incidente e sugestões opcionais de remediação.',
+    ],
     DnsZoneExists::class => [
         'name' => 'Existência de zona DNS',
         'description' => 'A notificação informa ao destinatário que a tentativa de criação da zona DNS falhou porque a zona DNS já existe. A notificação pode incluir detalhes sobre a zona DNS existente, o serviço afetado e o servidor DNS envolvido.',
@@ -301,6 +313,14 @@ return [
         'name' => 'Push To Live concluído',
         'description' => 'A notificação informa ao destinatário que as alterações feitas na instância de preparação foram transferidas com êxito para a versão ativa do site ou sistema. A notificação pode incluir detalhes sobre quais alterações foram feitas e quaisquer outras medidas que devam ser tomadas.',
     ],
+    GitAutoDeployFailed::class => [
+        'name' => 'Falha no auto-deploy do Git',
+        'description' => 'A notificação informa ao destinatário que um deploy automático acionado por um push do Git não pôde ser concluído.',
+    ],
+    GitAutoDeployFinished::class => [
+        'name' => 'Auto-deploy do Git concluído',
+        'description' => 'A notificação informa ao destinatário que um deploy automático acionado por um push do Git foi concluído com êxito.',
+    ],
     UpdateWordpressFailed::class => [
         'name' => 'Falha na atualização do WordPress',
         'description' => 'A notificação informa ao destinatário que uma tentativa de atualizar a instância do WordPress falhou. A notificação pode incluir detalhes sobre o motivo da falha na atualização e quais medidas devem ser tomadas para resolver o problema.',
@@ -308,6 +328,22 @@ return [
     UpdateWordpressFinished::class => [
         'name' => 'Atualização do WordPress concluída',
         'description' => 'A notificação informa ao destinatário que a instância do WordPress foi atualizada com êxito. A notificação pode incluir detalhes sobre quais alterações foram feitas na instância e quaisquer outras medidas que devam ser tomadas.',
+    ],
+    WordpressMcpEnableFailed::class => [
+        'name' => 'Falha ao ativar o WordPress MCP',
+        'description' => 'Informa ao destinatário que a ativação do WordPress MCP na instância falhou.',
+    ],
+    WordpressMcpEnableFinished::class => [
+        'name' => 'WordPress MCP ativado',
+        'description' => 'Informa ao destinatário que o WordPress MCP foi ativado com êxito na instância.',
+    ],
+    WordpressMcpDisableFailed::class => [
+        'name' => 'Falha ao desativar o WordPress MCP',
+        'description' => 'Informa ao destinatário que a desativação do WordPress MCP na instância falhou.',
+    ],
+    WordpressMcpDisableFinished::class => [
+        'name' => 'WordPress MCP desativado',
+        'description' => 'Informa ao destinatário que o WordPress MCP foi desativado com êxito na instância.',
     ],
     \App\Notifications\User\System\ResetPassword::class => [
         'name' => 'Redefinir senha',
@@ -428,5 +464,9 @@ return [
     ControlPanelUpgrade::class => [
         'name' => 'E-mail de boas-vindas de upgrade do painel de controle',
         'description' => 'Esta notificação informa que a conta de hospedagem foi atualizada com sucesso no painel de controle. Ela inclui os dados de acesso necessários para o usuário acessar sua conta.',
+    ],
+    RefreshReportDataFailed::class => [
+        'name' => 'Falha na atualização dos dados de relatório',
+        'description' => 'A notificação informa ao destinatário que o trabalho de atualização dos dados de relatório para uma instância do WordPress falhou. A notificação pode incluir detalhes sobre a instância e a mensagem de erro.',
     ],
 ];

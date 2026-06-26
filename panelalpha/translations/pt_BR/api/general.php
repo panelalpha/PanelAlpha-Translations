@@ -46,7 +46,8 @@ return [
         'cleanUp' => 'Limpando arquivos',
         'createFtpAccount' => 'Criando conta FTP/SFTP',
         'cleanUpPlugins' => 'Limpando plugins',
-],
+        'finalizeMigrationUsingPlugin' => 'Finalizando migração',
+ ],
     'health-checks' => [
         'server' => [
             'ping' => 'Conexão de teste do servidor',
@@ -104,5 +105,10 @@ return [
     ],
     'files' => 'Arquivos',
     'database' => 'Banco de dados',
+    'server' => 'servidor',
+    'Application' => 'aplicativo',
+    'ServerAccount' => 'conta de hospedagem',
+    'Server' => 'servidor',
+    'Service' => 'serviço',
 ];
 

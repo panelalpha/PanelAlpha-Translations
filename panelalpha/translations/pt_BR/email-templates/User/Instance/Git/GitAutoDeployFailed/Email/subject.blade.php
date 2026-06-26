@@ -1,0 +1,1 @@
+O auto-deploy falhou para {{ $instance_name }}

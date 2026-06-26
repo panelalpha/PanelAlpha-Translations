@@ -1,0 +1,1 @@
+Falha ao ativar o WordPress MCP em {{ $instance_name }}

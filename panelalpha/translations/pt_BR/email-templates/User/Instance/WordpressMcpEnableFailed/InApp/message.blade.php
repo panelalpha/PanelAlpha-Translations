@@ -1,0 +1,1 @@
+<p>Falha ao ativar o WordPress MCP em <strong>{{ $instance_name }}</strong>. Mensagem: {{ $exception_message }}</p>

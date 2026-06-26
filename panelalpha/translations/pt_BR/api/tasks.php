@@ -5,6 +5,7 @@ use App\Jobs\Admin\RestoreBackup as AdminRestoreBackup;
 use App\Jobs\Admin\SyncReportProviders;
 use App\Jobs\System\AdminSendAvailableUpdateNotification;
 use App\Jobs\System\DeleteRedundantBackups;
+use App\Jobs\System\GitAutoDeploy;
 use App\Jobs\System\InstanceHealthCheck;
 use App\Jobs\Admin\ConvertInstanceToTemplate;
 use App\Jobs\System\PostInstallInstanceSteps;
@@ -17,6 +18,7 @@ use App\Jobs\System\SyncInstanceSiteName;
 use App\Jobs\System\SyncWordPressData;
 use App\Jobs\System\UserSendAvailableUpdateNotification;
 use App\Jobs\User\ImportInstance;
+use App\Jobs\User\DeployInstance;
 use App\Jobs\System\ImportVisitors;
 use App\Jobs\System\InstallTheme;
 use App\Jobs\System\InstallAndActivatePlugin;
@@ -39,8 +41,12 @@ use App\Jobs\User\UpdatePlugin;
 use App\Jobs\User\InstallTheme as UserInstallTheme;
 use App\Jobs\User\UpdateTheme;
 use App\Jobs\User\UpdateWordpress;
+use App\Jobs\User\EnableWordpressMcp;
+use App\Jobs\User\DisableWordpressMcp;
 
 return [
+    EnableWordpressMcp::class => 'Ativar WordPress MCP',
+    DisableWordpressMcp::class => 'Desativar WordPress MCP',
     InstallPackage::class => 'Instalar pacote: :name',
     ForceUpdatePlugin::class => 'Forçar atualização do plug-in: :name',
     ForceUpdateTheme::class => 'Forçar atualização do tema: :name',
@@ -80,4 +86,6 @@ return [
     PushToStaging::class => 'Empurrar para a preparação',
     SyncHostingAccount::class => 'Sincronizar conta de hospedagem',
     SyncWordPressData::class => 'Sincronizar dados do WordPress',
+    DeployInstance::class => 'Implantar instância',
+    GitAutoDeploy::class => 'Auto-deploy do Git',
 ];
