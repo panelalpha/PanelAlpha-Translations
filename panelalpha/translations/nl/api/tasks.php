@@ -5,6 +5,7 @@ use App\Jobs\Admin\RestoreBackup as AdminRestoreBackup;
 use App\Jobs\Admin\SyncReportProviders;
 use App\Jobs\System\AdminSendAvailableUpdateNotification;
 use App\Jobs\System\DeleteRedundantBackups;
+use App\Jobs\System\GitAutoDeploy;
 use App\Jobs\System\InstanceHealthCheck;
 use App\Jobs\Admin\ConvertInstanceToTemplate;
 use App\Jobs\System\PostInstallInstanceSteps;
@@ -16,6 +17,9 @@ use App\Jobs\System\SyncBackupsWithRemoteContainer;
 use App\Jobs\System\SyncInstanceSiteName;
 use App\Jobs\System\SyncWordPressData;
 use App\Jobs\System\UserSendAvailableUpdateNotification;
+use App\Jobs\User\DeployInstance;
+use App\Jobs\User\EnableWordpressMcp;
+use App\Jobs\User\DisableWordpressMcp;
 use App\Jobs\User\ImportInstance;
 use App\Jobs\System\ImportVisitors;
 use App\Jobs\System\InstallTheme;
@@ -41,6 +45,8 @@ use App\Jobs\User\UpdateTheme;
 use App\Jobs\User\UpdateWordpress;
 
 return [
+    EnableWordpressMcp::class => 'WordPress MCP inschakelen',
+    DisableWordpressMcp::class => 'WordPress MCP uitschakelen',
     InstallPackage::class => 'Pakket installeren: :naam',
     ForceUpdatePlugin::class => 'Forceer update-plugin: :naam',
     ForceUpdateTheme::class => 'Forceer update thema: :naam',
@@ -80,4 +86,6 @@ return [
     PushToStaging::class => 'Push naar enscenering',
     SyncHostingAccount::class => 'Hostingaccount synchroniseren',
     SyncWordPressData::class => 'WordPress-gegevens synchroniseren',
+    DeployInstance::class => 'Instantie deployen',
+    GitAutoDeploy::class => 'Git auto-deploy',
 ];

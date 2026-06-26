@@ -8,6 +8,7 @@ use App\Lib\Integrations\Auth\Google;
 use App\Lib\Integrations\Auth\Linkedin;
 use App\Lib\Integrations\Auth\Microsoft;
 use App\Lib\Integrations\DbIp;
+use App\Lib\Integrations\DnsServers\Bunny;
 use App\Lib\Integrations\DnsServers\Cloudflare;
 use App\Lib\Integrations\DnsServers\PowerDns;
 use App\Lib\Integrations\EmailProvider\MailerSend;
@@ -19,6 +20,7 @@ use App\Lib\Integrations\EmailServers\Cpanel as CpanelEmailServer;
 use App\Lib\Integrations\EmailServers\Mailcow;
 use App\Lib\Integrations\GooglePageSpeedInsights;
 use App\Lib\Integrations\Onboarding\Extendify;
+use App\Lib\Integrations\Onboarding\TenWeb;
 use App\Lib\Integrations\PreviewSiteProvider\WithoutDns;
 use App\Lib\Integrations\ReportProviders\GoogleAnalytics;
 use App\Lib\Integrations\ReportProviders\Matomo;
@@ -97,7 +99,34 @@ return [
                 "label" => "Partner-ID",
                 "placeholder" => "Voer Partner-ID in"
             ]
-        ]
+        ],
+        'application_config' => [
+            'skip_extendify_questions' => [
+                'label' => 'Extendify-vragen overslaan',
+            ],
+        ],
+    ],
+    TenWeb::class => [
+        "title" => "10Web",
+        "subtitle" => "Gebruikt voor Super Snelle Onboarding van instanties",
+        "description" => "10Web is een WordPress-platform dat het aanmaken en instellen van websites automatiseert. Koppel het om snelle onboarding en provisioning van WordPress-instanties mogelijk te maken.",
+        "instruction" => "Om <b>10Web</b> te gebruiken, volg deze stappen:<ol><li>Log in op uw 10Web-account.</li><li>Open de sectie <b>API Key</b>.</li><li>Genereer een nieuwe API-token.</li><li>Kopieer de token en plak deze in het veld hieronder.</li></ol><br>Heeft u nog geen account? <a href=\"https://10web.io/website-builder-api/hosting-providers/?panelalpha_refering_url=1\" target=\"_blank\">Meld u hier aan</a>.",
+        "fields" => [
+            "api_key" => [
+                "label" => "API-token",
+                "placeholder" => "Voer API-token in"
+            ]
+        ],
+        'application_config' => [
+            'wvc_website_create_count' => [
+                'label' => 'Limiet website-aanmaak',
+                'tooltip' => 'Maximaal aantal toegestane AI-websitegeneraties per instantie.',
+            ],
+            'wvc_edit_count' => [
+                'label' => 'Bewerkingslimiet',
+                'tooltip' => 'Maximaal aantal toegestane AI-bewerkingen per instantie.',
+            ],
+        ],
     ],
     GoogleAnalytics::class => [
         "title" => "Google Analytics",
@@ -324,9 +353,11 @@ return [
         "config" => [
             'disk_space_limit' => [
                 'label' => 'Schijfruimtelimiet (MB)',
+                'tooltip' => 'Schijfruimtelimiet voor sites. De waarde moet als een geheel getal in megabytes (MB) worden opgegeven, zonder achtervoegsels.',
             ],
             'memory_limit' => [
                 'label' => 'Geheugenlimiet (MB)',
+                'tooltip' => 'Geheugenlimiet voor sites. De waarde moet als een geheel getal in megabytes (MB) worden opgegeven, zonder achtervoegsels.',
             ],
             'cpu_limit' => [
                 'label' => 'CPU-limiet',
@@ -369,6 +400,9 @@ return [
             ],
             'lsphp_settings' => [
                 'label' => 'LSPHP-instellingen',
+            ],
+            'redis_config' => [
+                'label' => 'Redis-configuratie',
             ],
             'dedicated_ipv4' => [
                 'label' => 'Toegewijd IPv4',
@@ -454,6 +488,7 @@ return [
             ],
             'api_token' => [
                 'label' => 'API-token',
+                'link_label' => 'Hoe een API-token aan te maken',
             ],
             'ssl_verification' => [
                 'label' => 'SSL-verificatie',
@@ -476,6 +511,11 @@ return [
             ],
             'account_id' => [
                 'label' => 'Account-ID',
+                'tooltip' => 'Dit veld is optioneel omdat standaard de account-ID uit de API-token wordt gehaald',
+            ],
+            'nameservers' => [
+                'label' => 'Nameservers',
+                'tooltip' => 'Voer aangepaste nameservers in (kommagescheiden) die aan uw Cloudflare-account zijn toegewezen (bijv. adam.ns.cloudflare.com, bella.ns.cloudflare.com). Deze worden weergegeven in het Klantpaneel. U moet deze handmatig configureren in het Cloudflare-dashboard.',
             ],
         ],
     ],
@@ -537,6 +577,27 @@ return [
             ],
             'nameservers' => [
                 'label' => 'Nameservers (kommagescheiden)',
+            ],
+        ]
+    ],
+    Bunny::class => [
+        "title" => "Bunny.net",
+        "description" => 'Bunny.net - Het wereldwijde edge-platform dat echt hupst',
+        "fields" => [
+            'api_key' => [
+                'label' => 'API-sleutel',
+            ],
+            'nameservers' => [
+                'label' => 'Aangepaste nameservers (kommagescheiden)',
+                'tooltip' => 'Voer aangepaste nameserver-hostnamen in die aan uw Bunny.net-account zijn toegewezen (bijv. ns1.uwdomein.com, ns2.uwdomein.com). Deze worden weergegeven in het Klantpaneel en toegepast bij het aanmaken van DNS-zones.',
+            ],
+            'nameserver_1' => [
+                'label' => 'Nameserver 1',
+                'tooltip' => 'Voer een aangepaste nameserver-hostnaam in die aan uw Bunny.net-account is toegewezen (bijv. ns1.uwdomein.com). Deze wordt weergegeven in het Klantpaneel en toegepast bij het aanmaken van DNS-zones.',
+            ],
+            'nameserver_2' => [
+                'label' => 'Nameserver 2',
+                'tooltip' => 'Voer een aangepaste nameserver-hostnaam in die aan uw Bunny.net-account is toegewezen (bijv. ns1.uwdomein.com). Deze wordt weergegeven in het Klantpaneel en toegepast bij het aanmaken van DNS-zones.',
             ],
         ]
     ],

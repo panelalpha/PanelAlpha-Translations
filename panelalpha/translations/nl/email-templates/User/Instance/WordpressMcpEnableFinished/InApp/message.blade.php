@@ -1,0 +1,1 @@
+<p>WordPress MCP is ingeschakeld op <strong>{{ $instance_name }}</strong>.</p>

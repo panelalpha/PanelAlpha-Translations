@@ -63,9 +63,17 @@ use App\Notifications\Admin\Theme\ForceUpdateThemeFinished;
 use App\Notifications\Admin\Theme\ForceUpdateThemeFailed;
 use App\Notifications\Admin\Plugin\ForceUpdatePluginFinished;
 use App\Notifications\Admin\Plugin\ForceUpdatePluginFailed;
+use App\Notifications\Admin\Health\IncidentSummary;
+use App\Notifications\Admin\Jobs\RefreshReportDataFailed;
 use App\Notifications\Admin\Server\ServerAlert;
 use App\Notifications\User\Instance\ImportFailed;
 use App\Notifications\User\Instance\ImportFinished;
+use App\Notifications\User\Instance\Git\GitAutoDeployFailed;
+use App\Notifications\User\Instance\Git\GitAutoDeployFinished;
+use App\Notifications\User\Instance\WordpressMcpEnableFailed;
+use App\Notifications\User\Instance\WordpressMcpEnableFinished;
+use App\Notifications\User\Instance\WordpressMcpDisableFailed;
+use App\Notifications\User\Instance\WordpressMcpDisableFinished;
 use App\Notifications\User\Service\SyncHostingAccountFailed;
 use App\Notifications\User\Service\SyncHostingAccountFinished;
 use App\Notifications\User\System\ControlPanelUpgrade;
@@ -184,6 +192,10 @@ return [
     ServerAlert::class => [
         'name' => 'Serverwaarschuwing',
         'description' => 'Deze melding informeert de ontvanger over waarschuwingen die op de hostingserver zijn gedetecteerd.',
+    ],
+    IncidentSummary::class => [
+        'name' => 'Samenvatting van incidenten',
+        'description' => 'De melding informeert de ontvanger over een samenvatting van health-incidenten die binnen een recente periode zijn geregistreerd (meestal het afgelopen uur). Incidenten worden gegroepeerd per server en hostingaccount, met aantallen per incidenttype en optionele herstelsuggesties.',
     ],
     DnsZoneExists::class => [
         'name' => 'DNS-zone bestaat',
@@ -309,6 +321,30 @@ return [
         'name' => 'WordPress Update Voltooid',
         'description' => 'De notificatie informeert de ontvanger dat de WordPress instantie met succes is bijgewerkt. De melding kan details bevatten over de wijzigingen die zijn aangebracht in de instantie en eventuele verdere stappen die moeten worden genomen.',
     ],
+    GitAutoDeployFailed::class => [
+        'name' => 'Git auto-deploy mislukt',
+        'description' => 'De melding informeert de ontvanger dat een automatische deploy getriggerd door een Git-push niet kon worden voltooid.',
+    ],
+    GitAutoDeployFinished::class => [
+        'name' => 'Git auto-deploy voltooid',
+        'description' => 'De melding informeert de ontvanger dat een automatische deploy getriggerd door een Git-push succesvol is voltooid.',
+    ],
+    WordpressMcpEnableFailed::class => [
+        'name' => 'WordPress MCP inschakelen mislukt',
+        'description' => 'Informeert de ontvanger dat het inschakelen van WordPress MCP op de instantie is mislukt.',
+    ],
+    WordpressMcpEnableFinished::class => [
+        'name' => 'WordPress MCP ingeschakeld',
+        'description' => 'Informeert de ontvanger dat WordPress MCP succesvol is ingeschakeld op de instantie.',
+    ],
+    WordpressMcpDisableFailed::class => [
+        'name' => 'WordPress MCP uitschakelen mislukt',
+        'description' => 'Informeert de ontvanger dat het uitschakelen van WordPress MCP op de instantie is mislukt.',
+    ],
+    WordpressMcpDisableFinished::class => [
+        'name' => 'WordPress MCP uitgeschakeld',
+        'description' => 'Informeert de ontvanger dat WordPress MCP succesvol is uitgeschakeld op de instantie.',
+    ],
     \App\Notifications\User\System\ResetPassword::class => [
         'name' => 'Wachtwoord opnieuw instellen',
         'description' => 'Een e-mail om het wachtwoord te resetten is een geautomatiseerd bericht dat naar het e-mailadres van een gebruiker wordt gestuurd wanneer deze een verzoek indient om zijn wachtwoord voor een account te resetten. De e-mail bevat meestal een koppeling of instructies om het wachtwoord opnieuw in te stellen, evenals een tijdslimiet voor de geldigheid van de koppeling.',
@@ -428,5 +464,9 @@ return [
     ControlPanelUpgrade::class => [
         'name' => 'Welkomst-e-mail voor upgrade van het controlepaneel',
         'description' => 'Deze melding informeert dat het hostingaccount succesvol is geüpgraded via het controlepaneel. Het bevat de benodigde inloggegevens zodat de gebruiker toegang heeft tot het account.',
+    ],
+    RefreshReportDataFailed::class => [
+        'name' => 'Rapportagegegevens vernieuwen mislukt',
+        'description' => 'De melding informeert de ontvanger dat de taak voor het vernieuwen van rapportagegegevens voor een WordPress-instantie is mislukt. De melding kan details bevatten over de instantie en de foutmelding.',
     ],
 ];

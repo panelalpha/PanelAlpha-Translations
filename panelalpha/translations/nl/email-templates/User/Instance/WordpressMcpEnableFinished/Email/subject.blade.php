@@ -1,0 +1,1 @@
+WordPress MCP ingeschakeld op {{ $instance_name }}

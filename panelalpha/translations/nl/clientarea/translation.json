@@ -35,7 +35,10 @@
         "services": "{{- app_name}} - Mijn plannen",
         "billing": "{{- app_name}} - Mijn facturering",
         "ssh": "SSH",
-        "copy-instance": "Instantie kopiëren"
+        "copy-instance": "Instantie kopiëren",
+        "usage": "{{- app_name}} - Gebruik",
+        "git": "{{- app_name}}: {{instance_name}} - Git",
+        "wordpress-mcp": "{{- app_name}}: {{instance_name}} - WordPress MCP"
     },
     "general": {
         "adventurer": "Avonturier",
@@ -129,7 +132,10 @@
         "value": "Waarde",
         "never": "Nooit",
         "none": "Geen",
-        "notSet": "Niet ingesteld"
+        "notSet": "Niet ingesteld",
+        "joinOurCommunity": "Word lid van onze community",
+        "files": "Bestanden",
+        "database": "Database"
     },
     "heading": {
         "notFoundPage.title": "Pagina Niet Gevonden",
@@ -471,7 +477,318 @@
                         }
                     }
                 }
-            }
+            },
+            "staging.alert.additionalCharge": "Staging-sites brengen kosten met zich mee omdat ze worden behandeld als extra sites.",
+            "pushToLive.databaseDiffUnavailable": "Kon databasewijzigingen niet vergelijken. Je kunt nog steeds bestanden en database pushen, maar selectieve tabelwijzigingen zijn niet beschikbaar.",
+            "pushToStaging.databaseDiffUnavailable": "Kon databasewijzigingen niet vergelijken. Je kunt nog steeds bestanden en database pushen, maar selectieve tabelwijzigingen zijn niet beschikbaar.",
+            "dnsTooltip.alertsIgnored": "DNS-waarschuwingen worden genegeerd voor deze instantie.",
+            "modal.setDomain.previewSite": "Nog niet live? Bekijk de site op de server",
+            "modal.setDomain.generateUrl": "URL genereren",
+            "modal.setDomain.config.tab.nameservers.list.first": "Verwijder deze nameservers:",
+            "modal.setDomain.config.tab.nameservers.list.learn_more_link": "Nameserver-wijzigingen en DNS-migratie",
+            "modal.setDomain.config.tab.nameservers.list.learn_more_text": "Lees meer over dit proces in onze documentatie:",
+            "modal.cancelInstanceImport.title": "Import annuleren",
+            "modal.cancelInstanceImport.desc": "Weet je zeker dat je het importeren van de instantie wilt annuleren? Alle ingevoerde gegevens worden permanent verwijderd.",
+            "modal.cancelInstanceImport.checkbox": "Ja, ik begrijp het en wil het importeren van de instantie annuleren.",
+            "modal.cancelInstanceInstallation.title": "Installatie annuleren",
+            "modal.cancelInstanceInstallation.desc": "Weet je zeker dat je de installatie van de instantie wilt annuleren? Alle ingevoerde gegevens worden permanent verwijderd.",
+            "modal.cancelInstanceInstallation.checkbox": "Ja, ik begrijp het en wil de installatie van de instantie annuleren.",
+            "modal.importDetails.title": "Migratielogs",
+            "modal.importDetails.step": {
+                "installNewInstance": {
+                    "title": "Nieuwe instantie installeren",
+                    "tooltip": "Een nieuwe WordPress-instantie installeren op de doelserver"
+                },
+                "installPluginOnNewInstance": {
+                    "title": "Plugin installeren op nieuwe instantie",
+                    "tooltip": "De migratieplugin installeren op de nieuw aangemaakte WordPress-instantie"
+                },
+                "installPluginOnImportedInstance": {
+                    "title": "Plugin installeren op gemigreerde instantie",
+                    "tooltip": "De migratieplugin installeren op de gemigreerde WordPress-instantie"
+                },
+                "prepareNewInstanceToMigration": {
+                    "title": "Nieuwe instantie voorbereiden op migratie",
+                    "tooltip": "De nieuwe WordPress-instantie configureren om gemigreerde gegevens te ontvangen"
+                },
+                "prepareMigrationUsingPlugin": {
+                    "title": "Migratie voorbereiden",
+                    "tooltip": "Het migratieproces instellen"
+                },
+                "runMigrationUsingPlugin": {
+                    "title": "Migratie uitvoeren",
+                    "tooltip": "Het geautomatiseerde migratieproces uitvoeren"
+                },
+                "migrateDatabaseUsingPlugin": {
+                    "title": "Database migreren",
+                    "tooltip": "De database importeren in de gemigreerde WordPress-instantie"
+                },
+                "migrateFilesUsingPlugin": {
+                    "title": "Bestanden migreren",
+                    "tooltip": "De gemigreerde WordPress-bestanden uploaden naar de doelserver"
+                },
+                "finalizeMigrationUsingPlugin": {
+                    "title": "Migratie afronden",
+                    "tooltip": "Het geautomatiseerde migratieproces afronden"
+                },
+                "prepareInstance": {
+                    "title": "Nieuwe instantie voorbereiden",
+                    "tooltip": "De nieuwe WordPress-instantie instellen voor migratie"
+                },
+                "downloadDatabase": {
+                    "title": "Database downloaden",
+                    "tooltip": "De WordPress-database downloaden van de bronserver"
+                },
+                "downloadFiles": {
+                    "title": "Bestanden downloaden",
+                    "tooltip": "WordPress-bestanden downloaden van de bronserver"
+                },
+                "uploadFiles": {
+                    "title": "Bestanden uploaden",
+                    "tooltip": "WordPress-bestanden uploaden naar de doelserver"
+                },
+                "uploadDatabase": {
+                    "title": "Database uploaden",
+                    "tooltip": "De WordPress-database uploaden naar de doelserver"
+                },
+                "importDatabase": {
+                    "title": "Database importeren",
+                    "tooltip": "De database importeren in de doelserver"
+                },
+                "configureWordPress": {
+                    "title": "WordPress configureren",
+                    "tooltip": "WordPress-configuratie bijwerken voor de nieuwe omgeving"
+                },
+                "cleanUp": {
+                    "title": "Bestanden opschonen",
+                    "tooltip": "Tijdelijke bestanden verwijderen die tijdens het migratieproces zijn gemaakt"
+                },
+                "createFtpAccount": {
+                    "title": "FTP-account aanmaken",
+                    "tooltip": "Een FTP-account aanmaken op de doelserver voor bestandsuploads"
+                },
+                "cleanUpPlugins": {
+                    "title": "Plugins opschonen",
+                    "tooltip": "Tijdelijke migratieplugins verwijderen"
+                },
+                "prepareFiles": {
+                    "title": "Bestanden voorbereiden",
+                    "tooltip": "WordPress-bestanden comprimeren en voorbereiden voor migratie"
+                },
+                "cleaning-files": {
+                    "title": "Bestanden opschonen",
+                    "tooltip": "Tijdelijke bestanden verwijderen die tijdens het migratieproces zijn gemaakt"
+                },
+                "removing-ftp-account": {
+                    "title": "FTP-account verwijderen",
+                    "tooltip": "Het tijdelijke FTP-account verwijderen van de doelserver"
+                },
+                "configuring-wordpress": {
+                    "title": "WordPress configureren",
+                    "tooltip": "WordPress-configuratie bijwerken voor de nieuwe omgeving"
+                },
+                "importing-database": {
+                    "title": "Database importeren",
+                    "tooltip": "De database importeren in de doelserver"
+                },
+                "creating-database": {
+                    "title": "Database aanmaken",
+                    "tooltip": "Een nieuwe database aanmaken op de doelserver"
+                },
+                "extracting-files": {
+                    "title": "Bestanden uitpakken",
+                    "tooltip": "WordPress-bestanden uit het archief uitpakken naar de domeinmap"
+                },
+                "creating-ftp-account": {
+                    "title": "FTP-account aanmaken",
+                    "tooltip": "Een FTP-account aanmaken op de doelserver voor bestandsuploads"
+                },
+                "creating-temporary-directory": {
+                    "title": "Tijdelijke map aanmaken",
+                    "tooltip": "Een tijdelijke map aanmaken op de doelserver voor bestandsverwerking"
+                },
+                "creating-domain": {
+                    "title": "Domein aanmaken",
+                    "tooltip": "Het domein configureren op de doelserver"
+                },
+                "creating-hosting-account": {
+                    "title": "Hostingaccount aanmaken",
+                    "tooltip": "Een nieuw hostingaccount aanmaken op de doelserver"
+                }
+            },
+            "backups.restore.deleteExistingFiles.tooltip": "Let op: Als deze optie niet is geselecteerd, blijven bestaande bestanden op je account staan en kunnen ze extra opslagruimte gebruiken.",
+            "backups.usage.unlimited": "Onbeperkt",
+            "backups.usage.manual_backups_number.max.suffix_one": "Handmatig",
+            "backups.usage.manual_backups_number.max.suffix_other": "Handmatig",
+            "backups.usage.manual_backups_number.tooltip": "Aantal handmatige back-ups ten opzichte van het maximaal toegestane aantal. Handmatige back-ups worden apart beperkt van automatische back-ups.",
+            "backups.usage.automatic_backups_number.max.suffix_one": "Automatisch",
+            "backups.usage.automatic_backups_number.max.suffix_other": "Automatisch",
+            "backups.usage.automatic_backups_number.tooltip": "Aantal automatische back-ups ten opzichte van het maximaal toegestane aantal.",
+            "backups.limit.manual_count": "Limiet voor handmatige back-ups bereikt.",
+            "backups.limit.size": "Opslaglimiet voor back-ups bereikt.",
+            "backups.download.title": "Back-up downloaden",
+            "backups.download.message": "Deze back-up is opgesplitst in meerdere bestanden. Wat wil je downloaden?",
+            "advanced.edge-cache.modal.cloudflare-warning.title": "Edge Cache inschakelen",
+            "advanced.edge-cache.modal.cloudflare-warning.info": "Edge Cache en Cloudflare Proxy gebruiken afzonderlijke caching-lagen die met elkaar kunnen conflicteren. Beide tegelijk ingeschakeld kan leiden tot verouderde inhoud, onverwacht caching-gedrag of prestatieproblemen.",
+            "advanced.edge-cache.modal.cloudflare-warning.alert": "Als Cloudflare Proxy actief is voor dit domein, overweeg om dit uit te schakelen voordat je Edge Cache inschakelt om caching-conflicten te voorkomen.",
+            "advanced.edge-cache.cloudflare-conflict.note": "Edge Cache en Cloudflare Proxy gebruiken afzonderlijke caching-lagen die met elkaar kunnen conflicteren. Als Cloudflare Proxy actief is voor dit domein, overweeg om dit uit te schakelen om caching-conflicten te voorkomen.",
+            "advanced.git.title": "Git",
+            "advanced.git.hostingUnsupported": "Git is nog niet beschikbaar voor deze server.",
+            "advanced.git.connect.title": "Repository verbinden",
+            "advanced.git.connect.subtitle": "Koppel deze WordPress-site aan een Git-repository (GitHub, GitLab of Bitbucket).",
+            "advanced.git.connect.repoUrl": "Repository-URL",
+            "advanced.git.connect.privateRepo": "Privé-repository",
+            "advanced.git.connect.token": "Toegangstoken",
+            "advanced.git.connect.tokenHint": "Maak een token aan in je Git-provider met toegang tot deze repository.",
+            "advanced.git.connect.button": "Repository verbinden",
+            "advanced.git.connect.failed": "Kon de repository niet verbinden. Controleer de URL en token.",
+            "advanced.git.connected.title": "Repository verbonden",
+            "advanced.git.connected.repo": "Repository",
+            "advanced.git.repoMode.reuseHint": "Gebruik dezelfde repository als je gekoppelde site. Je kunt een andere branch kiezen na het verbinden.",
+            "advanced.git.repoMode.stagingBranchHint": "Live gebruikt branch \"{{branch}}\". Deze site standaardert naar staging of develop als die branches in de repository bestaan.",
+            "advanced.git.repoMode.stagingBranchHintDefault": "Na het verbinden gebruikt deze site standaard de staging- of develop-branch als die branches in de repository bestaan.",
+            "advanced.git.repoMode.useDifferent": "Gebruik een andere repository",
+            "advanced.git.repoMode.manualTitle": "Voer repositorygegevens in",
+            "advanced.git.repoMode.useRelated": "Gebruik repository van gerelateerde site",
+            "advanced.git.disconnect.title": "Repository loskoppelen",
+            "advanced.git.disconnect.subtitle": "Dit verwijdert de Git-verbinding uit PanelAlpha. Bestanden op de server blijven zoals ze zijn. Gebruik Bestandsbeheer om Git-trackingbestanden op de server te verwijderen.",
+            "advanced.git.localRepoMissing.banner": "Deze site is verbonden met een repository in PanelAlpha, maar Git is niet ingesteld op de server. Gebruik Verbinding herstellen om het opnieuw in te stellen. Je sitebestanden worden niet verwijderd.",
+            "advanced.git.localRepoMissing.repair": "Verbinding herstellen",
+            "advanced.git.disconnect.button": "Loskoppelen",
+            "advanced.git.disconnect.confirm": "Loskoppelen",
+            "advanced.git.branch.title": "Branch",
+            "advanced.git.branch.subtitle": "De repository-branch die voor deze site wordt gebruikt.",
+            "advanced.git.branch.status": "Huidige branch: {{branch}}",
+            "advanced.git.modal.branch.title": "Branch wijzigen",
+            "advanced.git.modal.branch.message": "Voer de branchnaam in voor deze site.",
+            "advanced.git.modal.branch.field": "Branchnaam",
+            "advanced.git.modal.branch.warning": "Sla lokale bestandswijzigingen op de server op of negeer ze voordat je de branch wijzigt.",
+            "advanced.git.modal.branch.confirm": "Branch wijzigen",
+            "advanced.git.branch_change.title": "Branch gewijzigd",
+            "advanced.git.lastCommit.title": "Laatst gedeployde commit",
+            "advanced.git.lastCommit.subtitle": "De versie van je sitebestanden die voor het laatst is bijgewerkt vanuit de repository.",
+            "advanced.git.lastCommit.empty": "Nog geen implementatie geregistreerd. Gebruik Pull of Push hieronder om deze site te synchroniseren met de repository.",
+            "advanced.git.lastCommit.hash": "Commit",
+            "advanced.git.lastCommit.message": "Bericht",
+            "advanced.git.lastCommit.date": "Gedeployd",
+            "advanced.git.lastCommit.sync.remote": "Repository",
+            "advanced.git.lastCommit.sync.local": "Deze site",
+            "advanced.git.lastCommit.sections.syncStatus": "Synchronisatiestatus",
+            "advanced.git.lastCommit.sections.deployedCommit": "Gedeployde commit",
+            "advanced.git.lastCommit.labels.remote": "Repository",
+            "advanced.git.lastCommit.labels.local": "Deze site",
+            "advanced.git.pull.title": "Pull",
+            "advanced.git.pull.card.title": "Pull vanuit repository",
+            "advanced.git.pull.card.subtitle": "Werk deze site bij met de nieuwste bestanden vanuit de repository-branch.",
+            "advanced.git.push.title": "Push",
+            "advanced.git.push.card.title": "Push naar repository",
+            "advanced.git.push.card.subtitle": "Verstuur bestandswijzigingen vanuit deze site naar de repository-branch.",
+            "advanced.git.pullDirtyTree.title": "Lokale wijzigingen gedetecteerd",
+            "advanced.git.pullDirtyTree.message": "Deze site heeft lokale bestandswijzigingen die nog niet in de repository staan. Kies wat je wilt doen voordat je pullt.",
+            "advanced.git.pullDirtyTree.warning": "Force pull overschrijft lokale wijzigingen met de repository-inhoud.",
+            "advanced.git.pullDirtyTree.force": "Force pull (wijzigingen overschrijven)",
+            "advanced.git.pullDirtyTree.pushFirst": "Push eerst lokale wijzigingen, pull daarna",
+            "advanced.git.pullDirtyTree.pushFirstHint": "Uploadt je sitewijzigingen, downloadt repository-updates en uploadt daarna het samengevoegde resultaat.",
+            "advanced.git.pushFirst.title": "Repository is leeg",
+            "advanced.git.pushFirst.message": "Deze branch bestaat nog niet in de repository. Gebruik Push om je site te publiceren en aan te maken.",
+            "advanced.git.pushFirst.confirm": "Push",
+            "advanced.git.drift.banner": "Lokale wijzigingen op deze site staan nog niet in de repository.",
+            "advanced.git.drift.push": "Push naar repository",
+            "advanced.git.drift.revert": "Lokale wijzigingen negeren",
+            "advanced.git.drift.ignore": "Herinnering verbergen",
+            "advanced.git.lastCommit.checkUpdates": "Controleren op updates",
+            "advanced.git.lastCommit.remoteBehind": "{{count}} commit(s) in de repository nog niet hier gedeployd",
+            "advanced.git.lastCommit.remoteAhead": "{{count}} commit(s) op deze site nog niet in de repository",
+            "advanced.git.lastCommit.remoteInSync": "Up-to-date met de repository-branch",
+            "advanced.git.lastCommit.localChanges": "Lokale bestandswijzigingen gedetecteerd",
+            "advanced.git.lastCommit.localClean": "Geen lokale bestandswijzigingen",
+            "advanced.git.connection.ok": "De verbinding met de repository werkt.",
+            "advanced.git.connection.error.token": "Kan geen toegang krijgen tot de repository. Werk je toegangstoken bij.",
+            "advanced.git.connection.error.network": "Kan de Git-provider niet bereiken. Probeer het later opnieuw.",
+            "advanced.git.connection.error.not_found": "Repository niet gevonden of niet meer toegankelijk.",
+            "advanced.git.connection.error.localRepoMissing": "Git is niet ingesteld op deze site. Gebruik Verbinding herstellen hieronder.",
+            "advanced.git.connection.error.unknown": "Kan de repository-verbinding niet verifiëren.",
+            "advanced.git.connection.updateToken": "Toegangstoken bijwerken",
+            "advanced.git.connection.tokenLabel": "Toegangstoken",
+            "advanced.git.pull.pushToLiveHint": "Git Pull werkt sitebestanden bij vanuit je repository. Dit is niet hetzelfde als staging naar live pushen (bestanden en database).",
+            "advanced.git.logs.title": "Implementatielog",
+            "advanced.git.logs.subtitle": "Recente verbindingen, pulls, pushes en branch-wijzigingen voor deze site.",
+            "advanced.git.logs.action.connect": "Repository verbonden",
+            "advanced.git.logs.action.disconnect": "Repository losgekoppeld",
+            "advanced.git.logs.action.pull": "Gepulled vanuit repository",
+            "advanced.git.logs.action.push": "Gepusht naar repository",
+            "advanced.git.logs.action.branch_change": "Branch gewijzigd",
+            "advanced.git.logs.action.revert": "Lokale wijzigingen genegeerd",
+            "advanced.git.logs.action.webhook_pull": "Auto-deploy",
+            "advanced.git.logs.status.pending": "In afwachting",
+            "advanced.git.logs.status.in_progress": "Bezig",
+            "advanced.git.logs.status.success": "Voltooid",
+            "advanced.git.logs.status.failed": "Mislukt",
+            "advanced.git.logs.status.skipped": "Overgeslagen",
+            "advanced.git.autoDeploy.title": "Auto-deploy",
+            "advanced.git.autoDeploy.subtitle": "Automatisch pullen en deze site bijwerken wanneer nieuwe commits worden gepusht naar branch {{branch}} in de repository.",
+            "advanced.git.autoDeploy.toggle": "Auto-deploy bij push",
+            "advanced.git.autoDeploy.webhookRegistered": "Webhook geregistreerd bij Git-provider",
+            "advanced.git.autoDeploy.webhookNotRegistered": "Webhook niet geregistreerd",
+            "advanced.git.autoDeploy.webhookLabel": "Webhook",
+            "advanced.git.autoDeploy.lastTriggered": "Laatst getriggerd",
+            "advanced.git.autoDeploy.inProgress": "Auto-deploy bezig\\u2026",
+            "advanced.git.setupBanner.message": "Je repository is verbonden. Voer Pull of Push hieronder uit om deze site voor het eerst te synchroniseren met de repository.",
+            "advanced.git.setupBanner.checking": "Repository-status controleren\\u2026",
+            "advanced.git.setupBanner.sameBranchStaging": "Deze site gebruikt dezelfde branch als je live site ({{branch}}). Kies voor een testomgeving een andere branch (bijvoorbeeld develop).",
+            "advanced.git.setupBanner.sameBranchLive": "Je staging-site gebruikt dezelfde branch ({{branch}}). Staging volgt meestal een aparte branch.",
+            "advanced.git.setupBanner.changeBranch": "Branch wijzigen",
+            "advanced.git.setupBanner.pull": "Nu pullen",
+            "advanced.git.setupBanner.pullBehind": "Nu pullen ({{count}} achter)",
+            "advanced.git.setupBanner.push": "Site naar repository pushen",
+            "advanced.git.setupBanner.divergedHint": "Zowel deze site als de repository hebben nieuwe versies. Pull eerst om repository-updates op te halen. Als je wijzigingen op deze site wilt behouden, gebruik dan Push eerst lokale wijzigingen, en pull daarna in het Pull-venster.",
+            "advanced.git.push.pullFirstHint": "De repository heeft nieuwere commits. Pull deze wijzigingen voordat je vanaf deze site pusht.",
+            "advanced.git.drift.pullFirst": "Pull eerst updates",
+            "advanced.git.drift.divergedHint": "De repository heeft ook nieuwere commits. Pull eerst om die updates op te halen. Als je wijzigingen op deze site wilt behouden, gebruik dan Push eerst lokale wijzigingen, en pull daarna in het Pull-venster.",
+            "advanced.git.connect.partialSyncFailed": "Repository verbonden, maar de eerste synchronisatie is niet voltooid: {{message}} Gebruik de banner hierboven om het te voltooien.",
+            "advanced.wordpressMcp.title": "WordPress MCP",
+            "advanced.wordpressMcp.description": "Koppel een AI-assistent (Claude, Cursor, VS Code, \\u2026) rechtstreeks aan deze site via het Model Context Protocol. De assistent krijgt echte beheertoegang tot je inhoud, plugins en instellingen.",
+            "advanced.wordpressMcp.enable": "MCP inschakelen",
+            "advanced.wordpressMcp.disable": "MCP uitschakelen",
+            "advanced.wordpressMcp.installing": "Adapter installeren\\u2026",
+            "advanced.wordpressMcp.removing": "Adapter verwijderen\\u2026",
+            "advanced.wordpressMcp.tryAgain": "Opnieuw proberen",
+            "advanced.wordpressMcp.failed": "Er is iets misgegaan bij het bijwerken van de MCP-adapter.",
+            "advanced.wordpressMcp.howToConnect": "Hoe verbinden",
+            "advanced.wordpressMcp.statusDisabled": "Uitgeschakeld",
+            "advanced.wordpressMcp.statusActive": "Actief",
+            "advanced.wordpressMcp.disabledTitle": "WordPress MCP is uitgeschakeld",
+            "advanced.wordpressMcp.disabledDescription": "Koppel een AI-assistent (Claude Code, Codex, Cursor, \\u2026) rechtstreeks aan deze site via het Model Context Protocol. De assistent krijgt echte beheertoegang tot je inhoud, plugins en instellingen.",
+            "advanced.wordpressMcp.activeTitle": "WordPress MCP is actief",
+            "advanced.wordpressMcp.activeDescription": "Je AI-assistent kan nu verbinding maken met deze site. Gebruik de gegevens hieronder om de setup in je tool af te ronden.",
+            "advanced.wordpressMcp.step3Body": "Vervang <code class=\"mcp-path\">your-wp-username</code> en <code class=\"mcp-path\">your-application-password</code> door je WordPress-gebruikersnaam en het applicatiewachtwoord uit stap 1.",
+            "advanced.wordpressMcp.step1Title": "Maak een Application Password aan",
+            "advanced.wordpressMcp.step1Body": "Ga in WP-Admin naar <code class=\"mcp-path\">Users \\u2022 Profile \\u2022 Application Passwords</code>, geef het een naam (bijv. \"Claude\") en kopieer het gegenereerde wachtwoord.",
+            "advanced.wordpressMcp.step1Link": "Open WP-Admin",
+            "advanced.wordpressMcp.step2Title": "MCP-endpoint",
+            "advanced.wordpressMcp.step3Title": "Configuratie",
+            "advanced.wordpressMcp.copy": "Kopiëren",
+            "advanced.wordpressMcp.copied": "Gekopieerd",
+            "advanced.wordpressMcp.abilities.title": "Abilities beschikbaar maken via een eigen MU-plugin",
+            "advanced.wordpressMcp.abilities.description": "Standaard stelt de MCP-Adapter alleen veilige alleen-lezen abilities beschikbaar. Maak een Must-Use plugin aan om extra abilities toe te voegen.",
+            "advanced.wordpressMcp.abilities.step1Title": "Maak de MU-plugin aan",
+            "advanced.wordpressMcp.abilities.step1Body": "Kopieer de code hieronder naar een nieuw PHP-bestand. Upload het naar de map <code class=\"mcp-path\">wp-content/mu-plugins/</code> op je WordPress-site.",
+            "advanced.wordpressMcp.abilities.step2Title": "Activeer abilities",
+            "advanced.wordpressMcp.abilities.step2Body": "De voorbeeldcode markeert <code class=\"mcp-path\">core/get-site-info</code>, <code class=\"mcp-path\">core/get-environment-info</code> en <code class=\"mcp-path\">core/get-user-info</code> als publiek. Voeg abilities toe aan of verwijder ze uit de array <code class=\"mcp-path\">$expose</code> om te bepalen welke endpoints via MCP toegankelijk zijn.",
+            "advanced.wordpressMcp.abilities.noteTitle": "Ontwikkelaarscontrole",
+            "advanced.wordpressMcp.abilities.note": "Meer controle nodig? Gebruik de filter <code class=\"mcp-path\">wp_register_ability_args</code> om abilities publiek te verklaren. De filter ontvangt de ability-argumenten en de ability-ID.",
+            "advanced.wordpressMcp.copyCode": "Code kopiëren",
+            "advanced.wordpressMcp.disableConfirmTitle": "WordPress MCP uitschakelen?",
+            "advanced.wordpressMcp.disableConfirmBody": "Dit verwijdert de MCP Adapter-plugin en het endpoint stopt met werken. Vergeet niet ook het Application Password in wp-admin in te trekken.",
+            "advanced.wordpressMcp.confirm": "Uitschakelen",
+            "advanced.wordpressMcp.cancel": "Annuleren",
+            "advanced.wordpressMcp.infoTooltip": "Het Model Context Protocol laat AI-assistenten je WordPress-inhoud, plugins en instellingen rechtstreeks beheren via een beveiligd REST-endpoint.",
+            "advanced.wordpressMcp.pluginRequiredHint": "Dit inschakelen installeert automatisch de WordPress MCP Adapter-plugin op je site.",
+            "advanced.wordpressMcp.endpointUnavailable": "Het MCP-endpoint geeft momenteel een fout. De MCP Adapter-plugin is mogelijk nog aan het activeren\\u2014vernieuw over een moment.",
+            "advanced.wordpressMcp.enableSuccess": "WordPress MCP is ingeschakeld.",
+            "advanced.wordpressMcp.disableSuccess": "WordPress MCP is uitgeschakeld.",
+            "phpmyadminSsoChoice.title": "Inloggen bij phpMyAdmin",
+            "phpmyadminSsoChoice.message": "SSO-link genereren is bezig..."
         },
         "hosting": {
             "sidebar.manage.title": "Beheren",
@@ -667,7 +984,28 @@
             },
             "fileManager": {
                 "alert": "De bestandsbeheerder is mogelijk niet beschikbaar voor dit plan."
-            }
+            },
+            "usage.title": "Gebruik",
+            "usage.graphs.title": "Grafieken",
+            "usage.graphs.cpuUsage": "CPU-gebruik",
+            "usage.graphs.diskThroughput": "Schijfdoorvoer",
+            "usage.graphs.diskIops": "Schijf IOPS",
+            "usage.graphs.networkTraffic": "Netwerkverkeer",
+            "usage.graphs.networkPps": "Netwerk PPS",
+            "usage.graphs.noData": "Geen gegevens",
+            "usage.graphs.usage": "Gebruik",
+            "usage.graphs.read": "Lezen",
+            "usage.graphs.write": "Schrijven",
+            "usage.graphs.in": "In",
+            "usage.graphs.out": "Uit",
+            "summary.instancesCard.usage.usedOfLimit": "Gebruikt: {{used}} van {{limit}}",
+            "summary.instancesCard.usage.used": "Gebruikt: {{used}}",
+            "summary.planCard.usage.email_storage": "Opslag e-mailaccounts",
+            "dns.modal.proxy-warning.title": "Cloudflare Proxy inschakelen",
+            "dns.modal.proxy-warning.info": "Cloudflare Proxy inschakelen leidt verkeer via het netwerk van Cloudflare, dat een eigen caching-laag heeft. Dit kan conflicteren met WP Cloud Edge Cache als dat momenteel is ingeschakeld voor de WordPress-instantie op dit domein.",
+            "dns.modal.proxy-warning.alert": "Als Edge Cache actief is voor een WordPress-instantie op dit domein, overweeg om dit uit te schakelen voordat je Cloudflare Proxy inschakelt om caching-conflicten te voorkomen.",
+            "dns.zones.title": "DNS-zone",
+            "dns.zones.tooltip": "Selecteer een DNS-zone om de records te beheren."
         },
         "onboarding": {
             "selectType.title": "Nieuwe instantie toevoegen",
@@ -784,6 +1122,89 @@
                         "general": "We importeren je instantie."
                     }
                 }
+            },
+            "import.url.ipAddress.info": "Optioneel: voer het server-IP in als je domein nog niet werkt.",
+            "noInstallationType.title": "Installatie niet beschikbaar",
+            "noInstallationType.info": "Je kunt momenteel geen instantie installeren. Neem contact op met support voor meer informatie.",
+            "transferDomain.message.verificationRequired": "Domeinverificatie is nog vereist.",
+            "instanceSource": {
+                "title": "Kies hoe je je instantie wilt aanmaken",
+                "wordpress": {
+                    "title": "WordPress",
+                    "subtitle": "Maak een nieuwe site of migreer een bestaande."
+                },
+                "git": {
+                    "title": "Git",
+                    "subtitle": "Verbind GitHub, GitLab of Bitbucket en deploy naar je server."
+                },
+                "zip": {
+                    "title": "Bestanden",
+                    "subtitle": "Upload bestanden of een ZIP-archief en deploy naar je server."
+                },
+                "go": {
+                    "title": "Panelalpha GO"
+                }
+            },
+            "gitDeploy": {
+                "title": "Deployen vanuit Git",
+                "subtitle": "Verbind een repository om een instantie aan te maken",
+                "repoUrl": {
+                    "label": "Repository-URL"
+                },
+                "privateRepo": {
+                    "label": "Privé-repository"
+                },
+                "auth": {
+                    "title": "Toegangsmethode",
+                    "pat": {
+                        "label": "Personal access token (PAT)",
+                        "tokenLabel": "Toegangstoken",
+                        "placeholder": "Token plakken"
+                    },
+                    "deployKey": {
+                        "label": "Deploy key (SSH)",
+                        "publicKeyLabel": "Public key",
+                        "addedCheckbox": "Ik heb de deploy key toegevoegd aan de repository"
+                    }
+                }
+            },
+            "zipDeploy": {
+                "title": "Deployen vanuit bestanden",
+                "subtitle": "Upload je applicatiebestanden en een optionele database om een nieuwe instantie aan te maken",
+                "file": {
+                    "label": "Bronbestanden",
+                    "selectFolder": "Of selecteer een map\\u2026",
+                    "maxSelections": "Maximaal 5 bestanden of mappen in totaal.",
+                    "invalidType": "Toegestane bestandstypen: .zip, .tar.gz, .sql, .sql.gz, .sqlite, .db",
+                    "empty": "Voeg ten minste één bestand of map toe.",
+                    "emptyFolder": "De geselecteerde map is leeg."
+                },
+                "dropZone": {
+                    "title": "Sleep een map of archief met je applicatie hierheen",
+                    "hint": "Klik om te bladeren, of voeg een database-dump toe als apart bestand"
+                },
+                "supportedFormats": {
+                    "title": "Wat je kunt uploaden:",
+                    "webApp": "Map of archief (.zip) met je webapplicatie",
+                    "database": "Database-dump: .sql, .sql.gz, of SQLite (.sqlite, .db)",
+                    "backup": "Volledig back-uparchief van je vorige hosting",
+                    "allInOne": "Eén archief met applicatiebestanden en database samen",
+                    "separateFiles": "Applicatiearchief en database apart (bijv. site.tar.gz + database.sql.gz)"
+                },
+                "selection": {
+                    "folderSummary": "{{name}} ({{count}} bestanden)"
+                }
+            },
+            "gitZipDeployProgress": {
+                "title": "Je instantie instellen",
+                "subtitle": {
+                    "inProgress": "Dit kan enkele minuten duren",
+                    "failed": "Er is iets misgegaan"
+                },
+                "info": "We zijn je instantie aan het deployen. Je kunt dit venster sluiten en later terugkomen.",
+                "error": {
+                    "generic": "Implementatie mislukt. Controleer je meldingen of probeer het opnieuw."
+                }
             }
         },
         "navbar": {
@@ -792,7 +1213,8 @@
             "tab.resellerArea": "Reseller Area",
             "tab": {
                 "resellerArea": "Resellergebied"
-            }
+            },
+            "tab.myServer": "Mijn server"
         },
         "styleManager": {
             "title": "Stijlbeheer",
@@ -1026,11 +1448,30 @@
             "importing.failed": "Importeren van de instantie is mislukt.",
             "importing.site": "Uw site aan het importeren.",
             "importing.wait": "Het kan even duren.",
-            "instanceInstall.failed": "Instance-installatie mislukt."
+            "instanceInstall.failed": "Instance-installatie mislukt.",
+            "importing.inProgress": "Migratie is bezig",
+            "not-started": "Niet gestart",
+            "completed": "Voltooid",
+            "in-progress": "Bezig",
+            "stopped": "Gestopt",
+            "connected": "Verbonden",
+            "disconnected": "Niet verbonden"
         },
         "instanceInDiagnosticMode": "Het beheren van de site is momenteel niet mogelijk (Diagnosemodus). Neem contact op met support voor meer informatie.",
         "hostingAccountInDiagnosticMode": "Het beheren van de hosting is momenteel niet mogelijk (Diagnosemodus). Neem contact op met support voor meer informatie",
-        "confirmBeforeProceedingAction": "Bevestig voordat je verdergaat met deze actie."
+        "confirmBeforeProceedingAction": "Bevestig voordat je verdergaat met deze actie.",
+        "theme": {
+            "noDescription": "Geen beschrijving beschikbaar"
+        },
+        "importing": {
+            "modal": {
+                "title": "Migratielogs",
+                "desc": "Op dit scherm kun je een voorbeeld bekijken van je instantie-importproces en de status van afzonderlijke bewerkingen.",
+                "progress": "Voortgang importeren:",
+                "failed": "Migratie mislukt"
+            }
+        },
+        "link.documentation.howToCreate": "Hoe aan te maken?"
     },
     "notification": {
         "account": {
@@ -1116,7 +1557,21 @@
             "copyInstance.completed": "Instantie kopiëren is bezig",
             "modal.pushToStaging.success": "Push naar enscenering in uitvoering",
             "advanced.logs.maxEntries": "100 items uit het logboek worden weergegeven. Download om meer te zien.",
-            "disableSearchEngineIndexing.success": "Zoekmachine-indexering is bijgewerkt."
+            "disableSearchEngineIndexing.success": "Zoekmachine-indexering is bijgewerkt.",
+            "modal.ssoLogin.dnsMismatchDetected": "Waarschuwing! Dit domein verwijst mogelijk nog niet naar deze server. Als DNS niet correct is geconfigureerd, opent WordPress Admin mogelijk niet. Je kunt een tijdelijke URL genereren totdat DNS is ingesteld.",
+            "git.connect.success": "Repository verbonden. Je sitebestanden zijn ongewijzigd \\u2014 gebruik Pull om code uit de repository te downloaden, of Push om deze site te uploaden. Een banner op deze pagina stelt de beste volgende stap voor.",
+            "git.disconnect.success": "Repository losgekoppeld.",
+            "git.repair.success": "Git-verbinding hersteld. Je kunt nu pullen of pushen om deze site te synchroniseren met de repository.",
+            "git.pull.success": "Site bijgewerkt vanuit de repository.",
+            "git.push.success": "Wijzigingen naar de repository verzonden.",
+            "git.push.nothing": "Er zijn geen bestandswijzigingen op deze site om naar de repository te sturen.",
+            "git.revert.success": "Lokale bestandswijzigingen zijn genegeerd.",
+            "git.check.success": "Repository-status bijgewerkt.",
+            "git.credentials.success": "Toegangstoken bijgewerkt.",
+            "git.drift.ignore.success": "Herinnering verborgen totdat lokale wijzigingen veranderen.",
+            "git.branch.success": "Branch bijgewerkt.",
+            "git.autoDeploy.success": "Auto-deploy-instellingen bijgewerkt.",
+            "modal.phpmyadminSsoChoice.dnsMismatch": "Waarschuwing! Het gebruikte domein verwijst mogelijk nog niet naar deze server. Als DNS niet correct is geconfigureerd, opent phpMyAdmin mogelijk niet. Je kunt een tijdelijke URL genereren totdat DNS is ingesteld."
         },
         "hosting": {
             "domain.create.success": "{{type}} is toegevoegd.",
@@ -1434,6 +1889,33 @@
         },
         "apiToken": {
             "create": "API-token maken"
+        },
+        "edge-cache.enable": "Toch inschakelen",
+        "dns.proxy.enable": "Proxy toch inschakelen",
+        "connect.default": "Verbinden",
+        "ignore": "Negeren",
+        "restoreAlerts": "Waarschuwingen herstellen",
+        "loginWithTempUrl": "Inloggen met tijdelijke URL",
+        "loginDirectly": "Direct inloggen",
+        "git": {
+            "pull": "Pull",
+            "push": "Push"
+        },
+        "import": {
+            "cancel": "Migratie annuleren",
+            "resume": "Import hervatten",
+            "details": "Logs tonen"
+        },
+        "installation.resume": "Installatie hervatten",
+        "fullServerManagement": "Volledig serverbeheer",
+        "onboarding": {
+            "prepare-installation": "Installatie voorbereiden",
+            "preparing-installation": "Installatie voorbereiden...",
+            "create-domain": "Domein aanmaken...",
+            "check-domain-availability": "Domein controleren...",
+            "gitDeploy": {
+                "generateDeployKey": "Deploy key genereren"
+            }
         }
     },
     "tooltip": {
@@ -1613,7 +2095,8 @@
             },
             "collaborate": {
                 "start": "Nodig mensen uit om samen te werken aan deze instantie."
-            }
+            },
+            "theme.cannotDelete": "Het thema kan niet worden verwijderd omdat het al is geactiveerd"
         },
         "hosting": {
             "service.suspended": "Uw dienst is opgeschort.",
@@ -1686,7 +2169,8 @@
         },
         "add_ssh_account": {
             "username": "Gebruikersnaam van SSH-account"
-        }
+        },
+        "sharedAccess.loginAs.allUsers": "Sta deze gebruiker toe om in te loggen op WordPress als elke gebruiker op deze site."
     },
     "form": {
         "label": {
@@ -1805,7 +2289,9 @@
             "ssh": {
                 "user": "SSH-gebruiker",
                 "password": "SSH-wachtwoord"
-            }
+            },
+            "backupDownloadItem": "Back-uptype",
+            "ipAddress": "IP-adres"
         },
         "placeholder": {
             "cabundle": "Voer CA-bundle in",
@@ -2003,7 +2489,10 @@
             "visitors": "Bezoekers",
             "only_me": "Alleen ik",
             "me_and_delegated_user": "Ik en gedelegeerde gebruiker",
-            "collaborate": "Samenwerken"
+            "collaborate": "Samenwerken",
+            "sharedAccess.loginAs": {
+                "allUsers": "Alle WordPress-gebruikers"
+            }
         },
         "value": {
             "unlimited": "Onbeperkt",
@@ -2118,7 +2607,12 @@
             "instance": "Instantie",
             "instances": "Instanties",
             "last_used_at": "Laatst gebruikt op",
-            "created_at": "Aangemaakt op"
+            "created_at": "Aangemaakt op",
+            "action": "Actie",
+            "commit": "Commit",
+            "currentFile": "Huidig bestand",
+            "currentTable": "Huidige tabel",
+            "step": "Stap"
         },
         "field": {
             "userOwner": "{{name}} (jij)",
@@ -2433,5 +2927,14 @@
         "zh_CN": "Chinees (vereenvoudigd)",
         "zh_HK": "Chinees (Hongkong)"
     },
-    "reseller": "Reseller"
+    "reseller": "Reseller",
+    "appSingleServer": {
+        "adminAreaDropdown": {
+            "goTo": "Ga naar beheerdersgedeelte",
+            "shortcuts": "Snelkoppelingen:",
+            "migrations": "Migraties",
+            "logs": "Logs",
+            "configuration": "Configuratie"
+        }
+    }
 }

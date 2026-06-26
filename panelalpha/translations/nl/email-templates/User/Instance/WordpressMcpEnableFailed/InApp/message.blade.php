@@ -1,0 +1,1 @@
+<p>Het inschakelen van WordPress MCP op <strong>{{ $instance_name }}</strong> is mislukt. Bericht: {{ $exception_message }}</p>

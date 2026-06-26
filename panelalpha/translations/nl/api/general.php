@@ -3,7 +3,12 @@
 return [
     'instance' => 'instantie',
     'hosting_account' => 'hostingaccount',
+    'server' => 'server',
     'service' => 'service',
+    'Application' => 'applicatie',
+    'ServerAccount' => 'hostingaccount',
+    'Server' => 'server',
+    'Service' => 'service',
     'self_signed' => 'Zelf ondertekend',
     'files' => 'bestanden',
     'database' => 'database',
@@ -36,6 +41,7 @@ return [
         
         'migrateDatabaseUsingPlugin' => 'Database migreren',
         'migrateFilesUsingPlugin' => 'Bestanden migreren',
+        'finalizeMigrationUsingPlugin' => 'Migratie afronden',
         'prepareInstance' => 'Instantie voorbereiden op migratie',
         'downloadDatabase' => 'Database downloaden',
         'downloadFiles' => 'Bestanden downloaden',
